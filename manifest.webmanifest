@@ -1,0 +1,18 @@
+{
+  "short_name": "Catholic Stories",
+  "name": "Catholic Stories for Children",
+  "description": "Joyful animations helping bring the Catholic faith to life.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "hsl(267deg 50% 78%)",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "hsl(267deg 50% 78%)",
+  "shortcuts": []
+}
