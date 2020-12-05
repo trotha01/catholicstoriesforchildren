@@ -56,17 +56,9 @@ view =
         ]
 
 
-
--- "hsl(92deg 33% 65%)"
-
-
 section1Background : List (Attribute Never)
 section1Background =
     [ style "background" "radial-gradient(circle, white 10%, transparent 10%), radial-gradient(circle, white 10%, hsl(92deg 33% 65%) 10%) 50px 50px; background-size:100px 100px;" ]
-
-
-
--- [style "background" "hsl(40deg 78% 77%)"]
 
 
 section2Background : List (Attribute Never)
@@ -79,10 +71,6 @@ section2Background =
     , style "background-size" "20px 20px"
     , style "background-color" "#232323"
     ]
-
-
-
--- "hsl(199deg 58% 75%)"
 
 
 section3Color1 : String
@@ -124,16 +112,11 @@ section3Background =
     ]
 
 
-
--- [ style "background-color" "#DFDBE5", style "background-image" """url(data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E)"""]
-
-
 viewBody : Html.String.Html Never
 viewBody =
     div []
         [ viewSection "videos"
             section1Background
-            -- "hsl(92deg 33% 65%)"
             [ h2 [] [ text "Videos" ]
             , p [ style "font-style" "italic" ]
                 [ text "videos coming soon"
@@ -172,7 +155,6 @@ viewBody =
             ]
         , viewSection "about"
             section2Background
-            -- [style "background" "hsl(40deg 78% 77%)"]
             [ h2 [] [ text "About" ]
             , p []
                 [ text """Catholic Stories for Children is made with the vision that all Catholics have a strong love of neighbor and God."""
@@ -187,7 +169,6 @@ viewBody =
             ]
         , viewSection "contact"
             section3Background
-            -- "hsl(199deg 58% 75%)"
             [ h2 [] [ text "Contact" ]
             , p []
                 [ text "Please reach out! I love to hear from you!" ]
@@ -250,9 +231,9 @@ viewBody =
                     [ text "Twitter" ]
                 ]
             ]
-        , viewSection "support"
+        , viewSection "donate"
             [ style "background" "hsl(40deg 78% 77%)" ]
-            [ h2 [] [ text "Support Us" ]
+            [ h2 [] [ text "Donate Today" ]
             , p []
                 [ text "Be a monthly giver with "
                 , a
@@ -285,9 +266,6 @@ viewSection sectionId background body =
     section
         ([ id sectionId
          , style "padding" (toPx pageLeftMargin)
-
-         -- , style "background" backgroundColor
-         -- , backgroundColor
          ]
             ++ background
         )

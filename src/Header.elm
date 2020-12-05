@@ -30,7 +30,7 @@ viewHeader currentPage leftMargin =
 
 title : Html.String.Html msg
 title =
-    h1 [ style "line-height" "1.2em" ] [ text "Catholic Stories for Children" ]
+    h1 [ style "line-height" "1.2em", style "font-family" "Arbutus Slab" ] [ text "Catholic Stories for Children" ]
 
 
 navbar : String -> Html.String.Html msg
@@ -45,7 +45,7 @@ navbar currentPage =
             [ navbarItem "#videos" "Videos" (currentPage == "videos")
             , navbarItem "#about" "About" (currentPage == "about")
             , navbarItem "#contact" "Contact" (currentPage == "contact")
-            , navbarItem "#support" "Support us" (currentPage == "support")
+            , navbarItem "#donate" "Donate Today" (currentPage == "donate")
             ]
         ]
 
