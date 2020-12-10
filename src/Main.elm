@@ -119,7 +119,7 @@ viewBody =
             section1Background
             [ h2 [] [ text "Videos" ]
             , p [ style "font-style" "italic" ]
-                [ text "videos coming soon"
+                [ text "animations coming soon"
                 ]
 
             -- , div
@@ -172,9 +172,9 @@ viewBody =
             [ h2 [] [ text "Contact" ]
             , p []
                 [ text "Please reach out! I love to hear from you!" ]
-            , p []
+            , p [ style "overflow-wrap" "anywhere" ]
                 [ span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
-                , span []
+                , span [ style "display" "inline-block" ]
                     [ text "trevor"
                     , span [] [ text "@" ]
                     ]
