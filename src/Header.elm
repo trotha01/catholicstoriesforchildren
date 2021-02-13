@@ -16,8 +16,7 @@ toPx x =
 viewHeader : String -> Int -> Html.String.Html msg
 viewHeader currentPage leftMargin =
     header
-        [ style "border-bottom" "6px solid #e8eaed"
-        , style "padding" (toPx leftMargin)
+        [ style "padding" (toPx leftMargin)
         , style "background" "hsl(267deg 50% 78%)"
 
         -- overflow hidden is so that the header includes the content, otherwise it collapses

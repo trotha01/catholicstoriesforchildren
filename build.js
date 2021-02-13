@@ -16,7 +16,7 @@ var htmlPrefix = `<!doctype html>
 
     <title>Catholic Stories for Children</title>
   </head>
-  <body dir="ltr" lang="en" style="margin:0;font-size:1.5em;font-family:Georgia;line-height:1.5em;color:#333" >`
+  <body dir="ltr" lang="en" style="margin:0;font-size:1.5em;font-family:Helvetica;line-height:1.5em;color:#333" >`
 
 var htmlSuffix = `</body>
 </html>`

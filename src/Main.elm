@@ -58,58 +58,17 @@ view =
 
 section1Background : List (Attribute Never)
 section1Background =
-    [ style "background" "radial-gradient(circle, white 10%, transparent 10%), radial-gradient(circle, white 10%, hsl(92deg 33% 65%) 10%) 50px 50px; background-size:100px 100px;" ]
+    [ style "background" "white" ]
 
 
 section2Background : List (Attribute Never)
 section2Background =
-    [ style "background"
-        """linear-gradient(135deg, hsl(40deg 78% 77%) 25%, hsl(40deg 78% 77% / 50%) 25%) -50px 0,
-  linear-gradient(225deg, hsl(40deg 78% 77%) 25%, hsl(40deg 78% 77% / 50%) 25%) -50px 0,
-  linear-gradient(315deg, hsl(40deg 78% 77%) 25%, hsl(40deg 78% 77% / 50%) 25%),
-  linear-gradient(45deg, hsl(40deg 78% 77%) 25%, hsl(40deg 78% 77% / 50%) 25%)"""
-    , style "background-size" "20px 20px"
-    , style "background-color" "#232323"
-    ]
-
-
-section3Color1 : String
-section3Color1 =
-    "hsl(199deg 58% 75% / 85%)"
-
-
-section3Color2 : String
-section3Color2 =
-    "hsl(199deg 58% 75%)"
+    [ style "background" "white" ]
 
 
 section3Background : List (Attribute Never)
 section3Background =
-    [ style "background" ("""
-      linear-gradient(135deg, """ ++ section3Color2 ++ """ 0.3em, rgba(232, 58, 37, 0) 0.3em) 0 1em,
-      linear-gradient(-135deg, """ ++ section3Color2 ++ """ 0.3em, rgba(232, 58, 37, 0) 0.3em) 0 1em,
-      radial-gradient(circle at 1.79em 1.85em,
-                      """ ++ section3Color2 ++ """ 0.255em,
-                      rgba(232, 58, 37, 0) 0.261em
-                     ) 0 -1em,
-      radial-gradient(circle at 0.21em 1.85em,
-                      """ ++ section3Color2 ++ """ 0.255em,
-                      rgba(232, 58, 37, 0) 0.261em
-                      ) 0 -1em,
-      linear-gradient(135deg, """ ++ section3Color2 ++ """ 0.3em, rgba(152, 204, 150, 0) 0.3em) 1em 0,
-      linear-gradient(-135deg, """ ++ section3Color2 ++ """ 0.3em, rgba(152, 204, 150, 0) 0.3em) 1em 0,
-      radial-gradient(circle at 1.79em 1.85em,
-                      """ ++ section3Color2 ++ """ 0.255em,
-                      rgba(152, 204, 150, 0) 0.261em
-                      ) 1em 0,
-      radial-gradient(circle at 0.21em 1.85em,
-                      """ ++ section3Color2 ++ """ 0.255em,
-                      rgba(152, 204, 150, 0) 0.261em
-                      ) 1em 0""")
-    , style "background-size" "48px 48px"
-    , style "background-color" section3Color1
-    , style "background-repeat" "repeat"
-    ]
+    [ style "background" "#f6f8fa" ]
 
 
 viewBody : Html.String.Html Never
@@ -117,9 +76,21 @@ viewBody =
     div []
         [ viewSection "videos"
             section1Background
-            [ h2 [] [ text "Videos" ]
+            [ h2 [ style "color" "#499098" ] [ text "Videos" ]
             , p [ style "font-style" "italic" ]
-                [ text "animations coming soon"
+                [ span [ attribute "ariaHidden" "true" ] [ text "🎉 " ]
+                , span [] [ text "Animations coming soon" ]
+                ]
+            , div []
+                [ img
+                    [ src "Hail-Mary-Animation-Sample.png"
+                    , attribute "ariaHidden" "true"
+                    , style "width" "100%"
+                    , style "max-width" "750px"
+                    , style "border" "1px solid #424242"
+                    , style "border-radius" "3px"
+                    ]
+                    []
                 ]
 
             -- , div
@@ -155,16 +126,20 @@ viewBody =
             ]
         , viewSection "about"
             section2Background
-            [ h2 [] [ text "About" ]
-            , p []
-                [ text """Catholic Stories for Children is made with the vision that all Catholics have a strong love of neighbor and God."""
+            [ div
+                [ style "border-top" "#ddd solid 1px"
                 ]
-            , p []
-                [ text """Our hope is to help others along this journey with joyful stories."""
-                ]
-            , blockquote []
-                [ p [ style "font-style" "italic" ] [ text """Truth, naked and cold, had been turned away from every door in the village. Her nakedness frightened the people. When Parable found her she was huddled in a corner, shivering and hungry. Taking pity on her, Parable gathered her up and took her home. There, she dressed Truth in story, warmed her and sent her out again. Clothed in story, Truth knocked again at the doors and was readily welcomed into the villagers’ houses. They invited her to eat at their tables and warm herself by their fires.""" ]
-                , footer [] [ text "— Jewish Teaching Story" ]
+                [ h2 [ style "color" "#499098" ] [ text "About" ]
+                , p []
+                    [ text """Catholic Stories for Children is made with the vision that all Catholics have a strong love of neighbor and God."""
+                    ]
+                , p []
+                    [ text """Our hope is to help others along this journey with joyful stories."""
+                    ]
+                , blockquote []
+                    [ p [ style "font-style" "italic" ] [ text """Truth, naked and cold, had been turned away from every door in the village. Her nakedness frightened the people. When Parable found her she was huddled in a corner, shivering and hungry. Taking pity on her, Parable gathered her up and took her home. There, she dressed Truth in story, warmed her and sent her out again. Clothed in story, Truth knocked again at the doors and was readily welcomed into the villagers’ houses. They invited her to eat at their tables and warm herself by their fires.""" ]
+                    , footer [] [ text "— Jewish Teaching Story" ]
+                    ]
                 ]
             ]
         , viewSection "contact"
