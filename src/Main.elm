@@ -207,10 +207,15 @@ viewBody =
                 ]
             ]
         , viewSection "donate"
-            [ style "background" "hsl(40deg 78% 77%)" ]
+            [ style "background" "#9DE2EA" ]
             [ h2 [] [ text "Donate Today" ]
             , p []
-                [ text "Be a monthly giver with "
+                [ Html.String.form [ action "https://www.paypal.com/donate", method "post", target "_top" ]
+                    [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
+                    , input [ type_ "image", src "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
+                    , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
+                    ]
+                , text "Be a monthly giver with "
                 , a
                     [ href "http://www.patreon.com/catholicstoriesforchildren"
                     , rel "noopener"
