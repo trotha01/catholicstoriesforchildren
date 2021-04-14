@@ -10,11 +10,16 @@ var htmlPrefix = `<!doctype html>
     <meta name="theme-color" content="hsl(267deg 50% 78%)">
     <meta name="theme-color" content="hsl(267deg 50% 78%)">
     <link rel="manifest" href="/manifest.webmanifest">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
 
     <title>Catholic Stories for Children</title>
+    <style>
+      @font-face {
+        font-family: hvdComicSerifPro;
+        src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
+        font-display: swap;
+      }
+    </style>
   </head>
   <body dir="ltr" lang="en" style="margin:0;font-size:1.5em;font-family:Helvetica;line-height:1.5em;color:#333" >`
 

@@ -29,7 +29,7 @@ viewHeader currentPage leftMargin =
 
 title : Html.String.Html msg
 title =
-    h1 [ style "line-height" "1.2em", style "font-family" "Arbutus Slab" ] [ text "Catholic Stories for Children" ]
+    h1 [ style "line-height" "1.2em", style "font-family" "hvdComicSerifPro" ] [ text "Catholic Stories for Children" ]
 
 
 navbar : String -> Html.String.Html msg
