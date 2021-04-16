@@ -77,44 +77,45 @@ viewBody =
         [ viewSection "videos"
             section1Background
             [ h2 [ style "color" "#499098" ] [ text "Videos" ]
-            , p [ style "font-style" "italic" ]
-                [ span [ attribute "ariaHidden" "true" ] [ text "🎉 " ]
-                , span [] [ text "Animations coming soon" ]
-                ]
-            , div []
-                [ img
-                    [ src "Hail-Mary-Animation-Sample.png"
-                    , attribute "ariaHidden" "true"
-                    , style "width" "100%"
-                    , style "max-width" "750px"
-                    , style "border" "1px solid #424242"
-                    , style "border-radius" "3px"
-                    ]
-                    []
-                ]
 
-            -- , div
-            --     [ style "position" "relative"
-            --     , style "padding-bottom" "56.25%"
-            --     , height 0
-            --     , style "overflow" "hidden"
-            --     , style "max-width" "100%"
+            -- , p [ style "font-style" "italic" ]
+            --     [ span [ attribute "ariaHidden" "true" ] [ text "🎉 " ]
+            --     , span [] [ text "Animations coming soon" ]
             --     ]
-            --     [ iframe
-            --         [ style "position" "absolute"
+            -- , div []
+            --     [ img
+            --         [ src "Hail-Mary-Animation-Sample.png"
+            --         , attribute "ariaHidden" "true"
             --         , style "width" "100%"
-            --         , style "height" "100%"
-            --         , style "top" "0"
-            --         , style "left" "0"
-            --         -- TODO: replace title name and src
-            --         , src "https://www.youtube.com/embed/oGsI6C4w-UU"
-            --         , title "Youtube Video"
-            --         , property "frameborder" (Json.Encode.string "0")
-            --         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-            --         , property "allowfullscreen" (Json.Encode.string "true")
+            --         , style "max-width" "750px"
+            --         , style "border" "1px solid #424242"
+            --         , style "border-radius" "3px"
             --         ]
             --         []
             --     ]
+            , div
+                [ style "position" "relative"
+                , style "padding-bottom" "56.25%"
+                , height 0
+                , style "overflow" "hidden"
+                , style "max-width" "100%"
+                ]
+                [ iframe
+                    [ style "position" "absolute"
+                    , style "width" "100%"
+                    , style "height" "100%"
+                    , style "top" "0"
+                    , style "left" "0"
+
+                    -- TODO: replace title name and src
+                    , src "https://www.youtube.com/embed/HW0DzGEoa1Y"
+                    , title "Hail Mary, Full of Grace Video"
+                    , property "frameborder" (Json.Encode.string "0")
+                    , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+                    , property "allowfullscreen" (Json.Encode.string "true")
+                    ]
+                    []
+                ]
             , p []
                 [ a
                     [ href "https://www.youtube.com/channel/UC0zQzY08mRAOpb--FawZbYw/"
@@ -215,7 +216,7 @@ viewBody =
                     , input [ type_ "image", src "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
                     , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
                     ]
-                , text "Be a monthly giver with "
+                , text "Or donate through "
                 , a
                     [ href "http://www.patreon.com/catholicstoriesforchildren"
                     , rel "noopener"
