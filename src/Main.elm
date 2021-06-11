@@ -77,22 +77,6 @@ viewBody =
         [ viewSection "videos"
             section1Background
             [ h2 [ style "color" "#499098" ] [ text "Videos" ]
-
-            -- , p [ style "font-style" "italic" ]
-            --     [ span [ attribute "ariaHidden" "true" ] [ text "🎉 " ]
-            --     , span [] [ text "Animations coming soon" ]
-            --     ]
-            -- , div []
-            --     [ img
-            --         [ src "Hail-Mary-Animation-Sample.png"
-            --         , attribute "ariaHidden" "true"
-            --         , style "width" "100%"
-            --         , style "max-width" "750px"
-            --         , style "border" "1px solid #424242"
-            --         , style "border-radius" "3px"
-            --         ]
-            --         []
-            --     ]
             , div
                 [ style "position" "relative"
                 , style "padding-bottom" "56.25%"
@@ -115,6 +99,47 @@ viewBody =
                     , property "allowfullscreen" (Json.Encode.string "true")
                     ]
                     []
+                ]
+            , div
+                [ style "position" "relative"
+                , height 0
+                , style "overflow" "hidden"
+                , style "max-width" "100%"
+                , style "background-color" "#6c8fa5"
+                , style "color" "white"
+                , style "margin-top" "20px"
+                , style "text-align" "center"
+                , style "padding" "20px"
+                , style "font-family" "hvdComicSerifPro"
+                ]
+                [ div [ style "font-family" "hvdComicSerifPro" ] [ text "Guardian Angel Prayer" ]
+                , img
+                    [ src "https://ik.imagekit.io/catholicstories/Guardian_Angel_aMVg7CuOx.png"
+                    , style "width" "32vw"
+                    ]
+                    []
+                , div [] [ text "Animation under construction" ]
+                ]
+            , div
+                [ style "position" "relative"
+                , height 0
+                , style "overflow" "hidden"
+                , style "max-width" "100%"
+                , style "background-color" "#6c8fa5"
+                , style "color" "white"
+                , style "margin-top" "20px"
+                , style "text-align" "center"
+                , style "padding" "20px"
+                , style "font-family" "hvdComicSerifPro"
+                ]
+                [ div [] [ text "St. Michael the Archangel Prayer" ]
+                , img
+                    [ src "https://ik.imagekit.io/catholicstories/St_Michael_jLl2AjYst.png"
+                    , style "width" "32vw"
+                    , attribute "ariaHidden" "true"
+                    ]
+                    []
+                , div [] [ text "Animation under construction" ]
                 ]
             , p []
                 [ a
@@ -218,7 +243,7 @@ viewBody =
                     ]
                 , text "Or donate through "
                 , a
-                    [ href "http://www.patreon.com/catholicstoriesforchildren"
+                    [ href "https://www.patreon.com/catholicstoriesforchildren"
                     , rel "noopener"
                     , target "_blank"
                     , style "text-decoration" "none"
