@@ -58,12 +58,12 @@ view =
 
 section1Background : List (Attribute Never)
 section1Background =
-    [ style "background" "white" ]
+    [ style "background" "#3d5d75" ]
 
 
 section2Background : List (Attribute Never)
 section2Background =
-    [ style "background" "white" ]
+    [ style "background" "#ecd7f2" ]
 
 
 section3Background : List (Attribute Never)
@@ -74,9 +74,26 @@ section3Background =
 viewBody : Html.String.Html Never
 viewBody =
     div []
-        [ viewSection "videos"
+        [ div
+            [ style "height" "100vh"
+            , style "background-color" "#9de2ea"
+            ]
+            [ img
+                [ src "https://ik.imagekit.io/catholicstories/CS4C_FS_CZU-WX8Dy.png"
+                , style "width" "100vw"
+                , alt "Catholic Stories for Children"
+                ]
+                []
+            ]
+        , viewSection "videos"
             section1Background
-            [ h2 [ style "color" "#499098" ] [ text "Videos" ]
+            [ h2
+                [ style "color" "white"
+                , style "font-family" "hvdComicSerifPro"
+                , style "font-size" "60px"
+                , style "text-align" "center"
+                ]
+                [ text "Videos" ]
             , div
                 [ style "position" "relative"
                 , style "padding-bottom" "56.25%"
@@ -107,7 +124,7 @@ viewBody =
                 , style "max-width" "100%"
                 , style "background-color" "#6c8fa5"
                 , style "color" "white"
-                , style "margin-top" "20px"
+                , style "margin-top" "80px"
                 , style "text-align" "center"
                 , style "padding" "20px"
                 , style "font-family" "hvdComicSerifPro"
@@ -127,7 +144,7 @@ viewBody =
                 , style "max-width" "100%"
                 , style "background-color" "#6c8fa5"
                 , style "color" "white"
-                , style "margin-top" "20px"
+                , style "margin-top" "80px"
                 , style "text-align" "center"
                 , style "padding" "20px"
                 , style "font-family" "hvdComicSerifPro"
@@ -141,13 +158,20 @@ viewBody =
                     []
                 , div [] [ text "Animation under construction" ]
                 ]
-            , p []
-                [ a
+            , p
+                [ style "text-align" "center"
+                , style "color" "white"
+                , style "margin" "100px"
+                , style "font-size" "40px"
+                ]
+                [ text "Visit our "
+                , a
                     [ href "https://www.youtube.com/channel/UC0zQzY08mRAOpb--FawZbYw/"
                     , rel "noopener"
                     , target "_blank"
+                    , style "color" "white"
                     ]
-                    [ text "YouTube Channel" ]
+                    [ text "YouTube Channel!" ]
                 ]
             ]
         , viewSection "about"
@@ -155,7 +179,13 @@ viewBody =
             [ div
                 [ style "border-top" "#ddd solid 1px"
                 ]
-                [ h2 [ style "color" "#499098" ] [ text "About" ]
+                [ h2
+                    [ style "color" "#325164"
+                    , style "text-align" "center"
+                    , style "font-size" "60px"
+                    , style "font-family" "hvdComicSerifPro"
+                    ]
+                    [ text "About" ]
                 , p []
                     [ text """Catholic Stories for Children is made with the vision that all Catholics have a strong love of neighbor and God."""
                     ]
@@ -170,7 +200,12 @@ viewBody =
             ]
         , viewSection "contact"
             section3Background
-            [ h2 [] [ text "Contact" ]
+            [ h2
+                [ style "text-align" "center"
+                , style "font-size" "60px"
+                , style "font-family" "hvdComicSerifPro"
+                ]
+                [ text "Contact" ]
             , p []
                 [ text "Please reach out! I love to hear from you!" ]
             , p [ style "overflow-wrap" "anywhere" ]
@@ -233,23 +268,48 @@ viewBody =
                 ]
             ]
         , viewSection "donate"
-            [ style "background" "#9DE2EA" ]
-            [ h2 [] [ text "Donate Today" ]
-            , p []
-                [ Html.String.form [ action "https://www.paypal.com/donate", method "post", target "_top" ]
-                    [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
-                    , input [ type_ "image", src "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
-                    , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
+            [ style "background" "#9DE2EA"
+            , style "min-height" "100vh"
+            ]
+            [ h2
+                [ style "text-align" "center"
+                , style "font-size" "60px"
+                , style "font-family" "hvdComicSerifPro"
+                ]
+                [ text "Donate Today" ]
+            , p [ style "text-align" "center" ]
+                [ div
+                    [ style "margin-bottom" "30px"
+                    , style "text-align" "center"
                     ]
-                , text "Or donate through "
-                , a
-                    [ href "https://www.patreon.com/catholicstoriesforchildren"
-                    , rel "noopener"
-                    , target "_blank"
-                    , style "text-decoration" "none"
+                    [ div [ style "margin" "20px" ]
+                        [ text "Give via Paypal" ]
+                    , Html.String.form
+                        [ action "https://www.paypal.com/donate", method "post", target "_top" ]
+                        [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
+                        , input [ type_ "image", src "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
+                        , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
+                        ]
                     ]
-                    [ text "Patreon" ]
-                , text "!"
+                , div
+                    [ style "text-align" "center" ]
+                    [ div
+                        [ style "text-align" "center"
+                        , style "margin-bottom" "30px"
+                        ]
+                        [ text "Or donate with Patreon!" ]
+                    , a
+                        [ href "https://www.patreon.com/catholicstoriesforchildren"
+                        , rel "noopener"
+                        , target "_blank"
+                        , style "text-decoration" "none"
+                        , style "background-color" "#ff424e"
+                        , style "color" "white"
+                        , style "padding" "5px 20px"
+                        , style "box-shadow" "#717171 0px 0px 1px 0px"
+                        ]
+                        [ text "Patreon" ]
+                    ]
                 ]
 
             -- , p []

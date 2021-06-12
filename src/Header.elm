@@ -17,13 +17,15 @@ viewHeader : String -> Int -> Html.String.Html msg
 viewHeader currentPage leftMargin =
     header
         [ style "padding" (toPx leftMargin)
-        , style "background" "hsl(267deg 50% 78%)"
+        , style "background-color" "#3d5d75"
+        , style "color" "white"
 
+        -- , style "background" "hsl(267deg 50% 78%)"
         -- overflow hidden is so that the header includes the content, otherwise it collapses
         , style "overflow" "hidden"
         ]
-        [ title
-        , navbar currentPage
+        [ -- title
+          navbar currentPage
         ]
 
 
@@ -40,6 +42,7 @@ navbar currentPage =
             , style "margin" "0"
             , style "white-space" "nowrap"
             , style "overflow" "auto"
+            , style "float" "right"
             ]
             [ navbarItem "#videos" "Videos" (currentPage == "videos")
             , navbarItem "#about" "About" (currentPage == "about")
@@ -57,7 +60,7 @@ navbarItem link name isSelected =
             , style "display" "inline-block"
             , style "padding-right" "20px"
             , style "text-decoration" "none"
-            , style "color" "#333"
+            , style "color" "white"
             ]
             [ text name ]
         ]
