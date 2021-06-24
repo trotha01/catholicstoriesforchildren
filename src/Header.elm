@@ -47,7 +47,7 @@ navbar currentPage =
             [ navbarItem "#videos" "Videos" (currentPage == "videos")
             , navbarItem "#about" "About" (currentPage == "about")
             , navbarItem "#contact" "Contact" (currentPage == "contact")
-            , navbarItem "#donate" "Donate Today" (currentPage == "donate")
+            , navbarItem "#give" "Give" (currentPage == "give")
             ]
         ]
 

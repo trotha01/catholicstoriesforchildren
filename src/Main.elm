@@ -68,14 +68,14 @@ section2Background =
 
 section3Background : List (Attribute Never)
 section3Background =
-    [ style "background" "#f6f8fa" ]
+    [ style "background" "#3d5d75" ]
 
 
 viewBody : Html.String.Html Never
 viewBody =
     div []
         [ div
-            [ style "height" "100vh"
+            [ style "min-height" "100vh"
             , style "background-color" "#9de2ea"
             ]
             [ img
@@ -90,7 +90,7 @@ viewBody =
             [ h2
                 [ style "color" "white"
                 , style "font-family" "hvdComicSerifPro"
-                , style "font-size" "60px"
+                , style "font-size" "3em"
                 , style "text-align" "center"
                 ]
                 [ text "Videos" ]
@@ -182,7 +182,7 @@ viewBody =
                 [ h2
                     [ style "color" "#325164"
                     , style "text-align" "center"
-                    , style "font-size" "60px"
+                    , style "font-size" "3em"
                     , style "font-family" "hvdComicSerifPro"
                     ]
                     [ text "About" ]
@@ -199,84 +199,106 @@ viewBody =
                 ]
             ]
         , viewSection "contact"
-            section3Background
+            (section3Background
+                ++ [ style "background-image" "url('https://ik.imagekit.io/catholicstories/Paper_Airplane_1__gqjCqhabZ.png')"
+                   , style "background-blend-mode" "difference"
+                   ]
+            )
             [ h2
                 [ style "text-align" "center"
-                , style "font-size" "60px"
+                , style "font-size" "3em"
                 , style "font-family" "hvdComicSerifPro"
+                , style "color" "white"
                 ]
                 [ text "Contact" ]
-            , p []
-                [ text "Please reach out! I love to hear from you!" ]
-            , p [ style "overflow-wrap" "anywhere" ]
-                [ span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
-                , span [ style "display" "inline-block" ]
-                    [ text "trevor"
-                    , span [] [ text "@" ]
+            , div
+                [ style "width" "fit-content"
+                , style "margin-left" "auto"
+                , style "margin-right" "auto"
+                ]
+                [ p
+                    [ style "color" "white"
                     ]
-                , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
-                , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
-                , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
-                , span []
-                    [ text "catholicstoriesforchildren"
+                    [ text "Please reach out! I love to hear from you!" ]
+                , p
+                    [ style "overflow-wrap" "anywhere"
+                    , style "color" "white"
+                    ]
+                    [ span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
+                    , span [ style "display" "inline-block" ]
+                        [ text "trevor"
+                        , span [] [ text "@" ]
+                        ]
+                    , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
+                    , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
+                    , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
                     , span []
-                        [ text "."
-                        , span [] [ text "com" ]
+                        [ text "catholicstoriesforchildren"
+                        , span []
+                            [ text "."
+                            , span [] [ text "com" ]
+                            ]
                         ]
                     ]
-                ]
 
-            -- if the email starts getting spammed, we can update to use a form
-            -- , Html.String.form [ action "https://formspree.io/f/xzbkgowy", method "POST", target "my-iframe" ]
-            --     [ label [] [ text "email", input [ type_ "email", name "_replyto" ] [] ]
-            --     , label [] [ text "message", textarea [ type_ "message", name "message" ] [] ]
-            --     , button [ type_ "submit" ] [ text "send" ]
-            --     ]
-            -- , iframe [ name "my-iframe", height 0, width 0 ] []
-            , p []
-                [ img [ height 16, width 16, src "https://www.facebook.com/favicon.ico", attribute "ariaHidden" "true" ] []
-                , span [] [ text " " ]
-                , a
-                    [ href "https://www.facebook.com/Catholic-Stories-for-Children-120657933116228"
-                    , rel "noopener"
-                    , target "_blank"
-                    , style "text-decoration" "none"
+                -- if the email starts getting spammed, we can update to use a form
+                -- , Html.String.form [ action "https://formspree.io/f/xzbkgowy", method "POST", target "my-iframe" ]
+                --     [ label [] [ text "email", input [ type_ "email", name "_replyto" ] [] ]
+                --     , label [] [ text "message", textarea [ type_ "message", name "message" ] [] ]
+                --     , button [ type_ "submit" ] [ text "send" ]
+                --     ]
+                -- , iframe [ name "my-iframe", height 0, width 0 ] []
+                , p []
+                    [ img [ height 16, width 16, src "https://www.facebook.com/favicon.ico", attribute "ariaHidden" "true" ] []
+                    , span [] [ text " " ]
+                    , a
+                        [ href "https://www.facebook.com/Catholic-Stories-for-Children-120657933116228"
+                        , rel "noopener"
+                        , target "_blank"
+                        , style "text-decoration" "underline"
+                        , style "color" "white"
+                        ]
+                        [ text "Facebook" ]
                     ]
-                    [ text "Facebook" ]
-                ]
-            , p []
-                [ img [ height 16, width 16, src "https://www.instagram.com/favicon.ico", attribute "ariaHidden" "true" ] []
-                , span [] [ text " " ]
-                , a
-                    [ href "https://www.instagram.com/catholicstoriesforchildren"
-                    , rel "noopener"
-                    , target "_blank"
-                    , style "text-decoration" "none"
+                , p []
+                    [ img [ height 16, width 16, src "https://www.instagram.com/favicon.ico", attribute "ariaHidden" "true" ] []
+                    , span [] [ text " " ]
+                    , a
+                        [ href "https://www.instagram.com/catholicstoriesforchildren"
+                        , rel "noopener"
+                        , target "_blank"
+                        , style "text-decoration" "underline"
+                        , style "color" "white"
+                        ]
+                        [ text "Instagram" ]
                     ]
-                    [ text "Instagram" ]
-                ]
-            , p []
-                [ img [ height 16, width 16, src "https://www.twitter.com/favicon.ico", attribute "ariaHidden" "true" ] []
-                , span [] [ text " " ]
-                , a
-                    [ href "https://twitter.com/StoriesCatholic"
-                    , rel "noopener"
-                    , target "_blank"
-                    , style "text-decoration" "none"
+                , p []
+                    [ img [ height 16, width 16, src "https://www.twitter.com/favicon.ico", attribute "ariaHidden" "true" ] []
+                    , span [] [ text " " ]
+                    , a
+                        [ href "https://twitter.com/StoriesCatholic"
+                        , rel "noopener"
+                        , target "_blank"
+                        , style "text-decoration" "underline"
+                        , style "color" "white"
+                        ]
+                        [ text "Twitter" ]
                     ]
-                    [ text "Twitter" ]
                 ]
             ]
-        , viewSection "donate"
+        , viewSection "give"
             [ style "background" "#9DE2EA"
             , style "min-height" "100vh"
+            , style "position" "relative"
+            , style "background-image" "url('https://ik.imagekit.io/catholicstories/Donate_Box_2_h1wVXNnXz.png')"
+            , style "background-position" "top"
             ]
             [ h2
                 [ style "text-align" "center"
-                , style "font-size" "60px"
+                , style "font-size" "3em"
                 , style "font-family" "hvdComicSerifPro"
                 ]
-                [ text "Donate Today" ]
+                [ text "Give" ]
             , p [ style "text-align" "center" ]
                 [ div
                     [ style "margin-bottom" "30px"
