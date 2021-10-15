@@ -37,9 +37,19 @@ main =
 -- VIEW
 
 
+headerMargin : Int
+headerMargin =
+    10
+
+
 pageLeftMargin : Int
 pageLeftMargin =
-    20
+    40
+
+
+pageTopMargin : Int
+pageTopMargin =
+    40
 
 
 toPx : Int -> String
@@ -50,7 +60,7 @@ toPx x =
 view : Html.String.Html Never
 view =
     div []
-        [ viewHeader "home" pageLeftMargin
+        [ viewHeader "home" headerMargin
         , viewBody
         , viewFooter
         ]
@@ -68,7 +78,7 @@ section2Background =
 
 section3Background : List (Attribute Never)
 section3Background =
-    [ style "background" "#3d5d75" ]
+    [ style "background" "#6c93b2" ]
 
 
 viewBody : Html.String.Html Never
@@ -92,77 +102,97 @@ viewBody =
                 , style "font-family" "hvdComicSerifPro"
                 , style "font-size" "3em"
                 , style "text-align" "center"
+                , style "margin-top" "70px"
+                , style "margin-bottom" "70px"
                 ]
                 [ text "Videos" ]
             , div
-                [ style "position" "relative"
-                , style "padding-bottom" "56.25%"
-                , height 0
-                , style "overflow" "hidden"
-                , style "max-width" "100%"
+                [ style "margin" "5vw"
                 ]
-                [ iframe
-                    [ style "position" "absolute"
-                    , style "width" "100%"
-                    , style "height" "100%"
-                    , style "top" "0"
-                    , style "left" "0"
+                [ div
+                    [ style "position" "relative"
+                    , style "padding-bottom" "56.25%"
+                    , height 0
+                    , style "overflow" "hidden"
+                    , style "max-width" "100%"
+                    ]
+                    [ iframe
+                        [ style "position" "absolute"
+                        , style "width" "100%"
+                        , style "height" "100%"
+                        , style "top" "0"
+                        , style "left" "0"
 
-                    -- TODO: replace title name and src
-                    , src "https://www.youtube.com/embed/HW0DzGEoa1Y"
-                    , title "Hail Mary, Full of Grace Video"
-                    , property "frameborder" (Json.Encode.string "0")
-                    , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-                    , property "allowfullscreen" (Json.Encode.string "true")
+                        -- TODO: replace title name and src
+                        , src "https://www.youtube.com/embed/HW0DzGEoa1Y"
+                        , title "Hail Mary, Full of Grace Video"
+                        , property "frameborder" (Json.Encode.string "0")
+                        , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+                        , property "allowfullscreen" (Json.Encode.string "true")
+                        ]
+                        []
                     ]
-                    []
-                ]
-            , div
-                [ style "position" "relative"
-                , height 0
-                , style "overflow" "hidden"
-                , style "max-width" "100%"
-                , style "background-color" "#6c8fa5"
-                , style "color" "white"
-                , style "margin-top" "80px"
-                , style "text-align" "center"
-                , style "padding" "20px"
-                , style "font-family" "hvdComicSerifPro"
-                ]
-                [ div [ style "font-family" "hvdComicSerifPro" ] [ text "Guardian Angel Prayer" ]
-                , img
-                    [ src "https://ik.imagekit.io/catholicstories/Guardian_Angel_aMVg7CuOx.png"
-                    , style "width" "32vw"
+                , div
+                    [ style "position" "relative"
+                    , height 0
+                    , style "overflow" "hidden"
+                    , style "max-width" "100%"
+                    , style "background-color" "#293942"
+                    , style "color" "white"
+                    , style "margin-top" "80px"
+                    , style "text-align" "center"
+                    , style "padding" "20px"
+                    , style "font-family" "hvdComicSerifPro"
                     ]
-                    []
-                , div [] [ text "Animation under construction" ]
-                ]
-            , div
-                [ style "position" "relative"
-                , height 0
-                , style "overflow" "hidden"
-                , style "max-width" "100%"
-                , style "background-color" "#6c8fa5"
-                , style "color" "white"
-                , style "margin-top" "80px"
-                , style "text-align" "center"
-                , style "padding" "20px"
-                , style "font-family" "hvdComicSerifPro"
-                ]
-                [ div [] [ text "St. Michael the Archangel Prayer" ]
-                , img
-                    [ src "https://ik.imagekit.io/catholicstories/St_Michael_jLl2AjYst.png"
-                    , style "width" "32vw"
-                    , attribute "ariaHidden" "true"
+                    [ div
+                        [ style "font-family" "hvdComicSerifPro"
+                        , style "font-size" "2em"
+                        , style "line-height" "1em"
+                        ]
+                        [ text "Guardian Angel Prayer" ]
+                    , img
+                        [ src "https://ik.imagekit.io/catholicstories/Guardian_Angel_aMVg7CuOx.png"
+                        , style "width" "32vw"
+                        , attribute "ariaHidden" "true"
+                        , alt "Guardian angel with construction hat and cone"
+                        ]
+                        []
+                    , div [] [ text "Animation under construction" ]
                     ]
-                    []
-                , div [] [ text "Animation under construction" ]
+                , div
+                    [ style "position" "relative"
+                    , height 0
+                    , style "overflow" "hidden"
+                    , style "max-width" "100%"
+                    , style "background-color" "#293942"
+                    , style "color" "white"
+                    , style "margin-top" "80px"
+                    , style "text-align" "center"
+                    , style "padding" "20px"
+                    , style "font-family" "hvdComicSerifPro"
+                    ]
+                    [ div
+                        [ style "font-size" "2em"
+                        , style "line-height" "1em"
+                        ]
+                        [ text "St. Michael the Archangel Prayer" ]
+                    , img
+                        [ src "https://ik.imagekit.io/catholicstories/St_Michael_jLl2AjYst.png"
+                        , style "width" "32vw"
+                        , attribute "ariaHidden" "true"
+                        , alt "St. Michael with construction hat and cone"
+                        ]
+                        []
+                    , div [] [ text "Animation under construction" ]
+                    ]
                 ]
             , p
                 [ style "text-align" "center"
                 , style "color" "white"
-                , style "margin" "100px"
+                , style "margin-top" "100px"
+                , style "margin-bottom" "100px"
                 , style "font-size" "40px"
+                , style "line-height" "40px"
                 ]
                 [ text "Visit our "
                 , a
@@ -171,7 +201,8 @@ viewBody =
                     , target "_blank"
                     , style "color" "white"
                     ]
-                    [ text "YouTube Channel!" ]
+                    [ text "YouTube Channel" ]
+                , text "!"
                 ]
             ]
         , viewSection "about"
@@ -201,88 +232,97 @@ viewBody =
         , viewSection "contact"
             (section3Background
                 ++ [ style "background-image" "url('https://ik.imagekit.io/catholicstories/Paper_Airplane_1__gqjCqhabZ.png')"
-                   , style "background-blend-mode" "difference"
                    ]
             )
-            [ h2
-                [ style "text-align" "center"
-                , style "font-size" "3em"
-                , style "font-family" "hvdComicSerifPro"
-                , style "color" "white"
+            [ div
+                [ style "padding" "15px"
+
+                -- , style "background" "rgb(255 255 255 / 35%)"
+                -- , style "border-radius" "5px"
+                -- , style "box-shadow" "1px 1px 20px 20px rgb(255 255 255 / 35%)"
                 ]
-                [ text "Contact" ]
-            , div
-                [ style "width" "fit-content"
-                , style "margin-left" "auto"
-                , style "margin-right" "auto"
-                ]
-                [ p
-                    [ style "color" "white"
+                [ h2
+                    [ style "text-align" "center"
+                    , style "font-size" "3em"
+                    , style "font-family" "hvdComicSerifPro"
+                    , style "color" "#fd5d73"
                     ]
-                    [ text "Please reach out! I love to hear from you!" ]
-                , p
-                    [ style "overflow-wrap" "anywhere"
-                    , style "color" "white"
+                    [ text "Contact" ]
+                , div
+                    [ style "width" "fit-content"
+                    , style "margin-left" "auto"
+                    , style "margin-right" "auto"
+                    , style "background" "#ffffff82"
+                    , style "border-radius" "5px"
+                    , style "padding" "20px"
+                    , style "max-width" "700px"
                     ]
-                    [ span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
-                    , span [ style "display" "inline-block" ]
-                        [ text "trevor"
-                        , span [] [ text "@" ]
+                    [ p
+                        []
+                        [ text "Please reach out! I love to hear from you!" ]
+                    , p
+                        [ style "overflow-wrap" "anywhere"
                         ]
-                    , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
-                    , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
-                    , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
-                    , span []
-                        [ text "catholicstoriesforchildren"
+                        [ span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
+                        , span [ style "display" "inline-block" ]
+                            [ text "trevor"
+                            , span [] [ text "@" ]
+                            ]
+                        , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
+                        , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
+                        , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
                         , span []
-                            [ text "."
-                            , span [] [ text "com" ]
+                            [ text "catholicstoriesforchildren"
+                            , span []
+                                [ text "."
+                                , span [] [ text "com" ]
+                                ]
                             ]
                         ]
-                    ]
 
-                -- if the email starts getting spammed, we can update to use a form
-                -- , Html.String.form [ action "https://formspree.io/f/xzbkgowy", method "POST", target "my-iframe" ]
-                --     [ label [] [ text "email", input [ type_ "email", name "_replyto" ] [] ]
-                --     , label [] [ text "message", textarea [ type_ "message", name "message" ] [] ]
-                --     , button [ type_ "submit" ] [ text "send" ]
-                --     ]
-                -- , iframe [ name "my-iframe", height 0, width 0 ] []
-                , p []
-                    [ img [ height 16, width 16, src "https://www.facebook.com/favicon.ico", attribute "ariaHidden" "true" ] []
-                    , span [] [ text " " ]
-                    , a
-                        [ href "https://www.facebook.com/Catholic-Stories-for-Children-120657933116228"
-                        , rel "noopener"
-                        , target "_blank"
-                        , style "text-decoration" "underline"
-                        , style "color" "white"
+                    -- if the email starts getting spammed, we can update to use a form
+                    -- , Html.String.form [ action "https://formspree.io/f/xzbkgowy", method "POST", target "my-iframe" ]
+                    --     [ label [] [ text "email", input [ type_ "email", name "_replyto" ] [] ]
+                    --     , label [] [ text "message", textarea [ type_ "message", name "message" ] [] ]
+                    --     , button [ type_ "submit" ] [ text "send" ]
+                    --     ]
+                    -- , iframe [ name "my-iframe", height 0, width 0 ] []
+                    , p []
+                        [ img [ height 16, width 16, src "https://www.facebook.com/favicon.ico", attribute "ariaHidden" "true" ] []
+                        , span [] [ text " " ]
+                        , a
+                            [ href "https://www.facebook.com/Catholic-Stories-for-Children-120657933116228"
+                            , rel "noopener"
+                            , target "_blank"
+                            , style "text-decoration" "underline"
+                            , style "color" "black"
+                            ]
+                            [ text "Facebook" ]
                         ]
-                        [ text "Facebook" ]
-                    ]
-                , p []
-                    [ img [ height 16, width 16, src "https://www.instagram.com/favicon.ico", attribute "ariaHidden" "true" ] []
-                    , span [] [ text " " ]
-                    , a
-                        [ href "https://www.instagram.com/catholicstoriesforchildren"
-                        , rel "noopener"
-                        , target "_blank"
-                        , style "text-decoration" "underline"
-                        , style "color" "white"
+                    , p []
+                        [ img [ height 16, width 16, src "https://www.instagram.com/favicon.ico", attribute "ariaHidden" "true" ] []
+                        , span [] [ text " " ]
+                        , a
+                            [ href "https://www.instagram.com/catholicstoriesforchildren"
+                            , rel "noopener"
+                            , target "_blank"
+                            , style "text-decoration" "underline"
+                            , style "color" "black"
+                            ]
+                            [ text "Instagram" ]
                         ]
-                        [ text "Instagram" ]
-                    ]
-                , p []
-                    [ img [ height 16, width 16, src "https://www.twitter.com/favicon.ico", attribute "ariaHidden" "true" ] []
-                    , span [] [ text " " ]
-                    , a
-                        [ href "https://twitter.com/StoriesCatholic"
-                        , rel "noopener"
-                        , target "_blank"
-                        , style "text-decoration" "underline"
-                        , style "color" "white"
+                    , p []
+                        [ img [ height 16, width 16, src "https://www.twitter.com/favicon.ico", attribute "ariaHidden" "true" ] []
+                        , span [] [ text " " ]
+                        , a
+                            [ href "https://twitter.com/StoriesCatholic"
+                            , rel "noopener"
+                            , target "_blank"
+                            , style "text-decoration" "underline"
+                            , style "color" "black"
+                            ]
+                            [ text "Twitter" ]
                         ]
-                        [ text "Twitter" ]
                     ]
                 ]
             ]
@@ -292,6 +332,8 @@ viewBody =
             , style "position" "relative"
             , style "background-image" "url('https://ik.imagekit.io/catholicstories/Donate_Box_2_h1wVXNnXz.png')"
             , style "background-position" "top"
+            , style "text-align" "center"
+            , style "text-align" "-webkit-center"
             ]
             [ h2
                 [ style "text-align" "center"
@@ -299,12 +341,21 @@ viewBody =
                 , style "font-family" "hvdComicSerifPro"
                 ]
                 [ text "Give" ]
+            , p
+                [ style "text-align" "center"
+                , style "color" "#f0f"
+                ]
+                [ text "All donations are tax deductible" ]
             , p [ style "text-align" "center" ]
                 [ div
                     [ style "margin-bottom" "30px"
                     , style "text-align" "center"
+                    , style "background" "#ffffff82"
+                    , style "border-radius" "5px"
+                    , style "padding" "20px"
+                    , style "max-width" "300px"
                     ]
-                    [ div [ style "margin" "20px" ]
+                    [ div [ style "margin-bottom" "20px" ]
                         [ text "Give via Paypal" ]
                     , Html.String.form
                         [ action "https://www.paypal.com/donate", method "post", target "_top" ]
@@ -314,7 +365,12 @@ viewBody =
                         ]
                     ]
                 , div
-                    [ style "text-align" "center" ]
+                    [ style "text-align" "center"
+                    , style "background" "#ffffff82"
+                    , style "border-radius" "5px"
+                    , style "padding" "20px"
+                    , style "max-width" "300px"
+                    ]
                     [ div
                         [ style "text-align" "center"
                         , style "margin-bottom" "30px"
@@ -325,7 +381,7 @@ viewBody =
                         , rel "noopener"
                         , target "_blank"
                         , style "text-decoration" "none"
-                        , style "background-color" "#ff424e"
+                        , style "background-color" "#e6000f"
                         , style "color" "white"
                         , style "padding" "5px 20px"
                         , style "box-shadow" "#717171 0px 0px 1px 0px"
@@ -353,7 +409,11 @@ viewSection : String -> List (Attribute Never) -> List (Html.String.Html Never) 
 viewSection sectionId background body =
     section
         ([ id sectionId
-         , style "padding" (toPx pageLeftMargin)
+         , style "padding-left" (toPx pageLeftMargin)
+         , style "padding-right" (toPx pageLeftMargin)
+         , style "padding-top" (toPx pageTopMargin)
+         , style "padding-bottom" (toPx pageTopMargin)
+         , style "margin-top" (toPx 12)
          ]
             ++ background
         )
@@ -389,8 +449,7 @@ viewBanner url title pageUrl =
 
 viewFooter : Html.String.Html Never
 viewFooter =
-    footer [ style "padding" (toPx pageLeftMargin), style "background-color" "black", style "color" "white" ]
-        [ span [] [ text "Copyright © 2020 Catholic Stories for Children. All rights reserved." ]
-
-        -- , text Icons.youtube
+    footer [ style "padding" (toPx 30), style "background-color" "black", style "color" "white" ]
+        [ p [] [ text "Copyright © 2021 Catholic Stories for Children. All rights reserved." ]
+        , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883" ]
         ]

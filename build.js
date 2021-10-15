@@ -21,7 +21,7 @@ var htmlPrefix = `<!doctype html>
       }
     </style>
   </head>
-  <body dir="ltr" lang="en" style="margin:0;font-size:1.5em;font-family:Helvetica;line-height:1.5em;color:#333" >`
+  <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;line-height:1.2em;color:#333" >`
 
 var htmlSuffix = `</body>
 </html>`

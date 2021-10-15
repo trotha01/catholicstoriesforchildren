@@ -41,7 +41,7 @@ navbar currentPage =
             [ style "padding" "0"
             , style "margin" "0"
             , style "white-space" "nowrap"
-            , style "overflow" "auto"
+            , style "overflow" "none"
             , style "float" "right"
             ]
             [ navbarItem "#videos" "Videos" (currentPage == "videos")
