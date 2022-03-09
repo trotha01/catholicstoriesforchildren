@@ -84,28 +84,29 @@ section3Background =
 viewBody : Html.String.Html Never
 viewBody =
     div []
-        [ div
-            [ style "min-height" "100vh"
-            , style "background-color" "#9de2ea"
-            ]
-            [ img
-                [ src "https://ik.imagekit.io/catholicstories/CS4C_FS_CZU-WX8Dy.png"
-                , style "width" "100vw"
-                , alt "Catholic Stories for Children"
-                ]
-                []
-            ]
-        , viewSection "videos"
+        [ -- div
+          -- [ style "min-height" "100vh"
+          -- , style "background-color" "#9de2ea"
+          -- ]
+          -- [ img
+          --     [ src "https://ik.imagekit.io/catholicstories/CS4C_FS_CZU-WX8Dy.png"
+          --     , style "width" "100vw"
+          --     , alt "Catholic Stories for Children"
+          --     ]
+          --     []
+          -- ]
+          viewSection "videos"
             section1Background
             [ h2
                 [ style "color" "white"
                 , style "font-family" "hvdComicSerifPro"
                 , style "font-size" "3em"
                 , style "text-align" "center"
-                , style "margin-top" "70px"
+
+                -- , style "margin-top" "70px"
                 , style "margin-bottom" "70px"
                 ]
-                [ text "Videos" ]
+                [ text "Animations" ]
             , div
                 [ style "margin" "5vw"
                 ]
@@ -186,24 +187,25 @@ viewBody =
                     , div [] [ text "Animation under construction" ]
                     ]
                 ]
-            , p
-                [ style "text-align" "center"
-                , style "color" "white"
-                , style "margin-top" "100px"
-                , style "margin-bottom" "100px"
-                , style "font-size" "40px"
-                , style "line-height" "40px"
-                ]
-                [ text "Visit our "
-                , a
-                    [ href "https://www.youtube.com/channel/UC0zQzY08mRAOpb--FawZbYw/"
-                    , rel "noopener"
-                    , target "_blank"
-                    , style "color" "white"
-                    ]
-                    [ text "YouTube Channel" ]
-                , text "!"
-                ]
+
+            -- , p
+            --     [ style "text-align" "center"
+            --     , style "color" "white"
+            --     , style "margin-top" "100px"
+            --     , style "margin-bottom" "100px"
+            --     , style "font-size" "40px"
+            --     , style "line-height" "40px"
+            --     ]
+            --     [ text "Visit our "
+            --     , a
+            --         [ href "https://www.youtube.com/channel/UC0zQzY08mRAOpb--FawZbYw/"
+            --         , rel "noopener"
+            --         , target "_blank"
+            --         , style "color" "white"
+            --         ]
+            --         [ text "YouTube Channel" ]
+            --     , text "!"
+            --     ]
             ]
         , viewSection "about"
             section2Background
@@ -413,7 +415,8 @@ viewSection sectionId background body =
          , style "padding-right" (toPx pageLeftMargin)
          , style "padding-top" (toPx pageTopMargin)
          , style "padding-bottom" (toPx pageTopMargin)
-         , style "margin-top" (toPx 12)
+
+         --  , style "margin-top" (toPx 12)
          ]
             ++ background
         )
