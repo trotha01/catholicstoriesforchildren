@@ -103,7 +103,7 @@ viewBody =
                 , style "text-align" "center"
                 , style "margin-bottom" "70px"
                 ]
-                [ text "Animations" ]
+                [ text "Videos" ]
             , div
                 [ style "margin" "5vw"
                 ]
