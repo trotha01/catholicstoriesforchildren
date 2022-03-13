@@ -276,7 +276,7 @@ viewBody =
                 [ style "padding" "15px"
                 , style "transform" "translateZ(24px) scale(0.9)"
                 , style "position" "absolute"
-                , style "top" "0"
+                , style "top" "100px"
                 , style "left" "0"
                 , style "right" "0"
                 , style "bottom" "0"
@@ -388,7 +388,7 @@ viewBody =
             , hearts
             , div
                 [ style "position" "absolute"
-                , style "top" "0"
+                , style "top" "100px"
                 , style "left" "0"
                 , style "right" "0"
                 , style "bottom" "0"
