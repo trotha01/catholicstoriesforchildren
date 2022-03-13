@@ -1,6 +1,6 @@
 #!/bin/sh
 # Can run on osx with:
-# fswatch -o src/* | xargs -n1 -I{} ./make.sh
+# fswatch -o src/* build.js | xargs -n1 -I{} ./make.sh
 # and serve with:
 # python -m SimpleHTTPServer 8000
 

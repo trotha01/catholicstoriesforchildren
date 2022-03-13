@@ -19,6 +19,12 @@ var htmlPrefix = `<!doctype html>
         src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
         font-display: swap;
       }
+      @keyframes heart1 { 0% {transform: translate(-280px, 32vh); opacity:0} 10% {opacity:1} 80% {opacity:1} 100% {transform: translate(-280px, -1vh); opacity:0} }
+      @keyframes heart2 { 0% {transform: translate(-260px, 84vh); opacity:0} 10% {opacity: 1} 80% {opacity:1} 100% {transform: translate(-260px, -1vh); opacity:0} }
+      @keyframes heart3 { 0% {transform: translate(-240px, 24vh); opacity:0} 10% {opacity: 1} 80% {opacity:1} 100% {transform: translate(-240px, -1vh); opacity:0} }
+      @keyframes heart4 { 0% {transform: translate(180px, 44vh); opacity:0} 10% {opacity: 1} 80% {opacity:1} 100% {transform: translate(180px, -1vh); opacity:0} }
+      @keyframes heart5 { 0% {transform: translate(200px, 84vh); opacity:0} 10% {opacity: 1} 80% {opacity:1} 100% {transform: translate(200px, -1vh); opacity:0} }
+      @keyframes heart6 { 0% {transform: translate(230px, 12vh); opacity:0} 10% {opacity:1} 80% {opacity:1} 100% {transform: translate(230px, -1vh); opacity:0} }
     </style>
   </head>
   <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;line-height:1.2em;color:#333" >`

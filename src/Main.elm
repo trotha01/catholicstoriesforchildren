@@ -59,7 +59,14 @@ toPx x =
 
 view : Html.String.Html Never
 view =
-    div []
+    div
+        [ -- For parallax
+          style "height" "100vh"
+        , style "overflow-x" "hidden"
+        , style "overflow-y" "auto"
+        , style "perspective" "300px"
+        , style "scroll-behavior" "smooth"
+        ]
         [ viewHeader "home" headerMargin
         , viewBody
         , viewFooter
@@ -83,27 +90,17 @@ section3Background =
 
 viewBody : Html.String.Html Never
 viewBody =
-    div []
-        [ -- div
-          -- [ style "min-height" "100vh"
-          -- , style "background-color" "#9de2ea"
-          -- ]
-          -- [ img
-          --     [ src "https://ik.imagekit.io/catholicstories/CS4C_FS_CZU-WX8Dy.png"
-          --     , style "width" "100vw"
-          --     , alt "Catholic Stories for Children"
-          --     ]
-          --     []
-          -- ]
-          viewSection "videos"
+    div
+        [ -- for parallax
+          style "transform-style" "preserve-3d"
+        ]
+        [ viewSection "videos"
             section1Background
             [ h2
                 [ style "color" "white"
                 , style "font-family" "hvdComicSerifPro"
                 , style "font-size" "3em"
                 , style "text-align" "center"
-
-                -- , style "margin-top" "70px"
                 , style "margin-bottom" "70px"
                 ]
                 [ text "Animations" ]
@@ -233,15 +230,56 @@ viewBody =
             ]
         , viewSection "contact"
             (section3Background
-                ++ [ style "background-image" "url('https://ik.imagekit.io/catholicstories/Paper_Airplane_1__gqjCqhabZ.png')"
-                   ]
+             -- ++ [ style "background-image" "url('https://ik.imagekit.io/catholicstories/Paper_Airplane_1__gqjCqhabZ.png')"
+             --    ]
             )
-            [ div
+            [ img
+                [ style "position" "absolute"
+                , style "top" "0"
+                , style "left" "0"
+                , style "right" "0"
+                , style "bottom" "0"
+                , style "transform" "translate3d(190px, 380px, 0px)"
+                , src "/assets/cloud.svg"
+                , alt ""
+                , attribute "ariaHidden" "true"
+                , width 200
+                ]
+                []
+            , img
+                [ style "position" "absolute"
+                , style "top" "0"
+                , style "left" "0"
+                , style "right" "0"
+                , style "bottom" "0"
+                , style "transform" "translate3d(742px, 250px, 20px)"
+                , src "/assets/cloud.svg"
+                , alt ""
+                , attribute "ariaHidden" "true"
+                , width 200
+                ]
+                []
+            , img
+                [ style "position" "absolute"
+                , style "top" "0"
+                , style "left" "0"
+                , style "right" "0"
+                , style "bottom" "0"
+                , style "transform" "translate3d(550px, 550px, 30px)"
+                , src "/assets/cloud.svg"
+                , alt ""
+                , attribute "ariaHidden" "true"
+                , width 200
+                ]
+                []
+            , div
                 [ style "padding" "15px"
-
-                -- , style "background" "rgb(255 255 255 / 35%)"
-                -- , style "border-radius" "5px"
-                -- , style "box-shadow" "1px 1px 20px 20px rgb(255 255 255 / 35%)"
+                , style "transform" "translateZ(24px) scale(0.9)"
+                , style "position" "absolute"
+                , style "top" "0"
+                , style "left" "0"
+                , style "right" "0"
+                , style "bottom" "0"
                 ]
                 [ h2
                     [ style "text-align" "center"
@@ -329,81 +367,203 @@ viewBody =
                 ]
             ]
         , viewSection "give"
-            [ style "background" "#9DE2EA"
-            , style "min-height" "100vh"
+            [ -- style "background" "#9DE2EA"
+              style "min-height" "100vh"
             , style "position" "relative"
-            , style "background-image" "url('https://ik.imagekit.io/catholicstories/Donate_Box_2_h1wVXNnXz.png')"
             , style "background-position" "top"
             , style "text-align" "center"
             , style "text-align" "-webkit-center"
             ]
-            [ h2
-                [ style "text-align" "center"
-                , style "font-size" "3em"
-                , style "font-family" "hvdComicSerifPro"
+            [ div
+                [ style "transform" "translateZ(0px)"
+                , style "position" "absolute"
+                , style "top" "0"
+                , style "left" "0"
+                , style "right" "0"
+                , style "bottom" "0"
+                , style "background" "#9DE2EA80"
+                , style "mix-blend-mode" "normal"
                 ]
-                [ text "Give" ]
-            , p
-                [ style "text-align" "center"
-                , style "color" "#f0f"
+                []
+            , hearts
+            , div
+                [ style "position" "absolute"
+                , style "top" "0"
+                , style "left" "0"
+                , style "right" "0"
+                , style "bottom" "0"
                 ]
-                [ text "All donations are tax deductible" ]
-            , p [ style "text-align" "center" ]
-                [ div
-                    [ style "margin-bottom" "30px"
-                    , style "text-align" "center"
-                    , style "background" "#ffffff82"
-                    , style "border-radius" "5px"
-                    , style "padding" "20px"
-                    , style "max-width" "300px"
-                    ]
-                    [ div [ style "margin-bottom" "20px" ]
-                        [ text "Give via Paypal" ]
-                    , Html.String.form
-                        [ action "https://www.paypal.com/donate", method "post", target "_top" ]
-                        [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
-                        , input [ type_ "image", src "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
-                        , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
-                        ]
-                    ]
-                , div
+                [ h2
                     [ style "text-align" "center"
-                    , style "background" "#ffffff82"
-                    , style "border-radius" "5px"
-                    , style "padding" "20px"
-                    , style "max-width" "300px"
+                    , style "font-size" "3em"
+                    , style "font-family" "hvdComicSerifPro"
                     ]
+                    [ text "Give" ]
+                , p
+                    [ style "text-align" "center"
+                    , style "color" "#f0f"
+                    ]
+                    [ text "All donations are tax deductible" ]
+                , p [ style "text-align" "center" ]
                     [ div
+                        [ style "margin-bottom" "30px"
+                        , style "text-align" "center"
+                        , style "background" "#ffffff82"
+                        , style "border-radius" "5px"
+                        , style "padding" "20px"
+                        , style "max-width" "300px"
+                        ]
+                        [ div [ style "margin-bottom" "20px" ]
+                            [ text "Give via Paypal" ]
+                        , Html.String.form
+                            [ action "https://www.paypal.com/donate", method "post", target "_top" ]
+                            [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
+                            , input [ type_ "image", src "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
+                            , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
+                            ]
+                        ]
+                    , div
                         [ style "text-align" "center"
-                        , style "margin-bottom" "30px"
+                        , style "background" "#ffffff82"
+                        , style "border-radius" "5px"
+                        , style "padding" "20px"
+                        , style "max-width" "300px"
                         ]
-                        [ text "Or donate with Patreon!" ]
-                    , a
-                        [ href "https://www.patreon.com/catholicstoriesforchildren"
-                        , rel "noopener"
-                        , target "_blank"
-                        , style "text-decoration" "none"
-                        , style "background-color" "#e6000f"
-                        , style "color" "white"
-                        , style "padding" "5px 20px"
-                        , style "box-shadow" "#717171 0px 0px 1px 0px"
+                        [ div
+                            [ style "text-align" "center"
+                            , style "margin-bottom" "30px"
+                            ]
+                            [ text "Or donate with Patreon!" ]
+                        , a
+                            [ href "https://www.patreon.com/catholicstoriesforchildren"
+                            , rel "noopener"
+                            , target "_blank"
+                            , style "text-decoration" "none"
+                            , style "background-color" "#e6000f"
+                            , style "color" "white"
+                            , style "padding" "5px 20px"
+                            , style "box-shadow" "#717171 0px 0px 1px 0px"
+                            ]
+                            [ text "Patreon" ]
                         ]
-                        [ text "Patreon" ]
                     ]
-                ]
 
-            -- , p []
-            --     [ text "Support our next video with "
-            --     , a
-            --         [ href "https://www.gofundme.com/f/catholicstoriesforchildren"
-            --         , rel "noopener"
-            --         , target "_blank"
-            --         , style "text-decoration" "none"
-            --         ]
-            --         [ text "GoFundMe" ]
-            --     , text "!"
-            --     ]
+                -- , p []
+                --     [ text "Support our next video with "
+                --     , a
+                --         [ href "https://www.gofundme.com/f/catholicstoriesforchildren"
+                --         , rel "noopener"
+                --         , target "_blank"
+                --         , style "text-decoration" "none"
+                --         ]
+                --         [ text "GoFundMe" ]
+                --     , text "!"
+                --     ]
+                ]
             ]
+        ]
+
+
+hearts : Html.String.Html Never
+hearts =
+    div [ style "transform-style" "preserve-3d" ]
+        [ img
+            [ style "position" "absolute"
+            , style "top" "0"
+            , style "left" "0"
+            , style "right" "0"
+            , style "bottom" "0"
+            , style "transform" "translate3d(-150px, 0px, -50px) scale(0.7)"
+
+            -- Allow user to click through if content is underneath
+            -- but hopefully the hearts don't block any content
+            , style "pointer-events" "none"
+            , src "/assets/heart.svg"
+            , alt ""
+            , attribute "ariaHidden" "true"
+            , width 200
+            ]
+            []
+        , img
+            [ style "position" "absolute"
+            , style "top" "0"
+            , style "left" "0"
+            , style "right" "0"
+            , style "bottom" "0"
+            , style "transform" "translate3d(160px, 360px, -50px) scale(0.5)"
+            , src "/assets/heart.svg"
+            , alt ""
+            , attribute "ariaHidden" "true"
+            , width 200
+            ]
+            []
+
+        -- , img
+        --     [ src "/assets/heart.svg"
+        --     , attribute "ariaHidden" "true"
+        --     , alt ""
+        --     , style "width" "50px"
+        --     , style "animation-name" "heart1"
+        --     , style "animation-duration" "40s"
+        --     , style "animation-iteration-count" "infinite"
+        --     , style "animation-timing-function" "linear"
+        --     ]
+        --     []
+        -- , img
+        --     [ src "/assets/heart.svg"
+        --     , attribute "ariaHidden" "true"
+        --     , alt ""
+        --     , style "width" "90px"
+        --     , style "animation-name" "heart2"
+        --     , style "animation-duration" "55s"
+        --     , style "animation-iteration-count" "infinite"
+        --     , style "animation-timing-function" "linear"
+        --     ]
+        --     []
+        -- , img
+        --     [ src "/assets/heart.svg"
+        --     , attribute "ariaHidden" "true"
+        --     , alt ""
+        --     , style "width" "90px"
+        --     , style "animation-name" "heart3"
+        --     , style "animation-duration" "60s"
+        --     , style "animation-iteration-count" "infinite"
+        --     , style "animation-timing-function" "linear"
+        --     ]
+        --     []
+        -- , img
+        --     [ src "/assets/heart.svg"
+        --     , attribute "ariaHidden" "true"
+        --     , alt ""
+        --     , style "width" "70px"
+        --     , style "animation-name" "heart4"
+        --     , style "animation-duration" "50s"
+        --     , style "animation-iteration-count" "infinite"
+        --     , style "animation-timing-function" "linear"
+        --     ]
+        --     []
+        -- , img
+        --     [ src "/assets/heart.svg"
+        --     , attribute "ariaHidden" "true"
+        --     , alt ""
+        --     , style "width" "30px"
+        --     , style "animation-name" "heart5"
+        --     , style "animation-duration" "40s"
+        --     , style "animation-iteration-count" "infinite"
+        --     , style "animation-timing-function" "linear"
+        --     ]
+        --     []
+        -- , img
+        --     [ src "/assets/heart.svg"
+        --     , attribute "ariaHidden" "true"
+        --     , alt ""
+        --     , style "width" "30px"
+        --     , style "animation-name" "heart6"
+        --     , style "animation-duration" "42s"
+        --     , style "animation-iteration-count" "infinite"
+        --     , style "animation-timing-function" "linear"
+        --     ]
+        --     []
         ]
 
 
@@ -415,8 +575,8 @@ viewSection sectionId background body =
          , style "padding-right" (toPx pageLeftMargin)
          , style "padding-top" (toPx pageTopMargin)
          , style "padding-bottom" (toPx pageTopMargin)
-
-         --  , style "margin-top" (toPx 12)
+         , style "transform-style" "preserve-3d"
+         , style "min-height" "100vh"
          ]
             ++ background
         )
@@ -452,7 +612,12 @@ viewBanner url title pageUrl =
 
 viewFooter : Html.String.Html Never
 viewFooter =
-    footer [ style "padding" (toPx 30), style "background-color" "black", style "color" "white" ]
+    footer
+        [ style "padding" (toPx 30)
+        , style "background-color" "black"
+        , style "color" "white"
+        , style "transform-style" "preserve-3d"
+        ]
         [ p [] [ text "Copyright © 2021 Catholic Stories for Children. All rights reserved." ]
         , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883" ]
         ]
