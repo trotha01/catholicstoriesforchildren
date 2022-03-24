@@ -1,14 +1,12 @@
 module Main exposing (Model, main, view, viewBanner)
 
 import Browser
+import Footer exposing (viewFooter)
 import Header exposing (viewHeader)
-import Html
+import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
-import Icons
-import Json.Encode exposing (string)
-import Platform.Sub exposing (none)
-import Settings exposing (rootPrefix)
+import Json.Encode
 
 
 
@@ -35,26 +33,6 @@ main =
 
 
 -- VIEW
-
-
-headerMargin : Int
-headerMargin =
-    10
-
-
-pageLeftMargin : Int
-pageLeftMargin =
-    40
-
-
-pageTopMargin : Int
-pageTopMargin =
-    40
-
-
-toPx : Int -> String
-toPx x =
-    String.fromInt x ++ "px"
 
 
 view : Html.String.Html Never
@@ -96,16 +74,16 @@ viewBody =
         ]
         [ viewSection "videos"
             section1Background
-            [ h2
-                [ style "color" "white"
-                , style "font-family" "hvdComicSerifPro"
-                , style "font-size" "3em"
-                , style "text-align" "center"
-                , style "margin-bottom" "70px"
-                ]
-                [ text "Videos" ]
-            , div
-                [ style "margin" "5vw"
+            [ -- h2
+              -- [ style "color" "white"
+              -- , style "font-family" "hvdComicSerifPro"
+              -- , style "font-size" "3em"
+              -- , style "text-align" "center"
+              -- , style "margin-bottom" "70px"
+              -- ]
+              -- [ text "Videos" ]
+              div
+                [-- style "margin" "5vw"
                 ]
                 [ div
                     [ style "position" "relative"
@@ -607,17 +585,4 @@ viewBanner url title pageUrl =
             , style "text-align" "center"
             ]
             [ text title ]
-        ]
-
-
-viewFooter : Html.String.Html Never
-viewFooter =
-    footer
-        [ style "padding" (toPx 30)
-        , style "background-color" "black"
-        , style "color" "white"
-        , style "transform-style" "preserve-3d"
-        ]
-        [ p [] [ text "Copyright © 2022 Catholic Stories for Children. All rights reserved." ]
-        , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883" ]
         ]

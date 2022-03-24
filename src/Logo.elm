@@ -1,5 +1,7 @@
 module Logo exposing (..)
 
+import Html
+import Html.Attributes
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 
@@ -16,6 +18,17 @@ logo =
         , style "padding-top" "3px"
         , alt ""
         , style "vertical-align" "middle"
+        ]
+        []
+
+
+logoHtml =
+    Html.img
+        [ Html.Attributes.src "/assets/logo_solid.svg"
+        , Html.Attributes.style "height" "36px"
+        , Html.Attributes.style "padding-top" "3px"
+        , Html.Attributes.alt ""
+        , Html.Attributes.style "vertical-align" "middle"
         ]
         []
 

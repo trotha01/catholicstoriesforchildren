@@ -3,10 +3,15 @@
 # fswatch -o src/* build.js | xargs -n1 -I{} ./make.sh
 # and serve with:
 # python -m SimpleHTTPServer 8000
+#
+# We build this way so the webpage doesn't need javascript
 
 set -ex
 
 elm make --optimize \
   src/Main.elm \
   --output elm.js \
+  && elm make --optimize \
+  src/People/Main.elm \
+  --output peopleElm.js \
   && node build.js
