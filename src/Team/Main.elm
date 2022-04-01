@@ -1,4 +1,4 @@
-module People.Main exposing (..)
+module Team.Main exposing (..)
 
 import Browser
 import Footer exposing (viewFooter)
@@ -39,6 +39,7 @@ type Social
     | Behance
 
 
+socialOrdering : Social -> Social -> Order
 socialOrdering =
     Ordering.explicit
         [ Website
@@ -57,7 +58,7 @@ socialOrdering =
 
 imagePath : String
 imagePath =
-    "/assets/People/"
+    "/assets/Team/"
 
 
 staff : List Person
@@ -119,7 +120,7 @@ boardOfAdvisors =
       }
     , { name = "Carlos Gutierrez"
       , initials = ""
-      , position = "Mechanical Engineer"
+      , position = "CAD Designer"
       , description = "Carlos is a CAD designer who also has a passion for dogs, comedy and food."
       , image = imagePath ++ "CarlosG.jpg"
       , socials = []
@@ -229,7 +230,7 @@ contractors =
     , { name = "Sean Beeson"
       , initials = "SB"
       , position = "Composer"
-      , description = "Sean has scored hundreds of projects and have over a decade of media scoring experience."
+      , description = "Sean has scored hundreds of projects and has over a decade of media scoring experience."
       , image = imagePath ++ "SeanBeeson.jpeg"
       , socials =
             [ ( Website, "https://www.seanbeeson.com/" )
@@ -241,7 +242,7 @@ contractors =
       }
     , { name = "Ekaterina Soyuznova"
       , initials = "ES"
-      , position = "Illustrator"
+      , position = "Visual Development Artist"
       , description = "Ekaterina is a skilled artist presenting a unique approach to developing visually appealing designs."
       , image = imagePath ++ "Ekaterina.png"
       , socials =
@@ -301,7 +302,7 @@ view =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style "background" darkBlue
+        , style ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
         ]
         [ viewSubpageHeader "home" headerMargin
         , viewBody
