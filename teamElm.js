@@ -5890,7 +5890,7 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 		{a: '', b: '', c: 'I', d: 'Italia', e: 'Singer and Voice Actor', f: _List_Nil},
 		{a: '', b: '', c: 'D', d: 'Dominic', e: 'Singer and Voice Actor', f: _List_Nil},
 		{
-		a: 'Sean has scored hundreds of projects and has over a decade of media scoring experience.',
+		a: 'Sean is a composer for games, films, cartoons, trailers, and more. He is also a highly sought after composer for Catholic media. He is Roman Catholic, husband of 15 years, and father to six children.',
 		b: $author$project$Team$Main$imagePath + 'SeanBeeson.jpeg',
 		c: 'SB',
 		d: 'Sean Beeson',
@@ -6442,9 +6442,7 @@ var $author$project$Team$Main$view = A2(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-y', 'auto'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'perspective', '300px'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'scroll-behavior', 'smooth'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', '\n                  radial-gradient(#8c6897a3, transparent 5px),\n                  radial-gradient(#8c6897a3,  transparent 5px),\n                  radial-gradient(#8c6897a3,  transparent 5px),\n                  radial-gradient(#8c6897a3,  transparent 5px),\n                  radial-gradient(#8c6897a3,  transparent 5px),\n                  linear-gradient(130deg, ' + ($author$project$Helpers$darkBlue + ' 70%, #8c6897)')),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-size', '550px 550px, 450px 450px, 550px 550px, 350px 350px, 450px 345px, 100vw 100vh'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-position', '0 -230px, 40px -200px, 130px 270px, 70px 100px, 200px 110px, 0 0')
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, ' + ($author$project$Helpers$darkBlue + ' 70%, #8c6897)'))
 		]),
 	_List_fromArray(
 		[

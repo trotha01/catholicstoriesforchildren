@@ -230,7 +230,7 @@ contractors =
     , { name = "Sean Beeson"
       , initials = "SB"
       , position = "Composer"
-      , description = "Sean has scored hundreds of projects and has over a decade of media scoring experience."
+      , description = "Sean is a composer for games, films, cartoons, trailers, and more. He is also a highly sought after composer for Catholic media. He is Roman Catholic, husband of 15 years, and father to six children."
       , image = imagePath ++ "SeanBeeson.jpeg"
       , socials =
             [ ( Website, "https://www.seanbeeson.com/" )
@@ -302,7 +302,7 @@ view =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
+        , style "background-image" ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
         ]
         [ viewSubpageHeader "home" headerMargin
         , viewBody
