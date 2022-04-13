@@ -14,6 +14,9 @@ var htmlPrefix = `<!doctype html>
 
     <title>Catholic Stories for Children</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
       @font-face {
         font-family: hvdComicSerifPro;
         src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
@@ -27,7 +30,8 @@ var htmlPrefix = `<!doctype html>
       @keyframes heart6 { 0% {transform: translate(230px, 12vh); opacity:0} 10% {opacity:1} 80% {opacity:1} 100% {transform: translate(230px, -1vh); opacity:0} }
     </style>
   </head>
-  <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;line-height:1.2em;color:#333" >`
+  <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;font-weight:lighter;line-height:1.2em;color:#333" >
+`
 
 var htmlSuffix = `</body>
 </html>`
