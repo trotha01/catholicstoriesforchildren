@@ -113,8 +113,8 @@ boardOfAdvisors =
       }
     , { name = "Cheri Loreto"
       , initials = ""
-      , position = "Former House Supervisor"
-      , description = "Cheri is a retired House Supervisor from Anaheim Regional Medical Center."
+      , position = "Silent Advisor"
+      , description = "Truly silent."
       , image = imagePath ++ "Cheri.jpeg"
       , socials = []
       }

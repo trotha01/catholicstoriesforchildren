@@ -5802,7 +5802,7 @@ var $author$project$Team$Main$boardOfAdvisors = _List_fromArray(
 		{a: 'Fr. Aaron is the associate chaplain in Saint Irenaeus Parish in Cypress, CA.', b: $author$project$Team$Main$imagePath + 'FrAaron.jpeg', c: '', d: 'Father Aaron Galvizo, A.M.', e: 'Alagad ni Maria', f: _List_Nil},
 		{a: 'Fr. Fredrick is a former chaplain of Santa Margarita Catholic High School and CHOC, ' + ('former Parochial Vicar of St. Irenaeus Catholic Church, Church of St. Pius X, ' + 'and Our Lady of Mt. Carmel Church.'), b: $author$project$Team$Main$imagePath + 'FrDodik.jpeg', c: '', d: 'Father Fredrick Miras, A.M.', e: 'Alagad ni Maria', f: _List_Nil},
 		{a: 'Chris Pagel is the assistant dean of Graduate Business Programs and Career Services at ' + 'Chapman University\'s George L. Argyros School of Business and Economics.', b: $author$project$Team$Main$imagePath + 'ChrisPagel.jpeg', c: '', d: 'Christopher Pagel', e: 'Assistant Dean', f: _List_Nil},
-		{a: 'Cheri is a retired House Supervisor from Anaheim Regional Medical Center.', b: $author$project$Team$Main$imagePath + 'Cheri.jpeg', c: '', d: 'Cheri Loreto', e: 'Former House Supervisor', f: _List_Nil},
+		{a: 'Truly silent.', b: $author$project$Team$Main$imagePath + 'Cheri.jpeg', c: '', d: 'Cheri Loreto', e: 'Silent Advisor', f: _List_Nil},
 		{a: 'Carlos is a CAD designer who also has a passion for dogs, comedy and food.', b: $author$project$Team$Main$imagePath + 'CarlosG.jpg', c: '', d: 'Carlos Gutierrez', e: 'CAD Designer', f: _List_Nil}
 	]);
 var $author$project$Team$Main$Behance = 10;
