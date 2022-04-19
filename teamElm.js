@@ -5920,7 +5920,7 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 			])
 	},
 		{
-		a: 'Francesco is an artist, 3D Motion Designer, Husband 💍 and father of 5 awesome kids',
+		a: 'Artist, 3D Motion Designer, Husband and Father.',
 		b: '',
 		c: 'FS',
 		d: 'Francesco Schito',
