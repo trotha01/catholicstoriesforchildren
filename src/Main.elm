@@ -113,6 +113,7 @@ viewBody =
                     , height 0
                     , style "overflow" "hidden"
                     , style "max-width" "100%"
+                    , style "border-radius" "5px"
                     ]
                     [ iframe
                         [ style "position" "absolute"
@@ -141,6 +142,7 @@ viewBody =
                     , style "text-align" "center"
                     , style "padding" "20px"
                     , style "font-family" "hvdComicSerifPro"
+                    , style "border-radius" "5px"
                     ]
                     [ div
                         [ style "font-family" "hvdComicSerifPro"
@@ -168,6 +170,7 @@ viewBody =
                     , style "text-align" "center"
                     , style "padding" "20px"
                     , style "font-family" "hvdComicSerifPro"
+                    , style "border-radius" "5px"
                     ]
                     [ div
                         [ style "font-size" "2em"
