@@ -15,6 +15,9 @@ var htmlPrefix = `<!doctype html>
 
     <title>Catholic Stories for Children</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
       @font-face {
         font-family: hvdComicSerifPro;
         src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
@@ -27,7 +30,8 @@ var htmlPrefix = `<!doctype html>
       }
     </style>
   </head>
-  <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;line-height:1.2em;color:#333" >`
+  <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;font-weight:lighter;line-height:1.2em;color:#333" >
+`
 
 var htmlSuffix = `</body>
 </html>`
@@ -65,4 +69,4 @@ var teamFakeNode = function (path) {
 }
 
 var app = Elm.Elm.Main.init({ node: fakeNode('./index.html') })
-var teamApp = TeamElm.Elm.Team.Main.init({ node: teamFakeNode('./team.html') })
+var teamApp = TeamElm.Elm.Team.Main.init({ node: teamFakeNode('./team/index.html') })
