@@ -208,6 +208,22 @@ viewBody =
                     , footer [] [ text "— Jewish Teaching Story" ]
                     ]
                 ]
+            , div
+                [ style "text-align" "center"
+                ]
+                [ a
+                    [ href "/team"
+                    , rel "noopener"
+                    , target "_blank"
+                    , style "text-decoration" "none"
+                    , style "background" "#f44034d9"
+                    , style "color" "white"
+                    , style "padding" "20px"
+                    , style "display" "inline-block"
+                    , style "border-radius" "5px"
+                    ]
+                    [ text "Meet the team" ]
+                ]
             ]
         , viewSection "contact"
             (section3Background
