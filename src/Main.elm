@@ -193,7 +193,7 @@ viewBody =
                 [ h2
                     [ style "color" "#325164"
                     , style "text-align" "center"
-                    , style "font-size" "3em"
+                    , style "font-size" "4rem"
                     , style "font-family" "hvdComicSerifPro"
                     ]
                     [ text "About" ]
@@ -222,7 +222,7 @@ viewBody =
                         ]
                         [ h2
                             [ style "text-align" "center"
-                            , style "font-size" "3em"
+                            , style "font-size" "4rem"
                             , style "font-family" "hvdComicSerifPro"
                             , style "color" "#333333"
                             ]
@@ -362,7 +362,7 @@ viewBody =
                 ]
                 [ h2
                     [ style "text-align" "center"
-                    , style "font-size" "3em"
+                    , style "font-size" "4rem"
                     , style "font-family" "hvdComicSerifPro"
                     ]
                     [ text "Give" ]
