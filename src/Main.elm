@@ -216,17 +216,9 @@ viewBody =
             )
             (clouds
                 ++ [ div
-                        [ style "padding" "15px"
-                        , style "transform" "translateZ(50px) scale(0.9)"
-                        , style "position" "absolute"
-                        , style "top" "100px"
-                        , style "left" "0"
-                        , style "right" "0"
-                        , style "bottom" "0"
-
-                        -- reducing font size since it goes past the height of the section background
-                        -- on mobile
-                        , style "font-size" "0.7em"
+                        [ -- reducing font size since it goes past the height of the section background
+                          -- on mobile
+                          style "font-size" "0.7em"
                         ]
                         [ h2
                             [ style "text-align" "center"
@@ -444,10 +436,10 @@ clouds =
     [ img
         [ style "position" "absolute"
         , style "top" "0"
-        , style "left" "0"
+        , style "left" "50%"
         , style "right" "0"
         , style "bottom" "0"
-        , style "transform" "translate3d(190px, 380px, 0px)"
+        , style "transform" "translate(-400px, 380px)"
         , src "/assets/cloud.svg"
         , alt ""
         , attribute "ariaHidden" "true"
@@ -457,10 +449,10 @@ clouds =
     , img
         [ style "position" "absolute"
         , style "top" "0"
-        , style "left" "0"
+        , style "left" "50%"
         , style "right" "0"
         , style "bottom" "0"
-        , style "transform" "translate3d(742px, 250px, 20px)"
+        , style "transform" "translate(200px, 200px)"
         , src "/assets/cloud.svg"
         , alt ""
         , attribute "ariaHidden" "true"
@@ -470,13 +462,13 @@ clouds =
     , img
         [ style "position" "absolute"
         , style "top" "0"
-        , style "left" "0"
+        , style "left" "50%"
         , style "right" "0"
         , style "bottom" "0"
-        , style "transform" "translate3d(550px, 550px, 30px)"
+        , style "transform" "translate(-330px, 20px)"
         , src "/assets/cloud.svg"
         , alt ""
-        , attribute "ariaHidden" "true"
+        , attribute "ariaHidden" "true3"
         , width 200
         ]
         []
@@ -489,10 +481,10 @@ hearts =
         [ img
             [ style "position" "absolute"
             , style "top" "0"
-            , style "left" "0"
+            , style "left" "50%"
             , style "right" "0"
             , style "bottom" "0"
-            , style "transform" "translate3d(-150px, 0px, -50px) scale(0.7)"
+            , style "transform" "translate3d(-350px, 0px, -50px) scale(0.7)"
 
             -- Allow user to click through if content is underneath
             -- but hopefully the hearts don't block any content
@@ -506,7 +498,7 @@ hearts =
         , img
             [ style "position" "absolute"
             , style "top" "0"
-            , style "left" "0"
+            , style "left" "50%"
             , style "right" "0"
             , style "bottom" "0"
             , style "transform" "translate3d(160px, 360px, -50px) scale(0.5)"
