@@ -618,10 +618,7 @@ viewSection : String -> List (Attribute Never) -> List (Html.String.Html Never) 
 viewSection sectionId background body =
     section
         ([ id sectionId
-         , style "padding-left" (toPx pageLeftMargin)
-         , style "padding-right" (toPx pageLeftMargin)
-         , style "padding-top" (toPx pageTopMargin)
-         , style "padding-bottom" (toPx pageTopMargin)
+         , class "FortyToEightypadding"
          , style "transform-style" "preserve-3d"
          , style "min-height" "100vh"
          ]
