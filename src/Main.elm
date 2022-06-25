@@ -427,27 +427,21 @@ viewBody =
                         ]
                     , div
                         [ style "text-align" "center"
-                        , style "background" "#ffffff82"
                         , style "border-radius" "5px"
                         , style "padding" "20px"
                         , style "max-width" "300px"
                         ]
-                        [ div
-                            [ style "text-align" "center"
-                            , style "margin-bottom" "30px"
-                            ]
-                            [ text "Or donate with Patreon!" ]
-                        , a
-                            [ href "https://www.patreon.com/catholicstoriesforchildren"
+                        [ a
+                            [ href "/give"
                             , rel "noopener"
-                            , target "_blank"
                             , style "text-decoration" "none"
                             , style "background-color" "#e6000f"
                             , style "color" "white"
-                            , style "padding" "5px 20px"
+                            , style "padding" "20px"
+                            , style "border-radius" "5px"
                             , style "box-shadow" "#717171 0px 0px 1px 0px"
                             ]
-                            [ text "Patreon" ]
+                            [ text "More ways to donate" ]
                         ]
                     ]
 

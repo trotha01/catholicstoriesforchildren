@@ -2,6 +2,7 @@ module Helpers exposing (..)
 
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
+import Json.Encode
 
 
 
@@ -110,6 +111,11 @@ behanceLogo =
     favicon "https://www.behance.net/favicon.ico"
 
 
+paypalLogo : Html msg
+paypalLogo =
+    favicon "https://www.paypal.com/favicon.ico"
+
+
 favicon : String -> Html msg
 favicon link =
     img
@@ -119,3 +125,23 @@ favicon link =
         , style "height" "16px"
         ]
         []
+
+
+email : Html msg
+email =
+    span []
+        [ span [ style "display" "inline-block" ]
+            [ text "trevor"
+            , span [] [ text "@" ]
+            ]
+        , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
+        , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
+        , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
+        , span []
+            [ text "catholicstoriesforchildren"
+            , span []
+                [ text "."
+                , span [] [ text "com" ]
+                ]
+            ]
+        ]

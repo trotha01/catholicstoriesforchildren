@@ -1,6 +1,7 @@
 var fs = require('fs')
 var Elm = require('./elm.js')
 var TeamElm = require('./teamElm.js')
+var GiveElm = require('./giveElm.js')
 
 var htmlPrefix = `<!doctype html>
 <html lang="en">
@@ -62,21 +63,7 @@ var fakeNode = function (path) {
   }
 }
 
-var teamFakeNode = function (path) {
-  return {
-    replaceData: function (d, e, f) {
-      fs.writeFile(
-        path,
-        htmlPrefix + f + htmlSuffix,
-        function (err) {
-          if (err) {
-            console.log(err)
-          }
-        }
-      )
-    },
-  }
-}
 
 var app = Elm.Elm.Main.init({ node: fakeNode('./index.html') })
-var teamApp = TeamElm.Elm.Team.Main.init({ node: teamFakeNode('./team/index.html') })
+var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('./team/index.html') })
+var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html') })

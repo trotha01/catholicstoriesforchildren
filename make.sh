@@ -14,4 +14,7 @@ elm make --optimize \
   && elm make --optimize \
   src/Team/Main.elm \
   --output teamElm.js \
+  && elm make --optimize \
+  src/Give/Main.elm \
+  --output giveElm.js \
   && node build.js
