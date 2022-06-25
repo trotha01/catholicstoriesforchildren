@@ -437,7 +437,7 @@ viewBody =
                             , style "text-decoration" "none"
                             , style "background-color" "#e6000f"
                             , style "color" "white"
-                            , style "padding" "20px"
+                            , style "padding" "10px"
                             , style "border-radius" "5px"
                             , style "box-shadow" "#717171 0px 0px 1px 0px"
                             ]

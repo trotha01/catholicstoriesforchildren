@@ -6421,7 +6421,7 @@ var $author$project$Header$viewSubpageHeader = F2(
 					_List_fromArray(
 						[
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '1em'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '19.2px'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'inline'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'float', 'right'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-shadow', '#3d3d3d 3px 3px 11px'),

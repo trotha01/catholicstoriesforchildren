@@ -64,7 +64,7 @@ viewSubpageHeader currentPage leftMargin =
         , span centerStyle [ logo ]
         , h1
             [ style "font-family" "hvdComicSerifPro"
-            , style "font-size" "1em"
+            , style "font-size" "19.2px"
             , style "display" "inline"
             , style "float" "right"
             , style "text-shadow" "#3d3d3d 3px 3px 11px"

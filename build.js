@@ -13,6 +13,7 @@ var htmlPrefix = `<!doctype html>
     <meta name="theme-color" content="hsl(267deg 50% 78%)">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preload" href="assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <title>Catholic Stories for Children</title>
     <style>
@@ -41,7 +42,7 @@ var htmlPrefix = `<!doctype html>
       }
     </style>
   </head>
-  <body dir="ltr" lang="en" style="margin:0;font-size:1.2em;font-family:Helvetica;font-weight:lighter;line-height:1.2em;color:#333" >
+  <body dir="ltr" lang="en" style="margin:0;font-size:1.6em;font-family:Nunito Sans;font-weight:lighter;line-height:1.2em;color:#333" >
 `
 
 var htmlSuffix = `</body>
