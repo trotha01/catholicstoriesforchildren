@@ -5797,21 +5797,44 @@ var $zwilias$elm_html_string$Html$Types$Style = F2(
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
+var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
 var $author$project$Give$Main$donateAbout = A2(
-	$zwilias$elm_html_string$Html$String$p,
+	$zwilias$elm_html_string$Html$String$span,
 	_List_fromArray(
 		[
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '6em')
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white')
 		]),
 	_List_fromArray(
 		[
-			$zwilias$elm_html_string$Html$String$text('Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏')
+			A2(
+			$zwilias$elm_html_string$Html$String$p,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '1em')
+				]),
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏')
+				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$p,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '6em')
+				]),
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883')
+				]))
 		]));
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
@@ -6047,7 +6070,6 @@ var $zwilias$elm_html_string$Html$Types$ValueProperty = F2(
 		return {$: 3, a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$property = $zwilias$elm_html_string$Html$Types$ValueProperty;
-var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
 var $author$project$Helpers$email = A2(
 	$zwilias$elm_html_string$Html$String$span,
 	_List_Nil,
@@ -6174,7 +6196,7 @@ var $author$project$Give$Main$wordsOfEncouragement = A2(
 				_List_Nil,
 				_List_fromArray(
 					[
-						$zwilias$elm_html_string$Html$String$text(' "Encourage one another and build one another up" (NABRE 1 Th 5:11). Words of encouragement will lift our spirits. Let us build each other up in the faith.')
+						$zwilias$elm_html_string$Html$String$text(' "Encourage one another and build one another up" —1 Th 5:11. Sending words of encouragement are greatly appreciated. Let us build each other up in the faith.')
 					])),
 				$author$project$Helpers$email
 			])));

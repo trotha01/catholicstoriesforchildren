@@ -60,16 +60,28 @@ viewBody =
 
 donateAbout : Html msg
 donateAbout =
-    p
+    span
         [ style "text-align" "center"
         , style "color" "white"
-        , style "width" "80%"
-        , style "left" "50%"
-        , style "position" "relative"
-        , style "transform" "translate(-50%)"
-        , style "margin-bottom" "6em"
         ]
-        [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
+        [ p
+            [ style "width" "80%"
+            , style "left" "50%"
+            , style "position" "relative"
+            , style "transform" "translate(-50%)"
+            , style "margin-bottom" "1em"
+            ]
+            [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
+        , p
+            [ style "width" "80%"
+            , style "left" "50%"
+            , style "position" "relative"
+            , style "transform" "translate(-50%)"
+            , style "margin-bottom" "6em"
+            ]
+            [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883"
+            ]
+        ]
 
 
 prayForUs : Html msg
@@ -205,7 +217,7 @@ wordsOfEncouragement =
             , style "transform" "translate(-50%)"
             , style "margin-bottom" "6em"
             ]
-            [ p [] [ text """ "Encourage one another and build one another up" (NABRE 1 Th 5:11). Words of encouragement will lift our spirits. Let us build each other up in the faith.""" ]
+            [ p [] [ text """ "Encourage one another and build one another up" —1 Th 5:11. Sending words of encouragement are greatly appreciated. Let us build each other up in the faith.""" ]
             , Helpers.email
             ]
         )
