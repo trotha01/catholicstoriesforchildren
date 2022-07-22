@@ -84,13 +84,37 @@ viewBody =
               -- [ text "Videos" ]
               div
                 []
-                [ div
+                [ --     div
+                  --     [ style "position" "relative"
+                  --     , style "padding-bottom" "56.25%"
+                  --     , height 0
+                  --     , style "overflow" "hidden"
+                  --     , style "max-width" "100%"
+                  --     , style "border-radius" "5px"
+                  --     ]
+                  --     [ iframe
+                  --         [ style "position" "absolute"
+                  --         , style "width" "100%"
+                  --         , style "height" "100%"
+                  --         , style "top" "0"
+                  --         , style "left" "0"
+                  --         , src "https://player.vimeo.com/video/702301712?h=d6ef012bb2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  --         , title "About Catholic Stories for Children"
+                  --         , property "frameborder" (Json.Encode.string "0")
+                  --         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+                  --         , property "allowfullscreen" (Json.Encode.string "true")
+                  --         ]
+                  --         []
+                  --     ]
+                  -- ,
+                  div
                     [ style "position" "relative"
                     , style "padding-bottom" "56.25%"
                     , height 0
                     , style "overflow" "hidden"
                     , style "max-width" "100%"
                     , style "border-radius" "5px"
+                    , style "margin-top" "80px"
                     ]
                     [ iframe
                         [ style "position" "absolute"
@@ -98,7 +122,7 @@ viewBody =
                         , style "height" "100%"
                         , style "top" "0"
                         , style "left" "0"
-                        , src "https://player.vimeo.com/video/702301712?h=d6ef012bb2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        , src "https://www.youtube.com/embed/5fcIUJ7j6WA"
                         , title "About Catholic Stories for Children"
                         , property "frameborder" (Json.Encode.string "0")
                         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
