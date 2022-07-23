@@ -122,7 +122,7 @@ viewBody =
                         , style "height" "100%"
                         , style "top" "0"
                         , style "left" "0"
-                        , src "https://www.youtube.com/embed/GEaq7BbsDSc"
+                        , src "https://www.youtube.com/embed/uxP6KFTER60"
                         , title "About Catholic Stories for Children"
                         , property "frameborder" (Json.Encode.string "0")
                         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
