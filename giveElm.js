@@ -5895,6 +5895,27 @@ var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
 var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
 };
+var $author$project$Give$Main$donateWithAmazon = A2(
+	$author$project$Give$Main$donateSection,
+	'Donate via Amazon Smile',
+	A2(
+		$zwilias$elm_html_string$Html$String$a,
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$Attributes$href('https://smile.amazon.com/ch/85-4194883'),
+				$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
+				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#e6000f'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#717171 0px 0px 1px 0px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
+			]),
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$text('Amazon Smile')
+			])));
 var $author$project$Give$Main$donateWithPatreon = A2(
 	$author$project$Give$Main$donateSection,
 	'Donate via Patreon',
@@ -6196,7 +6217,14 @@ var $author$project$Give$Main$wordsOfEncouragement = A2(
 				_List_Nil,
 				_List_fromArray(
 					[
-						$zwilias$elm_html_string$Html$String$text(' "Encourage one another and build one another up" —1 Th 5:11. Sending words of encouragement are greatly appreciated. Let us build each other up in the faith.')
+						$zwilias$elm_html_string$Html$String$text('Sending words of encouragement are greatly appreciated. Let us build each other up in the faith. ')
+					])),
+				A2(
+				$zwilias$elm_html_string$Html$String$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$text(' "Encourage one another and build one another up" —1 Th 5:11. ')
 					])),
 				$author$project$Helpers$email
 			])));
@@ -6216,6 +6244,7 @@ var $author$project$Give$Main$viewBody = A2(
 			$author$project$Give$Main$prayForUs,
 			$author$project$Give$Main$donateWithPaypal,
 			$author$project$Give$Main$donateWithPatreon,
+			$author$project$Give$Main$donateWithAmazon,
 			$author$project$Give$Main$donateWithVehicle,
 			$author$project$Give$Main$sponsor,
 			$author$project$Give$Main$wordsOfEncouragement

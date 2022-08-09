@@ -52,6 +52,7 @@ viewBody =
         , prayForUs
         , donateWithPaypal
         , donateWithPatreon
+        , donateWithAmazon
         , donateWithVehicle
         , sponsor
         , wordsOfEncouragement
@@ -156,6 +157,24 @@ donateWithPatreon =
         )
 
 
+donateWithAmazon : Html msg
+donateWithAmazon =
+    donateSection "Donate via Amazon Smile"
+        (a
+            [ href "https://smile.amazon.com/ch/85-4194883"
+            , rel "noopener"
+            , target "_blank"
+            , style "text-decoration" "none"
+            , style "background-color" "#e6000f"
+            , style "color" "white"
+            , style "padding" "10px 20px"
+            , style "box-shadow" "#717171 0px 0px 1px 0px"
+            , style "border-radius" "5px"
+            ]
+            [ text "Amazon Smile" ]
+        )
+
+
 donateWithVehicle : Html msg
 donateWithVehicle =
     donateSection "Donate Your Vehicle"
@@ -217,7 +236,8 @@ wordsOfEncouragement =
             , style "transform" "translate(-50%)"
             , style "margin-bottom" "6em"
             ]
-            [ p [] [ text """ "Encourage one another and build one another up" —1 Th 5:11. Sending words of encouragement are greatly appreciated. Let us build each other up in the faith.""" ]
+            [ p [] [ text """Sending words of encouragement are greatly appreciated. Let us build each other up in the faith. """ ]
+            , p [] [ text """ "Encourage one another and build one another up" —1 Th 5:11. """ ]
             , Helpers.email
             ]
         )
