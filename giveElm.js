@@ -6008,7 +6008,7 @@ var $author$project$Give$Main$donateWithPaypal = A2(
 				_List_fromArray(
 					[
 						$zwilias$elm_html_string$Html$String$Attributes$type_('image'),
-						$zwilias$elm_html_string$Html$String$Attributes$src('https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'),
+						$zwilias$elm_html_string$Html$String$Attributes$src('https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG'),
 						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
 						$zwilias$elm_html_string$Html$String$Attributes$name('submit'),
 						$zwilias$elm_html_string$Html$String$Attributes$title('PayPal - The safer, easier way to pay online!'),
