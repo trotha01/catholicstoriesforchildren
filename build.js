@@ -32,12 +32,12 @@ var htmlPrefix = `<!doctype html>
       }
       @media (max-width: 720px) {
         .FortyToEightypadding {
-          padding: 40px;
+          padding: 80px 40px;
         }
       }
       @media (min-width: 721px) {
         .FortyToEightypadding {
-          padding: 80px;
+          padding: 160px 80px;
         }
       }
     </style>
