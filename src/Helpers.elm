@@ -96,6 +96,11 @@ youtubeLogo =
     favicon "https://www.youtube.com/favicon.ico"
 
 
+pinterestLogo : Html msg
+pinterestLogo =
+    favicon "https://www.pinterest.com/favicon.ico"
+
+
 spotifyLogo : Html msg
 spotifyLogo =
     favicon "https://www.spotify.com/favicon.ico"

@@ -5805,13 +5805,14 @@ var $author$project$Team$Main$boardOfAdvisors = _List_fromArray(
 		{a: 'Truly silent.', b: $author$project$Team$Main$imagePath + 'Cheri.jpeg', c: '', d: 'Cheri Loreto', e: 'Silent Advisor', f: _List_Nil},
 		{a: 'Carlos is a CAD designer who also has a passion for dogs, comedy and food.', b: $author$project$Team$Main$imagePath + 'CarlosG.jpg', c: '', d: 'Carlos Gutierrez', e: 'CAD Designer', f: _List_Nil}
 	]);
-var $author$project$Team$Main$Behance = 10;
+var $author$project$Team$Main$Behance = 11;
 var $author$project$Team$Main$Facebook = 5;
 var $author$project$Team$Main$IMDB = 4;
 var $author$project$Team$Main$Instagram = 1;
 var $author$project$Team$Main$LinkedIn = 6;
-var $author$project$Team$Main$SoundCloud = 9;
-var $author$project$Team$Main$Spotify = 8;
+var $author$project$Team$Main$Pinterest = 8;
+var $author$project$Team$Main$SoundCloud = 10;
+var $author$project$Team$Main$Spotify = 9;
 var $author$project$Team$Main$Twitter = 2;
 var $author$project$Team$Main$Website = 0;
 var $author$project$Team$Main$YouTube = 7;
@@ -5883,7 +5884,7 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 				_Utils_Tuple2(1, 'https://www.instagram.com/nickandalina/'),
 				_Utils_Tuple2(5, 'https://www.facebook.com/nickandalina/'),
 				_Utils_Tuple2(2, 'https://twitter.com/nickandalina_'),
-				_Utils_Tuple2(8, 'https://open.spotify.com/artist/3BHBEFqQWqROuXbQCSnb06?si=9Mh_b1M4T6S7nmsswkdHPQ&nd=1')
+				_Utils_Tuple2(9, 'https://open.spotify.com/artist/3BHBEFqQWqROuXbQCSnb06?si=9Mh_b1M4T6S7nmsswkdHPQ&nd=1')
 			])
 	},
 		{a: '', b: '', c: 'E', d: 'Ethan', e: 'Singer and Voice Actor', f: _List_Nil},
@@ -5898,7 +5899,7 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 		f: _List_fromArray(
 			[
 				_Utils_Tuple2(0, 'https://www.seanbeeson.com/'),
-				_Utils_Tuple2(9, 'https://soundcloud.com/sean-beeson'),
+				_Utils_Tuple2(10, 'https://soundcloud.com/sean-beeson'),
 				_Utils_Tuple2(5, 'https://www.facebook.com/gamecomposer'),
 				_Utils_Tuple2(2, 'https://twitter.com/seanbeeson'),
 				_Utils_Tuple2(7, 'https://www.youtube.com/user/Buckeye198181')
@@ -5930,7 +5931,7 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 				_Utils_Tuple2(1, 'https://www.instagram.com/francescoschito/?hl=en'),
 				_Utils_Tuple2(7, 'https://www.youtube.com/playlist?list=UUcaSHFPBBghZlWSePTZzwLw'),
 				_Utils_Tuple2(4, 'https://www.imdb.com/name/nm7877744/'),
-				_Utils_Tuple2(10, 'https://www.behance.net/francescoschito')
+				_Utils_Tuple2(11, 'https://www.behance.net/francescoschito')
 			])
 	},
 		{
@@ -5942,6 +5943,20 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 		f: _List_fromArray(
 			[
 				_Utils_Tuple2(6, 'https://www.linkedin.com/in/rachael-workman/')
+			])
+	},
+		{
+		a: 'Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada.',
+		b: $author$project$Team$Main$imagePath + 'KellyBriggs.jpeg',
+		c: 'KB',
+		d: 'Kelly Briggs',
+		e: 'Social Media Specialist',
+		f: _List_fromArray(
+			[
+				_Utils_Tuple2(1, 'https://www.instagram.com/simplehomemom/'),
+				_Utils_Tuple2(5, 'https://www.facebook.com/simplehomemom'),
+				_Utils_Tuple2(8, 'https://www.pinterest.com/simplehomemom/'),
+				_Utils_Tuple2(0, 'https://www.simplehomemom.com/')
 			])
 	}
 	]);
@@ -6137,7 +6152,7 @@ var $matthewsj$elm_ordering$Ordering$explicit = F3(
 	});
 var $author$project$Team$Main$socialOrdering = $matthewsj$elm_ordering$Ordering$explicit(
 	_List_fromArray(
-		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
 var $author$project$Team$Main$socialSort = F2(
 	function (_v0, _v1) {
 		var social1 = _v0.a;
@@ -6164,6 +6179,7 @@ var $author$project$Helpers$facebookLogo = $author$project$Helpers$favicon('http
 var $author$project$Helpers$imdbLogo = $author$project$Helpers$favicon('https://www.imdb.com/favicon.ico');
 var $author$project$Helpers$instagramLogo = $author$project$Helpers$favicon('https://www.instagram.com/favicon.ico');
 var $author$project$Helpers$linkedInLogo = $author$project$Helpers$favicon('https://www.linkedin.com/favicon.ico');
+var $author$project$Helpers$pinterestLogo = $author$project$Helpers$favicon('https://www.pinterest.com/favicon.ico');
 var $author$project$Helpers$soundcloudLogo = $author$project$Helpers$favicon('https://soundcloud.com/favicon.ico');
 var $author$project$Helpers$spotifyLogo = $author$project$Helpers$favicon('https://www.spotify.com/favicon.ico');
 var $author$project$Helpers$twitterLogo = $author$project$Helpers$favicon('https://www.twitter.com/favicon.ico');
@@ -6214,8 +6230,10 @@ var $author$project$Team$Main$viewSocial = function (_v0) {
 		case 7:
 			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$youtubeLogo, link);
 		case 8:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$spotifyLogo, link);
+			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$pinterestLogo, link);
 		case 9:
+			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$spotifyLogo, link);
+		case 10:
 			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$soundcloudLogo, link);
 		default:
 			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$behanceLogo, link);

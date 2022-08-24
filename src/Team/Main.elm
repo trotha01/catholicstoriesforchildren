@@ -34,6 +34,7 @@ type Social
     | Facebook
     | LinkedIn
     | YouTube
+    | Pinterest
     | Spotify
     | SoundCloud
     | Behance
@@ -50,6 +51,7 @@ socialOrdering =
         , Facebook
         , LinkedIn
         , YouTube
+        , Pinterest
         , Spotify
         , SoundCloud
         , Behance
@@ -272,6 +274,18 @@ contractors =
       , image = imagePath ++ "RachaelWorkman.jpeg"
       , socials = [ ( LinkedIn, "https://www.linkedin.com/in/rachael-workman/" ) ]
       }
+    , { name = "Kelly Briggs"
+      , initials = "KB"
+      , position = "Social Media Specialist"
+      , description = "Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada."
+      , image = imagePath ++ "KellyBriggs.jpeg"
+      , socials =
+            [ ( Instagram, "https://www.instagram.com/simplehomemom/" )
+            , ( Facebook, "https://www.facebook.com/simplehomemom" )
+            , ( Pinterest, "https://www.pinterest.com/simplehomemom/" )
+            , ( Website, "https://www.simplehomemom.com/" )
+            ]
+      }
     ]
 
 
@@ -427,6 +441,9 @@ viewSocial ( social, link ) =
 
         YouTube ->
             viewSocialLink youtubeLogo link
+
+        Pinterest ->
+            viewSocialLink pinterestLogo link
 
         Spotify ->
             viewSocialLink spotifyLogo link
