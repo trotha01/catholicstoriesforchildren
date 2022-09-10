@@ -15,7 +15,9 @@ var htmlPrefix = `<!doctype html>
     <link rel="preload" href="assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
-    <title>Catholic Stories for Children</title>
+    <title>`
+
+var htmlPrefix2 = `</title>
     <style>
       * {
         box-sizing: border-box;
@@ -48,12 +50,12 @@ var htmlPrefix = `<!doctype html>
 var htmlSuffix = `</body>
 </html>`
 
-var fakeNode = function (path) {
+var fakeNode = function (title, path) {
   return {
     replaceData: function (d, e, f) {
       fs.writeFile(
         path,
-        htmlPrefix + f + htmlSuffix,
+        htmlPrefix + title + htmlPrefix2 + f + htmlSuffix,
         function (err) {
           if (err) {
             console.log(err)
@@ -65,6 +67,6 @@ var fakeNode = function (path) {
 }
 
 
-var app = Elm.Elm.Main.init({ node: fakeNode('./index.html') })
-var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('./team/index.html') })
-var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html') })
+var app = Elm.Elm.Main.init({ node: fakeNode('Catholic Stories for Children', './index.html') })
+var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('Team - Catholic Stories for Children', './team/index.html') })
+var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('Give - Catholic Stories for Children', './give/index.html') })
