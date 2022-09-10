@@ -8,7 +8,15 @@
 
 <url>
   <loc>https://catholicstoriesforchildren.com/</loc>
+  <priority>1.00</priority>
 </url>
-
+<url>
+  <loc>https://catholicstoriesforchildren.com/team/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://catholicstoriesforchildren.com/give/</loc>
+  <priority>0.80</priority>
+</url>
 
 </urlset>
