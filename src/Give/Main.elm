@@ -35,7 +35,7 @@ view =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style "background-image" ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
+        , style "background-color" "#FEF7F4"
         ]
         [ viewSubpageHeader "home" headerMargin
         , viewBody
@@ -49,12 +49,16 @@ viewBody =
         []
         [ h1 h1Style [ text "Give" ]
         , donateAbout
-        , prayForUs
         , donateWithPaypal
+        , div [ style "margin-bottom" "6em" ] []
+        , h2 h2Style [ text "Other ways to give" ]
+        , div [ style "margin-bottom" "4em" ] []
+        , prayForUs
         , donateWithPatreon
         , donateWithAmazon
         , donateWithVehicle
         , sponsor
+        , volunteer
         , wordsOfEncouragement
         ]
 
@@ -63,7 +67,6 @@ donateAbout : Html msg
 donateAbout =
     span
         [ style "text-align" "center"
-        , style "color" "white"
         ]
         [ p
             [ style "width" "80%"
@@ -78,7 +81,6 @@ donateAbout =
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
-            , style "margin-bottom" "6em"
             ]
             [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883"
             ]
@@ -90,12 +92,10 @@ prayForUs =
     donateSection "Pray for us"
         (p
             [ style "text-align" "center"
-            , style "color" "white"
             , style "width" "80%"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
-            , style "margin-bottom" "6em"
             ]
             [ text "We believe in the power of prayer. Please pray for us in this work. We are praying for you. 🙏" ]
         )
@@ -103,8 +103,12 @@ prayForUs =
 
 donateWithPaypal : Html msg
 donateWithPaypal =
-    donateSection "Donate via Paypal"
-        (Html.String.form
+    div
+        [ style "margin" "auto"
+        , style "width" "400px"
+        , style "text-align" "center"
+        ]
+        [ Html.String.form
             [ action "https://www.paypal.com/donate", method "post", target "_top" ]
             [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
             , input
@@ -125,7 +129,7 @@ donateWithPaypal =
                 ]
                 []
             ]
-        )
+        ]
 
 
 donateWithPatreon : Html msg
@@ -136,10 +140,8 @@ donateWithPatreon =
             , rel "noopener"
             , target "_blank"
             , style "text-decoration" "none"
-            , style "background-color" "#e6000f"
-            , style "color" "white"
             , style "padding" "10px 20px"
-            , style "box-shadow" "#717171 0px 0px 1px 0px"
+            , style "box-shadow" "#777 1px 1px 5px"
             , style "border-radius" "5px"
             ]
             [ text "Patreon" ]
@@ -154,10 +156,8 @@ donateWithAmazon =
             , rel "noopener"
             , target "_blank"
             , style "text-decoration" "none"
-            , style "background-color" "#e6000f"
-            , style "color" "white"
             , style "padding" "10px 20px"
-            , style "box-shadow" "#717171 0px 0px 1px 0px"
+            , style "box-shadow" "#777 1px 1px 5px"
             , style "border-radius" "5px"
             ]
             [ text "Amazon Smile" ]
@@ -173,8 +173,11 @@ donateWithVehicle =
             , target "_blank"
             , style "text-decoration" "none"
             , title "Donate your Vehicle"
+            , style "padding" "10px 20px"
+            , style "box-shadow" "#777 1px 1px 5px"
+            , style "border-radius" "5px"
             ]
-            [ img [ src "http://www.cars2charities.org/banners/336x280.jpg" ] []
+            [ text "Cars 2 Charities"
             ]
         )
 
@@ -184,8 +187,6 @@ sponsor =
     donateSection "Sponsorship"
         (div
             [ style "text-align" "center"
-            , style "color" "white"
-            , style "width" "80%"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
@@ -201,13 +202,13 @@ volunteer =
     donateSection "Volunteer"
         (div
             [ style "text-align" "center"
-            , style "color" "white"
             , style "width" "80%"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
             ]
-            [ p [] [ text """ Interested in volunteering your talents or pro bono work? Please let us know! """ ]
+            [ p [] [ text """ Interested in volunteering your talents or pro bono work? """ ]
+            , p [] [ text """ We could use your help! Please let us know! """ ]
             , Helpers.email
             ]
         )
@@ -218,15 +219,14 @@ wordsOfEncouragement =
     donateSection "Words of Encouragement"
         (div
             [ style "text-align" "center"
-            , style "color" "white"
             , style "width" "80%"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
-            , style "margin-bottom" "6em"
             ]
             [ p [] [ text """Sending words of encouragement are greatly appreciated. Let us build each other up in the faith. """ ]
-            , p [] [ text """ "Encourage one another and build one another up" —1 Th 5:11. """ ]
+            , p [] [ text """ "Encourage one another and build one another up." """ ]
+            , p [] [ text """ —1 Th 5:11 """ ]
             , Helpers.email
             ]
         )
@@ -234,12 +234,21 @@ wordsOfEncouragement =
 
 donateSection : String -> Html msg -> Html msg
 donateSection title body =
-    div [ style "margin-bottom" "100px" ]
-        [ h2 titleStyle [ text title ]
+    div
+        [ style "margin-bottom" "100px"
+        , style "background-color" "white"
+        , style "color" "black"
+        , style "width" "80%"
+        , style "max-width" "600px"
+        , style "margin" "40px auto"
+        , style "padding" "80px 20px"
+        , style "border-radius" "5px"
+        ]
+        [ div [ style "padding" "0px 20px" ]
+            [ h2 h2Style [ text title ]
+            ]
         , div
             [ style "text-align" "center"
-            , style "color" "white"
-            , style "width" "80%"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
@@ -258,9 +267,16 @@ h1Style =
            ]
 
 
+h2Style : List (Attribute msg)
+h2Style =
+    titleStyle
+        ++ [ style "font-size" "2em"
+           , style "line-height" "1.1em"
+           ]
+
+
 titleStyle : List (Attribute msg)
 titleStyle =
     [ style "text-align" "center"
-    , style "color" "white"
     , style "font-family" "hvdComicSerifPro"
     ]

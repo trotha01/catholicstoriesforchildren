@@ -5773,7 +5773,6 @@ var $zwilias$elm_html_string$Html$Types$toString = F2(
 var $zwilias$elm_html_string$Html$String$toString = function (indent) {
 	return $zwilias$elm_html_string$Html$Types$toString(indent);
 };
-var $author$project$Helpers$darkBlue = '#445C73';
 var $zwilias$elm_html_string$Html$Types$Node = F3(
 	function (a, b, c) {
 		return {$: 0, a: a, b: b, c: c};
@@ -5802,8 +5801,7 @@ var $author$project$Give$Main$donateAbout = A2(
 	$zwilias$elm_html_string$Html$String$span,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white')
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center')
 		]),
 	_List_fromArray(
 		[
@@ -5828,8 +5826,7 @@ var $author$project$Give$Main$donateAbout = A2(
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '6em')
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
 				]),
 			_List_fromArray(
 				[
@@ -5841,33 +5838,53 @@ var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$Stri
 var $author$project$Give$Main$titleStyle = _List_fromArray(
 	[
 		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
 		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro')
 	]);
+var $author$project$Give$Main$h2Style = _Utils_ap(
+	$author$project$Give$Main$titleStyle,
+	_List_fromArray(
+		[
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '2em'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1.1em')
+		]));
 var $author$project$Give$Main$donateSection = F2(
 	function (title, body) {
 		return A2(
 			$zwilias$elm_html_string$Html$String$div,
 			_List_fromArray(
 				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '100px')
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '100px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', 'white'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'black'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '600px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '40px auto'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '80px 20px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
 				]),
 			_List_fromArray(
 				[
 					A2(
-					$zwilias$elm_html_string$Html$String$h2,
-					$author$project$Give$Main$titleStyle,
+					$zwilias$elm_html_string$Html$String$div,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text(title)
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '0px 20px')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$h2,
+							$author$project$Give$Main$h2Style,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$text(title)
+								]))
 						])),
 					A2(
 					$zwilias$elm_html_string$Html$String$div,
 					_List_fromArray(
 						[
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
@@ -5906,10 +5923,8 @@ var $author$project$Give$Main$donateWithAmazon = A2(
 				$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
 				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#e6000f'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#717171 0px 0px 1px 0px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
 			]),
 		_List_fromArray(
@@ -5927,10 +5942,8 @@ var $author$project$Give$Main$donateWithPatreon = A2(
 				$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
 				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#e6000f'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#717171 0px 0px 1px 0px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
 			]),
 		_List_fromArray(
@@ -5982,51 +5995,59 @@ var $zwilias$elm_html_string$Html$String$Attributes$width = function (val) {
 		$elm$core$String$fromInt(val));
 };
 var $author$project$Give$Main$donateWithPaypal = A2(
-	$author$project$Give$Main$donateSection,
-	'Donate via Paypal',
-	A2(
-		$zwilias$elm_html_string$Html$String$form,
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$Attributes$action('https://www.paypal.com/donate'),
-				$zwilias$elm_html_string$Html$String$Attributes$method('post'),
-				$zwilias$elm_html_string$Html$String$Attributes$target('_top')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$zwilias$elm_html_string$Html$String$input,
-				_List_fromArray(
-					[
-						$zwilias$elm_html_string$Html$String$Attributes$type_('hidden'),
-						$zwilias$elm_html_string$Html$String$Attributes$name('hosted_button_id'),
-						$zwilias$elm_html_string$Html$String$Attributes$value('ZA5YPU8KU6SL8')
-					]),
-				_List_Nil),
-				A2(
-				$zwilias$elm_html_string$Html$String$input,
-				_List_fromArray(
-					[
-						$zwilias$elm_html_string$Html$String$Attributes$type_('image'),
-						$zwilias$elm_html_string$Html$String$Attributes$src('https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG'),
-						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
-						$zwilias$elm_html_string$Html$String$Attributes$name('submit'),
-						$zwilias$elm_html_string$Html$String$Attributes$title('PayPal - The safer, easier way to pay online!'),
-						$zwilias$elm_html_string$Html$String$Attributes$alt('Donate with PayPal button')
-					]),
-				_List_Nil),
-				A2(
-				$zwilias$elm_html_string$Html$String$img,
-				_List_fromArray(
-					[
-						$zwilias$elm_html_string$Html$String$Attributes$alt(''),
-						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
-						$zwilias$elm_html_string$Html$String$Attributes$src('https://www.paypal.com/en_US/i/scr/pixel.gif'),
-						$zwilias$elm_html_string$Html$String$Attributes$width(1),
-						$zwilias$elm_html_string$Html$String$Attributes$height(1)
-					]),
-				_List_Nil)
-			])));
+	$zwilias$elm_html_string$Html$String$div,
+	_List_fromArray(
+		[
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '400px'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$form,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$action('https://www.paypal.com/donate'),
+					$zwilias$elm_html_string$Html$String$Attributes$method('post'),
+					$zwilias$elm_html_string$Html$String$Attributes$target('_top')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$input,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$type_('hidden'),
+							$zwilias$elm_html_string$Html$String$Attributes$name('hosted_button_id'),
+							$zwilias$elm_html_string$Html$String$Attributes$value('ZA5YPU8KU6SL8')
+						]),
+					_List_Nil),
+					A2(
+					$zwilias$elm_html_string$Html$String$input,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$type_('image'),
+							$zwilias$elm_html_string$Html$String$Attributes$src('https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
+							$zwilias$elm_html_string$Html$String$Attributes$name('submit'),
+							$zwilias$elm_html_string$Html$String$Attributes$title('PayPal - The safer, easier way to pay online!'),
+							$zwilias$elm_html_string$Html$String$Attributes$alt('Donate with PayPal button')
+						]),
+					_List_Nil),
+					A2(
+					$zwilias$elm_html_string$Html$String$img,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$alt(''),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
+							$zwilias$elm_html_string$Html$String$Attributes$src('https://www.paypal.com/en_US/i/scr/pixel.gif'),
+							$zwilias$elm_html_string$Html$String$Attributes$width(1),
+							$zwilias$elm_html_string$Html$String$Attributes$height(1)
+						]),
+					_List_Nil)
+				]))
+		]));
 var $author$project$Give$Main$donateWithVehicle = A2(
 	$author$project$Give$Main$donateSection,
 	'Donate Your Vehicle',
@@ -6038,17 +6059,14 @@ var $author$project$Give$Main$donateWithVehicle = A2(
 				$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
 				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-				$zwilias$elm_html_string$Html$String$Attributes$title('Donate your Vehicle')
+				$zwilias$elm_html_string$Html$String$Attributes$title('Donate your Vehicle'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
 			]),
 		_List_fromArray(
 			[
-				A2(
-				$zwilias$elm_html_string$Html$String$img,
-				_List_fromArray(
-					[
-						$zwilias$elm_html_string$Html$String$Attributes$src('http://www.cars2charities.org/banners/336x280.jpg')
-					]),
-				_List_Nil)
+				$zwilias$elm_html_string$Html$String$text('Cars 2 Charities')
 			])));
 var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
 var $author$project$Give$Main$h1Style = _Utils_ap(
@@ -6067,12 +6085,10 @@ var $author$project$Give$Main$prayForUs = A2(
 		_List_fromArray(
 			[
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '6em')
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
 			]),
 		_List_fromArray(
 			[
@@ -6178,8 +6194,6 @@ var $author$project$Give$Main$sponsor = A2(
 		_List_fromArray(
 			[
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
@@ -6195,6 +6209,37 @@ var $author$project$Give$Main$sponsor = A2(
 					])),
 				$author$project$Helpers$email
 			])));
+var $author$project$Give$Main$volunteer = A2(
+	$author$project$Give$Main$donateSection,
+	'Volunteer',
+	A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$zwilias$elm_html_string$Html$String$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$text(' Interested in volunteering your talents or pro bono work? ')
+					])),
+				A2(
+				$zwilias$elm_html_string$Html$String$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$text(' We could use your help! Please let us know! ')
+					])),
+				$author$project$Helpers$email
+			])));
 var $author$project$Give$Main$wordsOfEncouragement = A2(
 	$author$project$Give$Main$donateSection,
 	'Words of Encouragement',
@@ -6203,12 +6248,10 @@ var $author$project$Give$Main$wordsOfEncouragement = A2(
 		_List_fromArray(
 			[
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '6em')
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
 			]),
 		_List_fromArray(
 			[
@@ -6224,7 +6267,14 @@ var $author$project$Give$Main$wordsOfEncouragement = A2(
 				_List_Nil,
 				_List_fromArray(
 					[
-						$zwilias$elm_html_string$Html$String$text(' "Encourage one another and build one another up" —1 Th 5:11. ')
+						$zwilias$elm_html_string$Html$String$text(' "Encourage one another and build one another up." ')
+					])),
+				A2(
+				$zwilias$elm_html_string$Html$String$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$text(' —1 Th 5:11 ')
 					])),
 				$author$project$Helpers$email
 			])));
@@ -6241,12 +6291,34 @@ var $author$project$Give$Main$viewBody = A2(
 					$zwilias$elm_html_string$Html$String$text('Give')
 				])),
 			$author$project$Give$Main$donateAbout,
-			$author$project$Give$Main$prayForUs,
 			$author$project$Give$Main$donateWithPaypal,
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '6em')
+				]),
+			_List_Nil),
+			A2(
+			$zwilias$elm_html_string$Html$String$h2,
+			$author$project$Give$Main$h2Style,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Other ways to give')
+				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '4em')
+				]),
+			_List_Nil),
+			$author$project$Give$Main$prayForUs,
 			$author$project$Give$Main$donateWithPatreon,
 			$author$project$Give$Main$donateWithAmazon,
 			$author$project$Give$Main$donateWithVehicle,
 			$author$project$Give$Main$sponsor,
+			$author$project$Give$Main$volunteer,
 			$author$project$Give$Main$wordsOfEncouragement
 		]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
@@ -6282,6 +6354,7 @@ var $author$project$Footer$viewFooter = A2(
 					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
 				]))
 		]));
+var $author$project$Helpers$darkBlue = '#445C73';
 var $author$project$Header$backButton = A2(
 	$zwilias$elm_html_string$Html$String$a,
 	_List_fromArray(
@@ -6371,7 +6444,7 @@ var $author$project$Give$Main$view = A2(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-y', 'auto'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'perspective', '300px'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'scroll-behavior', 'smooth'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, ' + ($author$project$Helpers$darkBlue + ' 70%, #8c6897)'))
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#FEF7F4')
 		]),
 	_List_fromArray(
 		[
