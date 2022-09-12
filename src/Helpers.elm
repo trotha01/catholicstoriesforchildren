@@ -150,3 +150,27 @@ email =
                 ]
             ]
         ]
+
+
+h1Style : List (Attribute msg)
+h1Style =
+    titleStyle
+        ++ [ style "margin-top" "2em"
+           , style "font-size" "3em"
+           , style "line-height" "1em"
+           ]
+
+
+h2Style : List (Attribute msg)
+h2Style =
+    titleStyle
+        ++ [ style "font-size" "2em"
+           , style "line-height" "1.1em"
+           ]
+
+
+titleStyle : List (Attribute msg)
+titleStyle =
+    [ style "text-align" "center"
+    , style "font-family" "hvdComicSerifPro"
+    ]
