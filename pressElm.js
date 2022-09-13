@@ -5809,12 +5809,27 @@ var $author$project$Helpers$h1Style = _Utils_ap(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '3em'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1em')
 		]));
+var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
+var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
+	function (a, b) {
+		return {$: 1, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
+var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
+};
+var $zwilias$elm_html_string$Html$Types$Attribute = F2(
+	function (a, b) {
+		return {$: 0, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
 var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
 var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
 	function (tag, attrs, _v0) {
 		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
 	});
 var $zwilias$elm_html_string$Html$String$br = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('br');
+var $author$project$Helpers$darkBlue = '#445C73';
 var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
 var $author$project$Helpers$h2Style = _Utils_ap(
 	$author$project$Helpers$titleStyle,
@@ -5823,8 +5838,21 @@ var $author$project$Helpers$h2Style = _Utils_ap(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '2em'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1.1em')
 		]));
+var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
+};
+var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
+var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'rel', val);
+};
 var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
+var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
+};
+var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
+};
 var $author$project$Press$PR20220912$view = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_Nil,
@@ -5832,7 +5860,12 @@ var $author$project$Press$PR20220912$view = A2(
 		[
 			A2(
 			$zwilias$elm_html_string$Html$String$h2,
-			$author$project$Helpers$h2Style,
+			_Utils_ap(
+				$author$project$Helpers$h2Style,
+				_List_fromArray(
+					[
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'left')
+					])),
 			_List_fromArray(
 				[
 					$zwilias$elm_html_string$Html$String$text('Hail Mary Prayer Animation Wins Award in International Hollywood Film Festival')
@@ -5842,8 +5875,48 @@ var $author$project$Press$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children\'s animation, \'Hail Mary, Full of Grace\' wins the X Award in the iHollywood Film Festival this past week')
+					A2(
+					$zwilias$elm_html_string$Html$String$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children\'s animation, ')
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$a,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$href('https://youtu.be/HW0DzGEoa1Y'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', $author$project$Helpers$darkBlue),
+							$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
+							$zwilias$elm_html_string$Html$String$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('\'Hail Mary, Full of Grace\'')
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text(' wins the X Award in the iHollywood Film Festival this past week')
+						]))
 				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$img,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Mother_and_child_from_Hail_Mary_Animation_2_0AW0fCnOc.png?ik-sdk-version=javascript-1.4.3&updatedAt=1663026862327'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'ariaHidden', 'true'),
+					$zwilias$elm_html_string$Html$String$Attributes$alt('Mother and child from the Hail Mary Animation'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '50%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto')
+				]),
+			_List_Nil),
 			A2(
 			$zwilias$elm_html_string$Html$String$p,
 			_List_fromArray(
@@ -5892,7 +5965,26 @@ var $author$project$Press$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('The Hail Mary animated short film is a way for kids to not only learn but also understand the words in the Hail Mary prayer. It helps kids come to know their Holy Mother in Heaven. This prayer is a constant reminder for kids that they have a mother who is always listening and will always love them. And it is a reminder that they can go to her for help.')
+					A2(
+					$zwilias$elm_html_string$Html$String$a,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$href('https://youtu.be/HW0DzGEoa1Y'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', $author$project$Helpers$darkBlue),
+							$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
+							$zwilias$elm_html_string$Html$String$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('The Hail Mary animated short film')
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text(' is a way for kids to not only learn but also understand the words in the Hail Mary prayer. It helps kids come to know their Holy Mother in Heaven. This prayer is a constant reminder for kids that they have a mother who is always listening and will always love them. And it is a reminder that they can go to her for help.')
+						]))
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
@@ -6001,8 +6093,6 @@ var $author$project$Press$Main$viewPressReleases = function (prs) {
 		$zwilias$elm_html_string$Html$String$div,
 		_List_fromArray(
 			[
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '20px 40px'),
@@ -6012,12 +6102,23 @@ var $author$project$Press$Main$viewPressReleases = function (prs) {
 };
 var $author$project$Press$Main$viewBody = A2(
 	$zwilias$elm_html_string$Html$String$div,
-	_List_Nil,
+	_List_fromArray(
+		[
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto')
+		]),
 	_List_fromArray(
 		[
 			A2(
 			$zwilias$elm_html_string$Html$String$h1,
-			$author$project$Helpers$h1Style,
+			_Utils_ap(
+				$author$project$Helpers$h1Style,
+				_List_fromArray(
+					[
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'left'),
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', '#395D73')
+					])),
 			_List_fromArray(
 				[
 					$zwilias$elm_html_string$Html$String$text('Latest News')
@@ -6059,16 +6160,6 @@ var $author$project$Footer$viewFooter = A2(
 					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
 				]))
 		]));
-var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
-var $author$project$Helpers$darkBlue = '#445C73';
-var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
-	function (a, b) {
-		return {$: 1, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
-var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
-};
 var $author$project$Header$backButton = A2(
 	$zwilias$elm_html_string$Html$String$a,
 	_List_fromArray(
@@ -6094,13 +6185,6 @@ var $zwilias$elm_html_string$Html$String$Attributes$class = function (className)
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
 };
 var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
-var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
-};
-var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
-var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
-};
 var $author$project$Logo$logo = A2(
 	$zwilias$elm_html_string$Html$String$img,
 	_List_fromArray(

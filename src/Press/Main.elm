@@ -41,8 +41,17 @@ view =
 viewBody : Html Never
 viewBody =
     div
-        []
-        [ h1 h1Style [ text "Latest News" ]
+        [ style "width" "80%"
+        , style "max-width" "800px"
+        , style "margin" "auto"
+        ]
+        [ h1
+            (h1Style
+                ++ [ style "text-align" "left"
+                   , style "color" "#395D73"
+                   ]
+            )
+            [ text "Latest News" ]
         , viewPressReleases
             [ Press.PR20220912.view
             ]
@@ -52,9 +61,7 @@ viewBody =
 viewPressReleases : List (Html Never) -> Html Never
 viewPressReleases prs =
     div
-        [ style "width" "80%"
-        , style "max-width" "800px"
-        , style "background-color" "white"
+        [ style "background-color" "white"
         , style "border-radius" "5px"
         , style "padding" "20px 40px"
         , style "margin" "auto"
