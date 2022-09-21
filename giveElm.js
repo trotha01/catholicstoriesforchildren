@@ -5932,24 +5932,33 @@ var $author$project$Give$Main$donateWithAmazon = A2(
 				$zwilias$elm_html_string$Html$String$text('Amazon Smile')
 			])));
 var $author$project$Give$Main$donateWithPatreon = A2(
-	$author$project$Give$Main$donateSection,
-	'Donate via Patreon',
-	A2(
-		$zwilias$elm_html_string$Html$String$a,
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$Attributes$href('https://www.patreon.com/catholicstoriesforchildren'),
-				$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
-				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
-			]),
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$text('Patreon')
-			])));
+	$zwilias$elm_html_string$Html$String$div,
+	_List_fromArray(
+		[
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '400px'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '20px')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$a,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$href('https://www.patreon.com/catholicstoriesforchildren?fan_landing=true'),
+					$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
+					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
+				]),
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Donate through Patreon')
+				]))
+		]));
 var $zwilias$elm_html_string$Html$String$Attributes$action = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'action', val);
 };
@@ -5995,59 +6004,62 @@ var $zwilias$elm_html_string$Html$String$Attributes$width = function (val) {
 		$elm$core$String$fromInt(val));
 };
 var $author$project$Give$Main$donateWithPaypal = A2(
-	$zwilias$elm_html_string$Html$String$div,
-	_List_fromArray(
-		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '400px'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$form,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$Attributes$action('https://www.paypal.com/donate'),
-					$zwilias$elm_html_string$Html$String$Attributes$method('post'),
-					$zwilias$elm_html_string$Html$String$Attributes$target('_top')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$zwilias$elm_html_string$Html$String$input,
-					_List_fromArray(
-						[
-							$zwilias$elm_html_string$Html$String$Attributes$type_('hidden'),
-							$zwilias$elm_html_string$Html$String$Attributes$name('hosted_button_id'),
-							$zwilias$elm_html_string$Html$String$Attributes$value('ZA5YPU8KU6SL8')
-						]),
-					_List_Nil),
-					A2(
-					$zwilias$elm_html_string$Html$String$input,
-					_List_fromArray(
-						[
-							$zwilias$elm_html_string$Html$String$Attributes$type_('image'),
-							$zwilias$elm_html_string$Html$String$Attributes$src('https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
-							$zwilias$elm_html_string$Html$String$Attributes$name('submit'),
-							$zwilias$elm_html_string$Html$String$Attributes$title('PayPal - The safer, easier way to pay online!'),
-							$zwilias$elm_html_string$Html$String$Attributes$alt('Donate with PayPal button')
-						]),
-					_List_Nil),
-					A2(
-					$zwilias$elm_html_string$Html$String$img,
-					_List_fromArray(
-						[
-							$zwilias$elm_html_string$Html$String$Attributes$alt(''),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
-							$zwilias$elm_html_string$Html$String$Attributes$src('https://www.paypal.com/en_US/i/scr/pixel.gif'),
-							$zwilias$elm_html_string$Html$String$Attributes$width(1),
-							$zwilias$elm_html_string$Html$String$Attributes$height(1)
-						]),
-					_List_Nil)
-				]))
-		]));
+	$author$project$Give$Main$donateSection,
+	'Donate via Paypal',
+	A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '400px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$zwilias$elm_html_string$Html$String$form,
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$Attributes$action('https://www.paypal.com/donate'),
+						$zwilias$elm_html_string$Html$String$Attributes$method('post'),
+						$zwilias$elm_html_string$Html$String$Attributes$target('_top')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$zwilias$elm_html_string$Html$String$input,
+						_List_fromArray(
+							[
+								$zwilias$elm_html_string$Html$String$Attributes$type_('hidden'),
+								$zwilias$elm_html_string$Html$String$Attributes$name('hosted_button_id'),
+								$zwilias$elm_html_string$Html$String$Attributes$value('ZA5YPU8KU6SL8')
+							]),
+						_List_Nil),
+						A2(
+						$zwilias$elm_html_string$Html$String$input,
+						_List_fromArray(
+							[
+								$zwilias$elm_html_string$Html$String$Attributes$type_('image'),
+								$zwilias$elm_html_string$Html$String$Attributes$src('https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG'),
+								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
+								$zwilias$elm_html_string$Html$String$Attributes$name('submit'),
+								$zwilias$elm_html_string$Html$String$Attributes$title('PayPal - The safer, easier way to pay online!'),
+								$zwilias$elm_html_string$Html$String$Attributes$alt('Donate with PayPal button')
+							]),
+						_List_Nil),
+						A2(
+						$zwilias$elm_html_string$Html$String$img,
+						_List_fromArray(
+							[
+								$zwilias$elm_html_string$Html$String$Attributes$alt(''),
+								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
+								$zwilias$elm_html_string$Html$String$Attributes$src('https://www.paypal.com/en_US/i/scr/pixel.gif'),
+								$zwilias$elm_html_string$Html$String$Attributes$width(1),
+								$zwilias$elm_html_string$Html$String$Attributes$height(1)
+							]),
+						_List_Nil)
+					]))
+			])));
 var $author$project$Give$Main$donateWithVehicle = A2(
 	$author$project$Give$Main$donateSection,
 	'Donate Your Vehicle',
@@ -6291,7 +6303,7 @@ var $author$project$Give$Main$viewBody = A2(
 					$zwilias$elm_html_string$Html$String$text('Give')
 				])),
 			$author$project$Give$Main$donateAbout,
-			$author$project$Give$Main$donateWithPaypal,
+			$author$project$Give$Main$donateWithPatreon,
 			A2(
 			$zwilias$elm_html_string$Html$String$div,
 			_List_fromArray(
@@ -6314,7 +6326,7 @@ var $author$project$Give$Main$viewBody = A2(
 				]),
 			_List_Nil),
 			$author$project$Give$Main$prayForUs,
-			$author$project$Give$Main$donateWithPatreon,
+			$author$project$Give$Main$donateWithPaypal,
 			$author$project$Give$Main$donateWithAmazon,
 			$author$project$Give$Main$donateWithVehicle,
 			$author$project$Give$Main$sponsor,

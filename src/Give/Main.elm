@@ -49,12 +49,12 @@ viewBody =
         []
         [ h1 h1Style [ text "Give" ]
         , donateAbout
-        , donateWithPaypal
+        , donateWithPatreon
         , div [ style "margin-bottom" "6em" ] []
         , h2 h2Style [ text "Other ways to give" ]
         , div [ style "margin-bottom" "4em" ] []
         , prayForUs
-        , donateWithPatreon
+        , donateWithPaypal
         , donateWithAmazon
         , donateWithVehicle
         , sponsor
@@ -103,40 +103,47 @@ prayForUs =
 
 donateWithPaypal : Html msg
 donateWithPaypal =
-    div
-        [ style "margin" "auto"
-        , style "width" "400px"
-        , style "text-align" "center"
-        ]
-        [ Html.String.form
-            [ action "https://www.paypal.com/donate", method "post", target "_top" ]
-            [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
-            , input
-                [ type_ "image"
-                , src "https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG"
-                , style "border" "0"
-                , name "submit"
-                , title "PayPal - The safer, easier way to pay online!"
-                , alt "Donate with PayPal button"
-                ]
-                []
-            , img
-                [ alt ""
-                , style "border" "0"
-                , src "https://www.paypal.com/en_US/i/scr/pixel.gif"
-                , width 1
-                , height 1
-                ]
-                []
+    donateSection "Donate via Paypal"
+        (div
+            [ style "margin" "auto"
+            , style "width" "400px"
+            , style "text-align" "center"
             ]
-        ]
+            [ Html.String.form
+                [ action "https://www.paypal.com/donate", method "post", target "_top" ]
+                [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
+                , input
+                    [ type_ "image"
+                    , src "https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG"
+                    , style "border" "0"
+                    , name "submit"
+                    , title "PayPal - The safer, easier way to pay online!"
+                    , alt "Donate with PayPal button"
+                    ]
+                    []
+                , img
+                    [ alt ""
+                    , style "border" "0"
+                    , src "https://www.paypal.com/en_US/i/scr/pixel.gif"
+                    , width 1
+                    , height 1
+                    ]
+                    []
+                ]
+            ]
+        )
 
 
 donateWithPatreon : Html msg
 donateWithPatreon =
-    donateSection "Donate via Patreon"
-        (a
-            [ href "https://www.patreon.com/catholicstoriesforchildren"
+    div
+        [ style "margin" "auto"
+        , style "width" "400px"
+        , style "text-align" "center"
+        , style "padding" "20px"
+        ]
+        [ a
+            [ href "https://www.patreon.com/catholicstoriesforchildren?fan_landing=true"
             , rel "noopener"
             , target "_blank"
             , style "text-decoration" "none"
@@ -144,8 +151,8 @@ donateWithPatreon =
             , style "box-shadow" "#777 1px 1px 5px"
             , style "border-radius" "5px"
             ]
-            [ text "Patreon" ]
-        )
+            [ text "Donate through Patreon" ]
+        ]
 
 
 donateWithAmazon : Html msg
