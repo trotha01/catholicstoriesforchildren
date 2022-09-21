@@ -151,8 +151,11 @@ donateWithPatreon =
             , style "padding" "10px 20px"
             , style "box-shadow" "#777 1px 1px 5px"
             , style "border-radius" "5px"
+            , style "color" "white"
+            , style "background-color" "#FF424D"
             ]
-            [ text "Donate through Patreon" ]
+            [ text "Become a patron"
+            ]
         ]
 
 
@@ -216,7 +219,7 @@ volunteer =
             , style "transform" "translate(-50%)"
             ]
             [ p [] [ text """ Interested in volunteering your talents or pro bono work? """ ]
-            , p [] [ text """ We could use your help! Please let us know! """ ]
+            , p [] [ text """ We could use your help reviewing scripts, storyboards, and animatics. Please let us know! """ ]
             , Helpers.email
             ]
         )
@@ -249,7 +252,7 @@ donateSection title body =
         , style "width" "80%"
         , style "max-width" "600px"
         , style "margin" "40px auto"
-        , style "padding" "80px 20px"
+        , style "padding" "40px 20px"
         , style "border-radius" "5px"
         ]
         [ div [ style "padding" "0px 20px" ]
@@ -278,7 +281,7 @@ h1Style =
 h2Style : List (Attribute msg)
 h2Style =
     titleStyle
-        ++ [ style "font-size" "2em"
+        ++ [ style "font-size" "1.4em"
            , style "line-height" "1.1em"
            ]
 

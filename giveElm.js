@@ -5844,7 +5844,7 @@ var $author$project$Give$Main$h2Style = _Utils_ap(
 	$author$project$Give$Main$titleStyle,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '2em'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '1.4em'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1.1em')
 		]));
 var $author$project$Give$Main$donateSection = F2(
@@ -5859,7 +5859,7 @@ var $author$project$Give$Main$donateSection = F2(
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '600px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '40px auto'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '80px 20px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '40px 20px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
 				]),
 			_List_fromArray(
@@ -5952,11 +5952,13 @@ var $author$project$Give$Main$donateWithPatreon = A2(
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px')
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#FF424D')
 				]),
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Donate through Patreon')
+					$zwilias$elm_html_string$Html$String$text('Become a patron')
 				]))
 		]));
 var $zwilias$elm_html_string$Html$String$Attributes$action = function (val) {
@@ -6249,7 +6251,7 @@ var $author$project$Give$Main$volunteer = A2(
 				_List_Nil,
 				_List_fromArray(
 					[
-						$zwilias$elm_html_string$Html$String$text(' We could use your help! Please let us know! ')
+						$zwilias$elm_html_string$Html$String$text(' We could use your help reviewing scripts, storyboards, and animatics. Please let us know! ')
 					])),
 				$author$project$Helpers$email
 			])));
