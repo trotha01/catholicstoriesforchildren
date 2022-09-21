@@ -106,7 +106,7 @@ donateWithPaypal =
     donateSection "Donate via Paypal"
         (div
             [ style "margin" "auto"
-            , style "width" "400px"
+            , style "width" "200px"
             , style "text-align" "center"
             ]
             [ Html.String.form
@@ -119,6 +119,7 @@ donateWithPaypal =
                     , name "submit"
                     , title "PayPal - The safer, easier way to pay online!"
                     , alt "Donate with PayPal button"
+                    , style "width" "200px"
                     ]
                     []
                 , img

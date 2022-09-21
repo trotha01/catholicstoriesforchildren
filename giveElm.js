@@ -6011,7 +6011,7 @@ var $author$project$Give$Main$donateWithPaypal = A2(
 		_List_fromArray(
 			[
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '400px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '200px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center')
 			]),
 		_List_fromArray(
@@ -6044,7 +6044,8 @@ var $author$project$Give$Main$donateWithPaypal = A2(
 								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '0'),
 								$zwilias$elm_html_string$Html$String$Attributes$name('submit'),
 								$zwilias$elm_html_string$Html$String$Attributes$title('PayPal - The safer, easier way to pay online!'),
-								$zwilias$elm_html_string$Html$String$Attributes$alt('Donate with PayPal button')
+								$zwilias$elm_html_string$Html$String$Attributes$alt('Donate with PayPal button'),
+								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '200px')
 							]),
 						_List_Nil),
 						A2(

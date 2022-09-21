@@ -34,20 +34,24 @@ var htmlPart3 = `</title>
         .mobileHide {
           visibility: hidden;
         }
-      }
-      @media (max-width: 720px) {
         .FortyToEightypadding {
           padding: 80px 40px;
+        }
+        .fontSize {
+          font-size:1.4em
         }
       }
       @media (min-width: 721px) {
         .FortyToEightypadding {
           padding: 160px 80px;
         }
+        .fontSize {
+          font-size:1.6em
+        }
       }
     </style>
   </head>
-  <body dir="ltr" lang="en" style="margin:0;font-size:1.6em;font-family:Nunito Sans;font-weight:lighter;line-height:1.2em;color:#333" >
+  <body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.2em;color:#333" >
 `
 
 var htmlPart4 = `</body>
@@ -70,7 +74,7 @@ var fakeNode = function (path, title, description) {
 }
 
 
-var app = Elm.Elm.Main.init({ node: fakeNode('./ index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.') })
+var app = Elm.Elm.Main.init({ node: fakeNode('./index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.') })
 var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('./team/index.html', 'The Team - Catholic Stories for Children', 'A number of talented artists, contractors, teams and people help bring these animations to life.') })
 var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏') })
 var pressApp = PressElm.Elm.Press.Main.init({ node: fakeNode('./press/index.html', 'Press - Catholic Stories for Children', '') })
