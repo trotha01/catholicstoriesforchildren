@@ -18,6 +18,6 @@ elm make --optimize \
   src/Give/Main.elm \
   --output giveElm.js \
   && elm make --optimize \
-  src/Press/Main.elm \
-  --output pressElm.js \
+  src/Newsroom/Main.elm \
+  --output newsroomElm.js \
   && node build.js

@@ -1,4 +1,4 @@
-module Press.PR20220912 exposing (..)
+module Newsroom.PR20220912 exposing (..)
 
 import Helpers exposing (..)
 import Html.String exposing (..)

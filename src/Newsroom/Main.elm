@@ -1,4 +1,4 @@
-module Press.Main exposing (..)
+module Newsroom.Main exposing (..)
 
 import Browser
 import Footer exposing (viewFooter)
@@ -6,7 +6,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
-import Press.PR20220912
+import Newsroom.PR20220912
 
 
 type alias Model =
@@ -53,7 +53,7 @@ viewBody =
             )
             [ text "Latest News" ]
         , viewPressReleases
-            [ Press.PR20220912.view
+            [ Newsroom.PR20220912.view
             ]
         ]
 
