@@ -25,21 +25,6 @@ type alias Person =
     }
 
 
-type Social
-    = Website
-    | Instagram
-    | Twitter
-    | Vimeo
-    | IMDB
-    | Facebook
-    | LinkedIn
-    | YouTube
-    | Pinterest
-    | Spotify
-    | SoundCloud
-    | Behance
-
-
 socialOrdering : Social -> Social -> Order
 socialOrdering =
     Ordering.explicit
@@ -413,57 +398,6 @@ viewSocials person =
 socialSort : ( Social, String ) -> ( Social, String ) -> Order
 socialSort ( social1, link1 ) ( social2, link2 ) =
     socialOrdering social1 social2
-
-
-viewSocial : ( Social, String ) -> Html msg
-viewSocial ( social, link ) =
-    case social of
-        Website ->
-            viewSocialLink (text "🌐") link
-
-        Instagram ->
-            viewSocialLink instagramLogo link
-
-        Twitter ->
-            viewSocialLink twitterLogo link
-
-        Facebook ->
-            viewSocialLink facebookLogo link
-
-        LinkedIn ->
-            viewSocialLink linkedInLogo link
-
-        Vimeo ->
-            viewSocialLink vimeoLogo link
-
-        IMDB ->
-            viewSocialLink imdbLogo link
-
-        YouTube ->
-            viewSocialLink youtubeLogo link
-
-        Pinterest ->
-            viewSocialLink pinterestLogo link
-
-        Spotify ->
-            viewSocialLink spotifyLogo link
-
-        SoundCloud ->
-            viewSocialLink soundcloudLogo link
-
-        Behance ->
-            viewSocialLink behanceLogo link
-
-
-viewSocialLink : Html msg -> String -> Html msg
-viewSocialLink image link =
-    a
-        [ href link
-        , style "text-decoration" "none"
-        , target "_blank"
-        , style "margin-right" "10px"
-        ]
-        [ image ]
 
 
 viewImage : String -> String -> Html msg

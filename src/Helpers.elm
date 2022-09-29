@@ -174,3 +174,69 @@ titleStyle =
     [ style "text-align" "center"
     , style "font-family" "hvdComicSerifPro"
     ]
+
+
+type Social
+    = Website
+    | Instagram
+    | Twitter
+    | Vimeo
+    | IMDB
+    | Facebook
+    | LinkedIn
+    | YouTube
+    | Pinterest
+    | Spotify
+    | SoundCloud
+    | Behance
+
+
+viewSocial : ( Social, String ) -> Html msg
+viewSocial ( social, link ) =
+    case social of
+        Website ->
+            viewSocialLink (text "🌐") link
+
+        Instagram ->
+            viewSocialLink instagramLogo link
+
+        Twitter ->
+            viewSocialLink twitterLogo link
+
+        Facebook ->
+            viewSocialLink facebookLogo link
+
+        LinkedIn ->
+            viewSocialLink linkedInLogo link
+
+        Vimeo ->
+            viewSocialLink vimeoLogo link
+
+        IMDB ->
+            viewSocialLink imdbLogo link
+
+        YouTube ->
+            viewSocialLink youtubeLogo link
+
+        Pinterest ->
+            viewSocialLink pinterestLogo link
+
+        Spotify ->
+            viewSocialLink spotifyLogo link
+
+        SoundCloud ->
+            viewSocialLink soundcloudLogo link
+
+        Behance ->
+            viewSocialLink behanceLogo link
+
+
+viewSocialLink : Html msg -> String -> Html msg
+viewSocialLink image link =
+    a
+        [ href link
+        , style "text-decoration" "none"
+        , target "_blank"
+        , style "margin-right" "10px"
+        ]
+        [ image ]

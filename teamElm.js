@@ -5805,17 +5805,17 @@ var $author$project$Team$Main$boardOfAdvisors = _List_fromArray(
 		{a: 'Truly silent.', b: $author$project$Team$Main$imagePath + 'Cheri.jpeg', c: '', d: 'Cheri Loreto', e: 'Silent Advisor', f: _List_Nil},
 		{a: 'Carlos is a CAD designer who also has a passion for dogs, comedy and food.', b: $author$project$Team$Main$imagePath + 'CarlosG.jpg', c: '', d: 'Carlos Gutierrez', e: 'CAD Designer', f: _List_Nil}
 	]);
-var $author$project$Team$Main$Behance = 11;
-var $author$project$Team$Main$Facebook = 5;
-var $author$project$Team$Main$IMDB = 4;
-var $author$project$Team$Main$Instagram = 1;
-var $author$project$Team$Main$LinkedIn = 6;
-var $author$project$Team$Main$Pinterest = 8;
-var $author$project$Team$Main$SoundCloud = 10;
-var $author$project$Team$Main$Spotify = 9;
-var $author$project$Team$Main$Twitter = 2;
-var $author$project$Team$Main$Website = 0;
-var $author$project$Team$Main$YouTube = 7;
+var $author$project$Helpers$Behance = 11;
+var $author$project$Helpers$Facebook = 5;
+var $author$project$Helpers$IMDB = 4;
+var $author$project$Helpers$Instagram = 1;
+var $author$project$Helpers$LinkedIn = 6;
+var $author$project$Helpers$Pinterest = 8;
+var $author$project$Helpers$SoundCloud = 10;
+var $author$project$Helpers$Spotify = 9;
+var $author$project$Helpers$Twitter = 2;
+var $author$project$Helpers$Website = 0;
+var $author$project$Helpers$YouTube = 7;
 var $author$project$Team$Main$contractors = _List_fromArray(
 	[
 		{
@@ -6087,7 +6087,7 @@ var $author$project$Team$Main$viewPosition = function (position) {
 				$zwilias$elm_html_string$Html$String$text(position)
 			]));
 };
-var $author$project$Team$Main$Vimeo = 3;
+var $author$project$Helpers$Vimeo = 3;
 var $matthewsj$elm_ordering$Ordering$explicit = F3(
 	function (elements, x, y) {
 		var scanForY = function (items) {
@@ -6190,7 +6190,7 @@ var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
 var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
 };
-var $author$project$Team$Main$viewSocialLink = F2(
+var $author$project$Helpers$viewSocialLink = F2(
 	function (image, link) {
 		return A2(
 			$zwilias$elm_html_string$Html$String$a,
@@ -6206,37 +6206,37 @@ var $author$project$Team$Main$viewSocialLink = F2(
 	});
 var $author$project$Helpers$vimeoLogo = $author$project$Helpers$favicon('https://vimeo.com/favicon.ico');
 var $author$project$Helpers$youtubeLogo = $author$project$Helpers$favicon('https://www.youtube.com/favicon.ico');
-var $author$project$Team$Main$viewSocial = function (_v0) {
+var $author$project$Helpers$viewSocial = function (_v0) {
 	var social = _v0.a;
 	var link = _v0.b;
 	switch (social) {
 		case 0:
 			return A2(
-				$author$project$Team$Main$viewSocialLink,
+				$author$project$Helpers$viewSocialLink,
 				$zwilias$elm_html_string$Html$String$text('🌐'),
 				link);
 		case 1:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$instagramLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$instagramLogo, link);
 		case 2:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$twitterLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$twitterLogo, link);
 		case 5:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$facebookLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$facebookLogo, link);
 		case 6:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$linkedInLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$linkedInLogo, link);
 		case 3:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$vimeoLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$vimeoLogo, link);
 		case 4:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$imdbLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$imdbLogo, link);
 		case 7:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$youtubeLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$youtubeLogo, link);
 		case 8:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$pinterestLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$pinterestLogo, link);
 		case 9:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$spotifyLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$spotifyLogo, link);
 		case 10:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$soundcloudLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$soundcloudLogo, link);
 		default:
-			return A2($author$project$Team$Main$viewSocialLink, $author$project$Helpers$behanceLogo, link);
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$behanceLogo, link);
 	}
 };
 var $author$project$Team$Main$viewSocials = function (person) {
@@ -6248,7 +6248,7 @@ var $author$project$Team$Main$viewSocials = function (person) {
 			]),
 		A2(
 			$elm$core$List$map,
-			$author$project$Team$Main$viewSocial,
+			$author$project$Helpers$viewSocial,
 			A2($elm$core$List$sortWith, $author$project$Team$Main$socialSort, person.f)));
 };
 var $author$project$Team$Main$viewPerson = function (person) {

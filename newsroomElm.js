@@ -5809,6 +5809,9 @@ var $author$project$Helpers$h1Style = _Utils_ap(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '3em'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1em')
 		]));
+var $author$project$Helpers$Facebook = 5;
+var $author$project$Helpers$Instagram = 1;
+var $author$project$Helpers$Twitter = 2;
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
 	function (a, b) {
@@ -5853,6 +5856,76 @@ var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
 var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
 };
+var $author$project$Helpers$favicon = function (link) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$img,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'aria-hidden', 'true'),
+				$zwilias$elm_html_string$Html$String$Attributes$src(link),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '16px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '16px')
+			]),
+		_List_Nil);
+};
+var $author$project$Helpers$behanceLogo = $author$project$Helpers$favicon('https://www.behance.net/favicon.ico');
+var $author$project$Helpers$facebookLogo = $author$project$Helpers$favicon('https://www.facebook.com/favicon.ico');
+var $author$project$Helpers$imdbLogo = $author$project$Helpers$favicon('https://www.imdb.com/favicon.ico');
+var $author$project$Helpers$instagramLogo = $author$project$Helpers$favicon('https://www.instagram.com/favicon.ico');
+var $author$project$Helpers$linkedInLogo = $author$project$Helpers$favicon('https://www.linkedin.com/favicon.ico');
+var $author$project$Helpers$pinterestLogo = $author$project$Helpers$favicon('https://www.pinterest.com/favicon.ico');
+var $author$project$Helpers$soundcloudLogo = $author$project$Helpers$favicon('https://soundcloud.com/favicon.ico');
+var $author$project$Helpers$spotifyLogo = $author$project$Helpers$favicon('https://www.spotify.com/favicon.ico');
+var $author$project$Helpers$twitterLogo = $author$project$Helpers$favicon('https://www.twitter.com/favicon.ico');
+var $author$project$Helpers$viewSocialLink = F2(
+	function (image, link) {
+		return A2(
+			$zwilias$elm_html_string$Html$String$a,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$href(link),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-right', '10px')
+				]),
+			_List_fromArray(
+				[image]));
+	});
+var $author$project$Helpers$vimeoLogo = $author$project$Helpers$favicon('https://vimeo.com/favicon.ico');
+var $author$project$Helpers$youtubeLogo = $author$project$Helpers$favicon('https://www.youtube.com/favicon.ico');
+var $author$project$Helpers$viewSocial = function (_v0) {
+	var social = _v0.a;
+	var link = _v0.b;
+	switch (social) {
+		case 0:
+			return A2(
+				$author$project$Helpers$viewSocialLink,
+				$zwilias$elm_html_string$Html$String$text('🌐'),
+				link);
+		case 1:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$instagramLogo, link);
+		case 2:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$twitterLogo, link);
+		case 5:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$facebookLogo, link);
+		case 6:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$linkedInLogo, link);
+		case 3:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$vimeoLogo, link);
+		case 4:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$imdbLogo, link);
+		case 7:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$youtubeLogo, link);
+		case 8:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$pinterestLogo, link);
+		case 9:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$spotifyLogo, link);
+		case 10:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$soundcloudLogo, link);
+		default:
+			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$behanceLogo, link);
+	}
+};
 var $author$project$Newsroom$PR20220912$view = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_Nil,
@@ -5868,7 +5941,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					])),
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Hail Mary Prayer Animation Wins Award in International Hollywood Film Festival')
+					$zwilias$elm_html_string$Html$String$text('Hail Mary Prayer Animation Wins Multiple Awards in International Hollywood Film Festival')
 				])),
 			A2(
 			$zwilias$elm_html_string$Html$String$p,
@@ -5900,7 +5973,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text(' wins the X Award in the iHollywood Film Festival this past week')
+							$zwilias$elm_html_string$Html$String$text(' wins multiple awards in the iHollywood Film Festival this month')
 						]))
 				])),
 			A2(
@@ -5925,7 +5998,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 				]),
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Sept 12, 2022')
+					$zwilias$elm_html_string$Html$String$text('Sept 29, 2022')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
@@ -5948,7 +6021,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text('Today, Catholic Stories for Children, a new non-profit that creates animations for children,' + (' announced that they won the X award in the International Hollywood Film Festival (IHFF). "I am really grateful' + (' for this opportunity. I appreciate the support from the iHollywood team in helping spread the' + ' love of our Blessed Virgin Mother Mary" said Trevor Rothaus, founder of Catholic Stories for Children. ')))
+							$zwilias$elm_html_string$Html$String$text('Today, Catholic Stories for Children, a new non-profit that creates animations for children,' + (' announced that they won multiple awards in the International Hollywood Film Festival (IHFF). "I am really grateful' + (' to be able to spread the love of our Blessed Virgin Mother Mary. I appreciate the iHollywood team for considering this animation' + (' and selecting it for these awards." said Trevor Rothaus, founder of Catholic Stories for Children. ' + (' The Hail Mary animation was selected for the 5 Star Positive Consciousness Award, the 5 Star Expression Award. ' + ' the 5 Star Connection Award, the 5 Star Love &  Beauty Award, was the I AM Award Winner, and was the Semi-Finalist Mini Movie Animation.')))))
 						]))
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
@@ -5992,7 +6065,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help kids grow a habit of prayer. As kids build a habit of thanking God in the morning, before every meal, and throughout their day, they grow into grateful people. As kids pray for each other, they grow in empathy and love. As kids pray together, they grow in community. And when kids pray at home with their families, their hearts open up and the family grows strong with God as their center. But many parents struggle with getting their young kids to sit and pray at home, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, www.catholicstoriesforchildren.com.')
+					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help kids grow a habit of prayer. As kids build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As kids pray for each other, they grow in empathy and love. As kids pray together, they grow in community. And when kids pray at home with their families, their hearts open up and the family grows strong with God as their center. But many parents struggle with getting their young kids to sit and pray at home, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, www.catholicstoriesforchildren.com.')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
@@ -6044,6 +6117,11 @@ var $author$project$Newsroom$PR20220912$view = A2(
 							$zwilias$elm_html_string$Html$String$text('www.catholicstoriesforchildren.com')
 						])),
 					A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
+					$author$project$Helpers$viewSocial(
+					_Utils_Tuple2(5, 'https://www.facebook.com/catholicstoriesforchildren')),
+					$author$project$Helpers$viewSocial(
+					_Utils_Tuple2(1, 'https://www.instagram.com/catholicstoriesforchildren')),
+					A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 					A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 					A2(
 					$zwilias$elm_html_string$Html$String$span,
@@ -6075,7 +6153,10 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_fromArray(
 						[
 							$zwilias$elm_html_string$Html$String$text('www.ihollywoodfilmfest.com')
-						]))
+						])),
+					A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
+					$author$project$Helpers$viewSocial(
+					_Utils_Tuple2(2, 'https://twitter.com/ihollywoodfilm'))
 				]))
 		]));
 var $author$project$Newsroom$Main$viewPressRelease = function (pr) {
@@ -6096,7 +6177,8 @@ var $author$project$Newsroom$Main$viewPressReleases = function (prs) {
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '20px 40px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto')
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', 'auto'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '2em')
 			]),
 		A2($elm$core$List$map, $author$project$Newsroom$Main$viewPressRelease, prs));
 };

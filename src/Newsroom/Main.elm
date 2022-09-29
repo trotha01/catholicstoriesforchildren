@@ -65,6 +65,7 @@ viewPressReleases prs =
         , style "border-radius" "5px"
         , style "padding" "20px 40px"
         , style "margin" "auto"
+        , style "margin-bottom" "2em"
         ]
         (List.map viewPressRelease prs)
 
