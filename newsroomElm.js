@@ -5965,14 +5965,14 @@ var $author$project$Newsroom$PR20220912$view = A2(
 						]),
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text('\'Hail Mary, Full of Grace,\'')
+							$zwilias$elm_html_string$Html$String$text('Hail Mary, Full of Grace,')
 						])),
 					A2(
 					$zwilias$elm_html_string$Html$String$span,
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text(' wins multiple awards in the iHollywood Film Festival this month.')
+							$zwilias$elm_html_string$Html$String$text(' wins multiple awards in the iHollywood Film Festival.')
 						]))
 				])),
 			A2(
@@ -5994,7 +5994,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Sept 30, 2022')
+					$zwilias$elm_html_string$Html$String$text('Oct 3, 2022')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(

@@ -18,8 +18,8 @@ view =
                 , rel "noopener"
                 , target "_blank"
                 ]
-                [ text "'Hail Mary, Full of Grace,'" ]
-            , span [] [ text " wins multiple awards in the iHollywood Film Festival this month." ] -- subtitle
+                [ text "Hail Mary, Full of Grace," ]
+            , span [] [ text " wins multiple awards in the iHollywood Film Festival." ] -- subtitle
             ]
         , img
             [ src "https://ik.imagekit.io/catholicstories/Mother_and_child_from_Hail_Mary_Animation_2_0AW0fCnOc.png?ik-sdk-version=javascript-1.4.3&updatedAt=1663026862327"
@@ -32,7 +32,7 @@ view =
             , style "margin" "auto"
             ]
             []
-        , p [] [ text "Sept 30, 2022" ]
+        , p [] [ text "Oct 3, 2022" ]
         , br [] []
         , p []
             [ span [ style "font-style" "bold" ] [ text "Los Angeles, California. " ]
