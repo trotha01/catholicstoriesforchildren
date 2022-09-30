@@ -44,6 +44,7 @@ view =
                         ++ """ and selecting it for these awards," said Trevor Rothaus, founder of Catholic Stories for Children. """
                         ++ """ The Hail Mary animation was selected for the 5 Star Positive Consciousness Award, the 5 Star Expression Award, """
                         ++ """ the 5 Star Connection Award, and the 5 Star Love &  Beauty Award. It was also the I AM Award Winner and the Semi-Finalist Mini Movie Animation."""
+                        ++ """ The Hail Mary Animation was screened at the TCL Chinese 6 Theatres in Hollywood on September 6."""
                     )
                 ]
             ]
