@@ -49,7 +49,7 @@ view =
                 ]
             ]
         , br [] []
-        , p [] [ text "IHFF merges film, creatives, and web 3.0 technologies as to empower the independent filmmaker. They are also using their platform to support ocean conservation this year. IHFF is a proud member of the Hollywood Chamber of Commerce and is a member of their Entertainment, Arts and Media plus Tourism committees. The iHollywood Film Fest was created in 2020 to bring community to creatives." ]
+        , p [] [ text "IHFF merges film, creatives, and web 3.0 technologies as to empower the independent filmmaker. IHFF is a proud member of the Hollywood Chamber of Commerce and is a member of their Entertainment, Arts and Media plus Tourism committees." ]
         , br [] []
         , p []
             [ a

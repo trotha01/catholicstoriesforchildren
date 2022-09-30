@@ -6026,7 +6026,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('IHFF merges film, creatives, and web 3.0 technologies as to empower the independent filmmaker. They are also using their platform to support ocean conservation this year. IHFF is a proud member of the Hollywood Chamber of Commerce and is a member of their Entertainment, Arts and Media plus Tourism committees. The iHollywood Film Fest was created in 2020 to bring community to creatives.')
+					$zwilias$elm_html_string$Html$String$text('IHFF merges film, creatives, and web 3.0 technologies as to empower the independent filmmaker. IHFF is a proud member of the Hollywood Chamber of Commerce and is a member of their Entertainment, Arts and Media plus Tourism committees.')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
