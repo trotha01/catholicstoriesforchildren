@@ -38,7 +38,10 @@ var htmlPart3 = `</title>
           padding: 80px 40px;
         }
         .fontSize {
-          font-size:1.4em
+          font-size:1.4em;
+        }
+        h2 {
+          font-size: 32px;
         }
       }
       @media (min-width: 721px) {
@@ -47,6 +50,9 @@ var htmlPart3 = `</title>
         }
         .fontSize {
           font-size:1.6em
+        }
+        h2 {
+          font-size: 2em;
         }
       }
     </style>

@@ -164,8 +164,8 @@ h1Style =
 h2Style : List (Attribute msg)
 h2Style =
     titleStyle
-        ++ [ style "font-size" "2em"
-           , style "line-height" "1.1em"
+        ++ [ -- style "font-size" "2em"
+             style "line-height" "1.1em"
            ]
 
 

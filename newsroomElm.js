@@ -5838,7 +5838,6 @@ var $author$project$Helpers$h2Style = _Utils_ap(
 	$author$project$Helpers$titleStyle,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '2em'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1.1em')
 		]));
 var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
@@ -5966,7 +5965,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 						]),
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text('\'Hail Mary, Full of Grace\'')
+							$zwilias$elm_html_string$Html$String$text('\'Hail Mary, Full of Grace,\'')
 						])),
 					A2(
 					$zwilias$elm_html_string$Html$String$span,
@@ -5992,13 +5991,10 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil),
 			A2(
 			$zwilias$elm_html_string$Html$String$p,
+			_List_Nil,
 			_List_fromArray(
 				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '0.7em')
-				]),
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('Sept 29, 2022')
+					$zwilias$elm_html_string$Html$String$text('Sept 30, 2022')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
@@ -6021,7 +6017,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text('Today, Catholic Stories for Children, a new non-profit that creates animations for children,' + (' announced that they won multiple awards in the International Hollywood Film Festival (IHFF). "I am really grateful' + (' to be able to spread the love of our Blessed Virgin Mother Mary. I appreciate the iHollywood team for considering this animation' + (' and selecting it for these awards." said Trevor Rothaus, founder of Catholic Stories for Children. ' + (' The Hail Mary animation was selected for the 5 Star Positive Consciousness Award, the 5 Star Expression Award. ' + ' the 5 Star Connection Award, the 5 Star Love &  Beauty Award, was the I AM Award Winner, and was the Semi-Finalist Mini Movie Animation.')))))
+							$zwilias$elm_html_string$Html$String$text('Today, Catholic Stories for Children, a new non-profit that creates Catholic animations for children,' + (' announced that they won multiple awards in the International Hollywood Film Festival (IHFF). "I am really grateful' + (' to be able to spread the love of our Blessed Virgin Mother Mary. I appreciate the iHollywood Team for considering this animation' + (' and selecting it for these awards," said Trevor Rothaus, founder of Catholic Stories for Children. ' + (' The Hail Mary animation was selected for the 5 Star Positive Consciousness Award, the 5 Star Expression Award, ' + ' the 5 Star Connection Award, and the 5 Star Love &  Beauty Award. It was also the I AM Award Winner and the Semi-Finalist Mini Movie Animation.')))))
 						]))
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
@@ -6056,7 +6052,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text(' is a way for kids to not only learn but also understand the words in the Hail Mary prayer. It helps kids come to know their Holy Mother in Heaven. This prayer is a constant reminder for kids that they have a mother who is always listening and will always love them. And it is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it\'s also a true learning experience to bring our faith to every child,” says John Michael, a member\u00A0of the Board of Directors of the iHollywood International Film Festival.')
+							$zwilias$elm_html_string$Html$String$text(' is a way for children to not only learn, but also understand the words in the Hail Mary prayer. It helps children come to know their Holy Mother in Heaven. This prayer is a constant reminder for children that they have a mother who is always listening and will always love them. It is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it\'s also a true learning experience to bring our faith to every child,” says John Michael, a member\u00A0of the Board of Directors of the iHollywood International Film Festival.')
 						]))
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
@@ -6065,7 +6061,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help kids grow a habit of prayer. As kids build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As kids pray for each other, they grow in empathy and love. As kids pray together, they grow in community. And when kids pray at home with their families, their hearts open up and the family grows strong with God as their center. But many parents struggle with getting their young kids to sit and pray at home, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, www.catholicstoriesforchildren.com.')
+					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help children grow a habit of prayer. As children build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As children pray for each other, they grow in empathy and love. As children pray together, they grow in community. And when children pray at home with their families, their hearts open up and the family grows strong with God as their center. Many parents struggle with getting their young children to sit and pray at home, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, www.catholicstoriesforchildren.com.')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
