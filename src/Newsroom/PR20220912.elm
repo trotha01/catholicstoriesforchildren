@@ -19,7 +19,7 @@ view =
                 , target "_blank"
                 ]
                 [ text "'Hail Mary, Full of Grace,'" ]
-            , span [] [ text " wins multiple awards in the iHollywood Film Festival this month" ] -- subtitle
+            , span [] [ text " wins multiple awards in the iHollywood Film Festival this month." ] -- subtitle
             ]
         , img
             [ src "https://ik.imagekit.io/catholicstories/Mother_and_child_from_Hail_Mary_Animation_2_0AW0fCnOc.png?ik-sdk-version=javascript-1.4.3&updatedAt=1663026862327"

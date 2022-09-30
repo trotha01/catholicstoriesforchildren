@@ -5972,7 +5972,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text(' wins multiple awards in the iHollywood Film Festival this month')
+							$zwilias$elm_html_string$Html$String$text(' wins multiple awards in the iHollywood Film Festival this month.')
 						]))
 				])),
 			A2(
