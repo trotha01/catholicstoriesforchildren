@@ -59,10 +59,20 @@ view =
                 , target "_blank"
                 ]
                 [ text "The Hail Mary animated short film" ]
-            , span [] [ text """ is a way for children to not only learn, but also understand the words in the Hail Mary prayer. It helps children come to know their Holy Mother in Heaven. This prayer is a constant reminder for children that they have a mother who is always listening and will always love them. It is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it's also a true learning experience to bring our faith to every child,” says John Michael, a member\u{00A0}of the Board of Directors of the iHollywood International Film Festival.""" ]
+            , span [] [ text """ is a way for children to not only learn, but also understand the words in the Hail Mary prayer. It helps children come to know their Holy Mother in Heaven. This prayer is a constant reminder for children that they have a mother who is always listening and will always love them. It is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it's also a true learning experience to bring our faith to every child,” says John Michael, a member\u{00A0}of the Board of Directors of the International Hollywood Film Festival.""" ]
             ]
         , br [] []
-        , p [] [ text "Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help children grow a habit of prayer. As children build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As children pray for each other, they grow in empathy and love. As children pray together, they grow in community. And when children pray at home with their families, their hearts open up and the family grows strong with God as their center. Many parents struggle with getting their young children to sit and pray at home, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, www.catholicstoriesforchildren.com." ]
+        , p []
+            [ span [] [ text "Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help children grow a habit of prayer. As children build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As children pray for each other, they grow in empathy and love. As children pray together, they grow in community. And when children pray at home with their families, their hearts open up and the family grows strong with God as their center. Many parents struggle with getting their young children to pray, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, " ]
+            , a
+                [ href "https://catholicstoriesforchildren.com"
+                , style "color" darkBlue
+                , rel "noopener"
+                , target "_blank"
+                ]
+                [ text "www.catholicstoriesforchildren.com" ]
+            , span [] [ text "." ]
+            ]
         , br [] []
         , p [ style "font-size" "0.7em", style "line-height" "1.4em" ]
             [ span [] [ text "Media Contacts:" ]

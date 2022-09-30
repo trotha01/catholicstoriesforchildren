@@ -6052,7 +6052,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$zwilias$elm_html_string$Html$String$text(' is a way for children to not only learn, but also understand the words in the Hail Mary prayer. It helps children come to know their Holy Mother in Heaven. This prayer is a constant reminder for children that they have a mother who is always listening and will always love them. It is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it\'s also a true learning experience to bring our faith to every child,” says John Michael, a member\u00A0of the Board of Directors of the iHollywood International Film Festival.')
+							$zwilias$elm_html_string$Html$String$text(' is a way for children to not only learn, but also understand the words in the Hail Mary prayer. It helps children come to know their Holy Mother in Heaven. This prayer is a constant reminder for children that they have a mother who is always listening and will always love them. It is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it\'s also a true learning experience to bring our faith to every child,” says John Michael, a member\u00A0of the Board of Directors of the International Hollywood Film Festival.')
 						]))
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
@@ -6061,7 +6061,33 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help children grow a habit of prayer. As children build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As children pray for each other, they grow in empathy and love. As children pray together, they grow in community. And when children pray at home with their families, their hearts open up and the family grows strong with God as their center. Many parents struggle with getting their young children to sit and pray at home, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, www.catholicstoriesforchildren.com.')
+					A2(
+					$zwilias$elm_html_string$Html$String$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help children grow a habit of prayer. As children build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As children pray for each other, they grow in empathy and love. As children pray together, they grow in community. And when children pray at home with their families, their hearts open up and the family grows strong with God as their center. Many parents struggle with getting their young children to pray, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, ')
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$a,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$href('https://catholicstoriesforchildren.com'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', $author$project$Helpers$darkBlue),
+							$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
+							$zwilias$elm_html_string$Html$String$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('www.catholicstoriesforchildren.com')
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('.')
+						]))
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
