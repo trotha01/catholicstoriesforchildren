@@ -6006,7 +6006,7 @@ var $author$project$Newsroom$PR20220912$view = A2(
 					$zwilias$elm_html_string$Html$String$span,
 					_List_fromArray(
 						[
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-style', 'bold')
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-weight', 'bold')
 						]),
 					_List_fromArray(
 						[

@@ -35,7 +35,7 @@ view =
         , p [] [ text "Oct 3, 2022" ]
         , br [] []
         , p []
-            [ span [ style "font-style" "bold" ] [ text "Los Angeles, California. " ]
+            [ span [ style "font-weight" "bold" ] [ text "Los Angeles, California. " ]
             , span []
                 [ text
                     ("""Today, Catholic Stories for Children, a new non-profit that creates Catholic animations for children,"""
