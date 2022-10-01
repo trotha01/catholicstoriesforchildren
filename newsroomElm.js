@@ -6026,14 +6026,6 @@ var $author$project$Newsroom$PR20220912$view = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('IHFF merges film, creatives, and web 3.0 technologies as to empower the independent filmmaker. IHFF is a proud member of the Hollywood Chamber of Commerce and is a member of their Entertainment, Arts and Media plus Tourism committees.')
-				])),
-			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
-			A2(
-			$zwilias$elm_html_string$Html$String$p,
-			_List_Nil,
-			_List_fromArray(
-				[
 					A2(
 					$zwilias$elm_html_string$Html$String$a,
 					_List_fromArray(
@@ -6054,6 +6046,14 @@ var $author$project$Newsroom$PR20220912$view = A2(
 						[
 							$zwilias$elm_html_string$Html$String$text(' is a way for children to not only learn, but also understand the words in the Hail Mary prayer. It helps children come to know their Holy Mother in Heaven. This prayer is a constant reminder for children that they have a mother who is always listening and will always love them. It is a reminder that they can go to her for help. “Not only is it fun to watch and participate, but it\'s also a true learning experience to bring our faith to every child,” says John Michael, a member\u00A0of the Board of Directors of the International Hollywood Film Festival.')
 						]))
+				])),
+			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
+			A2(
+			$zwilias$elm_html_string$Html$String$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('IHFF merges film, creatives, and web 3.0 technologies as to empower the independent filmmaker. IHFF is a proud member of the Hollywood Chamber of Commerce and is a member of their Entertainment, Arts and Media plus Tourism committees.')
 				])),
 			A2($zwilias$elm_html_string$Html$String$br, _List_Nil, _List_Nil),
 			A2(
