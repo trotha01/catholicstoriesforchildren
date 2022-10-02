@@ -8,10 +8,10 @@ import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 import List
 import Ordering exposing (Ordering)
-import Svg exposing (image)
 
 
 
+-- import Svg exposing (image)
 -- MAIN
 
 
@@ -301,9 +301,11 @@ view =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style "background-image" ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
+
+        -- , style "background-image" ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
+        , style "background-color" darkBlue
         ]
-        [ viewSubpageHeader "home" headerMargin
+        [ viewSubpageHeader "Team" headerMargin
         , viewBody
         , viewFooter
         ]
@@ -311,25 +313,28 @@ view =
 
 titleStyle : List (Attribute msg)
 titleStyle =
-    [ style "text-align" "center"
-    , style "color" "white"
+    [ style "color" "white"
     , style "font-family" "hvdComicSerifPro"
+    , style "width" "80%"
+    , style "max-width" "800px"
     ]
 
 
 h1Style : List (Attribute msg)
 h1Style =
     titleStyle
-        ++ [ style "margin" "2em"
-           , style "font-size" "3em"
-           , style "line-height" "1em"
+        ++ [ style "line-height" "1em"
            ]
 
 
 viewBody : Html Never
 viewBody =
     div
-        []
+        [ -- center
+          class "hcenter"
+        , style "width" "80%"
+        , style "max-width" "800px"
+        ]
         [ h1 h1Style [ text "The Team" ]
         , viewPeople "Staff" "" staff
         , viewPeople "Board of Advisors" "" boardOfAdvisors
@@ -342,12 +347,8 @@ viewPeople title description people =
     div [ style "margin-bottom" "100px" ]
         ([ h2 titleStyle [ text title ]
          , div
-            [ style "text-align" "center"
-            , style "color" "white"
-            , style "width" "80%"
-            , style "left" "50%"
-            , style "position" "relative"
-            , style "transform" "translate(-50%)"
+            [ style "color" "white"
+            , class "hcenter"
             ]
             [ text description ]
          ]
@@ -359,10 +360,7 @@ viewPerson : Person -> Html msg
 viewPerson person =
     div
         [ -- POSITION
-          -- center
-          style "position" "relative"
-        , style "left" "50%"
-        , style "transform" "translateX(-50%)"
+          class "hcenter"
         , style "display" "grid"
         , style "grid-template-columns" "72px 1fr"
 
@@ -371,8 +369,6 @@ viewPerson person =
 
         -- SIZE
         , style "min-height" "115px"
-        , style "width" "80%"
-        , style "max-width" "800px"
 
         -- STYLE
         , style "background" "white"

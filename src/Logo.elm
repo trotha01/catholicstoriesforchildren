@@ -11,11 +11,11 @@ import Html.String.Attributes exposing (..)
 -- import Svg.String.Attributes exposing (attribute, style, transform, viewBox)
 
 
+logo : Html msg
 logo =
     img
         [ src "/assets/logo_solid.svg"
-        , style "height" "36px"
-        , style "padding-top" "3px"
+        , style "height" "30px"
         , alt ""
         , style "vertical-align" "middle"
         ]

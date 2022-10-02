@@ -5805,6 +5805,14 @@ var $author$project$Team$Main$boardOfAdvisors = _List_fromArray(
 		{a: 'Truly silent.', b: $author$project$Team$Main$imagePath + 'Cheri.jpeg', c: '', d: 'Cheri Loreto', e: 'Silent Advisor', f: _List_Nil},
 		{a: 'Carlos is a CAD designer who also has a passion for dogs, comedy and food.', b: $author$project$Team$Main$imagePath + 'CarlosG.jpg', c: '', d: 'Carlos Gutierrez', e: 'CAD Designer', f: _List_Nil}
 	]);
+var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
+	function (a, b) {
+		return {$: 1, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
+var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
+};
 var $author$project$Helpers$Behance = 11;
 var $author$project$Helpers$Facebook = 5;
 var $author$project$Helpers$IMDB = 4;
@@ -5963,16 +5971,15 @@ var $author$project$Team$Main$contractors = _List_fromArray(
 var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
 var $author$project$Team$Main$titleStyle = _List_fromArray(
 	[
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
 		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro')
+		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px')
 	]);
 var $author$project$Team$Main$h1Style = _Utils_ap(
 	$author$project$Team$Main$titleStyle,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '2em'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '3em'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1em')
 		]));
 var $author$project$Team$Main$staff = _List_fromArray(
@@ -5994,11 +6001,6 @@ var $author$project$Team$Main$viewDescription = function (description) {
 				$zwilias$elm_html_string$Html$String$text(description)
 			]));
 };
-var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
-	function (a, b) {
-		return {$: 1, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
 var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
 };
@@ -6256,15 +6258,11 @@ var $author$project$Team$Main$viewPerson = function (person) {
 		$zwilias$elm_html_string$Html$String$div,
 		_List_fromArray(
 			[
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translateX(-50%)'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('hcenter'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'grid'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'grid-template-columns', '72px 1fr'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '30px 0'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'min-height', '115px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '4px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '20px')
@@ -6306,12 +6304,8 @@ var $author$project$Team$Main$viewPeople = F3(
 						$zwilias$elm_html_string$Html$String$div,
 						_List_fromArray(
 							[
-								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
 								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
-								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
+								$zwilias$elm_html_string$Html$String$Attributes$class('hcenter')
 							]),
 						_List_fromArray(
 							[
@@ -6322,7 +6316,12 @@ var $author$project$Team$Main$viewPeople = F3(
 	});
 var $author$project$Team$Main$viewBody = A2(
 	$zwilias$elm_html_string$Html$String$div,
-	_List_Nil,
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$Attributes$class('hcenter'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px')
+		]),
 	_List_fromArray(
 		[
 			A2(
@@ -6370,46 +6369,90 @@ var $author$project$Footer$viewFooter = A2(
 					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
 				]))
 		]));
+var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
 var $author$project$Header$backButton = A2(
 	$zwilias$elm_html_string$Html$String$a,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'absolute'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'top', '50%'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translateY(-50%)'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('vcenter'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'right', '32px'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', $author$project$Helpers$darkBlue),
-			$zwilias$elm_html_string$Html$String$Attributes$href('/')
+			$zwilias$elm_html_string$Html$String$Attributes$href('/'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray')
 		]),
 	_List_fromArray(
 		[
-			$zwilias$elm_html_string$Html$String$text('Back')
+			A2(
+			$zwilias$elm_html_string$Html$String$img,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$src('/assets/backarrow.png'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '14px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-right', '10px')
+				]),
+			_List_Nil),
+			A2(
+			$zwilias$elm_html_string$Html$String$span,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Back')
+				]))
 		]));
-var $author$project$Header$centerStyle = _List_fromArray(
-	[
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translateX(-50%)')
-	]);
-var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
-};
 var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
+var $author$project$Header$toPx = function (x) {
+	return $elm$core$String$fromInt(x) + 'px';
+};
+var $author$project$Header$viewHeaderTitle = function (title) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$a,
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$Attributes$class('mobileHide'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('center'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('inlineBlock'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
+				$zwilias$elm_html_string$Html$String$Attributes$href('/')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$zwilias$elm_html_string$Html$String$h1,
+				_List_fromArray(
+					[
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '19px'),
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px')
+					]),
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children')
+					]))
+			]));
+};
 var $author$project$Logo$logo = A2(
 	$zwilias$elm_html_string$Html$String$img,
 	_List_fromArray(
 		[
 			$zwilias$elm_html_string$Html$String$Attributes$src('/assets/logo_solid.svg'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '36px'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding-top', '3px'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '30px'),
 			$zwilias$elm_html_string$Html$String$Attributes$alt(''),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'vertical-align', 'middle')
 		]),
 	_List_Nil);
-var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
-var $author$project$Header$toPx = function (x) {
-	return $elm$core$String$fromInt(x) + 'px';
-};
+var $author$project$Header$viewLogo = A2(
+	$zwilias$elm_html_string$Html$String$a,
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$Attributes$class('vcenter'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-left', '30px'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
+			$zwilias$elm_html_string$Html$String$Attributes$href('/')
+		]),
+	_List_fromArray(
+		[$author$project$Logo$logo]));
 var $author$project$Header$viewSubpageHeader = F2(
 	function (currentPage, leftMargin) {
 		return A2(
@@ -6418,37 +6461,20 @@ var $author$project$Header$viewSubpageHeader = F2(
 				[
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#3d5d75'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, #9DE2EB , #EBD6F1)'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+					$zwilias$elm_html_string$Html$String$Attributes$class('relative'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '48px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow', 'hidden'),
 					A2(
 					$zwilias$elm_html_string$Html$String$Attributes$style,
 					'padding',
-					'0px ' + $author$project$Header$toPx(leftMargin))
+					'0px ' + $author$project$Header$toPx(leftMargin)),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '19px')
 				]),
 			_List_fromArray(
 				[
-					$author$project$Header$backButton,
-					A2(
-					$zwilias$elm_html_string$Html$String$span,
-					$author$project$Header$centerStyle,
-					_List_fromArray(
-						[$author$project$Logo$logo])),
-					A2(
-					$zwilias$elm_html_string$Html$String$h1,
-					_List_fromArray(
-						[
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '19.2px'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'inline'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'float', 'right'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-shadow', '#3d3d3d 3px 3px 11px'),
-							$zwilias$elm_html_string$Html$String$Attributes$class('mobileHide')
-						]),
-					_List_fromArray(
-						[
-							$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children')
-						]))
+					$author$project$Header$viewLogo,
+					$author$project$Header$viewHeaderTitle(currentPage),
+					$author$project$Header$backButton
 				]));
 	});
 var $author$project$Team$Main$view = A2(
@@ -6460,11 +6486,11 @@ var $author$project$Team$Main$view = A2(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-y', 'auto'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'perspective', '300px'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'scroll-behavior', 'smooth'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, ' + ($author$project$Helpers$darkBlue + ' 70%, #8c6897)'))
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', $author$project$Helpers$darkBlue)
 		]),
 	_List_fromArray(
 		[
-			A2($author$project$Header$viewSubpageHeader, 'home', $author$project$Helpers$headerMargin),
+			A2($author$project$Header$viewSubpageHeader, 'Team', $author$project$Helpers$headerMargin),
 			$author$project$Team$Main$viewBody,
 			$author$project$Footer$viewFooter
 		]));

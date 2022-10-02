@@ -37,7 +37,7 @@ view =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "home" headerMargin
+        [ viewSubpageHeader "Give" headerMargin
         , viewBody
         , viewFooter
         ]
@@ -273,7 +273,6 @@ h1Style : List (Attribute msg)
 h1Style =
     titleStyle
         ++ [ style "margin-top" "2em"
-           , style "font-size" "3em"
            , style "line-height" "1em"
            ]
 

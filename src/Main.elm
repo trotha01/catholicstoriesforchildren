@@ -45,7 +45,7 @@ view =
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
         ]
-        [ viewHeader "home" headerMargin
+        [ viewHeader "Catholic Stories for Children" headerMargin
         , viewBody
         , viewFooter
         ]

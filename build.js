@@ -30,12 +30,59 @@ var htmlPart3 = `</title>
         src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
         font-display: swap;
       }
+
+      /* Defaults */
+      h1 {
+        font-size: 38px;
+      }
+      h2 {
+        font-size: 32px;
+      }
+
+      /* Helper Classes */
+      .inline {
+        display: inline;
+      }
+      .inlineBlock {
+        display: inline-block;
+      }
+      .hcenter {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .vcenter {
+        /* Container should have position relative */
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .center {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .relative {
+        position: relative;
+      }
+      .colorDarkGray {
+        color: #333;
+      }
+
+      /* Media Changes */
+
       @media (max-width: 720px) {
         .mobileHide {
-          visibility: hidden;
+          display: none;
+        }
+        .mobileCenter {
+          position: relative;
+          left: 50%;
+          transform: translate(-50%);
         }
         .FortyToEightypadding {
-          padding: 80px 40px;
+          padding: 1px 40px;
         }
         .fontSize {
           font-size:1.4em;
@@ -46,18 +93,18 @@ var htmlPart3 = `</title>
       }
       @media (min-width: 721px) {
         .FortyToEightypadding {
-          padding: 160px 80px;
+          padding: 1px 80px;
         }
         .fontSize {
           font-size:1.6em
         }
         h2 {
-          font-size: 2em;
+          font-size: 32px;
         }
       }
     </style>
   </head>
-  <body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.2em;color:#333" >
+  <body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
 `
 
 var htmlPart4 = `</body>

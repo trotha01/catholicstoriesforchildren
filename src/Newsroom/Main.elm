@@ -32,7 +32,7 @@ view =
     div
         [ style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "home" headerMargin
+        [ viewSubpageHeader "Newsroom" headerMargin
         , viewBody
         , viewFooter
         ]

@@ -81,9 +81,15 @@ view =
             , br [] []
             , span [] [ text "Trevor Rothaus | Founder" ]
             , br [] []
-            , span [] [ text "trevor@catholicstoriesforchildren.com" ]
+            , span [] [ Helpers.email ]
             , br [] []
-            , span [] [ text "www.catholicstoriesforchildren.com" ]
+            , a
+                [ href "https://catholicstoriesforchildren.com"
+                , style "color" darkBlue
+                , rel "noopener"
+                , target "_blank"
+                ]
+                [ text "www.catholicstoriesforchildren.com" ]
             , br [] []
             , viewSocial ( Facebook, "https://www.facebook.com/catholicstoriesforchildren" )
             , viewSocial ( Instagram, "https://www.instagram.com/catholicstoriesforchildren" )
@@ -95,7 +101,13 @@ view =
             , br [] []
             , span [] [ text "ihollywoodfilmfest@gmail.com" ]
             , br [] []
-            , span [] [ text "www.ihollywoodfilmfest.com" ]
+            , a
+                [ href "https://ihollywoodfilmfest.com"
+                , style "color" darkBlue
+                , rel "noopener"
+                , target "_blank"
+                ]
+                [ text "www.ihollywoodfilmfest.com" ]
             , br [] []
             , viewSocial ( Twitter, "https://twitter.com/ihollywoodfilm" )
             ]

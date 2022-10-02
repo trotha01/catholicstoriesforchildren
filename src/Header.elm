@@ -20,32 +20,18 @@ viewHeader currentPage leftMargin =
     header
         [ style "background-color" "#3d5d75"
         , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
-        , style "color" "white"
+        , style "color" "#333"
+        , class "colorDarkGray"
+        , class "relative"
+        , style "height" "48px"
+        , style "font-size" "19px"
 
         -- overflow hidden is so that the header includes the content, otherwise it collapses
         , style "overflow" "hidden"
-        , style "padding" ("0px " ++ toPx leftMargin)
         ]
-        [ logo
-        , h1
-            [ style "font-family" "hvdComicSerifPro"
-            , style "font-size" "1em"
-            , style "display" "inline"
-            , style "float" "right"
-            , style "text-shadow" "#3d3d3d 3px 3px 11px"
-            ]
-            [ text "Catholic Stories for Children" ]
-
-        -- navbar currentPage
+        [ viewLogo
+        , viewHeaderTitle currentPage
         ]
-
-
-centerStyle : List (Attribute msg)
-centerStyle =
-    [ style "position" "relative"
-    , style "left" "50%"
-    , style "transform" "translateX(-50%)"
-    ]
 
 
 viewSubpageHeader : String -> Int -> Html.String.Html msg
@@ -53,70 +39,67 @@ viewSubpageHeader currentPage leftMargin =
     header
         [ style "background-color" "#3d5d75"
         , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
-        , style "color" "white"
-        , style "position" "relative"
+        , class "relative"
+        , style "height" "48px"
 
         -- overflow hidden is so that the header includes the content, otherwise it collapses
         , style "overflow" "hidden"
         , style "padding" ("0px " ++ toPx leftMargin)
+        , style "font-size" "19px"
         ]
-        [ backButton
-        , span centerStyle [ logo ]
-        , h1
+        [ viewLogo
+        , viewHeaderTitle currentPage
+        , backButton
+        ]
+
+
+viewHeaderTitle : String -> Html msg
+viewHeaderTitle title =
+    a
+        [ class "mobileHide"
+        , class "center"
+        , class "inlineBlock"
+        , style "text-decoration" "none"
+        , class "colorDarkGray"
+        , href "/"
+        ]
+        [ h1
             [ style "font-family" "hvdComicSerifPro"
-            , style "font-size" "19.2px"
-            , style "display" "inline"
-            , style "float" "right"
-            , style "text-shadow" "#3d3d3d 3px 3px 11px"
-            , class "mobileHide"
+            , style "font-size" "19px"
+            , style "margin" "0px"
             ]
             [ text "Catholic Stories for Children" ]
-
-        -- navbar currentPage
         ]
 
 
 backButton : Html msg
 backButton =
     a
-        [ style "position" "absolute"
-        , style "top" "50%"
-        , style "transform" "translateY(-50%)"
+        [ class "vcenter"
+        , style "right" "32px"
         , style "text-decoration" "none"
-        , style "color" darkBlue
+        , href "/"
+        , class "colorDarkGray"
+        ]
+        [ img
+            [ src "/assets/backarrow.png"
+            , style "height" "14px"
+            , style "margin-right" "10px"
+            ]
+            []
+        , span
+            []
+            [ text "Back" ]
+        ]
+
+
+viewLogo : Html.String.Html msg
+viewLogo =
+    a
+        [ class "vcenter"
+        , style "margin-left" "30px"
+        , style "text-decoration" "none"
+        , class "colorDarkGray"
         , href "/"
         ]
-        [ text "Back" ]
-
-
-navbar : String -> Html.String.Html msg
-navbar currentPage =
-    nav []
-        [ logo
-        , ul
-            [ style "padding" "10px"
-            , style "margin" "0"
-            , style "white-space" "nowrap"
-            , style "overflow" "none"
-            , style "float" "right"
-            ]
-            [ navbarItem "#videos" "Videos" (currentPage == "videos")
-            , navbarItem "#about" "About" (currentPage == "about")
-            , navbarItem "#contact" "Contact" (currentPage == "contact")
-            , navbarItem "#give" "Give" (currentPage == "give")
-            ]
-        ]
-
-
-navbarItem : String -> String -> Bool -> Html.String.Html msg
-navbarItem link name isSelected =
-    li [ style "display" "inline-block" ]
-        [ a
-            [ href link
-            , style "display" "inline-block"
-            , style "padding-right" "20px"
-            , style "text-decoration" "none"
-            , style "color" "white"
-            ]
-            [ text name ]
-        ]
+        [ logo ]
