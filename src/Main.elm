@@ -401,8 +401,21 @@ viewBody =
                 , style "text-align" "center"
                 , style "margin-top" "50px"
                 ]
-                [ p
-                    []
+                [ a
+                    [ href "https://catholicstoriesforchildren.com/newsroom"
+                    , rel "noopener"
+                    , target "_blank"
+                    , style "text-decoration" "none"
+                    , style "padding" "20px"
+                    , style "display" "inline-block"
+                    , style "color" "black"
+                    , style "border" "2px solid #777"
+                    , style "border-radius" "5px"
+                    , style "box-shadow" "#777 1px 1px 5px"
+                    ]
+                    [ text "Latest News" ]
+                , p
+                    [ style "margin-top" "80px" ]
                     [ text "Sign up for our email list to get updates!" ]
                 , a
                     [ href "https://signup.catholicstoriesforchildren.com"
