@@ -7,12 +7,18 @@
       "src": "favicon.ico",
       "type": "image/png",
       "sizes": "32x32"
+    },
+    {
+      "src": "/assets/Favicons/PNG/144x144-favicon.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
-  "background_color": "hsl(267deg 50% 78%)",
+  "background_color": "#EBD7F2",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "hsl(267deg 50% 78%)",
+  "theme_color": "#EBD7F2",
   "shortcuts": []
 }

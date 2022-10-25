@@ -9,8 +9,8 @@ var htmlPart1 = `<!doctype html>
   <head>
     <meta charset='utf-8'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="hsl(267deg 50% 78%)">
-    <meta name="theme-color" content="hsl(267deg 50% 78%)">
+    <meta name="theme-color" content="#EBD7F2">
+    <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
     <meta name="description" content="`
 
 var htmlPart2 = `">
@@ -28,6 +28,11 @@ var htmlPart3 = `</title>
       @font-face {
         font-family: hvdComicSerifPro;
         src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
+        font-display: swap;
+      }
+      @font-face {
+        font-family: nunitoSansRegular;
+        src: url(/assets/Nunito_Sans/NunitoSans-Regular.ttf);
         font-display: swap;
       }
 
