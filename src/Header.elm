@@ -3,6 +3,7 @@ module Header exposing (viewHeader, viewSubpageHeader)
 import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
+import Json.Encode
 import Logo exposing (logo)
 
 
@@ -101,5 +102,6 @@ viewLogo =
         , style "text-decoration" "none"
         , class "colorDarkGray"
         , href "/"
+        , attribute "aria-label" "home"
         ]
         [ logo ]

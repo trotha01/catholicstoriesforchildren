@@ -6449,7 +6449,8 @@ var $author$project$Header$viewLogo = A2(
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-left', '30px'),
 			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
 			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
-			$zwilias$elm_html_string$Html$String$Attributes$href('/')
+			$zwilias$elm_html_string$Html$String$Attributes$href('/'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'home')
 		]),
 	_List_fromArray(
 		[$author$project$Logo$logo]));
