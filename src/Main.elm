@@ -473,14 +473,22 @@ viewBody =
                 , p [ style "text-align" "center" ]
                     [ div
                         [ style "margin-bottom" "30px"
+                        , style "width" "400px"
                         , style "text-align" "center"
-                        , style "max-width" "400px"
+                        , style "padding" "20px"
                         ]
-                        [ Html.String.form
-                            [ action "https://www.paypal.com/donate", method "post", target "_top" ]
-                            [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
-                            , input [ type_ "image", src "https://pics.paypal.com/00/s/ODVkNTk0NzktMmNmYy00NGVmLWI3NDMtZGRmMjZmNGNhZTk5/file.PNG", style "border" "0", name "submit", title "PayPal - The safer, easier way to pay online!", alt "Donate with PayPal button" ] []
-                            , img [ alt "", style "border" "0", src "https://www.paypal.com/en_US/i/scr/pixel.gif", width 1, height 1 ] []
+                        [ a
+                            [ href "https://www.patreon.com/catholicstoriesforchildren?fan_landing=true"
+                            , rel "noopener"
+                            , target "_blank"
+                            , style "text-decoration" "none"
+                            , style "padding" "10px 20px"
+                            , style "box-shadow" "#777 1px 1px 5px"
+                            , style "border-radius" "5px"
+                            , style "color" "white"
+                            , style "background-color" "#FF424D"
+                            ]
+                            [ text "Become a patron"
                             ]
                         ]
                     , div

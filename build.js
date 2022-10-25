@@ -87,7 +87,7 @@ var htmlPart3 = `</title>
           transform: translate(-50%);
         }
         .FortyToEightypadding {
-          padding: 1px 40px;
+          padding: 20px 40px;
         }
         .fontSize {
           font-size:1.4em;
@@ -98,7 +98,7 @@ var htmlPart3 = `</title>
       }
       @media (min-width: 721px) {
         .FortyToEightypadding {
-          padding: 1px 80px;
+          padding: 40px 80px;
         }
         .fontSize {
           font-size:1.6em
