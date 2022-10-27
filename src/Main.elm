@@ -58,26 +58,17 @@ section1Background =
 
 section2Background : List (Attribute Never)
 section2Background =
-    -- [ style "background" "#ecd7f2" ]
     [ style "background" "#FEF7F4" ]
 
 
 section3Background : List (Attribute Never)
 section3Background =
-    -- [ style "background" "#6c93b2" ]
-    -- [ style "background" "#FEF7F4" ]
     [ style "background" "#EBD7F2" ]
 
 
 section4Background : List (Attribute Never)
 section4Background =
-    -- [ style "background" "#6c93b2" ]
-    -- [ style "background" "#FEF7F4" ]
     [ style "background" "#FEF7F4" ]
-
-
-
--- [ style "background" "#ecd7f2" ]
 
 
 viewBody : Html.String.Html Never
@@ -88,15 +79,7 @@ viewBody =
         ]
         [ viewSection "videos"
             section1Background
-            [ -- h2
-              -- [ style "color" "white"
-              -- , style "font-family" "hvdComicSerifPro"
-              -- , style "font-size" "3em"
-              -- , style "text-align" "center"
-              -- , style "margin-bottom" "70px"
-              -- ]
-              -- [ text "Videos" ]
-              div
+            [ div
                 []
                 [ --     div
                   --     [ style "position" "relative"
@@ -223,25 +206,6 @@ viewBody =
                     , div [] [ text "Animation under construction" ]
                     ]
                 ]
-
-            -- , p
-            --     [ style "text-align" "center"
-            --     , style "color" "white"
-            --     , style "margin-top" "100px"
-            --     , style "margin-bottom" "100px"
-            --     , style "font-size" "40px"
-            --     , style "line-height" "40px"
-            --     ]
-            --     [ text "Visit our "
-            --     , a
-            --         [ href "https://www.youtube.com/channel/UC0zQzY08mRAOpb--FawZbYw/"
-            --         , rel "noopener"
-            --         , target "_blank"
-            --         , style "color" "white"
-            --         ]
-            --         [ text "YouTube Channel" ]
-            --     , text "!"
-            --     ]
             ]
         , viewSection "about"
             section2Background
@@ -285,15 +249,9 @@ viewBody =
                 ]
             ]
         , viewSection "contact"
-            (section3Background
-             -- ++ [ style "background-image" "url('https://ik.imagekit.io/catholicstories/Paper_Airplane_1__gqjCqhabZ.png')"
-             --    ]
-            )
+            section3Background
             [ div
-                [ -- reducing font size since it goes past the height of the section background
-                  -- on mobile
-                  --   style "font-size" "0.7em"
-                  style "font-weight" "400"
+                [ style "font-weight" "400"
                 , style "line-height" "1.7em"
                 ]
                 [ h2
