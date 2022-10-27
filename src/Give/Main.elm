@@ -84,6 +84,51 @@ donateAbout =
             ]
             [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883"
             ]
+        , p
+            [ style "width" "80%"
+            , style "max-width" "800px"
+            , style "min-width" "330px"
+            , style "left" "50%"
+            , style "position" "relative"
+            , style "transform" "translate(-50%)"
+            ]
+            [ externalLink "Angel Tier $5"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979093"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951"
+                    , style "width" "320px"
+                    , style "margin" "5px"
+                    ]
+                    []
+                ]
+            , externalLink "Archangel Tier $20"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979095"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258"
+                    , style "width" "320px"
+                    , style "margin" "5px"
+                    ]
+                    []
+                ]
+            , externalLink "Cherubim Tier $50"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979105"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249"
+                    , style "width" "320px"
+                    , style "margin" "5px"
+                    ]
+                    []
+                ]
+            , externalLink "Seraphim Tier $100"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979107"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319"
+                    , style "width" "320px"
+                    , style "margin" "5px"
+                    ]
+                    []
+                ]
+            ]
         ]
 
 

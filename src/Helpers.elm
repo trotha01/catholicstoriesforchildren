@@ -238,3 +238,14 @@ viewSocialLink image link =
         , style "margin-right" "10px"
         ]
         [ image ]
+
+
+externalLink : String -> String -> List (Html msg) -> Html msg
+externalLink label link children =
+    a
+        [ href link
+        , style "text-decoration" "none"
+        , target "_blank"
+        , attribute "aria-label" label
+        ]
+        children

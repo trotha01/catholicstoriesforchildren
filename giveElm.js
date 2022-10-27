@@ -5795,8 +5795,47 @@ var $zwilias$elm_html_string$Html$Types$Style = F2(
 		return {$: 4, a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
+var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
+var $zwilias$elm_html_string$Html$Types$Attribute = F2(
+	function (a, b) {
+		return {$: 0, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
+var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
+	function (a, b) {
+		return {$: 1, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
+var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
+};
+var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
+};
+var $author$project$Helpers$externalLink = F3(
+	function (label, link, children) {
+		return A2(
+			$zwilias$elm_html_string$Html$String$a,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$href(link),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', label)
+				]),
+			children);
+	});
+var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
+var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
+	function (tag, attrs, _v0) {
+		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
+	});
+var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
 var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
+var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
+};
 var $author$project$Give$Main$donateAbout = A2(
 	$zwilias$elm_html_string$Html$String$span,
 	_List_fromArray(
@@ -5831,9 +5870,86 @@ var $author$project$Give$Main$donateAbout = A2(
 			_List_fromArray(
 				[
 					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883')
+				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$p,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'min-width', '330px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
+				]),
+			_List_fromArray(
+				[
+					A3(
+					$author$project$Helpers$externalLink,
+					'Angel Tier $5',
+					'https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979093',
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$img,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+								]),
+							_List_Nil)
+						])),
+					A3(
+					$author$project$Helpers$externalLink,
+					'Archangel Tier $20',
+					'https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979095',
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$img,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+								]),
+							_List_Nil)
+						])),
+					A3(
+					$author$project$Helpers$externalLink,
+					'Cherubim Tier $50',
+					'https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979105',
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$img,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+								]),
+							_List_Nil)
+						])),
+					A3(
+					$author$project$Helpers$externalLink,
+					'Seraphim Tier $100',
+					'https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979107',
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$img,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+								]),
+							_List_Nil)
+						]))
 				]))
 		]));
-var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
 var $author$project$Give$Main$titleStyle = _List_fromArray(
 	[
@@ -5893,24 +6009,8 @@ var $author$project$Give$Main$donateSection = F2(
 						[body]))
 				]));
 	});
-var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
-	function (a, b) {
-		return {$: 1, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
-var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
-};
-var $zwilias$elm_html_string$Html$Types$Attribute = F2(
-	function (a, b) {
-		return {$: 0, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
 var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'rel', val);
-};
-var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
 };
 var $author$project$Give$Main$donateWithAmazon = A2(
 	$author$project$Give$Main$donateSection,
@@ -5974,21 +6074,12 @@ var $zwilias$elm_html_string$Html$String$Attributes$height = function (val) {
 		'height',
 		$elm$core$String$fromInt(val));
 };
-var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
-var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
-	function (tag, attrs, _v0) {
-		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
-	});
-var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
 var $zwilias$elm_html_string$Html$String$input = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('input');
 var $zwilias$elm_html_string$Html$String$Attributes$method = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'method', val);
 };
 var $zwilias$elm_html_string$Html$String$Attributes$name = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'name', val);
-};
-var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
 };
 var $zwilias$elm_html_string$Html$String$Attributes$title = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'title', val);
