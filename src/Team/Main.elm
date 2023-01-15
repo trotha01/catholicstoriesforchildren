@@ -323,8 +323,7 @@ titleStyle =
 h1Style : List (Attribute msg)
 h1Style =
     titleStyle
-        ++ [ style "line-height" "1em"
-           ]
+        ++ [ class "my-7" ]
 
 
 viewBody : Html Never

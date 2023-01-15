@@ -5795,17 +5795,20 @@ var $zwilias$elm_html_string$Html$Types$Style = F2(
 		return {$: 4, a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
+var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
+	function (a, b) {
+		return {$: 1, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
+var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
+};
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$Types$Attribute = F2(
 	function (a, b) {
 		return {$: 0, a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
-var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
-	function (a, b) {
-		return {$: 1, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
 var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
 };
@@ -5876,8 +5879,10 @@ var $author$project$Give$Main$donateAbout = A2(
 			_List_fromArray(
 				[
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '650px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'min-width', '330px'),
+					$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center'),
+					$zwilias$elm_html_string$Html$String$Attributes$class('mt-5'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%)')
@@ -5895,8 +5900,7 @@ var $author$project$Give$Main$donateAbout = A2(
 							_List_fromArray(
 								[
 									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px')
 								]),
 							_List_Nil)
 						])),
@@ -5911,8 +5915,7 @@ var $author$project$Give$Main$donateAbout = A2(
 							_List_fromArray(
 								[
 									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px')
 								]),
 							_List_Nil)
 						])),
@@ -5927,8 +5930,7 @@ var $author$project$Give$Main$donateAbout = A2(
 							_List_fromArray(
 								[
 									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px')
 								]),
 							_List_Nil)
 						])),
@@ -5943,8 +5945,7 @@ var $author$project$Give$Main$donateAbout = A2(
 							_List_fromArray(
 								[
 									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px'),
-									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '5px')
+									A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '320px')
 								]),
 							_List_Nil)
 						]))
@@ -6459,9 +6460,6 @@ var $author$project$Footer$viewFooter = A2(
 					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
 				]))
 		]));
-var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
-};
 var $author$project$Header$backButton = A2(
 	$zwilias$elm_html_string$Html$String$a,
 	_List_fromArray(

@@ -86,8 +86,10 @@ donateAbout =
             ]
         , p
             [ style "width" "80%"
-            , style "max-width" "800px"
+            , style "max-width" "650px"
             , style "min-width" "330px"
+            , class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center"
+            , class "mt-5"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
@@ -97,7 +99,6 @@ donateAbout =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951"
                     , style "width" "320px"
-                    , style "margin" "5px"
                     ]
                     []
                 ]
@@ -106,7 +107,6 @@ donateAbout =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258"
                     , style "width" "320px"
-                    , style "margin" "5px"
                     ]
                     []
                 ]
@@ -115,7 +115,6 @@ donateAbout =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249"
                     , style "width" "320px"
-                    , style "margin" "5px"
                     ]
                     []
                 ]
@@ -124,7 +123,6 @@ donateAbout =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319"
                     , style "width" "320px"
-                    , style "margin" "5px"
                     ]
                     []
                 ]

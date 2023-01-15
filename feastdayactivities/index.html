@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#EBD7F2">
+    <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
+    <link href="/tailwind.css" rel="stylesheet">
+    <meta name="description" content="Activites for kids on the feast days">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="preload" href="/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+    <title>Feast Day Activities - Catholic Stories for Children</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      @font-face {
+        font-family: hvdComicSerifPro;
+        src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
+        font-display: swap;
+      }
+      @font-face {
+        font-family: nunitoSansRegular;
+        src: url(/assets/Nunito_Sans/NunitoSans-Regular.ttf);
+        font-display: swap;
+      }
+
+      /* Defaults */
+      h1 {
+        font-size: 38px;
+      }
+      h2 {
+        font-size: 32px;
+      }
+
+      /* Helper Classes */
+      .inline {
+        display: inline;
+      }
+      .inlineBlock {
+        display: inline-block;
+      }
+      .hcenter {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .vcenter {
+        /* Container should have position relative */
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .center {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .relative {
+        position: relative;
+      }
+      .colorDarkGray {
+        color: #333;
+      }
+
+      /* Media Changes */
+
+      @media (max-width: 720px) {
+        .mobileHide {
+          display: none;
+        }
+        .mobileCenter {
+          position: relative;
+          left: 50%;
+          transform: translate(-50%);
+        }
+        .FortyToEightypadding {
+          padding: 20px 40px;
+        }
+        .fontSize {
+          font-size:1.4em;
+        }
+        h2 {
+          font-size: 32px;
+        }
+      }
+      @media (min-width: 721px) {
+        .FortyToEightypadding {
+          padding: 40px 80px;
+        }
+        .fontSize {
+          font-size:1.6em
+        }
+        h2 {
+          font-size: 32px;
+        }
+      }
+    </style>
+<script src="elm.js"></script></head>
+  <body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
+
+  <div id="myapp"></div>
+  <script>
+  var app = Elm.FeastDayActivities.Main.init({
+    node: document.getElementById('myapp')
+  });
+  </script>
+</body>
+</html>

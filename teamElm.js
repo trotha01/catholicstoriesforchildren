@@ -5980,7 +5980,7 @@ var $author$project$Team$Main$h1Style = _Utils_ap(
 	$author$project$Team$Main$titleStyle,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1em')
+			$zwilias$elm_html_string$Html$String$Attributes$class('my-7')
 		]));
 var $author$project$Team$Main$staff = _List_fromArray(
 	[

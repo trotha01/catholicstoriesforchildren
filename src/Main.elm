@@ -127,6 +127,105 @@ viewBody =
                         ]
                         []
                     ]
+                , div []
+                    [ div []
+                        [ h2
+                            [ style "color" "white"
+                            , style "text-align" "center"
+                            , style "font-size" "4rem"
+                            , style "line-height" "1.2em"
+                            , style "font-family" "hvdComicSerifPro"
+                            , style "margin-top" "100px"
+                            ]
+                            [ text "Animations" ]
+                        ]
+                    , div [ style "width" "100%" ]
+                        [ div
+                            [ style "padding" "10px"
+                            , style "display" "inline-block"
+                            , style "width" "33%"
+                            ]
+                            [ img
+                                [ src "https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348"
+                                , style "border-radius" "5px"
+                                , style "width" "-webkit-fill-available"
+                                ]
+                                []
+                            ]
+                        , div
+                            [ style "border-radius" "5px"
+                            , style "padding" "10px"
+                            , style "display" "inline-block"
+                            , style "width" "33%"
+                            ]
+                            [ img
+                                [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnail_8kiHWq1pu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897611"
+                                , style "border-radius" "5px"
+                                , style "width" "-webkit-fill-available"
+                                ]
+                                []
+                            ]
+                        , div
+                            [ style "border-radius" "5px"
+                            , style "padding" "10px"
+                            , style "display" "inline-block"
+                            , style "width" "33%"
+                            ]
+                            [ img
+                                [ src "https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722"
+                                , style "border-radius" "5px"
+                                , style "width" "-webkit-fill-available"
+                                ]
+                                []
+                            ]
+                        ]
+                    , div []
+                        [ div
+                            [ style "border-radius" "5px"
+                            , style "padding" "10px"
+                            , style "display" "inline-block"
+                            , style "width" "33%"
+                            ]
+                            [ img
+                                [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
+                                , style "border-radius" "5px"
+                                , style "width" "-webkit-fill-available"
+                                ]
+                                []
+                            ]
+                        , div
+                            [ style "border-radius" "5px"
+                            , style "padding" "10px"
+                            , style "display" "inline-block"
+                            , style "width" "33%"
+                            ]
+                            [ img
+                                [ src "https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552"
+                                , style "border-radius" "5px"
+                                , style "width" "-webkit-fill-available"
+                                ]
+                                []
+                            ]
+                        , div
+                            [ style "border-radius" "5px"
+                            , style "padding" "10px"
+                            , style "display" "inline-block"
+                            , style "width" "33%"
+                            ]
+                            [ img
+                                [ src "https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276"
+                                , style "border-radius" "5px"
+                                , style "width" "-webkit-fill-available"
+                                ]
+                                []
+                            ]
+                        , div
+                            [ style "clear" "both"
+                            , style "width" "1px"
+                            ]
+                            []
+                        ]
+                    ]
                 , div
                     [ style "position" "relative"
                     , style "padding-bottom" "56.25%"
@@ -149,61 +248,6 @@ viewBody =
                         , property "allowfullscreen" (Json.Encode.string "true")
                         ]
                         []
-                    ]
-                , div
-                    [ style "position" "relative"
-                    , height 0
-                    , style "overflow" "hidden"
-                    , style "max-width" "100%"
-                    , style "background-color" "#293942"
-                    , style "color" "white"
-                    , style "margin-top" "80px"
-                    , style "text-align" "center"
-                    , style "padding" "20px"
-                    , style "font-family" "hvdComicSerifPro"
-                    , style "border-radius" "5px"
-                    ]
-                    [ div
-                        [ style "font-family" "hvdComicSerifPro"
-                        , style "font-size" "2em"
-                        , style "line-height" "1em"
-                        ]
-                        [ text "Guardian Angel Prayer" ]
-                    , img
-                        [ src "https://ik.imagekit.io/catholicstories/Guardian_Angel_aMVg7CuOx.png"
-                        , style "width" "32vw"
-                        , attribute "ariaHidden" "true"
-                        , alt "Guardian angel with construction hat and cone"
-                        ]
-                        []
-                    , div [] [ text "Animation under construction" ]
-                    ]
-                , div
-                    [ style "position" "relative"
-                    , height 0
-                    , style "overflow" "hidden"
-                    , style "max-width" "100%"
-                    , style "background-color" "#293942"
-                    , style "color" "white"
-                    , style "margin-top" "80px"
-                    , style "text-align" "center"
-                    , style "padding" "20px"
-                    , style "font-family" "hvdComicSerifPro"
-                    , style "border-radius" "5px"
-                    ]
-                    [ div
-                        [ style "font-size" "2em"
-                        , style "line-height" "1em"
-                        ]
-                        [ text "St. Michael the Archangel Prayer" ]
-                    , img
-                        [ src "https://ik.imagekit.io/catholicstories/St_Michael_jLl2AjYst.png"
-                        , style "width" "32vw"
-                        , attribute "ariaHidden" "true"
-                        , alt "St. Michael with construction hat and cone"
-                        ]
-                        []
-                    , div [] [ text "Animation under construction" ]
                     ]
                 ]
             ]
