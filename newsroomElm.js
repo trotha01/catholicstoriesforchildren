@@ -6367,7 +6367,7 @@ var $author$project$Footer$viewFooter = A2(
 			_List_Nil,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Copyright © 2022 Catholic Stories for Children. All rights reserved.')
+					$zwilias$elm_html_string$Html$String$text('Copyright © 2023 Catholic Stories for Children. All rights reserved.')
 				])),
 			A2(
 			$zwilias$elm_html_string$Html$String$p,
