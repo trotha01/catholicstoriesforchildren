@@ -6,16 +6,64 @@ months =
     List.map .key feastDays
 
 
-type alias FeastDay =
-    { date : String, feasts : List String }
-
-
 type alias FeastMonth =
     { key : String
     , month : String
     , feasts : List FeastDay
     , color : String
     }
+
+
+type alias FeastDay =
+    { date : String, feasts : List FeastActivities }
+
+
+type alias FeastActivities =
+    { feast : String
+    , activities : List Activity
+    }
+
+
+isVideo : Activity -> Bool
+isVideo activity =
+    case activity of
+        Video _ ->
+            True
+
+        _ ->
+            False
+
+
+videoActivities : List Activity -> List VideoActivity
+videoActivities activities =
+    activities
+        |> List.concatMap
+            (\activity ->
+                case activity of
+                    Video v ->
+                        [ { title = v.title, link = v.link } ]
+
+                    _ ->
+                        []
+            )
+
+
+type Activity
+    = Video VideoActivity
+    | Reading ReadingActivity
+    | Printout PrintoutActivity
+
+
+type alias VideoActivity =
+    { title : String, link : String }
+
+
+type alias ReadingActivity =
+    { title : String, image : String, link : String }
+
+
+type alias PrintoutActivity =
+    { title : String, image : String, link : String }
 
 
 feastDays : List FeastMonth
@@ -43,105 +91,109 @@ january =
     , feasts =
         [ { date = "01"
           , feasts =
-                [ "Mary, Mother of God"
+                [ { feast = "Mary, Mother of God", activities = [] }
                 ]
           }
         , { date = "02"
           , feasts =
-                [ "Saint Basil"
+                [ { feast = "Saint Basil"
+                  , activities =
+                        [ Video { title = "Ss. Gregory & Basil", link = "https://youtu.be/lwe8voh3H_4" }
+                        ]
+                  }
                 ]
           }
         , { date = "03"
           , feasts =
-                [ "The Most Holy Name of Jesus"
+                [ { feast = "The Most Holy Name of Jesus", activities = [] }
                 ]
           }
         , { date = "04"
           , feasts =
-                [ "Saint Elizabeth Ann Seton"
+                [ { feast = "Saint Elizabeth Ann Seton", activities = [] }
                 ]
           }
         , { date = "05"
           , feasts =
-                [ "Saint John Newmann"
+                [ { feast = "Saint John Newmann", activities = [] }
                 ]
           }
         , { date = "06"
           , feasts =
-                [ "Saint André Bessette"
+                [ { feast = "Saint André Bessette", activities = [] }
                 ]
           }
         , { date = "07"
           , feasts =
-                [ "Saint Raymond of Penyafort"
+                [ { feast = "Saint Raymond of Penyafort", activities = [] }
                 ]
           }
         , { date = "08"
           , feasts =
-                [ "Epiphany of the Lord"
+                [ { feast = "Epiphany of the Lord", activities = [] }
                 ]
           }
         , { date = "09"
           , feasts =
-                [ "Baptism of the Lord"
+                [ { feast = "Baptism of the Lord", activities = [] }
                 ]
           }
         , { date = "13"
           , feasts =
-                [ "Saint Hilary of Poitiers"
+                [ { feast = "Saint Hilary of Poitiers", activities = [] }
                 ]
           }
         , { date = "17"
           , feasts =
-                [ "Saint Anthony of Egypt"
+                [ { feast = "Saint Anthony of Egypt", activities = [] }
                 ]
           }
         , { date = "20"
           , feasts =
-                [ "Saint Fabian"
-                , "Saint Sebastian"
+                [ { feast = "Saint Fabian", activities = [] }
+                , { feast = "Saint Sebastian", activities = [] }
                 ]
           }
         , { date = "21"
           , feasts =
-                [ "Saint Agnes"
+                [ { feast = "Saint Agnes", activities = [] }
                 ]
           }
         , { date = "23"
           , feasts =
-                [ "Saint Vincent (US)"
-                , "Saint Marianne Cope"
-                , "Day of Prayer for the Legal Protection of Unborn Children"
+                [ { feast = "Saint Vincent (US)", activities = [] }
+                , { feast = "Saint Marianne Cope", activities = [] }
+                , { feast = "Day of Prayer for the Legal Protection of Unborn Children", activities = [] }
                 ]
           }
         , { date = "24"
           , feasts =
-                [ "Saint Francis de Sales"
+                [ { feast = "Saint Francis de Sales", activities = [] }
                 ]
           }
         , { date = "25"
           , feasts =
-                [ "The Conversion of Saint Paul"
+                [ { feast = "The Conversion of Saint Paul", activities = [] }
                 ]
           }
         , { date = "26"
           , feasts =
-                [ "Saint Timothy and Titus"
+                [ { feast = "Saint Timothy and Titus", activities = [] }
                 ]
           }
         , { date = "27"
           , feasts =
-                [ "Saint Angela Merici"
+                [ { feast = "Saint Angela Merici", activities = [] }
                 ]
           }
         , { date = "28"
           , feasts =
-                [ "Saint Thomas Aquinas"
+                [ { feast = "Saint Thomas Aquinas", activities = [] }
                 ]
           }
         , { date = "31"
           , feasts =
-                [ "Saint John Bosco"
+                [ { feast = "Saint John Bosco", activities = [] }
                 ]
           }
         ]
@@ -156,7 +208,7 @@ february =
     , feasts =
         [ { date = "01"
           , feasts =
-                [ "Saint John Bosco"
+                [ { feast = "Saint John Bosco", activities = [] }
                 ]
           }
         ]

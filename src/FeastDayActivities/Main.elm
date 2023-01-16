@@ -5,7 +5,7 @@ module FeastDayActivities.Main exposing (..)
 
 import Browser
 import Browser.Navigation as Nav
-import FeastDayActivities.FeastDayHelpers exposing (splitList)
+import FeastDayActivities.FeastDayHelpers exposing (Route(..), UrlDate, parseRoute, route, splitList)
 import FeastDayActivities.FeastDays exposing (..)
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
@@ -13,24 +13,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Url
-import Url.Parser exposing ((</>), parse)
-
-
-
--- type alias Model =
---     {}
--- main : Program () Model Never
--- main =
---     Browser.sandbox
---         { init = {}
---         , view =
---             \_ ->
---                 view
---                     |> toString 0
---                     |> text
---                     |> toHtml
---         , update = \_ -> \model -> model
---         }
 
 
 main : Program () Model Msg
@@ -100,45 +82,13 @@ subscriptions _ =
 
 
 -- VIEW
--- view : Model -> Browser.Document Msg
--- view model =
---     { title = "Feast Day Activities - Catholic Stories for Children"
---     , body =
---         [ text "The current URL is: "
---         , b [] [ text (Url.toString model.url) ]
---         , ul []
---             [ viewLink "/feastdayactivities/jan"
---             , viewLink "/feastdayactivities/feb"
---             , viewLink "/feastdayactivities/mar"
---             , viewLink "/"
---             , viewLink "/reviews/shah-of-shahs"
---             ]
---         ]
---     }
--- view : Html Never
-
-
-parseMonthFromUrl : Url.Url -> Maybe String
-parseMonthFromUrl url =
-    parse urlMonthParser url
-
-
-urlMonthParser : Url.Parser.Parser (String -> a) a
-urlMonthParser =
-    Url.Parser.s "feastdayactivities" </> Url.Parser.string
 
 
 view : Model -> Browser.Document Msg
 view model =
     let
-        defaultMonth =
-            months
-                |> List.head
-                |> Maybe.withDefault "jan"
-
-        month =
-            parseMonthFromUrl model.url
-                |> Maybe.withDefault defaultMonth
+        currentRoute =
+            parseRoute model.url
     in
     { title = "Feast Day Activities - Catholic Stories for Children"
     , body =
@@ -152,7 +102,7 @@ view model =
             , style "background-color" "#FEF7F4"
             ]
             [ -- viewSubpageHeader "Feast Day Activities" headerMargin
-              viewBody month
+              viewBody currentRoute
 
             -- , viewFooter
             ]
@@ -160,110 +110,94 @@ view model =
     }
 
 
-viewLink : String -> Html Msg
-viewLink path =
-    li [] [ a [ href path ] [ text path ] ]
+viewBody : Maybe Route -> Html Msg
+viewBody route =
+    case Debug.log "route" route of
+        Just (Date date) ->
+            feastDays
+                |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower date.month)
+                |> List.head
+                |> Maybe.withDefault january
+                |> .feasts
+                |> List.filter (\feastDay -> String.toLower feastDay.date == String.toLower date.date)
+                |> List.map .feasts
+                |> List.head
+                |> Maybe.withDefault []
+                |> viewDate date
+
+        Just (Month month) ->
+            feastDays
+                |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower month)
+                |> List.head
+                |> Maybe.withDefault january
+                |> viewMonth
+
+        Nothing ->
+            viewMonth january
 
 
-dateWidth : String
-dateWidth =
-    "50px"
+
+-- DAY VIEW
 
 
-dateHR : Html Msg
-dateHR =
-    hr
-        [ style "width" dateWidth
-        , style "margin-left" "0px"
-        , style "border-top" "4px solid #415c71"
+viewDate : UrlDate -> List FeastActivities -> Html Msg
+viewDate urlDate feasts =
+    div [ class "text-center" ]
+        [ h1 [ class "capitalize" ]
+            [ text (urlDate.month ++ " " ++ urlDate.date)
+            ]
+        , div
+            [ class "grid m-auto max-w-2xl"
+            , class "text-left"
+            , class "text-2xl"
+            ]
+            (List.map (\feast -> div [] [ text feast.feast ]) feasts)
+        , div []
+            [ viewFeastActivities feasts ]
         ]
-        []
 
 
-viewFeastDay : { a | date : String, feasts : List String } -> Html Msg
-viewFeastDay feastDay =
+viewFeast : FeastActivities -> Html Msg
+viewFeast feastActivities =
+    div [] [ text feastActivities.feast ]
+
+
+viewFeastActivities : List FeastActivities -> Html Msg
+viewFeastActivities feastActivities =
     let
-        link =
-            feastDay.date
+        activities =
+            List.concatMap .activities feastActivities
     in
-    div
-        []
-        [ dateHR
-        , a
-            [ style "color" "black"
-            , href link
-            , class "grid grid-cols-calendar gap-3 items-center justify-items-center"
-            , class "hover:bg-csc-lightpurple"
-            , class "rounded"
+    div []
+        [ viewVideos (videoActivities activities)
+        ]
+
+
+viewVideos : List VideoActivity -> Html Msg
+viewVideos videos =
+    if List.isEmpty videos then
+        span [] []
+
+    else
+        div []
+            [ h2 [] [ text "Videos" ]
+            , div []
+                (List.map
+                    (\video ->
+                        a
+                            [ href video.link
+                            , target "_blank"
+                            ]
+                            [ text video.title
+                            ]
+                    )
+                    videos
+                )
             ]
-            [ div
-                [ class "my-3"
-                , class "text-3xl"
-                ]
-                [ text feastDay.date ]
-            , div
-                [ class "justify-self-start"
-                ]
-                (List.map viewFeast feastDay.feasts)
-            ]
-        ]
 
 
-viewFeast : String -> Html Msg
-viewFeast feast =
-    div [] [ text feast ]
 
-
-viewFeastDayHeader : String -> String -> Html Msg
-viewFeastDayHeader color month =
-    h2
-        [ class "text-center"
-        , class "col-span-2"
-        , class "grid"
-        , class "content-center"
-        , class "uppercase"
-        , class "text-5xl"
-        , style "font-family" "hvdComicSerifPro"
-        , style "background-color" color
-        , style "border-top" "3px solid black"
-        , style "border-bottom" "3px solid black"
-        , style "height" "2.5em"
-        ]
-        [ text month
-        ]
-
-
-viewFeastDays : List { a | date : String, feasts : List String } -> Html Msg
-viewFeastDays list =
-    div
-        [ class "col-span-1" ]
-        (List.map viewFeastDay list
-            ++ [ dateHR ]
-        )
-
-
-viewMonthPillBox : String -> Html msg
-viewMonthPillBox month =
-    -- TODO: use nav html elements?
-    a
-        [ class "col-span-1"
-        , class "hover:bg-csc-lightblue"
-        , class "rounded"
-        , class "p-2"
-        , class "cursor-pointer"
-        , class "capitalize"
-        , href ("./" ++ month)
-        ]
-        [ text month ]
-
-
-viewBody : String -> Html Msg
-viewBody month =
-    feastDays
-        |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower month)
-        |> List.head
-        |> Maybe.withDefault january
-        |> viewMonth
+-- MONTHLY VIEW
 
 
 viewMonth : FeastMonth -> Html Msg
@@ -274,7 +208,7 @@ viewMonth feastMonth =
     in
     div
         []
-        [ h1 [] [ text "Feast Day Activities" ]
+        [ h1 [ class "text-center" ] [ text "2023 Feast Day Activities" ]
         , div
             [ class "grid grid-cols-12"
             , class "text-base md:text-3xl lg:text-3xl"
@@ -300,8 +234,105 @@ viewMonth feastMonth =
                 , style "background-color" "white"
                 , style "padding" "50px"
                 ]
-                [ viewFeastDays firstHalf
-                , viewFeastDays secondHalf
+                [ viewFeastDays feastMonth.key firstHalf
+                , viewFeastDays feastMonth.key secondHalf
                 ]
             ]
         ]
+
+
+viewFeastDayHeader : String -> String -> Html Msg
+viewFeastDayHeader color month =
+    h2
+        [ class "text-center"
+        , class "col-span-2"
+        , class "grid"
+        , class "content-center"
+        , class "uppercase"
+        , class "text-5xl"
+        , style "font-family" "hvdComicSerifPro"
+        , style "background-color" color
+        , style "border-top" "3px solid black"
+        , style "border-bottom" "3px solid black"
+        , style "height" "2.5em"
+        ]
+        [ text month
+        ]
+
+
+viewFeastDays : String -> List FeastDay -> Html Msg
+viewFeastDays month list =
+    div
+        [ class "col-span-1" ]
+        (List.map (viewFeastDay month) list
+            ++ [ dateHR ]
+        )
+
+
+viewFeastDay : String -> FeastDay -> Html Msg
+viewFeastDay month feastDay =
+    let
+        link =
+            urlPath ++ "/" ++ month ++ "/" ++ feastDay.date
+    in
+    div
+        []
+        [ dateHR
+        , a
+            [ style "color" "black"
+            , href link
+            , class "grid grid-cols-calendar gap-3 items-center justify-items-center"
+            , class "hover:bg-csc-lightpurple"
+            , class "rounded"
+            ]
+            [ div
+                [ class "my-3"
+                , class "text-3xl"
+                ]
+                [ text feastDay.date ]
+            , div
+                [ class "justify-self-start"
+                ]
+                (List.map viewFeast feastDay.feasts)
+            ]
+        ]
+
+
+viewMonthPillBox : String -> Html msg
+viewMonthPillBox month =
+    -- TODO: use nav html elements?
+    a
+        [ class "col-span-1"
+        , class "hover:bg-csc-lightblue"
+        , class "rounded"
+        , class "p-2"
+        , class "cursor-pointer"
+        , class "capitalize"
+        , href ("./" ++ month)
+        ]
+        [ text month ]
+
+
+urlPath : String
+urlPath =
+    "/feastdayactivities"
+
+
+viewLink : String -> Html Msg
+viewLink path =
+    li [] [ a [ href path ] [ text path ] ]
+
+
+dateWidth : String
+dateWidth =
+    "50px"
+
+
+dateHR : Html Msg
+dateHR =
+    hr
+        [ style "width" dateWidth
+        , style "margin-left" "0px"
+        , style "border-top" "4px solid #415c71"
+        ]
+        []
