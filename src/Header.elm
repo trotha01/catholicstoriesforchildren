@@ -24,7 +24,7 @@ viewHeader currentPage leftMargin =
         , style "color" "#333"
         , class "colorDarkGray"
         , class "relative"
-        , style "height" "48px"
+        , style "height" "111px"
         , style "font-size" "19px"
 
         -- overflow hidden is so that the header includes the content, otherwise it collapses
@@ -66,7 +66,7 @@ viewHeaderTitle title =
         ]
         [ h1
             [ style "font-family" "hvdComicSerifPro"
-            , style "font-size" "19px"
+            , style "font-size" "34px"
             , style "margin" "0px"
             ]
             [ text "Catholic Stories for Children" ]

@@ -88,26 +88,6 @@ var htmlPart3 = `</title>
           left: 50%;
           transform: translate(-50%);
         }
-        .FortyToEightypadding {
-          padding: 20px 40px;
-        }
-        .fontSize {
-          font-size:1.4em;
-        }
-        h2 {
-          font-size: 32px;
-        }
-      }
-      @media (min-width: 721px) {
-        .FortyToEightypadding {
-          padding: 40px 80px;
-        }
-        .fontSize {
-          font-size:1.6em
-        }
-        h2 {
-          font-size: 32px;
-        }
       }
     </style>
 `

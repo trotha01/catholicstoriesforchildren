@@ -53,12 +53,12 @@ view =
 
 section1Background : List (Attribute Never)
 section1Background =
-    [ style "background" "#3d5d75" ]
+    [ style "background" "#fff" ]
 
 
 section2Background : List (Attribute Never)
 section2Background =
-    [ style "background" "#FEF7F4" ]
+    [ style "background" "#fff" ]
 
 
 section3Background : List (Attribute Never)
@@ -74,8 +74,8 @@ section4Background =
 viewBody : Html.String.Html Never
 viewBody =
     div
-        [ -- for parallax
-          style "transform-style" "preserve-3d"
+        [ class "text-lg leading-loose"
+        , class "lg:text-2xl"
         ]
         [ viewSection "videos"
             section1Background
@@ -127,24 +127,27 @@ viewBody =
                         ]
                         []
                     ]
-                , div []
+                , div
+                    [ class "mt-32 lg:mt-48"
+                    ]
                     [ div []
                         [ h2
-                            [ style "color" "white"
-                            , style "text-align" "center"
-                            , style "font-size" "4rem"
+                            [ style "text-align" "center"
                             , style "line-height" "1.2em"
                             , style "font-family" "hvdComicSerifPro"
-                            , style "margin-top" "100px"
+                            , class "text-4xl md:text-7xl"
+                            , class "m-5"
                             ]
                             [ text "Animations" ]
                         ]
-                    , div [ style "width" "100%" ]
+                    , div
+                        [ class "w-full"
+                        , class "grid grid-cols-1 lg:grid-cols-2"
+                        , class "max-w-7xl"
+                        , class "m-auto"
+                        ]
                         [ a
-                            [ style "padding" "10px"
-                            , style "display" "inline-block"
-                            , style "width" "33%"
-                            , href "/animations/hailmary"
+                            [ href "/animations/hailmary"
                             , class "hover:scale-105 transition ease-in-out duration-50"
                             ]
                             [ img
@@ -156,10 +159,8 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , style "padding" "10px"
-                            , style "display" "inline-block"
-                            , style "width" "33%"
                             , class "hover:grayscale transition ease-in-out duration-50"
+                            , class "hover:cursor-not-allowed"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnail_8kiHWq1pu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897611"
@@ -170,10 +171,8 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , style "padding" "10px"
-                            , style "display" "inline-block"
-                            , style "width" "33%"
                             , class "hover:grayscale transition ease-in-out duration-50"
+                            , class "hover:cursor-not-allowed"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722"
@@ -182,14 +181,10 @@ viewBody =
                                 ]
                                 []
                             ]
-                        ]
-                    , div []
-                        [ div
+                        , div
                             [ style "border-radius" "5px"
-                            , style "padding" "10px"
-                            , style "display" "inline-block"
-                            , style "width" "33%"
                             , class "hover:grayscale transition ease-in-out duration-50"
+                            , class "hover:cursor-not-allowed"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
@@ -200,10 +195,8 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , style "padding" "10px"
-                            , style "display" "inline-block"
-                            , style "width" "33%"
                             , class "hover:grayscale transition ease-in-out duration-50"
+                            , class "hover:cursor-not-allowed"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552"
@@ -214,10 +207,8 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , style "padding" "10px"
-                            , style "display" "inline-block"
-                            , style "width" "33%"
                             , class "hover:grayscale transition ease-in-out duration-50"
+                            , class "hover:cursor-not-allowed"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276"
@@ -242,16 +233,18 @@ viewBody =
                 , style "margin" "auto"
                 , style "font-weight" "400"
                 , style "line-height" "1.7em"
+                , cornerBorder
                 ]
                 [ h2
                     [ style "color" "#325164"
                     , style "text-align" "center"
-                    , style "font-size" "4rem"
                     , style "line-height" "1.2em"
                     , style "font-family" "hvdComicSerifPro"
+                    , class "text-4xl md:text-7xl"
+                    , class "m-5"
                     ]
                     [ text "About" ]
-                , p []
+                , p [ class "mb-4" ]
                     [ text """Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
                     ]
                 , p []
@@ -260,6 +253,7 @@ viewBody =
                 ]
             , div
                 [ style "text-align" "center"
+                , class "m-8"
                 ]
                 [ a
                     [ href "/team"
@@ -284,10 +278,10 @@ viewBody =
                 ]
                 [ h2
                     [ style "text-align" "center"
-                    , style "font-size" "4rem"
-                    , style "line-height" "1.2em"
                     , style "font-family" "hvdComicSerifPro"
                     , style "color" "#333333"
+                    , class "text-5xl"
+                    , class "mt-24 mb-5"
                     ]
                     [ text "Contact Us!" ]
                 , div
@@ -304,9 +298,11 @@ viewBody =
                         ]
                     , p
                         [ style "overflow-wrap" "anywhere"
+                        , class "text-base lg:text-3xl"
+                        , class "mt-3 lg:mt-5"
                         ]
-                        [ span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
-                        , span [ style "display" "inline-block" ]
+                        [ -- span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
+                          span [ style "display" "inline-block" ]
                             [ text "trevor"
                             , span [] [ text "@" ]
                             ]
@@ -372,10 +368,10 @@ viewBody =
             section4Background
             [ h2
                 [ style "text-align" "center"
-                , style "font-size" "4rem"
-                , style "line-height" "1.2em"
+                , class "text-5xl"
                 , style "font-family" "hvdComicSerifPro"
                 , style "color" "#333333"
+                , class "mt-24 mb-5"
                 ]
                 [ text "Stay Updated!" ]
             , div
@@ -392,7 +388,7 @@ viewBody =
                     , rel "noopener"
                     , target "_blank"
                     , style "text-decoration" "none"
-                    , style "padding" "20px"
+                    , style "padding" "10px"
                     , style "display" "inline-block"
                     , style "color" "black"
                     , style "border" "2px solid #777"
@@ -401,14 +397,16 @@ viewBody =
                     ]
                     [ text "Latest News" ]
                 , p
-                    [ style "margin-top" "80px" ]
+                    [ style "margin-top" "80px"
+                    , class "pb-5"
+                    ]
                     [ text "Sign up for our email list to get updates!" ]
                 , a
                     [ href "https://signup.catholicstoriesforchildren.com"
                     , rel "noopener"
                     , target "_blank"
                     , style "text-decoration" "none"
-                    , style "padding" "20px"
+                    , style "padding" "10px"
                     , style "display" "inline-block"
                     , style "color" "black"
                     , style "border" "2px solid #777"
@@ -426,25 +424,10 @@ viewBody =
             , style "text-align" "-webkit-center"
             , style "font-weight" "400"
             , style "line-height" "1.7"
+            , style "background" "#9DE2EA80"
             ]
             [ div
-                [ style "transform" "translateZ(0px)"
-                , style "position" "absolute"
-                , style "top" "0"
-                , style "left" "0"
-                , style "right" "0"
-                , style "bottom" "0"
-                , style "background" "#9DE2EA80"
-                , style "mix-blend-mode" "normal"
-                ]
                 []
-            , div
-                [ style "position" "absolute"
-                , style "top" "100px"
-                , style "left" "0"
-                , style "right" "0"
-                , style "bottom" "0"
-                ]
                 [ h2
                     [ style "text-align" "center"
                     , style "font-size" "4rem"
@@ -518,6 +501,8 @@ viewSection sectionId background body =
     section
         ([ id sectionId
          , class "FortyToEightypadding"
+         , class "px-5 py-5 md:px-10 md:py-40"
+         , class "pb-48"
          , style "transform-style" "preserve-3d"
          , style "min-height" "100vh"
          ]
@@ -551,3 +536,11 @@ viewBanner url title pageUrl =
             ]
             [ text title ]
         ]
+
+
+cornerBorder : Attribute msg
+cornerBorder =
+    class
+        ("before:absolute before:w-56 md:before:w-80 lg:before:w-96 before:h-4 before:top-0"
+            ++ " before:border-t-4 before:border-l-4 before:border-solid before:border-csc-lightblue before:rounded"
+        )
