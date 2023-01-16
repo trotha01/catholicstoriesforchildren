@@ -140,10 +140,12 @@ viewBody =
                             [ text "Animations" ]
                         ]
                     , div [ style "width" "100%" ]
-                        [ div
+                        [ a
                             [ style "padding" "10px"
                             , style "display" "inline-block"
                             , style "width" "33%"
+                            , href "/animations/hailmary"
+                            , class "hover:scale-105 transition ease-in-out duration-50"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348"
@@ -157,6 +159,7 @@ viewBody =
                             , style "padding" "10px"
                             , style "display" "inline-block"
                             , style "width" "33%"
+                            , class "hover:grayscale transition ease-in-out duration-50"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnail_8kiHWq1pu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897611"
@@ -170,6 +173,7 @@ viewBody =
                             , style "padding" "10px"
                             , style "display" "inline-block"
                             , style "width" "33%"
+                            , class "hover:grayscale transition ease-in-out duration-50"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722"
@@ -185,6 +189,7 @@ viewBody =
                             , style "padding" "10px"
                             , style "display" "inline-block"
                             , style "width" "33%"
+                            , class "hover:grayscale transition ease-in-out duration-50"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
@@ -198,6 +203,7 @@ viewBody =
                             , style "padding" "10px"
                             , style "display" "inline-block"
                             , style "width" "33%"
+                            , class "hover:grayscale transition ease-in-out duration-50"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552"
@@ -211,6 +217,7 @@ viewBody =
                             , style "padding" "10px"
                             , style "display" "inline-block"
                             , style "width" "33%"
+                            , class "hover:grayscale transition ease-in-out duration-50"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276"
@@ -225,29 +232,6 @@ viewBody =
                             ]
                             []
                         ]
-                    ]
-                , div
-                    [ style "position" "relative"
-                    , style "padding-bottom" "56.25%"
-                    , height 0
-                    , style "overflow" "hidden"
-                    , style "max-width" "100%"
-                    , style "border-radius" "5px"
-                    , style "margin-top" "80px"
-                    ]
-                    [ iframe
-                        [ style "position" "absolute"
-                        , style "width" "100%"
-                        , style "height" "100%"
-                        , style "top" "0"
-                        , style "left" "0"
-                        , src "https://www.youtube.com/embed/HW0DzGEoa1Y"
-                        , title "Hail Mary, Full of Grace Video"
-                        , property "frameborder" (Json.Encode.string "0")
-                        , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-                        , property "allowfullscreen" (Json.Encode.string "true")
-                        ]
-                        []
                     ]
                 ]
             ]
