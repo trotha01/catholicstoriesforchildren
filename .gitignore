@@ -1,3 +1,4 @@
 *.swp
 elm-stuff/
-elm.js
+/elm.js
+/teamElm.js

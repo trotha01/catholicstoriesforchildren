@@ -77,7 +77,7 @@ function A9(fun, a, b, c, d, e, f, g, h, i) {
   return fun.a === 9 ? fun.f(a, b, c, d, e, f, g, h, i) : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
 
-
+console.warn('Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.');
 
 
 // EQUALITY
@@ -113,7 +113,7 @@ function _Utils_eqHelp(x, y, depth, stack)
 		return true;
 	}
 
-	/**_UNUSED/
+	/**/
 	if (x.$ === 'Set_elm_builtin')
 	{
 		x = $elm$core$Set$toList(x);
@@ -126,7 +126,7 @@ function _Utils_eqHelp(x, y, depth, stack)
 	}
 	//*/
 
-	/**/
+	/**_UNUSED/
 	if (x.$ < 0)
 	{
 		x = $elm$core$Dict$toList(x);
@@ -161,7 +161,7 @@ function _Utils_cmp(x, y, ord)
 		return x === y ? /*EQ*/ 0 : x < y ? /*LT*/ -1 : /*GT*/ 1;
 	}
 
-	/**_UNUSED/
+	/**/
 	if (x instanceof String)
 	{
 		var a = x.valueOf();
@@ -170,10 +170,10 @@ function _Utils_cmp(x, y, ord)
 	}
 	//*/
 
-	/**/
+	/**_UNUSED/
 	if (typeof x.$ === 'undefined')
 	//*/
-	/**_UNUSED/
+	/**/
 	if (x.$[0] === '#')
 	//*/
 	{
@@ -203,17 +203,17 @@ var _Utils_compare = F2(function(x, y)
 
 // COMMON VALUES
 
-var _Utils_Tuple0 = 0;
-var _Utils_Tuple0_UNUSED = { $: '#0' };
+var _Utils_Tuple0_UNUSED = 0;
+var _Utils_Tuple0 = { $: '#0' };
 
-function _Utils_Tuple2(a, b) { return { a: a, b: b }; }
-function _Utils_Tuple2_UNUSED(a, b) { return { $: '#2', a: a, b: b }; }
+function _Utils_Tuple2_UNUSED(a, b) { return { a: a, b: b }; }
+function _Utils_Tuple2(a, b) { return { $: '#2', a: a, b: b }; }
 
-function _Utils_Tuple3(a, b, c) { return { a: a, b: b, c: c }; }
-function _Utils_Tuple3_UNUSED(a, b, c) { return { $: '#3', a: a, b: b, c: c }; }
+function _Utils_Tuple3_UNUSED(a, b, c) { return { a: a, b: b, c: c }; }
+function _Utils_Tuple3(a, b, c) { return { $: '#3', a: a, b: b, c: c }; }
 
-function _Utils_chr(c) { return c; }
-function _Utils_chr_UNUSED(c) { return new String(c); }
+function _Utils_chr_UNUSED(c) { return c; }
+function _Utils_chr(c) { return new String(c); }
 
 
 // RECORDS
@@ -264,11 +264,11 @@ function _Utils_ap(xs, ys)
 
 
 
-var _List_Nil = { $: 0 };
-var _List_Nil_UNUSED = { $: '[]' };
+var _List_Nil_UNUSED = { $: 0 };
+var _List_Nil = { $: '[]' };
 
-function _List_Cons(hd, tl) { return { $: 1, a: hd, b: tl }; }
-function _List_Cons_UNUSED(hd, tl) { return { $: '::', a: hd, b: tl }; }
+function _List_Cons_UNUSED(hd, tl) { return { $: 1, a: hd, b: tl }; }
+function _List_Cons(hd, tl) { return { $: '::', a: hd, b: tl }; }
 
 
 var _List_cons = F2(_List_Cons);
@@ -499,12 +499,12 @@ var _JsArray_appendN = F3(function(n, dest, source)
 
 // LOG
 
-var _Debug_log = F2(function(tag, value)
+var _Debug_log_UNUSED = F2(function(tag, value)
 {
 	return value;
 });
 
-var _Debug_log_UNUSED = F2(function(tag, value)
+var _Debug_log = F2(function(tag, value)
 {
 	console.log(tag + ': ' + _Debug_toString(value));
 	return value;
@@ -530,12 +530,12 @@ function _Debug_todoCase(moduleName, region, value)
 
 // TO STRING
 
-function _Debug_toString(value)
+function _Debug_toString_UNUSED(value)
 {
 	return '<internals>';
 }
 
-function _Debug_toString_UNUSED(value)
+function _Debug_toString(value)
 {
 	return _Debug_toAnsiString(false, value);
 }
@@ -720,13 +720,13 @@ function _Debug_toHexDigit(n)
 // CRASH
 
 
-function _Debug_crash(identifier)
+function _Debug_crash_UNUSED(identifier)
 {
 	throw new Error('https://github.com/elm/core/blob/1.0.0/hints/' + identifier + '.md');
 }
 
 
-function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
+function _Debug_crash(identifier, fact1, fact2, fact3, fact4)
 {
 	switch(identifier)
 	{
@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.S.I === region.X.I)
+	if (region.start.line === region.end.line)
 	{
-		return 'on line ' + region.S.I;
+		return 'on line ' + region.start.line;
 	}
-	return 'on lines ' + region.S.I + ' through ' + region.X.I;
+	return 'on lines ' + region.start.line + ' through ' + region.end.line;
 }
 
 
@@ -1212,7 +1212,7 @@ function _Char_toLocaleLower(char)
 
 
 
-/**_UNUSED/
+/**/
 function _Json_errorToString(error)
 {
 	return $elm$json$Json$Decode$errorToString(error);
@@ -1616,11 +1616,11 @@ var _Json_encode = F2(function(indentLevel, value)
 	return JSON.stringify(_Json_unwrap(value), null, indentLevel) + '';
 });
 
-function _Json_wrap_UNUSED(value) { return { $: 0, a: value }; }
-function _Json_unwrap_UNUSED(value) { return value.a; }
+function _Json_wrap(value) { return { $: 0, a: value }; }
+function _Json_unwrap(value) { return value.a; }
 
-function _Json_wrap(value) { return value; }
-function _Json_unwrap(value) { return value; }
+function _Json_wrap_UNUSED(value) { return value; }
+function _Json_unwrap_UNUSED(value) { return value; }
 
 function _Json_emptyArray() { return []; }
 function _Json_emptyObject() { return {}; }
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aJ,
-		impl.aW,
-		impl.aT,
+		impl.init,
+		impl.update,
+		impl.subscriptions,
 		function() { return function() {} }
 	);
 });
@@ -1872,7 +1872,7 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 function _Platform_initialize(flagDecoder, args, init, update, subscriptions, stepperBuilder)
 {
 	var result = A2(_Json_run, flagDecoder, _Json_wrap(args ? args['flags'] : undefined));
-	$elm$core$Result$isOk(result) || _Debug_crash(2 /**_UNUSED/, _Json_errorToString(result.a) /**/);
+	$elm$core$Result$isOk(result) || _Debug_crash(2 /**/, _Json_errorToString(result.a) /**/);
 	var managers = {};
 	var initPair = init(result.a);
 	var model = initPair.a;
@@ -2316,7 +2316,7 @@ function _Platform_setupIncomingPort(name, sendToApp)
 //
 
 
-function _Platform_export(exports)
+function _Platform_export_UNUSED(exports)
 {
 	scope['Elm']
 		? _Platform_mergeExportsProd(scope['Elm'], exports)
@@ -2337,7 +2337,7 @@ function _Platform_mergeExportsProd(obj, exports)
 }
 
 
-function _Platform_export_UNUSED(exports)
+function _Platform_export(exports)
 {
 	scope['Elm']
 		? _Platform_mergeExportsDebug('Elm', scope['Elm'], exports)
@@ -2377,10 +2377,10 @@ var _VirtualDom_init = F4(function(virtualNode, flagDecoder, debugMetadata, args
 {
 	// NOTE: this function needs _Platform_export available to work
 
-	/**/
+	/**_UNUSED/
 	var node = args['node'];
 	//*/
-	/**_UNUSED/
+	/**/
 	var node = args && args['node'] ? args['node'] : _Debug_crash(0);
 	//*/
 
@@ -2635,24 +2635,24 @@ function _VirtualDom_noInnerHtmlOrFormAction(key)
 	return key == 'innerHTML' || key == 'formAction' ? 'data-' + key : key;
 }
 
-function _VirtualDom_noJavaScriptUri(value)
+function _VirtualDom_noJavaScriptUri_UNUSED(value)
 {
 	return /^javascript:/i.test(value.replace(/\s/g,'')) ? '' : value;
 }
 
-function _VirtualDom_noJavaScriptUri_UNUSED(value)
+function _VirtualDom_noJavaScriptUri(value)
 {
 	return /^javascript:/i.test(value.replace(/\s/g,''))
 		? 'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'
 		: value;
 }
 
-function _VirtualDom_noJavaScriptOrHtmlUri(value)
+function _VirtualDom_noJavaScriptOrHtmlUri_UNUSED(value)
 {
 	return /^\s*(javascript:|data:text\/html)/i.test(value) ? '' : value;
 }
 
-function _VirtualDom_noJavaScriptOrHtmlUri_UNUSED(value)
+function _VirtualDom_noJavaScriptOrHtmlUri(value)
 {
 	return /^\s*(javascript:|data:text\/html)/i.test(value)
 		? 'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'
@@ -2704,9 +2704,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		x: func(record.x),
-		T: record.T,
-		Q: record.Q
+		message: func(record.message),
+		stopPropagation: record.stopPropagation,
+		preventDefault: record.preventDefault
 	}
 });
 
@@ -2974,11 +2974,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.x;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.T;
+		var message = !tag ? value : tag < 3 ? value.a : value.message;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.stopPropagation;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.Q) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.preventDefault) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3928,15 +3928,15 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aJ,
-		impl.aW,
-		impl.aT,
+		impl.init,
+		impl.update,
+		impl.subscriptions,
 		function(sendToApp, initialModel) {
-			var view = impl.aY;
-			/**/
+			var view = impl.view;
+			/**_UNUSED/
 			var domNode = args['node'];
 			//*/
-			/**_UNUSED/
+			/**/
 			var domNode = args && args['node'] ? args['node'] : _Debug_crash(0);
 			//*/
 			var currNode = _VirtualDom_virtualize(domNode);
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aJ,
-		impl.aW,
-		impl.aT,
+		impl.init,
+		impl.update,
+		impl.subscriptions,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.R && impl.R(sendToApp)
-			var view = impl.aY;
+			var divertHrefToApp = impl.setup && impl.setup(sendToApp)
+			var view = impl.view;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3977,12 +3977,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aB);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.body);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aV) && (_VirtualDom_doc.title = title = doc.aV);
+				(title !== doc.title) && (_VirtualDom_doc.title = title = doc.title);
 			});
 		}
 	);
@@ -4038,12 +4038,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aL;
-	var onUrlRequest = impl.aM;
+	var onUrlChange = impl.onUrlChange;
+	var onUrlRequest = impl.onUrlRequest;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		R: function(sendToApp)
+		setup: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4059,9 +4059,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.aj === next.aj
-							&& curr.aa === next.aa
-							&& curr.ag.a === next.ag.a
+							&& curr.protocol === next.protocol
+							&& curr.host === next.host
+							&& curr.port_.a === next.port_.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aJ: function(flags)
+		init: function(flags)
 		{
-			return A3(impl.aJ, flags, _Browser_getUrl(), key);
+			return A3(impl.init, flags, _Browser_getUrl(), key);
 		},
-		aY: impl.aY,
-		aW: impl.aW,
-		aT: impl.aT
+		view: impl.view,
+		update: impl.update,
+		subscriptions: impl.subscriptions
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aH: 'hidden', aC: 'visibilitychange' }
+		? { hidden: 'hidden', change: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aH: 'mozHidden', aC: 'mozvisibilitychange' }
+		? { hidden: 'mozHidden', change: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aH: 'msHidden', aC: 'msvisibilitychange' }
+		? { hidden: 'msHidden', change: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aH: 'webkitHidden', aC: 'webkitvisibilitychange' }
-		: { aH: 'hidden', aC: 'visibilitychange' };
+		? { hidden: 'webkitHidden', change: 'webkitvisibilitychange' }
+		: { hidden: 'hidden', change: 'visibilitychange' };
 }
 
 
@@ -4232,12 +4232,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		ap: _Browser_getScene(),
-		au: {
-			aw: _Browser_window.pageXOffset,
-			ax: _Browser_window.pageYOffset,
-			av: _Browser_doc.documentElement.clientWidth,
-			_: _Browser_doc.documentElement.clientHeight
+		scene: _Browser_getScene(),
+		viewport: {
+			x: _Browser_window.pageXOffset,
+			y: _Browser_window.pageYOffset,
+			width: _Browser_doc.documentElement.clientWidth,
+			height: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4247,8 +4247,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		av: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		_: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		width: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		height: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4271,15 +4271,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			ap: {
-				av: node.scrollWidth,
-				_: node.scrollHeight
+			scene: {
+				width: node.scrollWidth,
+				height: node.scrollHeight
 			},
-			au: {
-				aw: node.scrollLeft,
-				ax: node.scrollTop,
-				av: node.clientWidth,
-				_: node.clientHeight
+			viewport: {
+				x: node.scrollLeft,
+				y: node.scrollTop,
+				width: node.clientWidth,
+				height: node.clientHeight
 			}
 		};
 	});
@@ -4309,18 +4309,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			ap: _Browser_getScene(),
-			au: {
-				aw: x,
-				ax: y,
-				av: _Browser_doc.documentElement.clientWidth,
-				_: _Browser_doc.documentElement.clientHeight
+			scene: _Browser_getScene(),
+			viewport: {
+				x: x,
+				y: y,
+				width: _Browser_doc.documentElement.clientWidth,
+				height: _Browser_doc.documentElement.clientHeight
 			},
-			aE: {
-				aw: x + rect.left,
-				ax: y + rect.top,
-				av: rect.width,
-				_: rect.height
+			element: {
+				x: x + rect.left,
+				y: y + rect.top,
+				width: rect.width,
+				height: rect.height
 			}
 		};
 	});
@@ -4357,54 +4357,36 @@ function _Browser_load(url)
 }
 
 
-
-var _Bitwise_and = F2(function(a, b)
+function _Url_percentEncode(string)
 {
-	return a & b;
-});
+	return encodeURIComponent(string);
+}
 
-var _Bitwise_or = F2(function(a, b)
+function _Url_percentDecode(string)
 {
-	return a | b;
-});
-
-var _Bitwise_xor = F2(function(a, b)
-{
-	return a ^ b;
-});
-
-function _Bitwise_complement(a)
-{
-	return ~a;
+	try
+	{
+		return $elm$core$Maybe$Just(decodeURIComponent(string));
+	}
+	catch (e)
+	{
+		return $elm$core$Maybe$Nothing;
+	}
+}var $author$project$FeastDayActivities$Main$LinkClicked = function (a) {
+	return {$: 'LinkClicked', a: a};
 };
-
-var _Bitwise_shiftLeftBy = F2(function(offset, a)
-{
-	return a << offset;
-});
-
-var _Bitwise_shiftRightBy = F2(function(offset, a)
-{
-	return a >> offset;
-});
-
-var _Bitwise_shiftRightZfBy = F2(function(offset, a)
-{
-	return a >>> offset;
-});
-var $elm$core$Basics$apR = F2(
-	function (x, f) {
-		return f(x);
-	});
-var $elm$core$Basics$EQ = 1;
-var $elm$core$Basics$GT = 2;
-var $elm$core$Basics$LT = 0;
+var $author$project$FeastDayActivities$Main$UrlChanged = function (a) {
+	return {$: 'UrlChanged', a: a};
+};
+var $elm$core$Basics$EQ = {$: 'EQ'};
+var $elm$core$Basics$GT = {$: 'GT'};
+var $elm$core$Basics$LT = {$: 'LT'};
 var $elm$core$List$cons = _List_cons;
 var $elm$core$Dict$foldr = F3(
 	function (func, acc, t) {
 		foldr:
 		while (true) {
-			if (t.$ === -2) {
+			if (t.$ === 'RBEmpty_elm_builtin') {
 				return acc;
 			} else {
 				var key = t.b;
@@ -4449,7 +4431,7 @@ var $elm$core$Dict$keys = function (dict) {
 		dict);
 };
 var $elm$core$Set$toList = function (_v0) {
-	var dict = _v0;
+	var dict = _v0.a;
 	return $elm$core$Dict$keys(dict);
 };
 var $elm$core$Elm$JsArray$foldr = _JsArray_foldr;
@@ -4459,7 +4441,7 @@ var $elm$core$Array$foldr = F3(
 		var tail = _v0.d;
 		var helper = F2(
 			function (node, acc) {
-				if (!node.$) {
+				if (node.$ === 'SubTree') {
 					var subTree = node.a;
 					return A3($elm$core$Elm$JsArray$foldr, helper, acc, subTree);
 				} else {
@@ -4477,32 +4459,32 @@ var $elm$core$Array$toList = function (array) {
 	return A3($elm$core$Array$foldr, $elm$core$List$cons, _List_Nil, array);
 };
 var $elm$core$Result$Err = function (a) {
-	return {$: 1, a: a};
+	return {$: 'Err', a: a};
 };
 var $elm$json$Json$Decode$Failure = F2(
 	function (a, b) {
-		return {$: 3, a: a, b: b};
+		return {$: 'Failure', a: a, b: b};
 	});
 var $elm$json$Json$Decode$Field = F2(
 	function (a, b) {
-		return {$: 0, a: a, b: b};
+		return {$: 'Field', a: a, b: b};
 	});
 var $elm$json$Json$Decode$Index = F2(
 	function (a, b) {
-		return {$: 1, a: a, b: b};
+		return {$: 'Index', a: a, b: b};
 	});
 var $elm$core$Result$Ok = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Ok', a: a};
 };
 var $elm$json$Json$Decode$OneOf = function (a) {
-	return {$: 2, a: a};
+	return {$: 'OneOf', a: a};
 };
-var $elm$core$Basics$False = 1;
+var $elm$core$Basics$False = {$: 'False'};
 var $elm$core$Basics$add = _Basics_add;
 var $elm$core$Maybe$Just = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Just', a: a};
 };
-var $elm$core$Maybe$Nothing = {$: 1};
+var $elm$core$Maybe$Nothing = {$: 'Nothing'};
 var $elm$core$String$all = _String_all;
 var $elm$core$Basics$and = _Basics_and;
 var $elm$core$Basics$append = _Utils_append;
@@ -4627,12 +4609,12 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 		errorToStringHelp:
 		while (true) {
 			switch (error.$) {
-				case 0:
+				case 'Field':
 					var f = error.a;
 					var err = error.b;
 					var isSimple = function () {
 						var _v1 = $elm$core$String$uncons(f);
-						if (_v1.$ === 1) {
+						if (_v1.$ === 'Nothing') {
 							return false;
 						} else {
 							var _v2 = _v1.a;
@@ -4647,7 +4629,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 					error = $temp$error;
 					context = $temp$context;
 					continue errorToStringHelp;
-				case 1:
+				case 'Index':
 					var i = error.a;
 					var err = error.b;
 					var indexName = '[' + ($elm$core$String$fromInt(i) + ']');
@@ -4656,7 +4638,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 					error = $temp$error;
 					context = $temp$context;
 					continue errorToStringHelp;
-				case 2:
+				case 'OneOf':
 					var errors = error.a;
 					if (!errors.b) {
 						return 'Ran into a Json.Decode.oneOf with no possibilities' + function () {
@@ -4720,7 +4702,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 var $elm$core$Array$branchFactor = 32;
 var $elm$core$Array$Array_elm_builtin = F4(
 	function (a, b, c, d) {
-		return {$: 0, a: a, b: b, c: c, d: d};
+		return {$: 'Array_elm_builtin', a: a, b: b, c: c, d: d};
 	});
 var $elm$core$Elm$JsArray$empty = _JsArray_empty;
 var $elm$core$Basics$ceiling = _Basics_ceiling;
@@ -4735,10 +4717,14 @@ var $elm$core$Array$shiftStep = $elm$core$Basics$ceiling(
 var $elm$core$Array$empty = A4($elm$core$Array$Array_elm_builtin, 0, $elm$core$Array$shiftStep, $elm$core$Elm$JsArray$empty, $elm$core$Elm$JsArray$empty);
 var $elm$core$Elm$JsArray$initialize = _JsArray_initialize;
 var $elm$core$Array$Leaf = function (a) {
-	return {$: 1, a: a};
+	return {$: 'Leaf', a: a};
 };
 var $elm$core$Basics$apL = F2(
 	function (f, x) {
+		return f(x);
+	});
+var $elm$core$Basics$apR = F2(
+	function (x, f) {
 		return f(x);
 	});
 var $elm$core$Basics$eq = _Utils_equal;
@@ -4751,7 +4737,7 @@ var $elm$core$Basics$max = F2(
 	});
 var $elm$core$Basics$mul = _Basics_mul;
 var $elm$core$Array$SubTree = function (a) {
-	return {$: 0, a: a};
+	return {$: 'SubTree', a: a};
 };
 var $elm$core$Elm$JsArray$initializeFromList = _JsArray_initializeFromList;
 var $elm$core$Array$compressNodes = F2(
@@ -4798,25 +4784,25 @@ var $elm$core$Array$treeFromBuilder = F2(
 	});
 var $elm$core$Array$builderToArray = F2(
 	function (reverseNodeList, builder) {
-		if (!builder.g) {
+		if (!builder.nodeListSize) {
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.i),
+				$elm$core$Elm$JsArray$length(builder.tail),
 				$elm$core$Array$shiftStep,
 				$elm$core$Elm$JsArray$empty,
-				builder.i);
+				builder.tail);
 		} else {
-			var treeLen = builder.g * $elm$core$Array$branchFactor;
+			var treeLen = builder.nodeListSize * $elm$core$Array$branchFactor;
 			var depth = $elm$core$Basics$floor(
 				A2($elm$core$Basics$logBase, $elm$core$Array$branchFactor, treeLen - 1));
-			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.j) : builder.j;
-			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.g);
+			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.nodeList) : builder.nodeList;
+			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.nodeListSize);
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.i) + treeLen,
+				$elm$core$Elm$JsArray$length(builder.tail) + treeLen,
 				A2($elm$core$Basics$max, 5, depth * $elm$core$Array$shiftStep),
 				tree,
-				builder.i);
+				builder.tail);
 		}
 	});
 var $elm$core$Basics$idiv = _Basics_idiv;
@@ -4829,7 +4815,7 @@ var $elm$core$Array$initializeHelp = F5(
 				return A2(
 					$elm$core$Array$builderToArray,
 					false,
-					{j: nodeList, g: (len / $elm$core$Array$branchFactor) | 0, i: tail});
+					{nodeList: nodeList, nodeListSize: (len / $elm$core$Array$branchFactor) | 0, tail: tail});
 			} else {
 				var leaf = $elm$core$Array$Leaf(
 					A3($elm$core$Elm$JsArray$initialize, $elm$core$Array$branchFactor, fromIndex, fn));
@@ -4859,9 +4845,9 @@ var $elm$core$Array$initialize = F2(
 			return A5($elm$core$Array$initializeHelp, fn, initialFromIndex, len, _List_Nil, tail);
 		}
 	});
-var $elm$core$Basics$True = 0;
+var $elm$core$Basics$True = {$: 'True'};
 var $elm$core$Result$isOk = function (result) {
-	if (!result.$) {
+	if (result.$ === 'Ok') {
 		return true;
 	} else {
 		return false;
@@ -4872,31 +4858,33 @@ var $elm$json$Json$Decode$map2 = _Json_map2;
 var $elm$json$Json$Decode$succeed = _Json_succeed;
 var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 	switch (handler.$) {
-		case 0:
+		case 'Normal':
 			return 0;
-		case 1:
+		case 'MayStopPropagation':
 			return 1;
-		case 2:
+		case 'MayPreventDefault':
 			return 2;
 		default:
 			return 3;
 	}
 };
 var $elm$browser$Browser$External = function (a) {
-	return {$: 1, a: a};
+	return {$: 'External', a: a};
 };
 var $elm$browser$Browser$Internal = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Internal', a: a};
 };
 var $elm$core$Basics$identity = function (x) {
 	return x;
 };
-var $elm$browser$Browser$Dom$NotFound = $elm$core$Basics$identity;
-var $elm$url$Url$Http = 0;
-var $elm$url$Url$Https = 1;
+var $elm$browser$Browser$Dom$NotFound = function (a) {
+	return {$: 'NotFound', a: a};
+};
+var $elm$url$Url$Http = {$: 'Http'};
+var $elm$url$Url$Https = {$: 'Https'};
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {Z: fragment, aa: host, ae: path, ag: port_, aj: protocol, ak: query};
+		return {fragment: fragment, host: host, path: path, port_: port_, protocol: protocol, query: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -4932,7 +4920,7 @@ var $elm$url$Url$chompBeforePath = F5(
 					var i = _v0.a;
 					var _v1 = $elm$core$String$toInt(
 						A2($elm$core$String$dropLeft, i + 1, str));
-					if (_v1.$ === 1) {
+					if (_v1.$ === 'Nothing') {
 						return $elm$core$Maybe$Nothing;
 					} else {
 						var port_ = _v1;
@@ -5015,24 +5003,26 @@ var $elm$core$String$startsWith = _String_startsWith;
 var $elm$url$Url$fromString = function (str) {
 	return A2($elm$core$String$startsWith, 'http://', str) ? A2(
 		$elm$url$Url$chompAfterProtocol,
-		0,
+		$elm$url$Url$Http,
 		A2($elm$core$String$dropLeft, 7, str)) : (A2($elm$core$String$startsWith, 'https://', str) ? A2(
 		$elm$url$Url$chompAfterProtocol,
-		1,
+		$elm$url$Url$Https,
 		A2($elm$core$String$dropLeft, 8, str)) : $elm$core$Maybe$Nothing);
 };
 var $elm$core$Basics$never = function (_v0) {
 	never:
 	while (true) {
-		var nvr = _v0;
+		var nvr = _v0.a;
 		var $temp$_v0 = nvr;
 		_v0 = $temp$_v0;
 		continue never;
 	}
 };
-var $elm$core$Task$Perform = $elm$core$Basics$identity;
+var $elm$core$Task$Perform = function (a) {
+	return {$: 'Perform', a: a};
+};
 var $elm$core$Task$succeed = _Scheduler_succeed;
-var $elm$core$Task$init = $elm$core$Task$succeed(0);
+var $elm$core$Task$init = $elm$core$Task$succeed(_Utils_Tuple0);
 var $elm$core$List$foldrHelper = F4(
 	function (fn, acc, ctr, ls) {
 		if (!ls.b) {
@@ -5138,7 +5128,7 @@ var $elm$core$Task$sequence = function (tasks) {
 var $elm$core$Platform$sendToApp = _Platform_sendToApp;
 var $elm$core$Task$spawnCmd = F2(
 	function (router, _v0) {
-		var task = _v0;
+		var task = _v0.a;
 		return _Scheduler_spawn(
 			A2(
 				$elm$core$Task$andThen,
@@ -5150,7 +5140,7 @@ var $elm$core$Task$onEffects = F3(
 		return A2(
 			$elm$core$Task$map,
 			function (_v0) {
-				return 0;
+				return _Utils_Tuple0;
 			},
 			$elm$core$Task$sequence(
 				A2(
@@ -5160,1354 +5150,1735 @@ var $elm$core$Task$onEffects = F3(
 	});
 var $elm$core$Task$onSelfMsg = F3(
 	function (_v0, _v1, _v2) {
-		return $elm$core$Task$succeed(0);
+		return $elm$core$Task$succeed(_Utils_Tuple0);
 	});
 var $elm$core$Task$cmdMap = F2(
 	function (tagger, _v0) {
-		var task = _v0;
-		return A2($elm$core$Task$map, tagger, task);
+		var task = _v0.a;
+		return $elm$core$Task$Perform(
+			A2($elm$core$Task$map, tagger, task));
 	});
 _Platform_effectManagers['Task'] = _Platform_createManager($elm$core$Task$init, $elm$core$Task$onEffects, $elm$core$Task$onSelfMsg, $elm$core$Task$cmdMap);
 var $elm$core$Task$command = _Platform_leaf('Task');
 var $elm$core$Task$perform = F2(
 	function (toMessage, task) {
 		return $elm$core$Task$command(
-			A2($elm$core$Task$map, toMessage, task));
+			$elm$core$Task$Perform(
+				A2($elm$core$Task$map, toMessage, task)));
+	});
+var $elm$browser$Browser$application = _Browser_application;
+var $author$project$FeastDayActivities$Main$Model = F2(
+	function (key, url) {
+		return {key: key, url: url};
 	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
+var $author$project$FeastDayActivities$Main$init = F3(
+	function (flags, url, key) {
+		return _Utils_Tuple2(
+			A2($author$project$FeastDayActivities$Main$Model, key, url),
+			$elm$core$Platform$Cmd$none);
+	});
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
-var $elm$browser$Browser$sandbox = function (impl) {
-	return _Browser_element(
-		{
-			aJ: function (_v0) {
-				return _Utils_Tuple2(impl.aJ, $elm$core$Platform$Cmd$none);
-			},
-			aT: function (_v1) {
-				return $elm$core$Platform$Sub$none;
-			},
-			aW: F2(
-				function (msg, model) {
-					return _Utils_Tuple2(
-						A2(impl.aW, msg, model),
-						$elm$core$Platform$Cmd$none);
-				}),
-			aY: impl.aY
-		});
+var $author$project$FeastDayActivities$Main$subscriptions = function (_v0) {
+	return $elm$core$Platform$Sub$none;
 };
-var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
-	return {$: 1, a: a};
-};
-var $zwilias$elm_html_string$Html$String$text = $zwilias$elm_html_string$Html$Types$TextNode;
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
-var $elm$json$Json$Encode$bool = _Json_wrap;
-var $elm$virtual_dom$VirtualDom$Custom = function (a) {
-	return {$: 3, a: a};
-};
-var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var $elm$html$Html$Events$custom = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Custom(decoder));
-	});
-var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 0, a: a};
-};
-var $elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var $elm$virtual_dom$VirtualDom$MayPreventDefault = function (a) {
-	return {$: 2, a: a};
-};
-var $elm$html$Html$Events$preventDefaultOn = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$MayPreventDefault(decoder));
-	});
-var $elm$virtual_dom$VirtualDom$property = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_property,
-			_VirtualDom_noInnerHtmlOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$property = $elm$virtual_dom$VirtualDom$property;
-var $elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
-	return {$: 1, a: a};
-};
-var $elm$html$Html$Events$stopPropagationOn = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$MayStopPropagation(decoder));
-	});
-var $elm$json$Json$Encode$string = _Json_wrap;
-var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
-var $zwilias$elm_html_string$Html$Types$attributeToHtml = function (attribute) {
-	switch (attribute.$) {
-		case 0:
-			var key = attribute.a;
-			var value = attribute.b;
-			return A2($elm$html$Html$Attributes$attribute, key, value);
-		case 1:
-			var key = attribute.a;
-			var value = attribute.b;
-			return A2(
-				$elm$html$Html$Attributes$property,
-				key,
-				$elm$json$Json$Encode$string(value));
-		case 2:
-			var key = attribute.a;
-			var value = attribute.b;
-			return A2(
-				$elm$html$Html$Attributes$property,
-				key,
-				$elm$json$Json$Encode$bool(value));
-		case 3:
-			var key = attribute.a;
-			var value = attribute.b;
-			return A2($elm$html$Html$Attributes$property, key, value);
-		case 4:
-			var key = attribute.a;
-			var value = attribute.b;
-			return A2($elm$html$Html$Attributes$style, key, value);
-		default:
-			switch (attribute.b.$) {
-				case 0:
-					var name = attribute.a;
-					var d = attribute.b.a;
-					return A2($elm$html$Html$Events$on, name, d);
-				case 1:
-					var name = attribute.a;
-					var d = attribute.b.a;
-					return A2($elm$html$Html$Events$stopPropagationOn, name, d);
-				case 2:
-					var name = attribute.a;
-					var d = attribute.b.a;
-					return A2($elm$html$Html$Events$preventDefaultOn, name, d);
-				default:
-					var name = attribute.a;
-					var d = attribute.b.a;
-					return A2($elm$html$Html$Events$custom, name, d);
-			}
-	}
-};
-var $elm$core$Tuple$mapSecond = F2(
-	function (func, _v0) {
-		var x = _v0.a;
-		var y = _v0.b;
-		return _Utils_Tuple2(
-			x,
-			func(y));
-	});
-var $elm$virtual_dom$VirtualDom$node = function (tag) {
-	return _VirtualDom_node(
-		_VirtualDom_noScript(tag));
-};
-var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
-var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
-	return _VirtualDom_keyedNode(
-		_VirtualDom_noScript(tag));
-};
-var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $zwilias$elm_html_string$Html$Types$toHtml = function (node) {
-	if (!node.$) {
-		var tagName = node.a;
-		var attributes = node.b;
-		var children = node.c;
-		switch (children.$) {
-			case 0:
-				return A3(
-					$elm$html$Html$node,
-					tagName,
-					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
-					_List_Nil);
-			case 1:
-				var nodes = children.a;
-				return A3(
-					$elm$html$Html$node,
-					tagName,
-					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
-					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$toHtml, nodes));
-			default:
-				var keyedNodes = children.a;
-				return A3(
-					$elm$html$Html$Keyed$node,
-					tagName,
-					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
-					A2(
-						$elm$core$List$map,
-						$elm$core$Tuple$mapSecond($zwilias$elm_html_string$Html$Types$toHtml),
-						keyedNodes));
-		}
-	} else {
-		var content = node.a;
-		return $elm$html$Html$text(content);
-	}
-};
-var $zwilias$elm_html_string$Html$String$toHtml = $zwilias$elm_html_string$Html$Types$toHtml;
-var $elm$core$Basics$always = F2(
-	function (a, _v0) {
-		return a;
-	});
-var $elm$core$Bitwise$and = _Bitwise_and;
-var $elm$core$Bitwise$shiftRightBy = _Bitwise_shiftRightBy;
-var $elm$core$String$repeatHelp = F3(
-	function (n, chunk, result) {
-		return (n <= 0) ? result : A3(
-			$elm$core$String$repeatHelp,
-			n >> 1,
-			_Utils_ap(chunk, chunk),
-			(!(n & 1)) ? result : _Utils_ap(result, chunk));
-	});
-var $elm$core$String$repeat = F2(
-	function (n, chunk) {
-		return A3($elm$core$String$repeatHelp, n, chunk, '');
-	});
-var $zwilias$elm_html_string$Html$Types$indent = F3(
-	function (perLevel, level, x) {
-		return _Utils_ap(
-			A2($elm$core$String$repeat, perLevel * level, ' '),
-			x);
-	});
-var $zwilias$elm_html_string$Html$Types$join = F2(
-	function (between, list) {
-		if (!list.b) {
-			return '';
-		} else {
-			if (!list.b.b) {
-				var x = list.a;
-				return x;
+var $elm$core$List$any = F2(
+	function (isOkay, list) {
+		any:
+		while (true) {
+			if (!list.b) {
+				return false;
 			} else {
 				var x = list.a;
 				var xs = list.b;
-				return A3(
-					$elm$core$List$foldl,
-					F2(
-						function (y, acc) {
-							return _Utils_ap(
-								y,
-								_Utils_ap(between, acc));
-						}),
-					x,
-					xs);
-			}
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$closingTag = function (tagName) {
-	return '</' + (tagName + '>');
-};
-var $elm$core$Basics$composeR = F3(
-	function (f, g, x) {
-		return g(
-			f(x));
-	});
-var $elm$core$String$replace = F3(
-	function (before, after, string) {
-		return A2(
-			$elm$core$String$join,
-			after,
-			A2($elm$core$String$split, before, string));
-	});
-var $zwilias$elm_html_string$Html$Types$escapeHtmlText = A2(
-	$elm$core$Basics$composeR,
-	A2($elm$core$String$replace, '&', '&amp;'),
-	A2(
-		$elm$core$Basics$composeR,
-		A2($elm$core$String$replace, '<', '&lt;'),
-		A2($elm$core$String$replace, '>', '&gt;')));
-var $elm$core$Tuple$second = function (_v0) {
-	var y = _v0.b;
-	return y;
-};
-var $elm$core$String$foldl = _String_foldl;
-var $elm$core$String$cons = _String_cons;
-var $elm$core$String$fromChar = function (_char) {
-	return A2($elm$core$String$cons, _char, '');
-};
-var $zwilias$elm_html_string$Html$Types$escape = A2(
-	$elm$core$String$foldl,
-	F2(
-		function (_char, acc) {
-			return (_char === '\"') ? (acc + '\\\"') : _Utils_ap(
-				acc,
-				$elm$core$String$fromChar(_char));
-		}),
-	'');
-var $elm$core$Char$toLower = _Char_toLower;
-var $zwilias$elm_html_string$Html$Types$hyphenate = A2(
-	$elm$core$String$foldl,
-	F2(
-		function (_char, acc) {
-			return $elm$core$Char$isUpper(_char) ? (acc + ('-' + $elm$core$String$fromChar(
-				$elm$core$Char$toLower(_char)))) : _Utils_ap(
-				acc,
-				$elm$core$String$fromChar(_char));
-		}),
-	'');
-var $zwilias$elm_html_string$Html$Types$buildProp = F2(
-	function (key, value) {
-		return $zwilias$elm_html_string$Html$Types$hyphenate(key) + ('=\"' + ($zwilias$elm_html_string$Html$Types$escape(value) + '\"'));
-	});
-var $NoRedInk$elm_string_conversions$String$Conversions$fromValue = function (value) {
-	return A2($elm$json$Json$Encode$encode, 0, value);
-};
-var $zwilias$elm_html_string$Html$Types$propName = function (prop) {
-	switch (prop) {
-		case 'className':
-			return 'class';
-		case 'defaultValue':
-			return 'value';
-		case 'htmlFor':
-			return 'for';
-		default:
-			return prop;
-	}
-};
-var $zwilias$elm_html_string$Html$Types$addAttribute = F2(
-	function (attribute, acc) {
-		var classes = acc.a;
-		var styles = acc.b;
-		var attrs = acc.c;
-		switch (attribute.$) {
-			case 0:
-				var key = attribute.a;
-				var value = attribute.b;
-				return _Utils_Tuple3(
-					classes,
-					styles,
-					A2(
-						$elm$core$List$cons,
-						A2($zwilias$elm_html_string$Html$Types$buildProp, key, value),
-						attrs));
-			case 1:
-				if (attribute.a === 'className') {
-					var value = attribute.b;
-					return _Utils_Tuple3(
-						A2($elm$core$List$cons, value, classes),
-						styles,
-						attrs);
+				if (isOkay(x)) {
+					return true;
 				} else {
-					var string = attribute.a;
-					var value = attribute.b;
-					return _Utils_Tuple3(
-						classes,
-						styles,
-						A2(
-							$elm$core$List$cons,
-							A2(
-								$zwilias$elm_html_string$Html$Types$buildProp,
-								$zwilias$elm_html_string$Html$Types$propName(string),
-								value),
-							attrs));
-				}
-			case 2:
-				var string = attribute.a;
-				var enabled = attribute.b;
-				return enabled ? _Utils_Tuple3(
-					classes,
-					styles,
-					A2(
-						$elm$core$List$cons,
-						$zwilias$elm_html_string$Html$Types$hyphenate(
-							$zwilias$elm_html_string$Html$Types$propName(string)),
-						attrs)) : acc;
-			case 3:
-				var string = attribute.a;
-				var value = attribute.b;
-				return _Utils_Tuple3(
-					classes,
-					styles,
-					A2(
-						$elm$core$List$cons,
-						A2(
-							$zwilias$elm_html_string$Html$Types$buildProp,
-							$zwilias$elm_html_string$Html$Types$propName(string),
-							$NoRedInk$elm_string_conversions$String$Conversions$fromValue(value)),
-						attrs));
-			case 4:
-				var key = attribute.a;
-				var value = attribute.b;
-				return _Utils_Tuple3(
-					classes,
-					A2(
-						$elm$core$List$cons,
-						$zwilias$elm_html_string$Html$Types$escape(key) + (': ' + $zwilias$elm_html_string$Html$Types$escape(value)),
-						styles),
-					attrs);
-			default:
-				return acc;
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$withClasses = F2(
-	function (classes, attrs) {
-		if (!classes.b) {
-			return attrs;
-		} else {
-			return A2(
-				$elm$core$List$cons,
-				A2(
-					$zwilias$elm_html_string$Html$Types$buildProp,
-					'class',
-					A2($zwilias$elm_html_string$Html$Types$join, ' ', classes)),
-				attrs);
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$withStyles = F2(
-	function (styles, attrs) {
-		if (!styles.b) {
-			return attrs;
-		} else {
-			return A2(
-				$elm$core$List$cons,
-				A2(
-					$zwilias$elm_html_string$Html$Types$buildProp,
-					'style',
-					A2($zwilias$elm_html_string$Html$Types$join, '; ', styles)),
-				attrs);
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$attributesToString = function (attrs) {
-	var _v0 = A3(
-		$elm$core$List$foldl,
-		$zwilias$elm_html_string$Html$Types$addAttribute,
-		_Utils_Tuple3(_List_Nil, _List_Nil, _List_Nil),
-		attrs);
-	var classes = _v0.a;
-	var styles = _v0.b;
-	var regular = _v0.c;
-	return A2(
-		$zwilias$elm_html_string$Html$Types$withStyles,
-		styles,
-		A2($zwilias$elm_html_string$Html$Types$withClasses, classes, regular));
-};
-var $zwilias$elm_html_string$Html$Types$tag = F2(
-	function (tagName, attributes) {
-		return '<' + (A2(
-			$elm$core$String$join,
-			' ',
-			A2(
-				$elm$core$List$cons,
-				tagName,
-				$zwilias$elm_html_string$Html$Types$attributesToString(attributes))) + '>');
-	});
-var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
-	function (indenter, tags, acc) {
-		toStringHelper:
-		while (true) {
-			if (!tags.b) {
-				var _v1 = acc.t;
-				if (!_v1.b) {
-					return acc;
-				} else {
-					var _v2 = _v1.a;
-					var tagName = _v2.a;
-					var cont = _v2.b;
-					var rest = _v1.b;
-					var $temp$indenter = indenter,
-						$temp$tags = cont,
-						$temp$acc = _Utils_update(
-						acc,
-						{
-							k: acc.k - 1,
-							m: A2(
-								$elm$core$List$cons,
-								A2(
-									indenter,
-									acc.k - 1,
-									$zwilias$elm_html_string$Html$Types$closingTag(tagName)),
-								acc.m),
-							t: rest
-						});
-					indenter = $temp$indenter;
-					tags = $temp$tags;
-					acc = $temp$acc;
-					continue toStringHelper;
-				}
-			} else {
-				if (!tags.a.$) {
-					var _v3 = tags.a;
-					var tagName = _v3.a;
-					var attributes = _v3.b;
-					var children = _v3.c;
-					var rest = tags.b;
-					switch (children.$) {
-						case 0:
-							var $temp$indenter = indenter,
-								$temp$tags = rest,
-								$temp$acc = _Utils_update(
-								acc,
-								{
-									m: A2(
-										$elm$core$List$cons,
-										A2(
-											indenter,
-											acc.k,
-											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.m)
-								});
-							indenter = $temp$indenter;
-							tags = $temp$tags;
-							acc = $temp$acc;
-							continue toStringHelper;
-						case 1:
-							var childNodes = children.a;
-							var $temp$indenter = indenter,
-								$temp$tags = childNodes,
-								$temp$acc = _Utils_update(
-								acc,
-								{
-									k: acc.k + 1,
-									m: A2(
-										$elm$core$List$cons,
-										A2(
-											indenter,
-											acc.k,
-											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.m),
-									t: A2(
-										$elm$core$List$cons,
-										_Utils_Tuple2(tagName, rest),
-										acc.t)
-								});
-							indenter = $temp$indenter;
-							tags = $temp$tags;
-							acc = $temp$acc;
-							continue toStringHelper;
-						default:
-							var childNodes = children.a;
-							var $temp$indenter = indenter,
-								$temp$tags = A2($elm$core$List$map, $elm$core$Tuple$second, childNodes),
-								$temp$acc = _Utils_update(
-								acc,
-								{
-									k: acc.k + 1,
-									m: A2(
-										$elm$core$List$cons,
-										A2(
-											indenter,
-											acc.k,
-											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.m),
-									t: A2(
-										$elm$core$List$cons,
-										_Utils_Tuple2(tagName, rest),
-										acc.t)
-								});
-							indenter = $temp$indenter;
-							tags = $temp$tags;
-							acc = $temp$acc;
-							continue toStringHelper;
-					}
-				} else {
-					var string = tags.a.a;
-					var rest = tags.b;
-					var $temp$indenter = indenter,
-						$temp$tags = rest,
-						$temp$acc = _Utils_update(
-						acc,
-						{
-							m: A2(
-								$elm$core$List$cons,
-								A2(
-									indenter,
-									acc.k,
-									$zwilias$elm_html_string$Html$Types$escapeHtmlText(string)),
-								acc.m)
-						});
-					indenter = $temp$indenter;
-					tags = $temp$tags;
-					acc = $temp$acc;
-					continue toStringHelper;
+					var $temp$isOkay = isOkay,
+						$temp$list = xs;
+					isOkay = $temp$isOkay;
+					list = $temp$list;
+					continue any;
 				}
 			}
 		}
 	});
-var $zwilias$elm_html_string$Html$Types$toString = F2(
-	function (depth, html) {
-		var joinString = function () {
-			if (!depth) {
-				return '';
-			} else {
-				return '\n';
-			}
-		}();
-		var initialAcc = {k: 0, m: _List_Nil, t: _List_Nil};
-		var indenter = function () {
-			if (!depth) {
-				return $elm$core$Basics$always($elm$core$Basics$identity);
-			} else {
-				return $zwilias$elm_html_string$Html$Types$indent(depth);
-			}
-		}();
-		return A2(
-			$zwilias$elm_html_string$Html$Types$join,
-			joinString,
-			A3(
-				$zwilias$elm_html_string$Html$Types$toStringHelper,
-				indenter,
-				_List_fromArray(
-					[html]),
-				initialAcc).m);
-	});
-var $zwilias$elm_html_string$Html$String$toString = function (indent) {
-	return $zwilias$elm_html_string$Html$Types$toString(indent);
-};
-var $author$project$Helpers$darkBlue = '#445C73';
-var $zwilias$elm_html_string$Html$Types$Node = F3(
-	function (a, b, c) {
-		return {$: 0, a: a, b: b, c: c};
-	});
-var $zwilias$elm_html_string$Html$Types$Regular = function (a) {
-	return {$: 1, a: a};
-};
-var $zwilias$elm_html_string$Html$String$node = F3(
-	function (tag, attributes, children) {
-		return A3(
-			$zwilias$elm_html_string$Html$Types$Node,
-			tag,
-			attributes,
-			$zwilias$elm_html_string$Html$Types$Regular(children));
-	});
-var $zwilias$elm_html_string$Html$String$div = $zwilias$elm_html_string$Html$String$node('div');
-var $author$project$Helpers$headerMargin = 10;
-var $zwilias$elm_html_string$Html$Types$Style = F2(
-	function (a, b) {
-		return {$: 4, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
-var $author$project$Team$Main$imagePath = '/assets/Team/';
-var $author$project$Team$Main$boardOfAdvisors = _List_fromArray(
-	[
-		{a: 'Fr. Aaron is the associate chaplain in Saint Irenaeus Parish in Cypress, CA.', b: $author$project$Team$Main$imagePath + 'FrAaron.jpeg', c: '', d: 'Father Aaron Galvizo, A.M.', e: 'Alagad ni Maria', f: _List_Nil},
-		{a: 'Fr. Fredrick is a former chaplain of Santa Margarita Catholic High School and CHOC, ' + ('former Parochial Vicar of St. Irenaeus Catholic Church, Church of St. Pius X, ' + 'and Our Lady of Mt. Carmel Church.'), b: $author$project$Team$Main$imagePath + 'FrDodik.jpeg', c: '', d: 'Father Fredrick Miras, A.M.', e: 'Alagad ni Maria', f: _List_Nil},
-		{a: 'Chris Pagel is the assistant dean of Graduate Business Programs and Career Services at ' + 'Chapman University\'s George L. Argyros School of Business and Economics.', b: $author$project$Team$Main$imagePath + 'ChrisPagel.jpeg', c: '', d: 'Christopher Pagel', e: 'Assistant Dean', f: _List_Nil},
-		{a: 'Truly silent.', b: $author$project$Team$Main$imagePath + 'Cheri.jpeg', c: '', d: 'Cheri Loreto', e: 'Silent Advisor', f: _List_Nil},
-		{a: 'Carlos is a CAD designer who also has a passion for dogs, comedy and food.', b: $author$project$Team$Main$imagePath + 'CarlosG.jpg', c: '', d: 'Carlos Gutierrez', e: 'CAD Designer', f: _List_Nil}
-	]);
-var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
-	function (a, b) {
-		return {$: 1, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
-var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
-};
-var $author$project$Helpers$Behance = 11;
-var $author$project$Helpers$Facebook = 5;
-var $author$project$Helpers$IMDB = 4;
-var $author$project$Helpers$Instagram = 1;
-var $author$project$Helpers$LinkedIn = 6;
-var $author$project$Helpers$Pinterest = 8;
-var $author$project$Helpers$SoundCloud = 10;
-var $author$project$Helpers$Spotify = 9;
-var $author$project$Helpers$Twitter = 2;
-var $author$project$Helpers$Website = 0;
-var $author$project$Helpers$YouTube = 7;
-var $author$project$Team$Main$contractors = _List_fromArray(
-	[
-		{
-		a: 'Will is a freelance animator based in Arlington, Virginia. ',
-		b: $author$project$Team$Main$imagePath + 'Will.jpeg',
-		c: 'WM',
-		d: 'Will Maciejewski',
-		e: 'Producer and Animator',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(0, 'https://www.willmacmotion.com/'),
-				_Utils_Tuple2(1, 'https://www.instagram.com/willmacmotion/')
-			])
-	},
-		{
-		a: 'Emma is a graphic designer with an eye for detail and a desire ' + 'to captivate the wonder of the world through art. ',
-		b: $author$project$Team$Main$imagePath + 'EmmaGreene.jpeg',
-		c: 'EG',
-		d: 'Emma Greene',
-		e: 'Designer and Illustrator',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(1, 'https://www.instagram.com/emmarosecreative')
-			])
-	},
-		{
-		a: 'Fernando is passionate for film, videogames and music. He is passionate about telling stories through sound. ',
-		b: '',
-		c: 'FA',
-		d: 'Fernando J Alanis',
-		e: 'Sound Design and Re-Recording Mixer',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(0, 'https://www.alanissound.com/'),
-				_Utils_Tuple2(4, 'https://www.imdb.com/name/nm8854188/'),
-				_Utils_Tuple2(5, 'https://www.facebook.com/alanissound'),
-				_Utils_Tuple2(6, 'http://www.linkedin.com/in/alanissound')
-			])
-	},
-		{a: '', b: $author$project$Team$Main$imagePath + 'DanaMiller.jpeg', c: 'DM', d: 'Dana Miller', e: 'Voice Actor', f: _List_Nil},
-		{a: '', b: $author$project$Team$Main$imagePath + 'JadenLuo.jpeg', c: 'JL', d: 'Jaden Luo', e: 'Voice Actor', f: _List_Nil},
-		{
-		a: 'Mako Animation is a creative studio that offers visual communication strategies ' + ('for all kinds of projects. They are passionate about ' + ('bringing original stories to life\nwith a unique and ' + 'creative narrative.')),
-		b: $author$project$Team$Main$imagePath + 'makoTeam.png',
-		c: 'MT',
-		d: 'Mako Animation',
-		e: 'Animation Team',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(0, 'https://makoanimation.mx/'),
-				_Utils_Tuple2(5, 'https://www.facebook.com/makoanimation/'),
-				_Utils_Tuple2(2, 'https://twitter.com/MakoAnimation'),
-				_Utils_Tuple2(7, 'https://www.youtube.com/channel/UCOszpOlqJxLtjpbTH7VN7Kg')
-			])
-	},
-		{
-		a: 'Nick and Alina have been collaborators in songwriting and performing since 2006. They have fused their creative fires to illuminate the trials and triumphs of the human experience. The duo impacts their audiences through powerful testimony, moving vocals and songs that burn through with Truth, Love, Inspiration, and Beauty.',
-		b: $author$project$Team$Main$imagePath + 'NickAndAlina.jpeg',
-		c: 'ND',
-		d: 'Nick and Alina De La Torre',
-		e: 'Composer',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(0, 'http://nickandalina.com/'),
-				_Utils_Tuple2(7, 'https://www.youtube.com/nickalinadelatorre'),
-				_Utils_Tuple2(1, 'https://www.instagram.com/nickandalina/'),
-				_Utils_Tuple2(5, 'https://www.facebook.com/nickandalina/'),
-				_Utils_Tuple2(2, 'https://twitter.com/nickandalina_'),
-				_Utils_Tuple2(9, 'https://open.spotify.com/artist/3BHBEFqQWqROuXbQCSnb06?si=9Mh_b1M4T6S7nmsswkdHPQ&nd=1')
-			])
-	},
-		{a: '', b: '', c: 'E', d: 'Ethan', e: 'Singer and Voice Actor', f: _List_Nil},
-		{a: '', b: '', c: 'I', d: 'Italia', e: 'Singer and Voice Actor', f: _List_Nil},
-		{a: '', b: '', c: 'D', d: 'Dominic', e: 'Singer and Voice Actor', f: _List_Nil},
-		{
-		a: 'Sean is a composer for games, films, cartoons, trailers, and more. He is also a highly sought after composer for Catholic media. He is Roman Catholic, husband of 15 years, and father to six children.',
-		b: $author$project$Team$Main$imagePath + 'SeanBeeson.jpeg',
-		c: 'SB',
-		d: 'Sean Beeson',
-		e: 'Composer',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(0, 'https://www.seanbeeson.com/'),
-				_Utils_Tuple2(10, 'https://soundcloud.com/sean-beeson'),
-				_Utils_Tuple2(5, 'https://www.facebook.com/gamecomposer'),
-				_Utils_Tuple2(2, 'https://twitter.com/seanbeeson'),
-				_Utils_Tuple2(7, 'https://www.youtube.com/user/Buckeye198181')
-			])
-	},
-		{
-		a: 'Ekaterina is a skilled artist presenting a unique approach to developing visually appealing designs.',
-		b: $author$project$Team$Main$imagePath + 'Ekaterina.png',
-		c: 'ES',
-		d: 'Ekaterina Soyuznova',
-		e: 'Visual Development Artist',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(0, 'https://www.ekaterinasoyuznova.com/'),
-				_Utils_Tuple2(1, 'https://www.instagram.com/soyuznova_ekaterina/'),
-				_Utils_Tuple2(5, 'https://www.facebook.com/kate.soyuznova/'),
-				_Utils_Tuple2(2, 'https://twitter.com/Kati45413104'),
-				_Utils_Tuple2(7, 'https://www.youtube.com/channel/UCgc9v2t9OtqQEw_D4jKgbew')
-			])
-	},
-		{
-		a: 'Artist, 3D Motion Designer, Husband and Father.',
-		b: '',
-		c: 'FS',
-		d: 'Francesco Schito',
-		e: '3D Artist',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(1, 'https://www.instagram.com/francescoschito/?hl=en'),
-				_Utils_Tuple2(7, 'https://www.youtube.com/playlist?list=UUcaSHFPBBghZlWSePTZzwLw'),
-				_Utils_Tuple2(4, 'https://www.imdb.com/name/nm7877744/'),
-				_Utils_Tuple2(11, 'https://www.behance.net/francescoschito')
-			])
-	},
-		{
-		a: 'Rachael is passionate about telling stories through books, film, and dance.',
-		b: $author$project$Team$Main$imagePath + 'RachaelWorkman.jpeg',
-		c: 'RW',
-		d: 'Rachael Workman',
-		e: 'Screenwriter',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(6, 'https://www.linkedin.com/in/rachael-workman/')
-			])
-	},
-		{
-		a: 'Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada.',
-		b: $author$project$Team$Main$imagePath + 'KellyBriggs.jpeg',
-		c: 'KB',
-		d: 'Kelly Briggs',
-		e: 'Social Media Specialist',
-		f: _List_fromArray(
-			[
-				_Utils_Tuple2(1, 'https://www.instagram.com/simplehomemom/'),
-				_Utils_Tuple2(5, 'https://www.facebook.com/simplehomemom'),
-				_Utils_Tuple2(8, 'https://www.pinterest.com/simplehomemom/'),
-				_Utils_Tuple2(0, 'https://www.simplehomemom.com/')
-			])
-	}
-	]);
-var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
-var $author$project$Team$Main$titleStyle = _List_fromArray(
-	[
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px')
-	]);
-var $author$project$Team$Main$h1Style = _Utils_ap(
-	$author$project$Team$Main$titleStyle,
-	_List_fromArray(
+var $elm$browser$Browser$Navigation$load = _Browser_load;
+var $author$project$FeastDayActivities$FeastDays$april = {color: '#ebdf72', feasts: _List_Nil, key: 'apr', month: 'April'};
+var $author$project$FeastDayActivities$FeastDays$august = {color: '#ebdf72', feasts: _List_Nil, key: 'aug', month: 'August'};
+var $author$project$FeastDayActivities$FeastDays$december = {color: '#ebdf72', feasts: _List_Nil, key: 'dec', month: 'December'};
+var $author$project$FeastDayActivities$FeastDays$february = {
+	color: '#395d73',
+	feasts: _List_fromArray(
 		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('my-7')
-		]));
-var $author$project$Team$Main$staff = _List_fromArray(
-	[
-		{a: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), b: $author$project$Team$Main$imagePath + 'TrevorRothaus.jpeg', c: '', d: 'Trevor Rothaus', e: 'CEO', f: _List_Nil},
-		{a: 'Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer.', b: $author$project$Team$Main$imagePath + 'NoeliAcoba.PNG', c: '', d: 'Noeli Acoba', e: 'CFO', f: _List_Nil}
-	]);
-var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
-var $author$project$Team$Main$viewDescription = function (description) {
-	return A2(
-		$zwilias$elm_html_string$Html$String$div,
-		_List_fromArray(
-			[
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-wrap', 'anywhere'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-top', '10px')
-			]),
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$text(description)
-			]));
-};
-var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
-};
-var $zwilias$elm_html_string$Html$Types$Attribute = F2(
-	function (a, b) {
-		return {$: 0, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
-var $author$project$Helpers$darkPurple = '#B99EDA';
-var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
-var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
-	function (tag, attrs, _v0) {
-		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
-	});
-var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
-var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
-};
-var $author$project$Team$Main$viewImage = F2(
-	function (image, initials) {
-		return (image === '') ? A2(
-			$zwilias$elm_html_string$Html$String$div,
-			_List_fromArray(
+			{
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px 10px 40px 0'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'float', 'left'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '52px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '52px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '30px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '1px solid #777'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', $author$project$Helpers$darkPurple),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white')
-				]),
-			_List_fromArray(
+					{activities: _List_Nil, feast: 'Saint John Bosco'}
+				])
+		}
+		]),
+	key: 'feb',
+	month: 'February'
+};
+var $author$project$FeastDayActivities$FeastDays$Video = function (a) {
+	return {$: 'Video', a: a};
+};
+var $author$project$FeastDayActivities$FeastDays$january = {
+	color: '#9de3ec',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					A2(
-					$zwilias$elm_html_string$Html$String$div,
-					_List_fromArray(
+					{activities: _List_Nil, feast: 'Mary, Mother of God'}
+				])
+		},
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
 						[
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'absolute'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'top', '50%'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%, -50%)')
+							$author$project$FeastDayActivities$FeastDays$Video(
+							{link: 'https://youtu.be/lwe8voh3H_4', title: 'Ss. Gregory & Basil'})
 						]),
-					_List_fromArray(
-						[
-							$zwilias$elm_html_string$Html$String$text(initials)
-						]))
-				])) : A2(
-			$zwilias$elm_html_string$Html$String$img,
-			_List_fromArray(
+					feast: 'Saint Basil'
+				}
+				])
+		},
+			{
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px 10px 40px 0'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'float', 'left'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '52px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '52px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '30px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '1px solid #777'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'object-fit', 'cover'),
-					$zwilias$elm_html_string$Html$String$Attributes$src(image),
-					$zwilias$elm_html_string$Html$String$Attributes$alt(''),
-					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'ariaHidden', 'true')
-				]),
-			_List_Nil);
+					{activities: _List_Nil, feast: 'The Most Holy Name of Jesus'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Elizabeth Ann Seton'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Newmann'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint André Bessette'}
+				])
+		},
+			{
+			date: '07',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Raymond of Penyafort'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Epiphany of the Lord'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Baptism of the Lord'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Hilary of Poitiers'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Anthony of Egypt'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Fabian'},
+					{activities: _List_Nil, feast: 'Saint Sebastian'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Agnes'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Vincent (US)'},
+					{activities: _List_Nil, feast: 'Saint Marianne Cope'},
+					{activities: _List_Nil, feast: 'Day of Prayer for the Legal Protection of Unborn Children'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Francis de Sales'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Conversion of Saint Paul'}
+				])
+		},
+			{
+			date: '26',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Timothy and Titus'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Angela Merici'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Thomas Aquinas'}
+				])
+		},
+			{
+			date: '31',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Bosco'}
+				])
+		}
+		]),
+	key: 'jan',
+	month: 'Janury'
+};
+var $author$project$FeastDayActivities$FeastDays$july = {color: '#b99eda', feasts: _List_Nil, key: 'jul', month: 'July'};
+var $author$project$FeastDayActivities$FeastDays$june = {color: '#395d73', feasts: _List_Nil, key: 'jun', month: 'June'};
+var $author$project$FeastDayActivities$FeastDays$march = {color: '#b99eda', feasts: _List_Nil, key: 'mar', month: 'March'};
+var $author$project$FeastDayActivities$FeastDays$may = {color: '#9de3ec', feasts: _List_Nil, key: 'may', month: 'May'};
+var $author$project$FeastDayActivities$FeastDays$november = {color: '#b99eda', feasts: _List_Nil, key: 'nov', month: 'November'};
+var $author$project$FeastDayActivities$FeastDays$october = {color: '#395d73', feasts: _List_Nil, key: 'oct', month: 'October'};
+var $author$project$FeastDayActivities$FeastDays$september = {color: '#9de3ec', feasts: _List_Nil, key: 'sep', month: 'September'};
+var $author$project$FeastDayActivities$FeastDays$feastDays = _List_fromArray(
+	[$author$project$FeastDayActivities$FeastDays$january, $author$project$FeastDayActivities$FeastDays$february, $author$project$FeastDayActivities$FeastDays$march, $author$project$FeastDayActivities$FeastDays$april, $author$project$FeastDayActivities$FeastDays$may, $author$project$FeastDayActivities$FeastDays$june, $author$project$FeastDayActivities$FeastDays$july, $author$project$FeastDayActivities$FeastDays$august, $author$project$FeastDayActivities$FeastDays$september, $author$project$FeastDayActivities$FeastDays$october, $author$project$FeastDayActivities$FeastDays$november, $author$project$FeastDayActivities$FeastDays$december]);
+var $author$project$FeastDayActivities$FeastDays$months = A2(
+	$elm$core$List$map,
+	function ($) {
+		return $.key;
+	},
+	$author$project$FeastDayActivities$FeastDays$feastDays);
+var $elm$browser$Browser$Navigation$pushUrl = _Browser_pushUrl;
+var $elm$url$Url$addPort = F2(
+	function (maybePort, starter) {
+		if (maybePort.$ === 'Nothing') {
+			return starter;
+		} else {
+			var port_ = maybePort.a;
+			return starter + (':' + $elm$core$String$fromInt(port_));
+		}
 	});
-var $author$project$Team$Main$viewName = function (name) {
-	return A2(
-		$zwilias$elm_html_string$Html$String$div,
-		_List_Nil,
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$text(name)
-			]));
+var $elm$url$Url$addPrefixed = F3(
+	function (prefix, maybeSegment, starter) {
+		if (maybeSegment.$ === 'Nothing') {
+			return starter;
+		} else {
+			var segment = maybeSegment.a;
+			return _Utils_ap(
+				starter,
+				_Utils_ap(prefix, segment));
+		}
+	});
+var $elm$url$Url$toString = function (url) {
+	var http = function () {
+		var _v0 = url.protocol;
+		if (_v0.$ === 'Http') {
+			return 'http://';
+		} else {
+			return 'https://';
+		}
+	}();
+	return A3(
+		$elm$url$Url$addPrefixed,
+		'#',
+		url.fragment,
+		A3(
+			$elm$url$Url$addPrefixed,
+			'?',
+			url.query,
+			_Utils_ap(
+				A2(
+					$elm$url$Url$addPort,
+					url.port_,
+					_Utils_ap(http, url.host)),
+				url.path)));
 };
-var $author$project$Team$Main$viewPosition = function (position) {
-	return A2(
-		$zwilias$elm_html_string$Html$String$div,
-		_List_fromArray(
-			[
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', '#777'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '.8em')
-			]),
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$text(position)
-			]));
-};
-var $author$project$Helpers$Vimeo = 3;
-var $matthewsj$elm_ordering$Ordering$explicit = F3(
-	function (elements, x, y) {
-		var scanForY = function (items) {
-			scanForY:
-			while (true) {
-				if (items.b) {
-					var z = items.a;
-					var zs = items.b;
-					if (_Utils_eq(z, y)) {
-						return 0;
-					} else {
-						var $temp$items = zs;
-						items = $temp$items;
-						continue scanForY;
-					}
+var $author$project$FeastDayActivities$Main$update = F2(
+	function (msg, model) {
+		if (msg.$ === 'LinkClicked') {
+			var urlRequest = msg.a;
+			if (urlRequest.$ === 'Internal') {
+				var url = urlRequest.a;
+				var urlString = $elm$url$Url$toString(url);
+				var isMonth = A2(
+					$elm$core$List$any,
+					function (month) {
+						return A2($elm$core$String$contains, month, urlString);
+					},
+					$author$project$FeastDayActivities$FeastDays$months);
+				return isMonth ? _Utils_Tuple2(
+					model,
+					A2(
+						$elm$browser$Browser$Navigation$pushUrl,
+						model.key,
+						$elm$url$Url$toString(url))) : _Utils_Tuple2(
+					model,
+					$elm$browser$Browser$Navigation$load(
+						$elm$url$Url$toString(url)));
+			} else {
+				var href = urlRequest.a;
+				return _Utils_Tuple2(
+					model,
+					$elm$browser$Browser$Navigation$load(href));
+			}
+		} else {
+			var url = msg.a;
+			return _Utils_Tuple2(
+				_Utils_update(
+					model,
+					{url: url}),
+				$elm$core$Platform$Cmd$none);
+		}
+	});
+var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$url$Url$Parser$State = F5(
+	function (visited, unvisited, params, frag, value) {
+		return {frag: frag, params: params, unvisited: unvisited, value: value, visited: visited};
+	});
+var $elm$url$Url$Parser$getFirstMatch = function (states) {
+	getFirstMatch:
+	while (true) {
+		if (!states.b) {
+			return $elm$core$Maybe$Nothing;
+		} else {
+			var state = states.a;
+			var rest = states.b;
+			var _v1 = state.unvisited;
+			if (!_v1.b) {
+				return $elm$core$Maybe$Just(state.value);
+			} else {
+				if ((_v1.a === '') && (!_v1.b.b)) {
+					return $elm$core$Maybe$Just(state.value);
 				} else {
-					return 2;
+					var $temp$states = rest;
+					states = $temp$states;
+					continue getFirstMatch;
 				}
 			}
-		};
-		var scanForX = function (items) {
-			scanForX:
-			while (true) {
-				if (items.b) {
-					var z = items.a;
-					var zs = items.b;
-					if (_Utils_eq(z, x)) {
-						return 2;
-					} else {
-						var $temp$items = zs;
-						items = $temp$items;
-						continue scanForX;
-					}
-				} else {
-					return 0;
+		}
+	}
+};
+var $elm$url$Url$Parser$removeFinalEmpty = function (segments) {
+	if (!segments.b) {
+		return _List_Nil;
+	} else {
+		if ((segments.a === '') && (!segments.b.b)) {
+			return _List_Nil;
+		} else {
+			var segment = segments.a;
+			var rest = segments.b;
+			return A2(
+				$elm$core$List$cons,
+				segment,
+				$elm$url$Url$Parser$removeFinalEmpty(rest));
+		}
+	}
+};
+var $elm$url$Url$Parser$preparePath = function (path) {
+	var _v0 = A2($elm$core$String$split, '/', path);
+	if (_v0.b && (_v0.a === '')) {
+		var segments = _v0.b;
+		return $elm$url$Url$Parser$removeFinalEmpty(segments);
+	} else {
+		var segments = _v0;
+		return $elm$url$Url$Parser$removeFinalEmpty(segments);
+	}
+};
+var $elm$url$Url$Parser$addToParametersHelp = F2(
+	function (value, maybeList) {
+		if (maybeList.$ === 'Nothing') {
+			return $elm$core$Maybe$Just(
+				_List_fromArray(
+					[value]));
+		} else {
+			var list = maybeList.a;
+			return $elm$core$Maybe$Just(
+				A2($elm$core$List$cons, value, list));
+		}
+	});
+var $elm$url$Url$percentDecode = _Url_percentDecode;
+var $elm$core$Basics$compare = _Utils_compare;
+var $elm$core$Dict$get = F2(
+	function (targetKey, dict) {
+		get:
+		while (true) {
+			if (dict.$ === 'RBEmpty_elm_builtin') {
+				return $elm$core$Maybe$Nothing;
+			} else {
+				var key = dict.b;
+				var value = dict.c;
+				var left = dict.d;
+				var right = dict.e;
+				var _v1 = A2($elm$core$Basics$compare, targetKey, key);
+				switch (_v1.$) {
+					case 'LT':
+						var $temp$targetKey = targetKey,
+							$temp$dict = left;
+						targetKey = $temp$targetKey;
+						dict = $temp$dict;
+						continue get;
+					case 'EQ':
+						return $elm$core$Maybe$Just(value);
+					default:
+						var $temp$targetKey = targetKey,
+							$temp$dict = right;
+						targetKey = $temp$targetKey;
+						dict = $temp$dict;
+						continue get;
 				}
 			}
-		};
-		var scanForEither = function (items) {
-			scanForEither:
+		}
+	});
+var $elm$core$Dict$Black = {$: 'Black'};
+var $elm$core$Dict$RBNode_elm_builtin = F5(
+	function (a, b, c, d, e) {
+		return {$: 'RBNode_elm_builtin', a: a, b: b, c: c, d: d, e: e};
+	});
+var $elm$core$Dict$RBEmpty_elm_builtin = {$: 'RBEmpty_elm_builtin'};
+var $elm$core$Dict$Red = {$: 'Red'};
+var $elm$core$Dict$balance = F5(
+	function (color, key, value, left, right) {
+		if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Red')) {
+			var _v1 = right.a;
+			var rK = right.b;
+			var rV = right.c;
+			var rLeft = right.d;
+			var rRight = right.e;
+			if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
+				var _v3 = left.a;
+				var lK = left.b;
+				var lV = left.c;
+				var lLeft = left.d;
+				var lRight = left.e;
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Red,
+					key,
+					value,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rLeft, rRight));
+			} else {
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					color,
+					rK,
+					rV,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, left, rLeft),
+					rRight);
+			}
+		} else {
+			if ((((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) && (left.d.$ === 'RBNode_elm_builtin')) && (left.d.a.$ === 'Red')) {
+				var _v5 = left.a;
+				var lK = left.b;
+				var lV = left.c;
+				var _v6 = left.d;
+				var _v7 = _v6.a;
+				var llK = _v6.b;
+				var llV = _v6.c;
+				var llLeft = _v6.d;
+				var llRight = _v6.e;
+				var lRight = left.e;
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Red,
+					lK,
+					lV,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, key, value, lRight, right));
+			} else {
+				return A5($elm$core$Dict$RBNode_elm_builtin, color, key, value, left, right);
+			}
+		}
+	});
+var $elm$core$Dict$insertHelp = F3(
+	function (key, value, dict) {
+		if (dict.$ === 'RBEmpty_elm_builtin') {
+			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, $elm$core$Dict$RBEmpty_elm_builtin, $elm$core$Dict$RBEmpty_elm_builtin);
+		} else {
+			var nColor = dict.a;
+			var nKey = dict.b;
+			var nValue = dict.c;
+			var nLeft = dict.d;
+			var nRight = dict.e;
+			var _v1 = A2($elm$core$Basics$compare, key, nKey);
+			switch (_v1.$) {
+				case 'LT':
+					return A5(
+						$elm$core$Dict$balance,
+						nColor,
+						nKey,
+						nValue,
+						A3($elm$core$Dict$insertHelp, key, value, nLeft),
+						nRight);
+				case 'EQ':
+					return A5($elm$core$Dict$RBNode_elm_builtin, nColor, nKey, value, nLeft, nRight);
+				default:
+					return A5(
+						$elm$core$Dict$balance,
+						nColor,
+						nKey,
+						nValue,
+						nLeft,
+						A3($elm$core$Dict$insertHelp, key, value, nRight));
+			}
+		}
+	});
+var $elm$core$Dict$insert = F3(
+	function (key, value, dict) {
+		var _v0 = A3($elm$core$Dict$insertHelp, key, value, dict);
+		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
+			var _v1 = _v0.a;
+			var k = _v0.b;
+			var v = _v0.c;
+			var l = _v0.d;
+			var r = _v0.e;
+			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
+		} else {
+			var x = _v0;
+			return x;
+		}
+	});
+var $elm$core$Dict$getMin = function (dict) {
+	getMin:
+	while (true) {
+		if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
+			var left = dict.d;
+			var $temp$dict = left;
+			dict = $temp$dict;
+			continue getMin;
+		} else {
+			return dict;
+		}
+	}
+};
+var $elm$core$Dict$moveRedLeft = function (dict) {
+	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
+		if ((dict.e.d.$ === 'RBNode_elm_builtin') && (dict.e.d.a.$ === 'Red')) {
+			var clr = dict.a;
+			var k = dict.b;
+			var v = dict.c;
+			var _v1 = dict.d;
+			var lClr = _v1.a;
+			var lK = _v1.b;
+			var lV = _v1.c;
+			var lLeft = _v1.d;
+			var lRight = _v1.e;
+			var _v2 = dict.e;
+			var rClr = _v2.a;
+			var rK = _v2.b;
+			var rV = _v2.c;
+			var rLeft = _v2.d;
+			var _v3 = rLeft.a;
+			var rlK = rLeft.b;
+			var rlV = rLeft.c;
+			var rlL = rLeft.d;
+			var rlR = rLeft.e;
+			var rRight = _v2.e;
+			return A5(
+				$elm$core$Dict$RBNode_elm_builtin,
+				$elm$core$Dict$Red,
+				rlK,
+				rlV,
+				A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Black,
+					k,
+					v,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					rlL),
+				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rlR, rRight));
+		} else {
+			var clr = dict.a;
+			var k = dict.b;
+			var v = dict.c;
+			var _v4 = dict.d;
+			var lClr = _v4.a;
+			var lK = _v4.b;
+			var lV = _v4.c;
+			var lLeft = _v4.d;
+			var lRight = _v4.e;
+			var _v5 = dict.e;
+			var rClr = _v5.a;
+			var rK = _v5.b;
+			var rV = _v5.c;
+			var rLeft = _v5.d;
+			var rRight = _v5.e;
+			if (clr.$ === 'Black') {
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Black,
+					k,
+					v,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+			} else {
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Black,
+					k,
+					v,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+			}
+		}
+	} else {
+		return dict;
+	}
+};
+var $elm$core$Dict$moveRedRight = function (dict) {
+	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
+		if ((dict.d.d.$ === 'RBNode_elm_builtin') && (dict.d.d.a.$ === 'Red')) {
+			var clr = dict.a;
+			var k = dict.b;
+			var v = dict.c;
+			var _v1 = dict.d;
+			var lClr = _v1.a;
+			var lK = _v1.b;
+			var lV = _v1.c;
+			var _v2 = _v1.d;
+			var _v3 = _v2.a;
+			var llK = _v2.b;
+			var llV = _v2.c;
+			var llLeft = _v2.d;
+			var llRight = _v2.e;
+			var lRight = _v1.e;
+			var _v4 = dict.e;
+			var rClr = _v4.a;
+			var rK = _v4.b;
+			var rV = _v4.c;
+			var rLeft = _v4.d;
+			var rRight = _v4.e;
+			return A5(
+				$elm$core$Dict$RBNode_elm_builtin,
+				$elm$core$Dict$Red,
+				lK,
+				lV,
+				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
+				A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Black,
+					k,
+					v,
+					lRight,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight)));
+		} else {
+			var clr = dict.a;
+			var k = dict.b;
+			var v = dict.c;
+			var _v5 = dict.d;
+			var lClr = _v5.a;
+			var lK = _v5.b;
+			var lV = _v5.c;
+			var lLeft = _v5.d;
+			var lRight = _v5.e;
+			var _v6 = dict.e;
+			var rClr = _v6.a;
+			var rK = _v6.b;
+			var rV = _v6.c;
+			var rLeft = _v6.d;
+			var rRight = _v6.e;
+			if (clr.$ === 'Black') {
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Black,
+					k,
+					v,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+			} else {
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					$elm$core$Dict$Black,
+					k,
+					v,
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
+			}
+		}
+	} else {
+		return dict;
+	}
+};
+var $elm$core$Dict$removeHelpPrepEQGT = F7(
+	function (targetKey, dict, color, key, value, left, right) {
+		if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
+			var _v1 = left.a;
+			var lK = left.b;
+			var lV = left.c;
+			var lLeft = left.d;
+			var lRight = left.e;
+			return A5(
+				$elm$core$Dict$RBNode_elm_builtin,
+				color,
+				lK,
+				lV,
+				lLeft,
+				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, lRight, right));
+		} else {
+			_v2$2:
 			while (true) {
-				if (items.b) {
-					var z = items.a;
-					var zs = items.b;
-					if (_Utils_eq(z, x)) {
-						return scanForY(zs);
-					} else {
-						if (_Utils_eq(z, y)) {
-							return scanForX(zs);
+				if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Black')) {
+					if (right.d.$ === 'RBNode_elm_builtin') {
+						if (right.d.a.$ === 'Black') {
+							var _v3 = right.a;
+							var _v4 = right.d;
+							var _v5 = _v4.a;
+							return $elm$core$Dict$moveRedRight(dict);
 						} else {
-							var $temp$items = zs;
-							items = $temp$items;
-							continue scanForEither;
+							break _v2$2;
+						}
+					} else {
+						var _v6 = right.a;
+						var _v7 = right.d;
+						return $elm$core$Dict$moveRedRight(dict);
+					}
+				} else {
+					break _v2$2;
+				}
+			}
+			return dict;
+		}
+	});
+var $elm$core$Dict$removeMin = function (dict) {
+	if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
+		var color = dict.a;
+		var key = dict.b;
+		var value = dict.c;
+		var left = dict.d;
+		var lColor = left.a;
+		var lLeft = left.d;
+		var right = dict.e;
+		if (lColor.$ === 'Black') {
+			if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
+				var _v3 = lLeft.a;
+				return A5(
+					$elm$core$Dict$RBNode_elm_builtin,
+					color,
+					key,
+					value,
+					$elm$core$Dict$removeMin(left),
+					right);
+			} else {
+				var _v4 = $elm$core$Dict$moveRedLeft(dict);
+				if (_v4.$ === 'RBNode_elm_builtin') {
+					var nColor = _v4.a;
+					var nKey = _v4.b;
+					var nValue = _v4.c;
+					var nLeft = _v4.d;
+					var nRight = _v4.e;
+					return A5(
+						$elm$core$Dict$balance,
+						nColor,
+						nKey,
+						nValue,
+						$elm$core$Dict$removeMin(nLeft),
+						nRight);
+				} else {
+					return $elm$core$Dict$RBEmpty_elm_builtin;
+				}
+			}
+		} else {
+			return A5(
+				$elm$core$Dict$RBNode_elm_builtin,
+				color,
+				key,
+				value,
+				$elm$core$Dict$removeMin(left),
+				right);
+		}
+	} else {
+		return $elm$core$Dict$RBEmpty_elm_builtin;
+	}
+};
+var $elm$core$Dict$removeHelp = F2(
+	function (targetKey, dict) {
+		if (dict.$ === 'RBEmpty_elm_builtin') {
+			return $elm$core$Dict$RBEmpty_elm_builtin;
+		} else {
+			var color = dict.a;
+			var key = dict.b;
+			var value = dict.c;
+			var left = dict.d;
+			var right = dict.e;
+			if (_Utils_cmp(targetKey, key) < 0) {
+				if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Black')) {
+					var _v4 = left.a;
+					var lLeft = left.d;
+					if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
+						var _v6 = lLeft.a;
+						return A5(
+							$elm$core$Dict$RBNode_elm_builtin,
+							color,
+							key,
+							value,
+							A2($elm$core$Dict$removeHelp, targetKey, left),
+							right);
+					} else {
+						var _v7 = $elm$core$Dict$moveRedLeft(dict);
+						if (_v7.$ === 'RBNode_elm_builtin') {
+							var nColor = _v7.a;
+							var nKey = _v7.b;
+							var nValue = _v7.c;
+							var nLeft = _v7.d;
+							var nRight = _v7.e;
+							return A5(
+								$elm$core$Dict$balance,
+								nColor,
+								nKey,
+								nValue,
+								A2($elm$core$Dict$removeHelp, targetKey, nLeft),
+								nRight);
+						} else {
+							return $elm$core$Dict$RBEmpty_elm_builtin;
 						}
 					}
 				} else {
-					return 1;
+					return A5(
+						$elm$core$Dict$RBNode_elm_builtin,
+						color,
+						key,
+						value,
+						A2($elm$core$Dict$removeHelp, targetKey, left),
+						right);
+				}
+			} else {
+				return A2(
+					$elm$core$Dict$removeHelpEQGT,
+					targetKey,
+					A7($elm$core$Dict$removeHelpPrepEQGT, targetKey, dict, color, key, value, left, right));
+			}
+		}
+	});
+var $elm$core$Dict$removeHelpEQGT = F2(
+	function (targetKey, dict) {
+		if (dict.$ === 'RBNode_elm_builtin') {
+			var color = dict.a;
+			var key = dict.b;
+			var value = dict.c;
+			var left = dict.d;
+			var right = dict.e;
+			if (_Utils_eq(targetKey, key)) {
+				var _v1 = $elm$core$Dict$getMin(right);
+				if (_v1.$ === 'RBNode_elm_builtin') {
+					var minKey = _v1.b;
+					var minValue = _v1.c;
+					return A5(
+						$elm$core$Dict$balance,
+						color,
+						minKey,
+						minValue,
+						left,
+						$elm$core$Dict$removeMin(right));
+				} else {
+					return $elm$core$Dict$RBEmpty_elm_builtin;
+				}
+			} else {
+				return A5(
+					$elm$core$Dict$balance,
+					color,
+					key,
+					value,
+					left,
+					A2($elm$core$Dict$removeHelp, targetKey, right));
+			}
+		} else {
+			return $elm$core$Dict$RBEmpty_elm_builtin;
+		}
+	});
+var $elm$core$Dict$remove = F2(
+	function (key, dict) {
+		var _v0 = A2($elm$core$Dict$removeHelp, key, dict);
+		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
+			var _v1 = _v0.a;
+			var k = _v0.b;
+			var v = _v0.c;
+			var l = _v0.d;
+			var r = _v0.e;
+			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
+		} else {
+			var x = _v0;
+			return x;
+		}
+	});
+var $elm$core$Dict$update = F3(
+	function (targetKey, alter, dictionary) {
+		var _v0 = alter(
+			A2($elm$core$Dict$get, targetKey, dictionary));
+		if (_v0.$ === 'Just') {
+			var value = _v0.a;
+			return A3($elm$core$Dict$insert, targetKey, value, dictionary);
+		} else {
+			return A2($elm$core$Dict$remove, targetKey, dictionary);
+		}
+	});
+var $elm$url$Url$Parser$addParam = F2(
+	function (segment, dict) {
+		var _v0 = A2($elm$core$String$split, '=', segment);
+		if ((_v0.b && _v0.b.b) && (!_v0.b.b.b)) {
+			var rawKey = _v0.a;
+			var _v1 = _v0.b;
+			var rawValue = _v1.a;
+			var _v2 = $elm$url$Url$percentDecode(rawKey);
+			if (_v2.$ === 'Nothing') {
+				return dict;
+			} else {
+				var key = _v2.a;
+				var _v3 = $elm$url$Url$percentDecode(rawValue);
+				if (_v3.$ === 'Nothing') {
+					return dict;
+				} else {
+					var value = _v3.a;
+					return A3(
+						$elm$core$Dict$update,
+						key,
+						$elm$url$Url$Parser$addToParametersHelp(value),
+						dict);
 				}
 			}
-		};
-		return _Utils_eq(x, y) ? 1 : scanForEither(elements);
+		} else {
+			return dict;
+		}
 	});
-var $author$project$Team$Main$socialOrdering = $matthewsj$elm_ordering$Ordering$explicit(
-	_List_fromArray(
-		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
-var $author$project$Team$Main$socialSort = F2(
-	function (_v0, _v1) {
-		var social1 = _v0.a;
-		var link1 = _v0.b;
-		var social2 = _v1.a;
-		var link2 = _v1.b;
-		return A2($author$project$Team$Main$socialOrdering, social1, social2);
-	});
-var $elm$core$List$sortWith = _List_sortWith;
-var $author$project$Helpers$favicon = function (link) {
-	return A2(
-		$zwilias$elm_html_string$Html$String$img,
-		_List_fromArray(
-			[
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'aria-hidden', 'true'),
-				$zwilias$elm_html_string$Html$String$Attributes$src(link),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '16px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '16px')
-			]),
-		_List_Nil);
-};
-var $author$project$Helpers$behanceLogo = $author$project$Helpers$favicon('https://www.behance.net/favicon.ico');
-var $author$project$Helpers$facebookLogo = $author$project$Helpers$favicon('https://www.facebook.com/favicon.ico');
-var $author$project$Helpers$imdbLogo = $author$project$Helpers$favicon('https://www.imdb.com/favicon.ico');
-var $author$project$Helpers$instagramLogo = $author$project$Helpers$favicon('https://www.instagram.com/favicon.ico');
-var $author$project$Helpers$linkedInLogo = $author$project$Helpers$favicon('https://www.linkedin.com/favicon.ico');
-var $author$project$Helpers$pinterestLogo = $author$project$Helpers$favicon('https://www.pinterest.com/favicon.ico');
-var $author$project$Helpers$soundcloudLogo = $author$project$Helpers$favicon('https://soundcloud.com/favicon.ico');
-var $author$project$Helpers$spotifyLogo = $author$project$Helpers$favicon('https://www.spotify.com/favicon.ico');
-var $author$project$Helpers$twitterLogo = $author$project$Helpers$favicon('https://www.twitter.com/favicon.ico');
-var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
-var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
-};
-var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'target', val);
-};
-var $author$project$Helpers$viewSocialLink = F2(
-	function (image, link) {
-		return A2(
-			$zwilias$elm_html_string$Html$String$a,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$Attributes$href(link),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-right', '10px')
-				]),
-			_List_fromArray(
-				[image]));
-	});
-var $author$project$Helpers$vimeoLogo = $author$project$Helpers$favicon('https://vimeo.com/favicon.ico');
-var $author$project$Helpers$youtubeLogo = $author$project$Helpers$favicon('https://www.youtube.com/favicon.ico');
-var $author$project$Helpers$viewSocial = function (_v0) {
-	var social = _v0.a;
-	var link = _v0.b;
-	switch (social) {
-		case 0:
-			return A2(
-				$author$project$Helpers$viewSocialLink,
-				$zwilias$elm_html_string$Html$String$text('🌐'),
-				link);
-		case 1:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$instagramLogo, link);
-		case 2:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$twitterLogo, link);
-		case 5:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$facebookLogo, link);
-		case 6:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$linkedInLogo, link);
-		case 3:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$vimeoLogo, link);
-		case 4:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$imdbLogo, link);
-		case 7:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$youtubeLogo, link);
-		case 8:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$pinterestLogo, link);
-		case 9:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$spotifyLogo, link);
-		case 10:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$soundcloudLogo, link);
-		default:
-			return A2($author$project$Helpers$viewSocialLink, $author$project$Helpers$behanceLogo, link);
+var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
+var $elm$url$Url$Parser$prepareQuery = function (maybeQuery) {
+	if (maybeQuery.$ === 'Nothing') {
+		return $elm$core$Dict$empty;
+	} else {
+		var qry = maybeQuery.a;
+		return A3(
+			$elm$core$List$foldr,
+			$elm$url$Url$Parser$addParam,
+			$elm$core$Dict$empty,
+			A2($elm$core$String$split, '&', qry));
 	}
 };
-var $author$project$Team$Main$viewSocials = function (person) {
-	return A2(
-		$zwilias$elm_html_string$Html$String$div,
-		_List_fromArray(
-			[
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-top', '10px')
-			]),
-		A2(
-			$elm$core$List$map,
-			$author$project$Helpers$viewSocial,
-			A2($elm$core$List$sortWith, $author$project$Team$Main$socialSort, person.f)));
+var $elm$url$Url$Parser$parse = F2(
+	function (_v0, url) {
+		var parser = _v0.a;
+		return $elm$url$Url$Parser$getFirstMatch(
+			parser(
+				A5(
+					$elm$url$Url$Parser$State,
+					_List_Nil,
+					$elm$url$Url$Parser$preparePath(url.path),
+					$elm$url$Url$Parser$prepareQuery(url.query),
+					url.fragment,
+					$elm$core$Basics$identity)));
+	});
+var $author$project$FeastDayActivities$FeastDayHelpers$Date = function (a) {
+	return {$: 'Date', a: a};
 };
-var $author$project$Team$Main$viewPerson = function (person) {
+var $author$project$FeastDayActivities$FeastDayHelpers$Month = function (a) {
+	return {$: 'Month', a: a};
+};
+var $elm$url$Url$Parser$Parser = function (a) {
+	return {$: 'Parser', a: a};
+};
+var $elm$url$Url$Parser$mapState = F2(
+	function (func, _v0) {
+		var visited = _v0.visited;
+		var unvisited = _v0.unvisited;
+		var params = _v0.params;
+		var frag = _v0.frag;
+		var value = _v0.value;
+		return A5(
+			$elm$url$Url$Parser$State,
+			visited,
+			unvisited,
+			params,
+			frag,
+			func(value));
+	});
+var $elm$url$Url$Parser$map = F2(
+	function (subValue, _v0) {
+		var parseArg = _v0.a;
+		return $elm$url$Url$Parser$Parser(
+			function (_v1) {
+				var visited = _v1.visited;
+				var unvisited = _v1.unvisited;
+				var params = _v1.params;
+				var frag = _v1.frag;
+				var value = _v1.value;
+				return A2(
+					$elm$core$List$map,
+					$elm$url$Url$Parser$mapState(value),
+					parseArg(
+						A5($elm$url$Url$Parser$State, visited, unvisited, params, frag, subValue)));
+			});
+	});
+var $elm$core$List$append = F2(
+	function (xs, ys) {
+		if (!ys.b) {
+			return xs;
+		} else {
+			return A3($elm$core$List$foldr, $elm$core$List$cons, ys, xs);
+		}
+	});
+var $elm$core$List$concat = function (lists) {
+	return A3($elm$core$List$foldr, $elm$core$List$append, _List_Nil, lists);
+};
+var $elm$core$List$concatMap = F2(
+	function (f, list) {
+		return $elm$core$List$concat(
+			A2($elm$core$List$map, f, list));
+	});
+var $elm$url$Url$Parser$oneOf = function (parsers) {
+	return $elm$url$Url$Parser$Parser(
+		function (state) {
+			return A2(
+				$elm$core$List$concatMap,
+				function (_v0) {
+					var parser = _v0.a;
+					return parser(state);
+				},
+				parsers);
+		});
+};
+var $author$project$FeastDayActivities$FeastDayHelpers$UrlDate = F2(
+	function (month, date) {
+		return {date: date, month: month};
+	});
+var $elm$url$Url$Parser$s = function (str) {
+	return $elm$url$Url$Parser$Parser(
+		function (_v0) {
+			var visited = _v0.visited;
+			var unvisited = _v0.unvisited;
+			var params = _v0.params;
+			var frag = _v0.frag;
+			var value = _v0.value;
+			if (!unvisited.b) {
+				return _List_Nil;
+			} else {
+				var next = unvisited.a;
+				var rest = unvisited.b;
+				return _Utils_eq(next, str) ? _List_fromArray(
+					[
+						A5(
+						$elm$url$Url$Parser$State,
+						A2($elm$core$List$cons, next, visited),
+						rest,
+						params,
+						frag,
+						value)
+					]) : _List_Nil;
+			}
+		});
+};
+var $elm$url$Url$Parser$slash = F2(
+	function (_v0, _v1) {
+		var parseBefore = _v0.a;
+		var parseAfter = _v1.a;
+		return $elm$url$Url$Parser$Parser(
+			function (state) {
+				return A2(
+					$elm$core$List$concatMap,
+					parseAfter,
+					parseBefore(state));
+			});
+	});
+var $elm$url$Url$Parser$custom = F2(
+	function (tipe, stringToSomething) {
+		return $elm$url$Url$Parser$Parser(
+			function (_v0) {
+				var visited = _v0.visited;
+				var unvisited = _v0.unvisited;
+				var params = _v0.params;
+				var frag = _v0.frag;
+				var value = _v0.value;
+				if (!unvisited.b) {
+					return _List_Nil;
+				} else {
+					var next = unvisited.a;
+					var rest = unvisited.b;
+					var _v2 = stringToSomething(next);
+					if (_v2.$ === 'Just') {
+						var nextValue = _v2.a;
+						return _List_fromArray(
+							[
+								A5(
+								$elm$url$Url$Parser$State,
+								A2($elm$core$List$cons, next, visited),
+								rest,
+								params,
+								frag,
+								value(nextValue))
+							]);
+					} else {
+						return _List_Nil;
+					}
+				}
+			});
+	});
+var $elm$url$Url$Parser$string = A2($elm$url$Url$Parser$custom, 'STRING', $elm$core$Maybe$Just);
+var $author$project$FeastDayActivities$FeastDayHelpers$urlDayParser = A2(
+	$elm$url$Url$Parser$map,
+	$author$project$FeastDayActivities$FeastDayHelpers$UrlDate,
+	A2(
+		$elm$url$Url$Parser$slash,
+		$elm$url$Url$Parser$s('feastdayactivities'),
+		A2($elm$url$Url$Parser$slash, $elm$url$Url$Parser$string, $elm$url$Url$Parser$string)));
+var $author$project$FeastDayActivities$FeastDayHelpers$urlMonthParser = A2(
+	$elm$url$Url$Parser$slash,
+	$elm$url$Url$Parser$s('feastdayactivities'),
+	$elm$url$Url$Parser$string);
+var $author$project$FeastDayActivities$FeastDayHelpers$route = $elm$url$Url$Parser$oneOf(
+	_List_fromArray(
+		[
+			A2($elm$url$Url$Parser$map, $author$project$FeastDayActivities$FeastDayHelpers$Date, $author$project$FeastDayActivities$FeastDayHelpers$urlDayParser),
+			A2($elm$url$Url$Parser$map, $author$project$FeastDayActivities$FeastDayHelpers$Month, $author$project$FeastDayActivities$FeastDayHelpers$urlMonthParser)
+		]));
+var $author$project$FeastDayActivities$FeastDayHelpers$parseRoute = $elm$url$Url$Parser$parse($author$project$FeastDayActivities$FeastDayHelpers$route);
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
+var $elm$core$List$filter = F2(
+	function (isGood, list) {
+		return A3(
+			$elm$core$List$foldr,
+			F2(
+				function (x, xs) {
+					return isGood(x) ? A2($elm$core$List$cons, x, xs) : xs;
+				}),
+			_List_Nil,
+			list);
+	});
+var $elm$core$List$head = function (list) {
+	if (list.b) {
+		var x = list.a;
+		var xs = list.b;
+		return $elm$core$Maybe$Just(x);
+	} else {
+		return $elm$core$Maybe$Nothing;
+	}
+};
+var $elm$core$Debug$log = _Debug_log;
+var $elm$core$String$toLower = _String_toLower;
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
+	});
+var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$FeastDayActivities$FeastDays$videoActivities = function (activities) {
 	return A2(
-		$zwilias$elm_html_string$Html$String$div,
+		$elm$core$List$concatMap,
+		function (activity) {
+			if (activity.$ === 'Video') {
+				var v = activity.a;
+				return _List_fromArray(
+					[
+						{link: v.link, title: v.title}
+					]);
+			} else {
+				return _List_Nil;
+			}
+		},
+		activities);
+};
+var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$core$List$isEmpty = function (xs) {
+	if (!xs.b) {
+		return true;
+	} else {
+		return false;
+	}
+};
+var $elm$html$Html$span = _VirtualDom_node('span');
+var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $author$project$FeastDayActivities$Main$viewVideos = function (videos) {
+	return $elm$core$List$isEmpty(videos) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
+		$elm$html$Html$div,
+		_List_Nil,
 		_List_fromArray(
 			[
-				$zwilias$elm_html_string$Html$String$Attributes$class('hcenter'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'grid'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'grid-template-columns', '72px 1fr'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '30px 0'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'min-height', '115px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background', 'white'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '4px'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '20px')
-			]),
-		_List_fromArray(
-			[
-				A2($author$project$Team$Main$viewImage, person.b, person.c),
 				A2(
-				$zwilias$elm_html_string$Html$String$div,
+				$elm$html$Html$h2,
 				_List_Nil,
 				_List_fromArray(
 					[
-						$author$project$Team$Main$viewName(person.d),
-						$author$project$Team$Main$viewPosition(person.e),
-						$author$project$Team$Main$viewDescription(person.a),
-						$author$project$Team$Main$viewSocials(person)
-					]))
+						$elm$html$Html$text('Videos')
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				A2(
+					$elm$core$List$map,
+					function (video) {
+						return A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$href(video.link),
+									$elm$html$Html$Attributes$target('_blank')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(video.title)
+								]));
+					},
+					videos))
 			]));
 };
-var $author$project$Team$Main$viewPeople = F3(
-	function (title, description, people) {
-		return A2(
-			$zwilias$elm_html_string$Html$String$div,
-			_List_fromArray(
-				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-bottom', '100px')
-				]),
-			_Utils_ap(
-				_List_fromArray(
-					[
-						A2(
-						$zwilias$elm_html_string$Html$String$h2,
-						$author$project$Team$Main$titleStyle,
-						_List_fromArray(
-							[
-								$zwilias$elm_html_string$Html$String$text(title)
-							])),
-						A2(
-						$zwilias$elm_html_string$Html$String$div,
-						_List_fromArray(
-							[
-								A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-								$zwilias$elm_html_string$Html$String$Attributes$class('hcenter')
-							]),
-						_List_fromArray(
-							[
-								$zwilias$elm_html_string$Html$String$text(description)
-							]))
-					]),
-				A2($elm$core$List$map, $author$project$Team$Main$viewPerson, people)));
-	});
-var $author$project$Team$Main$viewBody = A2(
-	$zwilias$elm_html_string$Html$String$div,
-	_List_fromArray(
-		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('hcenter'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '80%'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '800px')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$h1,
-			$author$project$Team$Main$h1Style,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('The Team')
-				])),
-			A3($author$project$Team$Main$viewPeople, 'Staff', '', $author$project$Team$Main$staff),
-			A3($author$project$Team$Main$viewPeople, 'Board of Advisors', '', $author$project$Team$Main$boardOfAdvisors),
-			A3($author$project$Team$Main$viewPeople, 'Talent', 'A number of talented artists, contractors, teams and people help bring these animations to life.', $author$project$Team$Main$contractors)
-		]));
-var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
-var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
-var $author$project$Footer$toPx = function (x) {
-	return $elm$core$String$fromInt(x) + 'px';
-};
-var $author$project$Footer$viewFooter = A2(
-	$zwilias$elm_html_string$Html$String$footer,
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$Attributes$style,
-			'padding',
-			$author$project$Footer$toPx(30)),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', 'black'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform-style', 'preserve-3d')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$p,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('Copyright © 2023 Catholic Stories for Children. All rights reserved.')
-				])),
-			A2(
-			$zwilias$elm_html_string$Html$String$p,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
-				]))
-		]));
-var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
-var $author$project$Header$backButton = A2(
-	$zwilias$elm_html_string$Html$String$a,
-	_List_fromArray(
-		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('vcenter'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'right', '32px'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-			$zwilias$elm_html_string$Html$String$Attributes$href('/'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$img,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$Attributes$src('/assets/backarrow.png'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '14px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-right', '10px')
-				]),
-			_List_Nil),
-			A2(
-			$zwilias$elm_html_string$Html$String$span,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('Back')
-				]))
-		]));
-var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
-var $author$project$Header$toPx = function (x) {
-	return $elm$core$String$fromInt(x) + 'px';
-};
-var $author$project$Header$viewHeaderTitle = function (title) {
+var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feastActivities) {
+	var activities = A2(
+		$elm$core$List$concatMap,
+		function ($) {
+			return $.activities;
+		},
+		feastActivities);
 	return A2(
-		$zwilias$elm_html_string$Html$String$a,
+		$elm$html$Html$div,
+		_List_Nil,
 		_List_fromArray(
 			[
-				$zwilias$elm_html_string$Html$String$Attributes$class('mobileHide'),
-				$zwilias$elm_html_string$Html$String$Attributes$class('center'),
-				$zwilias$elm_html_string$Html$String$Attributes$class('inlineBlock'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-				$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
-				$zwilias$elm_html_string$Html$String$Attributes$href('/')
+				$author$project$FeastDayActivities$Main$viewVideos(
+				$author$project$FeastDayActivities$FeastDays$videoActivities(activities))
+			]));
+};
+var $author$project$FeastDayActivities$Main$viewDate = F2(
+	function (urlDate, feasts) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('text-center')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$h1,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('capitalize')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(urlDate.month + (' ' + urlDate.date))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('grid m-auto max-w-2xl'),
+							$elm$html$Html$Attributes$class('text-left'),
+							$elm$html$Html$Attributes$class('text-2xl')
+						]),
+					A2(
+						$elm$core$List$map,
+						function (feast) {
+							return A2(
+								$elm$html$Html$div,
+								_List_Nil,
+								_List_fromArray(
+									[
+										$elm$html$Html$text(feast.feast)
+									]));
+						},
+						feasts)),
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$author$project$FeastDayActivities$Main$viewFeastActivities(feasts)
+						]))
+				]));
+	});
+var $elm$core$List$drop = F2(
+	function (n, list) {
+		drop:
+		while (true) {
+			if (n <= 0) {
+				return list;
+			} else {
+				if (!list.b) {
+					return list;
+				} else {
+					var x = list.a;
+					var xs = list.b;
+					var $temp$n = n - 1,
+						$temp$list = xs;
+					n = $temp$n;
+					list = $temp$list;
+					continue drop;
+				}
+			}
+		}
+	});
+var $elm$core$List$takeReverse = F3(
+	function (n, list, kept) {
+		takeReverse:
+		while (true) {
+			if (n <= 0) {
+				return kept;
+			} else {
+				if (!list.b) {
+					return kept;
+				} else {
+					var x = list.a;
+					var xs = list.b;
+					var $temp$n = n - 1,
+						$temp$list = xs,
+						$temp$kept = A2($elm$core$List$cons, x, kept);
+					n = $temp$n;
+					list = $temp$list;
+					kept = $temp$kept;
+					continue takeReverse;
+				}
+			}
+		}
+	});
+var $elm$core$List$takeTailRec = F2(
+	function (n, list) {
+		return $elm$core$List$reverse(
+			A3($elm$core$List$takeReverse, n, list, _List_Nil));
+	});
+var $elm$core$List$takeFast = F3(
+	function (ctr, n, list) {
+		if (n <= 0) {
+			return _List_Nil;
+		} else {
+			var _v0 = _Utils_Tuple2(n, list);
+			_v0$1:
+			while (true) {
+				_v0$5:
+				while (true) {
+					if (!_v0.b.b) {
+						return list;
+					} else {
+						if (_v0.b.b.b) {
+							switch (_v0.a) {
+								case 1:
+									break _v0$1;
+								case 2:
+									var _v2 = _v0.b;
+									var x = _v2.a;
+									var _v3 = _v2.b;
+									var y = _v3.a;
+									return _List_fromArray(
+										[x, y]);
+								case 3:
+									if (_v0.b.b.b.b) {
+										var _v4 = _v0.b;
+										var x = _v4.a;
+										var _v5 = _v4.b;
+										var y = _v5.a;
+										var _v6 = _v5.b;
+										var z = _v6.a;
+										return _List_fromArray(
+											[x, y, z]);
+									} else {
+										break _v0$5;
+									}
+								default:
+									if (_v0.b.b.b.b && _v0.b.b.b.b.b) {
+										var _v7 = _v0.b;
+										var x = _v7.a;
+										var _v8 = _v7.b;
+										var y = _v8.a;
+										var _v9 = _v8.b;
+										var z = _v9.a;
+										var _v10 = _v9.b;
+										var w = _v10.a;
+										var tl = _v10.b;
+										return (ctr > 1000) ? A2(
+											$elm$core$List$cons,
+											x,
+											A2(
+												$elm$core$List$cons,
+												y,
+												A2(
+													$elm$core$List$cons,
+													z,
+													A2(
+														$elm$core$List$cons,
+														w,
+														A2($elm$core$List$takeTailRec, n - 4, tl))))) : A2(
+											$elm$core$List$cons,
+											x,
+											A2(
+												$elm$core$List$cons,
+												y,
+												A2(
+													$elm$core$List$cons,
+													z,
+													A2(
+														$elm$core$List$cons,
+														w,
+														A3($elm$core$List$takeFast, ctr + 1, n - 4, tl)))));
+									} else {
+										break _v0$5;
+									}
+							}
+						} else {
+							if (_v0.a === 1) {
+								break _v0$1;
+							} else {
+								break _v0$5;
+							}
+						}
+					}
+				}
+				return list;
+			}
+			var _v1 = _v0.b;
+			var x = _v1.a;
+			return _List_fromArray(
+				[x]);
+		}
+	});
+var $elm$core$List$take = F2(
+	function (n, list) {
+		return A3($elm$core$List$takeFast, 0, n, list);
+	});
+var $author$project$FeastDayActivities$FeastDayHelpers$splitList = function (list) {
+	return _Utils_Tuple2(
+		A2(
+			$elm$core$List$take,
+			($elm$core$List$length(list) / 2) | 0,
+			list),
+		A2(
+			$elm$core$List$drop,
+			($elm$core$List$length(list) / 2) | 0,
+			list));
+};
+var $author$project$FeastDayActivities$Main$viewFeastDayHeader = F2(
+	function (color, month) {
+		return A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('text-center'),
+					$elm$html$Html$Attributes$class('col-span-2'),
+					$elm$html$Html$Attributes$class('grid'),
+					$elm$html$Html$Attributes$class('content-center'),
+					$elm$html$Html$Attributes$class('uppercase'),
+					$elm$html$Html$Attributes$class('text-5xl'),
+					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+					A2($elm$html$Html$Attributes$style, 'background-color', color),
+					A2($elm$html$Html$Attributes$style, 'border-top', '3px solid black'),
+					A2($elm$html$Html$Attributes$style, 'border-bottom', '3px solid black'),
+					A2($elm$html$Html$Attributes$style, 'height', '2.5em')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text(month)
+				]));
+	});
+var $author$project$FeastDayActivities$Main$dateWidth = '50px';
+var $elm$html$Html$hr = _VirtualDom_node('hr');
+var $author$project$FeastDayActivities$Main$dateHR = A2(
+	$elm$html$Html$hr,
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'width', $author$project$FeastDayActivities$Main$dateWidth),
+			A2($elm$html$Html$Attributes$style, 'margin-left', '0px'),
+			A2($elm$html$Html$Attributes$style, 'border-top', '4px solid #415c71')
+		]),
+	_List_Nil);
+var $author$project$FeastDayActivities$Main$urlPath = '/feastdayactivities';
+var $author$project$FeastDayActivities$Main$viewFeast = function (feastActivities) {
+	return A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$text(feastActivities.feast)
+			]));
+};
+var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
+	function (month, feastDay) {
+		var link = $author$project$FeastDayActivities$Main$urlPath + ('/' + (month + ('/' + feastDay.date)));
+		return A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$author$project$FeastDayActivities$Main$dateHR,
+					A2(
+					$elm$html$Html$a,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'color', 'black'),
+							$elm$html$Html$Attributes$href(link),
+							$elm$html$Html$Attributes$class('grid grid-cols-calendar gap-3 items-center justify-items-center'),
+							$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
+							$elm$html$Html$Attributes$class('rounded')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('my-3'),
+									$elm$html$Html$Attributes$class('text-3xl')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(feastDay.date)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('justify-self-start')
+								]),
+							A2($elm$core$List$map, $author$project$FeastDayActivities$Main$viewFeast, feastDay.feasts))
+						]))
+				]));
+	});
+var $author$project$FeastDayActivities$Main$viewFeastDays = F2(
+	function (month, list) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('col-span-1')
+				]),
+			_Utils_ap(
+				A2(
+					$elm$core$List$map,
+					$author$project$FeastDayActivities$Main$viewFeastDay(month),
+					list),
+				_List_fromArray(
+					[$author$project$FeastDayActivities$Main$dateHR])));
+	});
+var $author$project$FeastDayActivities$Main$viewMonthPillBox = function (month) {
+	return A2(
+		$elm$html$Html$a,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('col-span-1'),
+				$elm$html$Html$Attributes$class('hover:bg-csc-lightblue'),
+				$elm$html$Html$Attributes$class('rounded'),
+				$elm$html$Html$Attributes$class('p-2'),
+				$elm$html$Html$Attributes$class('cursor-pointer'),
+				$elm$html$Html$Attributes$class('capitalize'),
+				$elm$html$Html$Attributes$href('./' + month)
 			]),
 		_List_fromArray(
 			[
+				$elm$html$Html$text(month)
+			]));
+};
+var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
+	var _v0 = $author$project$FeastDayActivities$FeastDayHelpers$splitList(feastMonth.feasts);
+	var firstHalf = _v0.a;
+	var secondHalf = _v0.b;
+	return A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
 				A2(
-				$zwilias$elm_html_string$Html$String$h1,
+				$elm$html$Html$h1,
 				_List_fromArray(
 					[
-						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '19px'),
-						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px')
+						$elm$html$Html$Attributes$class('text-center')
 					]),
 				_List_fromArray(
 					[
-						$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children')
+						$elm$html$Html$text('2023 Feast Day Activities')
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('grid grid-cols-12'),
+						$elm$html$Html$Attributes$class('text-base md:text-3xl lg:text-3xl'),
+						$elm$html$Html$Attributes$class('mt-6'),
+						$elm$html$Html$Attributes$class('text-center'),
+						A2($elm$html$Html$Attributes$style, 'max-width', '800px'),
+						$elm$html$Html$Attributes$class('hcenter')
+					]),
+				A2($elm$core$List$map, $author$project$FeastDayActivities$Main$viewMonthPillBox, $author$project$FeastDayActivities$FeastDays$months)),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'width', '100vw'),
+						A2($elm$html$Html$Attributes$style, 'max-width', '800px'),
+						$elm$html$Html$Attributes$class('hcenter'),
+						A2($elm$html$Html$Attributes$style, 'position', 'relative'),
+						A2($elm$html$Html$Attributes$style, 'font-size', '20px'),
+						A2($elm$html$Html$Attributes$style, 'margin-top', '50px'),
+						$elm$html$Html$Attributes$class('grid grid-cols-2')
+					]),
+				_List_fromArray(
+					[
+						A2($author$project$FeastDayActivities$Main$viewFeastDayHeader, feastMonth.color, feastMonth.month),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('grid grid-cols-1 md:grid-cols-2'),
+								$elm$html$Html$Attributes$class('col-span-2'),
+								A2($elm$html$Html$Attributes$style, 'background-color', 'white'),
+								A2($elm$html$Html$Attributes$style, 'padding', '50px')
+							]),
+						_List_fromArray(
+							[
+								A2($author$project$FeastDayActivities$Main$viewFeastDays, feastMonth.key, firstHalf),
+								A2($author$project$FeastDayActivities$Main$viewFeastDays, feastMonth.key, secondHalf)
+							]))
 					]))
 			]));
 };
-var $author$project$Logo$logo = A2(
-	$zwilias$elm_html_string$Html$String$img,
-	_List_fromArray(
-		[
-			$zwilias$elm_html_string$Html$String$Attributes$src('/assets/logo_solid.svg'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '30px'),
-			$zwilias$elm_html_string$Html$String$Attributes$alt(''),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'vertical-align', 'middle')
-		]),
-	_List_Nil);
-var $author$project$Header$viewLogo = A2(
-	$zwilias$elm_html_string$Html$String$a,
-	_List_fromArray(
-		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('vcenter'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-left', '30px'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
-			$zwilias$elm_html_string$Html$String$Attributes$href('/'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'home')
-		]),
-	_List_fromArray(
-		[$author$project$Logo$logo]));
-var $author$project$Header$viewSubpageHeader = F2(
-	function (currentPage, leftMargin) {
-		return A2(
-			$zwilias$elm_html_string$Html$String$header,
-			_List_fromArray(
-				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#3d5d75'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, #9DE2EB , #EBD6F1)'),
-					$zwilias$elm_html_string$Html$String$Attributes$class('relative'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '48px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow', 'hidden'),
-					A2(
-					$zwilias$elm_html_string$Html$String$Attributes$style,
-					'padding',
-					'0px ' + $author$project$Header$toPx(leftMargin)),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '19px')
-				]),
-			_List_fromArray(
-				[
-					$author$project$Header$viewLogo,
-					$author$project$Header$viewHeaderTitle(currentPage),
-					$author$project$Header$backButton
-				]));
-	});
-var $author$project$Team$Main$view = A2(
-	$zwilias$elm_html_string$Html$String$div,
-	_List_fromArray(
-		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '100vh'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-x', 'hidden'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-y', 'auto'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'perspective', '300px'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'scroll-behavior', 'smooth'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', $author$project$Helpers$darkBlue)
-		]),
-	_List_fromArray(
-		[
-			A2($author$project$Header$viewSubpageHeader, 'Team', $author$project$Helpers$headerMargin),
-			$author$project$Team$Main$viewBody,
-			$author$project$Footer$viewFooter
-		]));
-var $author$project$Team$Main$main = $elm$browser$Browser$sandbox(
-	{
-		aJ: {},
-		aW: function (_v0) {
-			return function (model) {
-				return model;
-			};
-		},
-		aY: function (_v1) {
-			return $zwilias$elm_html_string$Html$String$toHtml(
-				$zwilias$elm_html_string$Html$String$text(
-					A2($zwilias$elm_html_string$Html$String$toString, 0, $author$project$Team$Main$view)));
+var $elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
 		}
 	});
-_Platform_export({'Team':{'Main':{'init':$author$project$Team$Main$main(
-	$elm$json$Json$Decode$succeed(0))(0)}}});}(this));
+var $author$project$FeastDayActivities$Main$viewBody = function (route) {
+	var _v0 = A2($elm$core$Debug$log, 'route', route);
+	if (_v0.$ === 'Just') {
+		if (_v0.a.$ === 'Date') {
+			var date = _v0.a.a;
+			return A2(
+				$author$project$FeastDayActivities$Main$viewDate,
+				date,
+				A2(
+					$elm$core$Maybe$withDefault,
+					_List_Nil,
+					$elm$core$List$head(
+						A2(
+							$elm$core$List$map,
+							function ($) {
+								return $.feasts;
+							},
+							A2(
+								$elm$core$List$filter,
+								function (feastDay) {
+									return _Utils_eq(
+										$elm$core$String$toLower(feastDay.date),
+										$elm$core$String$toLower(date.date));
+								},
+								A2(
+									$elm$core$Maybe$withDefault,
+									$author$project$FeastDayActivities$FeastDays$january,
+									$elm$core$List$head(
+										A2(
+											$elm$core$List$filter,
+											function (feastDay) {
+												return _Utils_eq(
+													$elm$core$String$toLower(feastDay.key),
+													$elm$core$String$toLower(date.month));
+											},
+											$author$project$FeastDayActivities$FeastDays$feastDays))).feasts)))));
+		} else {
+			var month = _v0.a.a;
+			return $author$project$FeastDayActivities$Main$viewMonth(
+				A2(
+					$elm$core$Maybe$withDefault,
+					$author$project$FeastDayActivities$FeastDays$january,
+					$elm$core$List$head(
+						A2(
+							$elm$core$List$filter,
+							function (feastDay) {
+								return _Utils_eq(
+									$elm$core$String$toLower(feastDay.key),
+									$elm$core$String$toLower(month));
+							},
+							$author$project$FeastDayActivities$FeastDays$feastDays))));
+		}
+	} else {
+		return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$january);
+	}
+};
+var $author$project$FeastDayActivities$Main$view = function (model) {
+	var currentRoute = $author$project$FeastDayActivities$FeastDayHelpers$parseRoute(model.url);
+	return {
+		body: _List_fromArray(
+			[
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'height', '100vh'),
+						A2($elm$html$Html$Attributes$style, 'overflow-x', 'hidden'),
+						A2($elm$html$Html$Attributes$style, 'overflow-y', 'auto'),
+						A2($elm$html$Html$Attributes$style, 'perspective', '300px'),
+						A2($elm$html$Html$Attributes$style, 'scroll-behavior', 'smooth'),
+						A2($elm$html$Html$Attributes$style, 'background-color', '#FEF7F4')
+					]),
+				_List_fromArray(
+					[
+						$author$project$FeastDayActivities$Main$viewBody(currentRoute)
+					]))
+			]),
+		title: 'Feast Day Activities - Catholic Stories for Children'
+	};
+};
+var $author$project$FeastDayActivities$Main$main = $elm$browser$Browser$application(
+	{init: $author$project$FeastDayActivities$Main$init, onUrlChange: $author$project$FeastDayActivities$Main$UrlChanged, onUrlRequest: $author$project$FeastDayActivities$Main$LinkClicked, subscriptions: $author$project$FeastDayActivities$Main$subscriptions, update: $author$project$FeastDayActivities$Main$update, view: $author$project$FeastDayActivities$Main$view});
+_Platform_export({'FeastDayActivities':{'Main':{'init':$author$project$FeastDayActivities$Main$main(
+	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}}});}(this));
