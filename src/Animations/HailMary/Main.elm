@@ -116,13 +116,14 @@ aboutTheAnimation =
         [ class "mx-auto my-4 col-span-2 w-full"
         , class "text-lg"
         , class "p-5"
+        , class "max-w-3xl"
         ]
         [ h2 [] [ text "About the Animation" ]
         , p [ class "my-10" ]
             [ text "This animation helps kids learn the Hail Mary prayer though a story and repetition." ]
         , p [ class "my-10" ]
             [ text
-                ("This animation is meant to be an aide for kids to slowly build a habit of prayer. "
+                ("This animation is meant to be an aid for kids to slowly build a habit of prayer. "
                     ++ "It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray."
                 )
             ]
@@ -135,6 +136,7 @@ aboutThePrayer =
         [ class "mx-auto my-4 col-span-2 w-full"
         , class "text-lg"
         , class "p-5"
+        , class "max-w-3xl"
         ]
         [ h2 [] [ text "About the Prayer" ]
         , p [ class "my-10" ] [ text "The Hail Mary is a beautiful prayer to Mary, the Mother of Jesus. This prayer is filled with Scripture." ]
