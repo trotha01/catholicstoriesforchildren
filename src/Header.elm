@@ -66,6 +66,7 @@ backButton =
         , href "/"
         , class "colorDarkGray"
         , class "grid grid-cols-2 items-center justify-items-center"
+        , class "visible md:invisible"
         ]
         [ img
             [ src "/assets/backarrow.png"
