@@ -545,6 +545,10 @@ video {
   margin: 2rem;
 }
 
+.m-1 {
+  margin: 0.25rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -642,6 +646,10 @@ video {
   max-width: 64rem;
 }
 
+.max-w-3xl {
+  max-width: 48rem;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -690,6 +698,10 @@ video {
 
 .grid-cols-\[150px_1fr_150px\] {
   grid-template-columns: 150px 1fr 150px;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .content-center {
@@ -830,6 +842,15 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-\[0px\] {
+  font-size: 0px;
 }
 
 .uppercase {

@@ -53,7 +53,7 @@ viewHeaderTitle title =
         [ h1
             [ style "font-family" "hvdComicSerifPro"
             , style "margin" "0px"
-            , class "text-lg md:text-2xl"
+            , class "text-[0px] md:text-2xl"
             ]
             [ text "Catholic Stories for Children" ]
         ]

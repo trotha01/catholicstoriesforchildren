@@ -47,7 +47,7 @@ viewBody : Html Never
 viewBody =
     div
         []
-        [ h1 h1Style [ text "Give" ]
+        [ h1 (h1Style ++ [ class "mb-5" ]) [ text "Give" ]
         , donateAbout
         , donateWithPatreon
         , div [ style "margin-bottom" "6em" ] []
@@ -65,67 +65,21 @@ viewBody =
 
 donateAbout : Html msg
 donateAbout =
-    span
-        [ style "text-align" "center"
+    div
+        [ class "text-xl"
+        , class "p-5"
         ]
         [ p
-            [ style "width" "80%"
-            , style "left" "50%"
-            , style "position" "relative"
-            , style "transform" "translate(-50%)"
-            , style "margin-bottom" "1em"
+            [ style "margin-bottom" "1em"
+            , class "m-auto"
+            , class "max-w-3xl"
             ]
             [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
         , p
-            [ style "width" "80%"
-            , style "left" "50%"
-            , style "position" "relative"
-            , style "transform" "translate(-50%)"
+            [ class "m-auto"
+            , class "max-w-3xl"
             ]
             [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883"
-            ]
-        , p
-            [ style "width" "80%"
-            , style "max-width" "650px"
-            , style "min-width" "330px"
-            , class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center"
-            , class "mt-5"
-            , style "left" "50%"
-            , style "position" "relative"
-            , style "transform" "translate(-50%)"
-            ]
-            [ externalLink "Angel Tier $5"
-                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979093"
-                [ img
-                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951"
-                    , style "width" "320px"
-                    ]
-                    []
-                ]
-            , externalLink "Archangel Tier $20"
-                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979095"
-                [ img
-                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258"
-                    , style "width" "320px"
-                    ]
-                    []
-                ]
-            , externalLink "Cherubim Tier $50"
-                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979105"
-                [ img
-                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249"
-                    , style "width" "320px"
-                    ]
-                    []
-                ]
-            , externalLink "Seraphim Tier $100"
-                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979107"
-                [ img
-                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319"
-                    , style "width" "320px"
-                    ]
-                    []
-                ]
             ]
         ]
 
@@ -180,24 +134,69 @@ donateWithPaypal =
 
 donateWithPatreon : Html msg
 donateWithPatreon =
-    div
-        [ style "margin" "auto"
-        , style "width" "400px"
-        , style "text-align" "center"
-        , style "padding" "20px"
-        ]
-        [ a
-            [ href "https://www.patreon.com/catholicstoriesforchildren?fan_landing=true"
-            , rel "noopener"
-            , target "_blank"
-            , style "text-decoration" "none"
-            , style "padding" "10px 20px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            , style "border-radius" "5px"
-            , style "color" "white"
-            , style "background-color" "#FF424D"
+    div []
+        [ div
+            [ style "width" "80%"
+            , style "max-width" "650px"
+            , style "min-width" "330px"
+            , class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center"
+            , class "mt-5"
+            , style "left" "50%"
+            , style "position" "relative"
+            , style "transform" "translate(-50%)"
             ]
-            [ text "Become a patron"
+            [ externalLink "Angel Tier $5"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979093"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951"
+                    , style "width" "320px"
+                    ]
+                    []
+                ]
+            , externalLink "Archangel Tier $20"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979095"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258"
+                    , style "width" "320px"
+                    ]
+                    []
+                ]
+            , externalLink "Cherubim Tier $50"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979105"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249"
+                    , style "width" "320px"
+                    ]
+                    []
+                ]
+            , externalLink "Seraphim Tier $100"
+                "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979107"
+                [ img
+                    [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319"
+                    , style "width" "320px"
+                    ]
+                    []
+                ]
+            ]
+        , div
+            [ style "margin" "auto"
+            , style "width" "400px"
+            , style "text-align" "center"
+            , style "padding" "20px"
+            ]
+            [ a
+                [ href "https://www.patreon.com/catholicstoriesforchildren?fan_landing=true"
+                , rel "noopener"
+                , target "_blank"
+                , style "text-decoration" "none"
+                , style "padding" "10px 20px"
+                , style "box-shadow" "#777 1px 1px 5px"
+                , style "border-radius" "5px"
+                , style "color" "white"
+                , style "background-color" "#FF424D"
+                ]
+                [ text "Become a patron"
+                ]
             ]
         ]
 
@@ -298,7 +297,9 @@ donateSection title body =
         , style "padding" "40px 20px"
         , style "border-radius" "5px"
         ]
-        [ div [ style "padding" "0px 20px" ]
+        [ div
+            [ class "pb-5 m-1"
+            ]
             [ h2 h2Style [ text title ]
             ]
         , div
