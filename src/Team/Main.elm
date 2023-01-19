@@ -7,7 +7,7 @@ import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 import List
-import Ordering exposing (Ordering)
+import Ordering
 
 
 
@@ -295,14 +295,8 @@ main =
 view : Html Never
 view =
     div
-        [ -- For parallax
-          style "height" "100vh"
+        [ style "height" "100vh"
         , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-
-        -- , style "background-image" ("linear-gradient(130deg, " ++ darkBlue ++ " 70%, #8c6897)")
         , style "background-color" darkBlue
         ]
         [ viewSubpageHeader "Team" headerMargin
@@ -323,7 +317,7 @@ titleStyle =
 h1Style : List (Attribute msg)
 h1Style =
     titleStyle
-        ++ [ class "my-7" ]
+        ++ [ class "my-10" ]
 
 
 viewBody : Html Never
