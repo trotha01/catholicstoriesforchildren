@@ -26,6 +26,7 @@ viewHeader currentPage leftMargin =
         , class "relative"
         , style "height" "111px"
         , style "font-size" "19px"
+        , class "grid grid-cols-[100px_1fr] items-center justify-items-center"
 
         -- overflow hidden is so that the header includes the content, otherwise it collapses
         , style "overflow" "hidden"
