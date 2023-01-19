@@ -159,7 +159,7 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , class "grayscale xl:grayscale-0 lg:hover:grayscale transition ease-in-out duration-50"
+                            , class "grayscale"
                             , class "hover:cursor-not-allowed"
                             ]
                             [ img
@@ -171,7 +171,7 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , class "grayscale xl:grayscale-0 lg:hover:grayscale transition ease-in-out duration-50"
+                            , class "grayscale"
                             , class "hover:cursor-not-allowed"
                             ]
                             [ img
@@ -183,7 +183,7 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , class "grayscale xl:grayscale-0 lg:hover:grayscale transition ease-in-out duration-50"
+                            , class "grayscale"
                             , class "hover:cursor-not-allowed"
                             ]
                             [ img
@@ -195,7 +195,7 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , class "grayscale xl:grayscale-0 lg:hover:grayscale transition ease-in-out duration-50"
+                            , class "grayscale"
                             , class "hover:cursor-not-allowed"
                             ]
                             [ img
@@ -207,7 +207,7 @@ viewBody =
                             ]
                         , div
                             [ style "border-radius" "5px"
-                            , class "grayscale xl:grayscale-0 lg:hover:grayscale transition ease-in-out duration-50"
+                            , class "grayscale"
                             , class "hover:cursor-not-allowed"
                             ]
                             [ img
