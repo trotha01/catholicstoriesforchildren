@@ -258,7 +258,6 @@ viewBody =
                 [ a
                     [ href "/team"
                     , rel "noopener"
-                    , target "_blank"
                     , style "text-decoration" "none"
                     , style "padding" "20px"
                     , style "display" "inline-block"
@@ -386,7 +385,6 @@ viewBody =
                 [ a
                     [ href "https://catholicstoriesforchildren.com/newsroom"
                     , rel "noopener"
-                    , target "_blank"
                     , style "text-decoration" "none"
                     , style "padding" "10px"
                     , style "display" "inline-block"
