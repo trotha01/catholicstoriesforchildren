@@ -280,7 +280,7 @@ viewBody =
                     , style "font-family" "hvdComicSerifPro"
                     , style "color" "#333333"
                     , class "text-5xl"
-                    , class "mt-24 mb-5"
+                    , class "mt-40 mb-5"
                     ]
                     [ text "Contact Us!" ]
                 , div
