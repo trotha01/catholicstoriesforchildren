@@ -678,6 +678,10 @@ video {
   grid-template-columns: 100px 1fr 200px;
 }
 
+.grid-cols-\[150px_1fr_150px\] {
+  grid-template-columns: 150px 1fr 150px;
+}
+
 .content-center {
   align-content: center;
 }
@@ -964,6 +968,11 @@ video {
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:before\:w-80::before {

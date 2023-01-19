@@ -21,20 +21,19 @@ viewSubpageHeader currentPage leftMargin =
         isHomePage =
             currentPage == "Catholic Stories for Children"
 
-        ( height, mobileBackButton, smallGridClass ) =
+        ( height, mobileBackButton ) =
             if isHomePage then
-                ( "111px", span [] [], "grid-cols-[100px_1fr]" )
+                ( "111px", span [] [] )
 
             else
-                ( "48px", backButton, "grid-cols-[100px_1fr_200px]" )
+                ( "48px", backButton )
     in
     header
         [ style "background-color" "#3d5d75"
         , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
         , style "height" height
         , class "colorDarkGray"
-        , class smallGridClass
-        , class "grid md:grid-cols-[150px_1fr_150px] items-center justify-items-center"
+        , class "grid grid-cols-[150px_1fr_150px] items-center justify-items-center"
         ]
         [ viewLogo
         , viewHeaderTitle currentPage
@@ -54,11 +53,7 @@ viewHeaderTitle title =
         [ h1
             [ style "font-family" "hvdComicSerifPro"
             , style "margin" "0px"
-            , class "text-2xl"
-
-            -- We hide the anchor element so the grid 3-column layout stays
-            -- but display:none the title so it doesnt affect the height.
-            , class "hidden md:inline"
+            , class "text-lg md:text-2xl"
             ]
             [ text "Catholic Stories for Children" ]
         ]
