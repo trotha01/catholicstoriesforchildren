@@ -386,7 +386,10 @@ viewPerson person =
 
 viewSocials : Person -> Html msg
 viewSocials person =
-    div [ style "margin-top" "10px" ]
+    div
+        [ style "margin-top" "10px"
+        , class "flex items-center"
+        ]
         (List.map viewSocial (List.sortWith socialSort person.socials))
 
 
