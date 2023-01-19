@@ -513,6 +513,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -668,6 +672,10 @@ video {
 
 .grid-cols-\[100px_1fr\] {
   grid-template-columns: 100px 1fr;
+}
+
+.grid-cols-\[100px_1fr_200px\] {
+  grid-template-columns: 100px 1fr 200px;
 }
 
 .content-center {
@@ -901,6 +909,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:visible {
+    visibility: visible;
+  }
+
   .md\:inline {
     display: inline;
   }
@@ -911,6 +923,10 @@ video {
 
   .md\:grid-cols-\[50px_1fr_200px\] {
     grid-template-columns: 50px 1fr 200px;
+  }
+
+  .md\:grid-cols-\[150px_1fr_150px\] {
+    grid-template-columns: 150px 1fr 150px;
   }
 
   .md\:px-10 {
