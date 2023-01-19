@@ -149,11 +149,13 @@ viewBody =
                         [ a
                             [ href "/animations/hailmary"
                             , class "hover:scale-105 transition ease-in-out duration-50"
+                            , attribute "aria-label" "See the Hail Mary Animation"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
+                                , alt "Hail Mary Animation"
                                 ]
                                 []
                             ]
@@ -166,6 +168,7 @@ viewBody =
                                 [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnail_8kiHWq1pu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897611"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
+                                , alt "Guardian Angel Animation"
                                 ]
                                 []
                             ]
@@ -178,6 +181,7 @@ viewBody =
                                 [ src "https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
+                                , alt "St Michael Animation"
                                 ]
                                 []
                             ]
@@ -190,6 +194,7 @@ viewBody =
                                 [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
+                                , alt "Act of Contrition Animation"
                                 ]
                                 []
                             ]
@@ -202,6 +207,7 @@ viewBody =
                                 [ src "https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
+                                , alt "Prayer Before Meals Animation"
                                 ]
                                 []
                             ]
@@ -214,6 +220,7 @@ viewBody =
                                 [ src "https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
+                                , alt "St Anthony Animation"
                                 ]
                                 []
                             ]
@@ -453,7 +460,7 @@ viewBody =
                             , style "box-shadow" "#777 1px 1px 5px"
                             , style "border-radius" "5px"
                             , style "color" "white"
-                            , style "background-color" "#FF424D"
+                            , style "background-color" "#9200B3"
                             ]
                             [ text "Become a patron"
                             ]
