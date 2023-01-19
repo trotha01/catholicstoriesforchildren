@@ -425,6 +425,7 @@ viewBody =
             , style "font-weight" "400"
             , style "line-height" "1.7"
             , style "background" "#9DE2EA80"
+            , class "py-20 md:py-40"
             ]
             [ div
                 []
@@ -442,9 +443,8 @@ viewBody =
                 , p [ style "text-align" "center" ]
                     [ div
                         [ style "margin-bottom" "30px"
-                        , style "width" "400px"
-                        , style "text-align" "center"
-                        , style "padding" "20px"
+                        , class "p-3"
+                        , class "flex justify-center"
                         ]
                         [ a
                             [ href "https://www.patreon.com/catholicstoriesforchildren?fan_landing=true"
@@ -501,7 +501,7 @@ viewSection sectionId background body =
     section
         ([ id sectionId
          , class "FortyToEightypadding"
-         , class "px-5 py-5 md:px-10 md:py-40"
+         , class "px-5 py-5 md:px-10"
          , class "pb-48"
          , style "transform-style" "preserve-3d"
          , style "min-height" "100vh"
