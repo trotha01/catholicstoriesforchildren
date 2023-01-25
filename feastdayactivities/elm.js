@@ -5206,18 +5206,566 @@ var $elm$core$List$any = F2(
 		}
 	});
 var $elm$browser$Browser$Navigation$load = _Browser_load;
-var $author$project$FeastDayActivities$FeastDays$april = {color: '#ebdf72', feasts: _List_Nil, key: 'apr', month: 'April'};
-var $author$project$FeastDayActivities$FeastDays$august = {color: '#ebdf72', feasts: _List_Nil, key: 'aug', month: 'August'};
-var $author$project$FeastDayActivities$FeastDays$december = {color: '#ebdf72', feasts: _List_Nil, key: 'dec', month: 'December'};
-var $author$project$FeastDayActivities$FeastDays$february = {
-	color: '#395d73',
+var $author$project$FeastDayActivities$FeastDays$april = {
+	color: '#ebdf72',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Palm Sunday of the Lord\'s Passion'},
+					{activities: _List_Nil, feast: 'Saint Francis of Paola'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Isidore'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Vincent Ferrer'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Holy Thursday'}
+				])
+		},
+			{
+			date: '07',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Good Friday'},
+					{activities: _List_Nil, feast: 'Saint John Baptist de la Salle'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Holy Saturday'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Easter Sunday'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Stanislaus'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Martin I'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Divine Mercy Sunday'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Anselm of Canterbury'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint George'},
+					{activities: _List_Nil, feast: 'Saint Adalbert'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Fidelis of Sigmaringen'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Mark the Evangelist'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Peter Chanel'},
+					{activities: _List_Nil, feast: 'Saint Louis Grignon de Montfort'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Catherine of Siena'}
+				])
+		},
+			{
+			date: '30',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Pius V.'}
+				])
+		}
+		]),
+	key: 'apr',
+	month: 'April'
+};
+var $author$project$FeastDayActivities$FeastDays$august = {
+	color: '#ebdf72',
 	feasts: _List_fromArray(
 		[
 			{
 			date: '01',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint John Bosco'}
+					{activities: _List_Nil, feast: 'Saint Alphonsus Maria de Liguori'}
+				])
+		},
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Eusebius of Vercelli'},
+					{activities: _List_Nil, feast: 'Saint Peter Julian Eymard'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Jean Vianney (the Curé of Ars)'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Dedication of the Basilica of Saint Mary Major'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Transfiguration of the Lord'}
+				])
+		},
+			{
+			date: '07',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Sixtus II, Pope and Martyr'},
+					{activities: _List_Nil, feast: 'Saint Cajetan'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Dominic'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Teresa Benedicta of the Cross (Edith Stein)'}
+				])
+		},
+			{
+			date: '10',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Lawrence'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Clare'}
+				])
+		},
+			{
+			date: '12',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Jane Frances de Chantal'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Pontian, Pope and Hippoloytus'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Maximilian Mary Kolbe'}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Assumption of the Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Stephen of Hungary'}
+				])
+		},
+			{
+			date: '19',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Eudes'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bernard of Clairvaux'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Pius X'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Queenship of Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Rose of Lima'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bartholomew the Apostle'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Louis'},
+					{activities: _List_Nil, feast: 'Saint Joseph of Calasanz'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Monica'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Augustine of Hippo'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Passion of Saint John the Baptist'}
+				])
+		}
+		]),
+	key: 'aug',
+	month: 'August'
+};
+var $author$project$FeastDayActivities$FeastDays$december = {
+	color: '#ebdf72',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Francis Xavier'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Damascene'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Nicholas'}
+				])
+		},
+			{
+			date: '07',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Ambrose'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Immaculate Conception of the Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Juan Diego'}
+				])
+		},
+			{
+			date: '10',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of Loreto'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Damasus I'}
+				])
+		},
+			{
+			date: '12',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of Guadalupe'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Lucy of Syracuse'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John of the Cross'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Peter Canisius'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John of Kanty'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Nativity of the Lord'}
+				])
+		},
+			{
+			date: '26',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Stephen'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John the Apostle and Evangelist'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Holy Innocents'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Thomas Becket'}
+				])
+		},
+			{
+			date: '30',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Holy Family of Jesus, Mary, and Joseph'}
+				])
+		},
+			{
+			date: '31',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Sylvester I'}
+				])
+		}
+		]),
+	key: 'dec',
+	month: 'December'
+};
+var $author$project$FeastDayActivities$FeastDays$february = {
+	color: '#395d73',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Presentation of the Lord'}
+				])
+		},
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'St Blase'},
+					{activities: _List_Nil, feast: 'St Ansgar'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'St Agatha'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Sts Paul Miki and Companions'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Jerome Emilani'},
+					{activities: _List_Nil, feast: 'Saint Josephine Bakhita'}
+				])
+		},
+			{
+			date: '10',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Scholastica'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of Lourdes'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Cyril, Monk, and Methodius'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Seven Holy Founders of the Servite Order'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Peter Damian'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Ash Wednesday'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Polycarp'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Gregory of Narek'}
 				])
 		}
 		]),
@@ -5385,13 +5933,963 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 	key: 'jan',
 	month: 'Janury'
 };
-var $author$project$FeastDayActivities$FeastDays$july = {color: '#b99eda', feasts: _List_Nil, key: 'jul', month: 'July'};
-var $author$project$FeastDayActivities$FeastDays$june = {color: '#395d73', feasts: _List_Nil, key: 'jun', month: 'June'};
-var $author$project$FeastDayActivities$FeastDays$march = {color: '#b99eda', feasts: _List_Nil, key: 'mar', month: 'March'};
-var $author$project$FeastDayActivities$FeastDays$may = {color: '#9de3ec', feasts: _List_Nil, key: 'may', month: 'May'};
-var $author$project$FeastDayActivities$FeastDays$november = {color: '#b99eda', feasts: _List_Nil, key: 'nov', month: 'November'};
-var $author$project$FeastDayActivities$FeastDays$october = {color: '#395d73', feasts: _List_Nil, key: 'oct', month: 'October'};
-var $author$project$FeastDayActivities$FeastDays$september = {color: '#9de3ec', feasts: _List_Nil, key: 'sep', month: 'September'};
+var $author$project$FeastDayActivities$FeastDays$july = {
+	color: '#b99eda',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '01',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Junipero Serra'}
+				])
+		},
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Thomas the Apostle'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Elizabeth of Portugal (5th in the US)'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Anthony Zaccaria'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Maria Goretti'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Augustine Zhao Rong and Companion'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Benedict'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Henry'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Camillus de Lellis (18th in the US)'},
+					{activities: _List_Nil, feast: 'Saint Kateri Tekakwitha'}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bonaventure'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of Mount Carmel'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Apollinaris'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Lawrence of Brindisi'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Mary Magdalene'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bridget of Sweden'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Sharbel Makhlūf'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint James'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Martha, Mary and Lazarus'}
+				])
+		},
+			{
+			date: '30',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Peter Chrysologus'}
+				])
+		},
+			{
+			date: '31',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Ignatius of Loyola'}
+				])
+		}
+		]),
+	key: 'jul',
+	month: 'July'
+};
+var $author$project$FeastDayActivities$FeastDays$june = {
+	color: '#395d73',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '01',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Justin Martyr'}
+				])
+		},
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Marcellinus and Peter'}
+				])
+		},
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Charles Lwanga and Companions'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Most Holy Trinity'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Boniface'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Norbert'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Ephrem'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Most Holy Body and Blood of Christ'},
+					{activities: _List_Nil, feast: 'Saint Barnabas the Apostle'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Anthony of Padua'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Sacred Heart of Jesus'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Immaculate Heart of Mary'}
+				])
+		},
+			{
+			date: '19',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Romuald'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Aloysius Gonzaga'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Paulinus of Nola'},
+					{activities: _List_Nil, feast: 'Saint John Fisher'},
+					{activities: _List_Nil, feast: 'Saint Thomas More'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Birth of Saint John the Baptist'}
+				])
+		},
+			{
+			date: '26',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Josemaría Escrivá'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Cyril of Alexandria'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Irenaeus'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Peter and Paul'}
+				])
+		},
+			{
+			date: '30',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'First Martyrs of the Church of Rome'}
+				])
+		}
+		]),
+	key: 'jun',
+	month: 'June'
+};
+var $author$project$FeastDayActivities$FeastDays$march = {
+	color: '#b99eda',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Katharine Drexel'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Casimir'}
+				])
+		},
+			{
+			date: '07',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Perpetua and Felicity'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John of God'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Frances of Rome'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Patrick'}
+				])
+		},
+			{
+			date: '18',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Cyril of Jerusalem'}
+				])
+		},
+			{
+			date: '19',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Joseph Husband of the Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Turibius of Mogrovejo'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Annunciation of the Lord'}
+				])
+		}
+		]),
+	key: 'mar',
+	month: 'March'
+};
+var $author$project$FeastDayActivities$FeastDays$may = {
+	color: '#9de3ec',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '01',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Joseph the Worker'}
+				])
+		},
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Athanasius'}
+				])
+		},
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Philip and James'}
+				])
+		},
+			{
+			date: '10',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Damien de Veuster of Moloka\'i'},
+					{activities: _List_Nil, feast: 'Saint John of Ávila'}
+				])
+		},
+			{
+			date: '12',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Nereus and Achilleus'},
+					{activities: _List_Nil, feast: 'Saint Pancras'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of Fatima'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Mattias the Apostle'}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Isidore'}
+				])
+		},
+			{
+			date: '18',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Ascension of the Lord (or 21st)'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bernardine of Siena'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'The Ascension of the Lord (or 18th)'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Rita of Cascia'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bede the Venerable'},
+					{activities: _List_Nil, feast: 'Saint Gregory VII'}
+				])
+		},
+			{
+			date: '26',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Philip Neri'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Augustine of Canterbury'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Pentecost Sunday'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Blessed Virgin Mary, Mother of the Church'},
+					{activities: _List_Nil, feast: 'Saint Paul VI'}
+				])
+		},
+			{
+			date: '31',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Visitation of the Blessed Virgin Mary'}
+				])
+		}
+		]),
+	key: 'may',
+	month: 'May'
+};
+var $author$project$FeastDayActivities$FeastDays$november = {
+	color: '#b99eda',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '01',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'All Saints'}
+				])
+		},
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'All Souls Day'}
+				])
+		},
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Martin de Porres'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Charles Borromeo'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Dedication of the Lateran Basilica'}
+				])
+		},
+			{
+			date: '10',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Leo the Great'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Martin of Tours'}
+				])
+		},
+			{
+			date: '12',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Josaphat'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Frances Xavier Cabrini'}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Albert the Great'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Margaret of Scotland'},
+					{activities: _List_Nil, feast: 'Saint Gertrude the Great'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Elizabeth of Hungary'}
+				])
+		},
+			{
+			date: '18',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Dedication of the Basilicas of Saints Peter and Paul'},
+					{activities: _List_Nil, feast: 'Saint Rose Philippine Duchesne'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lord Jesus Christ, King of the Universe - Solemnity'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Presentation of the Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Cecilia'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Clement I'},
+					{activities: _List_Nil, feast: 'Blessed Miguel Agustín Pro'},
+					{activities: _List_Nil, feast: 'Saint Columban'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Andrew Dung-Lac, Priest and his Companions'}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Catherine of Alexandria'}
+				])
+		},
+			{
+			date: '30',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Andrew the Apostle'}
+				])
+		}
+		]),
+	key: 'nov',
+	month: 'November'
+};
+var $author$project$FeastDayActivities$FeastDays$october = {
+	color: '#395d73',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '01',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Therese of the Child Jesus'}
+				])
+		},
+			{
+			date: '02',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Guardian Angels'}
+				])
+		},
+			{
+			date: '04',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Francis of Assisi'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Faustina Kowalska'}
+				])
+		},
+			{
+			date: '06',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Bruno'},
+					{activities: _List_Nil, feast: 'Blessed Marie Rose Durocher'}
+				])
+		},
+			{
+			date: '07',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of the Rosary'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Henry Newman'},
+					{activities: _List_Nil, feast: 'Saint Denis'},
+					{activities: _List_Nil, feast: 'Saint John Leonardi'}
+				])
+		},
+			{
+			date: '11',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Paul XXIII'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Callistus I'}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Teresa of Jesus'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Hedwig'},
+					{activities: _List_Nil, feast: 'Saint Margaret Mary Alacoque'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Ignatius of Antioch'}
+				])
+		},
+			{
+			date: '18',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Luke the Evangelist'}
+				])
+		},
+			{
+			date: '19',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Jean de Bébeuf, Isaac Jogues, Priests and Martyrs; and their Companions'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Paul of the Cross'}
+				])
+		},
+			{
+			date: '22',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Paul II'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John of Capistrano'}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Anthony Mary Claret'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Simon and Saint Jude'}
+				])
+		}
+		]),
+	key: 'oct',
+	month: 'October'
+};
+var $author$project$FeastDayActivities$FeastDays$september = {
+	color: '#9de3ec',
+	feasts: _List_fromArray(
+		[
+			{
+			date: '03',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Gregory the Great, Pope and Doctor'}
+				])
+		},
+			{
+			date: '05',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Mother Teresa of Calcutta'}
+				])
+		},
+			{
+			date: '08',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Birth of the Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '09',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Peter Claver'}
+				])
+		},
+			{
+			date: '12',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Holy Name of the Blessed Virgin Mary'}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint John Chrysostom, Bishop and Doctor'}
+				])
+		},
+			{
+			date: '14',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Exaltation of the Holy Cross'}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Our Lady of Sorrows'}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Cornelius, Pope'},
+					{activities: _List_Nil, feast: 'Saint Cyprian, Bishop'}
+				])
+		},
+			{
+			date: '17',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Hildegard of Bingen, Virgin and Doctor of the Church'}
+				])
+		},
+			{
+			date: '19',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Januarius, Bishop and Martyr'}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Andrew Kim Tae-gŏn, Priest'},
+					{activities: _List_Nil, feast: 'Saint Paul Chŏng Ha-sang, and Companions, Martyrs'}
+				])
+		},
+			{
+			date: '21',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Matthew the Evangelist, Apostle'}
+				])
+		},
+			{
+			date: '23',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Pio of Pietrelcina, Priest'}
+				])
+		},
+			{
+			date: '26',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Cosmas; Saint Damian, Martyrs'}
+				])
+		},
+			{
+			date: '27',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Vincent de Paul, Priest'}
+				])
+		},
+			{
+			date: '28',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Wenceslaus, Martyr'},
+					{activities: _List_Nil, feast: 'Saint Lawrence Ruiz and Companions, Martyrs'}
+				])
+		},
+			{
+			date: '29',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saints Michael, Gabriel and Raphael, Archangels'}
+				])
+		},
+			{
+			date: '30',
+			feasts: _List_fromArray(
+				[
+					{activities: _List_Nil, feast: 'Saint Jerome, Priest and Doctor'}
+				])
+		}
+		]),
+	key: 'sep',
+	month: 'September'
+};
 var $author$project$FeastDayActivities$FeastDays$feastDays = _List_fromArray(
 	[$author$project$FeastDayActivities$FeastDays$january, $author$project$FeastDayActivities$FeastDays$february, $author$project$FeastDayActivities$FeastDays$march, $author$project$FeastDayActivities$FeastDays$april, $author$project$FeastDayActivities$FeastDays$may, $author$project$FeastDayActivities$FeastDays$june, $author$project$FeastDayActivities$FeastDays$july, $author$project$FeastDayActivities$FeastDays$august, $author$project$FeastDayActivities$FeastDays$september, $author$project$FeastDayActivities$FeastDays$october, $author$project$FeastDayActivities$FeastDays$november, $author$project$FeastDayActivities$FeastDays$december]);
 var $author$project$FeastDayActivities$FeastDays$months = A2(
