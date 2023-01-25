@@ -4,6 +4,7 @@ var TeamElm = require('./teamElm.js')
 var GiveElm = require('./giveElm.js')
 var NewsroomElm = require('./newsroomElm.js')
 var HailMaryElm = require('./hailMaryElm.js')
+var GuardianAngelElm = require('./guardianAngelElm.js')
 
 var htmlPart1 = `<!doctype html>
 <html lang="en">
@@ -149,4 +150,5 @@ var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('./team/index.html', '
 var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏') })
 var newsroomApp = NewsroomElm.Elm.Newsroom.Main.init({ node: fakeNode('./newsroom/index.html', 'Newsroom - Catholic Stories for Children', '') })
 var hailMaryApp = HailMaryElm.Elm.Animations.HailMary.Main.init({ node: fakeNode('./animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', '') })
+var guardianAngelApp = GuardianAngelElm.Elm.Animations.GuardianAngel.Main.init({ node: fakeNode('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', '') })
 fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', 'FeastDayActivities')

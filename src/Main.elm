@@ -159,10 +159,10 @@ viewBody =
                                 ]
                                 []
                             ]
-                        , div
-                            [ style "border-radius" "5px"
-                            , class "grayscale"
-                            , class "hover:cursor-not-allowed"
+                        , a
+                            [ href "/animations/guardianangel"
+                            , class "hover:scale-105 transition ease-in-out duration-50"
+                            , attribute "aria-label" "See the Guardian Angel Animation"
                             ]
                             [ img
                                 [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnail_8kiHWq1pu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897611"
