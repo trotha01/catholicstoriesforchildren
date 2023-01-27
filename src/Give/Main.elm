@@ -150,6 +150,7 @@ donateWithPatreon =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951"
                     , style "width" "320px"
+                    , alt "$5 per month"
                     ]
                     []
                 ]
@@ -158,6 +159,7 @@ donateWithPatreon =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/2_TXO1rv_0h-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024258"
                     , style "width" "320px"
+                    , alt "$20 per month"
                     ]
                     []
                 ]
@@ -166,6 +168,7 @@ donateWithPatreon =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/3_I-pMvDP6U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024249"
                     , style "width" "320px"
+                    , alt "$50 per month"
                     ]
                     []
                 ]
@@ -174,6 +177,7 @@ donateWithPatreon =
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/4_2E5sDbBLI.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666903024319"
                     , style "width" "320px"
+                    , alt "$100 per month"
                     ]
                     []
                 ]
@@ -193,7 +197,7 @@ donateWithPatreon =
                 , style "box-shadow" "#777 1px 1px 5px"
                 , style "border-radius" "5px"
                 , style "color" "white"
-                , style "background-color" "#FF424D"
+                , style "background-color" "#9200B3"
                 ]
                 [ text "Become a patron"
                 ]
