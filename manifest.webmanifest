@@ -19,6 +19,11 @@
       "type": "image/png",
       "sizes": "144x144",
       "purpose": "maskable"
+    },
+    {
+      "src": "/assets/Favicons/PNG/512x512-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",
