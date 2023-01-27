@@ -194,49 +194,50 @@ viewSocial : ( Social, String ) -> Html msg
 viewSocial ( social, link ) =
     case social of
         Website ->
-            viewSocialLink (text "🌐") link
+            viewSocialLink (text "🌐") link "website"
 
         Instagram ->
-            viewSocialLink instagramLogo link
+            viewSocialLink instagramLogo link "instagram"
 
         Twitter ->
-            viewSocialLink twitterLogo link
+            viewSocialLink twitterLogo link "twitter"
 
         Facebook ->
-            viewSocialLink facebookLogo link
+            viewSocialLink facebookLogo link "facebook"
 
         LinkedIn ->
-            viewSocialLink linkedInLogo link
+            viewSocialLink linkedInLogo link "linkedin"
 
         Vimeo ->
-            viewSocialLink vimeoLogo link
+            viewSocialLink vimeoLogo link "vimeo"
 
         IMDB ->
-            viewSocialLink imdbLogo link
+            viewSocialLink imdbLogo link "imdb"
 
         YouTube ->
-            viewSocialLink youtubeLogo link
+            viewSocialLink youtubeLogo link "youtube"
 
         Pinterest ->
-            viewSocialLink pinterestLogo link
+            viewSocialLink pinterestLogo link "pinterest"
 
         Spotify ->
-            viewSocialLink spotifyLogo link
+            viewSocialLink spotifyLogo link "spotify"
 
         SoundCloud ->
-            viewSocialLink soundcloudLogo link
+            viewSocialLink soundcloudLogo link "soundcloud"
 
         Behance ->
-            viewSocialLink behanceLogo link
+            viewSocialLink behanceLogo link "behance"
 
 
-viewSocialLink : Html msg -> String -> Html msg
-viewSocialLink image link =
+viewSocialLink : Html msg -> String -> String -> Html msg
+viewSocialLink image link label =
     a
         [ href link
         , style "text-decoration" "none"
         , target "_blank"
         , style "margin-right" "10px"
+        , attribute "aria-label" label
         ]
         [ image ]
 

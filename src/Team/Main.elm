@@ -451,7 +451,7 @@ viewName name =
 viewPosition : String -> Html msg
 viewPosition position =
     div
-        [ style "color" "#777"
+        [ style "color" "#333"
         , style "font-size" ".8em"
         ]
         [ text position ]
