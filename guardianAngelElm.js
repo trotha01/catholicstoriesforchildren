@@ -5914,7 +5914,7 @@ var $author$project$Animations$GuardianAngel$Main$viewVideoPlayers = A2(
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '100%'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'top', '0'),
 							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '0'),
-							$zwilias$elm_html_string$Html$String$Attributes$src('https://www.youtube.com/embed/03hmpXjV_ck'),
+							$zwilias$elm_html_string$Html$String$Attributes$src('https://www.youtube-nocookie.com/embed/03hmpXjV_ck'),
 							$zwilias$elm_html_string$Html$String$Attributes$title('Guardian Angel | Prayer Time with Angels'),
 							A2(
 							$zwilias$elm_html_string$Html$String$Attributes$property,

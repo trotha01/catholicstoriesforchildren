@@ -78,7 +78,7 @@ viewVideoPlayers =
                 , style "height" "100%"
                 , style "top" "0"
                 , style "left" "0"
-                , src "https://www.youtube.com/embed/03hmpXjV_ck"
+                , src "https://www.youtube-nocookie.com/embed/03hmpXjV_ck"
                 , title "Guardian Angel | Prayer Time with Angels"
                 , property "frameborder" (Json.Encode.string "0")
                 , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")

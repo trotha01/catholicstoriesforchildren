@@ -99,7 +99,7 @@ viewVideoPlayers =
                 , style "height" "100%"
                 , style "top" "0"
                 , style "left" "0"
-                , src "https://www.youtube.com/embed/QNVNbLiqznI"
+                , src "https://www.youtube-nocookie.com/embed/QNVNbLiqznI"
                 , title "Hail Mary, Full of Grace Video"
                 , property "frameborder" (Json.Encode.string "0")
                 , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
