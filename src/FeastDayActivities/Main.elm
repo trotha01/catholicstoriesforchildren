@@ -146,15 +146,23 @@ viewDate urlDate feasts =
         [ h1 [ class "capitalize" ]
             [ text (urlDate.month ++ " " ++ urlDate.date)
             ]
-        , div
-            [ class "grid m-auto max-w-2xl"
-            , class "text-left"
-            , class "text-2xl"
-            ]
-            (List.map (\feast -> div [] [ text feast.feast ]) feasts)
-        , div []
+        , viewFeastDayHeader feasts
+        , div [ class "mt-10" ]
             [ viewFeastActivities feasts ]
         ]
+
+
+viewFeastDayHeader : List FeastActivities -> Html Msg
+viewFeastDayHeader feasts =
+    let
+        concatFeasts =
+            String.join " and " (List.map .feast feasts)
+    in
+    div
+        [ class "grid m-auto max-w-2xl"
+        , class "text-center"
+        ]
+        [ h2 [ class "text-2xl" ] [ text ("Feast of " ++ concatFeasts) ] ]
 
 
 viewFeast : FeastActivities -> Html Msg
@@ -167,9 +175,14 @@ viewFeastActivities feastActivities =
     let
         activities =
             List.concatMap .activities feastActivities
+
+        feastDayReadingActivities =
+            readingActivities activities
     in
     div []
         [ viewVideos (videoActivities activities)
+        , viewPrintouts (printoutActivities activities)
+        , viewReadings feastDayReadingActivities
         ]
 
 
@@ -180,7 +193,7 @@ viewVideos videos =
 
     else
         div []
-            [ h2 [] [ text "Videos" ]
+            [ h3 [] [ text "Videos" ]
             , div []
                 (List.map
                     (\video ->
@@ -192,6 +205,73 @@ viewVideos videos =
                             ]
                     )
                     videos
+                )
+            ]
+
+
+viewPrintouts : List PrintoutActivity -> Html Msg
+viewPrintouts activities =
+    if List.isEmpty activities then
+        span [] []
+
+    else
+        div []
+            [ h3 [] [ text "Printouts" ]
+            , div []
+                (List.map
+                    (\activity ->
+                        a
+                            [ href activity.link
+                            , target "_blank"
+                            ]
+                            [ text activity.title
+                            ]
+                    )
+                    activities
+                )
+            ]
+
+
+viewReadings : List ReadingActivity -> Html Msg
+viewReadings activities =
+    if List.isEmpty activities then
+        span [] []
+
+    else
+        div []
+            [ h3
+                [ class "text-3xl"
+                ]
+                [ text "Reading" ]
+            , div [ class "max-w-3xl m-auto" ]
+                (List.map
+                    (\activity ->
+                        a
+                            [ class "grid grid-cols-[50px_1fr]"
+                            , href activity.link
+                            , target "_blank"
+                            , class "hover:bg-csc-lightpurple"
+                            , class "rounded m-5"
+                            ]
+                            [ img
+                                [ src activity.image
+                                , class "w-10 h-10"
+                                , class "rounded"
+                                ]
+                                []
+                            , div [ class "grid grid-rows" ]
+                                [ h4
+                                    [ class "text-xl text-left"
+                                    ]
+                                    [ text activity.title ]
+                                , div
+                                    [ class "text-left"
+                                    ]
+                                    [ text activity.snippet ]
+                                ]
+                            ]
+                    )
+                    activities
                 )
             ]
 
@@ -227,7 +307,7 @@ viewMonth feastMonth =
             , style "margin-top" "50px"
             , class "grid grid-cols-2"
             ]
-            [ viewFeastDayHeader feastMonth.color feastMonth.month
+            [ viewFeastMonthHeader feastMonth.color feastMonth.month
             , div
                 [ class "grid grid-cols-1 md:grid-cols-2"
                 , class "col-span-2"
@@ -241,8 +321,8 @@ viewMonth feastMonth =
         ]
 
 
-viewFeastDayHeader : String -> String -> Html Msg
-viewFeastDayHeader color month =
+viewFeastMonthHeader : String -> String -> Html Msg
+viewFeastMonthHeader color month =
     h2
         [ class "text-center"
         , class "col-span-2"

@@ -5772,6 +5772,9 @@ var $author$project$FeastDayActivities$FeastDays$february = {
 	key: 'feb',
 	month: 'February'
 };
+var $author$project$FeastDayActivities$FeastDays$Reading = function (a) {
+	return {$: 'Reading', a: a};
+};
 var $author$project$FeastDayActivities$FeastDays$Video = function (a) {
 	return {$: 'Video', a: a};
 };
@@ -5867,8 +5870,22 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 			date: '20',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint Fabian'},
-					{activities: _List_Nil, feast: 'Saint Sebastian'}
+					{
+					activities: _List_fromArray(
+						[
+							$author$project$FeastDayActivities$FeastDays$Reading(
+							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'})
+						]),
+					feast: 'Saint Fabian'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							$author$project$FeastDayActivities$FeastDays$Reading(
+							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'})
+						]),
+					feast: 'Saint Sebastian'
+				}
 				])
 		},
 			{
@@ -5926,7 +5943,14 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 			date: '31',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint John Bosco'}
+					{
+					activities: _List_fromArray(
+						[
+							$author$project$FeastDayActivities$FeastDays$Video(
+							{link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', title: 'My Catholic Family - Don Bosco'})
+						]),
+					feast: 'Saint John Bosco'
+				}
 				])
 		}
 		]),
@@ -7814,6 +7838,38 @@ var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$FeastDayActivities$FeastDays$printoutActivities = function (activities) {
+	return A2(
+		$elm$core$List$concatMap,
+		function (activity) {
+			if (activity.$ === 'Printout') {
+				var v = activity.a;
+				return _List_fromArray(
+					[
+						{image: v.image, link: v.link, title: v.title}
+					]);
+			} else {
+				return _List_Nil;
+			}
+		},
+		activities);
+};
+var $author$project$FeastDayActivities$FeastDays$readingActivities = function (activities) {
+	return A2(
+		$elm$core$List$concatMap,
+		function (activity) {
+			if (activity.$ === 'Reading') {
+				var v = activity.a;
+				return _List_fromArray(
+					[
+						{image: v.image, link: v.link, snippet: v.snippet, title: v.title}
+					]);
+			} else {
+				return _List_Nil;
+			}
+		},
+		activities);
+};
 var $author$project$FeastDayActivities$FeastDays$videoActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
@@ -7831,7 +7887,7 @@ var $author$project$FeastDayActivities$FeastDays$videoActivities = function (act
 		activities);
 };
 var $elm$html$Html$a = _VirtualDom_node('a');
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
@@ -7847,6 +7903,128 @@ var $elm$core$List$isEmpty = function (xs) {
 };
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $author$project$FeastDayActivities$Main$viewPrintouts = function (activities) {
+	return $elm$core$List$isEmpty(activities) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h3,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Printouts')
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				A2(
+					$elm$core$List$map,
+					function (activity) {
+						return A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$href(activity.link),
+									$elm$html$Html$Attributes$target('_blank')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(activity.title)
+								]));
+					},
+					activities))
+			]));
+};
+var $elm$html$Html$h4 = _VirtualDom_node('h4');
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $author$project$FeastDayActivities$Main$viewReadings = function (activities) {
+	return $elm$core$List$isEmpty(activities) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h3,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('text-3xl')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Reading')
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('max-w-3xl m-auto')
+					]),
+				A2(
+					$elm$core$List$map,
+					function (activity) {
+						return A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('grid grid-cols-[50px_1fr]'),
+									$elm$html$Html$Attributes$href(activity.link),
+									$elm$html$Html$Attributes$target('_blank'),
+									$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
+									$elm$html$Html$Attributes$class('rounded m-5')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src(activity.image),
+											$elm$html$Html$Attributes$class('w-10 h-10'),
+											$elm$html$Html$Attributes$class('rounded')
+										]),
+									_List_Nil),
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('grid grid-rows')
+										]),
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$h4,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('text-xl text-left')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text(activity.title)
+												])),
+											A2(
+											$elm$html$Html$div,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('text-left')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text(activity.snippet)
+												]))
+										]))
+								]));
+					},
+					activities))
+			]));
+};
 var $author$project$FeastDayActivities$Main$viewVideos = function (videos) {
 	return $elm$core$List$isEmpty(videos) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
 		$elm$html$Html$div,
@@ -7854,7 +8032,7 @@ var $author$project$FeastDayActivities$Main$viewVideos = function (videos) {
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$h2,
+				$elm$html$Html$h3,
 				_List_Nil,
 				_List_fromArray(
 					[
@@ -7888,13 +8066,49 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 			return $.activities;
 		},
 		feastActivities);
+	var feastDayReadingActivities = $author$project$FeastDayActivities$FeastDays$readingActivities(activities);
 	return A2(
 		$elm$html$Html$div,
 		_List_Nil,
 		_List_fromArray(
 			[
 				$author$project$FeastDayActivities$Main$viewVideos(
-				$author$project$FeastDayActivities$FeastDays$videoActivities(activities))
+				$author$project$FeastDayActivities$FeastDays$videoActivities(activities)),
+				$author$project$FeastDayActivities$Main$viewPrintouts(
+				$author$project$FeastDayActivities$FeastDays$printoutActivities(activities)),
+				$author$project$FeastDayActivities$Main$viewReadings(feastDayReadingActivities)
+			]));
+};
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feasts) {
+	var concatFeasts = A2(
+		$elm$core$String$join,
+		' and ',
+		A2(
+			$elm$core$List$map,
+			function ($) {
+				return $.feast;
+			},
+			feasts));
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('grid m-auto max-w-2xl'),
+				$elm$html$Html$Attributes$class('text-center')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h2,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('text-2xl')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Feast of ' + concatFeasts)
+					]))
 			]));
 };
 var $author$project$FeastDayActivities$Main$viewDate = F2(
@@ -7917,29 +8131,13 @@ var $author$project$FeastDayActivities$Main$viewDate = F2(
 						[
 							$elm$html$Html$text(urlDate.month + (' ' + urlDate.date))
 						])),
+					$author$project$FeastDayActivities$Main$viewFeastDayHeader(feasts),
 					A2(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('grid m-auto max-w-2xl'),
-							$elm$html$Html$Attributes$class('text-left'),
-							$elm$html$Html$Attributes$class('text-2xl')
+							$elm$html$Html$Attributes$class('mt-10')
 						]),
-					A2(
-						$elm$core$List$map,
-						function (feast) {
-							return A2(
-								$elm$html$Html$div,
-								_List_Nil,
-								_List_fromArray(
-									[
-										$elm$html$Html$text(feast.feast)
-									]));
-						},
-						feasts)),
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
 					_List_fromArray(
 						[
 							$author$project$FeastDayActivities$Main$viewFeastActivities(feasts)
@@ -8104,29 +8302,6 @@ var $author$project$FeastDayActivities$FeastDayHelpers$splitList = function (lis
 			($elm$core$List$length(list) / 2) | 0,
 			list));
 };
-var $author$project$FeastDayActivities$Main$viewFeastDayHeader = F2(
-	function (color, month) {
-		return A2(
-			$elm$html$Html$h2,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('text-center'),
-					$elm$html$Html$Attributes$class('col-span-2'),
-					$elm$html$Html$Attributes$class('grid'),
-					$elm$html$Html$Attributes$class('content-center'),
-					$elm$html$Html$Attributes$class('uppercase'),
-					$elm$html$Html$Attributes$class('text-5xl'),
-					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-					A2($elm$html$Html$Attributes$style, 'background-color', color),
-					A2($elm$html$Html$Attributes$style, 'border-top', '3px solid black'),
-					A2($elm$html$Html$Attributes$style, 'border-bottom', '3px solid black'),
-					A2($elm$html$Html$Attributes$style, 'height', '2.5em')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text(month)
-				]));
-	});
 var $author$project$FeastDayActivities$Main$dateWidth = '50px';
 var $elm$html$Html$hr = _VirtualDom_node('hr');
 var $author$project$FeastDayActivities$Main$dateHR = A2(
@@ -8206,6 +8381,29 @@ var $author$project$FeastDayActivities$Main$viewFeastDays = F2(
 				_List_fromArray(
 					[$author$project$FeastDayActivities$Main$dateHR])));
 	});
+var $author$project$FeastDayActivities$Main$viewFeastMonthHeader = F2(
+	function (color, month) {
+		return A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('text-center'),
+					$elm$html$Html$Attributes$class('col-span-2'),
+					$elm$html$Html$Attributes$class('grid'),
+					$elm$html$Html$Attributes$class('content-center'),
+					$elm$html$Html$Attributes$class('uppercase'),
+					$elm$html$Html$Attributes$class('text-5xl'),
+					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+					A2($elm$html$Html$Attributes$style, 'background-color', color),
+					A2($elm$html$Html$Attributes$style, 'border-top', '3px solid black'),
+					A2($elm$html$Html$Attributes$style, 'border-bottom', '3px solid black'),
+					A2($elm$html$Html$Attributes$style, 'height', '2.5em')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text(month)
+				]));
+	});
 var $author$project$FeastDayActivities$Main$viewMonthPillBox = function (month) {
 	return A2(
 		$elm$html$Html$a,
@@ -8269,7 +8467,7 @@ var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
 					]),
 				_List_fromArray(
 					[
-						A2($author$project$FeastDayActivities$Main$viewFeastDayHeader, feastMonth.color, feastMonth.month),
+						A2($author$project$FeastDayActivities$Main$viewFeastMonthHeader, feastMonth.color, feastMonth.month),
 						A2(
 						$elm$html$Html$div,
 						_List_fromArray(

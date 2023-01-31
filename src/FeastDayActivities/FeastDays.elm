@@ -50,10 +50,43 @@ videoActivities activities =
             )
 
 
+printoutActivities : List Activity -> List PrintoutActivity
+printoutActivities activities =
+    activities
+        |> List.concatMap
+            (\activity ->
+                case activity of
+                    Printout v ->
+                        [ { title = v.title, link = v.link, image = v.image } ]
+
+                    _ ->
+                        []
+            )
+
+
+readingActivities : List Activity -> List ReadingActivity
+readingActivities activities =
+    activities
+        |> List.concatMap
+            (\activity ->
+                case activity of
+                    Reading v ->
+                        [ { title = v.title
+                          , link = v.link
+                          , image = v.image
+                          , snippet = v.snippet
+                          }
+                        ]
+
+                    _ ->
+                        []
+            )
+
+
 type Activity
     = Video VideoActivity
-    | Reading ReadingActivity
     | Printout PrintoutActivity
+    | Reading ReadingActivity
 
 
 type alias VideoActivity =
@@ -61,7 +94,7 @@ type alias VideoActivity =
 
 
 type alias ReadingActivity =
-    { title : String, image : String, link : String }
+    { title : String, image : String, link : String, snippet : String }
 
 
 type alias PrintoutActivity =
@@ -152,8 +185,26 @@ january =
           }
         , { date = "20"
           , feasts =
-                [ { feast = "Saint Fabian", activities = [] }
-                , { feast = "Saint Sebastian", activities = [] }
+                [ { feast = "Saint Fabian"
+                  , activities =
+                        [ Reading
+                            { title = "Saint Fabian’s Story"
+                            , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                            , link = "https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20"
+                            , snippet = "Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian..."
+                            }
+                        ]
+                  }
+                , { feast = "Saint Sebastian"
+                  , activities =
+                        [ Reading
+                            { title = "Saint Sebastian’s Story"
+                            , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                            , link = "https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1"
+                            , snippet = "Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian..."
+                            }
+                        ]
+                  }
                 ]
           }
         , { date = "21"
@@ -190,12 +241,21 @@ january =
           }
         , { date = "28"
           , feasts =
-                [ { feast = "Saint Thomas Aquinas", activities = [] }
+                [ { feast = "Saint Thomas Aquinas"
+                  , activities = []
+                  }
                 ]
           }
         , { date = "31"
           , feasts =
-                [ { feast = "Saint John Bosco", activities = [] }
+                [ { feast = "Saint John Bosco"
+                  , activities =
+                        [ Video
+                            { title = "My Catholic Family - Don Bosco"
+                            , link = "https://www.youtube.com/watch?v=wejhGYOGLgE"
+                            }
+                        ]
+                  }
                 ]
           }
         ]
