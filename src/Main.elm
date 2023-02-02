@@ -165,7 +165,7 @@ viewBody =
                             , attribute "aria-label" "See the Guardian Angel Animation"
                             ]
                             [ img
-                                [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnail_8kiHWq1pu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897611"
+                                [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnailWatchNow_BjJTzxGXi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675312385506"
                                 , style "border-radius" "5px"
                                 , style "width" "-webkit-fill-available"
                                 , alt "Guardian Angel Animation"
