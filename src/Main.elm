@@ -127,7 +127,52 @@ viewBody =
                         ]
                         []
                     ]
-                , div
+                , div [ class "mt-32 lg:mt-48" ]
+                    [ div
+                        [ style "max-width" "800px"
+                        , style "margin" "auto"
+                        , style "font-weight" "400"
+                        , style "line-height" "1.7em"
+
+                        -- , cornerBorder
+                        ]
+                        [ h2
+                            [ style "color" "#325164"
+                            , style "text-align" "center"
+                            , style "line-height" "1.2em"
+                            , style "font-family" "hvdComicSerifPro"
+                            , class "text-4xl md:text-7xl"
+                            , class "m-5"
+                            ]
+                            [ text "About" ]
+                        , p [ class "mb-4" ]
+                            [ text """Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
+                            ]
+                        , p []
+                            [ text """Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God."""
+                            ]
+                        ]
+                    , div
+                        [ style "text-align" "center"
+                        , class "m-8"
+                        ]
+                        [ a
+                            [ href "/team"
+                            , rel "noopener"
+                            , style "text-decoration" "none"
+                            , style "padding" "20px"
+                            , style "display" "inline-block"
+                            , style "color" "black"
+                            , style "border" "2px solid #777"
+                            , style "border-radius" "5px"
+                            , style "box-shadow" "#777 1px 1px 5px"
+                            ]
+                            [ text "Meet the team" ]
+                        ]
+                    ]
+                ]
+            , div []
+                [ div
                     [ class "mt-32 lg:mt-48"
                     ]
                     [ div []
@@ -235,47 +280,7 @@ viewBody =
             ]
         , viewSection "about"
             section2Background
-            [ div
-                [ style "max-width" "800px"
-                , style "margin" "auto"
-                , style "font-weight" "400"
-                , style "line-height" "1.7em"
-                , cornerBorder
-                ]
-                [ h2
-                    [ style "color" "#325164"
-                    , style "text-align" "center"
-                    , style "line-height" "1.2em"
-                    , style "font-family" "hvdComicSerifPro"
-                    , class "text-4xl md:text-7xl"
-                    , class "m-5"
-                    ]
-                    [ text "About" ]
-                , p [ class "mb-4" ]
-                    [ text """Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
-                    ]
-                , p []
-                    [ text """Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God."""
-                    ]
-                ]
-            , div
-                [ style "text-align" "center"
-                , class "m-8"
-                ]
-                [ a
-                    [ href "/team"
-                    , rel "noopener"
-                    , style "text-decoration" "none"
-                    , style "padding" "20px"
-                    , style "display" "inline-block"
-                    , style "color" "black"
-                    , style "border" "2px solid #777"
-                    , style "border-radius" "5px"
-                    , style "box-shadow" "#777 1px 1px 5px"
-                    ]
-                    [ text "Meet the team" ]
-                ]
-            ]
+            []
         , viewSection "contact"
             section3Background
             [ div
