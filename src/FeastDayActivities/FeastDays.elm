@@ -87,6 +87,7 @@ type Activity
     = Video VideoActivity
     | Printout PrintoutActivity
     | Reading ReadingActivity
+    | Food FoodActivity
 
 
 type alias VideoActivity =
@@ -98,6 +99,10 @@ type alias ReadingActivity =
 
 
 type alias PrintoutActivity =
+    { title : String, image : String, link : String }
+
+
+type alias FoodActivity =
     { title : String, image : String, link : String }
 
 
