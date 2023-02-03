@@ -278,9 +278,6 @@ viewBody =
                     ]
                 ]
             ]
-        , viewSection "about"
-            section2Background
-            []
         , viewSection "contact"
             section3Background
             [ div
