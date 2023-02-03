@@ -9,7 +9,7 @@ toPx x =
     String.fromInt x ++ "px"
 
 
-viewFooter : Html.String.Html Never
+viewFooter : Html.String.Html msg
 viewFooter =
     footer
         [ style "padding" (toPx 30)

@@ -12,6 +12,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.String
 import Url
 
 
@@ -101,10 +102,9 @@ view model =
             , style "scroll-behavior" "smooth"
             , style "background-color" "#FEF7F4"
             ]
-            [ -- viewSubpageHeader "Feast Day Activities" headerMargin
-              viewBody currentRoute
-
-            -- , viewFooter
+            [ viewSubpageHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
+            , viewBody currentRoute
+            , viewFooter |> Html.String.toHtml
             ]
         ]
     }
@@ -287,7 +287,7 @@ viewMonth feastMonth =
             splitList feastMonth.feasts
     in
     div
-        []
+        [ class "mt-10 mb-20" ]
         [ h1 [ class "text-center" ] [ text "2023 Feast Day Activities" ]
         , div
             [ class "grid grid-cols-12"

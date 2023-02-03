@@ -7005,6 +7005,7 @@ var $author$project$FeastDayActivities$Main$update = F2(
 		}
 	});
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $author$project$Helpers$headerMargin = 10;
 var $elm$url$Url$Parser$State = F5(
 	function (visited, unvisited, params, frag, value) {
 		return {frag: frag, params: params, unvisited: unvisited, value: value, visited: visited};
@@ -7804,6 +7805,170 @@ var $author$project$FeastDayActivities$FeastDayHelpers$route = $elm$url$Url$Pars
 var $author$project$FeastDayActivities$FeastDayHelpers$parseRoute = $elm$url$Url$Parser$parse($author$project$FeastDayActivities$FeastDayHelpers$route);
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
+var $elm$json$Json$Encode$bool = _Json_wrap;
+var $elm$virtual_dom$VirtualDom$Custom = function (a) {
+	return {$: 'Custom', a: a};
+};
+var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var $elm$html$Html$Events$custom = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$Custom(decoder));
+	});
+var $elm$virtual_dom$VirtualDom$Normal = function (a) {
+	return {$: 'Normal', a: a};
+};
+var $elm$html$Html$Events$on = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$Normal(decoder));
+	});
+var $elm$virtual_dom$VirtualDom$MayPreventDefault = function (a) {
+	return {$: 'MayPreventDefault', a: a};
+};
+var $elm$html$Html$Events$preventDefaultOn = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$MayPreventDefault(decoder));
+	});
+var $elm$virtual_dom$VirtualDom$property = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_property,
+			_VirtualDom_noInnerHtmlOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$property = $elm$virtual_dom$VirtualDom$property;
+var $elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
+	return {$: 'MayStopPropagation', a: a};
+};
+var $elm$html$Html$Events$stopPropagationOn = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$MayStopPropagation(decoder));
+	});
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $zwilias$elm_html_string$Html$Types$attributeToHtml = function (attribute) {
+	switch (attribute.$) {
+		case 'Attribute':
+			var key = attribute.a;
+			var value = attribute.b;
+			return A2($elm$html$Html$Attributes$attribute, key, value);
+		case 'StringProperty':
+			var key = attribute.a;
+			var value = attribute.b;
+			return A2(
+				$elm$html$Html$Attributes$property,
+				key,
+				$elm$json$Json$Encode$string(value));
+		case 'BoolProperty':
+			var key = attribute.a;
+			var value = attribute.b;
+			return A2(
+				$elm$html$Html$Attributes$property,
+				key,
+				$elm$json$Json$Encode$bool(value));
+		case 'ValueProperty':
+			var key = attribute.a;
+			var value = attribute.b;
+			return A2($elm$html$Html$Attributes$property, key, value);
+		case 'Style':
+			var key = attribute.a;
+			var value = attribute.b;
+			return A2($elm$html$Html$Attributes$style, key, value);
+		default:
+			switch (attribute.b.$) {
+				case 'Normal':
+					var name = attribute.a;
+					var d = attribute.b.a;
+					return A2($elm$html$Html$Events$on, name, d);
+				case 'MayStopPropagation':
+					var name = attribute.a;
+					var d = attribute.b.a;
+					return A2($elm$html$Html$Events$stopPropagationOn, name, d);
+				case 'MayPreventDefault':
+					var name = attribute.a;
+					var d = attribute.b.a;
+					return A2($elm$html$Html$Events$preventDefaultOn, name, d);
+				default:
+					var name = attribute.a;
+					var d = attribute.b.a;
+					return A2($elm$html$Html$Events$custom, name, d);
+			}
+	}
+};
+var $elm$core$Tuple$mapSecond = F2(
+	function (func, _v0) {
+		var x = _v0.a;
+		var y = _v0.b;
+		return _Utils_Tuple2(
+			x,
+			func(y));
+	});
+var $elm$virtual_dom$VirtualDom$node = function (tag) {
+	return _VirtualDom_node(
+		_VirtualDom_noScript(tag));
+};
+var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
+var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
+	return _VirtualDom_keyedNode(
+		_VirtualDom_noScript(tag));
+};
+var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $zwilias$elm_html_string$Html$Types$toHtml = function (node) {
+	if (node.$ === 'Node') {
+		var tagName = node.a;
+		var attributes = node.b;
+		var children = node.c;
+		switch (children.$) {
+			case 'NoChildren':
+				return A3(
+					$elm$html$Html$node,
+					tagName,
+					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
+					_List_Nil);
+			case 'Regular':
+				var nodes = children.a;
+				return A3(
+					$elm$html$Html$node,
+					tagName,
+					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
+					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$toHtml, nodes));
+			default:
+				var keyedNodes = children.a;
+				return A3(
+					$elm$html$Html$Keyed$node,
+					tagName,
+					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
+					A2(
+						$elm$core$List$map,
+						$elm$core$Tuple$mapSecond($zwilias$elm_html_string$Html$Types$toHtml),
+						keyedNodes));
+		}
+	} else {
+		var content = node.a;
+		return $elm$html$Html$text(content);
+	}
+};
+var $zwilias$elm_html_string$Html$String$toHtml = $zwilias$elm_html_string$Html$Types$toHtml;
 var $elm$core$List$filter = F2(
 	function (isGood, list) {
 		return A3(
@@ -7826,7 +7991,6 @@ var $elm$core$List$head = function (list) {
 };
 var $elm$core$Debug$log = _Debug_log;
 var $elm$core$String$toLower = _String_toLower;
-var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
@@ -7836,8 +8000,6 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$FeastDayActivities$FeastDays$printoutActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
@@ -8428,7 +8590,10 @@ var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
 	var secondHalf = _v0.b;
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('mt-10 mb-20')
+			]),
 		_List_fromArray(
 			[
 				A2(
@@ -8550,6 +8715,197 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 		return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$january);
 	}
 };
+var $zwilias$elm_html_string$Html$Types$Node = F3(
+	function (a, b, c) {
+		return {$: 'Node', a: a, b: b, c: c};
+	});
+var $zwilias$elm_html_string$Html$Types$Regular = function (a) {
+	return {$: 'Regular', a: a};
+};
+var $zwilias$elm_html_string$Html$String$node = F3(
+	function (tag, attributes, children) {
+		return A3(
+			$zwilias$elm_html_string$Html$Types$Node,
+			tag,
+			attributes,
+			$zwilias$elm_html_string$Html$Types$Regular(children));
+	});
+var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
+var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
+var $zwilias$elm_html_string$Html$Types$Style = F2(
+	function (a, b) {
+		return {$: 'Style', a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
+var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
+	return {$: 'TextNode', a: a};
+};
+var $zwilias$elm_html_string$Html$String$text = $zwilias$elm_html_string$Html$Types$TextNode;
+var $author$project$Footer$toPx = function (x) {
+	return $elm$core$String$fromInt(x) + 'px';
+};
+var $author$project$Footer$viewFooter = A2(
+	$zwilias$elm_html_string$Html$String$footer,
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$Attributes$style,
+			'padding',
+			$author$project$Footer$toPx(30)),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', 'black'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform-style', 'preserve-3d')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Copyright © 2023 Catholic Stories for Children. All rights reserved.')
+				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
+				]))
+		]));
+var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
+var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
+	function (a, b) {
+		return {$: 'StringProperty', a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
+var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
+};
+var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
+};
+var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 'NoChildren'};
+var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
+	function (tag, attrs, _v0) {
+		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
+	});
+var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
+var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
+var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
+};
+var $author$project$Header$backButton = A2(
+	$zwilias$elm_html_string$Html$String$a,
+	_List_fromArray(
+		[
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+			$zwilias$elm_html_string$Html$String$Attributes$href('/'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-2 items-center justify-items-center'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('visible md:invisible')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$img,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$src('/assets/backarrow.png'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '14px')
+				]),
+			_List_Nil),
+			A2(
+			$zwilias$elm_html_string$Html$String$span,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$text('Back')
+				]))
+		]));
+var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
+var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
+var $author$project$Header$viewHeaderTitle = function (title) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$a,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('invisible md:visible'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('justify-self-center'),
+				$zwilias$elm_html_string$Html$String$Attributes$href('/')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$zwilias$elm_html_string$Html$String$h1,
+				_List_fromArray(
+					[
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+						A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px'),
+						$zwilias$elm_html_string$Html$String$Attributes$class('text-[0px] md:text-2xl')
+					]),
+				_List_fromArray(
+					[
+						$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children')
+					]))
+			]));
+};
+var $zwilias$elm_html_string$Html$Types$Attribute = F2(
+	function (a, b) {
+		return {$: 'Attribute', a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
+var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
+};
+var $author$project$Logo$logo = A2(
+	$zwilias$elm_html_string$Html$String$img,
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$Attributes$src('/assets/logo_solid.svg'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '30px'),
+			$zwilias$elm_html_string$Html$String$Attributes$alt(''),
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'vertical-align', 'middle')
+		]),
+	_List_Nil);
+var $author$project$Header$viewLogo = A2(
+	$zwilias$elm_html_string$Html$String$a,
+	_List_fromArray(
+		[
+			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+			$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
+			$zwilias$elm_html_string$Html$String$Attributes$href('/'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'home')
+		]),
+	_List_fromArray(
+		[$author$project$Logo$logo]));
+var $author$project$Header$viewSubpageHeader = F2(
+	function (currentPage, leftMargin) {
+		var isHomePage = currentPage === 'Catholic Stories for Children';
+		var _v0 = isHomePage ? _Utils_Tuple2(
+			'111px',
+			A2($zwilias$elm_html_string$Html$String$span, _List_Nil, _List_Nil)) : _Utils_Tuple2('48px', $author$project$Header$backButton);
+		var height = _v0.a;
+		var mobileBackButton = _v0.b;
+		return A2(
+			$zwilias$elm_html_string$Html$String$header,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#3d5d75'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, #9DE2EB , #EBD6F1)'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', height),
+					$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
+					$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[150px_1fr_150px] items-center justify-items-center')
+				]),
+			_List_fromArray(
+				[
+					$author$project$Header$viewLogo,
+					$author$project$Header$viewHeaderTitle(currentPage),
+					mobileBackButton
+				]));
+	});
 var $author$project$FeastDayActivities$Main$view = function (model) {
 	var currentRoute = $author$project$FeastDayActivities$FeastDayHelpers$parseRoute(model.url);
 	return {
@@ -8568,7 +8924,10 @@ var $author$project$FeastDayActivities$Main$view = function (model) {
 					]),
 				_List_fromArray(
 					[
-						$author$project$FeastDayActivities$Main$viewBody(currentRoute)
+						$zwilias$elm_html_string$Html$String$toHtml(
+						A2($author$project$Header$viewSubpageHeader, 'Feast Day Activities', $author$project$Helpers$headerMargin)),
+						$author$project$FeastDayActivities$Main$viewBody(currentRoute),
+						$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
 					]))
 			]),
 		title: 'Feast Day Activities - Catholic Stories for Children'
