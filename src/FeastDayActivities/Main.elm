@@ -1,8 +1,5 @@
 module FeastDayActivities.Main exposing (..)
 
--- import Html.String exposing (..)
--- import Html.String.Attributes exposing (..)
-
 import Browser
 import Browser.Navigation as Nav
 import FeastDayActivities.FeastDayHelpers exposing (Route(..), UrlDate, parseRoute, route, splitList)
@@ -98,8 +95,9 @@ view model =
               style "height" "100vh"
             , style "overflow-x" "hidden"
             , style "overflow-y" "auto"
-            , style "perspective" "300px"
-            , style "scroll-behavior" "smooth"
+
+            -- , style "perspective" "300px"
+            -- , style "scroll-behavior" "smooth"
             , style "background-color" "#FEF7F4"
             ]
             [ viewSubpageHeader "Feast Day Activities" headerMargin |> Html.String.toHtml

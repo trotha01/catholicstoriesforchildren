@@ -1,77 +1,115 @@
 module Main exposing (Model, main, view, viewBanner)
 
 import Browser
+import Browser.Navigation as Nav
 import Footer exposing (viewFooter)
 import Header exposing (viewHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.String
 import Json.Encode
+import Url
 
 
-
--- MAIN
+main : Program () Model Msg
+main =
+    Browser.application
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        , onUrlChange = UrlChanged
+        , onUrlRequest = LinkClicked
+        }
 
 
 type alias Model =
-    {}
+    { key : Nav.Key
+    , url : Url.Url
+    }
 
 
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-                    |> toString 0
-                    |> text
-                    |> toHtml
-        , update = \_ -> \model -> model
-        }
+init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
+init flags url key =
+    ( Model key url, Cmd.none )
+
+
+type Msg
+    = LinkClicked Browser.UrlRequest
+    | UrlChanged Url.Url
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        LinkClicked urlRequest ->
+            case urlRequest of
+                Browser.Internal url ->
+                    let
+                        urlString =
+                            Url.toString url
+                    in
+                    ( model, Nav.load (Url.toString url) )
+
+                Browser.External href ->
+                    ( model, Nav.load href )
+
+        UrlChanged url ->
+            ( { model | url = url }
+            , Cmd.none
+            )
+
+
+
+-- SUBSCRIPTIONS
+
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Sub.none
 
 
 
 -- VIEW
 
 
-view : Html.String.Html Never
-view =
-    div
-        [ -- For parallax
-          style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
+view : Model -> Browser.Document Msg
+view model =
+    { title = "Catholic Stories for Children"
+    , body =
+        [ div
+            [ style "background-color" "#FEF7F4"
+            ]
+            [ viewHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
+            , viewBody
+            , viewFooter |> Html.String.toHtml
+            ]
         ]
-        [ viewHeader "Catholic Stories for Children" headerMargin
-        , viewBody
-        , viewFooter
-        ]
+    }
 
 
-section1Background : List (Attribute Never)
+section1Background : List (Attribute msg)
 section1Background =
     [ style "background" "#fff" ]
 
 
-section2Background : List (Attribute Never)
+section2Background : List (Attribute msg)
 section2Background =
     [ style "background" "#fff" ]
 
 
-section3Background : List (Attribute Never)
+section3Background : List (Attribute msg)
 section3Background =
     [ style "background" "#EBD7F2" ]
 
 
-section4Background : List (Attribute Never)
+section4Background : List (Attribute msg)
 section4Background =
     [ style "background" "#FEF7F4" ]
 
 
-viewBody : Html.String.Html Never
+viewBody : Html.Html msg
 viewBody =
     div
         [ class "text-lg leading-loose"
@@ -471,7 +509,7 @@ viewBody =
                         [ style "text-align" "center"
                         , style "border-radius" "5px"
                         , style "padding" "20px"
-                        , style "max-width" "400px"
+                        , class "flex justify-center"
                         ]
                         [ a
                             [ href "/give"
@@ -503,7 +541,7 @@ viewBody =
         ]
 
 
-viewSection : String -> List (Attribute Never) -> List (Html.String.Html Never) -> Html.String.Html Never
+viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Html msg
 viewSection sectionId background body =
     section
         ([ id sectionId
@@ -518,7 +556,7 @@ viewSection sectionId background body =
         body
 
 
-viewBanner : String -> String -> String -> Html.String.Html Never
+viewBanner : String -> String -> String -> Html.Html msg
 viewBanner url title pageUrl =
     a
         [ style "background" ("linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))," ++ "url('" ++ url ++ "')")

@@ -1,5 +1,4 @@
 var fs = require('fs')
-var Elm = require('./elm.js')
 var TeamElm = require('./teamElm.js')
 var GiveElm = require('./giveElm.js')
 var NewsroomElm = require('./newsroomElm.js')
@@ -114,7 +113,7 @@ var htmlPart4 =
 var htmlPart4js = `
   <div id="myapp"></div>
   <script>
-  var app = Elm.`
+  var app = Elm`
 
 var htmlPart4p2js = `.Main.init({
     node: document.getElementById('myapp')
@@ -154,10 +153,10 @@ var fakeNodeWithJs = function (path, title, description, elmModule) {
 }
 
 
-var app = Elm.Elm.Main.init({ node: fakeNode('./index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.') })
+fakeNodeWithJs('./index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '')
 var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('./team/index.html', 'The Team - Catholic Stories for Children', 'A number of talented artists, contractors, teams and people help bring these animations to life.') })
 var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏') })
 var newsroomApp = NewsroomElm.Elm.Newsroom.Main.init({ node: fakeNode('./newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news') })
 var hailMaryApp = HailMaryElm.Elm.Animations.HailMary.Main.init({ node: fakeNode('./animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer') })
 var guardianAngelApp = GuardianAngelElm.Elm.Animations.GuardianAngel.Main.init({ node: fakeNode('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer') })
-fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', 'FeastDayActivities')
+fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', '.FeastDayActivities')

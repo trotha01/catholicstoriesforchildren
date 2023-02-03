@@ -8918,8 +8918,6 @@ var $author$project$FeastDayActivities$Main$view = function (model) {
 						A2($elm$html$Html$Attributes$style, 'height', '100vh'),
 						A2($elm$html$Html$Attributes$style, 'overflow-x', 'hidden'),
 						A2($elm$html$Html$Attributes$style, 'overflow-y', 'auto'),
-						A2($elm$html$Html$Attributes$style, 'perspective', '300px'),
-						A2($elm$html$Html$Attributes$style, 'scroll-behavior', 'smooth'),
 						A2($elm$html$Html$Attributes$style, 'background-color', '#FEF7F4')
 					]),
 				_List_fromArray(
