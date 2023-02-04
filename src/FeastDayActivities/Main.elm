@@ -10,6 +10,7 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
+import Json.Encode
 import Url
 
 
@@ -142,7 +143,10 @@ viewBody route =
 
 viewDate : String -> String -> List FeastActivities -> Html Msg
 viewDate month date feasts =
-    div [ class "text-center" ]
+    div
+        [ class "text-center"
+        , class "mt-10"
+        ]
         [ h1 [ class "capitalize" ]
             [ text (month ++ " " ++ date)
             ]
@@ -190,6 +194,7 @@ viewFeastActivities feastActivities =
             [ viewVideos (videoActivities activities)
             , viewPrintouts (printoutActivities activities)
             , viewReadings feastDayReadingActivities
+            , viewFood (foodActivities activities)
             ]
 
 
@@ -210,16 +215,36 @@ viewVideos videos =
         span [] []
 
     else
-        div []
-            [ h3 [] [ text "Videos" ]
-            , div []
+        div [ class "mt-20" ]
+            [ h3
+                [ class "text-3xl"
+                , class "mb-7"
+                ]
+                [ text "Videos" ]
+            , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\video ->
-                        a
-                            [ href video.link
-                            , target "_blank"
+                        div
+                            [ style "position" "relative"
+                            , style "padding-bottom" "56.25%"
+                            , height 0
+                            , style "overflow" "hidden"
+                            , style "max-width" "100%"
+                            , style "border-radius" "5px"
                             ]
-                            [ text video.title
+                            [ iframe
+                                [ style "position" "absolute"
+                                , style "width" "100%"
+                                , style "height" "100%"
+                                , style "top" "0"
+                                , style "left" "0"
+                                , src video.link
+                                , title video.title
+                                , property "frameborder" (Json.Encode.string "0")
+                                , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+                                , property "allowfullscreen" (Json.Encode.string "true")
+                                ]
+                                []
                             ]
                     )
                     videos
@@ -250,22 +275,23 @@ viewPrintouts activities =
             ]
 
 
-viewReadings : List ReadingActivity -> Html Msg
-viewReadings activities =
+viewFood : List FoodActivity -> Html Msg
+viewFood activities =
     if List.isEmpty activities then
         span [] []
 
     else
-        div []
+        div [ class "mt-20" ]
             [ h3
                 [ class "text-3xl"
+                , class "mb-7"
                 ]
-                [ text "Reading" ]
+                [ text "Recipes" ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\activity ->
                         a
-                            [ class "grid grid-cols-[50px_1fr]"
+                            [ class "grid grid-cols-[100px_1fr]"
                             , href activity.link
                             , target "_blank"
                             , class "hover:bg-csc-lightpurple"
@@ -273,7 +299,48 @@ viewReadings activities =
                             ]
                             [ img
                                 [ src activity.image
-                                , class "w-10 h-10"
+                                , class "w-20 h-20"
+                                , class "rounded"
+                                ]
+                                []
+                            , div [ class "grid grid-rows" ]
+                                [ h4
+                                    [ class "text-xl text-left"
+                                    ]
+                                    [ text activity.title ]
+                                ]
+                            ]
+                    )
+                    activities
+                )
+            ]
+
+
+viewReadings : List ReadingActivity -> Html Msg
+viewReadings activities =
+    if List.isEmpty activities then
+        span [] []
+
+    else
+        div [ class "mt-20" ]
+            [ h3
+                [ class "text-3xl"
+                , class "mb-7"
+                ]
+                [ text "Reading" ]
+            , div [ class "max-w-3xl m-auto" ]
+                (List.map
+                    (\activity ->
+                        a
+                            [ class "grid grid-cols-[100px_1fr]"
+                            , href activity.link
+                            , target "_blank"
+                            , class "hover:bg-csc-lightpurple"
+                            , class "rounded m-5"
+                            ]
+                            [ img
+                                [ src activity.image
+                                , class "w-20 h-20"
                                 , class "rounded"
                                 ]
                                 []
