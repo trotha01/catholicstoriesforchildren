@@ -5793,7 +5793,7 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 					activities: _List_fromArray(
 						[
 							$author$project$FeastDayActivities$FeastDays$Video(
-							{link: 'https://www.youtube-nocookie.com/embed/QNVNbLiqznI', title: 'Hail Mary, Full of Grace'}),
+							{link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', title: 'Hail Mary, Full of Grace'}),
 							$author$project$FeastDayActivities$FeastDays$Reading(
 							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'}),
 							$author$project$FeastDayActivities$FeastDays$Food(

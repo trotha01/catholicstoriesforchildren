@@ -149,7 +149,7 @@ january =
                   , activities =
                         [ Video
                             { title = "Hail Mary, Full of Grace"
-                            , link = "https://www.youtube-nocookie.com/embed/QNVNbLiqznI"
+                            , link = "https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y"
                             }
                         , Reading
                             { title = "The Story of Mary, Mother of God"
