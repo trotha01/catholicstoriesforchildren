@@ -5206,7 +5206,7 @@ var $elm$core$List$any = F2(
 		}
 	});
 var $elm$browser$Browser$Navigation$load = _Browser_load;
-var $author$project$FeastDayActivities$FeastDays$april = {
+var $author$project$FeastDayActivities$FeastDays$M04Apr$april = {
 	color: '#ebdf72',
 	feasts: _List_fromArray(
 		[
@@ -5337,7 +5337,7 @@ var $author$project$FeastDayActivities$FeastDays$april = {
 	key: 'apr',
 	month: 'April'
 };
-var $author$project$FeastDayActivities$FeastDays$august = {
+var $author$project$FeastDayActivities$FeastDays$M08Aug$august = {
 	color: '#ebdf72',
 	feasts: _List_fromArray(
 		[
@@ -5523,7 +5523,7 @@ var $author$project$FeastDayActivities$FeastDays$august = {
 	key: 'aug',
 	month: 'August'
 };
-var $author$project$FeastDayActivities$FeastDays$december = {
+var $author$project$FeastDayActivities$FeastDays$M12Dec$december = {
 	color: '#ebdf72',
 	feasts: _List_fromArray(
 		[
@@ -5671,7 +5671,7 @@ var $author$project$FeastDayActivities$FeastDays$december = {
 	key: 'dec',
 	month: 'December'
 };
-var $author$project$FeastDayActivities$FeastDays$february = {
+var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	color: '#395d73',
 	feasts: _List_fromArray(
 		[
@@ -5772,16 +5772,16 @@ var $author$project$FeastDayActivities$FeastDays$february = {
 	key: 'feb',
 	month: 'February'
 };
-var $author$project$FeastDayActivities$FeastDays$Food = function (a) {
+var $author$project$FeastDayActivities$FeastDayHelpers$Food = function (a) {
 	return {$: 'Food', a: a};
 };
-var $author$project$FeastDayActivities$FeastDays$Reading = function (a) {
+var $author$project$FeastDayActivities$FeastDayHelpers$Reading = function (a) {
 	return {$: 'Reading', a: a};
 };
-var $author$project$FeastDayActivities$FeastDays$Video = function (a) {
+var $author$project$FeastDayActivities$FeastDayHelpers$Video = function (a) {
 	return {$: 'Video', a: a};
 };
-var $author$project$FeastDayActivities$FeastDays$january = {
+var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 	color: '#9de3ec',
 	feasts: _List_fromArray(
 		[
@@ -5792,17 +5792,17 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDays$Video(
+							$author$project$FeastDayActivities$FeastDayHelpers$Video(
 							{link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', title: 'Hail Mary, Full of Grace'}),
-							$author$project$FeastDayActivities$FeastDays$Reading(
+							$author$project$FeastDayActivities$FeastDayHelpers$Reading(
 							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'}),
-							$author$project$FeastDayActivities$FeastDays$Food(
+							$author$project$FeastDayActivities$FeastDayHelpers$Food(
 							{image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'Smoked Sausage and Black-Eyed Peas'}),
-							$author$project$FeastDayActivities$FeastDays$Food(
+							$author$project$FeastDayActivities$FeastDayHelpers$Food(
 							{image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'Broccoli Cornbread Mini Muffins'}),
-							$author$project$FeastDayActivities$FeastDays$Food(
+							$author$project$FeastDayActivities$FeastDayHelpers$Food(
 							{image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'Sweet Buttermilk Cornbread'}),
-							$author$project$FeastDayActivities$FeastDays$Food(
+							$author$project$FeastDayActivities$FeastDayHelpers$Food(
 							{image: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'German New Years Cake'})
 						]),
 					feast: 'Mary, Mother of God'
@@ -5816,7 +5816,7 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDays$Video(
+							$author$project$FeastDayActivities$FeastDayHelpers$Video(
 							{link: 'https://youtu.be/lwe8voh3H_4', title: 'Ss. Gregory & Basil'})
 						]),
 					feast: 'Saint Basil'
@@ -5893,9 +5893,9 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDays$Reading(
+							$author$project$FeastDayActivities$FeastDayHelpers$Reading(
 							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'}),
-							$author$project$FeastDayActivities$FeastDays$Food(
+							$author$project$FeastDayActivities$FeastDayHelpers$Food(
 							{image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', title: 'Dove Dinner Rolls'})
 						]),
 					feast: 'Saint Fabian'
@@ -5903,9 +5903,9 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDays$Reading(
+							$author$project$FeastDayActivities$FeastDayHelpers$Reading(
 							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'}),
-							$author$project$FeastDayActivities$FeastDays$Food(
+							$author$project$FeastDayActivities$FeastDayHelpers$Food(
 							{image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', title: 'Roscos Orange Donuts'})
 						]),
 					feast: 'Saint Sebastian'
@@ -5970,7 +5970,7 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDays$Video(
+							$author$project$FeastDayActivities$FeastDayHelpers$Video(
 							{link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', title: 'My Catholic Family - Don Bosco'})
 						]),
 					feast: 'Saint John Bosco'
@@ -5979,9 +5979,9 @@ var $author$project$FeastDayActivities$FeastDays$january = {
 		}
 		]),
 	key: 'jan',
-	month: 'Janury'
+	month: 'January'
 };
-var $author$project$FeastDayActivities$FeastDays$july = {
+var $author$project$FeastDayActivities$FeastDays$M07Jul$july = {
 	color: '#b99eda',
 	feasts: _List_fromArray(
 		[
@@ -6130,7 +6130,7 @@ var $author$project$FeastDayActivities$FeastDays$july = {
 	key: 'jul',
 	month: 'July'
 };
-var $author$project$FeastDayActivities$FeastDays$june = {
+var $author$project$FeastDayActivities$FeastDays$M06Jun$june = {
 	color: '#395d73',
 	feasts: _List_fromArray(
 		[
@@ -6281,7 +6281,7 @@ var $author$project$FeastDayActivities$FeastDays$june = {
 	key: 'jun',
 	month: 'June'
 };
-var $author$project$FeastDayActivities$FeastDays$march = {
+var $author$project$FeastDayActivities$FeastDays$M03Mar$march = {
 	color: '#b99eda',
 	feasts: _List_fromArray(
 		[
@@ -6359,7 +6359,7 @@ var $author$project$FeastDayActivities$FeastDays$march = {
 	key: 'mar',
 	month: 'March'
 };
-var $author$project$FeastDayActivities$FeastDays$may = {
+var $author$project$FeastDayActivities$FeastDays$M05May$may = {
 	color: '#9de3ec',
 	feasts: _List_fromArray(
 		[
@@ -6497,7 +6497,7 @@ var $author$project$FeastDayActivities$FeastDays$may = {
 	key: 'may',
 	month: 'May'
 };
-var $author$project$FeastDayActivities$FeastDays$november = {
+var $author$project$FeastDayActivities$FeastDays$M11Nov$november = {
 	color: '#b99eda',
 	feasts: _List_fromArray(
 		[
@@ -6649,7 +6649,7 @@ var $author$project$FeastDayActivities$FeastDays$november = {
 	key: 'nov',
 	month: 'November'
 };
-var $author$project$FeastDayActivities$FeastDays$october = {
+var $author$project$FeastDayActivities$FeastDays$M10Oct$october = {
 	color: '#395d73',
 	feasts: _List_fromArray(
 		[
@@ -6794,7 +6794,7 @@ var $author$project$FeastDayActivities$FeastDays$october = {
 	key: 'oct',
 	month: 'October'
 };
-var $author$project$FeastDayActivities$FeastDays$september = {
+var $author$project$FeastDayActivities$FeastDays$M09Sep$september = {
 	color: '#9de3ec',
 	feasts: _List_fromArray(
 		[
@@ -6939,7 +6939,7 @@ var $author$project$FeastDayActivities$FeastDays$september = {
 	month: 'September'
 };
 var $author$project$FeastDayActivities$FeastDays$feastDays = _List_fromArray(
-	[$author$project$FeastDayActivities$FeastDays$january, $author$project$FeastDayActivities$FeastDays$february, $author$project$FeastDayActivities$FeastDays$march, $author$project$FeastDayActivities$FeastDays$april, $author$project$FeastDayActivities$FeastDays$may, $author$project$FeastDayActivities$FeastDays$june, $author$project$FeastDayActivities$FeastDays$july, $author$project$FeastDayActivities$FeastDays$august, $author$project$FeastDayActivities$FeastDays$september, $author$project$FeastDayActivities$FeastDays$october, $author$project$FeastDayActivities$FeastDays$november, $author$project$FeastDayActivities$FeastDays$december]);
+	[$author$project$FeastDayActivities$FeastDays$M01Jan$january, $author$project$FeastDayActivities$FeastDays$M02Feb$february, $author$project$FeastDayActivities$FeastDays$M03Mar$march, $author$project$FeastDayActivities$FeastDays$M04Apr$april, $author$project$FeastDayActivities$FeastDays$M05May$may, $author$project$FeastDayActivities$FeastDays$M06Jun$june, $author$project$FeastDayActivities$FeastDays$M07Jul$july, $author$project$FeastDayActivities$FeastDays$M08Aug$august, $author$project$FeastDayActivities$FeastDays$M09Sep$september, $author$project$FeastDayActivities$FeastDays$M10Oct$october, $author$project$FeastDayActivities$FeastDays$M11Nov$november, $author$project$FeastDayActivities$FeastDays$M12Dec$december]);
 var $author$project$FeastDayActivities$FeastDays$months = A2(
 	$elm$core$List$map,
 	function ($) {
@@ -8035,7 +8035,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $author$project$FeastDayActivities$FeastDays$foodActivities = function (activities) {
+var $author$project$FeastDayActivities$FeastDayHelpers$foodActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
 		function (activity) {
@@ -8058,7 +8058,7 @@ var $elm$core$List$isEmpty = function (xs) {
 		return false;
 	}
 };
-var $author$project$FeastDayActivities$FeastDays$printoutActivities = function (activities) {
+var $author$project$FeastDayActivities$FeastDayHelpers$printoutActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
 		function (activity) {
@@ -8074,7 +8074,7 @@ var $author$project$FeastDayActivities$FeastDays$printoutActivities = function (
 		},
 		activities);
 };
-var $author$project$FeastDayActivities$FeastDays$readingActivities = function (activities) {
+var $author$project$FeastDayActivities$FeastDayHelpers$readingActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
 		function (activity) {
@@ -8090,7 +8090,7 @@ var $author$project$FeastDayActivities$FeastDays$readingActivities = function (a
 		},
 		activities);
 };
-var $author$project$FeastDayActivities$FeastDays$videoActivities = function (activities) {
+var $author$project$FeastDayActivities$FeastDayHelpers$videoActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
 		function (activity) {
@@ -8424,19 +8424,19 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 			return $.activities;
 		},
 		feastActivities);
-	var feastDayReadingActivities = $author$project$FeastDayActivities$FeastDays$readingActivities(activities);
+	var feastDayReadingActivities = $author$project$FeastDayActivities$FeastDayHelpers$readingActivities(activities);
 	return $elm$core$List$isEmpty(activities) ? $author$project$FeastDayActivities$Main$viewNoActivities : A2(
 		$elm$html$Html$div,
 		_List_Nil,
 		_List_fromArray(
 			[
 				$author$project$FeastDayActivities$Main$viewVideos(
-				$author$project$FeastDayActivities$FeastDays$videoActivities(activities)),
+				$author$project$FeastDayActivities$FeastDayHelpers$videoActivities(activities)),
 				$author$project$FeastDayActivities$Main$viewPrintouts(
-				$author$project$FeastDayActivities$FeastDays$printoutActivities(activities)),
+				$author$project$FeastDayActivities$FeastDayHelpers$printoutActivities(activities)),
 				$author$project$FeastDayActivities$Main$viewReadings(feastDayReadingActivities),
 				$author$project$FeastDayActivities$Main$viewFood(
-				$author$project$FeastDayActivities$FeastDays$foodActivities(activities))
+				$author$project$FeastDayActivities$FeastDayHelpers$foodActivities(activities))
 			]));
 };
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
@@ -8881,7 +8881,7 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 									},
 									A2(
 										$elm$core$Maybe$withDefault,
-										$author$project$FeastDayActivities$FeastDays$january,
+										$author$project$FeastDayActivities$FeastDays$M01Jan$january,
 										$elm$core$List$head(
 											A2(
 												$elm$core$List$filter,
@@ -8897,7 +8897,7 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 				return $author$project$FeastDayActivities$Main$viewMonth(
 					A2(
 						$elm$core$Maybe$withDefault,
-						$author$project$FeastDayActivities$FeastDays$january,
+						$author$project$FeastDayActivities$FeastDays$M01Jan$january,
 						$elm$core$List$head(
 							A2(
 								$elm$core$List$filter,
@@ -8909,10 +8909,10 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 								$author$project$FeastDayActivities$FeastDays$feastDays))));
 			}
 		} else {
-			return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$january);
+			return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$M01Jan$january);
 		}
 	} else {
-		return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$january);
+		return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$M01Jan$january);
 	}
 };
 var $zwilias$elm_html_string$Html$Types$Node = F3(

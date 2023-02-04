@@ -2,8 +2,9 @@ module FeastDayActivities.Main exposing (..)
 
 import Browser
 import Browser.Navigation as Nav
-import FeastDayActivities.FeastDayHelpers exposing (Route(..), UrlDate, parseRoute, route, splitList)
+import FeastDayActivities.FeastDayHelpers exposing (..)
 import FeastDayActivities.FeastDays exposing (..)
+import FeastDayActivities.FeastDays.M01Jan exposing (january)
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
