@@ -95,9 +95,6 @@ view model =
               style "height" "100vh"
             , style "overflow-x" "hidden"
             , style "overflow-y" "auto"
-
-            -- , style "perspective" "300px"
-            -- , style "scroll-behavior" "smooth"
             , style "background-color" "#FEF7F4"
             ]
             [ viewSubpageHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
@@ -112,25 +109,30 @@ viewBody : Maybe Route -> Html Msg
 viewBody route =
     case Debug.log "route" route of
         Just (Date date) ->
-            feastDays
-                |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower date.month)
-                |> List.head
-                |> Maybe.withDefault january
-                |> .feasts
-                |> List.filter (\feastDay -> String.toLower feastDay.date == String.toLower date.date)
-                |> List.map .feasts
-                |> List.head
-                |> Maybe.withDefault []
-                |> viewDate date
+            case ( date.month, date.date ) of
+                ( Just m, Just d ) ->
+                    feastDays
+                        |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower m)
+                        |> List.head
+                        |> Maybe.withDefault january
+                        |> .feasts
+                        |> List.filter (\feastDay -> String.toLower feastDay.date == String.toLower d)
+                        |> List.map .feasts
+                        |> List.head
+                        |> Maybe.withDefault []
+                        |> viewDate m d
 
-        Just (Month month) ->
-            feastDays
-                |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower month)
-                |> List.head
-                |> Maybe.withDefault january
-                |> viewMonth
+                ( Just m, Nothing ) ->
+                    feastDays
+                        |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower m)
+                        |> List.head
+                        |> Maybe.withDefault january
+                        |> viewMonth
 
-        Nothing ->
+                _ ->
+                    viewMonth january
+
+        _ ->
             viewMonth january
 
 
@@ -138,11 +140,11 @@ viewBody route =
 -- DAY VIEW
 
 
-viewDate : UrlDate -> List FeastActivities -> Html Msg
-viewDate urlDate feasts =
+viewDate : String -> String -> List FeastActivities -> Html Msg
+viewDate month date feasts =
     div [ class "text-center" ]
         [ h1 [ class "capitalize" ]
-            [ text (urlDate.month ++ " " ++ urlDate.date)
+            [ text (month ++ " " ++ date)
             ]
         , viewFeastDayHeader feasts
         , div [ class "mt-10" ]
@@ -351,7 +353,7 @@ viewFeastDay : String -> FeastDay -> Html Msg
 viewFeastDay month feastDay =
     let
         link =
-            urlPath ++ "/" ++ month ++ "/" ++ feastDay.date
+            urlPath ++ "?m=" ++ month ++ "&d=" ++ feastDay.date
     in
     div
         []
@@ -386,7 +388,7 @@ viewMonthPillBox month =
         , class "p-2"
         , class "cursor-pointer"
         , class "capitalize"
-        , href ("./" ++ month)
+        , href (urlPath ++ "?m=" ++ month)
         ]
         [ text month ]
 

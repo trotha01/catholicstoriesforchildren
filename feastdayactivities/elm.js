@@ -7643,9 +7643,6 @@ var $elm$url$Url$Parser$parse = F2(
 var $author$project$FeastDayActivities$FeastDayHelpers$Date = function (a) {
 	return {$: 'Date', a: a};
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Month = function (a) {
-	return {$: 'Month', a: a};
-};
 var $elm$url$Url$Parser$Parser = function (a) {
 	return {$: 'Parser', a: a};
 };
@@ -7681,6 +7678,28 @@ var $elm$url$Url$Parser$map = F2(
 						A5($elm$url$Url$Parser$State, visited, unvisited, params, frag, subValue)));
 			});
 	});
+var $elm$url$Url$Parser$query = function (_v0) {
+	var queryParser = _v0.a;
+	return $elm$url$Url$Parser$Parser(
+		function (_v1) {
+			var visited = _v1.visited;
+			var unvisited = _v1.unvisited;
+			var params = _v1.params;
+			var frag = _v1.frag;
+			var value = _v1.value;
+			return _List_fromArray(
+				[
+					A5(
+					$elm$url$Url$Parser$State,
+					visited,
+					unvisited,
+					params,
+					frag,
+					value(
+						queryParser(params)))
+				]);
+		});
+};
 var $elm$core$List$append = F2(
 	function (xs, ys) {
 		if (!ys.b) {
@@ -7697,21 +7716,24 @@ var $elm$core$List$concatMap = F2(
 		return $elm$core$List$concat(
 			A2($elm$core$List$map, f, list));
 	});
-var $elm$url$Url$Parser$oneOf = function (parsers) {
-	return $elm$url$Url$Parser$Parser(
-		function (state) {
-			return A2(
-				$elm$core$List$concatMap,
-				function (_v0) {
-					var parser = _v0.a;
-					return parser(state);
-				},
-				parsers);
-		});
-};
-var $author$project$FeastDayActivities$FeastDayHelpers$UrlDate = F2(
-	function (month, date) {
-		return {date: date, month: month};
+var $elm$url$Url$Parser$slash = F2(
+	function (_v0, _v1) {
+		var parseBefore = _v0.a;
+		var parseAfter = _v1.a;
+		return $elm$url$Url$Parser$Parser(
+			function (state) {
+				return A2(
+					$elm$core$List$concatMap,
+					parseAfter,
+					parseBefore(state));
+			});
+	});
+var $elm$url$Url$Parser$questionMark = F2(
+	function (parser, queryParser) {
+		return A2(
+			$elm$url$Url$Parser$slash,
+			parser,
+			$elm$url$Url$Parser$query(queryParser));
 	});
 var $elm$url$Url$Parser$s = function (str) {
 	return $elm$url$Url$Parser$Parser(
@@ -7739,69 +7761,58 @@ var $elm$url$Url$Parser$s = function (str) {
 			}
 		});
 };
-var $elm$url$Url$Parser$slash = F2(
-	function (_v0, _v1) {
-		var parseBefore = _v0.a;
-		var parseAfter = _v1.a;
-		return $elm$url$Url$Parser$Parser(
-			function (state) {
-				return A2(
-					$elm$core$List$concatMap,
-					parseAfter,
-					parseBefore(state));
+var $elm$url$Url$Parser$Internal$Parser = function (a) {
+	return {$: 'Parser', a: a};
+};
+var $elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
+var $elm$url$Url$Parser$Query$custom = F2(
+	function (key, func) {
+		return $elm$url$Url$Parser$Internal$Parser(
+			function (dict) {
+				return func(
+					A2(
+						$elm$core$Maybe$withDefault,
+						_List_Nil,
+						A2($elm$core$Dict$get, key, dict)));
 			});
 	});
-var $elm$url$Url$Parser$custom = F2(
-	function (tipe, stringToSomething) {
-		return $elm$url$Url$Parser$Parser(
-			function (_v0) {
-				var visited = _v0.visited;
-				var unvisited = _v0.unvisited;
-				var params = _v0.params;
-				var frag = _v0.frag;
-				var value = _v0.value;
-				if (!unvisited.b) {
-					return _List_Nil;
-				} else {
-					var next = unvisited.a;
-					var rest = unvisited.b;
-					var _v2 = stringToSomething(next);
-					if (_v2.$ === 'Just') {
-						var nextValue = _v2.a;
-						return _List_fromArray(
-							[
-								A5(
-								$elm$url$Url$Parser$State,
-								A2($elm$core$List$cons, next, visited),
-								rest,
-								params,
-								frag,
-								value(nextValue))
-							]);
-					} else {
-						return _List_Nil;
-					}
-				}
-			});
-	});
-var $elm$url$Url$Parser$string = A2($elm$url$Url$Parser$custom, 'STRING', $elm$core$Maybe$Just);
-var $author$project$FeastDayActivities$FeastDayHelpers$urlDayParser = A2(
-	$elm$url$Url$Parser$map,
-	$author$project$FeastDayActivities$FeastDayHelpers$UrlDate,
+var $elm$url$Url$Parser$Query$string = function (key) {
+	return A2(
+		$elm$url$Url$Parser$Query$custom,
+		key,
+		function (stringList) {
+			if (stringList.b && (!stringList.b.b)) {
+				var str = stringList.a;
+				return $elm$core$Maybe$Just(str);
+			} else {
+				return $elm$core$Maybe$Nothing;
+			}
+		});
+};
+var $author$project$FeastDayActivities$FeastDayHelpers$urlDateParser = A2(
+	$elm$url$Url$Parser$questionMark,
 	A2(
-		$elm$url$Url$Parser$slash,
+		$elm$url$Url$Parser$questionMark,
 		$elm$url$Url$Parser$s('feastdayactivities'),
-		A2($elm$url$Url$Parser$slash, $elm$url$Url$Parser$string, $elm$url$Url$Parser$string)));
-var $author$project$FeastDayActivities$FeastDayHelpers$urlMonthParser = A2(
-	$elm$url$Url$Parser$slash,
-	$elm$url$Url$Parser$s('feastdayactivities'),
-	$elm$url$Url$Parser$string);
-var $author$project$FeastDayActivities$FeastDayHelpers$route = $elm$url$Url$Parser$oneOf(
-	_List_fromArray(
-		[
-			A2($elm$url$Url$Parser$map, $author$project$FeastDayActivities$FeastDayHelpers$Date, $author$project$FeastDayActivities$FeastDayHelpers$urlDayParser),
-			A2($elm$url$Url$Parser$map, $author$project$FeastDayActivities$FeastDayHelpers$Month, $author$project$FeastDayActivities$FeastDayHelpers$urlMonthParser)
-		]));
+		$elm$url$Url$Parser$Query$string('m')),
+	$elm$url$Url$Parser$Query$string('d'));
+var $author$project$FeastDayActivities$FeastDayHelpers$route = A2(
+	$elm$url$Url$Parser$map,
+	function (m) {
+		return function (d) {
+			return $author$project$FeastDayActivities$FeastDayHelpers$Date(
+				{date: d, month: m});
+		};
+	},
+	$author$project$FeastDayActivities$FeastDayHelpers$urlDateParser);
 var $author$project$FeastDayActivities$FeastDayHelpers$parseRoute = $elm$url$Url$Parser$parse($author$project$FeastDayActivities$FeastDayHelpers$route);
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
@@ -8273,8 +8284,8 @@ var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feast
 					]))
 			]));
 };
-var $author$project$FeastDayActivities$Main$viewDate = F2(
-	function (urlDate, feasts) {
+var $author$project$FeastDayActivities$Main$viewDate = F3(
+	function (month, date, feasts) {
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -8291,7 +8302,7 @@ var $author$project$FeastDayActivities$Main$viewDate = F2(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text(urlDate.month + (' ' + urlDate.date))
+							$elm$html$Html$text(month + (' ' + date))
 						])),
 					$author$project$FeastDayActivities$Main$viewFeastDayHeader(feasts),
 					A2(
@@ -8487,7 +8498,7 @@ var $author$project$FeastDayActivities$Main$viewFeast = function (feastActivitie
 };
 var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
 	function (month, feastDay) {
-		var link = $author$project$FeastDayActivities$Main$urlPath + ('/' + (month + ('/' + feastDay.date)));
+		var link = $author$project$FeastDayActivities$Main$urlPath + ('?m=' + (month + ('&d=' + feastDay.date)));
 		return A2(
 			$elm$html$Html$div,
 			_List_Nil,
@@ -8577,7 +8588,7 @@ var $author$project$FeastDayActivities$Main$viewMonthPillBox = function (month) 
 				$elm$html$Html$Attributes$class('p-2'),
 				$elm$html$Html$Attributes$class('cursor-pointer'),
 				$elm$html$Html$Attributes$class('capitalize'),
-				$elm$html$Html$Attributes$href('./' + month)
+				$elm$html$Html$Attributes$href($author$project$FeastDayActivities$Main$urlPath + ('?m=' + month))
 			]),
 		_List_fromArray(
 			[
@@ -8650,66 +8661,66 @@ var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
 					]))
 			]));
 };
-var $elm$core$Maybe$withDefault = F2(
-	function (_default, maybe) {
-		if (maybe.$ === 'Just') {
-			var value = maybe.a;
-			return value;
-		} else {
-			return _default;
-		}
-	});
 var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 	var _v0 = A2($elm$core$Debug$log, 'route', route);
 	if (_v0.$ === 'Just') {
-		if (_v0.a.$ === 'Date') {
-			var date = _v0.a.a;
-			return A2(
-				$author$project$FeastDayActivities$Main$viewDate,
-				date,
-				A2(
-					$elm$core$Maybe$withDefault,
-					_List_Nil,
-					$elm$core$List$head(
-						A2(
-							$elm$core$List$map,
-							function ($) {
-								return $.feasts;
-							},
+		var date = _v0.a.a;
+		var _v1 = _Utils_Tuple2(date.month, date.date);
+		if (_v1.a.$ === 'Just') {
+			if (_v1.b.$ === 'Just') {
+				var m = _v1.a.a;
+				var d = _v1.b.a;
+				return A3(
+					$author$project$FeastDayActivities$Main$viewDate,
+					m,
+					d,
+					A2(
+						$elm$core$Maybe$withDefault,
+						_List_Nil,
+						$elm$core$List$head(
+							A2(
+								$elm$core$List$map,
+								function ($) {
+									return $.feasts;
+								},
+								A2(
+									$elm$core$List$filter,
+									function (feastDay) {
+										return _Utils_eq(
+											$elm$core$String$toLower(feastDay.date),
+											$elm$core$String$toLower(d));
+									},
+									A2(
+										$elm$core$Maybe$withDefault,
+										$author$project$FeastDayActivities$FeastDays$january,
+										$elm$core$List$head(
+											A2(
+												$elm$core$List$filter,
+												function (feastDay) {
+													return _Utils_eq(
+														$elm$core$String$toLower(feastDay.key),
+														$elm$core$String$toLower(m));
+												},
+												$author$project$FeastDayActivities$FeastDays$feastDays))).feasts)))));
+			} else {
+				var m = _v1.a.a;
+				var _v2 = _v1.b;
+				return $author$project$FeastDayActivities$Main$viewMonth(
+					A2(
+						$elm$core$Maybe$withDefault,
+						$author$project$FeastDayActivities$FeastDays$january,
+						$elm$core$List$head(
 							A2(
 								$elm$core$List$filter,
 								function (feastDay) {
 									return _Utils_eq(
-										$elm$core$String$toLower(feastDay.date),
-										$elm$core$String$toLower(date.date));
+										$elm$core$String$toLower(feastDay.key),
+										$elm$core$String$toLower(m));
 								},
-								A2(
-									$elm$core$Maybe$withDefault,
-									$author$project$FeastDayActivities$FeastDays$january,
-									$elm$core$List$head(
-										A2(
-											$elm$core$List$filter,
-											function (feastDay) {
-												return _Utils_eq(
-													$elm$core$String$toLower(feastDay.key),
-													$elm$core$String$toLower(date.month));
-											},
-											$author$project$FeastDayActivities$FeastDays$feastDays))).feasts)))));
+								$author$project$FeastDayActivities$FeastDays$feastDays))));
+			}
 		} else {
-			var month = _v0.a.a;
-			return $author$project$FeastDayActivities$Main$viewMonth(
-				A2(
-					$elm$core$Maybe$withDefault,
-					$author$project$FeastDayActivities$FeastDays$january,
-					$elm$core$List$head(
-						A2(
-							$elm$core$List$filter,
-							function (feastDay) {
-								return _Utils_eq(
-									$elm$core$String$toLower(feastDay.key),
-									$elm$core$String$toLower(month));
-							},
-							$author$project$FeastDayActivities$FeastDays$feastDays))));
+			return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$january);
 		}
 	} else {
 		return $author$project$FeastDayActivities$Main$viewMonth($author$project$FeastDayActivities$FeastDays$january);

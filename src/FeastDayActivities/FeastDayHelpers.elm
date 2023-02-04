@@ -1,7 +1,8 @@
 module FeastDayActivities.FeastDayHelpers exposing (..)
 
 import Url
-import Url.Parser exposing ((</>), parse)
+import Url.Parser exposing ((</>), (<?>), parse)
+import Url.Parser.Query as Query
 
 
 splitList : List x -> ( List x, List x )
@@ -12,12 +13,11 @@ splitList list =
 
 
 type Route
-    = Month String
-    | Date UrlDate
+    = Date UrlDate
 
 
 type alias UrlDate =
-    { month : String, date : String }
+    { month : Maybe String, date : Maybe String }
 
 
 parseRoute : Url.Url -> Maybe Route
@@ -25,22 +25,13 @@ parseRoute =
     parse route
 
 
-urlMonthParser : Url.Parser.Parser (String -> a) a
-urlMonthParser =
-    Url.Parser.s "feastdayactivities" </> Url.Parser.string
-
-
-urlDayParser : Url.Parser.Parser (UrlDate -> a) a
-urlDayParser =
+urlDateParser : Url.Parser.Parser (Maybe String -> Maybe String -> a) a
+urlDateParser =
     Url.Parser.s "feastdayactivities"
-        </> Url.Parser.string
-        </> Url.Parser.string
-        |> Url.Parser.map UrlDate
+        <?> Query.string "m"
+        <?> Query.string "d"
 
 
 route : Url.Parser.Parser (Route -> a) a
 route =
-    Url.Parser.oneOf
-        [ Url.Parser.map Date urlDayParser
-        , Url.Parser.map Month urlMonthParser
-        ]
+    Url.Parser.map (\m -> \d -> Date { month = m, date = d }) urlDateParser
