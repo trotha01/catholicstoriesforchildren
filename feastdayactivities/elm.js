@@ -5772,15 +5772,9 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	key: 'feb',
 	month: 'February'
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Food = function (a) {
-	return {$: 'Food', a: a};
-};
-var $author$project$FeastDayActivities$FeastDayHelpers$Reading = function (a) {
-	return {$: 'Reading', a: a};
-};
-var $author$project$FeastDayActivities$FeastDayHelpers$Video = function (a) {
-	return {$: 'Video', a: a};
-};
+var $author$project$FeastDayActivities$FeastDayHelpers$Food = {$: 'Food'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Reading = {$: 'Reading'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Video = {$: 'Video'};
 var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 	color: '#9de3ec',
 	feasts: _List_fromArray(
@@ -5792,18 +5786,12 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDayHelpers$Video(
-							{link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', title: 'Hail Mary, Full of Grace'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Reading(
-							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Food(
-							{image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'Smoked Sausage and Black-Eyed Peas'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Food(
-							{image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'Broccoli Cornbread Mini Muffins'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Food(
-							{image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'Sweet Buttermilk Cornbread'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Food(
-							{image: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', title: 'German New Years Cake'})
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', snippet: '', title: 'Hail Mary, Full of Grace'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Reading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Smoked Sausage and Black-Eyed Peas'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Broccoli Cornbread Mini Muffins'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Sweet Buttermilk Cornbread'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'German New Years Cake'}
 						]),
 					feast: 'Mary, Mother of God'
 				}
@@ -5816,8 +5804,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDayHelpers$Video(
-							{link: 'https://youtu.be/lwe8voh3H_4', title: 'Ss. Gregory & Basil'})
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://youtu.be/lwe8voh3H_4', snippet: '', title: 'Ss. Gregory & Basil'}
 						]),
 					feast: 'Saint Basil'
 				}
@@ -5893,20 +5880,16 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDayHelpers$Reading(
-							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Food(
-							{image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', title: 'Dove Dinner Rolls'})
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Reading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: '', title: 'Dove Dinner Rolls'}
 						]),
 					feast: 'Saint Fabian'
 				},
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDayHelpers$Reading(
-							{image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'}),
-							$author$project$FeastDayActivities$FeastDayHelpers$Food(
-							{image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', title: 'Roscos Orange Donuts'})
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Reading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: '', title: 'Roscos Orange Donuts'}
 						]),
 					feast: 'Saint Sebastian'
 				}
@@ -5970,8 +5953,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							$author$project$FeastDayActivities$FeastDayHelpers$Video(
-							{link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', title: 'My Catholic Family - Don Bosco'})
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', snippet: '', title: 'My Catholic Family - Don Bosco'}
 						]),
 					feast: 'Saint John Bosco'
 				}
@@ -8035,19 +8017,21 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $author$project$FeastDayActivities$FeastDayHelpers$filterActivities = F2(
+	function (isFilterType, activities) {
+		return A2(
+			$elm$core$List$concatMap,
+			function (activity) {
+				return isFilterType(activity.activityType) ? _List_fromArray(
+					[activity]) : _List_Nil;
+			},
+			activities);
+	});
 var $author$project$FeastDayActivities$FeastDayHelpers$foodActivities = function (activities) {
 	return A2(
-		$elm$core$List$concatMap,
-		function (activity) {
-			if (activity.$ === 'Food') {
-				var v = activity.a;
-				return _List_fromArray(
-					[
-						{image: v.image, link: v.link, title: v.title}
-					]);
-			} else {
-				return _List_Nil;
-			}
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Food);
 		},
 		activities);
 };
@@ -8058,51 +8042,28 @@ var $elm$core$List$isEmpty = function (xs) {
 		return false;
 	}
 };
+var $author$project$FeastDayActivities$FeastDayHelpers$Printout = {$: 'Printout'};
 var $author$project$FeastDayActivities$FeastDayHelpers$printoutActivities = function (activities) {
 	return A2(
-		$elm$core$List$concatMap,
-		function (activity) {
-			if (activity.$ === 'Printout') {
-				var v = activity.a;
-				return _List_fromArray(
-					[
-						{image: v.image, link: v.link, title: v.title}
-					]);
-			} else {
-				return _List_Nil;
-			}
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Printout);
 		},
 		activities);
 };
 var $author$project$FeastDayActivities$FeastDayHelpers$readingActivities = function (activities) {
 	return A2(
-		$elm$core$List$concatMap,
-		function (activity) {
-			if (activity.$ === 'Reading') {
-				var v = activity.a;
-				return _List_fromArray(
-					[
-						{image: v.image, link: v.link, snippet: v.snippet, title: v.title}
-					]);
-			} else {
-				return _List_Nil;
-			}
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Reading);
 		},
 		activities);
 };
 var $author$project$FeastDayActivities$FeastDayHelpers$videoActivities = function (activities) {
 	return A2(
-		$elm$core$List$concatMap,
-		function (activity) {
-			if (activity.$ === 'Video') {
-				var v = activity.a;
-				return _List_fromArray(
-					[
-						{link: v.link, title: v.title}
-					]);
-			} else {
-				return _List_Nil;
-			}
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Video);
 		},
 		activities);
 };
@@ -8124,80 +8085,91 @@ var $elm$html$Html$Attributes$src = function (url) {
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
-var $author$project$FeastDayActivities$Main$viewFood = function (activities) {
-	return $elm$core$List$isEmpty(activities) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('mt-20')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$h3,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('text-3xl'),
-						$elm$html$Html$Attributes$class('mb-7')
-					]),
-				_List_fromArray(
-					[
-						$elm$html$Html$text('Recipes')
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('max-w-3xl m-auto')
-					]),
-				A2(
-					$elm$core$List$map,
-					function (activity) {
-						return A2(
-							$elm$html$Html$a,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('grid grid-cols-[100px_1fr]'),
-									$elm$html$Html$Attributes$href(activity.link),
-									$elm$html$Html$Attributes$target('_blank'),
-									$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
-									$elm$html$Html$Attributes$class('rounded m-5')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$img,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$src(activity.image),
-											$elm$html$Html$Attributes$class('w-20 h-20'),
-											$elm$html$Html$Attributes$class('rounded')
-										]),
-									_List_Nil),
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$class('grid grid-rows')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$h4,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$class('text-xl text-left')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text(activity.title)
-												]))
-										]))
-								]));
-					},
-					activities))
-			]));
-};
+var $author$project$FeastDayActivities$Main$viewActivities = F2(
+	function (activityType, activities) {
+		return $elm$core$List$isEmpty(activities) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mt-20')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$h3,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('text-3xl'),
+							$elm$html$Html$Attributes$class('mb-7')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(activityType)
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('max-w-3xl m-auto')
+						]),
+					A2(
+						$elm$core$List$map,
+						function (activity) {
+							return A2(
+								$elm$html$Html$a,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('grid grid-cols-[100px_1fr]'),
+										$elm$html$Html$Attributes$href(activity.link),
+										$elm$html$Html$Attributes$target('_blank'),
+										$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
+										$elm$html$Html$Attributes$class('rounded m-5')
+									]),
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$img,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$src(activity.image),
+												$elm$html$Html$Attributes$class('w-20 h-20'),
+												$elm$html$Html$Attributes$class('rounded')
+											]),
+										_List_Nil),
+										A2(
+										$elm$html$Html$div,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$class('grid grid-rows')
+											]),
+										_List_fromArray(
+											[
+												A2(
+												$elm$html$Html$h4,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('text-xl text-left')
+													]),
+												_List_fromArray(
+													[
+														$elm$html$Html$text(activity.title)
+													])),
+												A2(
+												$elm$html$Html$div,
+												_List_fromArray(
+													[
+														$elm$html$Html$Attributes$class('text-left')
+													]),
+												_List_fromArray(
+													[
+														$elm$html$Html$text(activity.snippet)
+													]))
+											]))
+									]));
+						},
+						activities))
+				]));
+	});
 var $elm$html$Html$p = _VirtualDom_node('p');
 var $author$project$FeastDayActivities$Main$viewNoActivities = A2(
 	$elm$html$Html$div,
@@ -8219,124 +8191,6 @@ var $author$project$FeastDayActivities$Main$viewNoActivities = A2(
 					$elm$html$Html$text('Please hang tight.')
 				]))
 		]));
-var $author$project$FeastDayActivities$Main$viewPrintouts = function (activities) {
-	return $elm$core$List$isEmpty(activities) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
-		$elm$html$Html$div,
-		_List_Nil,
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$h3,
-				_List_Nil,
-				_List_fromArray(
-					[
-						$elm$html$Html$text('Printouts')
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				A2(
-					$elm$core$List$map,
-					function (activity) {
-						return A2(
-							$elm$html$Html$a,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$href(activity.link),
-									$elm$html$Html$Attributes$target('_blank')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text(activity.title)
-								]));
-					},
-					activities))
-			]));
-};
-var $author$project$FeastDayActivities$Main$viewReadings = function (activities) {
-	return $elm$core$List$isEmpty(activities) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('mt-20')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$h3,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('text-3xl'),
-						$elm$html$Html$Attributes$class('mb-7')
-					]),
-				_List_fromArray(
-					[
-						$elm$html$Html$text('Reading')
-					])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('max-w-3xl m-auto')
-					]),
-				A2(
-					$elm$core$List$map,
-					function (activity) {
-						return A2(
-							$elm$html$Html$a,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('grid grid-cols-[100px_1fr]'),
-									$elm$html$Html$Attributes$href(activity.link),
-									$elm$html$Html$Attributes$target('_blank'),
-									$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
-									$elm$html$Html$Attributes$class('rounded m-5')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$img,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$src(activity.image),
-											$elm$html$Html$Attributes$class('w-20 h-20'),
-											$elm$html$Html$Attributes$class('rounded')
-										]),
-									_List_Nil),
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$class('grid grid-rows')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$h4,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$class('text-xl text-left')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text(activity.title)
-												])),
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$class('text-left')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text(activity.snippet)
-												]))
-										]))
-								]));
-					},
-					activities))
-			]));
-};
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
 		_VirtualDom_attribute,
@@ -8432,10 +8286,14 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 			[
 				$author$project$FeastDayActivities$Main$viewVideos(
 				$author$project$FeastDayActivities$FeastDayHelpers$videoActivities(activities)),
-				$author$project$FeastDayActivities$Main$viewPrintouts(
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'Printouts',
 				$author$project$FeastDayActivities$FeastDayHelpers$printoutActivities(activities)),
-				$author$project$FeastDayActivities$Main$viewReadings(feastDayReadingActivities),
-				$author$project$FeastDayActivities$Main$viewFood(
+				A2($author$project$FeastDayActivities$Main$viewActivities, 'Reading', feastDayReadingActivities),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'Recipes',
 				$author$project$FeastDayActivities$FeastDayHelpers$foodActivities(activities))
 			]));
 };

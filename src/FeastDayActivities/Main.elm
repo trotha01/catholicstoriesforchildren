@@ -193,9 +193,9 @@ viewFeastActivities feastActivities =
     else
         div []
             [ viewVideos (videoActivities activities)
-            , viewPrintouts (printoutActivities activities)
-            , viewReadings feastDayReadingActivities
-            , viewFood (foodActivities activities)
+            , viewActivities "Printouts" (printoutActivities activities)
+            , viewActivities "Reading" feastDayReadingActivities
+            , viewActivities "Recipes" (foodActivities activities)
             ]
 
 
@@ -210,7 +210,7 @@ viewNoActivities =
         ]
 
 
-viewVideos : List VideoActivity -> Html Msg
+viewVideos : List Activity -> Html Msg
 viewVideos videos =
     if List.isEmpty videos then
         span [] []
@@ -253,31 +253,8 @@ viewVideos videos =
             ]
 
 
-viewPrintouts : List PrintoutActivity -> Html Msg
-viewPrintouts activities =
-    if List.isEmpty activities then
-        span [] []
-
-    else
-        div []
-            [ h3 [] [ text "Printouts" ]
-            , div []
-                (List.map
-                    (\activity ->
-                        a
-                            [ href activity.link
-                            , target "_blank"
-                            ]
-                            [ text activity.title
-                            ]
-                    )
-                    activities
-                )
-            ]
-
-
-viewFood : List FoodActivity -> Html Msg
-viewFood activities =
+viewActivities : String -> List Activity -> Html Msg
+viewActivities activityType activities =
     if List.isEmpty activities then
         span [] []
 
@@ -287,48 +264,7 @@ viewFood activities =
                 [ class "text-3xl"
                 , class "mb-7"
                 ]
-                [ text "Recipes" ]
-            , div [ class "max-w-3xl m-auto" ]
-                (List.map
-                    (\activity ->
-                        a
-                            [ class "grid grid-cols-[100px_1fr]"
-                            , href activity.link
-                            , target "_blank"
-                            , class "hover:bg-csc-lightpurple"
-                            , class "rounded m-5"
-                            ]
-                            [ img
-                                [ src activity.image
-                                , class "w-20 h-20"
-                                , class "rounded"
-                                ]
-                                []
-                            , div [ class "grid grid-rows" ]
-                                [ h4
-                                    [ class "text-xl text-left"
-                                    ]
-                                    [ text activity.title ]
-                                ]
-                            ]
-                    )
-                    activities
-                )
-            ]
-
-
-viewReadings : List ReadingActivity -> Html Msg
-viewReadings activities =
-    if List.isEmpty activities then
-        span [] []
-
-    else
-        div [ class "mt-20" ]
-            [ h3
-                [ class "text-3xl"
-                , class "mb-7"
-                ]
-                [ text "Reading" ]
+                [ text activityType ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\activity ->

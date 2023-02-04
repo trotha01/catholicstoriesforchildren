@@ -25,98 +25,58 @@ type alias FeastActivities =
     }
 
 
+type alias Activity =
+    { activityType : ActivityType
+    , title : String
+    , image : String
+    , link : String
+    , snippet : String
+    }
+
+
+type ActivityType
+    = Video
+    | Printout
+    | Reading
+    | Food
+
+
 isVideo : Activity -> Bool
 isVideo activity =
-    case activity of
-        Video _ ->
-            True
-
-        _ ->
-            False
+    activity.activityType == Video
 
 
-videoActivities : List Activity -> List VideoActivity
+videoActivities : List Activity -> List Activity
 videoActivities activities =
-    activities
-        |> List.concatMap
-            (\activity ->
-                case activity of
-                    Video v ->
-                        [ { title = v.title, link = v.link } ]
-
-                    _ ->
-                        []
-            )
+    filterActivities (\activityType -> activityType == Video) activities
 
 
-printoutActivities : List Activity -> List PrintoutActivity
+printoutActivities : List Activity -> List Activity
 printoutActivities activities =
-    activities
-        |> List.concatMap
-            (\activity ->
-                case activity of
-                    Printout v ->
-                        [ { title = v.title, link = v.link, image = v.image } ]
-
-                    _ ->
-                        []
-            )
+    filterActivities (\activityType -> activityType == Printout) activities
 
 
-foodActivities : List Activity -> List FoodActivity
+foodActivities : List Activity -> List Activity
 foodActivities activities =
-    activities
-        |> List.concatMap
-            (\activity ->
-                case activity of
-                    Food v ->
-                        [ { title = v.title, link = v.link, image = v.image } ]
-
-                    _ ->
-                        []
-            )
+    filterActivities (\activityType -> activityType == Food) activities
 
 
-readingActivities : List Activity -> List ReadingActivity
+readingActivities : List Activity -> List Activity
 readingActivities activities =
+    filterActivities (\activityType -> activityType == Reading) activities
+
+
+filterActivities : (ActivityType -> Bool) -> List Activity -> List Activity
+filterActivities isFilterType activities =
     activities
         |> List.concatMap
             (\activity ->
-                case activity of
-                    Reading v ->
-                        [ { title = v.title
-                          , link = v.link
-                          , image = v.image
-                          , snippet = v.snippet
-                          }
-                        ]
+                if isFilterType activity.activityType then
+                    [ activity ]
 
-                    _ ->
-                        []
+                else
+                    []
             )
-
-
-type Activity
-    = Video VideoActivity
-    | Printout PrintoutActivity
-    | Reading ReadingActivity
-    | Food FoodActivity
-
-
-type alias VideoActivity =
-    { title : String, link : String }
-
-
-type alias ReadingActivity =
-    { title : String, image : String, link : String, snippet : String }
-
-
-type alias PrintoutActivity =
-    { title : String, image : String, link : String }
-
-
-type alias FoodActivity =
-    { title : String, image : String, link : String }
 
 
 splitList : List x -> ( List x, List x )
