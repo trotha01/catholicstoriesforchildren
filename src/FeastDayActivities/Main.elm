@@ -147,7 +147,10 @@ viewDate month date feasts =
             [ text (month ++ " " ++ date)
             ]
         , viewFeastDayHeader feasts
-        , div [ class "mt-10" ]
+        , div
+            [ class "mt-10"
+            , class "min-h-screen"
+            ]
             [ viewFeastActivities feasts ]
         ]
 
@@ -179,10 +182,25 @@ viewFeastActivities feastActivities =
         feastDayReadingActivities =
             readingActivities activities
     in
+    if List.isEmpty activities then
+        viewNoActivities
+
+    else
+        div []
+            [ viewVideos (videoActivities activities)
+            , viewPrintouts (printoutActivities activities)
+            , viewReadings feastDayReadingActivities
+            ]
+
+
+viewNoActivities : Html msg
+viewNoActivities =
     div []
-        [ viewVideos (videoActivities activities)
-        , viewPrintouts (printoutActivities activities)
-        , viewReadings feastDayReadingActivities
+        [ p []
+            [ text "We are still adding feast day activities!" ]
+        , p
+            []
+            [ text "Please hang tight." ]
         ]
 
 

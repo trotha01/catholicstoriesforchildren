@@ -8011,6 +8011,13 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$core$List$isEmpty = function (xs) {
+	if (!xs.b) {
+		return true;
+	} else {
+		return false;
+	}
+};
 var $author$project$FeastDayActivities$FeastDays$printoutActivities = function (activities) {
 	return A2(
 		$elm$core$List$concatMap,
@@ -8059,6 +8066,27 @@ var $author$project$FeastDayActivities$FeastDays$videoActivities = function (act
 		},
 		activities);
 };
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$FeastDayActivities$Main$viewNoActivities = A2(
+	$elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('We are still adding feast day activities!')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Please hang tight.')
+				]))
+		]));
 var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$Attributes$href = function (url) {
@@ -8066,13 +8094,6 @@ var $elm$html$Html$Attributes$href = function (url) {
 		$elm$html$Html$Attributes$stringProperty,
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
-};
-var $elm$core$List$isEmpty = function (xs) {
-	if (!xs.b) {
-		return true;
-	} else {
-		return false;
-	}
 };
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
@@ -8240,7 +8261,7 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 		},
 		feastActivities);
 	var feastDayReadingActivities = $author$project$FeastDayActivities$FeastDays$readingActivities(activities);
-	return A2(
+	return $elm$core$List$isEmpty(activities) ? $author$project$FeastDayActivities$Main$viewNoActivities : A2(
 		$elm$html$Html$div,
 		_List_Nil,
 		_List_fromArray(
@@ -8309,7 +8330,8 @@ var $author$project$FeastDayActivities$Main$viewDate = F3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('mt-10')
+							$elm$html$Html$Attributes$class('mt-10'),
+							$elm$html$Html$Attributes$class('min-h-screen')
 						]),
 					_List_fromArray(
 						[
