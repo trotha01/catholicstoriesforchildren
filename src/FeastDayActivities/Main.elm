@@ -153,7 +153,7 @@ viewDate month date feasts =
             ]
         , viewFeastDayHeader feasts
         , div
-            [ class "mt-10"
+            [ class "mt-10 mb-40"
             , class "min-h-screen"
             ]
             [ viewFeastActivities feasts ]
@@ -193,9 +193,13 @@ viewFeastActivities feastActivities =
     else
         div []
             [ viewVideos (videoActivities activities)
-            , viewActivities "Printouts" (printoutActivities activities)
             , viewActivities "Reading" feastDayReadingActivities
+            , viewActivities "Printouts" (printoutActivities activities)
+            , viewActivities "Games" (gameActivities activities)
             , viewActivities "Recipes" (foodActivities activities)
+            , viewActivities "Books" (bookActivities activities)
+            , viewActivities "Crafts" (craftActivities activities)
+            , viewActivities "More" (moreActivities activities)
             ]
 
 
@@ -279,6 +283,7 @@ viewActivities activityType activities =
                                 [ src activity.image
                                 , class "w-20 h-20"
                                 , class "rounded"
+                                , class "object-cover"
                                 ]
                                 []
                             , div [ class "grid grid-rows" ]

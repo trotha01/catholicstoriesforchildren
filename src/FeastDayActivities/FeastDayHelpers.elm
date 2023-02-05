@@ -37,13 +37,12 @@ type alias Activity =
 type ActivityType
     = Video
     | Printout
-    | Reading
+    | OnlineReading
     | Food
-
-
-isVideo : Activity -> Bool
-isVideo activity =
-    activity.activityType == Video
+    | Game
+    | Book
+    | Crafts
+    | More
 
 
 videoActivities : List Activity -> List Activity
@@ -63,7 +62,27 @@ foodActivities activities =
 
 readingActivities : List Activity -> List Activity
 readingActivities activities =
-    filterActivities (\activityType -> activityType == Reading) activities
+    filterActivities (\activityType -> activityType == OnlineReading) activities
+
+
+bookActivities : List Activity -> List Activity
+bookActivities activities =
+    filterActivities (\activityType -> activityType == Book) activities
+
+
+gameActivities : List Activity -> List Activity
+gameActivities activities =
+    filterActivities (\activityType -> activityType == Game) activities
+
+
+craftActivities : List Activity -> List Activity
+craftActivities activities =
+    filterActivities (\activityType -> activityType == Crafts) activities
+
+
+moreActivities : List Activity -> List Activity
+moreActivities activities =
+    filterActivities (\activityType -> activityType == More) activities
 
 
 filterActivities : (ActivityType -> Bool) -> List Activity -> List Activity

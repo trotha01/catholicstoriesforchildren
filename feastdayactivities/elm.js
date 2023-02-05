@@ -5772,8 +5772,12 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	key: 'feb',
 	month: 'February'
 };
+var $author$project$FeastDayActivities$FeastDayHelpers$Book = {$: 'Book'};
 var $author$project$FeastDayActivities$FeastDayHelpers$Food = {$: 'Food'};
-var $author$project$FeastDayActivities$FeastDayHelpers$Reading = {$: 'Reading'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Game = {$: 'Game'};
+var $author$project$FeastDayActivities$FeastDayHelpers$More = {$: 'More'};
+var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = {$: 'OnlineReading'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Printout = {$: 'Printout'};
 var $author$project$FeastDayActivities$FeastDayHelpers$Video = {$: 'Video'};
 var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 	color: '#9de3ec',
@@ -5787,7 +5791,9 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					activities: _List_fromArray(
 						[
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', snippet: '', title: 'Hail Mary, Full of Grace'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Reading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Game, image: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', link: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', snippet: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', title: 'Mary, Mother of Our Church File Folder Game'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', snippet: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', title: 'Solemnity of Mary, the Holy Mother of God'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Smoked Sausage and Black-Eyed Peas'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Broccoli Cornbread Mini Muffins'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Sweet Buttermilk Cornbread'},
@@ -5814,49 +5820,94 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 			date: '03',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'The Most Holy Name of Jesus'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', link: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'Why We Celebrate the Holy Name of Jesus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', link: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'How To Draw The Most Holy Name Of Jesus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Book, image: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', link: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', snippet: 'This booklet, "The Wonders of the Holy Name," reveals the simplest secret of holiness and happiness ever. For it shows us how we can pray "without ceasing," pray "always," and pray "at all times," as Holy Scripture exhorts us...', title: 'The Wonders of the Holy Name'}
+						]),
+					feast: 'The Most Holy Name of Jesus'
+				}
 				])
 		},
 			{
 			date: '04',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint Elizabeth Ann Seton'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', snippet: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', title: 'Saint Elizabeth Ann Seton'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', snippet: '', title: 'Betty Bayley Becomes A Saint'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', link: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', snippet: 'A themed word search for older kids.', title: 'Elizabeth Ann Seton Word Find'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', link: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', snippet: 'See Catholic Icing for more activity ideas to celebrate this saint!', title: 'Catholic Icing'}
+						]),
+					feast: 'Saint Elizabeth Ann Seton'
+				}
 				])
 		},
 			{
 			date: '05',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint John Newmann'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs', snippet: '', title: 'St. John Neumann'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/saints/ff_images/85.jpg', link: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', snippet: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', title: 'Saints Fun Facts: St. John Neumann'}
+						]),
+					feast: 'Saint John Newmann'
+				}
 				])
 		},
 			{
 			date: '06',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint André Bessette'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/files/images/saints/18.jpg', link: 'https://www.catholic.org/saints/saint.php?saint_id=18', snippet: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', title: 'St. Andre Bessette'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', snippet: '', title: 'The Story of Saint Brother Andre Bessette of Canada'}
+						]),
+					feast: 'Saint André Bessette'
+				}
 				])
 		},
 			{
 			date: '07',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saint Raymond of Penyafort'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/b1yNa55xmjM', snippet: '', title: 'St. Raymond of Peñafort'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', title: 'St. Raymond of Pennafort\'s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: '', title: 'Barcelona Vegan Potato Bombas'}
+						]),
+					feast: 'Saint Raymond of Penyafort'
+				}
 				])
 		},
 			{
 			date: '08',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Epiphany of the Lord'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', snippet: '', title: 'My Time with Jesus - Epiphany'}
+						]),
+					feast: 'The Epiphany of the Lord'
+				}
 				])
 		},
 			{
 			date: '09',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Baptism of the Lord'}
+					{activities: _List_Nil, feast: 'The Baptism of the Lord'}
 				])
 		},
 			{
@@ -5880,7 +5931,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Reading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: '', title: 'Dove Dinner Rolls'}
 						]),
 					feast: 'Saint Fabian'
@@ -5888,7 +5939,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Reading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: '', title: 'Roscos Orange Donuts'}
 						]),
 					feast: 'Saint Sebastian'
@@ -8027,11 +8078,36 @@ var $author$project$FeastDayActivities$FeastDayHelpers$filterActivities = F2(
 			},
 			activities);
 	});
+var $author$project$FeastDayActivities$FeastDayHelpers$bookActivities = function (activities) {
+	return A2(
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Book);
+		},
+		activities);
+};
+var $author$project$FeastDayActivities$FeastDayHelpers$Crafts = {$: 'Crafts'};
+var $author$project$FeastDayActivities$FeastDayHelpers$craftActivities = function (activities) {
+	return A2(
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Crafts);
+		},
+		activities);
+};
 var $author$project$FeastDayActivities$FeastDayHelpers$foodActivities = function (activities) {
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
 			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Food);
+		},
+		activities);
+};
+var $author$project$FeastDayActivities$FeastDayHelpers$gameActivities = function (activities) {
+	return A2(
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Game);
 		},
 		activities);
 };
@@ -8042,7 +8118,14 @@ var $elm$core$List$isEmpty = function (xs) {
 		return false;
 	}
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Printout = {$: 'Printout'};
+var $author$project$FeastDayActivities$FeastDayHelpers$moreActivities = function (activities) {
+	return A2(
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$More);
+		},
+		activities);
+};
 var $author$project$FeastDayActivities$FeastDayHelpers$printoutActivities = function (activities) {
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
@@ -8055,7 +8138,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$readingActivities = funct
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Reading);
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading);
 		},
 		activities);
 };
@@ -8133,7 +8216,8 @@ var $author$project$FeastDayActivities$Main$viewActivities = F2(
 											[
 												$elm$html$Html$Attributes$src(activity.image),
 												$elm$html$Html$Attributes$class('w-20 h-20'),
-												$elm$html$Html$Attributes$class('rounded')
+												$elm$html$Html$Attributes$class('rounded'),
+												$elm$html$Html$Attributes$class('object-cover')
 											]),
 										_List_Nil),
 										A2(
@@ -8286,15 +8370,31 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 			[
 				$author$project$FeastDayActivities$Main$viewVideos(
 				$author$project$FeastDayActivities$FeastDayHelpers$videoActivities(activities)),
+				A2($author$project$FeastDayActivities$Main$viewActivities, 'Reading', feastDayReadingActivities),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
 				'Printouts',
 				$author$project$FeastDayActivities$FeastDayHelpers$printoutActivities(activities)),
-				A2($author$project$FeastDayActivities$Main$viewActivities, 'Reading', feastDayReadingActivities),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'Games',
+				$author$project$FeastDayActivities$FeastDayHelpers$gameActivities(activities)),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
 				'Recipes',
-				$author$project$FeastDayActivities$FeastDayHelpers$foodActivities(activities))
+				$author$project$FeastDayActivities$FeastDayHelpers$foodActivities(activities)),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'Books',
+				$author$project$FeastDayActivities$FeastDayHelpers$bookActivities(activities)),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'Crafts',
+				$author$project$FeastDayActivities$FeastDayHelpers$craftActivities(activities)),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'More',
+				$author$project$FeastDayActivities$FeastDayHelpers$moreActivities(activities))
 			]));
 };
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
@@ -8355,7 +8455,7 @@ var $author$project$FeastDayActivities$Main$viewDate = F3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('mt-10'),
+							$elm$html$Html$Attributes$class('mt-10 mb-40'),
 							$elm$html$Html$Attributes$class('min-h-screen')
 						]),
 					_List_fromArray(

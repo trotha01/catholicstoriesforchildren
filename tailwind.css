@@ -637,6 +637,10 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.mb-40 {
+  margin-bottom: 10rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -795,6 +799,11 @@ video {
 
 .border-l-4 {
   border-left-width: 4px;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-2 {
