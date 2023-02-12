@@ -109,7 +109,7 @@ view model =
 
 viewBody : Maybe Route -> Html Msg
 viewBody route =
-    case Debug.log "route" route of
+    case route of
         Just (Date date) ->
             case ( date.month, date.date ) of
                 ( Just m, Just d ) ->

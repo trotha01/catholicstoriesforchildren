@@ -9,6 +9,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
+import Newsroom.Main exposing (viewSignUp)
 import Url
 
 
@@ -81,7 +82,7 @@ view model =
         [ div
             [ style "background-color" "#FEF7F4"
             ]
-            [ viewHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
+            [ viewHeader "Catholic Stories for Children" headerMargin |> Html.String.toHtml
             , viewBody
             , viewFooter |> Html.String.toHtml
             ]
@@ -430,7 +431,7 @@ viewBody =
                 , style "margin-top" "50px"
                 ]
                 [ a
-                    [ href "https://catholicstoriesforchildren.com/newsroom"
+                    [ href "/newsroom"
                     , rel "noopener"
                     , style "text-decoration" "none"
                     , style "padding" "10px"
@@ -441,24 +442,9 @@ viewBody =
                     , style "box-shadow" "#777 1px 1px 5px"
                     ]
                     [ text "Latest News" ]
-                , p
-                    [ style "margin-top" "80px"
-                    , class "pb-5"
+                , div [ class "mt-10" ]
+                    [ viewSignUp |> Html.String.toHtml
                     ]
-                    [ text "Sign up for our email list to get updates!" ]
-                , a
-                    [ href "https://signup.catholicstoriesforchildren.com"
-                    , rel "noopener"
-                    , target "_blank"
-                    , style "text-decoration" "none"
-                    , style "padding" "10px"
-                    , style "display" "inline-block"
-                    , style "color" "black"
-                    , style "border" "2px solid #777"
-                    , style "border-radius" "5px"
-                    , style "box-shadow" "#777 1px 1px 5px"
-                    ]
-                    [ text "Sign Up" ]
                 ]
             ]
         , viewSection "give"

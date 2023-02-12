@@ -14,6 +14,12 @@ elm make --optimize \
   src/Main.elm \
   --output elm.js \
   && elm make --optimize \
+  src/Navigation/Main.elm \
+  --output navigationElm.js \
+  && elm make --optimize \
+  src/Contact/Main.elm \
+  --output contactElm.js \
+  && elm make --optimize \
   src/Team/Main.elm \
   --output teamElm.js \
   && elm make --optimize \
@@ -23,12 +29,47 @@ elm make --optimize \
   src/Newsroom/Main.elm \
   --output newsroomElm.js \
   && elm make --optimize \
+  src/Animations/Main.elm \
+  --output animationsElm.js \
+  && elm make --optimize \
   src/Animations/HailMary/Main.elm \
   --output hailMaryElm.js \
   && elm make --optimize \
   src/Animations/GuardianAngel/Main.elm \
   --output guardianAngelElm.js \
-  && elm make \
+  && elm make --optimize \
   src/FeastDayActivities/Main.elm \
   --output feastdayactivities/elm.js \
   && node build.js
+
+# elm make \
+#   src/Main.elm \
+#   --output elm.js \
+#   && elm make \
+#   src/Navigation/Main.elm \
+#   --output navigationElm.js \
+#   && elm make \
+#   src/Contact/Main.elm \
+#   --output contactElm.js \
+#   && elm make \
+#   src/Team/Main.elm \
+#   --output teamElm.js \
+#   && elm make \
+#   src/Give/Main.elm \
+#   --output giveElm.js \
+#   && elm make \
+#   src/Newsroom/Main.elm \
+#   --output newsroomElm.js \
+#   && elm make \
+#   src/Animations/Main.elm \
+#   --output animationsElm.js \
+#   && elm make \
+#   src/Animations/HailMary/Main.elm \
+#   --output hailMaryElm.js \
+#   && elm make \
+#   src/Animations/GuardianAngel/Main.elm \
+#   --output guardianAngelElm.js \
+#   && elm make \
+#   src/FeastDayActivities/Main.elm \
+#   --output feastdayactivities/elm.js \
+#   && node build.js

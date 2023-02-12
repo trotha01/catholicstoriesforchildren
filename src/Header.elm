@@ -21,23 +21,24 @@ viewSubpageHeader currentPage leftMargin =
         isHomePage =
             currentPage == "Catholic Stories for Children"
 
-        ( height, mobileBackButton ) =
+        ( height, rightHandSide, gridColsClass ) =
             if isHomePage then
-                ( "111px", span [] [] )
+                ( "111px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
 
             else
-                ( "48px", backButton )
+                ( "48px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
     in
     header
         [ style "background-color" "#3d5d75"
         , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
         , style "height" height
         , class "colorDarkGray"
-        , class "grid grid-cols-[150px_1fr_150px] items-center justify-items-center"
+        , class "grid items-center justify-items-center"
+        , class gridColsClass
         ]
         [ viewLogo
         , viewHeaderTitle currentPage
-        , mobileBackButton
+        , rightHandSide height
         ]
 
 
@@ -47,7 +48,7 @@ viewHeaderTitle title =
         [ style "text-decoration" "none"
         , class "colorDarkGray"
         , class "invisible md:visible"
-        , class "justify-self-center"
+        , class "justify-self-start"
         , href "/"
         ]
         [ h1
@@ -57,6 +58,64 @@ viewHeaderTitle title =
             ]
             [ text "Catholic Stories for Children" ]
         ]
+
+
+navigation : String -> Html msg
+navigation height =
+    div [ class "w-full" ]
+        [ div [ class "lg:hidden" ] [ hamburgerMenu ]
+        , div [ class "hidden lg:block w-full" ] [ desktopNavigation height ]
+        ]
+
+
+hamburgerMenu : Html msg
+hamburgerMenu =
+    a [ href "/navigation", class "space-y-2" ]
+        [ div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
+        , div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
+        , div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
+        ]
+
+
+desktopNavigation : String -> Html msg
+desktopNavigation height =
+    nav
+        [ class "h-full w-full grid grid-cols-5 content-center justify-items-center"
+        ]
+        [ viewNavButton height "/team" "About Us"
+        , viewNavButton height "/animations" "Animations"
+        , viewNavButton height "/contact" "Contact"
+        , viewNavButton height "/newsroom" "Newsroom"
+        , viewNavButton height "/give" "Give"
+        ]
+
+
+viewNavButton : String -> String -> String -> Html msg
+viewNavButton height link page =
+    a
+        [ href link
+        , class "flex items-center justify-center"
+        , class "hover:bg-csc-lightpurple"
+        , class "hover:border-b-2 hover:border-gray-700"
+        , class "rounded-t"
+        , class "text-lg"
+        , style "height" height
+        , class "w-full"
+        ]
+        [ text page ]
+
+
+viewMobileNavButton : String -> String -> Html msg
+viewMobileNavButton link page =
+    a
+        [ href link
+        , class "hover:bg-csc-lightpurple"
+        , class "hover:border-b-2"
+        , class "p-5"
+        , class "rounded-t"
+        , class "text-lg"
+        ]
+        [ text page ]
 
 
 backButton : Html msg
