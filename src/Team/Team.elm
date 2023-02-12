@@ -41,69 +41,99 @@ imagePath =
 
 staff : List Person
 staff =
-    [ { name = "Trevor Rothaus"
-      , initials = ""
-      , position = "CEO"
-      , description =
-            "Trevor is a former software engineer. He is currently studying for a "
-                ++ "Masters in Theology at the Franciscan University of Stuebenville. "
-                ++ "He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love."
-      , image = imagePath ++ "TrevorRothaus.jpeg"
-      , socials = []
-      }
-    , { name = "Noeli Acoba"
-      , initials = ""
-      , position = "CFO"
-      , description = "Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer."
-      , image = imagePath ++ "NoeliAcoba.PNG"
-      , socials = []
-      }
+    [ trevor
+    , noeli
     ]
+
+
+trevor : Person
+trevor =
+    { name = "Trevor Rothaus"
+    , initials = ""
+    , position = "CEO"
+    , description =
+        "Trevor is a former software engineer. He is currently studying for a "
+            ++ "Masters in Theology at the Franciscan University of Stuebenville. "
+            ++ "He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love."
+    , image = imagePath ++ "TrevorRothaus.jpeg"
+    , socials = []
+    }
+
+
+noeli : Person
+noeli =
+    { name = "Noeli Acoba"
+    , initials = ""
+    , position = "CFO"
+    , description = "Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer."
+    , image = imagePath ++ "NoeliAcoba.PNG"
+    , socials = []
+    }
 
 
 boardOfAdvisors : List Person
 boardOfAdvisors =
-    [ { name = "Father Aaron Galvizo, A.M."
-      , initials = ""
-      , position = "Alagad ni Maria"
-      , description = "Fr. Aaron is the associate chaplain in Saint Irenaeus Parish in Cypress, CA."
-      , image = imagePath ++ "FrAaron.jpeg"
-      , socials = []
-      }
-    , { name = "Father Fredrick Miras, A.M."
-      , initials = ""
-      , position = "Alagad ni Maria"
-      , description =
-            "Fr. Fredrick is a former chaplain of Santa Margarita Catholic High School and CHOC, "
-                ++ "former Parochial Vicar of St. Irenaeus Catholic Church, Church of St. Pius X, "
-                ++ "and Our Lady of Mt. Carmel Church."
-      , image = imagePath ++ "FrDodik.jpeg"
-      , socials = []
-      }
-    , { name = "Christopher Pagel"
-      , initials = ""
-      , position = "Assistant Dean"
-      , description =
-            "Chris Pagel is the assistant dean of Graduate Business Programs and Career Services at "
-                ++ "Chapman University's George L. Argyros School of Business and Economics."
-      , image = imagePath ++ "ChrisPagel.jpeg"
-      , socials = []
-      }
-    , { name = "Cheri Loreto"
-      , initials = ""
-      , position = "Silent Advisor"
-      , description = "Truly silent."
-      , image = imagePath ++ "Cheri.jpeg"
-      , socials = []
-      }
-    , { name = "Carlos Gutierrez"
-      , initials = ""
-      , position = "CAD Designer"
-      , description = "Carlos is a CAD designer who also has a passion for dogs, comedy and food."
-      , image = imagePath ++ "CarlosG.jpg"
-      , socials = []
-      }
-    ]
+    [ fredrick, aaron, chris, cheri, carlos ]
+
+
+fredrick : Person
+fredrick =
+    { name = "Father Fredrick Miras, A.M."
+    , initials = ""
+    , position = "Alagad ni Maria"
+    , description =
+        "Fr. Fredrick is a former chaplain of Santa Margarita Catholic High School and CHOC, "
+            ++ "former Parochial Vicar of St. Irenaeus Catholic Church, Church of St. Pius X, "
+            ++ "and Our Lady of Mt. Carmel Church."
+    , image = imagePath ++ "FrDodik.jpeg"
+    , socials = []
+    }
+
+
+aaron : Person
+aaron =
+    { name = "Father Aaron Galvizo, A.M."
+    , initials = ""
+    , position = "Alagad ni Maria"
+    , description = "Fr. Aaron is the associate chaplain in Saint Irenaeus Parish in Cypress, CA."
+    , image = imagePath ++ "FrAaron.jpeg"
+    , socials = []
+    }
+
+
+chris : Person
+chris =
+    { name = "Christopher Pagel"
+    , initials = ""
+    , position = "Assistant Dean"
+    , description =
+        "Chris Pagel is the assistant dean of Graduate Business Programs and Career Services at "
+            ++ "Chapman University's George L. Argyros School of Business and Economics."
+    , image = imagePath ++ "ChrisPagel.jpeg"
+    , socials = []
+    }
+
+
+cheri : Person
+cheri =
+    { name = "Cheri Loreto"
+    , initials = ""
+    , position = "Silent Advisor"
+    , description = "Truly silent."
+    , image = imagePath ++ "Cheri.jpeg"
+    , socials = []
+    }
+
+
+carlos : Person
+carlos =
+    { name = "Carlos Gutierrez"
+    , initials = ""
+    , position = "CAD Designer"
+    , description = "Carlos is a CAD designer who also has a passion for dogs, comedy and food."
+    , image = imagePath ++ "CarlosG.jpg"
+    , socials = []
+    }
 
 
 contractors : List Person
@@ -250,16 +280,21 @@ contractors =
       , image = imagePath ++ "RachaelWorkman.jpeg"
       , socials = [ ( LinkedIn, "https://www.linkedin.com/in/rachael-workman/" ) ]
       }
-    , { name = "Kelly Briggs"
-      , initials = "KB"
-      , position = "Social Media Specialist"
-      , description = "Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada."
-      , image = imagePath ++ "KellyBriggs.jpeg"
-      , socials =
-            [ ( Instagram, "https://www.instagram.com/simplehomemom/" )
-            , ( Facebook, "https://www.facebook.com/simplehomemom" )
-            , ( Pinterest, "https://www.pinterest.com/simplehomemom/" )
-            , ( Website, "https://www.simplehomemom.com/" )
-            ]
-      }
+    , kelly
     ]
+
+
+kelly : Person
+kelly =
+    { name = "Kelly Briggs"
+    , initials = "KB"
+    , position = "Social Media Specialist"
+    , description = "Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada."
+    , image = imagePath ++ "KellyBriggs.jpeg"
+    , socials =
+        [ ( Instagram, "https://www.instagram.com/simplehomemom/" )
+        , ( Facebook, "https://www.facebook.com/simplehomemom" )
+        , ( Pinterest, "https://www.pinterest.com/simplehomemom/" )
+        , ( Website, "https://www.simplehomemom.com/" )
+        ]
+    }

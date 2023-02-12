@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aD,
-		impl.aS,
-		impl.aP,
+		impl.aF,
+		impl.aX,
+		impl.aU,
 		function() { return function() {} }
 	);
 });
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aD,
-		impl.aS,
-		impl.aP,
+		impl.aF,
+		impl.aX,
+		impl.aU,
 		function(sendToApp, initialModel) {
-			var view = impl.aT;
+			var view = impl.aY;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aD,
-		impl.aS,
-		impl.aP,
+		impl.aF,
+		impl.aX,
+		impl.aU,
 		function(sendToApp, initialModel) {
 			var divertHrefToApp = impl.L && impl.L(sendToApp)
-			var view = impl.aT;
+			var view = impl.aY;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3982,7 +3982,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aR) && (_VirtualDom_doc.title = title = doc.aR);
+				(title !== doc.aW) && (_VirtualDom_doc.title = title = doc.aW);
 			});
 		}
 	);
@@ -4038,8 +4038,8 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aH;
-	var onUrlRequest = impl.aI;
+	var onUrlChange = impl.aK;
+	var onUrlRequest = impl.aL;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aD: function(flags)
+		aF: function(flags)
 		{
-			return A3(impl.aD, flags, _Browser_getUrl(), key);
+			return A3(impl.aF, flags, _Browser_getUrl(), key);
 		},
-		aT: impl.aT,
-		aS: impl.aS,
-		aP: impl.aP
+		aY: impl.aY,
+		aX: impl.aX,
+		aU: impl.aU
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aB: 'hidden', aw: 'visibilitychange' }
+		? { aC: 'hidden', aw: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aB: 'mozHidden', aw: 'mozvisibilitychange' }
+		? { aC: 'mozHidden', aw: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aB: 'msHidden', aw: 'msvisibilitychange' }
+		? { aC: 'msHidden', aw: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aB: 'webkitHidden', aw: 'webkitvisibilitychange' }
-		: { aB: 'hidden', aw: 'visibilitychange' };
+		? { aC: 'webkitHidden', aw: 'webkitvisibilitychange' }
+		: { aC: 'hidden', aw: 'visibilitychange' };
 }
 
 
@@ -4316,7 +4316,7 @@ function _Browser_getElement(id)
 				ap: _Browser_doc.documentElement.clientWidth,
 				U: _Browser_doc.documentElement.clientHeight
 			},
-			ay: {
+			az: {
 				aq: x + rect.left,
 				ar: y + rect.top,
 				ap: rect.width,
@@ -5146,7 +5146,7 @@ var $elm$core$Task$perform = F2(
 var $elm$browser$Browser$application = _Browser_application;
 var $author$project$Main$Model = F2(
 	function (key, url) {
-		return {aE: key, an: url};
+		return {aH: key, an: url};
 	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
@@ -5400,7 +5400,6 @@ var $zwilias$elm_html_string$Html$Types$toHtml = function (node) {
 	}
 };
 var $zwilias$elm_html_string$Html$String$toHtml = $zwilias$elm_html_string$Html$Types$toHtml;
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
@@ -5408,10 +5407,227 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			key,
 			$elm$json$Json$Encode$string(string));
 	});
-var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
-var $elm$html$Html$br = _VirtualDom_node('br');
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
+var $elm$html$Html$section = _VirtualDom_node('section');
+var $author$project$Main$viewSection = F3(
+	function (sectionId, background, body) {
+		return A2(
+			$elm$html$Html$section,
+			_Utils_ap(
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$id(sectionId),
+						$elm$html$Html$Attributes$class('FortyToEightypadding'),
+						$elm$html$Html$Attributes$class('px-5 sm:pl-[150px] sm:pr-[100px] lg:pr-10'),
+						A2($elm$html$Html$Attributes$style, 'transform-style', 'preserve-3d'),
+						A2($elm$html$Html$Attributes$style, 'min-height', '80vh')
+					]),
+				background),
+			body);
+	});
+var $author$project$Main$viewAnimations = A3(
+	$author$project$Main$viewSection,
+	'animations',
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('pb-20 bg-white')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('pt-32 lg:pt-48')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$h2,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+									A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
+									A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+									$elm$html$Html$Attributes$class('text-4xl md:text-7xl'),
+									$elm$html$Html$Attributes$class('m-5')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Animations')
+								]))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('w-full'),
+							$elm$html$Html$Attributes$class('grid grid-cols-1 lg:grid-cols-2'),
+							$elm$html$Html$Attributes$class('max-w-[120rem]'),
+							$elm$html$Html$Attributes$class('m-auto')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$href('/animations/hailmary'),
+									$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out duration-50'),
+									A2($elm$html$Html$Attributes$attribute, 'aria-label', 'See the Hail Mary Animation')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
+											$elm$html$Html$Attributes$alt('Hail Mary Animation')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$href('/animations/guardianangel'),
+									$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out duration-50'),
+									A2($elm$html$Html$Attributes$attribute, 'aria-label', 'See the Guardian Angel Animation')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/GuardianAngelThumbnailWatchNow_BjJTzxGXi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675312385506'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
+											$elm$html$Html$Attributes$alt('Guardian Angel Animation')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+									$elm$html$Html$Attributes$class('grayscale'),
+									$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
+											$elm$html$Html$Attributes$alt('St Michael Animation')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+									$elm$html$Html$Attributes$class('grayscale'),
+									$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
+											$elm$html$Html$Attributes$alt('Act of Contrition Animation')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+									$elm$html$Html$Attributes$class('grayscale'),
+									$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
+											$elm$html$Html$Attributes$alt('Prayer Before Meals Animation')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+									$elm$html$Html$Attributes$class('grayscale'),
+									$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
+											$elm$html$Html$Attributes$alt('St Anthony Animation')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'clear', 'both'),
+									A2($elm$html$Html$Attributes$style, 'width', '1px')
+								]),
+							_List_Nil)
+						]))
+				]))
+		]));
+var $elm$html$Html$br = _VirtualDom_node('br');
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
 		_VirtualDom_attribute,
@@ -5426,56 +5642,267 @@ var $elm$html$Html$Attributes$boolProperty = F2(
 			$elm$json$Json$Encode$bool(bool));
 	});
 var $elm$html$Html$Attributes$hidden = $elm$html$Html$Attributes$boolProperty('hidden');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
-var $elm$html$Html$iframe = _VirtualDom_node('iframe');
-var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $elm$html$Html$Attributes$rel = _VirtualDom_attribute('rel');
-var $author$project$Main$section1Background = _List_fromArray(
-	[
-		A2($elm$html$Html$Attributes$style, 'background', '#fff')
-	]);
-var $author$project$Main$section3Background = _List_fromArray(
-	[
-		A2($elm$html$Html$Attributes$style, 'background', '#EBD7F2')
-	]);
-var $author$project$Main$section4Background = _List_fromArray(
-	[
-		A2($elm$html$Html$Attributes$style, 'background', '#FEF7F4')
-	]);
 var $elm$html$Html$span = _VirtualDom_node('span');
-var $elm$html$Html$Attributes$src = function (url) {
+var $elm$html$Html$Attributes$width = function (n) {
 	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
+		_VirtualDom_attribute,
+		'width',
+		$elm$core$String$fromInt(n));
 };
+var $author$project$Main$viewContact = A3(
+	$author$project$Main$viewSection,
+	'contact',
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'background', '#EBD7F2'),
+			A2($elm$html$Html$Attributes$style, 'font-weight', '400'),
+			A2($elm$html$Html$Attributes$style, 'line-height', '1.7em'),
+			$elm$html$Html$Attributes$class('py-64')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+					A2($elm$html$Html$Attributes$style, 'color', '#333333'),
+					$elm$html$Html$Attributes$class('text-5xl'),
+					$elm$html$Html$Attributes$class('mt-40 mb-5')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Contact Us!')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'width', 'fit-content'),
+					A2($elm$html$Html$Attributes$style, 'margin-left', 'auto'),
+					A2($elm$html$Html$Attributes$style, 'margin-right', 'auto'),
+					A2($elm$html$Html$Attributes$style, 'max-width', '700px')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Please reach out!'),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil),
+							$elm$html$Html$text('I love to hear from you!')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'anywhere'),
+							$elm$html$Html$Attributes$class('text-base lg:text-3xl'),
+							$elm$html$Html$Attributes$class('mt-3 lg:mt-5')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'display', 'inline-block')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('trevor'),
+									A2(
+									$elm$html$Html$span,
+									_List_Nil,
+									_List_fromArray(
+										[
+											$elm$html$Html$text('@')
+										]))
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true'),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'innerHTML',
+									$elm$json$Json$Encode$string('🍯'))
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true'),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'innerHTML',
+									$elm$json$Json$Encode$string('spam@catholicstoriesforchildren.com'))
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$height(0),
+									$elm$html$Html$Attributes$width(0),
+									A2($elm$html$Html$Attributes$style, 'display', 'none'),
+									$elm$html$Html$Attributes$hidden(true)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('spam@catholicstoriesforchildren.com')
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('catholicstoriesforchildren'),
+									A2(
+									$elm$html$Html$span,
+									_List_Nil,
+									_List_fromArray(
+										[
+											$elm$html$Html$text('.'),
+											A2(
+											$elm$html$Html$span,
+											_List_Nil,
+											_List_fromArray(
+												[
+													$elm$html$Html$text('com')
+												]))
+										]))
+								]))
+						]))
+				]))
+		]));
+var $elm$html$Html$Attributes$rel = _VirtualDom_attribute('rel');
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $author$project$Main$viewGive = A3(
+	$author$project$Main$viewSection,
+	'give',
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'min-height', '100vh'),
+			A2($elm$html$Html$Attributes$style, 'position', 'relative'),
+			A2($elm$html$Html$Attributes$style, 'background-position', 'top'),
+			A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+			A2($elm$html$Html$Attributes$style, 'text-align', '-webkit-center'),
+			A2($elm$html$Html$Attributes$style, 'font-weight', '400'),
+			A2($elm$html$Html$Attributes$style, 'line-height', '1.7'),
+			A2($elm$html$Html$Attributes$style, 'background', '#9DE2EA80'),
+			$elm$html$Html$Attributes$class('py-20 md:py-40')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$h2,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+							A2($elm$html$Html$Attributes$style, 'font-size', '4rem'),
+							A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
+							A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Give')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('All donations are tax deductible')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'margin-bottom', '30px'),
+									$elm$html$Html$Attributes$class('p-3'),
+									$elm$html$Html$Attributes$class('flex justify-center')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('https://www.patreon.com/catholicstoriesforchildren?fan_landing=true'),
+											$elm$html$Html$Attributes$rel('noopener'),
+											$elm$html$Html$Attributes$target('_blank'),
+											A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
+											A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
+											A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'color', 'white'),
+											A2($elm$html$Html$Attributes$style, 'background-color', '#9200B3')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Become a patron')
+										]))
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+									A2($elm$html$Html$Attributes$style, 'padding', '20px'),
+									$elm$html$Html$Attributes$class('flex justify-center')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('/give'),
+											$elm$html$Html$Attributes$rel('noopener'),
+											A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
+											A2($elm$html$Html$Attributes$style, 'padding', '20px'),
+											A2($elm$html$Html$Attributes$style, 'color', 'black'),
+											A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+											A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('More ways to donate')
+										]))
+								]))
+						]))
+				]))
+		]));
+var $elm$html$Html$iframe = _VirtualDom_node('iframe');
 var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
-var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
-var $elm$html$Html$section = _VirtualDom_node('section');
-var $author$project$Main$viewSection = F3(
-	function (sectionId, background, body) {
-		return A2(
-			$elm$html$Html$section,
-			_Utils_ap(
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$id(sectionId),
-						$elm$html$Html$Attributes$class('FortyToEightypadding'),
-						$elm$html$Html$Attributes$class('px-5 py-5 md:px-10'),
-						$elm$html$Html$Attributes$class('pb-48'),
-						A2($elm$html$Html$Attributes$style, 'transform-style', 'preserve-3d'),
-						A2($elm$html$Html$Attributes$style, 'min-height', '100vh')
-					]),
-				background),
-			body);
-	});
 var $zwilias$elm_html_string$Html$Types$Node = F3(
 	function (a, b, c) {
 		return {$: 0, a: a, b: b, c: c};
@@ -5538,7 +5965,7 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 				]),
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Sign up for our email list to get updates!')
+					$zwilias$elm_html_string$Html$String$text('Sign up for our email list to get tips, resources, and animation updates!')
 				])),
 			A2(
 			$zwilias$elm_html_string$Html$String$a,
@@ -5550,22 +5977,546 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'inline-block'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'black'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '2px solid #777'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#9200B3')
 				]),
 			_List_fromArray(
 				[
 					$zwilias$elm_html_string$Html$String$text('Sign Up')
 				]))
 		]));
-var $elm$html$Html$Attributes$width = function (n) {
-	return A2(
-		_VirtualDom_attribute,
-		'width',
-		$elm$core$String$fromInt(n));
+var $author$project$Main$viewIntro = A3(
+	$author$project$Main$viewSection,
+	'videos',
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('grid grid-cols-1 lg:grid-cols-2 gap-5'),
+			$elm$html$Html$Attributes$class('max-w-[120rem]'),
+			$elm$html$Html$Attributes$class('my-10')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-20')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$h2,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mb-7')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Animations for Catholic Children')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('leading-10')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts.')
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-10')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
+						]))
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'position', 'relative'),
+							A2($elm$html$Html$Attributes$style, 'padding-bottom', '56.25%'),
+							$elm$html$Html$Attributes$height(0),
+							A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
+							A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
+							A2($elm$html$Html$Attributes$style, 'border-radius', '5px')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$iframe,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
+									A2($elm$html$Html$Attributes$style, 'width', '100%'),
+									A2($elm$html$Html$Attributes$style, 'height', '100%'),
+									A2($elm$html$Html$Attributes$style, 'top', '0'),
+									A2($elm$html$Html$Attributes$style, 'left', '0'),
+									$elm$html$Html$Attributes$src('https://www.youtube-nocookie.com/embed/uxP6KFTER60'),
+									$elm$html$Html$Attributes$title('About Catholic Stories for Children'),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'frameborder',
+									$elm$json$Json$Encode$string('0')),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'allow',
+									$elm$json$Json$Encode$string('accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'allowfullscreen',
+									$elm$json$Json$Encode$string('true'))
+								]),
+							_List_Nil)
+						]))
+				]))
+		]));
+var $author$project$Main$viewNewsletter = A3(
+	$author$project$Main$viewSection,
+	'newsletter',
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'background', '#FEF7F4'),
+			$elm$html$Html$Attributes$class('py-20')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+					$elm$html$Html$Attributes$class('text-5xl'),
+					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+					A2($elm$html$Html$Attributes$style, 'color', '#333333'),
+					$elm$html$Html$Attributes$class('mt-24 mb-5')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Stay Updated!')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'width', 'fit-content'),
+					A2($elm$html$Html$Attributes$style, 'margin-left', 'auto'),
+					A2($elm$html$Html$Attributes$style, 'margin-right', 'auto'),
+					A2($elm$html$Html$Attributes$style, 'padding', '20px'),
+					A2($elm$html$Html$Attributes$style, 'max-width', '700px'),
+					A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+					A2($elm$html$Html$Attributes$style, 'margin-top', '50px')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$a,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$href('/newsroom'),
+							$elm$html$Html$Attributes$rel('noopener'),
+							A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
+							A2($elm$html$Html$Attributes$style, 'padding', '10px'),
+							A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
+							A2($elm$html$Html$Attributes$style, 'color', 'black'),
+							A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
+							A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+							A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Latest News')
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-10')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
+						]))
+				]))
+		]));
+var $author$project$Helpers$Facebook = 5;
+var $author$project$Helpers$Instagram = 1;
+var $author$project$Helpers$Pinterest = 8;
+var $author$project$Helpers$Website = 0;
+var $author$project$Team$Team$imagePath = '/assets/Team/';
+var $author$project$Team$Team$kelly = {
+	ax: 'Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada.',
+	aD: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg',
+	aG: 'KB',
+	aJ: 'Kelly Briggs',
+	aN: 'Social Media Specialist',
+	aR: _List_fromArray(
+		[
+			_Utils_Tuple2(1, 'https://www.instagram.com/simplehomemom/'),
+			_Utils_Tuple2(5, 'https://www.facebook.com/simplehomemom'),
+			_Utils_Tuple2(8, 'https://www.pinterest.com/simplehomemom/'),
+			_Utils_Tuple2(0, 'https://www.simplehomemom.com/')
+		])
 };
+var $author$project$Team$Team$noeli = {ax: 'Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer.', aD: $author$project$Team$Team$imagePath + 'NoeliAcoba.PNG', aG: '', aJ: 'Noeli Acoba', aN: 'CFO', aR: _List_Nil};
+var $author$project$Team$Team$trevor = {ax: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), aD: $author$project$Team$Team$imagePath + 'TrevorRothaus.jpeg', aG: '', aJ: 'Trevor Rothaus', aN: 'CEO', aR: _List_Nil};
+var $author$project$Team$Main$viewDescription = function (description) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-wrap', 'anywhere'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-top', '10px')
+			]),
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$text(description)
+			]));
+};
+var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
+};
+var $author$project$Helpers$darkPurple = '#B99EDA';
+var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
+var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
+	function (tag, attrs, _v0) {
+		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
+	});
+var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
+var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
+};
+var $author$project$Team$Main$viewImage = F2(
+	function (image, initials) {
+		return (image === '') ? A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px 10px 40px 0'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'float', 'left'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '52px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '52px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '30px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '1px solid #777'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', $author$project$Helpers$darkPurple),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$div,
+					_List_fromArray(
+						[
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'absolute'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'top', '50%'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '50%'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'transform', 'translate(-50%, -50%)')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text(initials)
+						]))
+				])) : A2(
+			$zwilias$elm_html_string$Html$String$img,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '0px 10px 40px 0'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'float', 'left'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '52px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '52px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '30px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '1px solid #777'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'object-fit', 'cover'),
+					$zwilias$elm_html_string$Html$String$Attributes$src(image),
+					$zwilias$elm_html_string$Html$String$Attributes$alt(''),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'ariaHidden', 'true')
+				]),
+			_List_Nil);
+	});
+var $author$project$Team$Main$viewName = function (name) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$text(name)
+			]));
+};
+var $author$project$Team$Main$viewPosition = function (position) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', '#333'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-size', '.8em')
+			]),
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$text(position)
+			]));
+};
+var $author$project$Helpers$Behance = 11;
+var $author$project$Helpers$IMDB = 4;
+var $author$project$Helpers$LinkedIn = 6;
+var $author$project$Helpers$SoundCloud = 10;
+var $author$project$Helpers$Spotify = 9;
+var $author$project$Helpers$Twitter = 2;
+var $author$project$Helpers$Vimeo = 3;
+var $author$project$Helpers$YouTube = 7;
+var $matthewsj$elm_ordering$Ordering$explicit = F3(
+	function (elements, x, y) {
+		var scanForY = function (items) {
+			scanForY:
+			while (true) {
+				if (items.b) {
+					var z = items.a;
+					var zs = items.b;
+					if (_Utils_eq(z, y)) {
+						return 0;
+					} else {
+						var $temp$items = zs;
+						items = $temp$items;
+						continue scanForY;
+					}
+				} else {
+					return 2;
+				}
+			}
+		};
+		var scanForX = function (items) {
+			scanForX:
+			while (true) {
+				if (items.b) {
+					var z = items.a;
+					var zs = items.b;
+					if (_Utils_eq(z, x)) {
+						return 2;
+					} else {
+						var $temp$items = zs;
+						items = $temp$items;
+						continue scanForX;
+					}
+				} else {
+					return 0;
+				}
+			}
+		};
+		var scanForEither = function (items) {
+			scanForEither:
+			while (true) {
+				if (items.b) {
+					var z = items.a;
+					var zs = items.b;
+					if (_Utils_eq(z, x)) {
+						return scanForY(zs);
+					} else {
+						if (_Utils_eq(z, y)) {
+							return scanForX(zs);
+						} else {
+							var $temp$items = zs;
+							items = $temp$items;
+							continue scanForEither;
+						}
+					}
+				} else {
+					return 1;
+				}
+			}
+		};
+		return _Utils_eq(x, y) ? 1 : scanForEither(elements);
+	});
+var $author$project$Team$Team$socialOrdering = $matthewsj$elm_ordering$Ordering$explicit(
+	_List_fromArray(
+		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
+var $author$project$Team$Main$socialSort = F2(
+	function (_v0, _v1) {
+		var social1 = _v0.a;
+		var link1 = _v0.b;
+		var social2 = _v1.a;
+		var link2 = _v1.b;
+		return A2($author$project$Team$Team$socialOrdering, social1, social2);
+	});
+var $elm$core$List$sortWith = _List_sortWith;
+var $author$project$Helpers$favicon = F2(
+	function (alternativeText, link) {
+		return A2(
+			$zwilias$elm_html_string$Html$String$img,
+			_List_fromArray(
+				[
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'aria-hidden', 'true'),
+					$zwilias$elm_html_string$Html$String$Attributes$src(link),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '16px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '16px'),
+					$zwilias$elm_html_string$Html$String$Attributes$alt(alternativeText)
+				]),
+			_List_Nil);
+	});
+var $author$project$Helpers$behanceLogo = A2($author$project$Helpers$favicon, 'behance', 'https://www.behance.net/favicon.ico');
+var $author$project$Helpers$facebookLogo = A2($author$project$Helpers$favicon, 'facebook', 'https://www.facebook.com/favicon.ico');
+var $author$project$Helpers$imdbLogo = A2($author$project$Helpers$favicon, 'imdb', 'https://www.imdb.com/favicon.ico');
+var $author$project$Helpers$instagramLogo = A2($author$project$Helpers$favicon, 'instagram', 'https://www.instagram.com/favicon.ico');
+var $author$project$Helpers$linkedInLogo = A2($author$project$Helpers$favicon, 'linkedin', 'https://www.linkedin.com/favicon.ico');
+var $author$project$Helpers$pinterestLogo = A2($author$project$Helpers$favicon, 'pinterest', 'https://www.pinterest.com/favicon.ico');
+var $author$project$Helpers$soundcloudLogo = A2($author$project$Helpers$favicon, 'soundcloud', 'https://soundcloud.com/favicon.ico');
+var $author$project$Helpers$spotifyLogo = A2($author$project$Helpers$favicon, 'spotify', 'https://www.spotify.com/favicon.ico');
+var $author$project$Helpers$twitterLogo = A2($author$project$Helpers$favicon, 'twitter', 'https://www.twitter.com/favicon.ico');
+var $author$project$Helpers$viewSocialLink = F3(
+	function (image, link, label) {
+		return A2(
+			$zwilias$elm_html_string$Html$String$a,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$href(link),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
+					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-right', '10px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', label)
+				]),
+			_List_fromArray(
+				[image]));
+	});
+var $author$project$Helpers$vimeoLogo = A2($author$project$Helpers$favicon, 'vimeo', 'https://vimeo.com/favicon.ico');
+var $author$project$Helpers$youtubeLogo = A2($author$project$Helpers$favicon, 'youtube', 'https://www.youtube.com/favicon.ico');
+var $author$project$Helpers$viewSocial = function (_v0) {
+	var social = _v0.a;
+	var link = _v0.b;
+	switch (social) {
+		case 0:
+			return A3(
+				$author$project$Helpers$viewSocialLink,
+				$zwilias$elm_html_string$Html$String$text('🌐'),
+				link,
+				'website');
+		case 1:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$instagramLogo, link, 'instagram');
+		case 2:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$twitterLogo, link, 'twitter');
+		case 5:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$facebookLogo, link, 'facebook');
+		case 6:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$linkedInLogo, link, 'linkedin');
+		case 3:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$vimeoLogo, link, 'vimeo');
+		case 4:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$imdbLogo, link, 'imdb');
+		case 7:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$youtubeLogo, link, 'youtube');
+		case 8:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$pinterestLogo, link, 'pinterest');
+		case 9:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$spotifyLogo, link, 'spotify');
+		case 10:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$soundcloudLogo, link, 'soundcloud');
+		default:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$behanceLogo, link, 'behance');
+	}
+};
+var $author$project$Team$Main$viewSocials = function (person) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_fromArray(
+			[
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-top', '10px'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('flex items-center')
+			]),
+		A2(
+			$elm$core$List$map,
+			$author$project$Helpers$viewSocial,
+			A2($elm$core$List$sortWith, $author$project$Team$Main$socialSort, person.aR)));
+};
+var $author$project$Team$Main$viewPerson = function (person) {
+	return A2(
+		$zwilias$elm_html_string$Html$String$div,
+		_List_fromArray(
+			[
+				$zwilias$elm_html_string$Html$String$Attributes$class('hcenter'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'grid'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'grid-template-columns', '72px 1fr'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '30px 0'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'min-height', '115px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background', 'white'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '4px'),
+				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '20px')
+			]),
+		_List_fromArray(
+			[
+				A2($author$project$Team$Main$viewImage, person.aD, person.aG),
+				A2(
+				$zwilias$elm_html_string$Html$String$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$author$project$Team$Main$viewName(person.aJ),
+						$author$project$Team$Main$viewPosition(person.aN),
+						$author$project$Team$Main$viewDescription(person.ax),
+						$author$project$Team$Main$viewSocials(person)
+					]))
+			]));
+};
+var $author$project$Main$viewTeam = A3(
+	$author$project$Main$viewSection,
+	'team',
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('bg-csc-lightpurple'),
+			$elm$html$Html$Attributes$class('py-20')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('The Team')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('grid xl:grid-cols-3 gap-5 max-w-[120rem]')
+				]),
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$toHtml(
+					$author$project$Team$Main$viewPerson($author$project$Team$Team$trevor)),
+					$zwilias$elm_html_string$Html$String$toHtml(
+					$author$project$Team$Main$viewPerson($author$project$Team$Team$noeli)),
+					$zwilias$elm_html_string$Html$String$toHtml(
+					$author$project$Team$Main$viewPerson($author$project$Team$Team$kelly))
+				])),
+			A2(
+			$elm$html$Html$a,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$href('/team'),
+					$elm$html$Html$Attributes$rel('noopener'),
+					A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
+					A2($elm$html$Html$Attributes$style, 'padding', '10px'),
+					A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
+					A2($elm$html$Html$Attributes$style, 'color', 'black'),
+					A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
+					A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+					A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Meet the Team')
+				]))
+		]));
 var $author$project$Main$viewBody = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -5574,640 +6525,7 @@ var $author$project$Main$viewBody = A2(
 			$elm$html$Html$Attributes$class('lg:text-2xl')
 		]),
 	_List_fromArray(
-		[
-			A3(
-			$author$project$Main$viewSection,
-			'videos',
-			$author$project$Main$section1Background,
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$div,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'position', 'relative'),
-									A2($elm$html$Html$Attributes$style, 'padding-bottom', '56.25%'),
-									$elm$html$Html$Attributes$height(0),
-									A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
-									A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
-									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-									A2($elm$html$Html$Attributes$style, 'margin-top', '80px')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$iframe,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
-											A2($elm$html$Html$Attributes$style, 'width', '100%'),
-											A2($elm$html$Html$Attributes$style, 'height', '100%'),
-											A2($elm$html$Html$Attributes$style, 'top', '0'),
-											A2($elm$html$Html$Attributes$style, 'left', '0'),
-											$elm$html$Html$Attributes$src('https://www.youtube-nocookie.com/embed/uxP6KFTER60'),
-											$elm$html$Html$Attributes$title('About Catholic Stories for Children'),
-											A2(
-											$elm$html$Html$Attributes$property,
-											'frameborder',
-											$elm$json$Json$Encode$string('0')),
-											A2(
-											$elm$html$Html$Attributes$property,
-											'allow',
-											$elm$json$Json$Encode$string('accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')),
-											A2(
-											$elm$html$Html$Attributes$property,
-											'allowfullscreen',
-											$elm$json$Json$Encode$string('true'))
-										]),
-									_List_Nil)
-								])),
-							A2(
-							$elm$html$Html$div,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('mt-32 lg:mt-48')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'max-width', '800px'),
-											A2($elm$html$Html$Attributes$style, 'margin', 'auto'),
-											A2($elm$html$Html$Attributes$style, 'font-weight', '400'),
-											A2($elm$html$Html$Attributes$style, 'line-height', '1.7em')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$h2,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'color', '#325164'),
-													A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-													A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
-													A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-													$elm$html$Html$Attributes$class('text-4xl md:text-7xl'),
-													$elm$html$Html$Attributes$class('m-5')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('About')
-												])),
-											A2(
-											$elm$html$Html$p,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$class('mb-4')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.')
-												])),
-											A2(
-											$elm$html$Html$p,
-											_List_Nil,
-											_List_fromArray(
-												[
-													$elm$html$Html$text('Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God.')
-												]))
-										])),
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-											$elm$html$Html$Attributes$class('m-8')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$a,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$href('/team'),
-													$elm$html$Html$Attributes$rel('noopener'),
-													A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-													A2($elm$html$Html$Attributes$style, 'padding', '20px'),
-													A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
-													A2($elm$html$Html$Attributes$style, 'color', 'black'),
-													A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('Meet the team')
-												]))
-										]))
-								]))
-						])),
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$div,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('mt-32 lg:mt-48')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$div,
-									_List_Nil,
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$h2,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-													A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
-													A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-													$elm$html$Html$Attributes$class('text-4xl md:text-7xl'),
-													$elm$html$Html$Attributes$class('m-5')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('Animations')
-												]))
-										])),
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$class('w-full'),
-											$elm$html$Html$Attributes$class('grid grid-cols-1 lg:grid-cols-2'),
-											$elm$html$Html$Attributes$class('max-w-7xl'),
-											$elm$html$Html$Attributes$class('m-auto')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$a,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$href('/animations/hailmary'),
-													$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out duration-50'),
-													A2($elm$html$Html$Attributes$attribute, 'aria-label', 'See the Hail Mary Animation')
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$img,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348'),
-															A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-															A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-															$elm$html$Html$Attributes$alt('Hail Mary Animation')
-														]),
-													_List_Nil)
-												])),
-											A2(
-											$elm$html$Html$a,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$href('/animations/guardianangel'),
-													$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out duration-50'),
-													A2($elm$html$Html$Attributes$attribute, 'aria-label', 'See the Guardian Angel Animation')
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$img,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/GuardianAngelThumbnailWatchNow_BjJTzxGXi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675312385506'),
-															A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-															A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-															$elm$html$Html$Attributes$alt('Guardian Angel Animation')
-														]),
-													_List_Nil)
-												])),
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													$elm$html$Html$Attributes$class('grayscale'),
-													$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$img,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722'),
-															A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-															A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-															$elm$html$Html$Attributes$alt('St Michael Animation')
-														]),
-													_List_Nil)
-												])),
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													$elm$html$Html$Attributes$class('grayscale'),
-													$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$img,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691'),
-															A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-															A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-															$elm$html$Html$Attributes$alt('Act of Contrition Animation')
-														]),
-													_List_Nil)
-												])),
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													$elm$html$Html$Attributes$class('grayscale'),
-													$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$img,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552'),
-															A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-															A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-															$elm$html$Html$Attributes$alt('Prayer Before Meals Animation')
-														]),
-													_List_Nil)
-												])),
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													$elm$html$Html$Attributes$class('grayscale'),
-													$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$elm$html$Html$img,
-													_List_fromArray(
-														[
-															$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276'),
-															A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-															A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-															$elm$html$Html$Attributes$alt('St Anthony Animation')
-														]),
-													_List_Nil)
-												])),
-											A2(
-											$elm$html$Html$div,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'clear', 'both'),
-													A2($elm$html$Html$Attributes$style, 'width', '1px')
-												]),
-											_List_Nil)
-										]))
-								]))
-						]))
-				])),
-			A3(
-			$author$project$Main$viewSection,
-			'contact',
-			$author$project$Main$section3Background,
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'font-weight', '400'),
-							A2($elm$html$Html$Attributes$style, 'line-height', '1.7em')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$h2,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-									A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-									A2($elm$html$Html$Attributes$style, 'color', '#333333'),
-									$elm$html$Html$Attributes$class('text-5xl'),
-									$elm$html$Html$Attributes$class('mt-40 mb-5')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Contact Us!')
-								])),
-							A2(
-							$elm$html$Html$div,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'width', 'fit-content'),
-									A2($elm$html$Html$Attributes$style, 'margin-left', 'auto'),
-									A2($elm$html$Html$Attributes$style, 'margin-right', 'auto'),
-									A2($elm$html$Html$Attributes$style, 'max-width', '700px')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$p,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'text-align', 'center')
-										]),
-									_List_fromArray(
-										[
-											$elm$html$Html$text('Please reach out!'),
-											A2($elm$html$Html$br, _List_Nil, _List_Nil),
-											$elm$html$Html$text('I love to hear from you!')
-										])),
-									A2(
-									$elm$html$Html$p,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'anywhere'),
-											$elm$html$Html$Attributes$class('text-base lg:text-3xl'),
-											$elm$html$Html$Attributes$class('mt-3 lg:mt-5')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$span,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$style, 'display', 'inline-block')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('trevor'),
-													A2(
-													$elm$html$Html$span,
-													_List_Nil,
-													_List_fromArray(
-														[
-															$elm$html$Html$text('@')
-														]))
-												])),
-											A2(
-											$elm$html$Html$span,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true'),
-													A2(
-													$elm$html$Html$Attributes$property,
-													'innerHTML',
-													$elm$json$Json$Encode$string('🍯'))
-												]),
-											_List_Nil),
-											A2(
-											$elm$html$Html$span,
-											_List_fromArray(
-												[
-													A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true'),
-													A2(
-													$elm$html$Html$Attributes$property,
-													'innerHTML',
-													$elm$json$Json$Encode$string('spam@catholicstoriesforchildren.com'))
-												]),
-											_List_Nil),
-											A2(
-											$elm$html$Html$span,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$height(0),
-													$elm$html$Html$Attributes$width(0),
-													A2($elm$html$Html$Attributes$style, 'display', 'none'),
-													$elm$html$Html$Attributes$hidden(true)
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('spam@catholicstoriesforchildren.com')
-												])),
-											A2(
-											$elm$html$Html$span,
-											_List_Nil,
-											_List_fromArray(
-												[
-													$elm$html$Html$text('catholicstoriesforchildren'),
-													A2(
-													$elm$html$Html$span,
-													_List_Nil,
-													_List_fromArray(
-														[
-															$elm$html$Html$text('.'),
-															A2(
-															$elm$html$Html$span,
-															_List_Nil,
-															_List_fromArray(
-																[
-																	$elm$html$Html$text('com')
-																]))
-														]))
-												]))
-										]))
-								]))
-						]))
-				])),
-			A3(
-			$author$project$Main$viewSection,
-			'newsletter',
-			$author$project$Main$section4Background,
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$h2,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-							$elm$html$Html$Attributes$class('text-5xl'),
-							A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-							A2($elm$html$Html$Attributes$style, 'color', '#333333'),
-							$elm$html$Html$Attributes$class('mt-24 mb-5')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Stay Updated!')
-						])),
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'width', 'fit-content'),
-							A2($elm$html$Html$Attributes$style, 'margin-left', 'auto'),
-							A2($elm$html$Html$Attributes$style, 'margin-right', 'auto'),
-							A2($elm$html$Html$Attributes$style, 'padding', '20px'),
-							A2($elm$html$Html$Attributes$style, 'max-width', '700px'),
-							A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-							A2($elm$html$Html$Attributes$style, 'margin-top', '50px')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$a,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$href('/newsroom'),
-									$elm$html$Html$Attributes$rel('noopener'),
-									A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-									A2($elm$html$Html$Attributes$style, 'padding', '10px'),
-									A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
-									A2($elm$html$Html$Attributes$style, 'color', 'black'),
-									A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
-									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-									A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Latest News')
-								])),
-							A2(
-							$elm$html$Html$div,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('mt-10')
-								]),
-							_List_fromArray(
-								[
-									$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
-								]))
-						]))
-				])),
-			A3(
-			$author$project$Main$viewSection,
-			'give',
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'min-height', '100vh'),
-					A2($elm$html$Html$Attributes$style, 'position', 'relative'),
-					A2($elm$html$Html$Attributes$style, 'background-position', 'top'),
-					A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-					A2($elm$html$Html$Attributes$style, 'text-align', '-webkit-center'),
-					A2($elm$html$Html$Attributes$style, 'font-weight', '400'),
-					A2($elm$html$Html$Attributes$style, 'line-height', '1.7'),
-					A2($elm$html$Html$Attributes$style, 'background', '#9DE2EA80'),
-					$elm$html$Html$Attributes$class('py-20 md:py-40')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$h2,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-									A2($elm$html$Html$Attributes$style, 'font-size', '4rem'),
-									A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
-									A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Give')
-								])),
-							A2(
-							$elm$html$Html$p,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'text-align', 'center')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('All donations are tax deductible')
-								])),
-							A2(
-							$elm$html$Html$p,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'text-align', 'center')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'margin-bottom', '30px'),
-											$elm$html$Html$Attributes$class('p-3'),
-											$elm$html$Html$Attributes$class('flex justify-center')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$a,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$href('https://www.patreon.com/catholicstoriesforchildren?fan_landing=true'),
-													$elm$html$Html$Attributes$rel('noopener'),
-													$elm$html$Html$Attributes$target('_blank'),
-													A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-													A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
-													A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													A2($elm$html$Html$Attributes$style, 'color', 'white'),
-													A2($elm$html$Html$Attributes$style, 'background-color', '#9200B3')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('Become a patron')
-												]))
-										])),
-									A2(
-									$elm$html$Html$div,
-									_List_fromArray(
-										[
-											A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-											A2($elm$html$Html$Attributes$style, 'padding', '20px'),
-											$elm$html$Html$Attributes$class('flex justify-center')
-										]),
-									_List_fromArray(
-										[
-											A2(
-											$elm$html$Html$a,
-											_List_fromArray(
-												[
-													$elm$html$Html$Attributes$href('/give'),
-													$elm$html$Html$Attributes$rel('noopener'),
-													A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-													A2($elm$html$Html$Attributes$style, 'padding', '20px'),
-													A2($elm$html$Html$Attributes$style, 'color', 'black'),
-													A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
-													A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-													A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px')
-												]),
-											_List_fromArray(
-												[
-													$elm$html$Html$text('More ways to donate')
-												]))
-										]))
-								]))
-						]))
-				]))
-		]));
+		[$author$project$Main$viewIntro, $author$project$Main$viewTeam, $author$project$Main$viewAnimations, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
@@ -6367,18 +6685,6 @@ var $author$project$Header$viewHeaderTitle = function (title) {
 					]))
 			]));
 };
-var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
-};
-var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
-var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
-	function (tag, attrs, _v0) {
-		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
-	});
-var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
-var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
-};
 var $author$project$Logo$logo = A2(
 	$zwilias$elm_html_string$Html$String$img,
 	_List_fromArray(
@@ -6447,10 +6753,10 @@ var $author$project$Main$view = function (model) {
 						$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
 					]))
 			]),
-		aR: 'Catholic Stories for Children'
+		aW: 'Catholic Stories for Children'
 	};
 };
 var $author$project$Main$main = $elm$browser$Browser$application(
-	{aD: $author$project$Main$init, aH: $author$project$Main$UrlChanged, aI: $author$project$Main$LinkClicked, aP: $author$project$Main$subscriptions, aS: $author$project$Main$update, aT: $author$project$Main$view});
+	{aF: $author$project$Main$init, aK: $author$project$Main$UrlChanged, aL: $author$project$Main$LinkClicked, aU: $author$project$Main$subscriptions, aX: $author$project$Main$update, aY: $author$project$Main$view});
 _Platform_export({'Main':{'init':$author$project$Main$main(
 	$elm$json$Json$Decode$succeed(0))(0)}});}(this));

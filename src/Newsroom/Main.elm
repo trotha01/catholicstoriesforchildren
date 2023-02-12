@@ -67,7 +67,7 @@ viewSignUp =
         [ p
             [ class "pb-5"
             ]
-            [ text "Sign up for our email list to get updates!" ]
+            [ text "Sign up for our email list to get tips, resources, and animation updates!" ]
         , a
             [ href "https://signup.catholicstoriesforchildren.com"
             , rel "noopener"
@@ -75,10 +75,10 @@ viewSignUp =
             , style "text-decoration" "none"
             , style "padding" "10px"
             , style "display" "inline-block"
-            , style "color" "black"
-            , style "border" "2px solid #777"
             , style "border-radius" "5px"
             , style "box-shadow" "#777 1px 1px 5px"
+            , style "color" "white"
+            , style "background-color" "#9200B3"
             ]
             [ text "Sign Up" ]
         ]
