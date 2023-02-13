@@ -36,6 +36,7 @@ type alias Activity =
 
 type ActivityType
     = Video
+    | Audio
     | Printout
     | OnlineReading
     | Food
@@ -58,6 +59,11 @@ printoutActivities activities =
 foodActivities : List Activity -> List Activity
 foodActivities activities =
     filterActivities (\activityType -> activityType == Food) activities
+
+
+audioActivities : List Activity -> List Activity
+audioActivities activities =
+    filterActivities (\activityType -> activityType == Audio) activities
 
 
 readingActivities : List Activity -> List Activity

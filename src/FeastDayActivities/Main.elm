@@ -183,9 +183,6 @@ viewFeastActivities feastActivities =
     let
         activities =
             List.concatMap .activities feastActivities
-
-        feastDayReadingActivities =
-            readingActivities activities
     in
     if List.isEmpty activities then
         viewNoActivities
@@ -193,7 +190,8 @@ viewFeastActivities feastActivities =
     else
         div []
             [ viewVideos (videoActivities activities)
-            , viewActivities "Reading" feastDayReadingActivities
+            , viewActivities "Audio" (audioActivities activities)
+            , viewActivities "Reading" (readingActivities activities)
             , viewActivities "Printouts" (printoutActivities activities)
             , viewActivities "Games" (gameActivities activities)
             , viewActivities "Recipes" (foodActivities activities)
@@ -229,32 +227,46 @@ viewVideos videos =
             , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\video ->
-                        div
-                            [ style "position" "relative"
-                            , style "padding-bottom" "56.25%"
-                            , height 0
-                            , style "overflow" "hidden"
-                            , style "max-width" "100%"
-                            , style "border-radius" "5px"
-                            ]
-                            [ iframe
-                                [ style "position" "absolute"
-                                , style "width" "100%"
-                                , style "height" "100%"
-                                , style "top" "0"
-                                , style "left" "0"
-                                , src video.link
-                                , title video.title
-                                , property "frameborder" (Json.Encode.string "0")
-                                , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-                                , property "allowfullscreen" (Json.Encode.string "true")
-                                ]
-                                []
-                            ]
+                        viewVideo video
                     )
                     videos
                 )
             ]
+
+
+viewVideo : Activity -> Html msg
+viewVideo video =
+    if String.contains "embed" video.link then
+        viewEmbeddedVideo video
+
+    else
+        viewActivity video
+
+
+viewEmbeddedVideo : Activity -> Html msg
+viewEmbeddedVideo video =
+    div
+        [ style "position" "relative"
+        , style "padding-bottom" "56.25%"
+        , height 0
+        , style "overflow" "hidden"
+        , style "max-width" "100%"
+        , style "border-radius" "5px"
+        ]
+        [ iframe
+            [ style "position" "absolute"
+            , style "width" "100%"
+            , style "height" "100%"
+            , style "top" "0"
+            , style "left" "0"
+            , src video.link
+            , title video.title
+            , property "frameborder" (Json.Encode.string "0")
+            , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+            , property "allowfullscreen" (Json.Encode.string "true")
+            ]
+            []
+        ]
 
 
 viewActivities : String -> List Activity -> Html Msg
@@ -270,37 +282,36 @@ viewActivities activityType activities =
                 ]
                 [ text activityType ]
             , div [ class "max-w-3xl m-auto" ]
-                (List.map
-                    (\activity ->
-                        a
-                            [ class "grid grid-cols-[100px_1fr]"
-                            , href activity.link
-                            , target "_blank"
-                            , class "hover:bg-csc-lightpurple"
-                            , class "rounded m-5"
-                            ]
-                            [ img
-                                [ src activity.image
-                                , class "w-20 h-20"
-                                , class "rounded"
-                                , class "object-cover"
-                                ]
-                                []
-                            , div [ class "grid grid-rows" ]
-                                [ h4
-                                    [ class "text-xl text-left"
-                                    ]
-                                    [ text activity.title ]
-                                , div
-                                    [ class "text-left"
-                                    ]
-                                    [ text activity.snippet ]
-                                ]
-                            ]
-                    )
-                    activities
-                )
+                (List.map viewActivity activities)
             ]
+
+
+viewActivity activity =
+    a
+        [ class "grid grid-cols-[100px_1fr]"
+        , href activity.link
+        , target "_blank"
+        , class "hover:bg-csc-lightpurple"
+        , class "rounded m-5"
+        ]
+        [ img
+            [ src activity.image
+            , class "w-20 h-20"
+            , class "rounded"
+            , class "object-cover"
+            ]
+            []
+        , div [ class "grid grid-rows" ]
+            [ h4
+                [ class "text-xl text-left"
+                ]
+                [ text activity.title ]
+            , div
+                [ class "text-left"
+                ]
+                [ text activity.snippet ]
+            ]
+        ]
 
 
 
