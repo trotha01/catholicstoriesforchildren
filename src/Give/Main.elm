@@ -265,8 +265,8 @@ wordsOfEncouragement =
             , style "transform" "translate(-50%)"
             ]
             [ p [] [ text """Sending words of encouragement are greatly appreciated. Let us build each other up in the faith. """ ]
-            , p [] [ text """ "Encourage one another and build one another up." """ ]
-            , p [] [ text """ —1 Th 5:11 """ ]
+            , p [ class "mt-5" ] [ text """ "Encourage one another and build one another up." """ ]
+            , p [ class "mb-5" ] [ text """1 Th 5:11""" ]
             , Helpers.email
             ]
         )
