@@ -73,7 +73,7 @@ viewSignUp =
             , rel "noopener"
             , target "_blank"
             , style "text-decoration" "none"
-            , style "padding" "10px"
+            , style "padding" "10px 20px"
             , style "display" "inline-block"
             , style "border-radius" "5px"
             , style "box-shadow" "#777 1px 1px 5px"

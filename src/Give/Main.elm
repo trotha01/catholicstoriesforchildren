@@ -55,7 +55,6 @@ viewBody =
         , div [ style "margin-bottom" "4em" ] []
         , prayForUs
         , donateWithPaypal
-        , donateWithAmazon
         , donateWithVehicle
         , sponsor
         , volunteer
@@ -203,22 +202,6 @@ donateWithPatreon =
                 ]
             ]
         ]
-
-
-donateWithAmazon : Html msg
-donateWithAmazon =
-    donateSection "Donate via Amazon Smile"
-        (a
-            [ href "https://smile.amazon.com/ch/85-4194883"
-            , rel "noopener"
-            , target "_blank"
-            , style "text-decoration" "none"
-            , style "padding" "10px 20px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            , style "border-radius" "5px"
-            ]
-            [ text "Amazon Smile" ]
-        )
 
 
 donateWithVehicle : Html msg

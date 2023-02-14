@@ -220,7 +220,7 @@ viewTeam =
             [ href "/team"
             , rel "noopener"
             , style "text-decoration" "none"
-            , style "padding" "10px"
+            , style "padding" "10px 20px"
             , style "display" "inline-block"
             , style "color" "black"
             , style "border" "2px solid #777"
@@ -478,11 +478,12 @@ viewNewsletter =
             , style "text-align" "center"
             , style "margin-top" "50px"
             ]
-            [ a
+            [ p [ class "mb-5" ] [ text "See our latest animation news." ]
+            , a
                 [ href "/newsroom"
                 , rel "noopener"
                 , style "text-decoration" "none"
-                , style "padding" "10px"
+                , style "padding" "10px 20px"
                 , style "display" "inline-block"
                 , style "color" "black"
                 , style "border" "2px solid #777"
@@ -522,7 +523,11 @@ viewGive =
             , p
                 [ style "text-align" "center"
                 ]
-                [ text "All donations are tax deductible" ]
+                [ text "Help us create Catholic animations and resources" ]
+            , p
+                [ style "text-align" "center"
+                ]
+                [ text "for you." ]
             , p [ style "text-align" "center" ]
                 [ div
                     [ style "margin-bottom" "30px"
@@ -553,7 +558,7 @@ viewGive =
                         [ href "/give"
                         , rel "noopener"
                         , style "text-decoration" "none"
-                        , style "padding" "20px"
+                        , style "padding" "10px 20px"
                         , style "color" "black"
                         , style "border" "2px solid #777"
                         , style "border-radius" "5px"

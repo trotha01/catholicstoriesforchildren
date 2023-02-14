@@ -5830,7 +5830,17 @@ var $author$project$Main$viewGive = A3(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('All donations are tax deductible')
+							$elm$html$Html$text('Help us create Catholic animations and resources')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('for you.')
 						])),
 					A2(
 					$elm$html$Html$p,
@@ -5887,7 +5897,7 @@ var $author$project$Main$viewGive = A3(
 											$elm$html$Html$Attributes$href('/give'),
 											$elm$html$Html$Attributes$rel('noopener'),
 											A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-											A2($elm$html$Html$Attributes$style, 'padding', '20px'),
+											A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
 											A2($elm$html$Html$Attributes$style, 'color', 'black'),
 											A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
 											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
@@ -5975,7 +5985,7 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 					$zwilias$elm_html_string$Html$String$Attributes$rel('noopener'),
 					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding', '10px 20px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'inline-block'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
@@ -6122,13 +6132,23 @@ var $author$project$Main$viewNewsletter = A3(
 			_List_fromArray(
 				[
 					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mb-5')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('See our latest animation news.')
+						])),
+					A2(
 					$elm$html$Html$a,
 					_List_fromArray(
 						[
 							$elm$html$Html$Attributes$href('/newsroom'),
 							$elm$html$Html$Attributes$rel('noopener'),
 							A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-							A2($elm$html$Html$Attributes$style, 'padding', '10px'),
+							A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
 							A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
 							A2($elm$html$Html$Attributes$style, 'color', 'black'),
 							A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
@@ -6505,7 +6525,7 @@ var $author$project$Main$viewTeam = A3(
 					$elm$html$Html$Attributes$href('/team'),
 					$elm$html$Html$Attributes$rel('noopener'),
 					A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-					A2($elm$html$Html$Attributes$style, 'padding', '10px'),
+					A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
 					A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
 					A2($elm$html$Html$Attributes$style, 'color', 'black'),
 					A2($elm$html$Html$Attributes$style, 'border', '2px solid #777'),
