@@ -347,10 +347,9 @@ viewTestimonials =
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
         , div [ class " md:flex md:overflow-x-auto" ]
-            [ div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
-
-            -- , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
+            [ div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
             , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
             ]
         ]

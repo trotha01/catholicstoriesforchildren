@@ -35,7 +35,7 @@ camSmithTestimonial =
     { name = "Cam Smith"
     , initials = "CS"
     , position = "Mother and Social Worker"
-    , description = "Oh wow that was amazing! I will share it to my church page."
+    , description = "I love how there is a story, animation, and even music to learning the prayers. We know that children often, if not always, learn first through their experience and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily! I will be showing these prayers to my infant child when he is older. 🙂"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CamNguyen_ze-IRFU1d.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325311225"
     , socials = []
     }

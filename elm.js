@@ -6530,6 +6530,7 @@ var $author$project$Main$viewTeam = A3(
 				]))
 		]));
 var $author$project$Team$Testimonials$ainsleyRawlingsTestimonial = {ax: 'My kids love the guardian angel song and video! The song is beautiful and easy for my littles to remember and sing along with. ❤️ Thank you!', aD: 'https://ik.imagekit.io/catholicstories/ProfileImages/ainsleyrawlings_hyB-0rd23.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325098991', aG: 'AR', aJ: 'Ainsley Rawlings', aN: 'Mother and Teacher', aR: _List_Nil};
+var $author$project$Team$Testimonials$camSmithTestimonial = {ax: 'I love how there is a story, animation, and even music to learning the prayers. We know that children often, if not always, learn first through their experience and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily! I will be showing these prayers to my infant child when he is older. 🙂', aD: 'https://ik.imagekit.io/catholicstories/ProfileImages/CamNguyen_ze-IRFU1d.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325311225', aG: 'CS', aJ: 'Cam Smith', aN: 'Mother and Social Worker', aR: _List_Nil};
 var $author$project$Team$Testimonials$kellyBriggsTestimonial = {ax: 'My three year old requests the Hail Mary animation often  it makes me so happy. I love it. Almost every time during our morning prayer time she asks.', aD: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg', aG: 'KB', aJ: 'Kelly Briggs', aN: 'Social Media Specialist', aR: _List_Nil};
 var $author$project$Team$Testimonials$meganReisterTestimonial = {ax: 'How fabulous!!! So looking forward to sharing this far and wide!!!', aD: 'https://spp.franciscan.edu/wp-content/uploads/sites/4/2019/02/Reister.jpg', aG: 'MR', aJ: 'Dr. Megan Reister', aN: 'Associate Professor of Special Education and Early Childhood', aR: _List_Nil};
 var $author$project$Main$viewTestimonials = A3(
@@ -6565,7 +6566,7 @@ var $author$project$Main$viewTestimonials = A3(
 					_List_fromArray(
 						[
 							$zwilias$elm_html_string$Html$String$toHtml(
-							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$meganReisterTestimonial))
+							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$ainsleyRawlingsTestimonial))
 						])),
 					A2(
 					$elm$html$Html$div,
@@ -6576,7 +6577,18 @@ var $author$project$Main$viewTestimonials = A3(
 					_List_fromArray(
 						[
 							$zwilias$elm_html_string$Html$String$toHtml(
-							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$ainsleyRawlingsTestimonial))
+							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$camSmithTestimonial))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$toHtml(
+							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$meganReisterTestimonial))
 						])),
 					A2(
 					$elm$html$Html$div,
