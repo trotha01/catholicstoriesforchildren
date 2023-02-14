@@ -10,8 +10,10 @@ import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
+import Svg.Attributes exposing (d)
 import Team.Main exposing (viewPerson)
 import Team.Team exposing (fredrick, kelly, noeli, trevor)
+import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Url
 
 
@@ -121,6 +123,7 @@ viewBody =
         [ viewIntro
         , viewTeam
         , viewAnimations
+        , viewTestimonials
         , viewContact
         , viewNewsletter
         , viewGive
@@ -205,7 +208,10 @@ viewTeam =
         , class "py-20"
         ]
         [ h2 [] [ text "The Team" ]
-        , div [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]" ]
+        , div
+            [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]"
+            , class "my-10"
+            ]
             [ viewPerson trevor |> Html.String.toHtml
             , viewPerson noeli |> Html.String.toHtml
             , viewPerson kelly |> Html.String.toHtml
@@ -332,6 +338,22 @@ viewAnimations =
                     ]
                     []
                 ]
+            ]
+        ]
+
+
+viewTestimonials : Html msg
+viewTestimonials =
+    viewSection "testimonials"
+        [ class "py-20 bg-[#FEF7F4] w-screen"
+        ]
+        [ h2 [ class "mb-10" ] [ text "Testimonials" ]
+        , div [ class " md:flex md:overflow-x-auto" ]
+            [ div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
+
+            -- , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
             ]
         ]
 

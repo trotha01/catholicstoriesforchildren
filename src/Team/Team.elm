@@ -214,22 +214,22 @@ contractors =
             , ( Spotify, "https://open.spotify.com/artist/3BHBEFqQWqROuXbQCSnb06?si=9Mh_b1M4T6S7nmsswkdHPQ&nd=1" )
             ]
       }
-    , { name = "Ethan"
-      , initials = "E"
+    , { name = "Ethan Nagy"
+      , initials = "EN"
       , position = "Singer and Voice Actor"
       , description = ""
       , image = ""
       , socials = []
       }
-    , { name = "Italia"
-      , initials = "I"
+    , { name = "Italia Rose"
+      , initials = "IR"
       , position = "Singer and Voice Actor"
       , description = ""
       , image = ""
       , socials = []
       }
-    , { name = "Dominic"
-      , initials = "D"
+    , { name = "Dominic Grodi"
+      , initials = "DG"
       , position = "Singer and Voice Actor"
       , description = ""
       , image = ""

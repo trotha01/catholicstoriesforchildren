@@ -112,7 +112,13 @@ viewPeople title description people =
             ]
             [ text description ]
          ]
-            ++ List.map viewPerson people
+            ++ List.map
+                (\person ->
+                    div [ class "my-10" ]
+                        [ viewPerson person
+                        ]
+                )
+                people
         )
 
 
@@ -120,13 +126,12 @@ viewPerson : Person -> Html msg
 viewPerson person =
     div
         [ -- POSITION
-          class "hcenter"
-        , style "display" "grid"
+          style "display" "grid"
         , style "grid-template-columns" "72px 1fr"
+        , class "h-full"
 
         -- spacing
-        , style "margin" "30px 0"
-
+        -- , style "margin" "30px 0"
         -- SIZE
         , style "min-height" "115px"
 

@@ -6442,10 +6442,9 @@ var $author$project$Team$Main$viewPerson = function (person) {
 		$zwilias$elm_html_string$Html$String$div,
 		_List_fromArray(
 			[
-				$zwilias$elm_html_string$Html$String$Attributes$class('hcenter'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'display', 'grid'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'grid-template-columns', '72px 1fr'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin', '30px 0'),
+				$zwilias$elm_html_string$Html$String$Attributes$class('h-full'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'min-height', '115px'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background', 'white'),
 				A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '4px'),
@@ -6487,7 +6486,8 @@ var $author$project$Main$viewTeam = A3(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('grid xl:grid-cols-3 gap-5 max-w-[120rem]')
+					$elm$html$Html$Attributes$class('grid xl:grid-cols-3 gap-5 max-w-[120rem]'),
+					$elm$html$Html$Attributes$class('my-10')
 				]),
 			_List_fromArray(
 				[
@@ -6517,6 +6517,71 @@ var $author$project$Main$viewTeam = A3(
 					$elm$html$Html$text('Meet the Team')
 				]))
 		]));
+var $author$project$Team$Testimonials$ainsleyRawlingsTestimonial = {ax: 'My kids love the guardian angel song and video! The song is beautiful and easy for my littles to remember and sing along with. ❤️ Thank you!', aD: 'https://ik.imagekit.io/catholicstories/ProfileImages/ainsleyrawlings_hyB-0rd23.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325098991', aG: 'AR', aJ: 'Ainsley Rawlings', aN: 'Mother and Teacher', aR: _List_Nil};
+var $author$project$Team$Testimonials$kellyBriggsTestimonial = {ax: 'My three year old requests the Hail Mary animation often  it makes me so happy. I love it. Almost every time during our morning prayer time she asks.', aD: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg', aG: 'KB', aJ: 'Kelly Briggs', aN: 'Social Media Specialist', aR: _List_Nil};
+var $author$project$Team$Testimonials$meganReisterTestimonial = {ax: 'How fabulous!!! So looking forward to sharing this far and wide!!!', aD: 'https://spp.franciscan.edu/wp-content/uploads/sites/4/2019/02/Reister.jpg', aG: 'MR', aJ: 'Dr. Megan Reister', aN: 'Associate Professor of Special Education and Early Childhood', aR: _List_Nil};
+var $author$project$Main$viewTestimonials = A3(
+	$author$project$Main$viewSection,
+	'testimonials',
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('py-20 bg-[#FEF7F4] w-screen')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Testimonials')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class(' md:flex md:overflow-x-auto')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$toHtml(
+							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$meganReisterTestimonial))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$toHtml(
+							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$ainsleyRawlingsTestimonial))
+						])),
+					A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+						]),
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$toHtml(
+							$author$project$Team$Main$viewPerson($author$project$Team$Testimonials$kellyBriggsTestimonial))
+						]))
+				]))
+		]));
 var $author$project$Main$viewBody = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -6525,7 +6590,7 @@ var $author$project$Main$viewBody = A2(
 			$elm$html$Html$Attributes$class('lg:text-2xl')
 		]),
 	_List_fromArray(
-		[$author$project$Main$viewIntro, $author$project$Main$viewTeam, $author$project$Main$viewAnimations, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive]));
+		[$author$project$Main$viewIntro, $author$project$Main$viewTeam, $author$project$Main$viewAnimations, $author$project$Main$viewTestimonials, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
