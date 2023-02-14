@@ -146,7 +146,10 @@ donateWithPatreon =
                 "https://www.patreon.com/join/catholicstoriesforchildren/checkout?rid=5979093"
                 [ img
                     [ src "https://ik.imagekit.io/catholicstories/Patreon_Graphics_for_Websites/1_NR6oBN9FG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666902853951"
-                    , style "width" "320px"
+
+                    -- , style "width" "320px"
+                    , width 320
+                    , height 380
                     , alt "$5 per month"
                     ]
                     []

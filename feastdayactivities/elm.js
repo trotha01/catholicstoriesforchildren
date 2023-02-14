@@ -9073,6 +9073,11 @@ var $zwilias$elm_html_string$Html$String$Attributes$class = function (className)
 var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
 var $zwilias$elm_html_string$Html$String$nav = $zwilias$elm_html_string$Html$String$node('nav');
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
+var $zwilias$elm_html_string$Html$Types$Attribute = F2(
+	function (a, b) {
+		return {$: 0, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
 var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
 };
@@ -9089,7 +9094,8 @@ var $author$project$Header$viewNavButton = F3(
 					$zwilias$elm_html_string$Html$String$Attributes$class('rounded-t'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('text-lg'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', height),
-					$zwilias$elm_html_string$Html$String$Attributes$class('w-full')
+					$zwilias$elm_html_string$Html$String$Attributes$class('w-full'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', page)
 				]),
 			_List_fromArray(
 				[
@@ -9118,7 +9124,8 @@ var $author$project$Header$hamburgerMenu = A2(
 	_List_fromArray(
 		[
 			$zwilias$elm_html_string$Html$String$Attributes$href('/navigation'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('space-y-2')
+			$zwilias$elm_html_string$Html$String$Attributes$class('space-y-2'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'menu')
 		]),
 	_List_fromArray(
 		[
@@ -9201,11 +9208,6 @@ var $author$project$Header$viewHeaderTitle = function (title) {
 					]))
 			]));
 };
-var $zwilias$elm_html_string$Html$Types$Attribute = F2(
-	function (a, b) {
-		return {$: 0, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
 var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
 };

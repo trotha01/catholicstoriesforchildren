@@ -5999,7 +5999,8 @@ var $author$project$Header$viewNavButton = F3(
 					$zwilias$elm_html_string$Html$String$Attributes$class('rounded-t'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('text-lg'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', height),
-					$zwilias$elm_html_string$Html$String$Attributes$class('w-full')
+					$zwilias$elm_html_string$Html$String$Attributes$class('w-full'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', page)
 				]),
 			_List_fromArray(
 				[
@@ -6027,7 +6028,8 @@ var $author$project$Header$hamburgerMenu = A2(
 	_List_fromArray(
 		[
 			$zwilias$elm_html_string$Html$String$Attributes$href('/navigation'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('space-y-2')
+			$zwilias$elm_html_string$Html$String$Attributes$class('space-y-2'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'menu')
 		]),
 	_List_fromArray(
 		[

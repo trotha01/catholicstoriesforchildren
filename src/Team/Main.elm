@@ -130,8 +130,6 @@ viewPerson person =
         , style "grid-template-columns" "72px 1fr"
         , class "h-full"
 
-        -- spacing
-        -- , style "margin" "30px 0"
         -- SIZE
         , style "min-height" "115px"
 
@@ -181,7 +179,8 @@ viewImage image initials =
             , style "border-radius" "30px"
             , style "border" "1px solid #777"
             , style "background-color" darkPurple
-            , style "color" "white"
+
+            -- , style "color" "white"
             ]
             [ div
                 [ style "position" "absolute"

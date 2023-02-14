@@ -70,7 +70,11 @@ navigation height =
 
 hamburgerMenu : Html msg
 hamburgerMenu =
-    a [ href "/navigation", class "space-y-2" ]
+    a
+        [ href "/navigation"
+        , class "space-y-2"
+        , attribute "aria-label" "menu"
+        ]
         [ div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
         , div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
         , div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
@@ -101,6 +105,7 @@ viewNavButton height link page =
         , class "text-lg"
         , style "height" height
         , class "w-full"
+        , attribute "aria-label" page
         ]
         [ text page ]
 

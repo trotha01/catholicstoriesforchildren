@@ -6223,8 +6223,7 @@ var $author$project$Team$Main$viewImage = F2(
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '52px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '30px'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border', '1px solid #777'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', $author$project$Helpers$darkPurple),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'color', 'white')
+					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', $author$project$Helpers$darkPurple)
 				]),
 			_List_fromArray(
 				[
@@ -6649,7 +6648,8 @@ var $author$project$Header$viewNavButton = F3(
 					$zwilias$elm_html_string$Html$String$Attributes$class('rounded-t'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('text-lg'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', height),
-					$zwilias$elm_html_string$Html$String$Attributes$class('w-full')
+					$zwilias$elm_html_string$Html$String$Attributes$class('w-full'),
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', page)
 				]),
 			_List_fromArray(
 				[
@@ -6677,7 +6677,8 @@ var $author$project$Header$hamburgerMenu = A2(
 	_List_fromArray(
 		[
 			$zwilias$elm_html_string$Html$String$Attributes$href('/navigation'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('space-y-2')
+			$zwilias$elm_html_string$Html$String$Attributes$class('space-y-2'),
+			A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'menu')
 		]),
 	_List_fromArray(
 		[
