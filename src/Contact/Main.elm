@@ -60,8 +60,7 @@ viewBody =
 viewContactInfo : Html msg
 viewContactInfo =
     div
-        [ class "text-base sm:text-3xl"
-        , class "text-center"
+        [ class "text-center"
         ]
         [ div
             []

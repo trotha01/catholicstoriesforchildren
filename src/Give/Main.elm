@@ -46,12 +46,14 @@ view =
 viewBody : Html Never
 viewBody =
     div
-        []
-        [ h1 (h1Style ++ [ class "mb-5" ]) [ text "Give" ]
+        [ class "m-auto"
+        , class "max-w-3xl"
+        ]
+        [ h1 [ class "my-10" ] [ text "Give" ]
         , donateAbout
         , donateWithPatreon
         , div [ style "margin-bottom" "6em" ] []
-        , h2 h2Style [ text "Other ways to give" ]
+        , h2 [ class "text-center" ] [ text "Other ways to give" ]
         , div [ style "margin-bottom" "4em" ] []
         , prayForUs
         , donateWithPaypal
@@ -65,13 +67,9 @@ viewBody =
 donateAbout : Html msg
 donateAbout =
     div
-        [ class "text-xl"
-        , class "p-5"
-        ]
+        [ class "text-xl mb-10" ]
         [ p
             [ style "margin-bottom" "1em"
-            , class "m-auto"
-            , class "max-w-3xl"
             ]
             [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
         , p
@@ -139,7 +137,7 @@ donateWithPatreon =
             , style "max-width" "650px"
             , style "min-width" "330px"
             , class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center"
-            , class "mt-5"
+            , class "my-5"
             , style "left" "50%"
             , style "position" "relative"
             , style "transform" "translate(-50%)"
@@ -287,7 +285,7 @@ donateSection title body =
         [ div
             [ class "pb-5 m-1"
             ]
-            [ h2 h2Style [ text title ]
+            [ h3 [ class "text-center text-xl" ] [ text title ]
             ]
         , div
             [ style "text-align" "center"

@@ -68,7 +68,7 @@ viewBody =
         , style "width" "80%"
         , style "max-width" "800px"
         ]
-        [ h1 h1Style [ text "About Us" ]
+        [ h1 [ class "my-10 text-white" ] [ text "About Us" ]
         , viewAbout
         , viewTeam
         ]

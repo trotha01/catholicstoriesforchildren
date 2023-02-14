@@ -43,8 +43,8 @@ viewBody =
         , style "width" "80%"
         , style "max-width" "800px"
         ]
-        [ h1 h1Style [ text "Animations" ]
-        , div [ class "m-10" ]
+        [ h1 [ class "mt-10" ] [ text "Animations" ]
+        , div [ class "my-10" ]
             [ p [] [ text "Our animations are built to help kids understand common Catholic prayers." ]
             , p [] [ text "You can use them to help your kids build a habit of prayer." ]
             ]

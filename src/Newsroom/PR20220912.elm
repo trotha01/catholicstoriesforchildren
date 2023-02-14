@@ -9,7 +9,12 @@ view : Html Never
 view =
     div
         []
-        [ h2 (h2Style ++ [ style "text-align" "left" ]) [ text "Hail Mary Prayer Animation Wins Multiple Awards in International Hollywood Film Festival" ]
+        [ h2
+            [ class "text-left"
+            , class "leading-10"
+            , class "mb-7"
+            ]
+            [ text "Hail Mary Prayer Animation Wins Multiple Awards in International Hollywood Film Festival" ]
         , p []
             [ span [] [ text "Catholic Stories for Children's animation, " ]
             , a

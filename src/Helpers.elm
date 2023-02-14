@@ -238,6 +238,7 @@ viewSocialLink image link label =
         , target "_blank"
         , style "margin-right" "10px"
         , attribute "aria-label" label
+        , class "inline-block"
         ]
         [ image ]
 

@@ -6395,7 +6395,8 @@ var $author$project$Helpers$viewSocialLink = F3(
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-decoration', 'none'),
 					$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-right', '10px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', label)
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', label),
+					$zwilias$elm_html_string$Html$String$Attributes$class('inline-block')
 				]),
 			_List_fromArray(
 				[image]));
