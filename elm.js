@@ -5418,12 +5418,22 @@ var $elm$html$Html$Attributes$href = function (url) {
 		_VirtualDom_noJavaScriptUri(url));
 };
 var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
 		'src',
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
+var $author$project$Main$subHeaderStyle = _List_fromArray(
+	[
+		A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+		A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
+		A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
+		$elm$html$Html$Attributes$class('text-4xl md:text-7xl'),
+		A2($elm$html$Html$Attributes$style, 'color', '#333333'),
+		$elm$html$Html$Attributes$class('m-5')
+	]);
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$section = _VirtualDom_node('section');
 var $author$project$Main$viewSection = F3(
@@ -5466,18 +5476,21 @@ var $author$project$Main$viewAnimations = A3(
 						[
 							A2(
 							$elm$html$Html$h2,
-							_List_fromArray(
-								[
-									A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-									A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
-									A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-									$elm$html$Html$Attributes$class('text-4xl md:text-7xl'),
-									$elm$html$Html$Attributes$class('m-5')
-								]),
+							$author$project$Main$subHeaderStyle,
 							_List_fromArray(
 								[
 									$elm$html$Html$text('Animations')
 								]))
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('text-center')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('These animations are made to help kids learn the Hail Mary prayer, the prayer to their guardian angel, and more!')
 						])),
 					A2(
 					$elm$html$Html$div,
@@ -5642,7 +5655,6 @@ var $elm$html$Html$Attributes$boolProperty = F2(
 			$elm$json$Json$Encode$bool(bool));
 	});
 var $elm$html$Html$Attributes$hidden = $elm$html$Html$Attributes$boolProperty('hidden');
-var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $elm$html$Html$Attributes$width = function (n) {
 	return A2(
@@ -5664,14 +5676,7 @@ var $author$project$Main$viewContact = A3(
 		[
 			A2(
 			$elm$html$Html$h2,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-					A2($elm$html$Html$Attributes$style, 'color', '#333333'),
-					$elm$html$Html$Attributes$class('text-5xl'),
-					$elm$html$Html$Attributes$class('mt-40 mb-5')
-				]),
+			$author$project$Main$subHeaderStyle,
 			_List_fromArray(
 				[
 					$elm$html$Html$text('Contact Us!')
@@ -5811,13 +5816,7 @@ var $author$project$Main$viewGive = A3(
 				[
 					A2(
 					$elm$html$Html$h2,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-							A2($elm$html$Html$Attributes$style, 'font-size', '4rem'),
-							A2($elm$html$Html$Attributes$style, 'line-height', '1.2em'),
-							A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro')
-						]),
+					$author$project$Main$subHeaderStyle,
 					_List_fromArray(
 						[
 							$elm$html$Html$text('Give')
@@ -6105,14 +6104,7 @@ var $author$project$Main$viewNewsletter = A3(
 		[
 			A2(
 			$elm$html$Html$h2,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
-					$elm$html$Html$Attributes$class('text-5xl'),
-					A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-					A2($elm$html$Html$Attributes$style, 'color', '#333333'),
-					$elm$html$Html$Attributes$class('mt-24 mb-5')
-				]),
+			$author$project$Main$subHeaderStyle,
 			_List_fromArray(
 				[
 					$elm$html$Html$text('Stay Updated!')
@@ -6497,7 +6489,7 @@ var $author$project$Main$viewTeam = A3(
 		[
 			A2(
 			$elm$html$Html$h2,
-			_List_Nil,
+			$author$project$Main$subHeaderStyle,
 			_List_fromArray(
 				[
 					$elm$html$Html$text('The Team')
@@ -6551,10 +6543,7 @@ var $author$project$Main$viewTestimonials = A3(
 		[
 			A2(
 			$elm$html$Html$h2,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('mb-10')
-				]),
+			$author$project$Main$subHeaderStyle,
 			_List_fromArray(
 				[
 					$elm$html$Html$text('Testimonials')

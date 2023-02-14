@@ -207,7 +207,8 @@ viewTeam =
         [ class "bg-csc-lightpurple"
         , class "py-20"
         ]
-        [ h2 [] [ text "The Team" ]
+        [ h2 subHeaderStyle
+            [ text "The Team" ]
         , div
             [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]"
             , class "my-10"
@@ -239,14 +240,11 @@ viewAnimations =
             [ class "pt-32 lg:pt-48"
             ]
             [ div []
-                [ h2
-                    [ style "text-align" "center"
-                    , style "line-height" "1.2em"
-                    , style "font-family" "hvdComicSerifPro"
-                    , class "text-4xl md:text-7xl"
-                    , class "m-5"
-                    ]
+                [ h2 subHeaderStyle
                     [ text "Animations" ]
+                ]
+            , p [ class "text-center" ]
+                [ text "These animations are made to help kids learn the Hail Mary prayer, the prayer to their guardian angel, and more!"
                 ]
             , div
                 [ class "w-full"
@@ -347,7 +345,7 @@ viewTestimonials =
     viewSection "testimonials"
         [ class "py-20 bg-[#FEF7F4] w-screen"
         ]
-        [ h2 [ class "mb-10" ] [ text "Testimonials" ]
+        [ h2 subHeaderStyle [ text "Testimonials" ]
         , div [ class " md:flex md:overflow-x-auto" ]
             [ div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
             , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
@@ -366,13 +364,7 @@ viewContact =
         , style "line-height" "1.7em"
         , class "py-64"
         ]
-        [ h2
-            [ style "text-align" "center"
-            , style "font-family" "hvdComicSerifPro"
-            , style "color" "#333333"
-            , class "text-5xl"
-            , class "mt-40 mb-5"
-            ]
+        [ h2 subHeaderStyle
             [ text "Contact Us!" ]
         , div
             [ style "width" "fit-content"
@@ -461,13 +453,7 @@ viewNewsletter =
         [ style "background" "#FEF7F4"
         , class "py-20"
         ]
-        [ h2
-            [ style "text-align" "center"
-            , class "text-5xl"
-            , style "font-family" "hvdComicSerifPro"
-            , style "color" "#333333"
-            , class "mt-24 mb-5"
-            ]
+        [ h2 subHeaderStyle
             [ text "Stay Updated!" ]
         , div
             [ style "width" "fit-content"
@@ -513,12 +499,7 @@ viewGive =
         ]
         [ div
             []
-            [ h2
-                [ style "text-align" "center"
-                , style "font-size" "4rem"
-                , style "line-height" "1.2em"
-                , style "font-family" "hvdComicSerifPro"
-                ]
+            [ h2 subHeaderStyle
                 [ text "Give" ]
             , p
                 [ style "text-align" "center"
@@ -630,3 +611,14 @@ cornerBorder =
         ("before:absolute before:w-56 md:before:w-80 lg:before:w-96 before:h-4 before:top-0"
             ++ " before:border-t-4 before:border-l-4 before:border-solid before:border-csc-lightblue before:rounded"
         )
+
+
+subHeaderStyle : List (Attribute msg)
+subHeaderStyle =
+    [ style "text-align" "center"
+    , style "line-height" "1.2em"
+    , style "font-family" "hvdComicSerifPro"
+    , class "text-4xl md:text-7xl"
+    , style "color" "#333333"
+    , class "m-5"
+    ]
