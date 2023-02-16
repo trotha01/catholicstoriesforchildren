@@ -31,6 +31,18 @@ january =
                           , link = "https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html"
                           , snippet = "The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board..."
                           }
+                        , { activityType = Crafts
+                          , title = "Pastel Resist Madonna - Art Project"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351"
+                          , link = "http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html"
+                          , snippet = "You only need some basic supplies for this one. Try to find heavy kraft paper if you can..."
+                          }
+                        , { activityType = Crafts
+                          , title = "How To Draw Mary And Baby Jesus (Easy!)"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/how-to-draw-mary-and-baby-jesus/"
+                          , snippet = "A step by step video for kids"
+                          }
                         , { activityType = OnlineReading
                           , title = "Solemnity of Mary, the Holy Mother of God"
                           , image = "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg"
@@ -116,6 +128,18 @@ january =
                           , image = "https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2"
                           , snippet = ""
+                          }
+                        , { activityType = Food
+                          , title = "Jewel Cake"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/make-a-jewel-cake-for-st-basil-on-new-years/"
+                          , snippet = "St. Basil’s feast day is on January 2, but it has become a Catholic tradition to make a “St. Basil’s Cake” on New Year’s to celebrate one of his miracles..."
+                          }
+                        , { activityType = Food
+                          , title = "St Basil's Cupcakes"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/st-basils-hidden-jewel-cupcakes-easy-to-make/"
+                          , snippet = "Slice a small hole in the top of the cupcake using a butter knife, and stick a lifesaver candy “jewel” inside..."
                           }
                         ]
                   }
@@ -281,6 +305,36 @@ january =
                           , link = "https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1"
                           , snippet = "The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal..."
                           }
+                        , { activityType = More
+                          , title = "Epiphany House Blessing with Chalk"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/epiphany-house-blessing-with-chalk/"
+                          , snippet = "The Epiphany house blessing of the door is a really great Catholic tradition for families..."
+                          }
+                        , { activityType = Crafts
+                          , title = "K is for King"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/"
+                          , snippet = "I love to make wearable crafts with preschoolers, because they love wearing them..."
+                          }
+                        , { activityType = Crafts
+                          , title = "3 Kings Epiphany Crafts For Kids"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/3-kings-epiphany-crafts/"
+                          , snippet = "Ornament Craft, peg doll wraps, and printable nativity set!"
+                          }
+                        , { activityType = Crafts
+                          , title = "Star Crafts"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/star-of-wonder-star-of-night/"
+                          , snippet = ""
+                          }
+                        , { activityType = Food
+                          , title = "Epiphany Crown Food Ideas"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/epiphany-crown-food-ideas/"
+                          , snippet = "I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany..."
+                          }
                         , { activityType = Food
                           , title = "La Galette des Rois: The French King Cake"
                           , image = "https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg"
@@ -383,11 +437,41 @@ january =
                           , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
                           , snippet = ""
                           }
+                        , { activityType = Crafts
+                          , title = "Holy Water Bottle Craft"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/"
+                          , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
+                          }
+                        , { activityType = Crafts
+                          , title = "Dove with Olive Branch"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/"
+                          , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
+                          }
+                        , { activityType = Crafts
+                          , title = "Dove with Gifts of the Holy Spirit"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/"
+                          , snippet = "You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra."
+                          }
+                        , { activityType = Crafts
+                          , title = "Simple Handprint Dove"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/holy-spirit-craft-handprint-dove/"
+                          , snippet = "For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint..."
+                          }
                         , { activityType = Food
                           , title = "Greek Dipples"
                           , image = "https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png"
                           , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
                           , snippet = ""
+                          }
+                        , { activityType = More
+                          , title = "Ideas for Teaching Catholic Kids About Baptism"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/"
+                          , snippet = "Baptism is so important, and it’s a great thing to make sure that your kids truly understand..."
                           }
                         ]
                   }
@@ -545,6 +629,12 @@ january =
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1"
                           , snippet = ""
                           }
+                        , { activityType = More
+                          , title = "Celebrating The Feast Day Of St. Agnes With Kids"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/st-agnes-crafts-feast-jan-21/"
+                          , snippet = "Today, let’s look at some celebrating the feast day of St. Agnes with kids..."
+                          }
                         ]
                   }
                 ]
@@ -608,6 +698,12 @@ january =
                           , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
                           , link = ""
                           , snippet = ""
+                          }
+                        , { activityType = More
+                          , title = "Pro Life Craft for Kids"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/pro-life-craft-for-kids/"
+                          , snippet = " Today, let’s look at some celebrating the feast day of St. Agnes with kids..."
                           }
                         ]
                   }

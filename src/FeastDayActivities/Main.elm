@@ -191,12 +191,13 @@ viewFeastActivities feastActivities =
         div []
             [ viewVideos (videoActivities activities)
             , viewActivities "Audio" (audioActivities activities)
-            , viewActivities "Reading" (readingActivities activities)
+            , viewActivities "Crafts" (craftActivities activities)
             , viewActivities "Printouts" (printoutActivities activities)
             , viewActivities "Games" (gameActivities activities)
+            , viewActivities "Images" (imageActivities activities)
+            , viewActivities "Reading" (readingActivities activities)
             , viewActivities "Recipes" (foodActivities activities)
             , viewActivities "Books" (bookActivities activities)
-            , viewActivities "Crafts" (craftActivities activities)
             , viewActivities "More" (moreActivities activities)
             ]
 

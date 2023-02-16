@@ -5665,6 +5665,11 @@ var $author$project$FeastDayActivities$FeastDays$M12Dec$december = {
 	aL: 'dec',
 	K: 'December'
 };
+var $author$project$FeastDayActivities$FeastDayHelpers$Audio = 1;
+var $author$project$FeastDayActivities$FeastDayHelpers$Crafts = 8;
+var $author$project$FeastDayActivities$FeastDayHelpers$Images = 2;
+var $author$project$FeastDayActivities$FeastDayHelpers$More = 9;
+var $author$project$FeastDayActivities$FeastDayHelpers$Video = 0;
 var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	aB: '#395d73',
 	X: _List_fromArray(
@@ -5673,14 +5678,27 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			H: '02',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Presentation of the Lord'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', aV: 'At the end of the fourth century, a woman named Etheria made a pilgrimage to Jerusalem. Her journal, discovered in 1887, gives an unprecedented...', a_: 'Presentation of the Lord'},
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', aV: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', a_: 'How To Celebrate Candlemas With Catholic Children'}
+						]),
+					aF: 'Presentation of the Lord'
+				}
 				])
 		},
 			{
 			H: '03',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'St Blase'},
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', aV: 'We know more about the devotion to Saint Blaise by Christians around the world than we know about the saint himself...', a_: 'Saint Blaise’s Story'}
+						]),
+					aF: 'St Blase'
+				},
 					{aw: _List_Nil, aF: 'St Ansgar'}
 				])
 		},
@@ -5688,43 +5706,89 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			H: '05',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'St Agatha'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', aV: 'As in the case of Agnes, another virgin-martyr of the early Church, almost nothing is historically certain about this saint except that she was martyred in Sicily during the persecution of Emperor Decius in 251...', a_: 'Saint Agatha’s Story'}
+						]),
+					aF: 'St Agatha'
+				}
 				])
 		},
 			{
 			H: '06',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Sts Paul Miki and Companions'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', aV: 'Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlooking Nagasaki...', a_: 'Saint Paul Miki and Companions’ Story'}
+						]),
+					aF: 'Sts Paul Miki and Companions'
+				}
 				])
 		},
 			{
 			H: '08',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Jerome Emilani'},
-					{aw: _List_Nil, aF: 'Saint Josephine Bakhita'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', aV: 'A careless and irreligious soldier for the city-state of Venice, Jerome was captured in a skirmish at an outpost town and chained in a dungeon...', a_: 'Saint Jerome Emiliani’s Story'}
+						]),
+					aF: 'Saint Jerome Emilani'
+				},
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/', aV: 'For many years, Josephine Bakhita was a slave but her spirit was always free and eventually that spirit prevailed.', a_: 'Saint Josephine Bakhita’s Story'},
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-josephine-bakhita-resources-for-kids/', aV: 'Let’s look at some celebrating the life of St. Bakhita for kids with crafts, printables, and even more resources.', a_: 'St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)'}
+						]),
+					aF: 'Saint Josephine Bakhita'
+				}
 				])
 		},
 			{
 			H: '10',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Scholastica'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', aV: 'Twins often share the same interests and ideas with an equal intensity. Therefore, it is no surprise that Scholastica and her twin brother, Benedict, established religious communities within a few miles from each other...', a_: 'Saint Scholastica’s Story'}
+						]),
+					aF: 'Saint Scholastica'
+				}
 				])
 		},
 			{
 			H: '11',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of Lourdes'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/XGe_P7oaSgQ ', aV: '', a_: 'Story of Saint Bernadette | Stories of Saints'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-lourdes/', aV: 'On December 8, 1854, Pope Pius IX proclaimed the dogma of the Immaculate Conception in the apostolic constitution Ineffabilis Deus. A little more than three years later, on February 11, 1858, a young lady appeared to Bernadette Soubirous...', a_: 'The Story of Our Lady of Lourdes'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/our-lady-of-lourdes-craft/', aV: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', a_: 'Our Lady Of Lourdes Diorama (Printable Craft For Catholic Kids!)'}
+						]),
+					aF: 'Our Lady of Lourdes'
+				}
 				])
 		},
 			{
 			H: '14',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Cyril, Monk, and Methodius'}
+					{aw: _List_Nil, aF: 'Saints Cyril, Monk, and Methodius'},
+					{
+					aw: _List_fromArray(
+						[
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/celebrating-st-valentines-day-with-catholic-kids/', aV: 'Today I am going to share with you some pintables, resources, crafts, and books to celebrate the true meaning of St. Valentine’s Day with Catholic kids...', a_: 'Celebrating St. Valentine’s Day With Catholic Kids'}
+						]),
+					aF: 'Saint Valentine'
+				}
 				])
 		},
 			{
@@ -5732,6 +5796,19 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			X: _List_fromArray(
 				[
 					{aw: _List_Nil, aF: 'Seven Holy Founders of the Servite Order'}
+				])
+		},
+			{
+			H: '18',
+			X: _List_fromArray(
+				[
+					{
+					aw: _List_fromArray(
+						[
+							{R: 2, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/GoogleArtsAndCulture__aIhfPvxu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676432323426', aM: 'https://artsandculture.google.com/entity/fra-angelico/m031b2?categoryId=artist', aV: 'View ultra-high resolution images of Fra Angelico\'s paintings', a_: 'Fra Angelico\'s Paintings'}
+						]),
+					aF: 'Blessed John of Fiesole (Fra Angelico)'
+				}
 				])
 		},
 			{
@@ -5745,7 +5822,13 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			H: '22',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Ash Wednesday'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ash-wednesday-for-kids/', aV: '', a_: 'Ash Wednesday For Kids (Traditions, Printables, & Resources)'}
+						]),
+					aF: 'Ash Wednesday'
+				}
 				])
 		},
 			{
@@ -5766,14 +5849,11 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	aL: 'feb',
 	K: 'February'
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Audio = 1;
-var $author$project$FeastDayActivities$FeastDayHelpers$Book = 6;
-var $author$project$FeastDayActivities$FeastDayHelpers$Food = 4;
-var $author$project$FeastDayActivities$FeastDayHelpers$Game = 5;
-var $author$project$FeastDayActivities$FeastDayHelpers$More = 8;
-var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = 3;
-var $author$project$FeastDayActivities$FeastDayHelpers$Printout = 2;
-var $author$project$FeastDayActivities$FeastDayHelpers$Video = 0;
+var $author$project$FeastDayActivities$FeastDayHelpers$Book = 7;
+var $author$project$FeastDayActivities$FeastDayHelpers$Food = 5;
+var $author$project$FeastDayActivities$FeastDayHelpers$Game = 6;
+var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = 4;
+var $author$project$FeastDayActivities$FeastDayHelpers$Printout = 3;
 var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 	aB: '#9de3ec',
 	X: _List_fromArray(
@@ -5787,13 +5867,15 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', aV: '', a_: 'Hail Mary, Full of Grace'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/mary-mother-of-god/', aV: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity...', a_: 'The Story of Mary, Mother of God'},
-							{R: 5, aI: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', aM: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', aV: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', a_: 'Mary, Mother of Our Church File Folder Game'},
-							{R: 3, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', aV: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', a_: 'Solemnity of Mary, the Holy Mother of God'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', a_: 'The Story of Mary, Mother of God'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Smoked Sausage and Black-Eyed Peas'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Broccoli Cornbread Mini Muffins'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Sweet Buttermilk Cornbread'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'German New Years Cake'}
+							{R: 6, aI: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', aM: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', aV: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', a_: 'Mary, Mother of Our Church File Folder Game'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351', aM: 'http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html', aV: 'You only need some basic supplies for this one. Try to find heavy kraft paper if you can...', a_: 'Pastel Resist Madonna - Art Project'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/how-to-draw-mary-and-baby-jesus/', aV: 'A step by step video for kids', a_: 'How To Draw Mary And Baby Jesus (Easy!)'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', aV: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', a_: 'Solemnity of Mary, the Holy Mother of God'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', a_: 'The Story of Mary, Mother of God'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Smoked Sausage and Black-Eyed Peas'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Broccoli Cornbread Mini Muffins'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Sweet Buttermilk Cornbread'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'German New Years Cake'}
 						]),
 					aF: 'Mary, Mother of God'
 				}
@@ -5808,11 +5890,13 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 0, aI: '', aM: 'https://youtu.be/lwe8voh3H_4', aV: '', a_: 'Ss. Gregory & Basil'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-basil-the-great/', aV: 'Basil was on his way to becoming a famous teacher when he decided to begin a religious life of gospel poverty...', a_: 'Saint Basil the Great’s Story'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', a_: 'Saint Basil the Great'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', a_: 'Saint Gregory of Nazianzus'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: '', a_: 'Vasilopita Bread'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: '', a_: 'Vasilopita Cake'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: '', a_: 'Hünkar Beğendi'}
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', a_: 'Saint Basil the Great'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', a_: 'Saint Gregory of Nazianzus'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: '', a_: 'Vasilopita Bread'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: '', a_: 'Vasilopita Cake'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: '', a_: 'Hünkar Beğendi'},
+							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/make-a-jewel-cake-for-st-basil-on-new-years/', aV: 'St. Basil’s feast day is on January 2, but it has become a Catholic tradition to make a “St. Basil’s Cake” on New Year’s to celebrate one of his miracles...', a_: 'Jewel Cake'},
+							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-basils-hidden-jewel-cupcakes-easy-to-make/', aV: 'Slice a small hole in the top of the cupcake using a butter knife, and stick a lifesaver candy “jewel” inside...', a_: 'St Basil\'s Cupcakes'}
 						]),
 					aF: 'Saint Basil'
 				}
@@ -5825,12 +5909,12 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', aM: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'Why We Celebrate the Holy Name of Jesus'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Saint Gregory of Nazianzus'},
+							{R: 4, aI: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', aM: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'Why We Celebrate the Holy Name of Jesus'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Saint Gregory of Nazianzus'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/', aV: 'Although Saint Paul might claim credit for promoting devotion to the Holy Name because Paul wrote in Philippians that God the Father gave Christ Jesus “that name that is above every name” (see 2:9), this devotion became popular because of 12th-century Cistercian monks and nuns but especially...', a_: 'The Story of the Most Holy Name of Jesus'},
-							{R: 2, aI: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', aM: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'How To Draw The Most Holy Name Of Jesus'},
-							{R: 6, aI: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', aM: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', aV: 'This booklet, "The Wonders of the Holy Name," reveals the simplest secret of holiness and happiness ever. For it shows us how we can pray "without ceasing," pray "always," and pray "at all times," as Holy Scripture exhorts us...', a_: 'The Wonders of the Holy Name'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Prosphora Orthodox Bread'}
+							{R: 3, aI: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', aM: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'How To Draw The Most Holy Name Of Jesus'},
+							{R: 7, aI: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', aM: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', aV: 'This booklet, "The Wonders of the Holy Name," reveals the simplest secret of holiness and happiness ever. For it shows us how we can pray "without ceasing," pray "always," and pray "at all times," as Holy Scripture exhorts us...', a_: 'The Wonders of the Holy Name'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Prosphora Orthodox Bread'}
 						]),
 					aF: 'The Most Holy Name of Jesus'
 				}
@@ -5843,14 +5927,14 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', aV: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', a_: 'Saint Elizabeth Ann Seton'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', a_: 'Saint Elizabeth Ann Seton\'s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', aV: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', a_: 'Saint Elizabeth Ann Seton'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', a_: 'Saint Elizabeth Ann Seton\'s Story'},
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', aV: '', a_: 'Betty Bayley Becomes A Saint'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-elizabeth-ann-seton/', aV: 'Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the Sisters of Charity. She opened the first American parish school and established the first American Catholic orphanage. All this she did in the span of 46 years while raising her five children...', a_: 'Saint Elizabeth Ann Seton’s Story'},
-							{R: 2, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', aM: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', aV: 'A themed word search for older kids.', a_: 'Elizabeth Ann Seton Word Find'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Corn and Crab Bisque'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg/v1/crop/x_18,y_454,w_366,h_444/fill/w_439,h_532,al_c,lg_1,q_80,enc_auto/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Oly Koeken, Vet Ballen, Vet Bollen, Ole Bollen, Oliekoecken....aka Oil Balls'},
-							{R: 8, aI: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', aM: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', aV: 'See Catholic Icing for more activity ideas to celebrate this saint!', a_: 'Catholic Icing'}
+							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', aM: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', aV: 'A themed word search for older kids.', a_: 'Elizabeth Ann Seton Word Find'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Corn and Crab Bisque'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg/v1/crop/x_18,y_454,w_366,h_444/fill/w_439,h_532,al_c,lg_1,q_80,enc_auto/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Oly Koeken, Vet Ballen, Vet Bollen, Ole Bollen, Oliekoecken....aka Oil Balls'},
+							{R: 9, aI: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', aM: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', aV: 'See Catholic Icing for more activity ideas to celebrate this saint!', a_: 'Catholic Icing'}
 						]),
 					aF: 'Saint Elizabeth Ann Seton'
 				}
@@ -5865,9 +5949,9 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs', aV: '', a_: 'St. John Neumann'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/', aV: 'Perhaps because the United States got a later start in the history of the world, it has relatively few canonized saints, but their number is increasing. John Neumann was born in what is now the Czech Republic. After studying in Prague, he came to New York at 25 and was ordained a priest...', a_: 'Saint John Neumann’s Story'},
-							{R: 3, aI: 'https://www.catholic.org/saints/ff_images/85.jpg', aM: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', aV: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', a_: 'Saints Fun Facts: St. John Neumann'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', aV: 'John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America...', a_: 'St. John Neumann\'s Story '},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', aV: '', a_: 'Svíčková with Dumplings'}
+							{R: 4, aI: 'https://www.catholic.org/saints/ff_images/85.jpg', aM: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', aV: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', a_: 'Saints Fun Facts: St. John Neumann'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', aV: 'John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America...', a_: 'St. John Neumann\'s Story '},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', aV: '', a_: 'Svíčková with Dumplings'}
 						]),
 					aF: 'Saint John Newmann'
 				}
@@ -5882,8 +5966,13 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', aV: '', a_: 'My Time with Jesus - Epiphany'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/', aV: 'Today’s feast of the Epiphany of the Lord is a feast that celebrates communication.  The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage...', a_: 'Epiphany of the Lord'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', a_: 'Gifts to our King'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: '', a_: 'La Galette des Rois: The French King Cake'}
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', a_: 'Gifts to our King'},
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/epiphany-house-blessing-with-chalk/', aV: 'The Epiphany house blessing of the door is a really great Catholic tradition for families...', a_: 'Epiphany House Blessing with Chalk'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/', aV: 'I love to make wearable crafts with preschoolers, because they love wearing them...', a_: 'K is for King'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/3-kings-epiphany-crafts/', aV: 'Ornament Craft, peg doll wraps, and printable nativity set!', a_: '3 Kings Epiphany Crafts For Kids'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/star-of-wonder-star-of-night/', aV: '', a_: 'Star Crafts'},
+							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/epiphany-crown-food-ideas/', aV: 'I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany...', a_: 'Epiphany Crown Food Ideas'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: '', a_: 'La Galette des Rois: The French King Cake'}
 						]),
 					aF: 'The Epiphany of the Lord'
 				}
@@ -5896,11 +5985,11 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://www.catholic.org/files/images/saints/18.jpg', aM: 'https://www.catholic.org/saints/saint.php?saint_id=18', aV: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', a_: 'St. Andre Bessette'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', a_: 'Saint André Bessette’s Story'},
+							{R: 4, aI: 'https://www.catholic.org/files/images/saints/18.jpg', aM: 'https://www.catholic.org/saints/saint.php?saint_id=18', aV: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', a_: 'St. Andre Bessette'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', a_: 'Saint André Bessette’s Story'},
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', aV: '', a_: 'The Story of Saint Brother Andre Bessette of Canada'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-andre-bessette/', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth...', a_: 'Saint André Bessette’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: '', a_: 'Maple Tourlouche Upside Down Cake\u200B'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: '', a_: 'Maple Tourlouche Upside Down Cake\u200B'}
 						]),
 					aF: 'Saint André Bessette'
 				}
@@ -5915,8 +6004,8 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/b1yNa55xmjM', aV: '', a_: 'St. Raymond of Peñafort'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-raymond-of-penafort/', aV: 'Since Raymond lived into his hundredth year, he had a chance to do many things. As a member of the Spanish nobility, he had the resources and the education to get a good start in life...', a_: 'Saint Raymond of Peñafort’s Story'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', aV: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', a_: 'St. Raymond of Pennafort\'s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', aV: '', a_: 'Barcelona Vegan Potato Bombas'}
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', aV: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', a_: 'St. Raymond of Pennafort\'s Story'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', aV: '', a_: 'Barcelona Vegan Potato Bombas'}
 						]),
 					aF: 'Saint Raymond of Penyafort'
 				}
@@ -5929,10 +6018,15 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', a_: 'The Story of the Feast of the Baptism of the Lord'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', a_: 'The Story of the Feast of the Baptism of the Lord'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/', aV: 'Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here.', a_: 'Feast of the Baptism of the Lord'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Jumping Jolly Juice'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Greek Dipples'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Jumping Jolly Juice'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/', aV: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', a_: 'Holy Water Bottle Craft'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/', aV: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', a_: 'Dove with Olive Branch'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/', aV: 'You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra.', a_: 'Dove with Gifts of the Holy Spirit'},
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/holy-spirit-craft-handprint-dove/', aV: 'For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint...', a_: 'Simple Handprint Dove'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Greek Dipples'},
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/', aV: 'Baptism is so important, and it’s a great thing to make sure that your kids truly understand...', a_: 'Ideas for Teaching Catholic Kids About Baptism'}
 						]),
 					aF: 'The Baptism of the Lord'
 				}
@@ -5945,10 +6039,10 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', a_: 'Saint Hilary of Poitiers’ Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', a_: 'Saint Hilary of Poitiers’ Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-hilary-of-poitiers/', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church..', a_: 'Saint Hilary of Poitiers’ Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'French Onion Soup'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png/v1/crop/x_0,y_72,w_443,h_358/fill/w_602,h_488,al_c,lg_1,q_85,enc_auto/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'Quiche Lorraine Quiche'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'French Onion Soup'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png/v1/crop/x_0,y_72,w_443,h_358/fill/w_602,h_488,al_c,lg_1,q_85,enc_auto/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'Quiche Lorraine Quiche'}
 						]),
 					aF: 'Saint Hilary of Poitiers'
 				}
@@ -5961,9 +6055,9 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', a_: 'Saint Anthony of Egypt’s Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', a_: 'Saint Anthony of Egypt’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-anthony-of-egypt/', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance.', a_: 'Saint Anthony of Egypt’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: '', a_: 'Uccelletti ~The little Birds of St. Anthony'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: '', a_: 'Uccelletti ~The little Birds of St. Anthony'},
 							{R: 0, aI: '', aM: 'https://www.youtube.com/watch?v=XwoTugfbSzc', aV: '', a_: 'Uccelletti ~The little Birds of St. Anthony'}
 						]),
 					aF: 'Saint Anthony of Egypt'
@@ -5977,18 +6071,18 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', aV: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', a_: 'Saint Fabian’s Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', aV: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', a_: 'Saint Fabian’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-fabian/', aV: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope...', a_: 'Saint Fabian’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', aV: '', a_: 'Dove Dinner Rolls'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', aV: '', a_: 'Dove Dinner Rolls'}
 						]),
 					aF: 'Saint Fabian'
 				},
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', aV: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', a_: 'Saint Sebastian’s Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', aV: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', a_: 'Saint Sebastian’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-sebastian/', aV: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', a_: 'Saint Sebastian’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', aV: '', a_: 'Roscos Orange Donuts'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', aV: '', a_: 'Roscos Orange Donuts'}
 						]),
 					aF: 'Saint Sebastian'
 				}
@@ -6001,12 +6095,13 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', a_: 'Saint Agnes’ Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', a_: 'Saint Agnes’ Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agnes/', aV: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', a_: 'Saint Agnes’ Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_acfdf6a128df4af299dce373dfcd31e9~mv2.jpg/v1/fill/w_508,h_855,al_c,lg_1,q_85,enc_auto/Picture1_edited.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Port Sauce served over Goat Cheese Polenta', a_: 'Pistachio Crusted Lamb Chops with Cherry'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg/v1/crop/x_14,y_0,w_1386,h_933/fill/w_790,h_532,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Delicious lemon pull-apart lamb', a_: 'Lamb Pull Apart Bread'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg/v1/crop/x_354,y_83,w_590,h_493/fill/w_470,h_392,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: '', a_: 'Agnesenplätzchen (St. Agnes Cookies)'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg/v1/crop/x_0,y_73,w_871,h_453/fill/w_792,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: '', a_: 'One Hour Yeast Dinner Rolls'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_acfdf6a128df4af299dce373dfcd31e9~mv2.jpg/v1/fill/w_508,h_855,al_c,lg_1,q_85,enc_auto/Picture1_edited.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Port Sauce served over Goat Cheese Polenta', a_: 'Pistachio Crusted Lamb Chops with Cherry'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg/v1/crop/x_14,y_0,w_1386,h_933/fill/w_790,h_532,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Delicious lemon pull-apart lamb', a_: 'Lamb Pull Apart Bread'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg/v1/crop/x_354,y_83,w_590,h_493/fill/w_470,h_392,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: '', a_: 'Agnesenplätzchen (St. Agnes Cookies)'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg/v1/crop/x_0,y_73,w_871,h_453/fill/w_792,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: '', a_: 'One Hour Yeast Dinner Rolls'},
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-agnes-crafts-feast-jan-21/', aV: 'Today, let’s look at some celebrating the feast day of St. Agnes with kids...', a_: 'Celebrating The Feast Day Of St. Agnes With Kids'}
 						]),
 					aF: 'Saint Agnes'
 				}
@@ -6019,26 +6114,27 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', aV: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', a_: 'Saint Vincent of Zaragossa’s Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', aV: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', a_: 'Saint Vincent of Zaragossa’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-of-zaragossa/', aV: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', a_: 'Saint Vincent of Zaragossa’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg/v1/crop/x_0,y_109,w_564,h_466/fill/w_646,h_534,al_c,lg_1,q_80,enc_auto/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', aV: '', a_: 'Basic Brioche'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg/v1/crop/x_0,y_109,w_564,h_466/fill/w_646,h_534,al_c,lg_1,q_80,enc_auto/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', aV: '', a_: 'Basic Brioche'}
 						]),
 					aF: 'Saint Vincent of Zaragossa (US)'
 				},
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', a_: 'Saint Marianne Cope’s Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', a_: 'Saint Marianne Cope’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-marianne-cope/', aV: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', a_: 'Saint Marianne Cope’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png/v1/fill/w_610,h_652,al_c,q_90,enc_auto/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: '', a_: 'Char Siu'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_05315e6abad04487bfaa70c5bc4fa9df~mv2.png/v1/crop/x_8,y_73,w_875,h_1088/fill/w_694,h_864,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: '', a_: 'Pineapple Upside-Down Cake'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png/v1/fill/w_610,h_652,al_c,q_90,enc_auto/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: '', a_: 'Char Siu'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_05315e6abad04487bfaa70c5bc4fa9df~mv2.png/v1/crop/x_8,y_73,w_875,h_1088/fill/w_694,h_864,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: '', a_: 'Pineapple Upside-Down Cake'}
 						]),
 					aF: 'Saint Marianne Cope'
 				},
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: '', aV: '', a_: ''}
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: '', aV: '', a_: ''},
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/pro-life-craft-for-kids/', aV: ' Today, let’s look at some celebrating the feast day of St. Agnes with kids...', a_: 'Pro Life Craft for Kids'}
 						]),
 					aF: 'Day of Prayer for the Legal Protection of Unborn Children'
 				}
@@ -6051,9 +6147,9 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', aV: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', a_: 'Saint Francis de Sales’ Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', aV: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', a_: 'Saint Francis de Sales’ Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-francis-de-sales/', aV: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', a_: 'Saint Francis de Sales’ Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_8c3cefd4508241babcfa2f8a3f961e35~mv2.png/v1/fill/w_882,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/PastedGraphic-25-1.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', aV: '', a_: 'Piperade'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_8c3cefd4508241babcfa2f8a3f961e35~mv2.png/v1/fill/w_882,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/PastedGraphic-25-1.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', aV: '', a_: 'Piperade'}
 						]),
 					aF: 'Saint Francis de Sales'
 				}
@@ -6079,12 +6175,12 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', a_: 'Saints Timothy and Titus’ Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', a_: 'Saints Timothy and Titus’ Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saints-timothy-and-titus/', aV: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', a_: 'Saints Timothy and Titus’ Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png/v1/fill/w_354,h_322,al_c,lg_1,q_85,enc_auto/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '', a_: 'Ajvar spread for bread'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg/v1/crop/x_38,y_0,w_326,h_225/fill/w_456,h_315,al_c,lg_1,q_80,enc_auto/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: 'Pogacha is a traditional Macedonian round loaf. It\'s usually made for special occasions.', a_: 'Pogacha'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg/v1/crop/x_31,y_0,w_571,h_430/fill/w_658,h_496,al_c,lg_1,q_80,enc_auto/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', a_: 'Kompir Mandza'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_081788385f104b9b95700584391731fa~mv2.png/v1/fill/w_636,h_476,al_c,lg_1,q_85,enc_auto/9c2964_081788385f104b9b95700584391731fa~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', a_: 'Vanilici Cookie'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png/v1/fill/w_354,h_322,al_c,lg_1,q_85,enc_auto/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '', a_: 'Ajvar spread for bread'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg/v1/crop/x_38,y_0,w_326,h_225/fill/w_456,h_315,al_c,lg_1,q_80,enc_auto/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: 'Pogacha is a traditional Macedonian round loaf. It\'s usually made for special occasions.', a_: 'Pogacha'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg/v1/crop/x_31,y_0,w_571,h_430/fill/w_658,h_496,al_c,lg_1,q_80,enc_auto/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', a_: 'Kompir Mandza'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_081788385f104b9b95700584391731fa~mv2.png/v1/fill/w_636,h_476,al_c,lg_1,q_85,enc_auto/9c2964_081788385f104b9b95700584391731fa~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', a_: 'Vanilici Cookie'}
 						]),
 					aF: 'Saint Timothy and Titus'
 				}
@@ -6097,11 +6193,11 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', a_: 'Saint Angela Merici’s Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', a_: 'Saint Angela Merici’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-angela-merici/', aV: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', a_: 'Saint Angela Merici’s story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png/v1/fill/w_608,h_504,al_c,lg_1,q_85,enc_auto/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Pasta Bolognese'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg/v1/fill/w_562,h_374,al_c,lg_1,q_80,enc_auto/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Custard'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png/v1/crop/x_12,y_0,w_982,h_592/fill/w_981,h_592,al_c,q_90,enc_auto/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Custard filled Dove Puff Pastries'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png/v1/fill/w_608,h_504,al_c,lg_1,q_85,enc_auto/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Pasta Bolognese'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg/v1/fill/w_562,h_374,al_c,lg_1,q_80,enc_auto/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Custard'},
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png/v1/crop/x_12,y_0,w_982,h_592/fill/w_981,h_592,al_c,q_90,enc_auto/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Custard filled Dove Puff Pastries'}
 						]),
 					aF: 'Saint Angela Merici'
 				}
@@ -6114,9 +6210,9 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', aV: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', a_: 'Saint Thomas Aquinas’ Story'},
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', aV: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', a_: 'Saint Thomas Aquinas’ Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-thomas-aquinas/', aV: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', a_: 'Saint Thomas Aquinas’ Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png/v1/crop/x_0,y_0,w_569,h_468/fill/w_652,h_536,al_c,lg_1,q_85,enc_auto/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', aV: '', a_: 'Tiramisu'}
+							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png/v1/crop/x_0,y_0,w_569,h_468/fill/w_652,h_536,al_c,lg_1,q_85,enc_auto/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', aV: '', a_: 'Tiramisu'}
 						]),
 					aF: 'Saint Thomas Aquinas'
 				}
@@ -6131,7 +6227,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 0, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/YoutubeLogo_YrXRl6n7P.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676253992177', aM: 'https://www.youtube.com/watch?v=wejhGYOGLgE', aV: 'Thomas and his wife Helen guide their children in the ways of holiness by teaching them about the lives of the saints. Here they explore the life of the great apostle of the youth, St. Don Bosco.', a_: 'My Catholic Family - Don Bosco'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/', aV: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', a_: 'Saint John Bosco’s Story'},
-							{R: 3, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', aV: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', a_: 'Saint John Bosco’s Story'}
+							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', aV: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', a_: 'Saint John Bosco’s Story'}
 						]),
 					aF: 'Saint John Bosco'
 				}
@@ -8204,16 +8300,15 @@ var $author$project$FeastDayActivities$FeastDayHelpers$bookActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 6;
+			return activityType === 7;
 		},
 		activities);
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Crafts = 7;
 var $author$project$FeastDayActivities$FeastDayHelpers$craftActivities = function (activities) {
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 7;
+			return activityType === 8;
 		},
 		activities);
 };
@@ -8221,7 +8316,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$foodActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 4;
+			return activityType === 5;
 		},
 		activities);
 };
@@ -8229,7 +8324,15 @@ var $author$project$FeastDayActivities$FeastDayHelpers$gameActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 5;
+			return activityType === 6;
+		},
+		activities);
+};
+var $author$project$FeastDayActivities$FeastDayHelpers$imageActivities = function (activities) {
+	return A2(
+		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
+		function (activityType) {
+			return activityType === 2;
 		},
 		activities);
 };
@@ -8244,7 +8347,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$moreActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 8;
+			return activityType === 9;
 		},
 		activities);
 };
@@ -8252,7 +8355,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$printoutActivities = func
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 2;
+			return activityType === 3;
 		},
 		activities);
 };
@@ -8260,7 +8363,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$readingActivities = funct
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 3;
+			return activityType === 4;
 		},
 		activities);
 };
@@ -8501,8 +8604,8 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 				$author$project$FeastDayActivities$FeastDayHelpers$audioActivities(activities)),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
-				'Reading',
-				$author$project$FeastDayActivities$FeastDayHelpers$readingActivities(activities)),
+				'Crafts',
+				$author$project$FeastDayActivities$FeastDayHelpers$craftActivities(activities)),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
 				'Printouts',
@@ -8513,16 +8616,20 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 				$author$project$FeastDayActivities$FeastDayHelpers$gameActivities(activities)),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
+				'Images',
+				$author$project$FeastDayActivities$FeastDayHelpers$imageActivities(activities)),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
+				'Reading',
+				$author$project$FeastDayActivities$FeastDayHelpers$readingActivities(activities)),
+				A2(
+				$author$project$FeastDayActivities$Main$viewActivities,
 				'Recipes',
 				$author$project$FeastDayActivities$FeastDayHelpers$foodActivities(activities)),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
 				'Books',
 				$author$project$FeastDayActivities$FeastDayHelpers$bookActivities(activities)),
-				A2(
-				$author$project$FeastDayActivities$Main$viewActivities,
-				'Crafts',
-				$author$project$FeastDayActivities$FeastDayHelpers$craftActivities(activities)),
 				A2(
 				$author$project$FeastDayActivities$Main$viewActivities,
 				'More',
