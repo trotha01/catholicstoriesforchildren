@@ -2,6 +2,7 @@ module Helpers exposing (..)
 
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
+import Html.String.Events exposing (..)
 import Json.Encode
 
 

@@ -9,10 +9,10 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
-import Newsroom.Main exposing (viewSignUp)
+import SignupForm
 import Svg.Attributes exposing (d)
 import Team.Main exposing (viewPerson)
-import Team.Team exposing (fredrick, kelly, noeli, trevor)
+import Team.Team exposing (kelly, noeli, trevor)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Url
 
@@ -32,17 +32,24 @@ main =
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
+    , signup : SignupForm.Model
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( Model key url, Cmd.none )
+    ( { key = key
+      , url = url
+      , signup = SignupForm.init
+      }
+    , Cmd.none
+    )
 
 
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
+    | SignupMsg SignupForm.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -63,6 +70,15 @@ update msg model =
         UrlChanged url ->
             ( { model | url = url }
             , Cmd.none
+            )
+
+        SignupMsg signupMsg ->
+            let
+                ( newSignupModel, signupCmd ) =
+                    SignupForm.update signupMsg model.signup
+            in
+            ( { model | signup = newSignupModel }
+            , signupCmd |> Cmd.map SignupMsg
             )
 
 
@@ -87,51 +103,31 @@ view model =
             [ style "background-color" "#FEF7F4"
             ]
             [ viewHeader "Catholic Stories for Children" headerMargin |> Html.String.toHtml
-            , viewBody
+            , viewBody model
             , viewFooter |> Html.String.toHtml
             ]
         ]
     }
 
 
-section1Background : List (Attribute msg)
-section1Background =
-    [ style "background" "#fff" ]
-
-
-section2Background : List (Attribute msg)
-section2Background =
-    [ style "background" "#fff" ]
-
-
-section3Background : List (Attribute msg)
-section3Background =
-    [ style "background" "#EBD7F2" ]
-
-
-section4Background : List (Attribute msg)
-section4Background =
-    [ style "background" "#FEF7F4" ]
-
-
-viewBody : Html.Html msg
-viewBody =
+viewBody : Model -> Html.Html Msg
+viewBody model =
     div
         [ class "text-lg leading-loose"
         , class "lg:text-2xl"
         ]
-        [ viewIntro
+        [ viewIntro model
         , viewTeam
         , viewAnimations
         , viewTestimonials
         , viewContact
-        , viewNewsletter
+        , viewNewsletter model
         , viewGive
         ]
 
 
-viewIntro : Html msg
-viewIntro =
+viewIntro : Model -> Html Msg
+viewIntro model =
     viewSection "videos"
         [ class "grid grid-cols-1 lg:grid-cols-2 gap-5"
         , class "max-w-[120rem]"
@@ -146,7 +142,7 @@ viewIntro =
                 [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
                 ]
             , div [ class "mt-10" ]
-                [ viewSignUp |> Html.String.toHtml
+                [ SignupForm.view model.signup |> Html.map SignupMsg
                 ]
             ]
         , div
@@ -446,8 +442,8 @@ viewContact =
         ]
 
 
-viewNewsletter : Html msg
-viewNewsletter =
+viewNewsletter : Model -> Html Msg
+viewNewsletter model =
     viewSection "newsletter"
         [ style "background" "#FEF7F4"
         , class "py-20"
@@ -477,7 +473,7 @@ viewNewsletter =
                 ]
                 [ text "Latest News" ]
             , div [ class "mt-10" ]
-                [ viewSignUp |> Html.String.toHtml
+                [ SignupForm.view model.signup |> Html.map SignupMsg
                 ]
             ]
         ]

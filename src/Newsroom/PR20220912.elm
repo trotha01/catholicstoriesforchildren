@@ -5,7 +5,7 @@ import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 
 
-view : Html Never
+view : Html msg
 view =
     div
         []

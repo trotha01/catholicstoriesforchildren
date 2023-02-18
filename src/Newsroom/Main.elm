@@ -7,6 +7,7 @@ import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 import Newsroom.PR20220912
+import SignupForm
 
 
 type alias Model =
@@ -27,7 +28,7 @@ main =
         }
 
 
-view : Html Never
+view : Html msg
 view =
     div
         [ style "background-color" "#FEF7F4"
@@ -38,7 +39,7 @@ view =
         ]
 
 
-viewBody : Html Never
+viewBody : Html msg
 viewBody =
     div
         [ class "w-3/4"
@@ -54,37 +55,39 @@ viewBody =
         , div
             [ class "mb-10"
             ]
-            [ viewSignUp ]
+            -- [ SignupForm.view ]
+            []
         , viewPressReleases
             [ Newsroom.PR20220912.view
             ]
         ]
 
 
-viewSignUp : Html msg
-viewSignUp =
-    div []
-        [ p
-            [ class "pb-5"
-            ]
-            [ text "Sign up for our email list to get tips, resources, and animation updates!" ]
-        , a
-            [ href "https://signup.catholicstoriesforchildren.com"
-            , rel "noopener"
-            , target "_blank"
-            , style "text-decoration" "none"
-            , style "padding" "10px 20px"
-            , style "display" "inline-block"
-            , style "border-radius" "5px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            , style "color" "white"
-            , style "background-color" "#9200B3"
-            ]
-            [ text "Sign Up" ]
-        ]
+
+-- viewSignUp : Html msg
+-- viewSignUp =
+--     div []
+--         [ p
+--             [ class "pb-5"
+--             ]
+--             [ text "Sign up for our email list to get tips, resources, and animation updates!" ]
+--         , a
+--             [ href "https://signup.catholicstoriesforchildren.com"
+--             , rel "noopener"
+--             , target "_blank"
+--             , style "text-decoration" "none"
+--             , style "padding" "10px 20px"
+--             , style "display" "inline-block"
+--             , style "border-radius" "5px"
+--             , style "box-shadow" "#777 1px 1px 5px"
+--             , style "color" "white"
+--             , style "background-color" "#9200B3"
+--             ]
+--             [ text "Sign Up" ]
+--         ]
 
 
-viewPressReleases : List (Html Never) -> Html Never
+viewPressReleases : List (Html msg) -> Html msg
 viewPressReleases prs =
     div
         [ style "background-color" "white"
@@ -96,6 +99,6 @@ viewPressReleases prs =
         (List.map viewPressRelease prs)
 
 
-viewPressRelease : Html Never -> Html Never
+viewPressRelease : Html msg -> Html msg
 viewPressRelease pr =
     div [ style "line-height" "1.6em" ] [ pr ]
