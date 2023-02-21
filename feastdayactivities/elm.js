@@ -5667,8 +5667,10 @@ var $author$project$FeastDayActivities$FeastDays$M12Dec$december = {
 };
 var $author$project$FeastDayActivities$FeastDayHelpers$Audio = 1;
 var $author$project$FeastDayActivities$FeastDayHelpers$Crafts = 8;
+var $author$project$FeastDayActivities$FeastDayHelpers$Food = 5;
 var $author$project$FeastDayActivities$FeastDayHelpers$Images = 2;
 var $author$project$FeastDayActivities$FeastDayHelpers$More = 9;
+var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = 4;
 var $author$project$FeastDayActivities$FeastDayHelpers$Video = 0;
 var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	aB: '#395d73',
@@ -5681,6 +5683,7 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/83Fkcb9SGek', aV: '', a_: 'The Presentation of Jesus'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', aV: 'At the end of the fourth century, a woman named Etheria made a pilgrimage to Jerusalem. Her journal, discovered in 1887, gives an unprecedented...', a_: 'Presentation of the Lord'},
 							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', aV: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', a_: 'How To Celebrate Candlemas With Catholic Children'}
 						]),
@@ -5695,11 +5698,19 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', aV: 'We know more about the devotion to Saint Blaise by Christians around the world than we know about the saint himself...', a_: 'Saint Blaise’s Story'}
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/3yGRtx_ITgA', aV: '', a_: 'St. Blase'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', aV: 'We know more about the devotion to Saint Blaise by Christians around the world than we know about the saint himself...', a_: 'Saint Blaise’s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase/', aV: 'According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey)...', a_: 'Saint Blaise'}
 						]),
 					aF: 'St Blase'
 				},
-					{aw: _List_Nil, aF: 'St Ansgar'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/BWJt5CZX3mc', aV: '', a_: 'St. Ansgar'}
+						]),
+					aF: 'St Ansgar'
+				}
 				])
 		},
 			{
@@ -5709,7 +5720,9 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', aV: 'As in the case of Agnes, another virgin-martyr of the early Church, almost nothing is historically certain about this saint except that she was martyred in Sicily during the persecution of Emperor Decius in 251...', a_: 'Saint Agatha’s Story'}
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/y42RPHsJX44', aV: '', a_: 'St. Agatha'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', aV: 'As in the case of Agnes, another virgin-martyr of the early Church, almost nothing is historically certain about this saint except that she was martyred in Sicily during the persecution of Emperor Decius in 251...', a_: 'Saint Agatha’s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha/', aV: 'Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories...', a_: 'Saint Agatha'}
 						]),
 					aF: 'St Agatha'
 				}
@@ -5722,7 +5735,9 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', aV: 'Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlooking Nagasaki...', a_: 'Saint Paul Miki and Companions’ Story'}
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/36uf0JQMJv4', aV: '', a_: 'St. Paul Miki'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', aV: 'Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlooking Nagasaki...', a_: 'Saint Paul Miki and Companions’ Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions/', aV: 'When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government...', a_: 'Saint Paul Miki and Companions'}
 						]),
 					aF: 'Sts Paul Miki and Companions'
 				}
@@ -5735,15 +5750,18 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', aV: 'A careless and irreligious soldier for the city-state of Venice, Jerome was captured in a skirmish at an outpost town and chained in a dungeon...', a_: 'Saint Jerome Emiliani’s Story'}
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', aV: 'A careless and irreligious soldier for the city-state of Venice, Jerome was captured in a skirmish at an outpost town and chained in a dungeon...', a_: 'Saint Jerome Emiliani’s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-jerome-emiliani/', aV: 'Jerome Emiliani was born in Venice. As a soldier, he was captured during battle and imprisoned. In a dungeon he thought about his life...', a_: 'Saint Jerome Emiliani'}
 						]),
 					aF: 'Saint Jerome Emilani'
 				},
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/9WsYj6dIyXM', aV: '', a_: 'St. Josephine Bakhita'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/', aV: 'For many years, Josephine Bakhita was a slave but her spirit was always free and eventually that spirit prevailed.', a_: 'Saint Josephine Bakhita’s Story'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-josephine-bakhita-resources-for-kids/', aV: 'Let’s look at some celebrating the life of St. Bakhita for kids with crafts, printables, and even more resources.', a_: 'St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)'}
+							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-josephine-bakhita-resources-for-kids/', aV: 'Let’s look at some celebrating the life of St. Bakhita for kids with crafts, printables, and even more resources.', a_: 'St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita/', aV: 'Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery...', a_: 'Saint Josephine, Bakhita'}
 						]),
 					aF: 'Saint Josephine Bakhita'
 				}
@@ -5756,7 +5774,9 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', aV: 'Twins often share the same interests and ideas with an equal intensity. Therefore, it is no surprise that Scholastica and her twin brother, Benedict, established religious communities within a few miles from each other...', a_: 'Saint Scholastica’s Story'}
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/_wBhZ5Z0suE', aV: '', a_: 'St. Scholastica'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', aV: 'Twins often share the same interests and ideas with an equal intensity. Therefore, it is no surprise that Scholastica and her twin brother, Benedict, established religious communities within a few miles from each other...', a_: 'Saint Scholastica’s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica/', aV: 'Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica...', a_: 'Saint Scholastica'}
 						]),
 					aF: 'Saint Scholastica'
 				}
@@ -5769,9 +5789,13 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/BTAd8GqsQ14', aV: '', a_: 'Bernadette: The Princess of Lourdes | The Saints and Heroes Collection'},
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/Gde3rSZA_CQ', aV: '', a_: 'Our Lady of Lourdes'},
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/XGe_P7oaSgQ ', aV: '', a_: 'Story of Saint Bernadette | Stories of Saints'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-lourdes/', aV: 'On December 8, 1854, Pope Pius IX proclaimed the dogma of the Immaculate Conception in the apostolic constitution Ineffabilis Deus. A little more than three years later, on February 11, 1858, a young lady appeared to Bernadette Soubirous...', a_: 'The Story of Our Lady of Lourdes'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/our-lady-of-lourdes-craft/', aV: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', a_: 'Our Lady Of Lourdes Diorama (Printable Craft For Catholic Kids!)'}
+							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/our-lady-of-lourdes-craft/', aV: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', a_: 'Our Lady Of Lourdes Diorama (Printable Craft For Catholic Kids!)'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/our-lady-of-lourdes/', aV: 'Each year over 2 million people make their way through the mountainous country of southeastern France to Lourdes. They come seeking cures, hoping to find answers, believing, and praying. At Lourdes...', a_: 'Our Lady of Lourdes'},
+							{R: 5, aI: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', aM: 'https://www.catholicicing.com/rice-krispie-treat-grotto-for-our-lady/', aV: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', a_: 'Rice Krispie Treat Grotto Tor Our Lady Of Lourdes'}
 						]),
 					aF: 'Our Lady of Lourdes'
 				}
@@ -5785,6 +5809,8 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/NeBoi1K37Kc', aV: '', a_: 'Ss. Cyril & Methodius'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-cyril-and-methodius/', aV: 'Cyril and Methodius were brothers, born in Thessalonika, Greece. Cyril (825–869), a philosopher, studied in Constantinople and was ordained a priest. Methodius (826–884), for five years the governor of a Slavic region of the empire, became a monk...', a_: 'Saints Cyril and Methodius'},
 							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/celebrating-st-valentines-day-with-catholic-kids/', aV: 'Today I am going to share with you some pintables, resources, crafts, and books to celebrate the true meaning of St. Valentine’s Day with Catholic kids...', a_: 'Celebrating St. Valentine’s Day With Catholic Kids'}
 						]),
 					aF: 'Saint Valentine'
@@ -5795,7 +5821,14 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			H: '17',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Seven Holy Founders of the Servite Order'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/PXEtTbAWGgc', aV: '', a_: 'The Seven Holy Founders'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites/', aV: 'Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values...', a_: 'The Seven Holy Founders of the of Servite Order'}
+						]),
+					aF: 'Seven Holy Founders of the Servite Order'
+				}
 				])
 		},
 			{
@@ -5815,7 +5848,15 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			H: '21',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Peter Damian'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/SClTqIzdiZk', aV: '', a_: 'St. Peter Damian'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-peter-damian/', aV: 'Maybe because he was orphaned and had been treated shabbily by one of his brothers, Peter Damian was very good to the poor. It was the ordinary thing for him to have a poor person or two with him at table and he liked to minister personally to their needs...', a_: 'Saint Peter Damian’s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian/', aV: 'Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time...', a_: 'Saint Peter Damian'}
+						]),
+					aF: 'Saint Peter Damian'
+				}
 				])
 		},
 			{
@@ -5825,6 +5866,7 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/Gn_5c-EYGZ4', aV: '', a_: 'Ash Wednesday'},
 							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ash-wednesday-for-kids/', aV: '', a_: 'Ash Wednesday For Kids (Traditions, Printables, & Resources)'}
 						]),
 					aF: 'Ash Wednesday'
@@ -5835,14 +5877,28 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			H: '23',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Polycarp'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/IgX8kpUxBz4', aV: '', a_: 'St. Polycarp'},
+							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-polycarp/', aV: 'Polycarp, bishop of Smyrna, disciple of Saint John the Apostle and friend of Saint Ignatius of Antioch, was a revered Christian leader during the first half of the second century...', a_: 'Saint Polycarp’s Story'},
+							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp/', aV: 'The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders...', a_: 'Saint Polycarp'}
+						]),
+					aF: 'Saint Polycarp'
+				}
 				])
 		},
 			{
 			H: '27',
 			X: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Gregory of Narek'}
+					{
+					aw: _List_fromArray(
+						[
+							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/saint-gregory-of-narek/', aV: 'The Apostles Saint Jude Thaddeus and Saint Bartholomew are believed to have traveled to Armenia to share the Gospel. In 301 A.D., the Armenian king was converted who, in turn, made Christianity the kingdom’s official religion, making Armenia the first nation to do so...', a_: 'Saint Gregory of Narek'}
+						]),
+					aF: 'Saint Gregory of Narek'
+				}
 				])
 		}
 		]),
@@ -5850,9 +5906,7 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	K: 'February'
 };
 var $author$project$FeastDayActivities$FeastDayHelpers$Book = 7;
-var $author$project$FeastDayActivities$FeastDayHelpers$Food = 5;
 var $author$project$FeastDayActivities$FeastDayHelpers$Game = 6;
-var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = 4;
 var $author$project$FeastDayActivities$FeastDayHelpers$Printout = 3;
 var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 	aB: '#9de3ec',
