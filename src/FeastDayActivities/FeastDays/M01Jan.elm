@@ -19,6 +19,12 @@ january =
                           , link = "https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y"
                           , snippet = ""
                           }
+                        , { activityType = Video
+                          , title = "Born of Woman"
+                          , image = ""
+                          , link = "https://www.youtube-nocookie.com/embed/HoAUG7htvkA"
+                          , snippet = ""
+                          }
                         , { activityType = Audio
                           , title = "The Story of Mary, Mother of God"
                           , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
@@ -89,7 +95,7 @@ january =
                   , activities =
                         [ { activityType = Video
                           , title = "Ss. Gregory & Basil"
-                          , link = "https://youtu.be/lwe8voh3H_4"
+                          , link = "https://www.youtube-nocookie.com/embed/lwe8voh3H_4"
                           , image = ""
                           , snippet = ""
                           }
@@ -149,7 +155,13 @@ january =
           , feasts =
                 [ { feast = "The Most Holy Name of Jesus"
                   , activities =
-                        [ { activityType = OnlineReading
+                        [ { activityType = Video
+                          , title = "The Name Above All Names"
+                          , link = "https://www.youtube-nocookie.com/embed/muyR_oFp8oE"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = OnlineReading
                           , title = "Why We Celebrate the Holy Name of Jesus"
                           , link = "https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/"
                           , image = "https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg"
@@ -193,7 +205,19 @@ january =
           , feasts =
                 [ { feast = "Saint Elizabeth Ann Seton"
                   , activities =
-                        [ { activityType = OnlineReading
+                        [ { activityType = Video
+                          , title = "The First American Saint"
+                          , link = "https://www.youtube-nocookie.com/embed/896zFSI81X4"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Video
+                          , title = "Betty Bayley Becomes A Saint"
+                          , image = ""
+                          , link = "https://www.youtube-nocookie.com/embed/fR42gZv9T3A"
+                          , snippet = ""
+                          }
+                        , { activityType = OnlineReading
                           , title = "Saint Elizabeth Ann Seton"
                           , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/"
                           , image = "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg"
@@ -204,12 +228,6 @@ january =
                           , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1"
                           , snippet = "Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church..."
-                          }
-                        , { activityType = Video
-                          , title = "Betty Bayley Becomes A Saint"
-                          , image = ""
-                          , link = "https://www.youtube-nocookie.com/embed/fR42gZv9T3A"
-                          , snippet = ""
                           }
                         , { activityType = Audio
                           , title = "Saint Elizabeth Ann Seton’s Story"
@@ -288,6 +306,12 @@ january =
                 [ { feast = "The Epiphany of the Lord"
                   , activities =
                         [ { activityType = Video
+                          , title = "Feast of the Epiphany"
+                          , link = "https://www.youtube-nocookie.com/embed/nMeuF62R6hw"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Video
                           , title = "My Time with Jesus - Epiphany"
                           , link = "https://www.youtube-nocookie.com/embed/8vzYYJK1_pg"
                           , image = ""
@@ -362,6 +386,12 @@ january =
                           , snippet = "Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal..."
                           }
                         , { activityType = Video
+                          , title = "Blessed Andre Bessette"
+                          , link = "https://www.youtube-nocookie.com/embed/brwYgiR8vHo"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Video
                           , title = "The Story of Saint Brother Andre Bessette of Canada"
                           , link = "https://www.youtube-nocookie.com/embed/NGzM8sr6w7s"
                           , image = ""
@@ -419,7 +449,13 @@ january =
           , feasts =
                 [ { feast = "The Baptism of the Lord"
                   , activities =
-                        [ { activityType = OnlineReading
+                        [ { activityType = Video
+                          , title = "Washed Away"
+                          , link = "https://www.youtube-nocookie.com/embed/75F5qJw5YEY"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = OnlineReading
                           , title = "The Story of the Feast of the Baptism of the Lord"
                           , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
                           , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
@@ -481,7 +517,13 @@ january =
           , feasts =
                 [ { feast = "Saint Hilary of Poitiers"
                   , activities =
-                        [ { activityType = OnlineReading
+                        [ { activityType = Video
+                          , title = "St. Hilary of Poitiers"
+                          , link = "https://www.youtube-nocookie.com/embed/x5_l-pQ_Snk"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = OnlineReading
                           , title = "Saint Hilary of Poitiers’ Story"
                           , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2"
@@ -513,7 +555,13 @@ january =
           , feasts =
                 [ { feast = "Saint Anthony of Egypt"
                   , activities =
-                        [ { activityType = OnlineReading
+                        [ { activityType = Video
+                          , title = "St Anthony of the Desert"
+                          , link = "https://www.youtube-nocookie.com/embed/LbetpKRyO7A"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = OnlineReading
                           , title = "Saint Anthony of Egypt’s Story"
                           , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1"

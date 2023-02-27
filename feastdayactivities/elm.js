@@ -5687,7 +5687,7 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', aV: 'At the end of the fourth century, a woman named Etheria made a pilgrimage to Jerusalem. Her journal, discovered in 1887, gives an unprecedented...', a_: 'Presentation of the Lord'},
 							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', aV: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', a_: 'How To Celebrate Candlemas With Catholic Children'}
 						]),
-					aF: 'Presentation of the Lord'
+					aF: 'The Presentation of the Lord'
 				}
 				])
 		},
@@ -5920,6 +5920,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					aw: _List_fromArray(
 						[
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', aV: '', a_: 'Hail Mary, Full of Grace'},
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/HoAUG7htvkA', aV: '', a_: 'Born of Woman'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/mary-mother-of-god/', aV: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity...', a_: 'The Story of Mary, Mother of God'},
 							{R: 6, aI: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', aM: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', aV: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', a_: 'Mary, Mother of Our Church File Folder Game'},
 							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351', aM: 'http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html', aV: 'You only need some basic supplies for this one. Try to find heavy kraft paper if you can...', a_: 'Pastel Resist Madonna - Art Project'},
@@ -5942,7 +5943,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://youtu.be/lwe8voh3H_4', aV: '', a_: 'Ss. Gregory & Basil'},
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/lwe8voh3H_4', aV: '', a_: 'Ss. Gregory & Basil'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-basil-the-great/', aV: 'Basil was on his way to becoming a famous teacher when he decided to begin a religious life of gospel poverty...', a_: 'Saint Basil the Great’s Story'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', a_: 'Saint Basil the Great'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', a_: 'Saint Gregory of Nazianzus'},
@@ -5963,6 +5964,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/muyR_oFp8oE', aV: '', a_: 'The Name Above All Names'},
 							{R: 4, aI: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', aM: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'Why We Celebrate the Holy Name of Jesus'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Saint Gregory of Nazianzus'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/', aV: 'Although Saint Paul might claim credit for promoting devotion to the Holy Name because Paul wrote in Philippians that God the Father gave Christ Jesus “that name that is above every name” (see 2:9), this devotion became popular because of 12th-century Cistercian monks and nuns but especially...', a_: 'The Story of the Most Holy Name of Jesus'},
@@ -5981,9 +5983,10 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/896zFSI81X4', aV: '', a_: 'The First American Saint'},
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', aV: '', a_: 'Betty Bayley Becomes A Saint'},
 							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', aV: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', a_: 'Saint Elizabeth Ann Seton'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', a_: 'Saint Elizabeth Ann Seton\'s Story'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', aV: '', a_: 'Betty Bayley Becomes A Saint'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-elizabeth-ann-seton/', aV: 'Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the Sisters of Charity. She opened the first American parish school and established the first American Catholic orphanage. All this she did in the span of 46 years while raising her five children...', a_: 'Saint Elizabeth Ann Seton’s Story'},
 							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', aM: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', aV: 'A themed word search for older kids.', a_: 'Elizabeth Ann Seton Word Find'},
 							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Corn and Crab Bisque'},
@@ -6018,6 +6021,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/nMeuF62R6hw', aV: '', a_: 'Feast of the Epiphany'},
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', aV: '', a_: 'My Time with Jesus - Epiphany'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/', aV: 'Today’s feast of the Epiphany of the Lord is a feast that celebrates communication.  The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage...', a_: 'Epiphany of the Lord'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', a_: 'Gifts to our King'},
@@ -6041,6 +6045,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 						[
 							{R: 4, aI: 'https://www.catholic.org/files/images/saints/18.jpg', aM: 'https://www.catholic.org/saints/saint.php?saint_id=18', aV: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', a_: 'St. Andre Bessette'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', a_: 'Saint André Bessette’s Story'},
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/brwYgiR8vHo', aV: '', a_: 'Blessed Andre Bessette'},
 							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', aV: '', a_: 'The Story of Saint Brother Andre Bessette of Canada'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-andre-bessette/', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth...', a_: 'Saint André Bessette’s Story'},
 							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: '', a_: 'Maple Tourlouche Upside Down Cake\u200B'}
@@ -6072,6 +6077,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/75F5qJw5YEY', aV: '', a_: 'Washed Away'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', a_: 'The Story of the Feast of the Baptism of the Lord'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/', aV: 'Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here.', a_: 'Feast of the Baptism of the Lord'},
 							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Jumping Jolly Juice'},
@@ -6093,6 +6099,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/x5_l-pQ_Snk', aV: '', a_: 'St. Hilary of Poitiers'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', a_: 'Saint Hilary of Poitiers’ Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-hilary-of-poitiers/', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church..', a_: 'Saint Hilary of Poitiers’ Story'},
 							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'French Onion Soup'},
@@ -6109,6 +6116,7 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					aw: _List_fromArray(
 						[
+							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/LbetpKRyO7A', aV: '', a_: 'St Anthony of the Desert'},
 							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', a_: 'Saint Anthony of Egypt’s Story'},
 							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-anthony-of-egypt/', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance.', a_: 'Saint Anthony of Egypt’s Story'},
 							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: '', a_: 'Uccelletti ~The little Birds of St. Anthony'},
@@ -8323,6 +8331,7 @@ var $elm$core$List$head = function (list) {
 	}
 };
 var $elm$core$String$toLower = _String_toLower;
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
@@ -8332,6 +8341,13 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $author$project$FeastDayActivities$Main$urlPath = '/feastdayactivities';
 var $author$project$FeastDayActivities$FeastDayHelpers$filterActivities = F2(
 	function (isFilterType, activities) {
 		return A2(
@@ -8431,14 +8447,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$videoActivities = functio
 };
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$span = _VirtualDom_node('span');
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$h4 = _VirtualDom_node('h4');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
@@ -8454,6 +8463,7 @@ var $author$project$FeastDayActivities$Main$viewActivity = function (activity) {
 			[
 				$elm$html$Html$Attributes$class('grid grid-cols-[100px_1fr]'),
 				$elm$html$Html$Attributes$href(activity.aM),
+				A2($elm$html$Html$Attributes$attribute, 'aria-label', activity.a_),
 				$elm$html$Html$Attributes$target('_blank'),
 				$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
 				$elm$html$Html$Attributes$class('rounded m-5')
@@ -8570,7 +8580,8 @@ var $author$project$FeastDayActivities$Main$viewEmbeddedVideo = function (video)
 				$elm$html$Html$Attributes$height(0),
 				A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
 				A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
-				A2($elm$html$Html$Attributes$style, 'border-radius', '5px')
+				A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+				$elm$html$Html$Attributes$class('m-5')
 			]),
 		_List_fromArray(
 			[
@@ -8705,8 +8716,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feast
 		$elm$html$Html$div,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$class('grid m-auto max-w-2xl'),
-				$elm$html$Html$Attributes$class('text-center')
+				$elm$html$Html$Attributes$class('grid m-auto max-w-2xl mx-5 md:mx-0')
 			]),
 		_List_fromArray(
 			[
@@ -8714,7 +8724,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feast
 				$elm$html$Html$h2,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('text-2xl')
+						$elm$html$Html$Attributes$class('text-2xl text-left')
 					]),
 				_List_fromArray(
 					[
@@ -8729,21 +8739,64 @@ var $author$project$FeastDayActivities$Main$viewDate = F3(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('text-center'),
-					$elm$html$Html$Attributes$class('mt-10')
+					$elm$html$Html$Attributes$class('mt-10 max-w-3xl mx-auto')
 				]),
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$h1,
+					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('capitalize')
+							$elm$html$Html$Attributes$class('grid md:grid-cols-[200px,_1fr]')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text(month + (' ' + date))
+							A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('text-7xl text-left m-5 md:m-0'),
+									$elm$html$Html$Attributes$href($author$project$FeastDayActivities$Main$urlPath + ('?m=' + month)),
+									A2($elm$html$Html$Attributes$attribute, 'aria-label', 'Back to ' + month)
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
+									_List_Nil,
+									_List_fromArray(
+										[
+											$elm$html$Html$text('🗓️')
+										])),
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('text-sm capitalize')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Back to ' + month)
+										]))
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$h1,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('capitalize text-left mx-5 md:mx-0')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Catholic Activities for Children for ' + (month + (' ' + (date + ', 2023'))))
+										])),
+									$author$project$FeastDayActivities$Main$viewFeastDayHeader(feasts)
+								]))
 						])),
-					$author$project$FeastDayActivities$Main$viewFeastDayHeader(feasts),
 					A2(
 					$elm$html$Html$div,
 					_List_fromArray(
@@ -8926,7 +8979,6 @@ var $author$project$FeastDayActivities$Main$dateHR = A2(
 			A2($elm$html$Html$Attributes$style, 'border-top', '4px solid #415c71')
 		]),
 	_List_Nil);
-var $author$project$FeastDayActivities$Main$urlPath = '/feastdayactivities';
 var $author$project$FeastDayActivities$Main$viewFeast = function (feastActivities) {
 	return A2(
 		$elm$html$Html$div,
@@ -8951,6 +9003,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
 						[
 							A2($elm$html$Html$Attributes$style, 'color', 'black'),
 							$elm$html$Html$Attributes$href(link),
+							A2($elm$html$Html$Attributes$attribute, 'aria-label', month + (' ' + feastDay.H)),
 							$elm$html$Html$Attributes$class('grid grid-cols-calendar gap-3 items-center justify-items-center'),
 							$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
 							$elm$html$Html$Attributes$class('rounded')
@@ -9028,6 +9081,7 @@ var $author$project$FeastDayActivities$Main$viewMonthPillBox = function (month) 
 				$elm$html$Html$Attributes$class('p-2'),
 				$elm$html$Html$Attributes$class('cursor-pointer'),
 				$elm$html$Html$Attributes$class('capitalize'),
+				A2($elm$html$Html$Attributes$attribute, 'aria-label', month),
 				$elm$html$Html$Attributes$href($author$project$FeastDayActivities$Main$urlPath + ('?m=' + month))
 			]),
 		_List_fromArray(
@@ -9051,11 +9105,21 @@ var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
 				$elm$html$Html$h1,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('text-center')
+						$elm$html$Html$Attributes$class('text-center font-bold')
 					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('2023 Feast Day Activities')
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('text-center text-2xl mt-5 mb-10')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Catholic Feast Day Activities for Children')
 					])),
 				A2(
 				$elm$html$Html$div,

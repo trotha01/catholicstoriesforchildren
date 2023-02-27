@@ -146,12 +146,26 @@ viewDate : String -> String -> List FeastActivities -> Html Msg
 viewDate month date feasts =
     div
         [ class "text-center"
-        , class "mt-10"
+        , class "mt-10 max-w-3xl mx-auto"
         ]
-        [ h1 [ class "capitalize" ]
-            [ text (month ++ " " ++ date)
+        [ div [ class "grid md:grid-cols-[200px,_1fr]" ]
+            [ a
+                [ class "text-7xl text-left m-5 md:m-0"
+                , href (urlPath ++ "?m=" ++ month)
+                , attribute "aria-label" ("Back to " ++ month)
+                ]
+                -- TODO: Use a different image (this says July)
+                [ div [] [ text "🗓️" ]
+                , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
+                ]
+            , div
+                []
+                [ h1 [ class "capitalize text-left mx-5 md:mx-0" ]
+                    [ text ("Catholic Activities for Children for " ++ month ++ " " ++ date ++ ", 2023")
+                    ]
+                , viewFeastDayHeader feasts
+                ]
             ]
-        , viewFeastDayHeader feasts
         , div
             [ class "mt-10 mb-40"
             , class "min-h-screen"
@@ -167,10 +181,8 @@ viewFeastDayHeader feasts =
             String.join " and " (List.map .feast feasts)
     in
     div
-        [ class "grid m-auto max-w-2xl"
-        , class "text-center"
-        ]
-        [ h2 [ class "text-2xl" ] [ text ("Feast of " ++ concatFeasts) ] ]
+        [ class "grid m-auto max-w-2xl mx-5 md:mx-0" ]
+        [ h2 [ class "text-2xl text-left" ] [ text ("Feast of " ++ concatFeasts) ] ]
 
 
 viewFeast : FeastActivities -> Html Msg
@@ -253,6 +265,7 @@ viewEmbeddedVideo video =
         , style "overflow" "hidden"
         , style "max-width" "100%"
         , style "border-radius" "5px"
+        , class "m-5"
         ]
         [ iframe
             [ style "position" "absolute"
@@ -287,10 +300,12 @@ viewActivities activityType activities =
             ]
 
 
+viewActivity : Activity -> Html msg
 viewActivity activity =
     a
         [ class "grid grid-cols-[100px_1fr]"
         , href activity.link
+        , attribute "aria-label" activity.title
         , target "_blank"
         , class "hover:bg-csc-lightpurple"
         , class "rounded m-5"
@@ -327,7 +342,8 @@ viewMonth feastMonth =
     in
     div
         [ class "mt-10 mb-20" ]
-        [ h1 [ class "text-center" ] [ text "2023 Feast Day Activities" ]
+        [ h1 [ class "text-center font-bold" ] [ text "2023 Feast Day Activities" ]
+        , p [ class "text-center text-2xl mt-5 mb-10" ] [ text "Catholic Feast Day Activities for Children" ]
         , div
             [ class "grid grid-cols-12"
             , class "text-base md:text-3xl lg:text-3xl"
@@ -400,6 +416,7 @@ viewFeastDay month feastDay =
         , a
             [ style "color" "black"
             , href link
+            , attribute "aria-label" (month ++ " " ++ feastDay.date)
             , class "grid grid-cols-calendar gap-3 items-center justify-items-center"
             , class "hover:bg-csc-lightpurple"
             , class "rounded"
@@ -427,6 +444,7 @@ viewMonthPillBox month =
         , class "p-2"
         , class "cursor-pointer"
         , class "capitalize"
+        , attribute "aria-label" month
         , href (urlPath ++ "?m=" ++ month)
         ]
         [ text month ]
@@ -435,11 +453,6 @@ viewMonthPillBox month =
 urlPath : String
 urlPath =
     "/feastdayactivities"
-
-
-viewLink : String -> Html Msg
-viewLink path =
-    li [] [ a [ href path ] [ text path ] ]
 
 
 dateWidth : String
