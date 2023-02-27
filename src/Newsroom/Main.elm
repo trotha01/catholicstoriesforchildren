@@ -67,21 +67,26 @@ viewSignUp =
         [ p
             [ class "pb-5"
             ]
-            [ text "Sign up for our email list to get tips, resources, and animation updates!" ]
-        , a
-            [ href "https://signup.catholicstoriesforchildren.com"
-            , rel "noopener"
-            , target "_blank"
-            , style "text-decoration" "none"
-            , style "padding" "10px 20px"
-            , style "display" "inline-block"
-            , style "border-radius" "5px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            , style "color" "white"
-            , style "background-color" "#9200B3"
-            ]
-            [ text "Sign Up" ]
+            [ text "Sign up for our email list to get tips, resources, and animations to your inbox!" ]
+        , viewSignUpButton
         ]
+
+
+viewSignUpButton : Html msg
+viewSignUpButton =
+    a
+        [ href "https://signup.catholicstoriesforchildren.com"
+        , rel "noopener"
+        , target "_blank"
+        , style "text-decoration" "none"
+        , style "padding" "10px 20px"
+        , style "display" "inline-block"
+        , style "border-radius" "5px"
+        , style "box-shadow" "#777 1px 1px 5px"
+        , style "color" "white"
+        , style "background-color" "#9200B3"
+        ]
+        [ text "Sign Up" ]
 
 
 viewPressReleases : List (Html Never) -> Html Never
