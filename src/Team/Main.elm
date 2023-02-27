@@ -37,7 +37,7 @@ view =
     div
         [ style "height" "100vh"
         , style "overflow-x" "hidden"
-        , style "background-color" darkBlue
+        , style "background-color" "#FEF7F4"
         ]
         [ viewSubpageHeader "Team" headerMargin
         , viewBody
@@ -47,8 +47,7 @@ view =
 
 titleStyle : List (Attribute msg)
 titleStyle =
-    [ style "color" "white"
-    , style "font-family" "hvdComicSerifPro"
+    [ style "font-family" "hvdComicSerifPro"
     , style "width" "80%"
     , style "max-width" "800px"
     ]
@@ -68,7 +67,7 @@ viewBody =
         , style "width" "80%"
         , style "max-width" "800px"
         ]
-        [ h1 [ class "my-10 text-white" ] [ text "About Us" ]
+        [ h1 [ class "my-10" ] [ text "About Us" ]
         , viewAbout
         , viewTeam
         ]
@@ -76,7 +75,7 @@ viewBody =
 
 viewAbout : Html msg
 viewAbout =
-    div [ class "text-white" ]
+    div []
         [ p [ class "mb-4" ]
             [ text """Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
             ]
@@ -93,7 +92,7 @@ viewAbout =
 viewTeam : Html msg
 viewTeam =
     div []
-        [ h2 [ class "my-10 text-white" ]
+        [ h2 [ class "my-10" ]
             [ text "The Team"
             ]
         , viewPeople "Staff" "" staff
@@ -105,10 +104,9 @@ viewTeam =
 viewPeople : String -> String -> List Person -> Html msg
 viewPeople title description people =
     div [ style "margin-bottom" "100px" ]
-        ([ h3 [ class "text-white text-2xl" ] [ text title ]
+        ([ h3 [ class "text-2xl" ] [ text title ]
          , div
-            [ style "color" "white"
-            , class "hcenter"
+            [ class "hcenter"
             ]
             [ text description ]
          ]
@@ -179,8 +177,6 @@ viewImage image initials =
             , style "border-radius" "30px"
             , style "border" "1px solid #777"
             , style "background-color" darkPurple
-
-            -- , style "color" "white"
             ]
             [ div
                 [ style "position" "absolute"
