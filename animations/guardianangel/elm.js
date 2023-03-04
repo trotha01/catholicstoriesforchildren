@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.N.C === region.S.C)
+	if (region.M.C === region.R.C)
 	{
-		return 'on line ' + region.N.C;
+		return 'on line ' + region.M.C;
 	}
-	return 'on lines ' + region.N.C + ' through ' + region.S.C;
+	return 'on lines ' + region.M.C + ' through ' + region.R.C;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aE,
-		impl.aS,
-		impl.aP,
+		impl.aD,
+		impl.aR,
+		impl.aO,
 		function() { return function() {} }
 	);
 });
@@ -2705,8 +2705,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		r: func(record.r),
-		O: record.O,
-		L: record.L
+		N: record.N,
+		K: record.K
 	}
 });
 
@@ -2975,10 +2975,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.O;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.N;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.L) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.K) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aE,
-		impl.aS,
-		impl.aP,
+		impl.aD,
+		impl.aR,
+		impl.aO,
 		function(sendToApp, initialModel) {
-			var view = impl.aU;
+			var view = impl.aT;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aE,
-		impl.aS,
-		impl.aP,
+		impl.aD,
+		impl.aR,
+		impl.aO,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.M && impl.M(sendToApp)
-			var view = impl.aU;
+			var divertHrefToApp = impl.L && impl.L(sendToApp)
+			var view = impl.aT;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3977,12 +3977,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aw);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.av);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aR) && (_VirtualDom_doc.title = title = doc.aR);
+				(title !== doc.aQ) && (_VirtualDom_doc.title = title = doc.aQ);
 			});
 		}
 	);
@@ -4038,12 +4038,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aH;
-	var onUrlRequest = impl.aI;
+	var onUrlChange = impl.aG;
+	var onUrlRequest = impl.aH;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		M: function(sendToApp)
+		L: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4059,9 +4059,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ae === next.ae
-							&& curr.W === next.W
-							&& curr.ab.a === next.ab.a
+							&& curr.ad === next.ad
+							&& curr.V === next.V
+							&& curr.aa.a === next.aa.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aE: function(flags)
+		aD: function(flags)
 		{
-			return A3(impl.aE, flags, _Browser_getUrl(), key);
+			return A3(impl.aD, flags, _Browser_getUrl(), key);
 		},
-		aU: impl.aU,
-		aS: impl.aS,
-		aP: impl.aP
+		aT: impl.aT,
+		aR: impl.aR,
+		aO: impl.aO
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aC: 'hidden', ax: 'visibilitychange' }
+		? { aB: 'hidden', aw: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aC: 'mozHidden', ax: 'mozvisibilitychange' }
+		? { aB: 'mozHidden', aw: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aC: 'msHidden', ax: 'msvisibilitychange' }
+		? { aB: 'msHidden', aw: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aC: 'webkitHidden', ax: 'webkitvisibilitychange' }
-		: { aC: 'hidden', ax: 'visibilitychange' };
+		? { aB: 'webkitHidden', aw: 'webkitvisibilitychange' }
+		: { aB: 'hidden', aw: 'visibilitychange' };
 }
 
 
@@ -4232,12 +4232,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		ak: _Browser_getScene(),
-		ap: {
-			ar: _Browser_window.pageXOffset,
-			as: _Browser_window.pageYOffset,
-			aq: _Browser_doc.documentElement.clientWidth,
-			V: _Browser_doc.documentElement.clientHeight
+		aj: _Browser_getScene(),
+		ao: {
+			aq: _Browser_window.pageXOffset,
+			ar: _Browser_window.pageYOffset,
+			ap: _Browser_doc.documentElement.clientWidth,
+			U: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4247,8 +4247,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		aq: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		V: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		ap: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		U: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4271,15 +4271,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			ak: {
-				aq: node.scrollWidth,
-				V: node.scrollHeight
+			aj: {
+				ap: node.scrollWidth,
+				U: node.scrollHeight
 			},
-			ap: {
-				ar: node.scrollLeft,
-				as: node.scrollTop,
-				aq: node.clientWidth,
-				V: node.clientHeight
+			ao: {
+				aq: node.scrollLeft,
+				ar: node.scrollTop,
+				ap: node.clientWidth,
+				U: node.clientHeight
 			}
 		};
 	});
@@ -4309,18 +4309,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			ak: _Browser_getScene(),
-			ap: {
-				ar: x,
-				as: y,
-				aq: _Browser_doc.documentElement.clientWidth,
-				V: _Browser_doc.documentElement.clientHeight
+			aj: _Browser_getScene(),
+			ao: {
+				aq: x,
+				ar: y,
+				ap: _Browser_doc.documentElement.clientWidth,
+				U: _Browser_doc.documentElement.clientHeight
 			},
-			az: {
-				ar: x + rect.left,
-				as: y + rect.top,
-				aq: rect.width,
-				V: rect.height
+			ay: {
+				aq: x + rect.left,
+				ar: y + rect.top,
+				ap: rect.width,
+				U: rect.height
 			}
 		};
 	});
@@ -4355,7 +4355,6 @@ function _Browser_load(url)
 		}
 	}));
 }
-var $author$project$Animations$HailMary$Main$English = 0;
 var $elm$core$Basics$EQ = 1;
 var $elm$core$Basics$GT = 2;
 var $elm$core$Basics$LT = 0;
@@ -4860,7 +4859,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {U: fragment, W: host, _: path, ab: port_, ae: protocol, af: query};
+		return {T: fragment, V: host, Z: path, aa: port_, ad: protocol, ae: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5145,28 +5144,21 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aE: function (_v0) {
-				return _Utils_Tuple2(impl.aE, $elm$core$Platform$Cmd$none);
+			aD: function (_v0) {
+				return _Utils_Tuple2(impl.aD, $elm$core$Platform$Cmd$none);
 			},
-			aP: function (_v1) {
+			aO: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aS: F2(
+			aR: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aS, msg, model),
+						A2(impl.aR, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aU: impl.aU
+			aT: impl.aT
 		});
 };
-var $author$project$Animations$HailMary$Main$update = F2(
-	function (msg, model) {
-		var videoTab = msg;
-		return _Utils_update(
-			model,
-			{H: videoTab});
-	});
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Helpers$headerMargin = 10;
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
@@ -5344,7 +5336,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $author$project$Animations$HailMary$Main$aboutTheAnimation = A2(
+var $author$project$Animations$GuardianAngel$Main$aboutTheAnimation = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
@@ -5362,7 +5354,7 @@ var $author$project$Animations$HailMary$Main$aboutTheAnimation = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('This animation helps kids learn the Hail Mary prayer though a story and repetition.')
+					$elm$html$Html$text('This animation helps kids learn the Guardian Angel prayer though a story and song. ' + ' It also helps kids understand the concept of a guardian angel.')
 				])),
 			A2(
 			$elm$html$Html$p,
@@ -5372,140 +5364,13 @@ var $author$project$Animations$HailMary$Main$aboutTheAnimation = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('The animation is meant to be an aid for kids to slowly build a habit of prayer. ' + 'It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray.')
-				]))
-		]));
-var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
-var $elm$html$Html$Attributes$cite = $elm$html$Html$Attributes$stringProperty('cite');
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
-var $author$project$Animations$HailMary$Main$aboutThePrayer = A2(
-	$elm$html$Html$div,
-	_List_fromArray(
-		[
-			$elm$html$Html$Attributes$class('mx-auto my-4 col-span-2 w-full'),
-			$elm$html$Html$Attributes$class('text-lg'),
-			$elm$html$Html$Attributes$class('py-5'),
-			$elm$html$Html$Attributes$class('max-w-3xl')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$h2,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$elm$html$Html$text('About the Hail Mary Prayer')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-10')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('The Hail Mary is a beautiful prayer to Mary, the Mother of Jesus. This prayer is filled with Scripture.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-10')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('In this prayer, we begin with the greeting of St. Michael the Archangel, ' + ('\'Hail Mary, full of grace, the Lord is with you\' (Luke 1:28). ' + ('What does it mean to be full of grace? Mary considered in her mind what sort of greeting this might be (Luke 1:29). ' + ('To be completely filled with grace indicates that Mary is ' + 'without sin.'))))
-				])),
-			A2(
-			$elm$html$Html$blockquote,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$cite('https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html'),
-					$elm$html$Html$Attributes$class('my-10'),
-					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
-					$elm$html$Html$Attributes$class('italic')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$p,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('inline'),
-							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Because of this gift of sublime grace she far surpasses all creatures, ' + ('both in heaven and on earth. At the same time, however, because ' + ('she belongs to the offspring of Adam she is one with all those who ' + 'are to be saved. ')))
-						])),
-					A2(
-					$elm$html$Html$p,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('mt-2')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Lumen Gentium, 53')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-10')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Then we praise Mary in the same way as her cousin Elizabeth, ' + '\'Blessed are you among women, and blessed is the fruit of your womb\' (Luke 1:42).')
-				])),
-			A2(
-			$elm$html$Html$blockquote,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-10'),
-					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
-					$elm$html$Html$Attributes$class('italic'),
-					$elm$html$Html$Attributes$cite('https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031987_redemptoris-mater.html')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$p,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('inline'),
-							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('If after the announcement of the heavenly messenger the Virgin of Nazareth is also called ' + (' "blessed among women" (cf. Lk. 1:42), it is because of that blessing with which "God the Father" has ' + ('filled us "in the heavenly places, in Christ." It is a spiritual blessing which is meant for all people and ' + ('which bears in itself fullness and universality ("every blessing"). It flows from that love which, in the ' + ('Holy Spirit, unites the consubstantial Son to the Father. At the same time, it is a blessing poured out through ' + ('Jesus Christ upon human history until the end: upon all people. This blessing, however, refers to Mary in a ' + 'special and exceptional degree: for she was greeted by Elizabeth as "blessed among women." '))))))
-						])),
-					A2(
-					$elm$html$Html$p,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('my-10')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Pope John Paul II, Redemptoris Mater, 8')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-10')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Lastly, we asks Mary to pray for us, ' + 'Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen.')
+					$elm$html$Html$text('This animation is meant to be an aid for kids to slowly build a habit of prayer. ' + 'It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray.')
 				]))
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$span = _VirtualDom_node('span');
-var $author$project$Animations$HailMary$Main$viewPrayer = A2(
+var $author$project$Animations$GuardianAngel$Main$viewPrayer = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
@@ -5536,7 +5401,7 @@ var $author$project$Animations$HailMary$Main$viewPrayer = A2(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Hail Mary, full of grace, the Lord is with you;')
+							$elm$html$Html$text('Angel Of God, my guardian dear,')
 						])),
 					A2(
 					$elm$html$Html$span,
@@ -5546,7 +5411,7 @@ var $author$project$Animations$HailMary$Main$viewPrayer = A2(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('blessed are you among women,')
+							$elm$html$Html$text('to whom God\'s love commits me here,')
 						])),
 					A2(
 					$elm$html$Html$span,
@@ -5556,7 +5421,7 @@ var $author$project$Animations$HailMary$Main$viewPrayer = A2(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('and blessed is the fruit of your womb, Jesus.')
+							$elm$html$Html$text('ever this day be at my side,')
 						])),
 					A2(
 					$elm$html$Html$span,
@@ -5566,27 +5431,7 @@ var $author$project$Animations$HailMary$Main$viewPrayer = A2(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Holy Mary, Mother of God,')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('pray for us sinners')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('now and at the hour of our death.')
+							$elm$html$Html$text('to light and guard, to rule and guide.')
 						])),
 					A2(
 					$elm$html$Html$span,
@@ -5685,8 +5530,6 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 				])),
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));
-var $author$project$Animations$HailMary$Main$aslVideoLink = 'https://www.youtube-nocookie.com/embed/QNVNbLiqznI';
-var $author$project$Animations$HailMary$Main$englishVideoLink = 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y';
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
 		_VirtualDom_attribute,
@@ -5743,143 +5586,42 @@ var $author$project$Animations$Helpers$viewVideo = F2(
 					_List_Nil)
 				]));
 	});
-var $author$project$Animations$HailMary$Main$ASL = 1;
-var $author$project$Animations$HailMary$Main$VideoTabClick = $elm$core$Basics$identity;
-var $elm$html$Html$button = _VirtualDom_node('button');
-var $elm$html$Html$li = _VirtualDom_node('li');
-var $elm$html$Html$Events$onClick = function (msg) {
-	return A2(
-		$elm$html$Html$Events$on,
-		'click',
-		$elm$json$Json$Decode$succeed(msg));
-};
-var $elm$html$Html$ul = _VirtualDom_node('ul');
-var $author$project$Animations$HailMary$Main$viewVideoPlayerTabs = function (model) {
-	var selectedClass = 'active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500';
-	var nonSelectedClass = 'border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300';
-	var _v0 = function () {
-		var _v1 = model.H;
-		if (!_v1) {
-			return _Utils_Tuple2(selectedClass, nonSelectedClass);
-		} else {
-			return _Utils_Tuple2(nonSelectedClass, selectedClass);
-		}
-	}();
-	var englishClass = _v0.a;
-	var aslClass = _v0.b;
-	return A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$ul,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('flex flex-wrap -mb-px')
-					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$li,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('mr-2')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$button,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('inline-block p-4 border-b-2 rounded-t-lg ' + englishClass),
-										$elm$html$Html$Events$onClick(0)
-									]),
-								_List_fromArray(
-									[
-										$elm$html$Html$text('English')
-									]))
-							])),
-						A2(
-						$elm$html$Html$li,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('mr-2')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$button,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('inline-block p-4 border-b-2 rounded-t-lg ' + aslClass),
-										$elm$html$Html$Events$onClick(1)
-									]),
-								_List_fromArray(
-									[
-										$elm$html$Html$text('ASL')
-									]))
-							]))
-					]))
-			]));
-};
-var $author$project$Animations$HailMary$Main$viewVideoPlayers = function (model) {
-	return A2(
-		$elm$html$Html$div,
-		_List_Nil,
-		_List_fromArray(
-			[
-				$author$project$Animations$HailMary$Main$viewVideoPlayerTabs(model),
-				function () {
-				var _v0 = model.H;
-				if (!_v0) {
-					return A2($author$project$Animations$Helpers$viewVideo, 'Hail Mary, Full of Grace Video', $author$project$Animations$HailMary$Main$englishVideoLink);
-				} else {
-					return A2($author$project$Animations$Helpers$viewVideo, 'Hail Mary, Full of Grace Video', $author$project$Animations$HailMary$Main$aslVideoLink);
-				}
-			}()
-			]));
-};
-var $author$project$Animations$HailMary$Main$viewBody = function (model) {
-	return A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('max-w-3xl'),
-				$elm$html$Html$Attributes$class('m-auto'),
-				$elm$html$Html$Attributes$class('p-5')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$h1,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('my-10 leading-10')
-					]),
-				_List_fromArray(
-					[
-						$elm$html$Html$text('Hail Mary Animation for Children')
-					])),
-				$author$project$Animations$HailMary$Main$aboutTheAnimation,
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('mb-10')
-					]),
-				_List_fromArray(
-					[
-						$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
-					])),
-				$author$project$Animations$HailMary$Main$viewVideoPlayers(model),
-				$author$project$Animations$HailMary$Main$viewPrayer,
-				$author$project$Animations$HailMary$Main$aboutThePrayer
-			]));
-};
+var $author$project$Animations$GuardianAngel$Main$viewVideoPlayers = A2($author$project$Animations$Helpers$viewVideo, 'Guardian Angel | Prayer Time with Angels', 'https://www.youtube-nocookie.com/embed/03hmpXjV_ck');
+var $author$project$Animations$GuardianAngel$Main$viewBody = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('max-w-3xl'),
+			$elm$html$Html$Attributes$class('m-auto'),
+			$elm$html$Html$Attributes$class('p-5'),
+			$elm$html$Html$Attributes$class('mb-10')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-10 leading-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Guardian Angel Prayer')
+				])),
+			$author$project$Animations$GuardianAngel$Main$aboutTheAnimation,
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-10')
+				]),
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
+				])),
+			$author$project$Animations$GuardianAngel$Main$viewVideoPlayers,
+			$author$project$Animations$GuardianAngel$Main$viewPrayer
+		]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
@@ -6099,31 +5841,35 @@ var $author$project$Header$viewSubpageHeader = F2(
 					rightHandSide(height)
 				]));
 	});
-var $author$project$Animations$HailMary$Main$view = function (model) {
-	return A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				A2($elm$html$Html$Attributes$style, 'height', '100vh'),
-				A2($elm$html$Html$Attributes$style, 'overflow-x', 'hidden'),
-				A2($elm$html$Html$Attributes$style, 'overflow-y', 'auto'),
-				A2($elm$html$Html$Attributes$style, 'perspective', '300px'),
-				A2($elm$html$Html$Attributes$style, 'scroll-behavior', 'smooth'),
-				A2($elm$html$Html$Attributes$style, 'background-color', '#FEF7F4')
-			]),
-		_List_fromArray(
-			[
-				$zwilias$elm_html_string$Html$String$toHtml(
-				A2($author$project$Header$viewSubpageHeader, 'Hail Mary', $author$project$Helpers$headerMargin)),
-				$author$project$Animations$HailMary$Main$viewBody(model),
-				$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
-			]));
-};
-var $author$project$Animations$HailMary$Main$main = $elm$browser$Browser$sandbox(
+var $author$project$Animations$GuardianAngel$Main$view = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'height', '100vh'),
+			A2($elm$html$Html$Attributes$style, 'overflow-x', 'hidden'),
+			A2($elm$html$Html$Attributes$style, 'overflow-y', 'auto'),
+			A2($elm$html$Html$Attributes$style, 'perspective', '300px'),
+			A2($elm$html$Html$Attributes$style, 'scroll-behavior', 'smooth'),
+			A2($elm$html$Html$Attributes$style, 'background-color', '#FEF7F4')
+		]),
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$toHtml(
+			A2($author$project$Header$viewSubpageHeader, 'Guardian Angel', $author$project$Helpers$headerMargin)),
+			$author$project$Animations$GuardianAngel$Main$viewBody,
+			$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
+		]));
+var $author$project$Animations$GuardianAngel$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aE: {H: 0},
-		aS: $author$project$Animations$HailMary$Main$update,
-		aU: $author$project$Animations$HailMary$Main$view
+		aD: {},
+		aR: function (_v0) {
+			return function (model) {
+				return model;
+			};
+		},
+		aT: function (_v1) {
+			return $author$project$Animations$GuardianAngel$Main$view;
+		}
 	});
-_Platform_export({'Animations':{'HailMary':{'Main':{'init':$author$project$Animations$HailMary$Main$main(
+_Platform_export({'Animations':{'GuardianAngel':{'Main':{'init':$author$project$Animations$GuardianAngel$Main$main(
 	$elm$json$Json$Decode$succeed(0))(0)}}}});}(this));

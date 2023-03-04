@@ -4355,47 +4355,6 @@ function _Browser_load(url)
 		}
 	}));
 }
-
-
-
-var _Bitwise_and = F2(function(a, b)
-{
-	return a & b;
-});
-
-var _Bitwise_or = F2(function(a, b)
-{
-	return a | b;
-});
-
-var _Bitwise_xor = F2(function(a, b)
-{
-	return a ^ b;
-});
-
-function _Bitwise_complement(a)
-{
-	return ~a;
-};
-
-var _Bitwise_shiftLeftBy = F2(function(offset, a)
-{
-	return a << offset;
-});
-
-var _Bitwise_shiftRightBy = F2(function(offset, a)
-{
-	return a >> offset;
-});
-
-var _Bitwise_shiftRightZfBy = F2(function(offset, a)
-{
-	return a >>> offset;
-});
-var $elm$core$Basics$apR = F2(
-	function (x, f) {
-		return f(x);
-	});
 var $elm$core$Basics$EQ = 1;
 var $elm$core$Basics$GT = 2;
 var $elm$core$Basics$LT = 0;
@@ -4739,6 +4698,10 @@ var $elm$core$Array$Leaf = function (a) {
 };
 var $elm$core$Basics$apL = F2(
 	function (f, x) {
+		return f(x);
+	});
+var $elm$core$Basics$apR = F2(
+	function (x, f) {
 		return f(x);
 	});
 var $elm$core$Basics$eq = _Utils_equal;
@@ -5196,10 +5159,10 @@ var $elm$browser$Browser$sandbox = function (impl) {
 			aT: impl.aT
 		});
 };
-var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
-	return {$: 1, a: a};
-};
-var $zwilias$elm_html_string$Html$String$text = $zwilias$elm_html_string$Html$Types$TextNode;
+var $elm$html$Html$div = _VirtualDom_node('div');
+var $author$project$Helpers$headerMargin = 10;
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $elm$virtual_dom$VirtualDom$attribute = F2(
 	function (key, value) {
 		return A2(
@@ -5259,8 +5222,6 @@ var $elm$html$Html$Events$stopPropagationOn = F2(
 			$elm$virtual_dom$VirtualDom$MayStopPropagation(decoder));
 	});
 var $elm$json$Json$Encode$string = _Json_wrap;
-var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $zwilias$elm_html_string$Html$Types$attributeToHtml = function (attribute) {
 	switch (attribute.$) {
 		case 0:
@@ -5366,413 +5327,174 @@ var $zwilias$elm_html_string$Html$Types$toHtml = function (node) {
 	}
 };
 var $zwilias$elm_html_string$Html$String$toHtml = $zwilias$elm_html_string$Html$Types$toHtml;
-var $elm$core$Basics$always = F2(
-	function (a, _v0) {
-		return a;
-	});
-var $elm$core$Bitwise$and = _Bitwise_and;
-var $elm$core$Bitwise$shiftRightBy = _Bitwise_shiftRightBy;
-var $elm$core$String$repeatHelp = F3(
-	function (n, chunk, result) {
-		return (n <= 0) ? result : A3(
-			$elm$core$String$repeatHelp,
-			n >> 1,
-			_Utils_ap(chunk, chunk),
-			(!(n & 1)) ? result : _Utils_ap(result, chunk));
-	});
-var $elm$core$String$repeat = F2(
-	function (n, chunk) {
-		return A3($elm$core$String$repeatHelp, n, chunk, '');
-	});
-var $zwilias$elm_html_string$Html$Types$indent = F3(
-	function (perLevel, level, x) {
-		return _Utils_ap(
-			A2($elm$core$String$repeat, perLevel * level, ' '),
-			x);
-	});
-var $zwilias$elm_html_string$Html$Types$join = F2(
-	function (between, list) {
-		if (!list.b) {
-			return '';
-		} else {
-			if (!list.b.b) {
-				var x = list.a;
-				return x;
-			} else {
-				var x = list.a;
-				var xs = list.b;
-				return A3(
-					$elm$core$List$foldl,
-					F2(
-						function (y, acc) {
-							return _Utils_ap(
-								y,
-								_Utils_ap(between, acc));
-						}),
-					x,
-					xs);
-			}
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$closingTag = function (tagName) {
-	return '</' + (tagName + '>');
-};
-var $elm$core$Basics$composeR = F3(
-	function (f, g, x) {
-		return g(
-			f(x));
-	});
-var $elm$core$String$replace = F3(
-	function (before, after, string) {
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
 		return A2(
-			$elm$core$String$join,
-			after,
-			A2($elm$core$String$split, before, string));
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
 	});
-var $zwilias$elm_html_string$Html$Types$escapeHtmlText = A2(
-	$elm$core$Basics$composeR,
-	A2($elm$core$String$replace, '&', '&amp;'),
-	A2(
-		$elm$core$Basics$composeR,
-		A2($elm$core$String$replace, '<', '&lt;'),
-		A2($elm$core$String$replace, '>', '&gt;')));
-var $elm$core$Tuple$second = function (_v0) {
-	var y = _v0.b;
-	return y;
-};
-var $elm$core$String$foldl = _String_foldl;
-var $elm$core$String$cons = _String_cons;
-var $elm$core$String$fromChar = function (_char) {
-	return A2($elm$core$String$cons, _char, '');
-};
-var $zwilias$elm_html_string$Html$Types$escape = A2(
-	$elm$core$String$foldl,
-	F2(
-		function (_char, acc) {
-			return (_char === '\"') ? (acc + '\\\"') : _Utils_ap(
-				acc,
-				$elm$core$String$fromChar(_char));
-		}),
-	'');
-var $elm$core$Char$toLower = _Char_toLower;
-var $zwilias$elm_html_string$Html$Types$hyphenate = A2(
-	$elm$core$String$foldl,
-	F2(
-		function (_char, acc) {
-			return $elm$core$Char$isUpper(_char) ? (acc + ('-' + $elm$core$String$fromChar(
-				$elm$core$Char$toLower(_char)))) : _Utils_ap(
-				acc,
-				$elm$core$String$fromChar(_char));
-		}),
-	'');
-var $zwilias$elm_html_string$Html$Types$buildProp = F2(
-	function (key, value) {
-		return $zwilias$elm_html_string$Html$Types$hyphenate(key) + ('=\"' + ($zwilias$elm_html_string$Html$Types$escape(value) + '\"'));
-	});
-var $NoRedInk$elm_string_conversions$String$Conversions$fromValue = function (value) {
-	return A2($elm$json$Json$Encode$encode, 0, value);
-};
-var $zwilias$elm_html_string$Html$Types$propName = function (prop) {
-	switch (prop) {
-		case 'className':
-			return 'class';
-		case 'defaultValue':
-			return 'value';
-		case 'htmlFor':
-			return 'for';
-		default:
-			return prop;
-	}
-};
-var $zwilias$elm_html_string$Html$Types$addAttribute = F2(
-	function (attribute, acc) {
-		var classes = acc.a;
-		var styles = acc.b;
-		var attrs = acc.c;
-		switch (attribute.$) {
-			case 0:
-				var key = attribute.a;
-				var value = attribute.b;
-				return _Utils_Tuple3(
-					classes,
-					styles,
-					A2(
-						$elm$core$List$cons,
-						A2($zwilias$elm_html_string$Html$Types$buildProp, key, value),
-						attrs));
-			case 1:
-				if (attribute.a === 'className') {
-					var value = attribute.b;
-					return _Utils_Tuple3(
-						A2($elm$core$List$cons, value, classes),
-						styles,
-						attrs);
-				} else {
-					var string = attribute.a;
-					var value = attribute.b;
-					return _Utils_Tuple3(
-						classes,
-						styles,
-						A2(
-							$elm$core$List$cons,
-							A2(
-								$zwilias$elm_html_string$Html$Types$buildProp,
-								$zwilias$elm_html_string$Html$Types$propName(string),
-								value),
-							attrs));
-				}
-			case 2:
-				var string = attribute.a;
-				var enabled = attribute.b;
-				return enabled ? _Utils_Tuple3(
-					classes,
-					styles,
-					A2(
-						$elm$core$List$cons,
-						$zwilias$elm_html_string$Html$Types$hyphenate(
-							$zwilias$elm_html_string$Html$Types$propName(string)),
-						attrs)) : acc;
-			case 3:
-				var string = attribute.a;
-				var value = attribute.b;
-				return _Utils_Tuple3(
-					classes,
-					styles,
-					A2(
-						$elm$core$List$cons,
-						A2(
-							$zwilias$elm_html_string$Html$Types$buildProp,
-							$zwilias$elm_html_string$Html$Types$propName(string),
-							$NoRedInk$elm_string_conversions$String$Conversions$fromValue(value)),
-						attrs));
-			case 4:
-				var key = attribute.a;
-				var value = attribute.b;
-				return _Utils_Tuple3(
-					classes,
-					A2(
-						$elm$core$List$cons,
-						$zwilias$elm_html_string$Html$Types$escape(key) + (': ' + $zwilias$elm_html_string$Html$Types$escape(value)),
-						styles),
-					attrs);
-			default:
-				return acc;
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$withClasses = F2(
-	function (classes, attrs) {
-		if (!classes.b) {
-			return attrs;
-		} else {
-			return A2(
-				$elm$core$List$cons,
-				A2(
-					$zwilias$elm_html_string$Html$Types$buildProp,
-					'class',
-					A2($zwilias$elm_html_string$Html$Types$join, ' ', classes)),
-				attrs);
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$withStyles = F2(
-	function (styles, attrs) {
-		if (!styles.b) {
-			return attrs;
-		} else {
-			return A2(
-				$elm$core$List$cons,
-				A2(
-					$zwilias$elm_html_string$Html$Types$buildProp,
-					'style',
-					A2($zwilias$elm_html_string$Html$Types$join, '; ', styles)),
-				attrs);
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$attributesToString = function (attrs) {
-	var _v0 = A3(
-		$elm$core$List$foldl,
-		$zwilias$elm_html_string$Html$Types$addAttribute,
-		_Utils_Tuple3(_List_Nil, _List_Nil, _List_Nil),
-		attrs);
-	var classes = _v0.a;
-	var styles = _v0.b;
-	var regular = _v0.c;
-	return A2(
-		$zwilias$elm_html_string$Html$Types$withStyles,
-		styles,
-		A2($zwilias$elm_html_string$Html$Types$withClasses, classes, regular));
-};
-var $zwilias$elm_html_string$Html$Types$tag = F2(
-	function (tagName, attributes) {
-		return '<' + (A2(
-			$elm$core$String$join,
-			' ',
+var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$Animations$GuardianAngel$Main$aboutTheAnimation = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mx-auto my-4 col-span-2 w-full'),
+			$elm$html$Html$Attributes$class('text-lg'),
+			$elm$html$Html$Attributes$class('p-5'),
+			$elm$html$Html$Attributes$class('max-w-3xl')
+		]),
+	_List_fromArray(
+		[
 			A2(
-				$elm$core$List$cons,
-				tagName,
-				$zwilias$elm_html_string$Html$Types$attributesToString(attributes))) + '>');
-	});
-var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
-	function (indenter, tags, acc) {
-		toStringHelper:
-		while (true) {
-			if (!tags.b) {
-				var _v1 = acc.n;
-				if (!_v1.b) {
-					return acc;
-				} else {
-					var _v2 = _v1.a;
-					var tagName = _v2.a;
-					var cont = _v2.b;
-					var rest = _v1.b;
-					var $temp$indenter = indenter,
-						$temp$tags = cont,
-						$temp$acc = _Utils_update(
-						acc,
-						{
-							e: acc.e - 1,
-							g: A2(
-								$elm$core$List$cons,
-								A2(
-									indenter,
-									acc.e - 1,
-									$zwilias$elm_html_string$Html$Types$closingTag(tagName)),
-								acc.g),
-							n: rest
-						});
-					indenter = $temp$indenter;
-					tags = $temp$tags;
-					acc = $temp$acc;
-					continue toStringHelper;
-				}
-			} else {
-				if (!tags.a.$) {
-					var _v3 = tags.a;
-					var tagName = _v3.a;
-					var attributes = _v3.b;
-					var children = _v3.c;
-					var rest = tags.b;
-					switch (children.$) {
-						case 0:
-							var $temp$indenter = indenter,
-								$temp$tags = rest,
-								$temp$acc = _Utils_update(
-								acc,
-								{
-									g: A2(
-										$elm$core$List$cons,
-										A2(
-											indenter,
-											acc.e,
-											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.g)
-								});
-							indenter = $temp$indenter;
-							tags = $temp$tags;
-							acc = $temp$acc;
-							continue toStringHelper;
-						case 1:
-							var childNodes = children.a;
-							var $temp$indenter = indenter,
-								$temp$tags = childNodes,
-								$temp$acc = _Utils_update(
-								acc,
-								{
-									e: acc.e + 1,
-									g: A2(
-										$elm$core$List$cons,
-										A2(
-											indenter,
-											acc.e,
-											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.g),
-									n: A2(
-										$elm$core$List$cons,
-										_Utils_Tuple2(tagName, rest),
-										acc.n)
-								});
-							indenter = $temp$indenter;
-							tags = $temp$tags;
-							acc = $temp$acc;
-							continue toStringHelper;
-						default:
-							var childNodes = children.a;
-							var $temp$indenter = indenter,
-								$temp$tags = A2($elm$core$List$map, $elm$core$Tuple$second, childNodes),
-								$temp$acc = _Utils_update(
-								acc,
-								{
-									e: acc.e + 1,
-									g: A2(
-										$elm$core$List$cons,
-										A2(
-											indenter,
-											acc.e,
-											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.g),
-									n: A2(
-										$elm$core$List$cons,
-										_Utils_Tuple2(tagName, rest),
-										acc.n)
-								});
-							indenter = $temp$indenter;
-							tags = $temp$tags;
-							acc = $temp$acc;
-							continue toStringHelper;
-					}
-				} else {
-					var string = tags.a.a;
-					var rest = tags.b;
-					var $temp$indenter = indenter,
-						$temp$tags = rest,
-						$temp$acc = _Utils_update(
-						acc,
-						{
-							g: A2(
-								$elm$core$List$cons,
-								A2(
-									indenter,
-									acc.e,
-									$zwilias$elm_html_string$Html$Types$escapeHtmlText(string)),
-								acc.g)
-						});
-					indenter = $temp$indenter;
-					tags = $temp$tags;
-					acc = $temp$acc;
-					continue toStringHelper;
-				}
-			}
-		}
-	});
-var $zwilias$elm_html_string$Html$Types$toString = F2(
-	function (depth, html) {
-		var joinString = function () {
-			if (!depth) {
-				return '';
-			} else {
-				return '\n';
-			}
-		}();
-		var initialAcc = {e: 0, g: _List_Nil, n: _List_Nil};
-		var indenter = function () {
-			if (!depth) {
-				return $elm$core$Basics$always($elm$core$Basics$identity);
-			} else {
-				return $zwilias$elm_html_string$Html$Types$indent(depth);
-			}
-		}();
-		return A2(
-			$zwilias$elm_html_string$Html$Types$join,
-			joinString,
-			A3(
-				$zwilias$elm_html_string$Html$Types$toStringHelper,
-				indenter,
-				_List_fromArray(
-					[html]),
-				initialAcc).g);
-	});
-var $zwilias$elm_html_string$Html$String$toString = function (indent) {
-	return $zwilias$elm_html_string$Html$Types$toString(indent);
+			$elm$html$Html$h2,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('About the Animation')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('This animation helps kids learn the Guardian Angel prayer though a story and song. ' + ' It also helps kids understand the concept of a guardian angel.')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('This animation is meant to be an aid for kids to slowly build a habit of prayer. ' + 'It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray.')
+				]))
+		]));
+var $author$project$Animations$GuardianAngel$Main$aboutThePrayer = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mx-auto my-4 col-span-2 w-full'),
+			$elm$html$Html$Attributes$class('text-lg'),
+			$elm$html$Html$Attributes$class('p-5'),
+			$elm$html$Html$Attributes$class('max-w-3xl')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('About the Prayer')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('')
+				]))
+		]));
+var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$Attributes$height = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
 };
+var $elm$html$Html$iframe = _VirtualDom_node('iframe');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
+var $author$project$Animations$GuardianAngel$Main$viewVideoPlayers = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('grid grid-cols-2 gap-2'),
+			$elm$html$Html$Attributes$class('max-w-5xl'),
+			$elm$html$Html$Attributes$class('m-auto')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'position', 'relative'),
+					A2($elm$html$Html$Attributes$style, 'padding-bottom', '56.25%'),
+					$elm$html$Html$Attributes$height(0),
+					A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
+					A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
+					A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+					A2($elm$html$Html$Attributes$style, 'margin-top', '80px'),
+					$elm$html$Html$Attributes$class('col-span-2')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$iframe,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
+							A2($elm$html$Html$Attributes$style, 'width', '100%'),
+							A2($elm$html$Html$Attributes$style, 'height', '100%'),
+							A2($elm$html$Html$Attributes$style, 'top', '0'),
+							A2($elm$html$Html$Attributes$style, 'left', '0'),
+							$elm$html$Html$Attributes$src('https://www.youtube-nocookie.com/embed/03hmpXjV_ck'),
+							$elm$html$Html$Attributes$title('Guardian Angel | Prayer Time with Angels'),
+							A2(
+							$elm$html$Html$Attributes$property,
+							'frameborder',
+							$elm$json$Json$Encode$string('0')),
+							A2(
+							$elm$html$Html$Attributes$property,
+							'allow',
+							$elm$json$Json$Encode$string('accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')),
+							A2(
+							$elm$html$Html$Attributes$property,
+							'allowfullscreen',
+							$elm$json$Json$Encode$string('true'))
+						]),
+					_List_Nil)
+				]))
+		]));
+var $author$project$Animations$GuardianAngel$Main$viewBody = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('max-w-3xl'),
+			$elm$html$Html$Attributes$class('m-auto')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Guardian Angel Prayer')
+				])),
+			$author$project$Animations$GuardianAngel$Main$aboutTheAnimation,
+			$author$project$Animations$GuardianAngel$Main$viewVideoPlayers,
+			$author$project$Animations$GuardianAngel$Main$aboutThePrayer
+		]));
 var $zwilias$elm_html_string$Html$Types$Node = F3(
 	function (a, b, c) {
 		return {$: 0, a: a, b: b, c: c};
@@ -5788,166 +5510,17 @@ var $zwilias$elm_html_string$Html$String$node = F3(
 			attributes,
 			$zwilias$elm_html_string$Html$Types$Regular(children));
 	});
-var $zwilias$elm_html_string$Html$String$div = $zwilias$elm_html_string$Html$String$node('div');
-var $author$project$Helpers$headerMargin = 10;
+var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
+var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
 var $zwilias$elm_html_string$Html$Types$Style = F2(
 	function (a, b) {
 		return {$: 4, a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
-var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
-	function (a, b) {
-		return {$: 1, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
-var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
+var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
+	return {$: 1, a: a};
 };
-var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
-var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
-var $author$project$Animations$GuardianAngel$Main$aboutTheAnimation = A2(
-	$zwilias$elm_html_string$Html$String$div,
-	_List_fromArray(
-		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('mx-auto my-4 col-span-2 w-full'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('text-lg'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('p-5'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('max-w-3xl')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$h2,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('About the Animation')
-				])),
-			A2(
-			$zwilias$elm_html_string$Html$String$p,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$Attributes$class('my-10')
-				]),
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('This animation helps kids learn the Guardian Angel prayer though a story and song. ' + ' It also helps kids understand the concept of a guardian angel.')
-				])),
-			A2(
-			$zwilias$elm_html_string$Html$String$p,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$Attributes$class('my-10')
-				]),
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('This animation is meant to be an aid for kids to slowly build a habit of prayer. ' + 'It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray.')
-				]))
-		]));
-var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
-var $author$project$Helpers$titleStyle = _List_fromArray(
-	[
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'text-align', 'center'),
-		A2($zwilias$elm_html_string$Html$String$Attributes$style, 'font-family', 'hvdComicSerifPro')
-	]);
-var $author$project$Helpers$h1Style = _Utils_ap(
-	$author$project$Helpers$titleStyle,
-	_List_fromArray(
-		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-top', '2em'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'line-height', '1em')
-		]));
-var $zwilias$elm_html_string$Html$Types$Attribute = F2(
-	function (a, b) {
-		return {$: 0, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
-var $zwilias$elm_html_string$Html$String$Attributes$height = function (val) {
-	return A2(
-		$zwilias$elm_html_string$Html$String$Attributes$attribute,
-		'height',
-		$elm$core$String$fromInt(val));
-};
-var $zwilias$elm_html_string$Html$String$iframe = $zwilias$elm_html_string$Html$String$node('iframe');
-var $zwilias$elm_html_string$Html$Types$ValueProperty = F2(
-	function (a, b) {
-		return {$: 3, a: a, b: b};
-	});
-var $zwilias$elm_html_string$Html$String$Attributes$property = $zwilias$elm_html_string$Html$Types$ValueProperty;
-var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
-};
-var $zwilias$elm_html_string$Html$String$Attributes$title = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'title', val);
-};
-var $author$project$Animations$GuardianAngel$Main$viewVideoPlayers = A2(
-	$zwilias$elm_html_string$Html$String$div,
-	_List_fromArray(
-		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-2 gap-2'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('max-w-5xl'),
-			$zwilias$elm_html_string$Html$String$Attributes$class('m-auto')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$div,
-			_List_fromArray(
-				[
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'relative'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'padding-bottom', '56.25%'),
-					$zwilias$elm_html_string$Html$String$Attributes$height(0),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow', 'hidden'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'max-width', '100%'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'border-radius', '5px'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'margin-top', '80px'),
-					$zwilias$elm_html_string$Html$String$Attributes$class('col-span-2')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$zwilias$elm_html_string$Html$String$iframe,
-					_List_fromArray(
-						[
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'position', 'absolute'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'width', '100%'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '100%'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'top', '0'),
-							A2($zwilias$elm_html_string$Html$String$Attributes$style, 'left', '0'),
-							$zwilias$elm_html_string$Html$String$Attributes$src('https://www.youtube-nocookie.com/embed/03hmpXjV_ck'),
-							$zwilias$elm_html_string$Html$String$Attributes$title('Guardian Angel | Prayer Time with Angels'),
-							A2(
-							$zwilias$elm_html_string$Html$String$Attributes$property,
-							'frameborder',
-							$elm$json$Json$Encode$string('0')),
-							A2(
-							$zwilias$elm_html_string$Html$String$Attributes$property,
-							'allow',
-							$elm$json$Json$Encode$string('accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')),
-							A2(
-							$zwilias$elm_html_string$Html$String$Attributes$property,
-							'allowfullscreen',
-							$elm$json$Json$Encode$string('true'))
-						]),
-					_List_Nil)
-				]))
-		]));
-var $author$project$Animations$GuardianAngel$Main$viewBody = A2(
-	$zwilias$elm_html_string$Html$String$div,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			$zwilias$elm_html_string$Html$String$h1,
-			$author$project$Helpers$h1Style,
-			_List_fromArray(
-				[
-					$zwilias$elm_html_string$Html$String$text('Guardian Angel Prayer')
-				])),
-			$author$project$Animations$GuardianAngel$Main$viewVideoPlayers,
-			$author$project$Animations$GuardianAngel$Main$aboutTheAnimation
-		]));
-var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
+var $zwilias$elm_html_string$Html$String$text = $zwilias$elm_html_string$Html$Types$TextNode;
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
 };
@@ -5980,9 +5553,22 @@ var $author$project$Footer$viewFooter = A2(
 					$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
 				]))
 		]));
+var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
+	function (a, b) {
+		return {$: 1, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
+var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
+};
 var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
 var $zwilias$elm_html_string$Html$String$nav = $zwilias$elm_html_string$Html$String$node('nav');
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
+var $zwilias$elm_html_string$Html$Types$Attribute = F2(
+	function (a, b) {
+		return {$: 0, a: a, b: b};
+	});
+var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
 var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'href', val);
 };
@@ -6023,6 +5609,7 @@ var $author$project$Header$desktopNavigation = function (height) {
 				A3($author$project$Header$viewNavButton, height, '/give', 'Give')
 			]));
 };
+var $zwilias$elm_html_string$Html$String$div = $zwilias$elm_html_string$Html$String$node('div');
 var $author$project$Header$hamburgerMenu = A2(
 	$zwilias$elm_html_string$Html$String$a,
 	_List_fromArray(
@@ -6084,6 +5671,7 @@ var $author$project$Header$navigation = function (height) {
 					]))
 			]));
 };
+var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
 var $author$project$Header$viewHeaderTitle = function (title) {
 	return A2(
 		$zwilias$elm_html_string$Html$String$a,
@@ -6120,6 +5708,9 @@ var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
 		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
 	});
 var $zwilias$elm_html_string$Html$String$img = $zwilias$elm_html_string$Html$String$nodeWithoutChildren('img');
+var $zwilias$elm_html_string$Html$String$Attributes$src = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'src', val);
+};
 var $author$project$Logo$logo = A2(
 	$zwilias$elm_html_string$Html$String$img,
 	_List_fromArray(
@@ -6167,21 +5758,22 @@ var $author$project$Header$viewSubpageHeader = F2(
 				]));
 	});
 var $author$project$Animations$GuardianAngel$Main$view = A2(
-	$zwilias$elm_html_string$Html$String$div,
+	$elm$html$Html$div,
 	_List_fromArray(
 		[
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', '100vh'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-x', 'hidden'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'overflow-y', 'auto'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'perspective', '300px'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'scroll-behavior', 'smooth'),
-			A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#FEF7F4')
+			A2($elm$html$Html$Attributes$style, 'height', '100vh'),
+			A2($elm$html$Html$Attributes$style, 'overflow-x', 'hidden'),
+			A2($elm$html$Html$Attributes$style, 'overflow-y', 'auto'),
+			A2($elm$html$Html$Attributes$style, 'perspective', '300px'),
+			A2($elm$html$Html$Attributes$style, 'scroll-behavior', 'smooth'),
+			A2($elm$html$Html$Attributes$style, 'background-color', '#FEF7F4')
 		]),
 	_List_fromArray(
 		[
-			A2($author$project$Header$viewSubpageHeader, 'Give', $author$project$Helpers$headerMargin),
+			$zwilias$elm_html_string$Html$String$toHtml(
+			A2($author$project$Header$viewSubpageHeader, 'Guardian Angel', $author$project$Helpers$headerMargin)),
 			$author$project$Animations$GuardianAngel$Main$viewBody,
-			$author$project$Footer$viewFooter
+			$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
 		]));
 var $author$project$Animations$GuardianAngel$Main$main = $elm$browser$Browser$sandbox(
 	{
@@ -6192,9 +5784,7 @@ var $author$project$Animations$GuardianAngel$Main$main = $elm$browser$Browser$sa
 			};
 		},
 		aT: function (_v1) {
-			return $zwilias$elm_html_string$Html$String$toHtml(
-				$zwilias$elm_html_string$Html$String$text(
-					A2($zwilias$elm_html_string$Html$String$toString, 0, $author$project$Animations$GuardianAngel$Main$view)));
+			return $author$project$Animations$GuardianAngel$Main$view;
 		}
 	});
 _Platform_export({'Animations':{'GuardianAngel':{'Main':{'init':$author$project$Animations$GuardianAngel$Main$main(

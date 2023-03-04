@@ -1,5 +1,6 @@
 module Animations.HailMary.Main exposing (..)
 
+import Animations.Helpers exposing (viewVideo)
 import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
@@ -8,7 +9,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Html.String
-import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
 
 
@@ -54,7 +54,7 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Give" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "Hail Mary" headerMargin |> Html.String.toHtml
         , viewBody model
         , viewFooter |> Html.String.toHtml
         ]
@@ -65,11 +65,13 @@ viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
+        , class "p-5"
         ]
-        [ h1 [ class "my-10" ] [ text "Hail Mary Animation for Children" ]
+        [ h1 [ class "my-10 leading-10" ] [ text "Hail Mary Animation for Children" ]
         , aboutTheAnimation
         , div [ class "mb-10" ] [ viewSignUp |> Html.String.toHtml ]
         , viewVideoPlayers model
+        , viewPrayer
         , aboutThePrayer
         ]
 
@@ -120,10 +122,10 @@ viewVideoPlayers model =
         [ viewVideoPlayerTabs model
         , case model.videoTab of
             English ->
-                viewVideo englishVideoLink
+                viewVideo "Hail Mary, Full of Grace Video" englishVideoLink
 
             ASL ->
-                viewVideo aslVideoLink
+                viewVideo "Hail Mary, Full of Grace Video" aslVideoLink
         ]
 
 
@@ -135,36 +137,6 @@ englishVideoLink =
 aslVideoLink : String
 aslVideoLink =
     "https://www.youtube-nocookie.com/embed/QNVNbLiqznI"
-
-
-viewVideo : String -> Html msg
-viewVideo link =
-    div
-        [ class "w-1/2"
-        ]
-        [ div
-            [ style "position" "relative"
-            , style "padding-bottom" "56.25%"
-            , height 0
-            , style "overflow" "hidden"
-            , style "max-width" "100%"
-            , style "border-radius" "5px"
-            ]
-            [ iframe
-                [ style "position" "absolute"
-                , style "width" "100%"
-                , style "height" "100%"
-                , style "top" "0"
-                , style "left" "0"
-                , src link
-                , title "Hail Mary, Full of Grace Video"
-                , property "frameborder" (Json.Encode.string "0")
-                , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-                , property "allowfullscreen" (Json.Encode.string "true")
-                ]
-                []
-            ]
-        ]
 
 
 aboutTheAnimation : Html msg
@@ -181,6 +153,22 @@ aboutTheAnimation =
                 ("The animation is meant to be an aid for kids to slowly build a habit of prayer. "
                     ++ "It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray."
                 )
+            ]
+        ]
+
+
+viewPrayer : Html msg
+viewPrayer =
+    div [ class "mt-10 text-lg" ]
+        [ h2 [ class "mb-3" ] [ text "The Prayer" ]
+        , p []
+            [ span [ class "block" ] [ text "Hail Mary, full of grace, the Lord is with you;" ]
+            , span [ class "block" ] [ text "blessed are you among women," ]
+            , span [ class "block" ] [ text "and blessed is the fruit of your womb, Jesus." ]
+            , span [ class "block" ] [ text "Holy Mary, Mother of God," ]
+            , span [ class "block" ] [ text "pray for us sinners" ]
+            , span [ class "block" ] [ text "now and at the hour of our death." ]
+            , span [ class "block" ] [ text "Amen." ]
             ]
         ]
 

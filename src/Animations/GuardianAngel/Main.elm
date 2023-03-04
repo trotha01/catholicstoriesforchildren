@@ -1,12 +1,15 @@
 module Animations.GuardianAngel.Main exposing (..)
 
+import Animations.Helpers exposing (viewVideo)
 import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.String
 import Json.Encode
+import Newsroom.Main exposing (viewSignUp)
 
 
 type alias Model =
@@ -20,9 +23,6 @@ main =
         , view =
             \_ ->
                 view
-                    |> toString 0
-                    |> text
-                    |> toHtml
         , update = \_ -> \model -> model
         }
 
@@ -37,19 +37,25 @@ view =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Give" headerMargin
+        [ viewSubpageHeader "Guardian Angel" headerMargin |> Html.String.toHtml
         , viewBody
-        , viewFooter
+        , viewFooter |> Html.String.toHtml
         ]
 
 
 viewBody : Html Never
 viewBody =
     div
-        []
-        [ h1 h1Style [ text "Guardian Angel Prayer" ]
-        , viewVideoPlayers
+        [ class "max-w-3xl"
+        , class "m-auto"
+        , class "p-5"
+        , class "mb-10"
+        ]
+        [ h1 [ class "my-10 leading-10" ] [ text "Guardian Angel Prayer" ]
         , aboutTheAnimation
+        , div [ class "mb-10" ] [ viewSignUp |> Html.String.toHtml ]
+        , viewVideoPlayers
+        , viewPrayer
 
         -- , aboutThePrayer
         ]
@@ -57,54 +63,34 @@ viewBody =
 
 viewVideoPlayers : Html msg
 viewVideoPlayers =
+    viewVideo
+        "Guardian Angel | Prayer Time with Angels"
+        "https://www.youtube-nocookie.com/embed/03hmpXjV_ck"
+
+
+viewVideoPlayer : String -> Html msg
+viewVideoPlayer link =
     div
-        [ class "grid grid-cols-2 gap-2"
-        , class "max-w-5xl"
-        , class "m-auto"
+        [ class "w-1/2"
         ]
-        [ div
-            [ style "position" "relative"
-            , style "padding-bottom" "56.25%"
-            , height 0
-            , style "overflow" "hidden"
-            , style "max-width" "100%"
-            , style "border-radius" "5px"
-            , style "margin-top" "80px"
-            , class "col-span-2"
-            ]
-            [ iframe
-                [ style "position" "absolute"
-                , style "width" "100%"
-                , style "height" "100%"
-                , style "top" "0"
-                , style "left" "0"
-                , src "https://www.youtube-nocookie.com/embed/03hmpXjV_ck"
-                , title "Guardian Angel | Prayer Time with Angels"
-                , property "frameborder" (Json.Encode.string "0")
-                , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-                , property "allowfullscreen" (Json.Encode.string "true")
-                ]
-                []
-            ]
+        [ viewVideo "Guardian Angel | Prayer Time with Angels" link
         ]
 
 
 aboutTheAnimation : Html msg
 aboutTheAnimation =
     div
-        [ class "mx-auto my-4 col-span-2 w-full"
+        [ class "mx-auto col-span-2 w-full"
         , class "text-lg"
-        , class "p-5"
         , class "max-w-3xl"
         ]
-        [ h2 [] [ text "About the Animation" ]
-        , p [ class "my-10" ]
+        [ p [ class "my-3" ]
             [ text
                 ("This animation helps kids learn the Guardian Angel prayer though a story and song. "
                     ++ " It also helps kids understand the concept of a guardian angel."
                 )
             ]
-        , p [ class "my-10" ]
+        , p [ class "my-3" ]
             [ text
                 ("This animation is meant to be an aid for kids to slowly build a habit of prayer. "
                     ++ "It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray."
@@ -113,14 +99,28 @@ aboutTheAnimation =
         ]
 
 
+viewPrayer : Html msg
+viewPrayer =
+    div [ class "mt-10 text-lg" ]
+        [ h2 [ class "mb-3" ] [ text "The Prayer" ]
+        , p []
+            [ span [ class "block" ] [ text "Angel Of God, my guardian dear," ]
+            , span [ class "block" ] [ text "to whom God's love commits me here," ]
+            , span [ class "block" ] [ text "ever this day be at my side," ]
+            , span [ class "block" ] [ text "to light and guard, to rule and guide." ]
+            , span [ class "block" ] [ text "Amen." ]
+            ]
+        ]
+
+
 aboutThePrayer : Html msg
 aboutThePrayer =
     div
-        [ class "mx-auto my-4 col-span-2 w-full"
+        [ class "mx-auto col-span-2 w-full"
         , class "text-lg"
-        , class "p-5"
+        , class "py-5"
         , class "max-w-3xl"
         ]
-        [ h2 [] [ text "About the Prayer" ]
-        , p [ class "my-10" ] [ text "" ]
+        [ h2 [] [ text "About the Guardian Angel Prayer" ]
+        , p [ class "my-3" ] [ text "" ]
         ]

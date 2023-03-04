@@ -36,7 +36,7 @@ elm make --optimize \
   --output animations/hailmary/elm.js \
   && elm make --optimize \
   src/Animations/GuardianAngel/Main.elm \
-  --output guardianAngelElm.js \
+  --output animations/guardianangel/elm.js \
   && elm make --optimize \
   src/FeastDayActivities/Main.elm \
   --output feastdayactivities/elm.js \
