@@ -7,6 +7,7 @@ import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 import List
+import Newsroom.Main exposing (viewSignUp)
 import Team.Team exposing (..)
 
 
@@ -82,6 +83,7 @@ viewAbout =
         , p []
             [ text """Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God."""
             ]
+        , div [ class "mt-5" ] [ viewSignUp ]
         , h2 [ class "my-7" ] [ text "Vision" ]
         , p [] [ text "Catholic Stories for Children is made with the vision that all Catholics have a strong love of God and neighbor." ]
         , h2 [ class "my-7" ] [ text "Mission" ]

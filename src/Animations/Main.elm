@@ -6,6 +6,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
+import Newsroom.Main exposing (viewSignUp)
 
 
 type alias Model =
@@ -47,6 +48,7 @@ viewBody =
         , div [ class "my-10" ]
             [ p [] [ text "Our animations are built to help kids understand common Catholic prayers." ]
             , p [] [ text "You can use them to help your kids build a habit of prayer." ]
+            , div [ class "mt-5" ] [ viewSignUp ]
             ]
         , animations
         ]

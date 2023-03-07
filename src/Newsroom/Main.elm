@@ -67,7 +67,7 @@ viewSignUp =
         [ p
             [ class "pb-5"
             ]
-            [ text "Sign up for our email list to get tips, resources, and animations to your inbox!" ]
+            [ text "Sign up for our email list to get tips, resources, and animations to your inbox! We are giving away our Lenten Activity printable to those who sign up today!" ]
         , viewSignUpButton
         ]
 

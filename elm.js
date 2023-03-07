@@ -5993,7 +5993,7 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 				]),
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Sign up for our email list to get tips, resources, and animations to your inbox!')
+					$zwilias$elm_html_string$Html$String$text('Sign up for our email list to get tips, resources, and animations to your inbox! We are giving away our Lenten Activity printable to those who sign up today!')
 				])),
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));
