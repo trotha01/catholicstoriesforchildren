@@ -139,9 +139,9 @@ viewIntro =
         ]
         [ div [ class "mb-20" ]
             [ h2
-                [ class "mb-7"
+                [ class "mb-7 leading-10"
                 ]
-                [ text "Animations for Catholic Children" ]
+                [ text "Start teaching your children with Catholic animations" ]
             , p [ class "leading-10" ]
                 [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
                 ]

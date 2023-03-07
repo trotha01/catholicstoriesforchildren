@@ -8,7 +8,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
-import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
 
 

@@ -6020,11 +6020,11 @@ var $author$project$Main$viewIntro = A3(
 					$elm$html$Html$h2,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('mb-7')
+							$elm$html$Html$Attributes$class('mb-7 leading-10')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Animations for Catholic Children')
+							$elm$html$Html$text('Start teaching your children with Catholic animations')
 						])),
 					A2(
 					$elm$html$Html$p,
