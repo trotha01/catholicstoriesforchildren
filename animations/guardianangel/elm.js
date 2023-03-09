@@ -5526,7 +5526,7 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 				]),
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$text('Receive tips, resources, and animations! We are giving away our Lenten Activity printable to those who sign up today!')
+					$zwilias$elm_html_string$Html$String$text('Want tips, resources, and Catholic animations? We are giving away our Lenten Activity printable to those who sign up today!')
 				])),
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));

@@ -12,6 +12,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
+import Newsroom.Main exposing (viewSignUp)
 import Url
 
 
@@ -341,9 +342,12 @@ viewMonth feastMonth =
             splitList feastMonth.feasts
     in
     div
-        [ class "mt-10 mb-20" ]
-        [ h1 [ class "text-center font-bold" ] [ text "2023 Feast Day Activities" ]
-        , p [ class "text-center text-2xl mt-5 mb-10" ] [ text "Catholic Feast Day Activities for Children" ]
+        -- [ class "mt-10 mb-20" ]
+        [ class "mt-10 max-w-3xl mx-auto" ]
+        [ h1 [ class "font-bold" ] [ text "2023 Feast Day Activities" ]
+        , p [ class "text-2xl mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
+        , p [ class "text-2xl mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
+        , viewSignUp |> Html.String.toHtml
         , div
             [ class "grid grid-cols-12"
             , class "text-base md:text-3xl lg:text-3xl"
