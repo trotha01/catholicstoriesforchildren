@@ -39,15 +39,27 @@ view =
 viewBody : Html Never
 viewBody =
     div
-        [ -- center
-          class "hcenter"
+        [ class "hcenter"
         , style "width" "80%"
         , style "max-width" "800px"
         ]
-        [ h1 [ class "mt-10" ] [ text "Animations" ]
+        [ h1 [ class "mt-10 leading-10" ] [ text "Start teaching your children with Catholic animations" ]
         , div [ class "my-10" ]
-            [ p [] [ text "Our animations are built to help kids understand common Catholic prayers." ]
-            , p [] [ text "You can use them to help your kids build a habit of prayer." ]
+            [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
+            , p [ class "my-5" ]
+                [ text
+                    ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
+                        ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
+                    )
+                ]
+            , p [ class "my-5" ]
+                [ text
+                    ("Do you want your children to grow in gratitude? Start with the prayer before meals."
+                        ++ "Do you want your children to grow in humility? Start with the Act of Contrition."
+                        ++ "Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
+                        ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
+                    )
+                ]
             , div [ class "mt-5" ] [ viewSignUp ]
             ]
         , animations

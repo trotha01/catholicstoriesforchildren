@@ -147,11 +147,11 @@ aboutTheAnimation =
         , class "max-w-3xl"
         ]
         [ p [ class "my-3" ]
-            [ text "This animation helps kids learn the Hail Mary prayer though a story and repetition." ]
+            [ text "Use this animation to help your kids learn the Hail Mary prayer though a story and repetition." ]
         , p [ class "my-3" ]
             [ text
-                ("The animation is meant to be an aid for kids to slowly build a habit of prayer. "
-                    ++ "It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray."
+                ("The animation is meant to be an aid for your children to slowly build a habit of prayer. "
+                    ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
                 )
             ]
         ]
@@ -185,9 +185,10 @@ aboutThePrayer =
         , p [ class "my-10" ] [ text "The Hail Mary is a beautiful prayer to Mary, the Mother of Jesus. This prayer is filled with Scripture." ]
         , p [ class "my-10" ]
             [ text
-                ("In this prayer, we begin with the greeting of St. Michael the Archangel, "
-                    ++ "'Hail Mary, full of grace, the Lord is with you' (Luke 1:28). "
-                    ++ "What does it mean to be full of grace? Mary considered in her mind what sort of greeting this might be (Luke 1:29). "
+                "In this prayer, we begin with the greeting of St. Michael the Archangel, "
+            , span [ class "font-semibold" ] [ text "'Hail Mary, full of grace, the Lord is with you' (Luke 1:28). " ]
+            , text
+                ("What does it mean to be full of grace? Mary considered in her mind what sort of greeting this might be (Luke 1:29). "
                     ++ "To be completely filled with grace indicates that Mary is "
                     ++ "without sin."
                 )
@@ -216,9 +217,8 @@ aboutThePrayer =
             ]
         , p [ class "my-10" ]
             [ text
-                ("Then we praise Mary in the same way as her cousin Elizabeth, "
-                    ++ "'Blessed are you among women, and blessed is the fruit of your womb' (Luke 1:42)."
-                )
+                "Then we praise Mary in the same way as her cousin Elizabeth, "
+            , span [ class "font-semibold" ] [ text "'Blessed are you among women, and blessed is the fruit of your womb' (Luke 1:42)." ]
             ]
         , blockquote
             [ class "my-10"
@@ -247,9 +247,7 @@ aboutThePrayer =
                 ]
             ]
         , p [ class "my-10" ]
-            [ text
-                ("Lastly, we asks Mary to pray for us, "
-                    ++ "Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen."
-                )
+            [ text "Lastly, we asks Mary to pray for us. "
+            , span [ class "font-semibold" ] [ text "Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen." ]
             ]
         ]

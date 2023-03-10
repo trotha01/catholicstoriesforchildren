@@ -5362,7 +5362,7 @@ var $author$project$Animations$HailMary$Main$aboutTheAnimation = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('This animation helps kids learn the Hail Mary prayer though a story and repetition.')
+					$elm$html$Html$text('Use this animation to help your kids learn the Hail Mary prayer though a story and repetition.')
 				])),
 			A2(
 			$elm$html$Html$p,
@@ -5372,12 +5372,13 @@ var $author$project$Animations$HailMary$Main$aboutTheAnimation = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('The animation is meant to be an aid for kids to slowly build a habit of prayer. ' + 'It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray.')
+					$elm$html$Html$text('The animation is meant to be an aid for your children to slowly build a habit of prayer. ' + 'You can use it during prayer time while kids are still learning both the words and the solemn manner to pray.')
 				]))
 		]));
 var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
 var $elm$html$Html$Attributes$cite = $elm$html$Html$Attributes$stringProperty('cite');
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Animations$HailMary$Main$aboutThePrayer = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -5414,7 +5415,18 @@ var $author$project$Animations$HailMary$Main$aboutThePrayer = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('In this prayer, we begin with the greeting of St. Michael the Archangel, ' + ('\'Hail Mary, full of grace, the Lord is with you\' (Luke 1:28). ' + ('What does it mean to be full of grace? Mary considered in her mind what sort of greeting this might be (Luke 1:29). ' + ('To be completely filled with grace indicates that Mary is ' + 'without sin.'))))
+					$elm$html$Html$text('In this prayer, we begin with the greeting of St. Michael the Archangel, '),
+					A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('font-semibold')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('\'Hail Mary, full of grace, the Lord is with you\' (Luke 1:28). ')
+						])),
+					$elm$html$Html$text('What does it mean to be full of grace? Mary considered in her mind what sort of greeting this might be (Luke 1:29). ' + ('To be completely filled with grace indicates that Mary is ' + 'without sin.'))
 				])),
 			A2(
 			$elm$html$Html$blockquote,
@@ -5457,7 +5469,17 @@ var $author$project$Animations$HailMary$Main$aboutThePrayer = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('Then we praise Mary in the same way as her cousin Elizabeth, ' + '\'Blessed are you among women, and blessed is the fruit of your womb\' (Luke 1:42).')
+					$elm$html$Html$text('Then we praise Mary in the same way as her cousin Elizabeth, '),
+					A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('font-semibold')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('\'Blessed are you among women, and blessed is the fruit of your womb\' (Luke 1:42).')
+						]))
 				])),
 			A2(
 			$elm$html$Html$blockquote,
@@ -5500,11 +5522,20 @@ var $author$project$Animations$HailMary$Main$aboutThePrayer = A2(
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('Lastly, we asks Mary to pray for us, ' + 'Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen.')
+					$elm$html$Html$text('Lastly, we asks Mary to pray for us. '),
+					A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('font-semibold')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen.')
+						]))
 				]))
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Animations$HailMary$Main$viewPrayer = A2(
 	$elm$html$Html$div,
 	_List_fromArray(

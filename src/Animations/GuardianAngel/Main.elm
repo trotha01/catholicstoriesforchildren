@@ -85,14 +85,14 @@ aboutTheAnimation =
         ]
         [ p [ class "my-3" ]
             [ text
-                ("This animation helps kids learn the Guardian Angel prayer though a story and song. "
-                    ++ " It also helps kids understand the concept of a guardian angel."
+                ("Use this animation to help your children learn the Guardian Angel prayer though a story and song."
+                    ++ " It also will help your children understand the concept of a guardian angel."
                 )
             ]
         , p [ class "my-3" ]
             [ text
-                ("This animation is meant to be an aid for kids to slowly build a habit of prayer. "
-                    ++ "It is a tool that can be used during prayer time while kids are still learning both the words and the solemn manner to pray."
+                ("This animation is meant to be an aid for your children to slowly build a habit of prayer. "
+                    ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
                 )
             ]
         ]
