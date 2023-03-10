@@ -213,6 +213,12 @@ march =
                           , link = "https://www.catholicicing.com/st-josephs-altar/"
                           , snippet = "It’s a 3D printable St. Joseph’s altar, and it’s super easy to put together!"
                           }
+                        , { activityType = Printout
+                          , title = "St. Joseph Altar For Beginners"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                          , link = "https://www.catholicicing.com/st-joseph-altar-for-beginners/"
+                          , snippet = "Today I wanted to share with you our St. Joseph’s altar. I also want to answer all the questions you may have about how to set up a St. Joseph’s altar, what’s involved, and why we do it."
+                          }
                         , { activityType = More
                           , title = "St. Joseph Feast Day Celebration Ideas for your Home"
                           , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"

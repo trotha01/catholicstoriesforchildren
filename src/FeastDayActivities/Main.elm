@@ -342,7 +342,6 @@ viewMonth feastMonth =
             splitList feastMonth.feasts
     in
     div
-        -- [ class "mt-10 mb-20" ]
         [ class "mt-10 max-w-3xl mx-auto" ]
         [ h1 [ class "font-bold" ] [ text "2023 Feast Day Activities" ]
         , p [ class "text-2xl mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
