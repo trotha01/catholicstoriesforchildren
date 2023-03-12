@@ -45,7 +45,7 @@ viewBody : Html Never
 viewBody =
     div
         [ class "h-screen"
-        , class "bg-csc-lightpurple"
+        , class "bg-[#FEF7F4]"
         , class "p-10"
         ]
         [ h1
