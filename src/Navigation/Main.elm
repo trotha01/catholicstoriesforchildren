@@ -27,9 +27,10 @@ main =
 view : Html Never
 view =
     div
-        [ class "w-screen h-screen"
-        , class "grid grid-rows-6"
+        [ class "min-h-screen"
+        , class "flex flex-col"
         , class "bg-csc-lightpurple"
+        , class "pt-5"
         ]
         [ viewNavButton "/" "Home"
         , viewNavButton "/team" "About Us"
@@ -45,9 +46,8 @@ viewNavButton link page =
     a
         [ href link
         , class "hover:bg-csc-lightpurple"
-        , class "p-10"
+        , class "px-10 py-5"
         , class "rounded-t"
-        , class "border-b-gray-500 border-b-2"
-        , class "text-2xl"
+        , class "text-4xl text-semibold"
         ]
-        [ text page ]
+        [ span [ class "px-10 m-auto" ] [ text page ] ]
