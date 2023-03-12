@@ -29,7 +29,9 @@ main =
 
 view : Html Never
 view =
-    div []
+    div
+        [ class "bg-[#FEF7F4]"
+        ]
         [ viewSubpageHeader "Team" headerMargin
         , viewBody
         , viewFooter
