@@ -5485,7 +5485,7 @@ var $author$project$Main$viewAnimations = A3(
 					$elm$html$Html$p,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('text-center')
+							$elm$html$Html$Attributes$class('text-center pb-3')
 						]),
 					_List_fromArray(
 						[

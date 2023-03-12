@@ -243,7 +243,7 @@ viewAnimations =
                 [ h2 subHeaderStyle
                     [ text "Animations" ]
                 ]
-            , p [ class "text-center" ]
+            , p [ class "text-center pb-3" ]
                 [ text "These animations are made to help kids learn the Hail Mary prayer, the prayer to their guardian angel, and more!"
                 ]
             , div
