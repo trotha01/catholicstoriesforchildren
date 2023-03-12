@@ -26,12 +26,12 @@ viewSubpageHeader currentPage leftMargin =
                 ( "111px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
 
             else
-                ( "48px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
+                ( "60px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
     in
     header
         [ style "background-color" "#3d5d75"
         , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
-        , style "height" height
+        , class ("h-[60px] md:h-" ++ height)
         , class "colorDarkGray"
         , class "grid items-center justify-items-center"
         , class gridColsClass

@@ -9602,7 +9602,7 @@ var $author$project$Header$viewLogo = A2(
 var $author$project$Header$viewSubpageHeader = F2(
 	function (currentPage, leftMargin) {
 		var isHomePage = currentPage === 'Catholic Stories for Children';
-		var _v0 = isHomePage ? _Utils_Tuple3('111px', $author$project$Header$navigation, 'grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]') : _Utils_Tuple3('48px', $author$project$Header$navigation, 'grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]');
+		var _v0 = isHomePage ? _Utils_Tuple3('111px', $author$project$Header$navigation, 'grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]') : _Utils_Tuple3('60px', $author$project$Header$navigation, 'grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]');
 		var height = _v0.a;
 		var rightHandSide = _v0.b;
 		var gridColsClass = _v0.c;
@@ -9612,7 +9612,7 @@ var $author$project$Header$viewSubpageHeader = F2(
 				[
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#3d5d75'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, #9DE2EB , #EBD6F1)'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', height),
+					$zwilias$elm_html_string$Html$String$Attributes$class('h-[60px] md:h-' + height),
 					$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('grid items-center justify-items-center'),
 					$zwilias$elm_html_string$Html$String$Attributes$class(gridColsClass)
