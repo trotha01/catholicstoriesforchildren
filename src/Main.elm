@@ -347,10 +347,10 @@ viewTestimonials =
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
         , div [ class " md:flex md:overflow-x-auto" ]
-            [ div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
+            [ div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
             ]
         ]
 
@@ -567,7 +567,6 @@ viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Htm
 viewSection sectionId background body =
     section
         ([ id sectionId
-         , class "FortyToEightypadding"
          , class "px-5 sm:pl-[150px] sm:pr-[100px] lg:pr-10"
          , style "transform-style" "preserve-3d"
          , style "min-height" "80vh"

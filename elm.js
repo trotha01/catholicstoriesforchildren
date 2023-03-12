@@ -5444,7 +5444,6 @@ var $author$project$Main$viewSection = F3(
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$id(sectionId),
-						$elm$html$Html$Attributes$class('FortyToEightypadding'),
 						$elm$html$Html$Attributes$class('px-5 sm:pl-[150px] sm:pr-[100px] lg:pr-10'),
 						A2($elm$html$Html$Attributes$style, 'transform-style', 'preserve-3d'),
 						A2($elm$html$Html$Attributes$style, 'min-height', '80vh')
@@ -6562,7 +6561,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6573,7 +6572,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6584,7 +6583,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6595,7 +6594,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20')
 						]),
 					_List_fromArray(
 						[
