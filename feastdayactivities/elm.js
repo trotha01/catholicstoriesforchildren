@@ -9452,7 +9452,7 @@ var $author$project$Header$viewNavButton = F3(
 					$zwilias$elm_html_string$Html$String$Attributes$class('hover:border-b-2 hover:border-gray-700'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('rounded-t'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('text-lg'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'height', height),
+					$zwilias$elm_html_string$Html$String$Attributes$class('h-[60px] h-[' + (height + ']')),
 					$zwilias$elm_html_string$Html$String$Attributes$class('w-full'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', page)
 				]),
@@ -9612,7 +9612,7 @@ var $author$project$Header$viewSubpageHeader = F2(
 				[
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-color', '#3d5d75'),
 					A2($zwilias$elm_html_string$Html$String$Attributes$style, 'background-image', 'linear-gradient(130deg, #9DE2EB , #EBD6F1)'),
-					$zwilias$elm_html_string$Html$String$Attributes$class('h-[60px] md:h-' + height),
+					$zwilias$elm_html_string$Html$String$Attributes$class('h-[60px] md:h-[' + (height + ']')),
 					$zwilias$elm_html_string$Html$String$Attributes$class('colorDarkGray'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('grid items-center justify-items-center'),
 					$zwilias$elm_html_string$Html$String$Attributes$class(gridColsClass)

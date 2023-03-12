@@ -31,7 +31,7 @@ viewSubpageHeader currentPage leftMargin =
     header
         [ style "background-color" "#3d5d75"
         , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
-        , class ("h-[60px] md:h-" ++ height)
+        , class ("h-[60px] md:h-[" ++ height ++ "]")
         , class "colorDarkGray"
         , class "grid items-center justify-items-center"
         , class gridColsClass
@@ -103,7 +103,9 @@ viewNavButton height link page =
         , class "hover:border-b-2 hover:border-gray-700"
         , class "rounded-t"
         , class "text-lg"
-        , style "height" height
+
+        -- , style "height" height
+        , class ("h-[60px] h-[" ++ height ++ "]")
         , class "w-full"
         , attribute "aria-label" page
         ]
