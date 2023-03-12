@@ -121,9 +121,9 @@ viewBody =
         , class "lg:text-2xl"
         ]
         [ viewIntro
-        , viewTeam
-        , viewAnimations
         , viewTestimonials
+        , viewAnimations
+        , viewTeam
         , viewContact
         , viewNewsletter
         , viewGive
@@ -204,7 +204,7 @@ viewIntro =
 viewTeam : Html msg
 viewTeam =
     viewSection "team"
-        [ class "bg-csc-lightpurple"
+        [ class "bg-[#FEF7F4]"
         , class "py-20"
         ]
         [ h2 subHeaderStyle
@@ -347,10 +347,10 @@ viewTestimonials =
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
         , div [ class " md:flex md:overflow-x-auto" ]
-            [ div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none w-1/3 min-w-[500px] my-10 mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
+            [ div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
+            , div [ class "flex-none w-1/3 min-w-[340px] my-10 mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
             ]
         ]
 

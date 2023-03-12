@@ -6483,7 +6483,7 @@ var $author$project$Main$viewTeam = A3(
 	'team',
 	_List_fromArray(
 		[
-			$elm$html$Html$Attributes$class('bg-csc-lightpurple'),
+			$elm$html$Html$Attributes$class('bg-[#FEF7F4]'),
 			$elm$html$Html$Attributes$class('py-20')
 		]),
 	_List_fromArray(
@@ -6562,7 +6562,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6573,7 +6573,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6584,7 +6584,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6595,7 +6595,7 @@ var $author$project$Main$viewTestimonials = A3(
 					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[500px] my-10 mr-20')
+							$elm$html$Html$Attributes$class('flex-none w-1/3 min-w-[340px] my-10 mr-20')
 						]),
 					_List_fromArray(
 						[
@@ -6612,7 +6612,7 @@ var $author$project$Main$viewBody = A2(
 			$elm$html$Html$Attributes$class('lg:text-2xl')
 		]),
 	_List_fromArray(
-		[$author$project$Main$viewIntro, $author$project$Main$viewTeam, $author$project$Main$viewAnimations, $author$project$Main$viewTestimonials, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive]));
+		[$author$project$Main$viewIntro, $author$project$Main$viewTestimonials, $author$project$Main$viewAnimations, $author$project$Main$viewTeam, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
