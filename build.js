@@ -5,8 +5,8 @@ var TeamElm = require('./teamElm.js')
 var GiveElm = require('./giveElm.js')
 var NewsroomElm = require('./newsroomElm.js')
 var AnimationsElm = require('./animationsElm.js')
-// var HailMaryElm = require('./hailMaryElm.js')
 var GuardianAngelElm = require('./guardianAngelElm.js')
+var PrivacyPolicyElm = require('./privacyPolicyElm.js')
 
 var htmlPart1 = `<!doctype html>
 <html lang="en">
@@ -165,7 +165,7 @@ var teamApp = TeamElm.Elm.Team.Main.init({ node: fakeNode('./team/index.html', '
 var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏') })
 var newsroomApp = NewsroomElm.Elm.Newsroom.Main.init({ node: fakeNode('./newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news') })
 var animationsApp = AnimationsElm.Elm.Animations.Main.init({ node: fakeNode('./animations/index.html', 'Animations - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers') })
-// var guardianAngelApp = GuardianAngelElm.Elm.Animations.GuardianAngel.Main.init({ node: fakeNode('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer') })
+var privacyPolicyApp = PrivacyPolicyElm.Elm.About.PrivacyPolicy.Main.init({ node: fakeNode('./about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers') })
 fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', '.FeastDayActivities')
 fakeNodeWithJs('./animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary')
 fakeNodeWithJs('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel')

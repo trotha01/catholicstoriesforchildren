@@ -40,4 +40,7 @@ elm make --optimize \
   && elm make --optimize \
   src/FeastDayActivities/Main.elm \
   --output feastdayactivities/elm.js \
+  && elm make --optimize \
+  src/About/PrivacyPolicy/Main.elm \
+  --output privacyPolicyElm.js \
   && node build.js
