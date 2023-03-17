@@ -7,6 +7,11 @@ var NewsroomElm = require('./newsroomElm.js')
 var AnimationsElm = require('./animationsElm.js')
 var GuardianAngelElm = require('./guardianAngelElm.js')
 var PrivacyPolicyElm = require('./privacyPolicyElm.js')
+var ResourcesElm = require('./resourcesElm.js')
+var ResourcesBooksElm = require('./resourcesBooksElm.js')
+var ResourcesPodcastsElm = require('./resourcesPodcastsElm.js')
+var ResourcesVideosElm = require('./resourcesVideosElm.js')
+var ResourcesSubscriptionsElm = require('./resourcesSubscriptionsElm.js')
 
 var htmlPart1 = `<!doctype html>
 <html lang="en">
@@ -169,3 +174,8 @@ var privacyPolicyApp = PrivacyPolicyElm.Elm.About.PrivacyPolicy.Main.init({ node
 fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', '.FeastDayActivities')
 fakeNodeWithJs('./animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary')
 fakeNodeWithJs('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel')
+var resourcesApp = ResourcesElm.Elm.Resources.Main.init({ node: fakeNode('./resources/index.html', 'Resources - Catholic Stories for Children', 'Resources to guide kids in learning the Catholic faith') })
+var resourcesPodcastsApp = ResourcesPodcastsElm.Elm.Resources.Podcasts.Main.init({ node: fakeNode('./resources/podcasts/index.html', 'Podcast Resources - Catholic Stories for Children', 'Podcasts to guide kids in learning the Catholic faith') })
+var resourcesBooksApp = ResourcesBooksElm.Elm.Resources.Books.Main.init({ node: fakeNode('./resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith') })
+var resourcesVideosApp = ResourcesVideosElm.Elm.Resources.Videos.Main.init({ node: fakeNode('./resources/videos/index.html', 'Video Resources - Catholic Stories for Children', 'Videos to guide kids in learning the Catholic faith') })
+var resourcesSubscriptionsApp = ResourcesSubscriptionsElm.Elm.Resources.Subscriptions.Main.init({ node: fakeNode('./resources/subscriptions/index.html', 'Subscription Resources - Catholic Stories for Children', 'Subscriptions to guide kids in learning the Catholic faith') })

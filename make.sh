@@ -43,4 +43,19 @@ elm make --optimize \
   && elm make --optimize \
   src/About/PrivacyPolicy/Main.elm \
   --output privacyPolicyElm.js \
+  && elm make --optimize \
+  src/Resources/Main.elm \
+  --output resourcesElm.js \
+  && elm make --optimize \
+  src/Resources/Books/Main.elm \
+  --output resourcesBooksElm.js \
+  && elm make --optimize \
+  src/Resources/Podcasts/Main.elm \
+  --output resourcesPodcastsElm.js \
+  && elm make --optimize \
+  src/Resources/Videos/Main.elm \
+  --output resourcesVideosElm.js \
+  && elm make --optimize \
+  src/Resources/Subscriptions/Main.elm \
+  --output resourcesSubscriptionsElm.js \
   && node build.js
