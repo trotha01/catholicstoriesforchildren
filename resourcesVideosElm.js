@@ -5804,7 +5804,13 @@ var $zwilias$elm_html_string$Html$String$Attributes$class = function (className)
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'className', className);
 };
 var $zwilias$elm_html_string$Html$String$h1 = $zwilias$elm_html_string$Html$String$node('h1');
-var $author$project$Resources$Videos$Main$viewAboutVideos = A2($zwilias$elm_html_string$Html$String$div, _List_Nil, _List_Nil);
+var $author$project$Resources$Videos$Main$viewAboutVideos = A2(
+	$zwilias$elm_html_string$Html$String$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$text('Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.')
+		]));
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
@@ -5946,7 +5952,7 @@ var $author$project$Resources$Videos$Main$viewBody = A2(
 			$zwilias$elm_html_string$Html$String$div,
 			_List_fromArray(
 				[
-					$zwilias$elm_html_string$Html$String$Attributes$class('mb-10')
+					$zwilias$elm_html_string$Html$String$Attributes$class('my-10')
 				]),
 			_List_fromArray(
 				[$author$project$Newsroom$Main$viewSignUp])),
@@ -6020,7 +6026,7 @@ var $author$project$Header$desktopNavigation = function (height) {
 				A3($author$project$Header$viewNavButton, height, '/team', 'About Us'),
 				A3($author$project$Header$viewNavButton, height, '/animations', 'Animations'),
 				A3($author$project$Header$viewNavButton, height, '/contact', 'Contact'),
-				A3($author$project$Header$viewNavButton, height, '/newsroom', 'Newsroom'),
+				A3($author$project$Header$viewNavButton, height, '/resources', 'Resources'),
 				A3($author$project$Header$viewNavButton, height, '/give', 'Give')
 			]));
 };

@@ -6025,7 +6025,7 @@ var $author$project$Header$desktopNavigation = function (height) {
 				A3($author$project$Header$viewNavButton, height, '/team', 'About Us'),
 				A3($author$project$Header$viewNavButton, height, '/animations', 'Animations'),
 				A3($author$project$Header$viewNavButton, height, '/contact', 'Contact'),
-				A3($author$project$Header$viewNavButton, height, '/newsroom', 'Newsroom'),
+				A3($author$project$Header$viewNavButton, height, '/resources', 'Resources'),
 				A3($author$project$Header$viewNavButton, height, '/give', 'Give')
 			]));
 };

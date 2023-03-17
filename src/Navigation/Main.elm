@@ -36,7 +36,7 @@ view =
         , viewNavButton "/team" "About Us"
         , viewNavButton "/animations" "Animations"
         , viewNavButton "/contact" "Contact"
-        , viewNavButton "/newsroom" "Newsroom"
+        , viewNavButton "/resources" "Resources"
         , viewNavButton "/give" "Give"
         ]
 

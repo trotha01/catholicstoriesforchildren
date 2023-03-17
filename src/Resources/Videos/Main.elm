@@ -54,14 +54,16 @@ viewBody =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Youtube Channels" ]
         , viewAboutVideos
-        , div [ class "mb-10" ] [ viewSignUp ]
+        , div [ class "my-10" ] [ viewSignUp ]
         , viewVideos
         ]
 
 
 viewAboutVideos : Html Never
 viewAboutVideos =
-    div [] []
+    div []
+        [ text "Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home."
+        ]
 
 
 viewVideos : Html Never

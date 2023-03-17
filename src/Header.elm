@@ -89,7 +89,7 @@ desktopNavigation height =
         [ viewNavButton height "/team" "About Us"
         , viewNavButton height "/animations" "Animations"
         , viewNavButton height "/contact" "Contact"
-        , viewNavButton height "/newsroom" "Newsroom"
+        , viewNavButton height "/resources" "Resources"
         , viewNavButton height "/give" "Give"
         ]
 
