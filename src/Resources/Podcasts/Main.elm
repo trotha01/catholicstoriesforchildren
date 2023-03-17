@@ -76,6 +76,8 @@ viewPodcasts =
             , thatsTheWord
             , onTheNightTrain
             , saintsAlive
+            , catholicKidsPodcast
+            , catholicKidsTriviaPodcast
             ]
         )
 
@@ -117,4 +119,20 @@ saintsAlive =
     { name = "Saints Alive"
     , link = "https://podcasts.apple.com/us/podcast/saints-alive-podcast/id1598392451"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/14_Aps0ku8wH.png?updatedAt=1679069710842"
+    }
+
+
+catholicKidsPodcast : Resource
+catholicKidsPodcast =
+    { name = "Catholic Kids Podcast"
+    , link = "https://podcasts.apple.com/us/podcast/catholic-kids-podcast/id1557527100"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_Mz1VR_PBx.png?updatedAt=1679071655063"
+    }
+
+
+catholicKidsTriviaPodcast : Resource
+catholicKidsTriviaPodcast =
+    { name = "Catholic Kids Trivia Podcast"
+    , link = "https://podcasts.apple.com/us/podcast/catholic-kids-trivia-podcast/id1662532400"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicKidsTriviaPodcast_rFHEiGK88.png?updatedAt=1679071809107"
     }

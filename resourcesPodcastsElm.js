@@ -5811,6 +5811,8 @@ var $author$project$Resources$Podcasts$Main$viewAboutPodcasts = A2(
 		[
 			$zwilias$elm_html_string$Html$String$text('Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.')
 		]));
+var $author$project$Resources$Podcasts$Main$catholicKidsPodcast = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_Mz1VR_PBx.png?updatedAt=1679071655063', Z: 'https://podcasts.apple.com/us/podcast/catholic-kids-podcast/id1557527100', J: 'Catholic Kids Podcast'};
+var $author$project$Resources$Podcasts$Main$catholicKidsTriviaPodcast = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicKidsTriviaPodcast_rFHEiGK88.png?updatedAt=1679071809107', Z: 'https://podcasts.apple.com/us/podcast/catholic-kids-trivia-podcast/id1662532400', J: 'Catholic Kids Trivia Podcast'};
 var $author$project$Resources$Podcasts$Main$catholicSprouts = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/11_HUKazDTNih.png?updatedAt=1679069711765', Z: 'https://podcasts.apple.com/ca/podcast/catholic-sprouts-daily-podcast-for-catholic-kids/id1406174660', J: 'Catholic Sprouts'};
 var $author$project$Resources$Podcasts$Main$onTheNightTrain = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/On_The_Night_Train_Uy2SqRG8B.png?updatedAt=1679069840295', Z: 'https://podcasts.apple.com/us/podcast/on-the-night-train/id1638922447', J: 'On The Night Train'};
 var $author$project$Resources$Podcasts$Main$saintStoriesForKids = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/10_W0OwjM8Yu.png?updatedAt=1679069711783', Z: 'https://podcasts.apple.com/ca/podcast/saint-stories-for-kids/id1448514363', J: 'Saint Stories for Kids'};
@@ -5886,7 +5888,7 @@ var $author$project$Resources$Podcasts$Main$viewPodcasts = A2(
 		$elm$core$List$map,
 		$author$project$Resources$Helpers$viewResource,
 		_List_fromArray(
-			[$author$project$Resources$Podcasts$Main$saintStoriesForKids, $author$project$Resources$Podcasts$Main$catholicSprouts, $author$project$Resources$Podcasts$Main$thatsTheWord, $author$project$Resources$Podcasts$Main$onTheNightTrain, $author$project$Resources$Podcasts$Main$saintsAlive])));
+			[$author$project$Resources$Podcasts$Main$saintStoriesForKids, $author$project$Resources$Podcasts$Main$catholicSprouts, $author$project$Resources$Podcasts$Main$thatsTheWord, $author$project$Resources$Podcasts$Main$onTheNightTrain, $author$project$Resources$Podcasts$Main$saintsAlive, $author$project$Resources$Podcasts$Main$catholicKidsPodcast, $author$project$Resources$Podcasts$Main$catholicKidsTriviaPodcast])));
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
 var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'rel', val);
