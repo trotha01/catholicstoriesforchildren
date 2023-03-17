@@ -5368,8 +5368,350 @@ var $author$project$Animations$GuardianAngel$Main$aboutTheAnimation = A2(
 				]))
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
+var $elm$html$Html$Attributes$cite = $elm$html$Html$Attributes$stringProperty('cite');
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $author$project$Animations$GuardianAngel$Main$magisterialTeachings = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mx-auto col-span-2 w-full'),
+			$elm$html$Html$Attributes$class('text-lg'),
+			$elm$html$Html$Attributes$class('py-5'),
+			$elm$html$Html$Attributes$class('max-w-3xl')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Popes and The Magisterium')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('We can also find popes and magisterial teachings on the care of angels over us.')
+				])),
+			A2(
+			$elm$html$Html$blockquote,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('From its beginning until death, human life is surrounded by their watchful care and intercession.')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-2')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('CCC 336')
+						]))
+				])),
+			A2(
+			$elm$html$Html$blockquote,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Dear friends, the Lord is ever close and active in humanity’s history and accompanies us with the unique presence of his Angels, whom today the Church venerates as “Guardian Angels”, that is, ministers of the divine care for every human being. From the beginning until the hour of death, human life is surrounded by their constant protection.')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-2')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Pope Benedict XVI, Angelus, Oct. 2, 2011]')
+						]))
+				]))
+		]));
 var $elm$html$Html$span = _VirtualDom_node('span');
+var $author$project$Animations$GuardianAngel$Main$scripture = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mx-auto col-span-2 w-full'),
+			$elm$html$Html$Attributes$class('text-lg'),
+			$elm$html$Html$Attributes$class('py-5'),
+			$elm$html$Html$Attributes$class('max-w-3xl')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Scripture')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('We find a reference to guardian angels in Jesus\' parable of the Lost Sheep. He talks about the guardian angels of the little ones and how their angels always look upon the face of God the Father in heaven.')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-3 font-semibold')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('See that you do not despise one of these little ones, for I say to you that their angels in heaven always look upon the face of my heavenly Father.  - Matthew 18:10 ')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('We also find a reference to guardian angels in Acts of the Apostles when Peter knocked on the gateway door at the house of Mary, the mother of Mark. Rhonda was excited to hear his voice so she ran to the others to announce his arrival.' + ' But they didn\'t believe her and thought it was Peter\'s angel.')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-3 font-semibold')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('italic')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(' Angelus eius est! ')
+						])),
+					A2(
+					$elm$html$Html$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('- "It\'s his angel!" - Acts 12:15 ')
+						]))
+				])),
+			A2(
+			$elm$html$Html$blockquote,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(' See on what intimate terms the early Christians were with their guardian angels. And what about you? ')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-2')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('St Josemaría Escrivá, The Way, 570')
+						]))
+				]))
+		]));
+var $author$project$Animations$GuardianAngel$Main$tradition = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mx-auto col-span-2 w-full'),
+			$elm$html$Html$Attributes$class('text-lg'),
+			$elm$html$Html$Attributes$class('py-5'),
+			$elm$html$Html$Attributes$class('max-w-3xl')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-10')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Tradition')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('We can find some of our early church fathers talking about guardian angels.')
+				])),
+			A2(
+			$elm$html$Html$blockquote,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('For regiments of angels are distributed over nations and cities; and perhaps some even are assigned to particular individuals.')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-2')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Clement of Alexandria, Miscellanies 6.17')
+						]))
+				])),
+			A2(
+			$elm$html$Html$blockquote,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('High dignity of souls, that each from its birth has an Angel set in charge over it!')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-2')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('St. Jerome')
+						]))
+				])),
+			A2(
+			$elm$html$Html$blockquote,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Beside each believer stands an angel as protector and shepherd leading him to life.')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mt-2')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text('St. Basil, Adv. Eunomium III, 1: PG 29, 656B')
+						]))
+				]))
+		]));
 var $author$project$Animations$GuardianAngel$Main$viewPrayer = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -5620,7 +5962,10 @@ var $author$project$Animations$GuardianAngel$Main$viewBody = A2(
 					$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
 				])),
 			$author$project$Animations$GuardianAngel$Main$viewVideoPlayers,
-			$author$project$Animations$GuardianAngel$Main$viewPrayer
+			$author$project$Animations$GuardianAngel$Main$viewPrayer,
+			$author$project$Animations$GuardianAngel$Main$scripture,
+			$author$project$Animations$GuardianAngel$Main$tradition,
+			$author$project$Animations$GuardianAngel$Main$magisterialTeachings
 		]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {
