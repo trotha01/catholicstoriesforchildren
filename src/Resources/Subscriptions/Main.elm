@@ -56,6 +56,7 @@ viewBody =
         , viewAboutSubscriptions
         , div [ class "my-10" ] [ viewSignUp ]
         , viewSubscriptions
+        , viewWorkInProgressNotice
         ]
 
 

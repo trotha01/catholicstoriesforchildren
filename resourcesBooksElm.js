@@ -5925,6 +5925,42 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 				])),
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));
+var $author$project$Resources$Helpers$viewWorkInProgressNotice = A2(
+	$zwilias$elm_html_string$Html$String$div,
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$img,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Construction_Cone_vLoPMhMZBm.png?updatedAt=1679070884463'),
+							$zwilias$elm_html_string$Html$String$Attributes$class('w-20 h-20 object-cover')
+						]),
+					_List_Nil)
+				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('This page is a work-in-progress. We are working hard on adding resources this page for you.')
+						]))
+				]))
+		]));
 var $author$project$Resources$Books$Main$viewBody = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_fromArray(
@@ -5955,7 +5991,8 @@ var $author$project$Resources$Books$Main$viewBody = A2(
 				]),
 			_List_fromArray(
 				[$author$project$Newsroom$Main$viewSignUp])),
-			$author$project$Resources$Books$Main$viewBooks
+			$author$project$Resources$Books$Main$viewBooks,
+			$author$project$Resources$Helpers$viewWorkInProgressNotice
 		]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {

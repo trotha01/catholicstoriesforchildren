@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.Q.G === region.V.G)
+	if (region.O.D === region.T.D)
 	{
-		return 'on line ' + region.Q.G;
+		return 'on line ' + region.O.D;
 	}
-	return 'on lines ' + region.Q.G + ' through ' + region.V.G;
+	return 'on lines ' + region.O.D + ' through ' + region.T.D;
 }
 
 
@@ -2705,8 +2705,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		r: func(record.r),
-		R: record.R,
-		O: record.O
+		P: record.P,
+		M: record.M
 	}
 });
 
@@ -2975,10 +2975,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.R;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.P;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.O) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.M) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3968,7 +3968,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 		impl.aU,
 		impl.aR,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.P && impl.P(sendToApp)
+			var divertHrefToApp = impl.N && impl.N(sendToApp)
 			var view = impl.aW;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
@@ -4043,7 +4043,7 @@ function _Browser_application(impl)
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		P: function(sendToApp)
+		N: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4060,7 +4060,7 @@ function _Browser_application(impl)
 					sendToApp(onUrlRequest(
 						(next
 							&& curr.ah === next.ah
-							&& curr.Z === next.Z
+							&& curr.X === next.X
 							&& curr.ae.a === next.ae.a
 						)
 							? $elm$browser$Browser$Internal(next)
@@ -4237,7 +4237,7 @@ function _Browser_getViewport()
 			au: _Browser_window.pageXOffset,
 			av: _Browser_window.pageYOffset,
 			at: _Browser_doc.documentElement.clientWidth,
-			Y: _Browser_doc.documentElement.clientHeight
+			W: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4248,7 +4248,7 @@ function _Browser_getScene()
 	var elem = _Browser_doc.documentElement;
 	return {
 		at: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		Y: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		W: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4273,13 +4273,13 @@ function _Browser_getViewportOf(id)
 		return {
 			an: {
 				at: node.scrollWidth,
-				Y: node.scrollHeight
+				W: node.scrollHeight
 			},
 			as: {
 				au: node.scrollLeft,
 				av: node.scrollTop,
 				at: node.clientWidth,
-				Y: node.clientHeight
+				W: node.clientHeight
 			}
 		};
 	});
@@ -4314,13 +4314,13 @@ function _Browser_getElement(id)
 				au: x,
 				av: y,
 				at: _Browser_doc.documentElement.clientWidth,
-				Y: _Browser_doc.documentElement.clientHeight
+				W: _Browser_doc.documentElement.clientHeight
 			},
 			aC: {
 				au: x + rect.left,
 				av: y + rect.top,
 				at: rect.width,
-				Y: rect.height
+				W: rect.height
 			}
 		};
 	});
@@ -4896,7 +4896,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {X: fragment, Z: host, ac: path, ae: port_, ah: protocol, ai: query};
+		return {V: fragment, X: host, ac: path, ae: port_, ah: protocol, ai: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5818,10 +5818,10 @@ var $author$project$Resources$Main$viewAboutResources = A2(
 					$zwilias$elm_html_string$Html$String$text('Find links to podcasts, videos, books and more. There are a lot of resources out there for Catholic parents and we are here to help you find them.')
 				]))
 		]));
-var $author$project$Resources$Main$books = {z: 'Find books here. It\'s hard to go wrong with a good Catholic book.', B: 'https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106', C: 'books', v: 'Books'};
-var $author$project$Resources$Main$podcasts = {z: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', B: 'https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335', C: 'podcasts', v: 'Podcasts'};
-var $author$project$Resources$Main$subscriptions = {z: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', B: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068', C: 'subscriptions', v: 'Subscriptions'};
-var $author$project$Resources$Main$videos = {z: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', B: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272', C: 'videos', v: 'Youtube Channels'};
+var $author$project$Resources$Main$books = {y: 'Find books here. It\'s hard to go wrong with a good Catholic book.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106', _: 'books', K: 'Books'};
+var $author$project$Resources$Main$podcasts = {y: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335', _: 'podcasts', K: 'Podcasts'};
+var $author$project$Resources$Main$subscriptions = {y: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068', _: 'subscriptions', K: 'Subscriptions'};
+var $author$project$Resources$Main$videos = {y: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272', _: 'videos', K: 'Youtube Channels'};
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$Types$Attribute = F2(
 	function (a, b) {
@@ -5847,8 +5847,8 @@ var $author$project$Resources$Main$viewResourceGroup = function (resourceGroup) 
 		_List_fromArray(
 			[
 				$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7'),
-				$zwilias$elm_html_string$Html$String$Attributes$href('/resources/' + resourceGroup.C),
-				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resourceGroup.v)
+				$zwilias$elm_html_string$Html$String$Attributes$href('/resources/' + resourceGroup._),
+				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resourceGroup.K)
 			]),
 		_List_fromArray(
 			[
@@ -5861,7 +5861,7 @@ var $author$project$Resources$Main$viewResourceGroup = function (resourceGroup) 
 						$zwilias$elm_html_string$Html$String$img,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$Attributes$src(resourceGroup.B),
+								$zwilias$elm_html_string$Html$String$Attributes$src(resourceGroup.Y),
 								$zwilias$elm_html_string$Html$String$Attributes$class('w-20 h-20 object-cover')
 							]),
 						_List_Nil)
@@ -5876,14 +5876,14 @@ var $author$project$Resources$Main$viewResourceGroup = function (resourceGroup) 
 						_List_Nil,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$text(resourceGroup.v)
+								$zwilias$elm_html_string$Html$String$text(resourceGroup.K)
 							])),
 						A2(
 						$zwilias$elm_html_string$Html$String$p,
 						_List_Nil,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$text(resourceGroup.z)
+								$zwilias$elm_html_string$Html$String$text(resourceGroup.y)
 							]))
 					]))
 			]));
@@ -5938,6 +5938,42 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 				])),
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));
+var $author$project$Resources$Helpers$viewWorkInProgressNotice = A2(
+	$zwilias$elm_html_string$Html$String$div,
+	_List_fromArray(
+		[
+			$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$img,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Construction_Cone_vLoPMhMZBm.png?updatedAt=1679070884463'),
+							$zwilias$elm_html_string$Html$String$Attributes$class('w-20 h-20 object-cover')
+						]),
+					_List_Nil)
+				])),
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('This page is a work-in-progress. We are working hard on adding resources this page for you.')
+						]))
+				]))
+		]));
 var $author$project$Resources$Main$viewBody = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_fromArray(
@@ -5968,7 +6004,8 @@ var $author$project$Resources$Main$viewBody = A2(
 				]),
 			_List_fromArray(
 				[$author$project$Newsroom$Main$viewSignUp])),
-			$author$project$Resources$Main$viewResourceGroups
+			$author$project$Resources$Main$viewResourceGroups,
+			$author$project$Resources$Helpers$viewWorkInProgressNotice
 		]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {

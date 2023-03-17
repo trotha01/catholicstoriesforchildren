@@ -56,6 +56,7 @@ viewBody =
         , viewAboutVideos
         , div [ class "my-10" ] [ viewSignUp ]
         , viewVideos
+        , viewWorkInProgressNotice
         ]
 
 

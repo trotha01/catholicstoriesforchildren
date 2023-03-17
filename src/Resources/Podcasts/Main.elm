@@ -56,6 +56,7 @@ viewBody =
         , viewAboutPodcasts
         , div [ class "my-10" ] [ viewSignUp ]
         , viewPodcasts
+        , viewWorkInProgressNotice
         ]
 
 

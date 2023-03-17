@@ -7,6 +7,7 @@ import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
 import Newsroom.Main exposing (viewSignUp)
+import Resources.Helpers exposing (..)
 
 
 type alias Model =
@@ -55,6 +56,7 @@ viewBody =
         , viewAboutResources
         , div [ class "mb-10" ] [ viewSignUp ]
         , viewResourceGroups
+        , viewWorkInProgressNotice
         ]
 
 
