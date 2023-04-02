@@ -5930,7 +5930,7 @@ var $author$project$Resources$Helpers$viewWorkInProgressNotice = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_fromArray(
 		[
-			$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7')
+			$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] rounded py-7')
 		]),
 	_List_fromArray(
 		[

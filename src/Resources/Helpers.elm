@@ -33,7 +33,7 @@ viewResource resource =
 viewWorkInProgressNotice : Html msg
 viewWorkInProgressNotice =
     div
-        [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7"
+        [ class "grid grid-cols-[100px_1fr] rounded py-7"
         ]
         [ div []
             [ img [ src "https://ik.imagekit.io/catholicstories/Construction_Cone_vLoPMhMZBm.png?updatedAt=1679070884463", class "w-20 h-20 object-cover" ] []
