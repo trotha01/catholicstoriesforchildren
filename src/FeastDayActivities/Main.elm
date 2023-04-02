@@ -145,6 +145,10 @@ viewBody route =
 
 viewDate : String -> String -> List FeastActivities -> Html Msg
 viewDate month date feasts =
+    let
+        _ =
+            Debug.log "feasts" feasts
+    in
     div
         [ class "text-center"
         , class "mt-10 max-w-3xl mx-auto"

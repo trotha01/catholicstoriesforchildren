@@ -77,7 +77,7 @@ function A9(fun, a, b, c, d, e, f, g, h, i) {
   return fun.a === 9 ? fun.f(a, b, c, d, e, f, g, h, i) : fun(a)(b)(c)(d)(e)(f)(g)(h)(i);
 }
 
-
+console.warn('Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.1/optimize for better performance and smaller assets.');
 
 
 // EQUALITY
@@ -113,7 +113,7 @@ function _Utils_eqHelp(x, y, depth, stack)
 		return true;
 	}
 
-	/**_UNUSED/
+	/**/
 	if (x.$ === 'Set_elm_builtin')
 	{
 		x = $elm$core$Set$toList(x);
@@ -126,7 +126,7 @@ function _Utils_eqHelp(x, y, depth, stack)
 	}
 	//*/
 
-	/**/
+	/**_UNUSED/
 	if (x.$ < 0)
 	{
 		x = $elm$core$Dict$toList(x);
@@ -161,7 +161,7 @@ function _Utils_cmp(x, y, ord)
 		return x === y ? /*EQ*/ 0 : x < y ? /*LT*/ -1 : /*GT*/ 1;
 	}
 
-	/**_UNUSED/
+	/**/
 	if (x instanceof String)
 	{
 		var a = x.valueOf();
@@ -170,10 +170,10 @@ function _Utils_cmp(x, y, ord)
 	}
 	//*/
 
-	/**/
+	/**_UNUSED/
 	if (typeof x.$ === 'undefined')
 	//*/
-	/**_UNUSED/
+	/**/
 	if (x.$[0] === '#')
 	//*/
 	{
@@ -203,17 +203,17 @@ var _Utils_compare = F2(function(x, y)
 
 // COMMON VALUES
 
-var _Utils_Tuple0 = 0;
-var _Utils_Tuple0_UNUSED = { $: '#0' };
+var _Utils_Tuple0_UNUSED = 0;
+var _Utils_Tuple0 = { $: '#0' };
 
-function _Utils_Tuple2(a, b) { return { a: a, b: b }; }
-function _Utils_Tuple2_UNUSED(a, b) { return { $: '#2', a: a, b: b }; }
+function _Utils_Tuple2_UNUSED(a, b) { return { a: a, b: b }; }
+function _Utils_Tuple2(a, b) { return { $: '#2', a: a, b: b }; }
 
-function _Utils_Tuple3(a, b, c) { return { a: a, b: b, c: c }; }
-function _Utils_Tuple3_UNUSED(a, b, c) { return { $: '#3', a: a, b: b, c: c }; }
+function _Utils_Tuple3_UNUSED(a, b, c) { return { a: a, b: b, c: c }; }
+function _Utils_Tuple3(a, b, c) { return { $: '#3', a: a, b: b, c: c }; }
 
-function _Utils_chr(c) { return c; }
-function _Utils_chr_UNUSED(c) { return new String(c); }
+function _Utils_chr_UNUSED(c) { return c; }
+function _Utils_chr(c) { return new String(c); }
 
 
 // RECORDS
@@ -264,11 +264,11 @@ function _Utils_ap(xs, ys)
 
 
 
-var _List_Nil = { $: 0 };
-var _List_Nil_UNUSED = { $: '[]' };
+var _List_Nil_UNUSED = { $: 0 };
+var _List_Nil = { $: '[]' };
 
-function _List_Cons(hd, tl) { return { $: 1, a: hd, b: tl }; }
-function _List_Cons_UNUSED(hd, tl) { return { $: '::', a: hd, b: tl }; }
+function _List_Cons_UNUSED(hd, tl) { return { $: 1, a: hd, b: tl }; }
+function _List_Cons(hd, tl) { return { $: '::', a: hd, b: tl }; }
 
 
 var _List_cons = F2(_List_Cons);
@@ -499,12 +499,12 @@ var _JsArray_appendN = F3(function(n, dest, source)
 
 // LOG
 
-var _Debug_log = F2(function(tag, value)
+var _Debug_log_UNUSED = F2(function(tag, value)
 {
 	return value;
 });
 
-var _Debug_log_UNUSED = F2(function(tag, value)
+var _Debug_log = F2(function(tag, value)
 {
 	console.log(tag + ': ' + _Debug_toString(value));
 	return value;
@@ -530,12 +530,12 @@ function _Debug_todoCase(moduleName, region, value)
 
 // TO STRING
 
-function _Debug_toString(value)
+function _Debug_toString_UNUSED(value)
 {
 	return '<internals>';
 }
 
-function _Debug_toString_UNUSED(value)
+function _Debug_toString(value)
 {
 	return _Debug_toAnsiString(false, value);
 }
@@ -720,13 +720,13 @@ function _Debug_toHexDigit(n)
 // CRASH
 
 
-function _Debug_crash(identifier)
+function _Debug_crash_UNUSED(identifier)
 {
 	throw new Error('https://github.com/elm/core/blob/1.0.0/hints/' + identifier + '.md');
 }
 
 
-function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
+function _Debug_crash(identifier, fact1, fact2, fact3, fact4)
 {
 	switch(identifier)
 	{
@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.O.C === region.V.C)
+	if (region.start.line === region.end.line)
 	{
-		return 'on line ' + region.O.C;
+		return 'on line ' + region.start.line;
 	}
-	return 'on lines ' + region.O.C + ' through ' + region.V.C;
+	return 'on lines ' + region.start.line + ' through ' + region.end.line;
 }
 
 
@@ -1212,7 +1212,7 @@ function _Char_toLocaleLower(char)
 
 
 
-/**_UNUSED/
+/**/
 function _Json_errorToString(error)
 {
 	return $elm$json$Json$Decode$errorToString(error);
@@ -1616,11 +1616,11 @@ var _Json_encode = F2(function(indentLevel, value)
 	return JSON.stringify(_Json_unwrap(value), null, indentLevel) + '';
 });
 
-function _Json_wrap_UNUSED(value) { return { $: 0, a: value }; }
-function _Json_unwrap_UNUSED(value) { return value.a; }
+function _Json_wrap(value) { return { $: 0, a: value }; }
+function _Json_unwrap(value) { return value.a; }
 
-function _Json_wrap(value) { return value; }
-function _Json_unwrap(value) { return value; }
+function _Json_wrap_UNUSED(value) { return value; }
+function _Json_unwrap_UNUSED(value) { return value; }
 
 function _Json_emptyArray() { return []; }
 function _Json_emptyObject() { return {}; }
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aK,
-		impl.a$,
-		impl.aY,
+		impl.init,
+		impl.update,
+		impl.subscriptions,
 		function() { return function() {} }
 	);
 });
@@ -1872,7 +1872,7 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 function _Platform_initialize(flagDecoder, args, init, update, subscriptions, stepperBuilder)
 {
 	var result = A2(_Json_run, flagDecoder, _Json_wrap(args ? args['flags'] : undefined));
-	$elm$core$Result$isOk(result) || _Debug_crash(2 /**_UNUSED/, _Json_errorToString(result.a) /**/);
+	$elm$core$Result$isOk(result) || _Debug_crash(2 /**/, _Json_errorToString(result.a) /**/);
 	var managers = {};
 	var initPair = init(result.a);
 	var model = initPair.a;
@@ -2316,7 +2316,7 @@ function _Platform_setupIncomingPort(name, sendToApp)
 //
 
 
-function _Platform_export(exports)
+function _Platform_export_UNUSED(exports)
 {
 	scope['Elm']
 		? _Platform_mergeExportsProd(scope['Elm'], exports)
@@ -2337,7 +2337,7 @@ function _Platform_mergeExportsProd(obj, exports)
 }
 
 
-function _Platform_export_UNUSED(exports)
+function _Platform_export(exports)
 {
 	scope['Elm']
 		? _Platform_mergeExportsDebug('Elm', scope['Elm'], exports)
@@ -2377,10 +2377,10 @@ var _VirtualDom_init = F4(function(virtualNode, flagDecoder, debugMetadata, args
 {
 	// NOTE: this function needs _Platform_export available to work
 
-	/**/
+	/**_UNUSED/
 	var node = args['node'];
 	//*/
-	/**_UNUSED/
+	/**/
 	var node = args && args['node'] ? args['node'] : _Debug_crash(0);
 	//*/
 
@@ -2635,24 +2635,24 @@ function _VirtualDom_noInnerHtmlOrFormAction(key)
 	return key == 'innerHTML' || key == 'formAction' ? 'data-' + key : key;
 }
 
-function _VirtualDom_noJavaScriptUri(value)
+function _VirtualDom_noJavaScriptUri_UNUSED(value)
 {
 	return /^javascript:/i.test(value.replace(/\s/g,'')) ? '' : value;
 }
 
-function _VirtualDom_noJavaScriptUri_UNUSED(value)
+function _VirtualDom_noJavaScriptUri(value)
 {
 	return /^javascript:/i.test(value.replace(/\s/g,''))
 		? 'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'
 		: value;
 }
 
-function _VirtualDom_noJavaScriptOrHtmlUri(value)
+function _VirtualDom_noJavaScriptOrHtmlUri_UNUSED(value)
 {
 	return /^\s*(javascript:|data:text\/html)/i.test(value) ? '' : value;
 }
 
-function _VirtualDom_noJavaScriptOrHtmlUri_UNUSED(value)
+function _VirtualDom_noJavaScriptOrHtmlUri(value)
 {
 	return /^\s*(javascript:|data:text\/html)/i.test(value)
 		? 'javascript:alert("This is an XSS vector. Please use ports or web components instead.")'
@@ -2704,9 +2704,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		r: func(record.r),
-		P: record.P,
-		M: record.M
+		message: func(record.message),
+		stopPropagation: record.stopPropagation,
+		preventDefault: record.preventDefault
 	}
 });
 
@@ -2974,11 +2974,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.P;
+		var message = !tag ? value : tag < 3 ? value.a : value.message;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.stopPropagation;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.M) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.preventDefault) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3928,15 +3928,15 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aK,
-		impl.a$,
-		impl.aY,
+		impl.init,
+		impl.update,
+		impl.subscriptions,
 		function(sendToApp, initialModel) {
-			var view = impl.a0;
-			/**/
+			var view = impl.view;
+			/**_UNUSED/
 			var domNode = args['node'];
 			//*/
-			/**_UNUSED/
+			/**/
 			var domNode = args && args['node'] ? args['node'] : _Debug_crash(0);
 			//*/
 			var currNode = _VirtualDom_virtualize(domNode);
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aK,
-		impl.a$,
-		impl.aY,
+		impl.init,
+		impl.update,
+		impl.subscriptions,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.N && impl.N(sendToApp)
-			var view = impl.a0;
+			var divertHrefToApp = impl.setup && impl.setup(sendToApp)
+			var view = impl.view;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3977,12 +3977,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.az);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.body);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.a_) && (_VirtualDom_doc.title = title = doc.a_);
+				(title !== doc.title) && (_VirtualDom_doc.title = title = doc.title);
 			});
 		}
 	);
@@ -4038,12 +4038,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aP;
-	var onUrlRequest = impl.aQ;
+	var onUrlChange = impl.onUrlChange;
+	var onUrlRequest = impl.onUrlRequest;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		N: function(sendToApp)
+		setup: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4059,9 +4059,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ag === next.ag
-							&& curr._ === next._
-							&& curr.ad.a === next.ad.a
+							&& curr.protocol === next.protocol
+							&& curr.host === next.host
+							&& curr.port_.a === next.port_.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aK: function(flags)
+		init: function(flags)
 		{
-			return A3(impl.aK, flags, _Browser_getUrl(), key);
+			return A3(impl.init, flags, _Browser_getUrl(), key);
 		},
-		a0: impl.a0,
-		a$: impl.a$,
-		aY: impl.aY
+		view: impl.view,
+		update: impl.update,
+		subscriptions: impl.subscriptions
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aH: 'hidden', aA: 'visibilitychange' }
+		? { hidden: 'hidden', change: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aH: 'mozHidden', aA: 'mozvisibilitychange' }
+		? { hidden: 'mozHidden', change: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aH: 'msHidden', aA: 'msvisibilitychange' }
+		? { hidden: 'msHidden', change: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aH: 'webkitHidden', aA: 'webkitvisibilitychange' }
-		: { aH: 'hidden', aA: 'visibilitychange' };
+		? { hidden: 'webkitHidden', change: 'webkitvisibilitychange' }
+		: { hidden: 'hidden', change: 'visibilitychange' };
 }
 
 
@@ -4232,12 +4232,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		am: _Browser_getScene(),
-		ar: {
-			at: _Browser_window.pageXOffset,
-			au: _Browser_window.pageYOffset,
-			as: _Browser_doc.documentElement.clientWidth,
-			Z: _Browser_doc.documentElement.clientHeight
+		scene: _Browser_getScene(),
+		viewport: {
+			x: _Browser_window.pageXOffset,
+			y: _Browser_window.pageYOffset,
+			width: _Browser_doc.documentElement.clientWidth,
+			height: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4247,8 +4247,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		as: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		Z: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		width: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		height: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4271,15 +4271,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			am: {
-				as: node.scrollWidth,
-				Z: node.scrollHeight
+			scene: {
+				width: node.scrollWidth,
+				height: node.scrollHeight
 			},
-			ar: {
-				at: node.scrollLeft,
-				au: node.scrollTop,
-				as: node.clientWidth,
-				Z: node.clientHeight
+			viewport: {
+				x: node.scrollLeft,
+				y: node.scrollTop,
+				width: node.clientWidth,
+				height: node.clientHeight
 			}
 		};
 	});
@@ -4309,18 +4309,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			am: _Browser_getScene(),
-			ar: {
-				at: x,
-				au: y,
-				as: _Browser_doc.documentElement.clientWidth,
-				Z: _Browser_doc.documentElement.clientHeight
+			scene: _Browser_getScene(),
+			viewport: {
+				x: x,
+				y: y,
+				width: _Browser_doc.documentElement.clientWidth,
+				height: _Browser_doc.documentElement.clientHeight
 			},
-			aD: {
-				at: x + rect.left,
-				au: y + rect.top,
-				as: rect.width,
-				Z: rect.height
+			element: {
+				x: x + rect.left,
+				y: y + rect.top,
+				width: rect.width,
+				height: rect.height
 			}
 		};
 	});
@@ -4373,20 +4373,20 @@ function _Url_percentDecode(string)
 		return $elm$core$Maybe$Nothing;
 	}
 }var $author$project$FeastDayActivities$Main$LinkClicked = function (a) {
-	return {$: 0, a: a};
+	return {$: 'LinkClicked', a: a};
 };
 var $author$project$FeastDayActivities$Main$UrlChanged = function (a) {
-	return {$: 1, a: a};
+	return {$: 'UrlChanged', a: a};
 };
-var $elm$core$Basics$EQ = 1;
-var $elm$core$Basics$GT = 2;
-var $elm$core$Basics$LT = 0;
+var $elm$core$Basics$EQ = {$: 'EQ'};
+var $elm$core$Basics$GT = {$: 'GT'};
+var $elm$core$Basics$LT = {$: 'LT'};
 var $elm$core$List$cons = _List_cons;
 var $elm$core$Dict$foldr = F3(
 	function (func, acc, t) {
 		foldr:
 		while (true) {
-			if (t.$ === -2) {
+			if (t.$ === 'RBEmpty_elm_builtin') {
 				return acc;
 			} else {
 				var key = t.b;
@@ -4431,7 +4431,7 @@ var $elm$core$Dict$keys = function (dict) {
 		dict);
 };
 var $elm$core$Set$toList = function (_v0) {
-	var dict = _v0;
+	var dict = _v0.a;
 	return $elm$core$Dict$keys(dict);
 };
 var $elm$core$Elm$JsArray$foldr = _JsArray_foldr;
@@ -4441,7 +4441,7 @@ var $elm$core$Array$foldr = F3(
 		var tail = _v0.d;
 		var helper = F2(
 			function (node, acc) {
-				if (!node.$) {
+				if (node.$ === 'SubTree') {
 					var subTree = node.a;
 					return A3($elm$core$Elm$JsArray$foldr, helper, acc, subTree);
 				} else {
@@ -4459,32 +4459,32 @@ var $elm$core$Array$toList = function (array) {
 	return A3($elm$core$Array$foldr, $elm$core$List$cons, _List_Nil, array);
 };
 var $elm$core$Result$Err = function (a) {
-	return {$: 1, a: a};
+	return {$: 'Err', a: a};
 };
 var $elm$json$Json$Decode$Failure = F2(
 	function (a, b) {
-		return {$: 3, a: a, b: b};
+		return {$: 'Failure', a: a, b: b};
 	});
 var $elm$json$Json$Decode$Field = F2(
 	function (a, b) {
-		return {$: 0, a: a, b: b};
+		return {$: 'Field', a: a, b: b};
 	});
 var $elm$json$Json$Decode$Index = F2(
 	function (a, b) {
-		return {$: 1, a: a, b: b};
+		return {$: 'Index', a: a, b: b};
 	});
 var $elm$core$Result$Ok = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Ok', a: a};
 };
 var $elm$json$Json$Decode$OneOf = function (a) {
-	return {$: 2, a: a};
+	return {$: 'OneOf', a: a};
 };
-var $elm$core$Basics$False = 1;
+var $elm$core$Basics$False = {$: 'False'};
 var $elm$core$Basics$add = _Basics_add;
 var $elm$core$Maybe$Just = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Just', a: a};
 };
-var $elm$core$Maybe$Nothing = {$: 1};
+var $elm$core$Maybe$Nothing = {$: 'Nothing'};
 var $elm$core$String$all = _String_all;
 var $elm$core$Basics$and = _Basics_and;
 var $elm$core$Basics$append = _Utils_append;
@@ -4609,12 +4609,12 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 		errorToStringHelp:
 		while (true) {
 			switch (error.$) {
-				case 0:
+				case 'Field':
 					var f = error.a;
 					var err = error.b;
 					var isSimple = function () {
 						var _v1 = $elm$core$String$uncons(f);
-						if (_v1.$ === 1) {
+						if (_v1.$ === 'Nothing') {
 							return false;
 						} else {
 							var _v2 = _v1.a;
@@ -4629,7 +4629,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 					error = $temp$error;
 					context = $temp$context;
 					continue errorToStringHelp;
-				case 1:
+				case 'Index':
 					var i = error.a;
 					var err = error.b;
 					var indexName = '[' + ($elm$core$String$fromInt(i) + ']');
@@ -4638,7 +4638,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 					error = $temp$error;
 					context = $temp$context;
 					continue errorToStringHelp;
-				case 2:
+				case 'OneOf':
 					var errors = error.a;
 					if (!errors.b) {
 						return 'Ran into a Json.Decode.oneOf with no possibilities' + function () {
@@ -4702,7 +4702,7 @@ var $elm$json$Json$Decode$errorToStringHelp = F2(
 var $elm$core$Array$branchFactor = 32;
 var $elm$core$Array$Array_elm_builtin = F4(
 	function (a, b, c, d) {
-		return {$: 0, a: a, b: b, c: c, d: d};
+		return {$: 'Array_elm_builtin', a: a, b: b, c: c, d: d};
 	});
 var $elm$core$Elm$JsArray$empty = _JsArray_empty;
 var $elm$core$Basics$ceiling = _Basics_ceiling;
@@ -4717,7 +4717,7 @@ var $elm$core$Array$shiftStep = $elm$core$Basics$ceiling(
 var $elm$core$Array$empty = A4($elm$core$Array$Array_elm_builtin, 0, $elm$core$Array$shiftStep, $elm$core$Elm$JsArray$empty, $elm$core$Elm$JsArray$empty);
 var $elm$core$Elm$JsArray$initialize = _JsArray_initialize;
 var $elm$core$Array$Leaf = function (a) {
-	return {$: 1, a: a};
+	return {$: 'Leaf', a: a};
 };
 var $elm$core$Basics$apL = F2(
 	function (f, x) {
@@ -4737,7 +4737,7 @@ var $elm$core$Basics$max = F2(
 	});
 var $elm$core$Basics$mul = _Basics_mul;
 var $elm$core$Array$SubTree = function (a) {
-	return {$: 0, a: a};
+	return {$: 'SubTree', a: a};
 };
 var $elm$core$Elm$JsArray$initializeFromList = _JsArray_initializeFromList;
 var $elm$core$Array$compressNodes = F2(
@@ -4784,25 +4784,25 @@ var $elm$core$Array$treeFromBuilder = F2(
 	});
 var $elm$core$Array$builderToArray = F2(
 	function (reverseNodeList, builder) {
-		if (!builder.a) {
+		if (!builder.nodeListSize) {
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.c),
+				$elm$core$Elm$JsArray$length(builder.tail),
 				$elm$core$Array$shiftStep,
 				$elm$core$Elm$JsArray$empty,
-				builder.c);
+				builder.tail);
 		} else {
-			var treeLen = builder.a * $elm$core$Array$branchFactor;
+			var treeLen = builder.nodeListSize * $elm$core$Array$branchFactor;
 			var depth = $elm$core$Basics$floor(
 				A2($elm$core$Basics$logBase, $elm$core$Array$branchFactor, treeLen - 1));
-			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.d) : builder.d;
-			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.a);
+			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.nodeList) : builder.nodeList;
+			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.nodeListSize);
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.c) + treeLen,
+				$elm$core$Elm$JsArray$length(builder.tail) + treeLen,
 				A2($elm$core$Basics$max, 5, depth * $elm$core$Array$shiftStep),
 				tree,
-				builder.c);
+				builder.tail);
 		}
 	});
 var $elm$core$Basics$idiv = _Basics_idiv;
@@ -4815,7 +4815,7 @@ var $elm$core$Array$initializeHelp = F5(
 				return A2(
 					$elm$core$Array$builderToArray,
 					false,
-					{d: nodeList, a: (len / $elm$core$Array$branchFactor) | 0, c: tail});
+					{nodeList: nodeList, nodeListSize: (len / $elm$core$Array$branchFactor) | 0, tail: tail});
 			} else {
 				var leaf = $elm$core$Array$Leaf(
 					A3($elm$core$Elm$JsArray$initialize, $elm$core$Array$branchFactor, fromIndex, fn));
@@ -4845,9 +4845,9 @@ var $elm$core$Array$initialize = F2(
 			return A5($elm$core$Array$initializeHelp, fn, initialFromIndex, len, _List_Nil, tail);
 		}
 	});
-var $elm$core$Basics$True = 0;
+var $elm$core$Basics$True = {$: 'True'};
 var $elm$core$Result$isOk = function (result) {
-	if (!result.$) {
+	if (result.$ === 'Ok') {
 		return true;
 	} else {
 		return false;
@@ -4858,31 +4858,33 @@ var $elm$json$Json$Decode$map2 = _Json_map2;
 var $elm$json$Json$Decode$succeed = _Json_succeed;
 var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 	switch (handler.$) {
-		case 0:
+		case 'Normal':
 			return 0;
-		case 1:
+		case 'MayStopPropagation':
 			return 1;
-		case 2:
+		case 'MayPreventDefault':
 			return 2;
 		default:
 			return 3;
 	}
 };
 var $elm$browser$Browser$External = function (a) {
-	return {$: 1, a: a};
+	return {$: 'External', a: a};
 };
 var $elm$browser$Browser$Internal = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Internal', a: a};
 };
 var $elm$core$Basics$identity = function (x) {
 	return x;
 };
-var $elm$browser$Browser$Dom$NotFound = $elm$core$Basics$identity;
-var $elm$url$Url$Http = 0;
-var $elm$url$Url$Https = 1;
+var $elm$browser$Browser$Dom$NotFound = function (a) {
+	return {$: 'NotFound', a: a};
+};
+var $elm$url$Url$Http = {$: 'Http'};
+var $elm$url$Url$Https = {$: 'Https'};
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {Y: fragment, _: host, ab: path, ad: port_, ag: protocol, ah: query};
+		return {fragment: fragment, host: host, path: path, port_: port_, protocol: protocol, query: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -4918,7 +4920,7 @@ var $elm$url$Url$chompBeforePath = F5(
 					var i = _v0.a;
 					var _v1 = $elm$core$String$toInt(
 						A2($elm$core$String$dropLeft, i + 1, str));
-					if (_v1.$ === 1) {
+					if (_v1.$ === 'Nothing') {
 						return $elm$core$Maybe$Nothing;
 					} else {
 						var port_ = _v1;
@@ -5001,24 +5003,26 @@ var $elm$core$String$startsWith = _String_startsWith;
 var $elm$url$Url$fromString = function (str) {
 	return A2($elm$core$String$startsWith, 'http://', str) ? A2(
 		$elm$url$Url$chompAfterProtocol,
-		0,
+		$elm$url$Url$Http,
 		A2($elm$core$String$dropLeft, 7, str)) : (A2($elm$core$String$startsWith, 'https://', str) ? A2(
 		$elm$url$Url$chompAfterProtocol,
-		1,
+		$elm$url$Url$Https,
 		A2($elm$core$String$dropLeft, 8, str)) : $elm$core$Maybe$Nothing);
 };
 var $elm$core$Basics$never = function (_v0) {
 	never:
 	while (true) {
-		var nvr = _v0;
+		var nvr = _v0.a;
 		var $temp$_v0 = nvr;
 		_v0 = $temp$_v0;
 		continue never;
 	}
 };
-var $elm$core$Task$Perform = $elm$core$Basics$identity;
+var $elm$core$Task$Perform = function (a) {
+	return {$: 'Perform', a: a};
+};
 var $elm$core$Task$succeed = _Scheduler_succeed;
-var $elm$core$Task$init = $elm$core$Task$succeed(0);
+var $elm$core$Task$init = $elm$core$Task$succeed(_Utils_Tuple0);
 var $elm$core$List$foldrHelper = F4(
 	function (fn, acc, ctr, ls) {
 		if (!ls.b) {
@@ -5124,7 +5128,7 @@ var $elm$core$Task$sequence = function (tasks) {
 var $elm$core$Platform$sendToApp = _Platform_sendToApp;
 var $elm$core$Task$spawnCmd = F2(
 	function (router, _v0) {
-		var task = _v0;
+		var task = _v0.a;
 		return _Scheduler_spawn(
 			A2(
 				$elm$core$Task$andThen,
@@ -5136,7 +5140,7 @@ var $elm$core$Task$onEffects = F3(
 		return A2(
 			$elm$core$Task$map,
 			function (_v0) {
-				return 0;
+				return _Utils_Tuple0;
 			},
 			$elm$core$Task$sequence(
 				A2(
@@ -5146,24 +5150,26 @@ var $elm$core$Task$onEffects = F3(
 	});
 var $elm$core$Task$onSelfMsg = F3(
 	function (_v0, _v1, _v2) {
-		return $elm$core$Task$succeed(0);
+		return $elm$core$Task$succeed(_Utils_Tuple0);
 	});
 var $elm$core$Task$cmdMap = F2(
 	function (tagger, _v0) {
-		var task = _v0;
-		return A2($elm$core$Task$map, tagger, task);
+		var task = _v0.a;
+		return $elm$core$Task$Perform(
+			A2($elm$core$Task$map, tagger, task));
 	});
 _Platform_effectManagers['Task'] = _Platform_createManager($elm$core$Task$init, $elm$core$Task$onEffects, $elm$core$Task$onSelfMsg, $elm$core$Task$cmdMap);
 var $elm$core$Task$command = _Platform_leaf('Task');
 var $elm$core$Task$perform = F2(
 	function (toMessage, task) {
 		return $elm$core$Task$command(
-			A2($elm$core$Task$map, toMessage, task));
+			$elm$core$Task$Perform(
+				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$application = _Browser_application;
 var $author$project$FeastDayActivities$Main$Model = F2(
 	function (key, url) {
-		return {aL: key, Q: url};
+		return {key: key, url: url};
 	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
@@ -5200,2154 +5206,2221 @@ var $elm$core$List$any = F2(
 		}
 	});
 var $elm$browser$Browser$Navigation$load = _Browser_load;
+var $author$project$FeastDayActivities$FeastDayHelpers$Audio = {$: 'Audio'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Crafts = {$: 'Crafts'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Food = {$: 'Food'};
+var $author$project$FeastDayActivities$FeastDayHelpers$More = {$: 'More'};
+var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = {$: 'OnlineReading'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Video = {$: 'Video'};
 var $author$project$FeastDayActivities$FeastDays$M04Apr$april = {
-	aB: '#ebdf72',
-	X: _List_fromArray(
+	color: '#ebdf72',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Palm Sunday of the Lord\'s Passion'},
-					{aw: _List_Nil, aF: 'Saint Francis of Paola'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/ZrJ-7ZVzvKE', snippet: '', title: 'Hosanna'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/O___M05czhg', snippet: '', title: 'What is Holy Week? Palm Sunday, Holy Thursday, Good Friday, and Easter!'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/1ssgKEadTL8', snippet: '', title: 'Palm Sunday and the Passion- For Kids'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/palm-sunday-crafts-and-ideas-for-kids/', snippet: 'Celebrating Palm Sunday with your family is a great way to live the liturgical year at home with your kids! It begins the last week of Lent, and there are a lot of fun and meaningful ways to celebrate Palm Sunday with your kids...', title: 'Celebrate Palm Sunday (Crafts and Ideas for Kids)'}
+						]),
+					feast: 'Palm Sunday of the Lord\'s Passion'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/8SL_wCW_Srs', snippet: '', title: 'St. Francis of Paola'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-francis-of-paola/', snippet: 'Francis of Paola was a man who deeply loved contemplative solitude and wished only to be the “least in the household of God.” Yet, when the Church called him to active service in the world, he became a miracle-worker and influenced the course of nations...', title: 'Saint Francis of Paola’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/april-2-saint-francis-of-paola-hermit/', snippet: 'James Martotille and his bride wedded and lived in the town of Paola, in the southernmost region of Italy. During the first years of their marriage, they were unable to conceive a child. Being devout Catholics, they turned to prayer and beseeched the intercession of Saint Francis of Assisi...', title: 'Saint Francis of Paola, Hermit'}
+						]),
+					feast: 'Saint Francis of Paola'
+				}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Isidore'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-isidore-of-seville/', snippet: 'The 76 years of Isidore’s life were a time of conflict and growth for the Church in Spain. The Visigoths had invaded the land a century and a half earlier, and shortly before Isidore’s birth they set up their own capital. They were Arians...', title: 'Saint Isidore of Seville’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/april-4-saint-isidore-bishop-and-doctor-of-the-church/', snippet: 'Isidore, a man of great distinction, bishop of the church of Seville, successor and brother of bishop Leander, flourished from the time of Emperor Maurice and King Reccared. In him antiquity reasserted itself...', title: 'Saint Isidore, Bishop and Doctor of the Church'}
+						]),
+					feast: 'Saint Isidore'
+				}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Vincent Ferrer'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-ferrer/', snippet: 'The polarization in the Church today is a mild breeze compared with the tornado that ripped the Church apart during the lifetime of this saint. If any saint is a patron of reconciliation, Vincent Ferrer is...', title: 'Saint Vincent Ferrer’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/april-5-saint-vincent-ferrer-priest/', snippet: 'It can be said that today’s saint lived two sequential lives. The first forty-nine years of his life were, in many ways, a preparation for the final twenty years of his life...', title: 'Saint Vincent Ferrer, Priest'}
+						]),
+					feast: 'Saint Vincent Ferrer'
+				}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Holy Thursday'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/holy-thursday/', snippet: 'Holy Thursday is also called Maundy Thursday. “Maundy” comes from the Latin word mandatum, which is translated “mandate.” It is on this night that...', title: 'Holy Thursday'}
+						]),
+					feast: 'Holy Thursday'
+				}
 				])
 		},
 			{
-			H: '07',
-			X: _List_fromArray(
+			date: '07',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Good Friday'},
-					{aw: _List_Nil, aF: 'Saint John Baptist de la Salle'}
+					{activities: _List_Nil, feast: 'Good Friday'},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-baptist-de-la-salle/', snippet: 'Complete dedication to what he saw as God’s will for him dominated the life of John Baptist de La Salle. In 1950, Pope Pius XII named him patron of schoolteachers for his efforts in upgrading school instruction...', title: 'Saint John Baptist de La Salle'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/april-7-saint-john-baptist-de-la-salle-priest/', snippet: 'Saint John Baptist de La Salle died on Good Friday, perhaps as a divine sign of the sacrificial life he had lived for the salvation of souls...', title: 'Saint John Baptist de la Salle, Priest'}
+						]),
+					feast: 'Saint John Baptist de la Salle'
+				}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Holy Saturday'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/catholic-prayers/triduum-and-easter-prayers/prayer-meditation-for-holy-saturday/', snippet: 'My Lord, today all is silent. You have given Your precious life for the salvation of the world.  You died a horrific death, poured out all Mercy from Your wounded Heart, and now You rest in peace in the tomb as the soldiers keep vigil...', title: 'Prayer Meditation for Holy Saturday'}
+						]),
+					feast: 'Holy Saturday'
+				}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Easter Sunday'}
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/7z7XN9vmOOM', snippet: '', title: 'Easter Octave'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/easter-sunday/', snippet: 'Alleluia!  He is Risen! Saying those words is like drinking a tall glass of cold water after being out in the desert all day.  Lent is over. It is time to celebrate the great joy of Easter!', title: 'Easter Sunday'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/count-down-the-easter-season-printable-countdown-bunting/', snippet: 'The Easter season lasts 50 days for Catholics, which is 10 more days than Lent! It’s like St. Pope John Paul II said, “We are an Easter people and Alleluia is our song!”', title: 'Count Down The Easter Season'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/easy-easter-cookie-recipe-birds-nests-with-eggs/', snippet: 'When I am planning fun Easter treats with the kids, I always love to include things that have symbols that point back to the true meaning of Easter...', title: 'Easy Easter Cookie Recipe- Bird’s Nests With Eggs!'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/how-to-make-easter-story-cookies-with-a-printable-recipe/', snippet: 'Making Easter Story Cookies (Aka, resurrection cookies) is a fun way to celebrate the true meaning of Easter with your kids!', title: 'How To Make Easter Story Cookies'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/50-days-of-easter/', snippet: 'All the Easter crafts, snacks, games, books, etc. couldn’t possibly all happen on actual Easter Sunday- it’s too much! But that’s ok because the Church, in her infinite wisdom, granted an entire season of Easter that lasts for 50 days, all the way through Pentecost!', title: 'Celebrating The Entire Easter Season With Catholic Kids- All 50 Days!'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552', link: 'https://cultivatingcatholics.com/how-to-engage-your-3-7-year-olds-in-the-triduum/', snippet: 'As we move into Holy Week, it is important to help the youngest Catholics understand and engage with several days of long liturgies.', title: 'How to engage your 3-7 year olds in the Triduum'}
+						]),
+					feast: 'Easter Sunday'
+				}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Stanislaus'}
+					{activities: _List_Nil, feast: 'Saint Stanislaus'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Martin I'}
+					{activities: _List_Nil, feast: 'Saint Martin I'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Divine Mercy Sunday'}
+					{activities: _List_Nil, feast: 'Divine Mercy Sunday'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Anselm of Canterbury'}
+					{activities: _List_Nil, feast: 'Saint Anselm of Canterbury'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint George'},
-					{aw: _List_Nil, aF: 'Saint Adalbert'}
+					{activities: _List_Nil, feast: 'Saint George'},
+					{activities: _List_Nil, feast: 'Saint Adalbert'}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Fidelis of Sigmaringen'}
+					{activities: _List_Nil, feast: 'Saint Fidelis of Sigmaringen'}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Mark the Evangelist'}
+					{activities: _List_Nil, feast: 'Saint Mark the Evangelist'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Peter Chanel'},
-					{aw: _List_Nil, aF: 'Saint Louis Grignon de Montfort'}
+					{activities: _List_Nil, feast: 'Saint Peter Chanel'},
+					{activities: _List_Nil, feast: 'Saint Louis Grignon de Montfort'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Catherine of Siena'}
+					{activities: _List_Nil, feast: 'Saint Catherine of Siena'}
 				])
 		},
 			{
-			H: '30',
-			X: _List_fromArray(
+			date: '30',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Pius V.'}
+					{activities: _List_Nil, feast: 'Saint Pius V.'}
 				])
 		}
 		]),
-	aL: 'apr',
-	K: 'April'
+	key: 'apr',
+	month: 'April'
 };
 var $author$project$FeastDayActivities$FeastDays$M08Aug$august = {
-	aB: '#ebdf72',
-	X: _List_fromArray(
+	color: '#ebdf72',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Alphonsus Maria de Liguori'}
+					{activities: _List_Nil, feast: 'Saint Alphonsus Maria de Liguori'}
 				])
 		},
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Eusebius of Vercelli'},
-					{aw: _List_Nil, aF: 'Saint Peter Julian Eymard'}
+					{activities: _List_Nil, feast: 'Saint Eusebius of Vercelli'},
+					{activities: _List_Nil, feast: 'Saint Peter Julian Eymard'}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Jean Vianney (the Curé of Ars)'}
+					{activities: _List_Nil, feast: 'Saint Jean Vianney (the Curé of Ars)'}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Dedication of the Basilica of Saint Mary Major'}
+					{activities: _List_Nil, feast: 'Dedication of the Basilica of Saint Mary Major'}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Transfiguration of the Lord'}
+					{activities: _List_Nil, feast: 'Transfiguration of the Lord'}
 				])
 		},
 			{
-			H: '07',
-			X: _List_fromArray(
+			date: '07',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Sixtus II, Pope and Martyr'},
-					{aw: _List_Nil, aF: 'Saint Cajetan'}
+					{activities: _List_Nil, feast: 'Saint Sixtus II, Pope and Martyr'},
+					{activities: _List_Nil, feast: 'Saint Cajetan'}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Dominic'}
+					{activities: _List_Nil, feast: 'Saint Dominic'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Teresa Benedicta of the Cross (Edith Stein)'}
+					{activities: _List_Nil, feast: 'Saint Teresa Benedicta of the Cross (Edith Stein)'}
 				])
 		},
 			{
-			H: '10',
-			X: _List_fromArray(
+			date: '10',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Lawrence'}
+					{activities: _List_Nil, feast: 'Saint Lawrence'}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Clare'}
+					{activities: _List_Nil, feast: 'Saint Clare'}
 				])
 		},
 			{
-			H: '12',
-			X: _List_fromArray(
+			date: '12',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Jane Frances de Chantal'}
+					{activities: _List_Nil, feast: 'Saint Jane Frances de Chantal'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Pontian, Pope and Hippoloytus'}
+					{activities: _List_Nil, feast: 'Saints Pontian, Pope and Hippoloytus'}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Maximilian Mary Kolbe'}
+					{activities: _List_Nil, feast: 'Saint Maximilian Mary Kolbe'}
 				])
 		},
 			{
-			H: '15',
-			X: _List_fromArray(
+			date: '15',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Assumption of the Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Assumption of the Blessed Virgin Mary'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Stephen of Hungary'}
+					{activities: _List_Nil, feast: 'Saint Stephen of Hungary'}
 				])
 		},
 			{
-			H: '19',
-			X: _List_fromArray(
+			date: '19',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John Eudes'}
+					{activities: _List_Nil, feast: 'Saint John Eudes'}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bernard of Clairvaux'}
+					{activities: _List_Nil, feast: 'Saint Bernard of Clairvaux'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Pius X'}
+					{activities: _List_Nil, feast: 'Saint Pius X'}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Queenship of Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Queenship of Blessed Virgin Mary'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Rose of Lima'}
+					{activities: _List_Nil, feast: 'Saint Rose of Lima'}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bartholomew the Apostle'}
+					{activities: _List_Nil, feast: 'Saint Bartholomew the Apostle'}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Louis'},
-					{aw: _List_Nil, aF: 'Saint Joseph of Calasanz'}
+					{activities: _List_Nil, feast: 'Saint Louis'},
+					{activities: _List_Nil, feast: 'Saint Joseph of Calasanz'}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Monica'}
+					{activities: _List_Nil, feast: 'Saint Monica'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Augustine of Hippo'}
+					{activities: _List_Nil, feast: 'Saint Augustine of Hippo'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'The Passion of Saint John the Baptist'}
+					{activities: _List_Nil, feast: 'The Passion of Saint John the Baptist'}
 				])
 		}
 		]),
-	aL: 'aug',
-	K: 'August'
+	key: 'aug',
+	month: 'August'
 };
 var $author$project$FeastDayActivities$FeastDays$M12Dec$december = {
-	aB: '#ebdf72',
-	X: _List_fromArray(
+	color: '#ebdf72',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Francis Xavier'}
+					{activities: _List_Nil, feast: 'Saint Francis Xavier'}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John Damascene'}
+					{activities: _List_Nil, feast: 'Saint John Damascene'}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Nicholas'}
+					{activities: _List_Nil, feast: 'Saint Nicholas'}
 				])
 		},
 			{
-			H: '07',
-			X: _List_fromArray(
+			date: '07',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Ambrose'}
+					{activities: _List_Nil, feast: 'Saint Ambrose'}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Immaculate Conception of the Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Immaculate Conception of the Blessed Virgin Mary'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Juan Diego'}
+					{activities: _List_Nil, feast: 'Saint Juan Diego'}
 				])
 		},
 			{
-			H: '10',
-			X: _List_fromArray(
+			date: '10',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of Loreto'}
+					{activities: _List_Nil, feast: 'Our Lady of Loreto'}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Damasus I'}
+					{activities: _List_Nil, feast: 'Saint Damasus I'}
 				])
 		},
 			{
-			H: '12',
-			X: _List_fromArray(
+			date: '12',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of Guadalupe'}
+					{activities: _List_Nil, feast: 'Our Lady of Guadalupe'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Lucy of Syracuse'}
+					{activities: _List_Nil, feast: 'Saint Lucy of Syracuse'}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John of the Cross'}
+					{activities: _List_Nil, feast: 'Saint John of the Cross'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Peter Canisius'}
+					{activities: _List_Nil, feast: 'Saint Peter Canisius'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John of Kanty'}
+					{activities: _List_Nil, feast: 'Saint John of Kanty'}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Nativity of the Lord'}
+					{activities: _List_Nil, feast: 'Nativity of the Lord'}
 				])
 		},
 			{
-			H: '26',
-			X: _List_fromArray(
+			date: '26',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Stephen'}
+					{activities: _List_Nil, feast: 'Saint Stephen'}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John the Apostle and Evangelist'}
+					{activities: _List_Nil, feast: 'Saint John the Apostle and Evangelist'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Holy Innocents'}
+					{activities: _List_Nil, feast: 'Holy Innocents'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Thomas Becket'}
+					{activities: _List_Nil, feast: 'Saint Thomas Becket'}
 				])
 		},
 			{
-			H: '30',
-			X: _List_fromArray(
+			date: '30',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'The Holy Family of Jesus, Mary, and Joseph'}
+					{activities: _List_Nil, feast: 'The Holy Family of Jesus, Mary, and Joseph'}
 				])
 		},
 			{
-			H: '31',
-			X: _List_fromArray(
+			date: '31',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Sylvester I'}
+					{activities: _List_Nil, feast: 'Saint Sylvester I'}
 				])
 		}
 		]),
-	aL: 'dec',
-	K: 'December'
+	key: 'dec',
+	month: 'December'
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Audio = 1;
-var $author$project$FeastDayActivities$FeastDayHelpers$Crafts = 8;
-var $author$project$FeastDayActivities$FeastDayHelpers$Food = 5;
-var $author$project$FeastDayActivities$FeastDayHelpers$Images = 2;
-var $author$project$FeastDayActivities$FeastDayHelpers$More = 9;
-var $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading = 4;
-var $author$project$FeastDayActivities$FeastDayHelpers$Video = 0;
+var $author$project$FeastDayActivities$FeastDayHelpers$Images = {$: 'Images'};
 var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
-	aB: '#395d73',
-	X: _List_fromArray(
+	color: '#395d73',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/83Fkcb9SGek', aV: '', a_: 'The Presentation of Jesus'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', aV: 'At the end of the fourth century, a woman named Etheria made a pilgrimage to Jerusalem. Her journal, discovered in 1887, gives an unprecedented...', a_: 'Presentation of the Lord'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', aV: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', a_: 'How To Celebrate Candlemas With Catholic Children'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/83Fkcb9SGek', snippet: '', title: 'The Presentation of Jesus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', snippet: 'At the end of the fourth century, a woman named Etheria made a pilgrimage to Jerusalem. Her journal, discovered in 1887, gives an unprecedented...', title: 'Presentation of the Lord'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', snippet: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', title: 'How To Celebrate Candlemas With Catholic Children'}
 						]),
-					aF: 'The Presentation of the Lord'
+					feast: 'The Presentation of the Lord'
 				}
 				])
 		},
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/3yGRtx_ITgA', aV: '', a_: 'St. Blase'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', aV: 'We know more about the devotion to Saint Blaise by Christians around the world than we know about the saint himself...', a_: 'Saint Blaise’s Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase/', aV: 'According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey)...', a_: 'Saint Blaise'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/3yGRtx_ITgA', snippet: '', title: 'St. Blase'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', snippet: 'We know more about the devotion to Saint Blaise by Christians around the world than we know about the saint himself...', title: 'Saint Blaise’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase/', snippet: 'According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey)...', title: 'Saint Blaise'}
 						]),
-					aF: 'St Blase'
+					feast: 'St Blase'
 				},
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/BWJt5CZX3mc', aV: '', a_: 'St. Ansgar'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/BWJt5CZX3mc', snippet: '', title: 'St. Ansgar'}
 						]),
-					aF: 'St Ansgar'
+					feast: 'St Ansgar'
 				}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/y42RPHsJX44', aV: '', a_: 'St. Agatha'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', aV: 'As in the case of Agnes, another virgin-martyr of the early Church, almost nothing is historically certain about this saint except that she was martyred in Sicily during the persecution of Emperor Decius in 251...', a_: 'Saint Agatha’s Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha/', aV: 'Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories...', a_: 'Saint Agatha'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/y42RPHsJX44', snippet: '', title: 'St. Agatha'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', snippet: 'As in the case of Agnes, another virgin-martyr of the early Church, almost nothing is historically certain about this saint except that she was martyred in Sicily during the persecution of Emperor Decius in 251...', title: 'Saint Agatha’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha/', snippet: 'Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories...', title: 'Saint Agatha'}
 						]),
-					aF: 'St Agatha'
+					feast: 'St Agatha'
 				}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/36uf0JQMJv4', aV: '', a_: 'St. Paul Miki'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', aV: 'Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlooking Nagasaki...', a_: 'Saint Paul Miki and Companions’ Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions/', aV: 'When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government...', a_: 'Saint Paul Miki and Companions'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/36uf0JQMJv4', snippet: '', title: 'St. Paul Miki'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', snippet: 'Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlooking Nagasaki...', title: 'Saint Paul Miki and Companions’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions/', snippet: 'When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government...', title: 'Saint Paul Miki and Companions'}
 						]),
-					aF: 'Sts Paul Miki and Companions'
+					feast: 'Sts Paul Miki and Companions'
 				}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', aV: 'A careless and irreligious soldier for the city-state of Venice, Jerome was captured in a skirmish at an outpost town and chained in a dungeon...', a_: 'Saint Jerome Emiliani’s Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-jerome-emiliani/', aV: 'Jerome Emiliani was born in Venice. As a soldier, he was captured during battle and imprisoned. In a dungeon he thought about his life...', a_: 'Saint Jerome Emiliani'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', snippet: 'A careless and irreligious soldier for the city-state of Venice, Jerome was captured in a skirmish at an outpost town and chained in a dungeon...', title: 'Saint Jerome Emiliani’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-jerome-emiliani/', snippet: 'Jerome Emiliani was born in Venice. As a soldier, he was captured during battle and imprisoned. In a dungeon he thought about his life...', title: 'Saint Jerome Emiliani'}
 						]),
-					aF: 'Saint Jerome Emilani'
+					feast: 'Saint Jerome Emilani'
 				},
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/9WsYj6dIyXM', aV: '', a_: 'St. Josephine Bakhita'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/', aV: 'For many years, Josephine Bakhita was a slave but her spirit was always free and eventually that spirit prevailed.', a_: 'Saint Josephine Bakhita’s Story'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-josephine-bakhita-resources-for-kids/', aV: 'Let’s look at some celebrating the life of St. Bakhita for kids with crafts, printables, and even more resources.', a_: 'St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita/', aV: 'Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery...', a_: 'Saint Josephine, Bakhita'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/9WsYj6dIyXM', snippet: '', title: 'St. Josephine Bakhita'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/', snippet: 'For many years, Josephine Bakhita was a slave but her spirit was always free and eventually that spirit prevailed.', title: 'Saint Josephine Bakhita’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-josephine-bakhita-resources-for-kids/', snippet: 'Let’s look at some celebrating the life of St. Bakhita for kids with crafts, printables, and even more resources.', title: 'St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita/', snippet: 'Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery...', title: 'Saint Josephine, Bakhita'}
 						]),
-					aF: 'Saint Josephine Bakhita'
+					feast: 'Saint Josephine Bakhita'
 				}
 				])
 		},
 			{
-			H: '10',
-			X: _List_fromArray(
+			date: '10',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/_wBhZ5Z0suE', aV: '', a_: 'St. Scholastica'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', aV: 'Twins often share the same interests and ideas with an equal intensity. Therefore, it is no surprise that Scholastica and her twin brother, Benedict, established religious communities within a few miles from each other...', a_: 'Saint Scholastica’s Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica/', aV: 'Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica...', a_: 'Saint Scholastica'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/_wBhZ5Z0suE', snippet: '', title: 'St. Scholastica'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', snippet: 'Twins often share the same interests and ideas with an equal intensity. Therefore, it is no surprise that Scholastica and her twin brother, Benedict, established religious communities within a few miles from each other...', title: 'Saint Scholastica’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica/', snippet: 'Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica...', title: 'Saint Scholastica'}
 						]),
-					aF: 'Saint Scholastica'
+					feast: 'Saint Scholastica'
 				}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/BTAd8GqsQ14', aV: '', a_: 'Bernadette: The Princess of Lourdes | The Saints and Heroes Collection'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/Gde3rSZA_CQ', aV: '', a_: 'Our Lady of Lourdes'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/XGe_P7oaSgQ ', aV: '', a_: 'Story of Saint Bernadette | Stories of Saints'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-lourdes/', aV: 'On December 8, 1854, Pope Pius IX proclaimed the dogma of the Immaculate Conception in the apostolic constitution Ineffabilis Deus. A little more than three years later, on February 11, 1858, a young lady appeared to Bernadette Soubirous...', a_: 'The Story of Our Lady of Lourdes'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/our-lady-of-lourdes-craft/', aV: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', a_: 'Our Lady Of Lourdes Diorama (Printable Craft For Catholic Kids!)'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/our-lady-of-lourdes/', aV: 'Each year over 2 million people make their way through the mountainous country of southeastern France to Lourdes. They come seeking cures, hoping to find answers, believing, and praying. At Lourdes...', a_: 'Our Lady of Lourdes'},
-							{R: 5, aI: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', aM: 'https://www.catholicicing.com/rice-krispie-treat-grotto-for-our-lady/', aV: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', a_: 'Rice Krispie Treat Grotto Tor Our Lady Of Lourdes'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/BTAd8GqsQ14', snippet: '', title: 'Bernadette: The Princess of Lourdes | The Saints and Heroes Collection'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/Gde3rSZA_CQ', snippet: '', title: 'Our Lady of Lourdes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/XGe_P7oaSgQ ', snippet: '', title: 'Story of Saint Bernadette | Stories of Saints'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-lourdes/', snippet: 'On December 8, 1854, Pope Pius IX proclaimed the dogma of the Immaculate Conception in the apostolic constitution Ineffabilis Deus. A little more than three years later, on February 11, 1858, a young lady appeared to Bernadette Soubirous...', title: 'The Story of Our Lady of Lourdes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/our-lady-of-lourdes-craft/', snippet: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', title: 'Our Lady Of Lourdes Diorama (Printable Craft For Catholic Kids!)'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/our-lady-of-lourdes/', snippet: 'Each year over 2 million people make their way through the mountainous country of southeastern France to Lourdes. They come seeking cures, hoping to find answers, believing, and praying. At Lourdes...', title: 'Our Lady of Lourdes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', link: 'https://www.catholicicing.com/rice-krispie-treat-grotto-for-our-lady/', snippet: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', title: 'Rice Krispie Treat Grotto Tor Our Lady Of Lourdes'}
 						]),
-					aF: 'Our Lady of Lourdes'
+					feast: 'Our Lady of Lourdes'
 				}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Cyril, Monk, and Methodius'},
+					{activities: _List_Nil, feast: 'Saints Cyril, Monk, and Methodius'},
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/NeBoi1K37Kc', aV: '', a_: 'Ss. Cyril & Methodius'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-cyril-and-methodius/', aV: 'Cyril and Methodius were brothers, born in Thessalonika, Greece. Cyril (825–869), a philosopher, studied in Constantinople and was ordained a priest. Methodius (826–884), for five years the governor of a Slavic region of the empire, became a monk...', a_: 'Saints Cyril and Methodius'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/celebrating-st-valentines-day-with-catholic-kids/', aV: 'Today I am going to share with you some pintables, resources, crafts, and books to celebrate the true meaning of St. Valentine’s Day with Catholic kids...', a_: 'Celebrating St. Valentine’s Day With Catholic Kids'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/NeBoi1K37Kc', snippet: '', title: 'Ss. Cyril & Methodius'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-cyril-and-methodius/', snippet: 'Cyril and Methodius were brothers, born in Thessalonika, Greece. Cyril (825–869), a philosopher, studied in Constantinople and was ordained a priest. Methodius (826–884), for five years the governor of a Slavic region of the empire, became a monk...', title: 'Saints Cyril and Methodius'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/celebrating-st-valentines-day-with-catholic-kids/', snippet: 'Today I am going to share with you some pintables, resources, crafts, and books to celebrate the true meaning of St. Valentine’s Day with Catholic kids...', title: 'Celebrating St. Valentine’s Day With Catholic Kids'}
 						]),
-					aF: 'Saint Valentine'
+					feast: 'Saint Valentine'
 				}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/PXEtTbAWGgc', aV: '', a_: 'The Seven Holy Founders'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites/', aV: 'Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values...', a_: 'The Seven Holy Founders of the of Servite Order'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/PXEtTbAWGgc', snippet: '', title: 'The Seven Holy Founders'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites/', snippet: 'Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values...', title: 'The Seven Holy Founders of the of Servite Order'}
 						]),
-					aF: 'Seven Holy Founders of the Servite Order'
+					feast: 'Seven Holy Founders of the Servite Order'
 				}
 				])
 		},
 			{
-			H: '18',
-			X: _List_fromArray(
+			date: '18',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 2, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/GoogleArtsAndCulture__aIhfPvxu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676432323426', aM: 'https://artsandculture.google.com/entity/fra-angelico/m031b2?categoryId=artist', aV: 'View ultra-high resolution images of Fra Angelico\'s paintings', a_: 'Fra Angelico\'s Paintings'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Images, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/GoogleArtsAndCulture__aIhfPvxu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676432323426', link: 'https://artsandculture.google.com/entity/fra-angelico/m031b2?categoryId=artist', snippet: 'View ultra-high resolution images of Fra Angelico\'s paintings', title: 'Fra Angelico\'s Paintings'}
 						]),
-					aF: 'Blessed John of Fiesole (Fra Angelico)'
+					feast: 'Blessed John of Fiesole (Fra Angelico)'
 				}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/SClTqIzdiZk', aV: '', a_: 'St. Peter Damian'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-peter-damian/', aV: 'Maybe because he was orphaned and had been treated shabbily by one of his brothers, Peter Damian was very good to the poor. It was the ordinary thing for him to have a poor person or two with him at table and he liked to minister personally to their needs...', a_: 'Saint Peter Damian’s Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian/', aV: 'Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time...', a_: 'Saint Peter Damian'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/SClTqIzdiZk', snippet: '', title: 'St. Peter Damian'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-peter-damian/', snippet: 'Maybe because he was orphaned and had been treated shabbily by one of his brothers, Peter Damian was very good to the poor. It was the ordinary thing for him to have a poor person or two with him at table and he liked to minister personally to their needs...', title: 'Saint Peter Damian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian/', snippet: 'Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time...', title: 'Saint Peter Damian'}
 						]),
-					aF: 'Saint Peter Damian'
+					feast: 'Saint Peter Damian'
 				}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/Gn_5c-EYGZ4', aV: '', a_: 'Ash Wednesday'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ash-wednesday-for-kids/', aV: '', a_: 'Ash Wednesday For Kids (Traditions, Printables, & Resources)'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/Gn_5c-EYGZ4', snippet: '', title: 'Ash Wednesday'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/9xMgWbg1Xs8', snippet: '', title: 'Ash Wednesday'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/t671atw7Fgk', snippet: '', title: 'Ash Wednesday'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/vIZYKohGDHE', snippet: '', title: 'Ash Wednesday'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', link: 'https://www.catholicicing.com/pretzels-for-lent/', snippet: 'Did you know that the pretzel is a traditional food for lent? In fact, the pretzel was actually invented in order to be a simple Lenten snack!', title: 'Lenten Pretzel Recipe (And A Printable Pretzel Prayer Poem)'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552', link: 'https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/', snippet: 'Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas.', title: 'Meatless Lent Recipes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ash-wednesday-for-kids/', snippet: '', title: 'Ash Wednesday For Kids (Traditions, Printables, & Resources)'}
 						]),
-					aF: 'Ash Wednesday'
+					feast: 'Ash Wednesday'
 				}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/IgX8kpUxBz4', aV: '', a_: 'St. Polycarp'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-polycarp/', aV: 'Polycarp, bishop of Smyrna, disciple of Saint John the Apostle and friend of Saint Ignatius of Antioch, was a revered Christian leader during the first half of the second century...', a_: 'Saint Polycarp’s Story'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp/', aV: 'The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders...', a_: 'Saint Polycarp'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/IgX8kpUxBz4', snippet: '', title: 'St. Polycarp'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-polycarp/', snippet: 'Polycarp, bishop of Smyrna, disciple of Saint John the Apostle and friend of Saint Ignatius of Antioch, was a revered Christian leader during the first half of the second century...', title: 'Saint Polycarp’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp/', snippet: 'The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders...', title: 'Saint Polycarp'}
 						]),
-					aF: 'Saint Polycarp'
+					feast: 'Saint Polycarp'
 				}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/saint-gregory-of-narek/', aV: 'The Apostles Saint Jude Thaddeus and Saint Bartholomew are believed to have traveled to Armenia to share the Gospel. In 301 A.D., the Armenian king was converted who, in turn, made Christianity the kingdom’s official religion, making Armenia the first nation to do so...', a_: 'Saint Gregory of Narek'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/saint-gregory-of-narek/', snippet: 'The Apostles Saint Jude Thaddeus and Saint Bartholomew are believed to have traveled to Armenia to share the Gospel. In 301 A.D., the Armenian king was converted who, in turn, made Christianity the kingdom’s official religion, making Armenia the first nation to do so...', title: 'Saint Gregory of Narek'}
 						]),
-					aF: 'Saint Gregory of Narek'
+					feast: 'Saint Gregory of Narek'
 				}
 				])
 		}
 		]),
-	aL: 'feb',
-	K: 'February'
+	key: 'feb',
+	month: 'February'
 };
-var $author$project$FeastDayActivities$FeastDayHelpers$Book = 7;
-var $author$project$FeastDayActivities$FeastDayHelpers$Game = 6;
-var $author$project$FeastDayActivities$FeastDayHelpers$Printout = 3;
+var $author$project$FeastDayActivities$FeastDayHelpers$Book = {$: 'Book'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Game = {$: 'Game'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Printout = {$: 'Printout'};
 var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
-	aB: '#9de3ec',
-	X: _List_fromArray(
+	color: '#9de3ec',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', aV: '', a_: 'Hail Mary, Full of Grace'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/HoAUG7htvkA', aV: '', a_: 'Born of Woman'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/mary-mother-of-god/', aV: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity...', a_: 'The Story of Mary, Mother of God'},
-							{R: 6, aI: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', aM: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', aV: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', a_: 'Mary, Mother of Our Church File Folder Game'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351', aM: 'http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html', aV: 'You only need some basic supplies for this one. Try to find heavy kraft paper if you can...', a_: 'Pastel Resist Madonna - Art Project'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/how-to-draw-mary-and-baby-jesus/', aV: 'A step by step video for kids', a_: 'How To Draw Mary And Baby Jesus (Easy!)'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', aV: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', a_: 'Solemnity of Mary, the Holy Mother of God'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', a_: 'The Story of Mary, Mother of God'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Smoked Sausage and Black-Eyed Peas'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Broccoli Cornbread Mini Muffins'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'Sweet Buttermilk Cornbread'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', aV: '', a_: 'German New Years Cake'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', snippet: '', title: 'Hail Mary, Full of Grace'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HoAUG7htvkA', snippet: '', title: 'Born of Woman'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/mary-mother-of-god/', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity...', title: 'The Story of Mary, Mother of God'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Game, image: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', link: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', snippet: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', title: 'Mary, Mother of Our Church File Folder Game'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351', link: 'http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html', snippet: 'You only need some basic supplies for this one. Try to find heavy kraft paper if you can...', title: 'Pastel Resist Madonna - Art Project'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/how-to-draw-mary-and-baby-jesus/', snippet: 'A step by step video for kids', title: 'How To Draw Mary And Baby Jesus (Easy!)'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', snippet: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', title: 'Solemnity of Mary, the Holy Mother of God'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Smoked Sausage and Black-Eyed Peas'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Broccoli Cornbread Mini Muffins'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Sweet Buttermilk Cornbread'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'German New Years Cake'}
 						]),
-					aF: 'Mary, Mother of God'
+					feast: 'Mary, Mother of God'
 				}
 				])
 		},
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/lwe8voh3H_4', aV: '', a_: 'Ss. Gregory & Basil'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-basil-the-great/', aV: 'Basil was on his way to becoming a famous teacher when he decided to begin a religious life of gospel poverty...', a_: 'Saint Basil the Great’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', a_: 'Saint Basil the Great'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', a_: 'Saint Gregory of Nazianzus'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: '', a_: 'Vasilopita Bread'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', aV: '', a_: 'Vasilopita Cake'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', aV: '', a_: 'Hünkar Beğendi'},
-							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/make-a-jewel-cake-for-st-basil-on-new-years/', aV: 'St. Basil’s feast day is on January 2, but it has become a Catholic tradition to make a “St. Basil’s Cake” on New Year’s to celebrate one of his miracles...', a_: 'Jewel Cake'},
-							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-basils-hidden-jewel-cupcakes-easy-to-make/', aV: 'Slice a small hole in the top of the cupcake using a butter knife, and stick a lifesaver candy “jewel” inside...', a_: 'St Basil\'s Cupcakes'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/lwe8voh3H_4', snippet: '', title: 'Ss. Gregory & Basil'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-basil-the-great/', snippet: 'Basil was on his way to becoming a famous teacher when he decided to begin a religious life of gospel poverty...', title: 'Saint Basil the Great’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', title: 'Saint Basil the Great'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', snippet: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', title: 'Saint Gregory of Nazianzus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: '', title: 'Vasilopita Bread'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: '', title: 'Vasilopita Cake'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', snippet: '', title: 'Hünkar Beğendi'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/make-a-jewel-cake-for-st-basil-on-new-years/', snippet: 'St. Basil’s feast day is on January 2, but it has become a Catholic tradition to make a “St. Basil’s Cake” on New Year’s to celebrate one of his miracles...', title: 'Jewel Cake'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-basils-hidden-jewel-cupcakes-easy-to-make/', snippet: 'Slice a small hole in the top of the cupcake using a butter knife, and stick a lifesaver candy “jewel” inside...', title: 'St Basil\'s Cupcakes'}
 						]),
-					aF: 'Saint Basil'
+					feast: 'Saint Basil'
 				}
 				])
 		},
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/muyR_oFp8oE', aV: '', a_: 'The Name Above All Names'},
-							{R: 4, aI: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', aM: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'Why We Celebrate the Holy Name of Jesus'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Saint Gregory of Nazianzus'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/', aV: 'Although Saint Paul might claim credit for promoting devotion to the Holy Name because Paul wrote in Philippians that God the Father gave Christ Jesus “that name that is above every name” (see 2:9), this devotion became popular because of 12th-century Cistercian monks and nuns but especially...', a_: 'The Story of the Most Holy Name of Jesus'},
-							{R: 3, aI: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', aM: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', aV: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', a_: 'How To Draw The Most Holy Name Of Jesus'},
-							{R: 7, aI: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', aM: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', aV: 'This booklet, "The Wonders of the Holy Name," reveals the simplest secret of holiness and happiness ever. For it shows us how we can pray "without ceasing," pray "always," and pray "at all times," as Holy Scripture exhorts us...', a_: 'The Wonders of the Holy Name'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', aV: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', a_: 'Prosphora Orthodox Bread'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/muyR_oFp8oE', snippet: '', title: 'The Name Above All Names'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', link: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'Why We Celebrate the Holy Name of Jesus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', title: 'Saint Gregory of Nazianzus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/', snippet: 'Although Saint Paul might claim credit for promoting devotion to the Holy Name because Paul wrote in Philippians that God the Father gave Christ Jesus “that name that is above every name” (see 2:9), this devotion became popular because of 12th-century Cistercian monks and nuns but especially...', title: 'The Story of the Most Holy Name of Jesus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', link: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'How To Draw The Most Holy Name Of Jesus'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Book, image: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', link: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', snippet: 'This booklet, "The Wonders of the Holy Name," reveals the simplest secret of holiness and happiness ever. For it shows us how we can pray "without ceasing," pray "always," and pray "at all times," as Holy Scripture exhorts us...', title: 'The Wonders of the Holy Name'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', title: 'Prosphora Orthodox Bread'}
 						]),
-					aF: 'The Most Holy Name of Jesus'
+					feast: 'The Most Holy Name of Jesus'
 				}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/896zFSI81X4', aV: '', a_: 'The First American Saint'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', aV: '', a_: 'Betty Bayley Becomes A Saint'},
-							{R: 4, aI: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', aM: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', aV: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', a_: 'Saint Elizabeth Ann Seton'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', a_: 'Saint Elizabeth Ann Seton\'s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-elizabeth-ann-seton/', aV: 'Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the Sisters of Charity. She opened the first American parish school and established the first American Catholic orphanage. All this she did in the span of 46 years while raising her five children...', a_: 'Saint Elizabeth Ann Seton’s Story'},
-							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', aM: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', aV: 'A themed word search for older kids.', a_: 'Elizabeth Ann Seton Word Find'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Corn and Crab Bisque'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg/v1/crop/x_18,y_454,w_366,h_444/fill/w_439,h_532,al_c,lg_1,q_80,enc_auto/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', aV: '', a_: 'Oly Koeken, Vet Ballen, Vet Bollen, Ole Bollen, Oliekoecken....aka Oil Balls'},
-							{R: 9, aI: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', aM: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', aV: 'See Catholic Icing for more activity ideas to celebrate this saint!', a_: 'Catholic Icing'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/896zFSI81X4', snippet: '', title: 'The First American Saint'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', snippet: '', title: 'Betty Bayley Becomes A Saint'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', snippet: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', title: 'Saint Elizabeth Ann Seton'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', title: 'Saint Elizabeth Ann Seton\'s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-elizabeth-ann-seton/', snippet: 'Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the Sisters of Charity. She opened the first American parish school and established the first American Catholic orphanage. All this she did in the span of 46 years while raising her five children...', title: 'Saint Elizabeth Ann Seton’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', link: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', snippet: 'A themed word search for older kids.', title: 'Elizabeth Ann Seton Word Find'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: '', title: 'Corn and Crab Bisque'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg/v1/crop/x_18,y_454,w_366,h_444/fill/w_439,h_532,al_c,lg_1,q_80,enc_auto/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: '', title: 'Oly Koeken, Vet Ballen, Vet Bollen, Ole Bollen, Oliekoecken....aka Oil Balls'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', link: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', snippet: 'See Catholic Icing for more activity ideas to celebrate this saint!', title: 'Catholic Icing'}
 						]),
-					aF: 'Saint Elizabeth Ann Seton'
+					feast: 'Saint Elizabeth Ann Seton'
 				}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs', aV: '', a_: 'St. John Neumann'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/', aV: 'Perhaps because the United States got a later start in the history of the world, it has relatively few canonized saints, but their number is increasing. John Neumann was born in what is now the Czech Republic. After studying in Prague, he came to New York at 25 and was ordained a priest...', a_: 'Saint John Neumann’s Story'},
-							{R: 4, aI: 'https://www.catholic.org/saints/ff_images/85.jpg', aM: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', aV: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', a_: 'Saints Fun Facts: St. John Neumann'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', aV: 'John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America...', a_: 'St. John Neumann\'s Story '},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', aV: '', a_: 'Svíčková with Dumplings'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs', snippet: '', title: 'St. John Neumann'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/', snippet: 'Perhaps because the United States got a later start in the history of the world, it has relatively few canonized saints, but their number is increasing. John Neumann was born in what is now the Czech Republic. After studying in Prague, he came to New York at 25 and was ordained a priest...', title: 'Saint John Neumann’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/saints/ff_images/85.jpg', link: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', snippet: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', title: 'Saints Fun Facts: St. John Neumann'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: 'John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America...', title: 'St. John Neumann\'s Story '},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: '', title: 'Svíčková with Dumplings'}
 						]),
-					aF: 'Saint John Newmann'
+					feast: 'Saint John Newmann'
 				}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/nMeuF62R6hw', aV: '', a_: 'Feast of the Epiphany'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', aV: '', a_: 'My Time with Jesus - Epiphany'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/', aV: 'Today’s feast of the Epiphany of the Lord is a feast that celebrates communication.  The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage...', a_: 'Epiphany of the Lord'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', a_: 'Gifts to our King'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/epiphany-house-blessing-with-chalk/', aV: 'The Epiphany house blessing of the door is a really great Catholic tradition for families...', a_: 'Epiphany House Blessing with Chalk'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/', aV: 'I love to make wearable crafts with preschoolers, because they love wearing them...', a_: 'K is for King'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/3-kings-epiphany-crafts/', aV: 'Ornament Craft, peg doll wraps, and printable nativity set!', a_: '3 Kings Epiphany Crafts For Kids'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/star-of-wonder-star-of-night/', aV: '', a_: 'Star Crafts'},
-							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/epiphany-crown-food-ideas/', aV: 'I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany...', a_: 'Epiphany Crown Food Ideas'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', aV: '', a_: 'La Galette des Rois: The French King Cake'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/nMeuF62R6hw', snippet: '', title: 'Feast of the Epiphany'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', snippet: '', title: 'My Time with Jesus - Epiphany'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/', snippet: 'Today’s feast of the Epiphany of the Lord is a feast that celebrates communication.  The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage...', title: 'Epiphany of the Lord'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', title: 'Gifts to our King'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/epiphany-house-blessing-with-chalk/', snippet: 'The Epiphany house blessing of the door is a really great Catholic tradition for families...', title: 'Epiphany House Blessing with Chalk'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/', snippet: 'I love to make wearable crafts with preschoolers, because they love wearing them...', title: 'K is for King'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/3-kings-epiphany-crafts/', snippet: 'Ornament Craft, peg doll wraps, and printable nativity set!', title: '3 Kings Epiphany Crafts For Kids'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/star-of-wonder-star-of-night/', snippet: '', title: 'Star Crafts'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/epiphany-crown-food-ideas/', snippet: 'I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany...', title: 'Epiphany Crown Food Ideas'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: '', title: 'La Galette des Rois: The French King Cake'}
 						]),
-					aF: 'The Epiphany of the Lord'
+					feast: 'The Epiphany of the Lord'
 				}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://www.catholic.org/files/images/saints/18.jpg', aM: 'https://www.catholic.org/saints/saint.php?saint_id=18', aV: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', a_: 'St. Andre Bessette'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', a_: 'Saint André Bessette’s Story'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/brwYgiR8vHo', aV: '', a_: 'Blessed Andre Bessette'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', aV: '', a_: 'The Story of Saint Brother Andre Bessette of Canada'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-andre-bessette/', aV: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth...', a_: 'Saint André Bessette’s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', aV: '', a_: 'Maple Tourlouche Upside Down Cake\u200B'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/files/images/saints/18.jpg', link: 'https://www.catholic.org/saints/saint.php?saint_id=18', snippet: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', title: 'St. Andre Bessette'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', snippet: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', title: 'Saint André Bessette’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/brwYgiR8vHo', snippet: '', title: 'Blessed Andre Bessette'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', snippet: '', title: 'The Story of Saint Brother Andre Bessette of Canada'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-andre-bessette/', snippet: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth...', title: 'Saint André Bessette’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', snippet: '', title: 'Maple Tourlouche Upside Down Cake\u200B'}
 						]),
-					aF: 'Saint André Bessette'
+					feast: 'Saint André Bessette'
 				}
 				])
 		},
 			{
-			H: '07',
-			X: _List_fromArray(
+			date: '07',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/b1yNa55xmjM', aV: '', a_: 'St. Raymond of Peñafort'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-raymond-of-penafort/', aV: 'Since Raymond lived into his hundredth year, he had a chance to do many things. As a member of the Spanish nobility, he had the resources and the education to get a good start in life...', a_: 'Saint Raymond of Peñafort’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', aV: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', a_: 'St. Raymond of Pennafort\'s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', aV: '', a_: 'Barcelona Vegan Potato Bombas'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/b1yNa55xmjM', snippet: '', title: 'St. Raymond of Peñafort'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-raymond-of-penafort/', snippet: 'Since Raymond lived into his hundredth year, he had a chance to do many things. As a member of the Spanish nobility, he had the resources and the education to get a good start in life...', title: 'Saint Raymond of Peñafort’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', title: 'St. Raymond of Pennafort\'s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: '', title: 'Barcelona Vegan Potato Bombas'}
 						]),
-					aF: 'Saint Raymond of Penyafort'
+					feast: 'Saint Raymond of Penyafort'
 				}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/75F5qJw5YEY', aV: '', a_: 'Washed Away'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', a_: 'The Story of the Feast of the Baptism of the Lord'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/', aV: 'Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here.', a_: 'Feast of the Baptism of the Lord'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Jumping Jolly Juice'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/', aV: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', a_: 'Holy Water Bottle Craft'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/', aV: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', a_: 'Dove with Olive Branch'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/', aV: 'You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra.', a_: 'Dove with Gifts of the Holy Spirit'},
-							{R: 8, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/holy-spirit-craft-handprint-dove/', aV: 'For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint...', a_: 'Simple Handprint Dove'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', aV: '', a_: 'Greek Dipples'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/', aV: 'Baptism is so important, and it’s a great thing to make sure that your kids truly understand...', a_: 'Ideas for Teaching Catholic Kids About Baptism'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/75F5qJw5YEY', snippet: '', title: 'Washed Away'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', title: 'The Story of the Feast of the Baptism of the Lord'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/', snippet: 'Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here.', title: 'Feast of the Baptism of the Lord'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: '', title: 'Jumping Jolly Juice'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/', snippet: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', title: 'Holy Water Bottle Craft'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/', snippet: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', title: 'Dove with Olive Branch'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/', snippet: 'You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra.', title: 'Dove with Gifts of the Holy Spirit'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/holy-spirit-craft-handprint-dove/', snippet: 'For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint...', title: 'Simple Handprint Dove'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: '', title: 'Greek Dipples'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/', snippet: 'Baptism is so important, and it’s a great thing to make sure that your kids truly understand...', title: 'Ideas for Teaching Catholic Kids About Baptism'}
 						]),
-					aF: 'The Baptism of the Lord'
+					feast: 'The Baptism of the Lord'
 				}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/x5_l-pQ_Snk', aV: '', a_: 'St. Hilary of Poitiers'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', a_: 'Saint Hilary of Poitiers’ Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-hilary-of-poitiers/', aV: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church..', a_: 'Saint Hilary of Poitiers’ Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'French Onion Soup'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png/v1/crop/x_0,y_72,w_443,h_358/fill/w_602,h_488,al_c,lg_1,q_85,enc_auto/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', aV: '', a_: 'Quiche Lorraine Quiche'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/x5_l-pQ_Snk', snippet: '', title: 'St. Hilary of Poitiers'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', title: 'Saint Hilary of Poitiers’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-hilary-of-poitiers/', snippet: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church..', title: 'Saint Hilary of Poitiers’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: '', title: 'French Onion Soup'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png/v1/crop/x_0,y_72,w_443,h_358/fill/w_602,h_488,al_c,lg_1,q_85,enc_auto/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: '', title: 'Quiche Lorraine Quiche'}
 						]),
-					aF: 'Saint Hilary of Poitiers'
+					feast: 'Saint Hilary of Poitiers'
 				}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/LbetpKRyO7A', aV: '', a_: 'St Anthony of the Desert'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', a_: 'Saint Anthony of Egypt’s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-anthony-of-egypt/', aV: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance.', a_: 'Saint Anthony of Egypt’s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', aV: '', a_: 'Uccelletti ~The little Birds of St. Anthony'},
-							{R: 0, aI: '', aM: 'https://www.youtube.com/watch?v=XwoTugfbSzc', aV: '', a_: 'Uccelletti ~The little Birds of St. Anthony'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/LbetpKRyO7A', snippet: '', title: 'St Anthony of the Desert'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', title: 'Saint Anthony of Egypt’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-anthony-of-egypt/', snippet: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance.', title: 'Saint Anthony of Egypt’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: '', title: 'Uccelletti ~The little Birds of St. Anthony'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube.com/watch?v=XwoTugfbSzc', snippet: '', title: 'Uccelletti ~The little Birds of St. Anthony'}
 						]),
-					aF: 'Saint Anthony of Egypt'
+					feast: 'Saint Anthony of Egypt'
 				}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', aV: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', a_: 'Saint Fabian’s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-fabian/', aV: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope...', a_: 'Saint Fabian’s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', aV: '', a_: 'Dove Dinner Rolls'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-fabian/', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope...', title: 'Saint Fabian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: '', title: 'Dove Dinner Rolls'}
 						]),
-					aF: 'Saint Fabian'
+					feast: 'Saint Fabian'
 				},
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', aV: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', a_: 'Saint Sebastian’s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-sebastian/', aV: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', a_: 'Saint Sebastian’s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', aV: '', a_: 'Roscos Orange Donuts'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-sebastian/', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: '', title: 'Roscos Orange Donuts'}
 						]),
-					aF: 'Saint Sebastian'
+					feast: 'Saint Sebastian'
 				}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', a_: 'Saint Agnes’ Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agnes/', aV: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', a_: 'Saint Agnes’ Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_acfdf6a128df4af299dce373dfcd31e9~mv2.jpg/v1/fill/w_508,h_855,al_c,lg_1,q_85,enc_auto/Picture1_edited.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Port Sauce served over Goat Cheese Polenta', a_: 'Pistachio Crusted Lamb Chops with Cherry'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg/v1/crop/x_14,y_0,w_1386,h_933/fill/w_790,h_532,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: 'Delicious lemon pull-apart lamb', a_: 'Lamb Pull Apart Bread'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg/v1/crop/x_354,y_83,w_590,h_493/fill/w_470,h_392,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: '', a_: 'Agnesenplätzchen (St. Agnes Cookies)'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg/v1/crop/x_0,y_73,w_871,h_453/fill/w_792,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', aV: '', a_: 'One Hour Yeast Dinner Rolls'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-agnes-crafts-feast-jan-21/', aV: 'Today, let’s look at some celebrating the feast day of St. Agnes with kids...', a_: 'Celebrating The Feast Day Of St. Agnes With Kids'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', title: 'Saint Agnes’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agnes/', snippet: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', title: 'Saint Agnes’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_acfdf6a128df4af299dce373dfcd31e9~mv2.jpg/v1/fill/w_508,h_855,al_c,lg_1,q_85,enc_auto/Picture1_edited.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Port Sauce served over Goat Cheese Polenta', title: 'Pistachio Crusted Lamb Chops with Cherry'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg/v1/crop/x_14,y_0,w_1386,h_933/fill/w_790,h_532,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Delicious lemon pull-apart lamb', title: 'Lamb Pull Apart Bread'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg/v1/crop/x_354,y_83,w_590,h_493/fill/w_470,h_392,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: '', title: 'Agnesenplätzchen (St. Agnes Cookies)'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg/v1/crop/x_0,y_73,w_871,h_453/fill/w_792,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: '', title: 'One Hour Yeast Dinner Rolls'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-agnes-crafts-feast-jan-21/', snippet: 'Today, let’s look at some celebrating the feast day of St. Agnes with kids...', title: 'Celebrating The Feast Day Of St. Agnes With Kids'}
 						]),
-					aF: 'Saint Agnes'
+					feast: 'Saint Agnes'
 				}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', aV: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', a_: 'Saint Vincent of Zaragossa’s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-of-zaragossa/', aV: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', a_: 'Saint Vincent of Zaragossa’s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg/v1/crop/x_0,y_109,w_564,h_466/fill/w_646,h_534,al_c,lg_1,q_80,enc_auto/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', aV: '', a_: 'Basic Brioche'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', title: 'Saint Vincent of Zaragossa’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-of-zaragossa/', snippet: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', title: 'Saint Vincent of Zaragossa’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg/v1/crop/x_0,y_109,w_564,h_466/fill/w_646,h_534,al_c,lg_1,q_80,enc_auto/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: '', title: 'Basic Brioche'}
 						]),
-					aF: 'Saint Vincent of Zaragossa (US)'
+					feast: 'Saint Vincent of Zaragossa (US)'
 				},
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', a_: 'Saint Marianne Cope’s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-marianne-cope/', aV: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', a_: 'Saint Marianne Cope’s Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png/v1/fill/w_610,h_652,al_c,q_90,enc_auto/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: '', a_: 'Char Siu'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_05315e6abad04487bfaa70c5bc4fa9df~mv2.png/v1/crop/x_8,y_73,w_875,h_1088/fill/w_694,h_864,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', aV: '', a_: 'Pineapple Upside-Down Cake'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', title: 'Saint Marianne Cope’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-marianne-cope/', snippet: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', title: 'Saint Marianne Cope’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png/v1/fill/w_610,h_652,al_c,q_90,enc_auto/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: '', title: 'Char Siu'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_05315e6abad04487bfaa70c5bc4fa9df~mv2.png/v1/crop/x_8,y_73,w_875,h_1088/fill/w_694,h_864,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: '', title: 'Pineapple Upside-Down Cake'}
 						]),
-					aF: 'Saint Marianne Cope'
+					feast: 'Saint Marianne Cope'
 				},
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: '', aV: '', a_: ''},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/pro-life-craft-for-kids/', aV: ' Today, let’s look at some celebrating the feast day of St. Agnes with kids...', a_: 'Pro Life Craft for Kids'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: '', snippet: '', title: ''},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/pro-life-craft-for-kids/', snippet: ' Today, let’s look at some celebrating the feast day of St. Agnes with kids...', title: 'Pro Life Craft for Kids'}
 						]),
-					aF: 'Day of Prayer for the Legal Protection of Unborn Children'
+					feast: 'Day of Prayer for the Legal Protection of Unborn Children'
 				}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', aV: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', a_: 'Saint Francis de Sales’ Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-francis-de-sales/', aV: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', a_: 'Saint Francis de Sales’ Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_8c3cefd4508241babcfa2f8a3f961e35~mv2.png/v1/fill/w_882,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/PastedGraphic-25-1.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', aV: '', a_: 'Piperade'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', title: 'Saint Francis de Sales’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-francis-de-sales/', snippet: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', title: 'Saint Francis de Sales’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8c3cefd4508241babcfa2f8a3f961e35~mv2.png/v1/fill/w_882,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/PastedGraphic-25-1.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: '', title: 'Piperade'}
 						]),
-					aF: 'Saint Francis de Sales'
+					feast: 'Saint Francis de Sales'
 				}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/conversion-of-saint-paul/', aV: 'Saint Paul’s entire life can be explained in terms of one experience—his meeting with Jesus on the road to Damascus...', a_: 'The Story of the Conversion of Saint Paul'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/conversion-of-saint-paul/', snippet: 'Saint Paul’s entire life can be explained in terms of one experience—his meeting with Jesus on the road to Damascus...', title: 'The Story of the Conversion of Saint Paul'}
 						]),
-					aF: 'The Conversion of Saint Paul'
+					feast: 'The Conversion of Saint Paul'
 				}
 				])
 		},
 			{
-			H: '26',
-			X: _List_fromArray(
+			date: '26',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', a_: 'Saints Timothy and Titus’ Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saints-timothy-and-titus/', aV: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', a_: 'Saints Timothy and Titus’ Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png/v1/fill/w_354,h_322,al_c,lg_1,q_85,enc_auto/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '', a_: 'Ajvar spread for bread'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg/v1/crop/x_38,y_0,w_326,h_225/fill/w_456,h_315,al_c,lg_1,q_80,enc_auto/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: 'Pogacha is a traditional Macedonian round loaf. It\'s usually made for special occasions.', a_: 'Pogacha'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg/v1/crop/x_31,y_0,w_571,h_430/fill/w_658,h_496,al_c,lg_1,q_80,enc_auto/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', a_: 'Kompir Mandza'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_081788385f104b9b95700584391731fa~mv2.png/v1/fill/w_636,h_476,al_c,lg_1,q_85,enc_auto/9c2964_081788385f104b9b95700584391731fa~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', aV: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', a_: 'Vanilici Cookie'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', title: 'Saints Timothy and Titus’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saints-timothy-and-titus/', snippet: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', title: 'Saints Timothy and Titus’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png/v1/fill/w_354,h_322,al_c,lg_1,q_85,enc_auto/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '', title: 'Ajvar spread for bread'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg/v1/crop/x_38,y_0,w_326,h_225/fill/w_456,h_315,al_c,lg_1,q_80,enc_auto/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'Pogacha is a traditional Macedonian round loaf. It\'s usually made for special occasions.', title: 'Pogacha'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg/v1/crop/x_31,y_0,w_571,h_430/fill/w_658,h_496,al_c,lg_1,q_80,enc_auto/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', title: 'Kompir Mandza'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_081788385f104b9b95700584391731fa~mv2.png/v1/fill/w_636,h_476,al_c,lg_1,q_85,enc_auto/9c2964_081788385f104b9b95700584391731fa~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', title: 'Vanilici Cookie'}
 						]),
-					aF: 'Saint Timothy and Titus'
+					feast: 'Saint Timothy and Titus'
 				}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', a_: 'Saint Angela Merici’s Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-angela-merici/', aV: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', a_: 'Saint Angela Merici’s story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png/v1/fill/w_608,h_504,al_c,lg_1,q_85,enc_auto/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Pasta Bolognese'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg/v1/fill/w_562,h_374,al_c,lg_1,q_80,enc_auto/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Custard'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png/v1/crop/x_12,y_0,w_982,h_592/fill/w_981,h_592,al_c,q_90,enc_auto/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', aV: '', a_: 'Custard filled Dove Puff Pastries'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', title: 'Saint Angela Merici’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-angela-merici/', snippet: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', title: 'Saint Angela Merici’s story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png/v1/fill/w_608,h_504,al_c,lg_1,q_85,enc_auto/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Pasta Bolognese'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg/v1/fill/w_562,h_374,al_c,lg_1,q_80,enc_auto/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Custard'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png/v1/crop/x_12,y_0,w_982,h_592/fill/w_981,h_592,al_c,q_90,enc_auto/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Custard filled Dove Puff Pastries'}
 						]),
-					aF: 'Saint Angela Merici'
+					feast: 'Saint Angela Merici'
 				}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', aV: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', a_: 'Saint Thomas Aquinas’ Story'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-thomas-aquinas/', aV: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', a_: 'Saint Thomas Aquinas’ Story'},
-							{R: 5, aI: 'https://static.wixstatic.com/media/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png/v1/crop/x_0,y_0,w_569,h_468/fill/w_652,h_536,al_c,lg_1,q_85,enc_auto/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png', aM: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', aV: '', a_: 'Tiramisu'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', title: 'Saint Thomas Aquinas’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-thomas-aquinas/', snippet: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', title: 'Saint Thomas Aquinas’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png/v1/crop/x_0,y_0,w_569,h_468/fill/w_652,h_536,al_c,lg_1,q_85,enc_auto/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: '', title: 'Tiramisu'}
 						]),
-					aF: 'Saint Thomas Aquinas'
+					feast: 'Saint Thomas Aquinas'
 				}
 				])
 		},
 			{
-			H: '31',
-			X: _List_fromArray(
+			date: '31',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 0, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/YoutubeLogo_YrXRl6n7P.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676253992177', aM: 'https://www.youtube.com/watch?v=wejhGYOGLgE', aV: 'Thomas and his wife Helen guide their children in the ways of holiness by teaching them about the lives of the saints. Here they explore the life of the great apostle of the youth, St. Don Bosco.', a_: 'My Catholic Family - Don Bosco'},
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/', aV: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', a_: 'Saint John Bosco’s Story'},
-							{R: 4, aI: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', aM: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', aV: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', a_: 'Saint John Bosco’s Story'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/YoutubeLogo_YrXRl6n7P.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676253992177', link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', snippet: 'Thomas and his wife Helen guide their children in the ways of holiness by teaching them about the lives of the saints. Here they explore the life of the great apostle of the youth, St. Don Bosco.', title: 'My Catholic Family - Don Bosco'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/', snippet: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', title: 'Saint John Bosco’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', snippet: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', title: 'Saint John Bosco’s Story'}
 						]),
-					aF: 'Saint John Bosco'
+					feast: 'Saint John Bosco'
 				}
 				])
 		}
 		]),
-	aL: 'jan',
-	K: 'January'
+	key: 'jan',
+	month: 'January'
 };
 var $author$project$FeastDayActivities$FeastDays$M07Jul$july = {
-	aB: '#b99eda',
-	X: _List_fromArray(
+	color: '#b99eda',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Junipero Serra'}
+					{activities: _List_Nil, feast: 'Saint Junipero Serra'}
 				])
 		},
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Thomas the Apostle'}
+					{activities: _List_Nil, feast: 'Saint Thomas the Apostle'}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Elizabeth of Portugal (5th in the US)'}
+					{activities: _List_Nil, feast: 'Saint Elizabeth of Portugal (5th in the US)'}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Anthony Zaccaria'}
+					{activities: _List_Nil, feast: 'Saint Anthony Zaccaria'}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Maria Goretti'}
+					{activities: _List_Nil, feast: 'Saint Maria Goretti'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Augustine Zhao Rong and Companion'}
+					{activities: _List_Nil, feast: 'Saint Augustine Zhao Rong and Companion'}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Benedict'}
+					{activities: _List_Nil, feast: 'Saint Benedict'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Henry'}
+					{activities: _List_Nil, feast: 'Saint Henry'}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Camillus de Lellis (18th in the US)'},
-					{aw: _List_Nil, aF: 'Saint Kateri Tekakwitha'}
+					{activities: _List_Nil, feast: 'Saint Camillus de Lellis (18th in the US)'},
+					{activities: _List_Nil, feast: 'Saint Kateri Tekakwitha'}
 				])
 		},
 			{
-			H: '15',
-			X: _List_fromArray(
+			date: '15',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bonaventure'}
+					{activities: _List_Nil, feast: 'Saint Bonaventure'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of Mount Carmel'}
+					{activities: _List_Nil, feast: 'Our Lady of Mount Carmel'}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Apollinaris'}
+					{activities: _List_Nil, feast: 'Saint Apollinaris'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Lawrence of Brindisi'}
+					{activities: _List_Nil, feast: 'Saint Lawrence of Brindisi'}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Mary Magdalene'}
+					{activities: _List_Nil, feast: 'Saint Mary Magdalene'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bridget of Sweden'}
+					{activities: _List_Nil, feast: 'Saint Bridget of Sweden'}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Sharbel Makhlūf'}
+					{activities: _List_Nil, feast: 'Saint Sharbel Makhlūf'}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint James'}
+					{activities: _List_Nil, feast: 'Saint James'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Martha, Mary and Lazarus'}
+					{activities: _List_Nil, feast: 'Saints Martha, Mary and Lazarus'}
 				])
 		},
 			{
-			H: '30',
-			X: _List_fromArray(
+			date: '30',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Peter Chrysologus'}
+					{activities: _List_Nil, feast: 'Saint Peter Chrysologus'}
 				])
 		},
 			{
-			H: '31',
-			X: _List_fromArray(
+			date: '31',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Ignatius of Loyola'}
+					{activities: _List_Nil, feast: 'Saint Ignatius of Loyola'}
 				])
 		}
 		]),
-	aL: 'jul',
-	K: 'July'
+	key: 'jul',
+	month: 'July'
 };
 var $author$project$FeastDayActivities$FeastDays$M06Jun$june = {
-	aB: '#395d73',
-	X: _List_fromArray(
+	color: '#395d73',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Justin Martyr'}
+					{activities: _List_Nil, feast: 'Saint Justin Martyr'}
 				])
 		},
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Marcellinus and Peter'}
+					{activities: _List_Nil, feast: 'Saints Marcellinus and Peter'}
 				])
 		},
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Charles Lwanga and Companions'}
+					{activities: _List_Nil, feast: 'Saints Charles Lwanga and Companions'}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'The Most Holy Trinity'}
+					{activities: _List_Nil, feast: 'The Most Holy Trinity'}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Boniface'}
+					{activities: _List_Nil, feast: 'Saint Boniface'}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Norbert'}
+					{activities: _List_Nil, feast: 'Saint Norbert'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Ephrem'}
+					{activities: _List_Nil, feast: 'Saint Ephrem'}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'The Most Holy Body and Blood of Christ'},
-					{aw: _List_Nil, aF: 'Saint Barnabas the Apostle'}
+					{activities: _List_Nil, feast: 'The Most Holy Body and Blood of Christ'},
+					{activities: _List_Nil, feast: 'Saint Barnabas the Apostle'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Anthony of Padua'}
+					{activities: _List_Nil, feast: 'Saint Anthony of Padua'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Sacred Heart of Jesus'}
+					{activities: _List_Nil, feast: 'Sacred Heart of Jesus'}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Immaculate Heart of Mary'}
+					{activities: _List_Nil, feast: 'Immaculate Heart of Mary'}
 				])
 		},
 			{
-			H: '19',
-			X: _List_fromArray(
+			date: '19',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Romuald'}
+					{activities: _List_Nil, feast: 'Saint Romuald'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Aloysius Gonzaga'}
+					{activities: _List_Nil, feast: 'Saint Aloysius Gonzaga'}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Paulinus of Nola'},
-					{aw: _List_Nil, aF: 'Saint John Fisher'},
-					{aw: _List_Nil, aF: 'Saint Thomas More'}
+					{activities: _List_Nil, feast: 'Saint Paulinus of Nola'},
+					{activities: _List_Nil, feast: 'Saint John Fisher'},
+					{activities: _List_Nil, feast: 'Saint Thomas More'}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Birth of Saint John the Baptist'}
+					{activities: _List_Nil, feast: 'Birth of Saint John the Baptist'}
 				])
 		},
 			{
-			H: '26',
-			X: _List_fromArray(
+			date: '26',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Josemaría Escrivá'}
+					{activities: _List_Nil, feast: 'Saint Josemaría Escrivá'}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Cyril of Alexandria'}
+					{activities: _List_Nil, feast: 'Saint Cyril of Alexandria'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Irenaeus'}
+					{activities: _List_Nil, feast: 'Saint Irenaeus'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Peter and Paul'}
+					{activities: _List_Nil, feast: 'Saints Peter and Paul'}
 				])
 		},
 			{
-			H: '30',
-			X: _List_fromArray(
+			date: '30',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'First Martyrs of the Church of Rome'}
+					{activities: _List_Nil, feast: 'First Martyrs of the Church of Rome'}
 				])
 		}
 		]),
-	aL: 'jun',
-	K: 'June'
+	key: 'jun',
+	month: 'June'
 };
 var $author$project$FeastDayActivities$FeastDays$M03Mar$march = {
-	aB: '#b99eda',
-	X: _List_fromArray(
+	color: '#b99eda',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-katharine-drexel/', aV: 'If your father is an international banker and you ride in a private railroad car, you are not likely to be drawn into a life of voluntary poverty. But if your mother opens your home to the poor three days each week and your father spends half an hour each evening in prayer, it is not impossible that you will devote your life to the poor and give away millions of dollars. Katharine Drexel did that...', a_: 'Saint Katharine Drexel’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-3-saint-katharine-drexel-virgin-usa-optional-memorial/', aV: 'Like the little girl who wept when she found that her doll was stuffed with sawdust and her drum was hollow, I too have made a horrifying discovery and my discovery like hers is true. I have ripped both the doll and the drum open and the fact lies plainly and in all its glaring reality before me...', a_: 'Saint Katharine Drexel'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-katharine-drexel/', snippet: 'If your father is an international banker and you ride in a private railroad car, you are not likely to be drawn into a life of voluntary poverty. But if your mother opens your home to the poor three days each week and your father spends half an hour each evening in prayer, it is not impossible that you will devote your life to the poor and give away millions of dollars. Katharine Drexel did that...', title: 'Saint Katharine Drexel’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-3-saint-katharine-drexel-virgin-usa-optional-memorial/', snippet: 'Like the little girl who wept when she found that her doll was stuffed with sawdust and her drum was hollow, I too have made a horrifying discovery and my discovery like hers is true. I have ripped both the doll and the drum open and the fact lies plainly and in all its glaring reality before me...', title: 'Saint Katharine Drexel'}
 						]),
-					aF: 'Saint Katharine Drexel'
+					feast: 'Saint Katharine Drexel'
 				}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-casimir/', aV: 'Casimir, born of kings and in line to be a king himself, was filled with exceptional values and learning by a great teacher, John Dlugosz. Even his critics could not say that his conscientious objection indicated softness. As a teenager, Casimir lived a highly disciplined, even severe life, sleeping on the ground, spending a great part of the night in prayer and dedicating himself to lifelong celibacy...', a_: 'Saint Casimir’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-4-saint-casimir/', aV: 'Daily, daily sing to Mary; Sing, my soul, her praises due. All her glorious actions cherish, With the heart’s devotion true. Lost in wond’ring contemplation, Be her majesty confessed...', a_: 'Saint Casimir'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-casimir/', snippet: 'Casimir, born of kings and in line to be a king himself, was filled with exceptional values and learning by a great teacher, John Dlugosz. Even his critics could not say that his conscientious objection indicated softness. As a teenager, Casimir lived a highly disciplined, even severe life, sleeping on the ground, spending a great part of the night in prayer and dedicating himself to lifelong celibacy...', title: 'Saint Casimir’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-4-saint-casimir/', snippet: 'Daily, daily sing to Mary; Sing, my soul, her praises due. All her glorious actions cherish, With the heart’s devotion true. Lost in wond’ring contemplation, Be her majesty confessed...', title: 'Saint Casimir'}
 						]),
-					aF: 'Saint Casimir'
+					feast: 'Saint Casimir'
 				}
 				])
 		},
 			{
-			H: '07',
-			X: _List_fromArray(
+			date: '07',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saints-perpetua-and-felicity/', aV: '“When my father in his affection for me was trying to turn me from my purpose by arguments and thus weaken my faith, I said to him, ‘Do you see this vessel—water pot or whatever it may be? Can it be called by any other name than what it is?’ ‘No,’ he replied. ‘So also I cannot call myself by any other name than what I am—a Christian.’”', a_: 'Saints Perpetua and Felicity’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-7-saints-perpetua-and-felicity-martyrs/', aV: 'Now dawned the day of their victory, and they went forth from the prison into the amphitheater as it were into heaven, cheerful and bright of countenance; if they trembled at all, it was for joy, not for fear...', a_: 'Saints Perpetua and Felicity'},
-							{R: 0, aI: '', aM: 'https://www.youtube-nocookie.com/embed/Cmbhtgu8xlk', aV: '', a_: 'Story of Saints Perpetua and Felicity | Stories of Saints | EP83'},
-							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/TheCatholicKidLogo_BOq9GnY34.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678397749498', aM: 'https://www.thecatholickid.com/saint-perpetua-and-felicity-coloring-page-cnt-mls/', aV: '', a_: 'Saint Perpetua and Felicity Coloring Page'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saints-perpetua-and-felicity/', snippet: '“When my father in his affection for me was trying to turn me from my purpose by arguments and thus weaken my faith, I said to him, ‘Do you see this vessel—water pot or whatever it may be? Can it be called by any other name than what it is?’ ‘No,’ he replied. ‘So also I cannot call myself by any other name than what I am—a Christian.’”', title: 'Saints Perpetua and Felicity’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-7-saints-perpetua-and-felicity-martyrs/', snippet: 'Now dawned the day of their victory, and they went forth from the prison into the amphitheater as it were into heaven, cheerful and bright of countenance; if they trembled at all, it was for joy, not for fear...', title: 'Saints Perpetua and Felicity'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/Cmbhtgu8xlk', snippet: '', title: 'Story of Saints Perpetua and Felicity | Stories of Saints | EP83'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/TheCatholicKidLogo_BOq9GnY34.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678397749498', link: 'https://www.thecatholickid.com/saint-perpetua-and-felicity-coloring-page-cnt-mls/', snippet: '', title: 'Saint Perpetua and Felicity Coloring Page'}
 						]),
-					aF: 'Saints Perpetua and Felicity'
+					feast: 'Saints Perpetua and Felicity'
 				}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-of-god/', aV: 'Having given up active Christian belief while a soldier, John was 40 before the depth of his sinfulness began to dawn on him. He decided to give the rest of his life to God’s service, and headed at once for Africa where he hoped to free captive Christians and, possibly, be martyred...', a_: 'Saint John of God’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-8-saint-john-of-god-religious/', aV: 'Lord be blessed for in your great kindness to me who am such a great sinner having done so many wicked things, yet you see fit to set me free from such a tremendous temptation and deception which I fell into through my own sinfulness...', a_: 'Saint John of God'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-of-god/', snippet: 'Having given up active Christian belief while a soldier, John was 40 before the depth of his sinfulness began to dawn on him. He decided to give the rest of his life to God’s service, and headed at once for Africa where he hoped to free captive Christians and, possibly, be martyred...', title: 'Saint John of God’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-8-saint-john-of-god-religious/', snippet: 'Lord be blessed for in your great kindness to me who am such a great sinner having done so many wicked things, yet you see fit to set me free from such a tremendous temptation and deception which I fell into through my own sinfulness...', title: 'Saint John of God'}
 						]),
-					aF: 'Saint John of God'
+					feast: 'Saint John of God'
 				}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-frances-of-rome/', aV: 'Frances’ life combines aspects of secular and religious life. A devoted and loving wife, she longed for a lifestyle of prayer and service, so she organized a group of women to minister to the needs of Rome’s poor...', a_: 'Saint Frances of Rome’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-9-saint-frances-of-rome-religious/', aV: 'A married woman must, when called upon, leave her devotions to God at the altar to find him in her household affairs...', a_: 'Saint Frances of Rome'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-frances-of-rome/', snippet: 'Frances’ life combines aspects of secular and religious life. A devoted and loving wife, she longed for a lifestyle of prayer and service, so she organized a group of women to minister to the needs of Rome’s poor...', title: 'Saint Frances of Rome’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-9-saint-frances-of-rome-religious/', snippet: 'A married woman must, when called upon, leave her devotions to God at the altar to find him in her household affairs...', title: 'Saint Frances of Rome'}
 						]),
-					aF: 'Saint Frances of Rome'
+					feast: 'Saint Frances of Rome'
 				}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-patrick/', aV: 'Legends about Patrick abound; but truth is best served by our seeing two solid qualities in him: He was humble and he was courageous. The determination to accept suffering and success with equal indifference guided the life of God’s instrument for winning most of Ireland for Christ.', a_: 'Saint Patrick’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-17-saint-patrick-bishop/', aV: 'I, Patrick, a sinner, a most simple countryman, the least of all the faithful and most contemptible to many…was taken captive. I was at that time about sixteen years of age. I did not, indeed, know the true God; and I was taken into captivity in Ireland with many thousands of people...', a_: 'Saint Patrick'},
-							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/printable-trinity-shamrock-craft-perfect-craft-for-st-patricks-day/', aV: 'We crafted shamrocks and added this printable to turn them into Trinity shamrocks. You just print 2 sided, fold, and open! Check it out.', a_: 'Printable Trinity Shamrock Craft'},
-							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/catholic-st-patricks-day-printables/', aV: 'Here are some great Catholic St. Patrick’s day printables to help your kids know the true meaning of this Catholic feast day!', a_: 'Catholic St. Patrick’s Day Printables'},
-							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-patricks-day-tea-party/', aV: 'I love tea parties because they can be as simple or as complicated as you want, and you can do them with a very small group- even just your own kids...', a_: 'St. Patrick’s Day Tea Party- Menu And Food Ideas'},
-							{R: 5, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/catholic-st-patricks-day-food/', aV: 'I love these St. Patrick’s Day food ideas I’ve been seeing around! Just remember when you’re making St. Patrick’s Day treats this year, the shamrock is the tool that St. Patrick used to explain the trinity- 3 in one!', a_: 'Catholic St. Patrick’s Day Fun Food Ideas For Kids'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-patricks-snake-banishment/', aV: 'Here are some fun snake foods, crafts, and games for celebrating St. Patrick’s story on his feast day!', a_: 'St. Patrick’s Snake Banishment- Crafts, Food, Games, More!'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-patrick/', snippet: 'Legends about Patrick abound; but truth is best served by our seeing two solid qualities in him: He was humble and he was courageous. The determination to accept suffering and success with equal indifference guided the life of God’s instrument for winning most of Ireland for Christ.', title: 'Saint Patrick’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-17-saint-patrick-bishop/', snippet: 'I, Patrick, a sinner, a most simple countryman, the least of all the faithful and most contemptible to many…was taken captive. I was at that time about sixteen years of age. I did not, indeed, know the true God; and I was taken into captivity in Ireland with many thousands of people...', title: 'Saint Patrick'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/printable-trinity-shamrock-craft-perfect-craft-for-st-patricks-day/', snippet: 'We crafted shamrocks and added this printable to turn them into Trinity shamrocks. You just print 2 sided, fold, and open! Check it out.', title: 'Printable Trinity Shamrock Craft'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/catholic-st-patricks-day-printables/', snippet: 'Here are some great Catholic St. Patrick’s day printables to help your kids know the true meaning of this Catholic feast day!', title: 'Catholic St. Patrick’s Day Printables'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-patricks-day-tea-party/', snippet: 'I love tea parties because they can be as simple or as complicated as you want, and you can do them with a very small group- even just your own kids...', title: 'St. Patrick’s Day Tea Party- Menu And Food Ideas'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/catholic-st-patricks-day-food/', snippet: 'I love these St. Patrick’s Day food ideas I’ve been seeing around! Just remember when you’re making St. Patrick’s Day treats this year, the shamrock is the tool that St. Patrick used to explain the trinity- 3 in one!', title: 'Catholic St. Patrick’s Day Fun Food Ideas For Kids'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-patricks-snake-banishment/', snippet: 'Here are some fun snake foods, crafts, and games for celebrating St. Patrick’s story on his feast day!', title: 'St. Patrick’s Snake Banishment- Crafts, Food, Games, More!'}
 						]),
-					aF: 'Saint Patrick'
+					feast: 'Saint Patrick'
 				}
 				])
 		},
 			{
-			H: '18',
-			X: _List_fromArray(
+			date: '18',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-cyril-of-jerusalem/', aV: 'The crises that the Church faces today may seem minor when compared with the threat posed by the Arian heresy, which denied the divinity of Christ and almost overcame Christianity in the fourth century. Cyril was to be caught up in the controversy, accused of Arianism by Saint Jerome, and ultimately vindicated both by the men of his own time and by being declared a Doctor of the Church in 1822...', a_: 'Saint Cyril of Jerusalem’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-18-saint-cyril-of-jerusalem-bishop-and-doctor/', aV: 'God is loving to man, and loving in no small measure. For say not, I have committed fornication and adultery: I have done dreadful things, and not once only, but often: will He forgive? Will He grant pardon? Hear what the Psalmist says...', a_: 'Saint Cyril of Jerusalem'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-cyril-of-jerusalem/', snippet: 'The crises that the Church faces today may seem minor when compared with the threat posed by the Arian heresy, which denied the divinity of Christ and almost overcame Christianity in the fourth century. Cyril was to be caught up in the controversy, accused of Arianism by Saint Jerome, and ultimately vindicated both by the men of his own time and by being declared a Doctor of the Church in 1822...', title: 'Saint Cyril of Jerusalem’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-18-saint-cyril-of-jerusalem-bishop-and-doctor/', snippet: 'God is loving to man, and loving in no small measure. For say not, I have committed fornication and adultery: I have done dreadful things, and not once only, but often: will He forgive? Will He grant pardon? Hear what the Psalmist says...', title: 'Saint Cyril of Jerusalem'}
 						]),
-					aF: 'Saint Cyril of Jerusalem'
+					feast: 'Saint Cyril of Jerusalem'
 				}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-husband-of-mary/', aV: 'The Bible pays Joseph the highest compliment: he was a “just” man. The quality meant a lot more than faithfulness in paying debts...', a_: 'Saint Joseph’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/catholic-prayers/novena-to-saint-joseph/', aV: 'Saint Joseph, you were privileged to share in the mystery of the Incarnation as the foster-father of Jesus...', a_: 'Novena to Saint Joseph'},
-							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-josephs-altar/', aV: 'It’s a 3D printable St. Joseph’s altar, and it’s super easy to put together!', a_: 'Printable 3D St. Joseph’s Altar'},
-							{R: 3, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-joseph-altar-for-beginners/', aV: 'Today I wanted to share with you our St. Joseph’s altar. I also want to answer all the questions you may have about how to set up a St. Joseph’s altar, what’s involved, and why we do it.', a_: 'St. Joseph Altar For Beginners'},
-							{R: 9, aI: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', aM: 'https://www.catholicicing.com/st-joseph-feast-day-celebration-ideas/', aV: 'Find some St. Joseph feast day celebration ideas for your home!', a_: 'St. Joseph Feast Day Celebration Ideas for your Home'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-husband-of-mary/', snippet: 'The Bible pays Joseph the highest compliment: he was a “just” man. The quality meant a lot more than faithfulness in paying debts...', title: 'Saint Joseph’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/catholic-prayers/novena-to-saint-joseph/', snippet: 'Saint Joseph, you were privileged to share in the mystery of the Incarnation as the foster-father of Jesus...', title: 'Novena to Saint Joseph'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-josephs-altar/', snippet: 'It’s a 3D printable St. Joseph’s altar, and it’s super easy to put together!', title: 'Printable 3D St. Joseph’s Altar'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-joseph-altar-for-beginners/', snippet: 'Today I wanted to share with you our St. Joseph’s altar. I also want to answer all the questions you may have about how to set up a St. Joseph’s altar, what’s involved, and why we do it.', title: 'St. Joseph Altar For Beginners'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-joseph-feast-day-celebration-ideas/', snippet: 'Find some St. Joseph feast day celebration ideas for your home!', title: 'St. Joseph Feast Day Celebration Ideas for your Home'}
 						]),
-					aF: 'Saint Joseph Husband of the Blessed Virgin Mary'
+					feast: 'Saint Joseph Husband of the Blessed Virgin Mary'
 				}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/saint-turibius-of-mogrovejo/', aV: 'Together with Rose of Lima, Turibius is the first known saint of the New World, serving the Lord in Peru, South America, for 26 years...', a_: 'Saint Turibius of Mogrovejo’s Story'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-23-saint-turibius-of-mogrovejo-bishop/', aV: 'Nothing gave the saint so much pleasure as the greatest labors and dangers, to procure the least spiritual advantage to one soul. Burning with the most vehement desire of laying down his life for his flock, and of suffering all things for him who died for us, he feared no danger.', a_: 'Saint Turibius of Mogrovejo'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-turibius-of-mogrovejo/', snippet: 'Together with Rose of Lima, Turibius is the first known saint of the New World, serving the Lord in Peru, South America, for 26 years...', title: 'Saint Turibius of Mogrovejo’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-23-saint-turibius-of-mogrovejo-bishop/', snippet: 'Nothing gave the saint so much pleasure as the greatest labors and dangers, to procure the least spiritual advantage to one soul. Burning with the most vehement desire of laying down his life for his flock, and of suffering all things for him who died for us, he feared no danger.', title: 'Saint Turibius of Mogrovejo'}
 						]),
-					aF: 'Saint Turibius of Mogrovejo'
+					feast: 'Saint Turibius of Mogrovejo'
 				}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
 					{
-					aw: _List_fromArray(
+					activities: _List_fromArray(
 						[
-							{R: 1, aI: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', aM: 'https://www.franciscanmedia.org/saint-of-the-day/annunciation-of-the-lord/', aV: 'The feast of the Annunciation, now recognized as a solemnity, was first celebrated in the fourth or fifth century. Its central focus is the Incarnation: God has become one of us. From all eternity God had decided that the Second Person of the Blessed Trinity should become human...', a_: 'The Story of the Annunciation of the Lord'},
-							{R: 4, aI: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', aM: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/', aV: 'In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the “hypostatic union.” Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine...', a_: 'Annunciation of the Lord'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/annunciation-of-the-lord/', snippet: 'The feast of the Annunciation, now recognized as a solemnity, was first celebrated in the fourth or fifth century. Its central focus is the Incarnation: God has become one of us. From all eternity God had decided that the Second Person of the Blessed Trinity should become human...', title: 'The Story of the Annunciation of the Lord'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/', snippet: 'In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the “hypostatic union.” Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine...', title: 'Annunciation of the Lord'}
 						]),
-					aF: 'Annunciation of the Lord'
+					feast: 'Annunciation of the Lord'
 				}
 				])
 		}
 		]),
-	aL: 'mar',
-	K: 'March'
+	key: 'mar',
+	month: 'March'
 };
 var $author$project$FeastDayActivities$FeastDays$M05May$may = {
-	aB: '#9de3ec',
-	X: _List_fromArray(
+	color: '#9de3ec',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Joseph the Worker'}
+					{activities: _List_Nil, feast: 'Saint Joseph the Worker'}
 				])
 		},
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Athanasius'}
+					{activities: _List_Nil, feast: 'Saint Athanasius'}
 				])
 		},
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Philip and James'}
+					{activities: _List_Nil, feast: 'Saints Philip and James'}
 				])
 		},
 			{
-			H: '10',
-			X: _List_fromArray(
+			date: '10',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Damien de Veuster of Moloka\'i'},
-					{aw: _List_Nil, aF: 'Saint John of Ávila'}
+					{activities: _List_Nil, feast: 'Saint Damien de Veuster of Moloka\'i'},
+					{activities: _List_Nil, feast: 'Saint John of Ávila'}
 				])
 		},
 			{
-			H: '12',
-			X: _List_fromArray(
+			date: '12',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Nereus and Achilleus'},
-					{aw: _List_Nil, aF: 'Saint Pancras'}
+					{activities: _List_Nil, feast: 'Saints Nereus and Achilleus'},
+					{activities: _List_Nil, feast: 'Saint Pancras'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of Fatima'}
+					{activities: _List_Nil, feast: 'Our Lady of Fatima'}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Mattias the Apostle'}
+					{activities: _List_Nil, feast: 'Saint Mattias the Apostle'}
 				])
 		},
 			{
-			H: '15',
-			X: _List_fromArray(
+			date: '15',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Isidore'}
+					{activities: _List_Nil, feast: 'Saint Isidore'}
 				])
 		},
 			{
-			H: '18',
-			X: _List_fromArray(
+			date: '18',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'The Ascension of the Lord (or 21st)'}
+					{activities: _List_Nil, feast: 'The Ascension of the Lord (or 21st)'}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bernardine of Siena'}
+					{activities: _List_Nil, feast: 'Saint Bernardine of Siena'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'The Ascension of the Lord (or 18th)'}
+					{activities: _List_Nil, feast: 'The Ascension of the Lord (or 18th)'}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Rita of Cascia'}
+					{activities: _List_Nil, feast: 'Saint Rita of Cascia'}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bede the Venerable'},
-					{aw: _List_Nil, aF: 'Saint Gregory VII'}
+					{activities: _List_Nil, feast: 'Saint Bede the Venerable'},
+					{activities: _List_Nil, feast: 'Saint Gregory VII'}
 				])
 		},
 			{
-			H: '26',
-			X: _List_fromArray(
+			date: '26',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Philip Neri'}
+					{activities: _List_Nil, feast: 'Saint Philip Neri'}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Augustine of Canterbury'}
+					{activities: _List_Nil, feast: 'Saint Augustine of Canterbury'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Pentecost Sunday'}
+					{activities: _List_Nil, feast: 'Pentecost Sunday'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Blessed Virgin Mary, Mother of the Church'},
-					{aw: _List_Nil, aF: 'Saint Paul VI'}
+					{activities: _List_Nil, feast: 'Blessed Virgin Mary, Mother of the Church'},
+					{activities: _List_Nil, feast: 'Saint Paul VI'}
 				])
 		},
 			{
-			H: '31',
-			X: _List_fromArray(
+			date: '31',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Visitation of the Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Visitation of the Blessed Virgin Mary'}
 				])
 		}
 		]),
-	aL: 'may',
-	K: 'May'
+	key: 'may',
+	month: 'May'
 };
 var $author$project$FeastDayActivities$FeastDays$M11Nov$november = {
-	aB: '#b99eda',
-	X: _List_fromArray(
+	color: '#b99eda',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'All Saints'}
+					{activities: _List_Nil, feast: 'All Saints'}
 				])
 		},
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'All Souls Day'}
+					{activities: _List_Nil, feast: 'All Souls Day'}
 				])
 		},
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Martin de Porres'}
+					{activities: _List_Nil, feast: 'Saint Martin de Porres'}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Charles Borromeo'}
+					{activities: _List_Nil, feast: 'Saint Charles Borromeo'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Dedication of the Lateran Basilica'}
+					{activities: _List_Nil, feast: 'Dedication of the Lateran Basilica'}
 				])
 		},
 			{
-			H: '10',
-			X: _List_fromArray(
+			date: '10',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Leo the Great'}
+					{activities: _List_Nil, feast: 'Saint Leo the Great'}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Martin of Tours'}
+					{activities: _List_Nil, feast: 'Saint Martin of Tours'}
 				])
 		},
 			{
-			H: '12',
-			X: _List_fromArray(
+			date: '12',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Josaphat'}
+					{activities: _List_Nil, feast: 'Saint Josaphat'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Frances Xavier Cabrini'}
+					{activities: _List_Nil, feast: 'Saint Frances Xavier Cabrini'}
 				])
 		},
 			{
-			H: '15',
-			X: _List_fromArray(
+			date: '15',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Albert the Great'}
+					{activities: _List_Nil, feast: 'Saint Albert the Great'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Margaret of Scotland'},
-					{aw: _List_Nil, aF: 'Saint Gertrude the Great'}
+					{activities: _List_Nil, feast: 'Saint Margaret of Scotland'},
+					{activities: _List_Nil, feast: 'Saint Gertrude the Great'}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Elizabeth of Hungary'}
+					{activities: _List_Nil, feast: 'Saint Elizabeth of Hungary'}
 				])
 		},
 			{
-			H: '18',
-			X: _List_fromArray(
+			date: '18',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Dedication of the Basilicas of Saints Peter and Paul'},
-					{aw: _List_Nil, aF: 'Saint Rose Philippine Duchesne'}
+					{activities: _List_Nil, feast: 'Dedication of the Basilicas of Saints Peter and Paul'},
+					{activities: _List_Nil, feast: 'Saint Rose Philippine Duchesne'}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lord Jesus Christ, King of the Universe - Solemnity'}
+					{activities: _List_Nil, feast: 'Our Lord Jesus Christ, King of the Universe - Solemnity'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Presentation of the Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Presentation of the Blessed Virgin Mary'}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Cecilia'}
+					{activities: _List_Nil, feast: 'Saint Cecilia'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Clement I'},
-					{aw: _List_Nil, aF: 'Blessed Miguel Agustín Pro'},
-					{aw: _List_Nil, aF: 'Saint Columban'}
+					{activities: _List_Nil, feast: 'Saint Clement I'},
+					{activities: _List_Nil, feast: 'Blessed Miguel Agustín Pro'},
+					{activities: _List_Nil, feast: 'Saint Columban'}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Andrew Dung-Lac, Priest and his Companions'}
+					{activities: _List_Nil, feast: 'Saint Andrew Dung-Lac, Priest and his Companions'}
 				])
 		},
 			{
-			H: '25',
-			X: _List_fromArray(
+			date: '25',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Catherine of Alexandria'}
+					{activities: _List_Nil, feast: 'Saint Catherine of Alexandria'}
 				])
 		},
 			{
-			H: '30',
-			X: _List_fromArray(
+			date: '30',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Andrew the Apostle'}
+					{activities: _List_Nil, feast: 'Saint Andrew the Apostle'}
 				])
 		}
 		]),
-	aL: 'nov',
-	K: 'November'
+	key: 'nov',
+	month: 'November'
 };
 var $author$project$FeastDayActivities$FeastDays$M10Oct$october = {
-	aB: '#395d73',
-	X: _List_fromArray(
+	color: '#395d73',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '01',
-			X: _List_fromArray(
+			date: '01',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Therese of the Child Jesus'}
+					{activities: _List_Nil, feast: 'Saint Therese of the Child Jesus'}
 				])
 		},
 			{
-			H: '02',
-			X: _List_fromArray(
+			date: '02',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Guardian Angels'}
+					{activities: _List_Nil, feast: 'Guardian Angels'}
 				])
 		},
 			{
-			H: '04',
-			X: _List_fromArray(
+			date: '04',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Francis of Assisi'}
+					{activities: _List_Nil, feast: 'Saint Francis of Assisi'}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Faustina Kowalska'}
+					{activities: _List_Nil, feast: 'Saint Faustina Kowalska'}
 				])
 		},
 			{
-			H: '06',
-			X: _List_fromArray(
+			date: '06',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Bruno'},
-					{aw: _List_Nil, aF: 'Blessed Marie Rose Durocher'}
+					{activities: _List_Nil, feast: 'Saint Bruno'},
+					{activities: _List_Nil, feast: 'Blessed Marie Rose Durocher'}
 				])
 		},
 			{
-			H: '07',
-			X: _List_fromArray(
+			date: '07',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of the Rosary'}
+					{activities: _List_Nil, feast: 'Our Lady of the Rosary'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John Henry Newman'},
-					{aw: _List_Nil, aF: 'Saint Denis'},
-					{aw: _List_Nil, aF: 'Saint John Leonardi'}
+					{activities: _List_Nil, feast: 'Saint John Henry Newman'},
+					{activities: _List_Nil, feast: 'Saint Denis'},
+					{activities: _List_Nil, feast: 'Saint John Leonardi'}
 				])
 		},
 			{
-			H: '11',
-			X: _List_fromArray(
+			date: '11',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John Paul XXIII'}
+					{activities: _List_Nil, feast: 'Saint John Paul XXIII'}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Callistus I'}
+					{activities: _List_Nil, feast: 'Saint Callistus I'}
 				])
 		},
 			{
-			H: '15',
-			X: _List_fromArray(
+			date: '15',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Teresa of Jesus'}
+					{activities: _List_Nil, feast: 'Saint Teresa of Jesus'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Hedwig'},
-					{aw: _List_Nil, aF: 'Saint Margaret Mary Alacoque'}
+					{activities: _List_Nil, feast: 'Saint Hedwig'},
+					{activities: _List_Nil, feast: 'Saint Margaret Mary Alacoque'}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Ignatius of Antioch'}
+					{activities: _List_Nil, feast: 'Saint Ignatius of Antioch'}
 				])
 		},
 			{
-			H: '18',
-			X: _List_fromArray(
+			date: '18',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Luke the Evangelist'}
+					{activities: _List_Nil, feast: 'Saint Luke the Evangelist'}
 				])
 		},
 			{
-			H: '19',
-			X: _List_fromArray(
+			date: '19',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Jean de Bébeuf, Isaac Jogues, Priests and Martyrs; and their Companions'}
+					{activities: _List_Nil, feast: 'Saints Jean de Bébeuf, Isaac Jogues, Priests and Martyrs; and their Companions'}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Paul of the Cross'}
+					{activities: _List_Nil, feast: 'Saint Paul of the Cross'}
 				])
 		},
 			{
-			H: '22',
-			X: _List_fromArray(
+			date: '22',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John Paul II'}
+					{activities: _List_Nil, feast: 'Saint John Paul II'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John of Capistrano'}
+					{activities: _List_Nil, feast: 'Saint John of Capistrano'}
 				])
 		},
 			{
-			H: '24',
-			X: _List_fromArray(
+			date: '24',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Anthony Mary Claret'}
+					{activities: _List_Nil, feast: 'Saint Anthony Mary Claret'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Simon and Saint Jude'}
+					{activities: _List_Nil, feast: 'Saint Simon and Saint Jude'}
 				])
 		}
 		]),
-	aL: 'oct',
-	K: 'October'
+	key: 'oct',
+	month: 'October'
 };
 var $author$project$FeastDayActivities$FeastDays$M09Sep$september = {
-	aB: '#9de3ec',
-	X: _List_fromArray(
+	color: '#9de3ec',
+	feasts: _List_fromArray(
 		[
 			{
-			H: '03',
-			X: _List_fromArray(
+			date: '03',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Gregory the Great, Pope and Doctor'}
+					{activities: _List_Nil, feast: 'Saint Gregory the Great, Pope and Doctor'}
 				])
 		},
 			{
-			H: '05',
-			X: _List_fromArray(
+			date: '05',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Mother Teresa of Calcutta'}
+					{activities: _List_Nil, feast: 'Saint Mother Teresa of Calcutta'}
 				])
 		},
 			{
-			H: '08',
-			X: _List_fromArray(
+			date: '08',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Birth of the Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Birth of the Blessed Virgin Mary'}
 				])
 		},
 			{
-			H: '09',
-			X: _List_fromArray(
+			date: '09',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Peter Claver'}
+					{activities: _List_Nil, feast: 'Saint Peter Claver'}
 				])
 		},
 			{
-			H: '12',
-			X: _List_fromArray(
+			date: '12',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Holy Name of the Blessed Virgin Mary'}
+					{activities: _List_Nil, feast: 'Holy Name of the Blessed Virgin Mary'}
 				])
 		},
 			{
-			H: '13',
-			X: _List_fromArray(
+			date: '13',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint John Chrysostom, Bishop and Doctor'}
+					{activities: _List_Nil, feast: 'Saint John Chrysostom, Bishop and Doctor'}
 				])
 		},
 			{
-			H: '14',
-			X: _List_fromArray(
+			date: '14',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Exaltation of the Holy Cross'}
+					{activities: _List_Nil, feast: 'Exaltation of the Holy Cross'}
 				])
 		},
 			{
-			H: '15',
-			X: _List_fromArray(
+			date: '15',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Our Lady of Sorrows'}
+					{activities: _List_Nil, feast: 'Our Lady of Sorrows'}
 				])
 		},
 			{
-			H: '16',
-			X: _List_fromArray(
+			date: '16',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Cornelius, Pope'},
-					{aw: _List_Nil, aF: 'Saint Cyprian, Bishop'}
+					{activities: _List_Nil, feast: 'Saint Cornelius, Pope'},
+					{activities: _List_Nil, feast: 'Saint Cyprian, Bishop'}
 				])
 		},
 			{
-			H: '17',
-			X: _List_fromArray(
+			date: '17',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Hildegard of Bingen, Virgin and Doctor of the Church'}
+					{activities: _List_Nil, feast: 'Saint Hildegard of Bingen, Virgin and Doctor of the Church'}
 				])
 		},
 			{
-			H: '19',
-			X: _List_fromArray(
+			date: '19',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Januarius, Bishop and Martyr'}
+					{activities: _List_Nil, feast: 'Saint Januarius, Bishop and Martyr'}
 				])
 		},
 			{
-			H: '20',
-			X: _List_fromArray(
+			date: '20',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Andrew Kim Tae-gŏn, Priest'},
-					{aw: _List_Nil, aF: 'Saint Paul Chŏng Ha-sang, and Companions, Martyrs'}
+					{activities: _List_Nil, feast: 'Saint Andrew Kim Tae-gŏn, Priest'},
+					{activities: _List_Nil, feast: 'Saint Paul Chŏng Ha-sang, and Companions, Martyrs'}
 				])
 		},
 			{
-			H: '21',
-			X: _List_fromArray(
+			date: '21',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Matthew the Evangelist, Apostle'}
+					{activities: _List_Nil, feast: 'Saint Matthew the Evangelist, Apostle'}
 				])
 		},
 			{
-			H: '23',
-			X: _List_fromArray(
+			date: '23',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Pio of Pietrelcina, Priest'}
+					{activities: _List_Nil, feast: 'Saint Pio of Pietrelcina, Priest'}
 				])
 		},
 			{
-			H: '26',
-			X: _List_fromArray(
+			date: '26',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Cosmas; Saint Damian, Martyrs'}
+					{activities: _List_Nil, feast: 'Saint Cosmas; Saint Damian, Martyrs'}
 				])
 		},
 			{
-			H: '27',
-			X: _List_fromArray(
+			date: '27',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Vincent de Paul, Priest'}
+					{activities: _List_Nil, feast: 'Saint Vincent de Paul, Priest'}
 				])
 		},
 			{
-			H: '28',
-			X: _List_fromArray(
+			date: '28',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Wenceslaus, Martyr'},
-					{aw: _List_Nil, aF: 'Saint Lawrence Ruiz and Companions, Martyrs'}
+					{activities: _List_Nil, feast: 'Saint Wenceslaus, Martyr'},
+					{activities: _List_Nil, feast: 'Saint Lawrence Ruiz and Companions, Martyrs'}
 				])
 		},
 			{
-			H: '29',
-			X: _List_fromArray(
+			date: '29',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saints Michael, Gabriel and Raphael, Archangels'}
+					{activities: _List_Nil, feast: 'Saints Michael, Gabriel and Raphael, Archangels'}
 				])
 		},
 			{
-			H: '30',
-			X: _List_fromArray(
+			date: '30',
+			feasts: _List_fromArray(
 				[
-					{aw: _List_Nil, aF: 'Saint Jerome, Priest and Doctor'}
+					{activities: _List_Nil, feast: 'Saint Jerome, Priest and Doctor'}
 				])
 		}
 		]),
-	aL: 'sep',
-	K: 'September'
+	key: 'sep',
+	month: 'September'
 };
 var $author$project$FeastDayActivities$FeastDays$feastDays = _List_fromArray(
 	[$author$project$FeastDayActivities$FeastDays$M01Jan$january, $author$project$FeastDayActivities$FeastDays$M02Feb$february, $author$project$FeastDayActivities$FeastDays$M03Mar$march, $author$project$FeastDayActivities$FeastDays$M04Apr$april, $author$project$FeastDayActivities$FeastDays$M05May$may, $author$project$FeastDayActivities$FeastDays$M06Jun$june, $author$project$FeastDayActivities$FeastDays$M07Jul$july, $author$project$FeastDayActivities$FeastDays$M08Aug$august, $author$project$FeastDayActivities$FeastDays$M09Sep$september, $author$project$FeastDayActivities$FeastDays$M10Oct$october, $author$project$FeastDayActivities$FeastDays$M11Nov$november, $author$project$FeastDayActivities$FeastDays$M12Dec$december]);
 var $author$project$FeastDayActivities$FeastDays$months = A2(
 	$elm$core$List$map,
 	function ($) {
-		return $.aL;
+		return $.key;
 	},
 	$author$project$FeastDayActivities$FeastDays$feastDays);
 var $elm$browser$Browser$Navigation$pushUrl = _Browser_pushUrl;
 var $elm$url$Url$addPort = F2(
 	function (maybePort, starter) {
-		if (maybePort.$ === 1) {
+		if (maybePort.$ === 'Nothing') {
 			return starter;
 		} else {
 			var port_ = maybePort.a;
@@ -7356,7 +7429,7 @@ var $elm$url$Url$addPort = F2(
 	});
 var $elm$url$Url$addPrefixed = F3(
 	function (prefix, maybeSegment, starter) {
-		if (maybeSegment.$ === 1) {
+		if (maybeSegment.$ === 'Nothing') {
 			return starter;
 		} else {
 			var segment = maybeSegment.a;
@@ -7367,8 +7440,8 @@ var $elm$url$Url$addPrefixed = F3(
 	});
 var $elm$url$Url$toString = function (url) {
 	var http = function () {
-		var _v0 = url.ag;
-		if (!_v0) {
+		var _v0 = url.protocol;
+		if (_v0.$ === 'Http') {
 			return 'http://';
 		} else {
 			return 'https://';
@@ -7377,23 +7450,23 @@ var $elm$url$Url$toString = function (url) {
 	return A3(
 		$elm$url$Url$addPrefixed,
 		'#',
-		url.Y,
+		url.fragment,
 		A3(
 			$elm$url$Url$addPrefixed,
 			'?',
-			url.ah,
+			url.query,
 			_Utils_ap(
 				A2(
 					$elm$url$Url$addPort,
-					url.ad,
-					_Utils_ap(http, url._)),
-				url.ab)));
+					url.port_,
+					_Utils_ap(http, url.host)),
+				url.path)));
 };
 var $author$project$FeastDayActivities$Main$update = F2(
 	function (msg, model) {
-		if (!msg.$) {
+		if (msg.$ === 'LinkClicked') {
 			var urlRequest = msg.a;
-			if (!urlRequest.$) {
+			if (urlRequest.$ === 'Internal') {
 				var url = urlRequest.a;
 				var urlString = $elm$url$Url$toString(url);
 				var isMonth = A2(
@@ -7406,7 +7479,7 @@ var $author$project$FeastDayActivities$Main$update = F2(
 					model,
 					A2(
 						$elm$browser$Browser$Navigation$pushUrl,
-						model.aL,
+						model.key,
 						$elm$url$Url$toString(url))) : _Utils_Tuple2(
 					model,
 					$elm$browser$Browser$Navigation$load(
@@ -7422,7 +7495,7 @@ var $author$project$FeastDayActivities$Main$update = F2(
 			return _Utils_Tuple2(
 				_Utils_update(
 					model,
-					{Q: url}),
+					{url: url}),
 				$elm$core$Platform$Cmd$none);
 		}
 	});
@@ -7430,7 +7503,7 @@ var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Helpers$headerMargin = 10;
 var $elm$url$Url$Parser$State = F5(
 	function (visited, unvisited, params, frag, value) {
-		return {u: frag, v: params, t: unvisited, p: value, x: visited};
+		return {frag: frag, params: params, unvisited: unvisited, value: value, visited: visited};
 	});
 var $elm$url$Url$Parser$getFirstMatch = function (states) {
 	getFirstMatch:
@@ -7440,12 +7513,12 @@ var $elm$url$Url$Parser$getFirstMatch = function (states) {
 		} else {
 			var state = states.a;
 			var rest = states.b;
-			var _v1 = state.t;
+			var _v1 = state.unvisited;
 			if (!_v1.b) {
-				return $elm$core$Maybe$Just(state.p);
+				return $elm$core$Maybe$Just(state.value);
 			} else {
 				if ((_v1.a === '') && (!_v1.b.b)) {
-					return $elm$core$Maybe$Just(state.p);
+					return $elm$core$Maybe$Just(state.value);
 				} else {
 					var $temp$states = rest;
 					states = $temp$states;
@@ -7483,7 +7556,7 @@ var $elm$url$Url$Parser$preparePath = function (path) {
 };
 var $elm$url$Url$Parser$addToParametersHelp = F2(
 	function (value, maybeList) {
-		if (maybeList.$ === 1) {
+		if (maybeList.$ === 'Nothing') {
 			return $elm$core$Maybe$Just(
 				_List_fromArray(
 					[value]));
@@ -7499,7 +7572,7 @@ var $elm$core$Dict$get = F2(
 	function (targetKey, dict) {
 		get:
 		while (true) {
-			if (dict.$ === -2) {
+			if (dict.$ === 'RBEmpty_elm_builtin') {
 				return $elm$core$Maybe$Nothing;
 			} else {
 				var key = dict.b;
@@ -7507,14 +7580,14 @@ var $elm$core$Dict$get = F2(
 				var left = dict.d;
 				var right = dict.e;
 				var _v1 = A2($elm$core$Basics$compare, targetKey, key);
-				switch (_v1) {
-					case 0:
+				switch (_v1.$) {
+					case 'LT':
 						var $temp$targetKey = targetKey,
 							$temp$dict = left;
 						targetKey = $temp$targetKey;
 						dict = $temp$dict;
 						continue get;
-					case 1:
+					case 'EQ':
 						return $elm$core$Maybe$Just(value);
 					default:
 						var $temp$targetKey = targetKey,
@@ -7526,22 +7599,22 @@ var $elm$core$Dict$get = F2(
 			}
 		}
 	});
-var $elm$core$Dict$Black = 1;
+var $elm$core$Dict$Black = {$: 'Black'};
 var $elm$core$Dict$RBNode_elm_builtin = F5(
 	function (a, b, c, d, e) {
-		return {$: -1, a: a, b: b, c: c, d: d, e: e};
+		return {$: 'RBNode_elm_builtin', a: a, b: b, c: c, d: d, e: e};
 	});
-var $elm$core$Dict$RBEmpty_elm_builtin = {$: -2};
-var $elm$core$Dict$Red = 0;
+var $elm$core$Dict$RBEmpty_elm_builtin = {$: 'RBEmpty_elm_builtin'};
+var $elm$core$Dict$Red = {$: 'Red'};
 var $elm$core$Dict$balance = F5(
 	function (color, key, value, left, right) {
-		if ((right.$ === -1) && (!right.a)) {
+		if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Red')) {
 			var _v1 = right.a;
 			var rK = right.b;
 			var rV = right.c;
 			var rLeft = right.d;
 			var rRight = right.e;
-			if ((left.$ === -1) && (!left.a)) {
+			if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
 				var _v3 = left.a;
 				var lK = left.b;
 				var lV = left.c;
@@ -7549,22 +7622,22 @@ var $elm$core$Dict$balance = F5(
 				var lRight = left.e;
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					0,
+					$elm$core$Dict$Red,
 					key,
 					value,
-					A5($elm$core$Dict$RBNode_elm_builtin, 1, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, 1, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rLeft, rRight));
 			} else {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
 					color,
 					rK,
 					rV,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, key, value, left, rLeft),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, left, rLeft),
 					rRight);
 			}
 		} else {
-			if ((((left.$ === -1) && (!left.a)) && (left.d.$ === -1)) && (!left.d.a)) {
+			if ((((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) && (left.d.$ === 'RBNode_elm_builtin')) && (left.d.a.$ === 'Red')) {
 				var _v5 = left.a;
 				var lK = left.b;
 				var lV = left.c;
@@ -7577,11 +7650,11 @@ var $elm$core$Dict$balance = F5(
 				var lRight = left.e;
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					0,
+					$elm$core$Dict$Red,
 					lK,
 					lV,
-					A5($elm$core$Dict$RBNode_elm_builtin, 1, llK, llV, llLeft, llRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, 1, key, value, lRight, right));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, key, value, lRight, right));
 			} else {
 				return A5($elm$core$Dict$RBNode_elm_builtin, color, key, value, left, right);
 			}
@@ -7589,8 +7662,8 @@ var $elm$core$Dict$balance = F5(
 	});
 var $elm$core$Dict$insertHelp = F3(
 	function (key, value, dict) {
-		if (dict.$ === -2) {
-			return A5($elm$core$Dict$RBNode_elm_builtin, 0, key, value, $elm$core$Dict$RBEmpty_elm_builtin, $elm$core$Dict$RBEmpty_elm_builtin);
+		if (dict.$ === 'RBEmpty_elm_builtin') {
+			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, $elm$core$Dict$RBEmpty_elm_builtin, $elm$core$Dict$RBEmpty_elm_builtin);
 		} else {
 			var nColor = dict.a;
 			var nKey = dict.b;
@@ -7598,8 +7671,8 @@ var $elm$core$Dict$insertHelp = F3(
 			var nLeft = dict.d;
 			var nRight = dict.e;
 			var _v1 = A2($elm$core$Basics$compare, key, nKey);
-			switch (_v1) {
-				case 0:
+			switch (_v1.$) {
+				case 'LT':
 					return A5(
 						$elm$core$Dict$balance,
 						nColor,
@@ -7607,7 +7680,7 @@ var $elm$core$Dict$insertHelp = F3(
 						nValue,
 						A3($elm$core$Dict$insertHelp, key, value, nLeft),
 						nRight);
-				case 1:
+				case 'EQ':
 					return A5($elm$core$Dict$RBNode_elm_builtin, nColor, nKey, value, nLeft, nRight);
 				default:
 					return A5(
@@ -7623,13 +7696,13 @@ var $elm$core$Dict$insertHelp = F3(
 var $elm$core$Dict$insert = F3(
 	function (key, value, dict) {
 		var _v0 = A3($elm$core$Dict$insertHelp, key, value, dict);
-		if ((_v0.$ === -1) && (!_v0.a)) {
+		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
 			var _v1 = _v0.a;
 			var k = _v0.b;
 			var v = _v0.c;
 			var l = _v0.d;
 			var r = _v0.e;
-			return A5($elm$core$Dict$RBNode_elm_builtin, 1, k, v, l, r);
+			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
 		} else {
 			var x = _v0;
 			return x;
@@ -7638,7 +7711,7 @@ var $elm$core$Dict$insert = F3(
 var $elm$core$Dict$getMin = function (dict) {
 	getMin:
 	while (true) {
-		if ((dict.$ === -1) && (dict.d.$ === -1)) {
+		if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
 			var left = dict.d;
 			var $temp$dict = left;
 			dict = $temp$dict;
@@ -7649,8 +7722,8 @@ var $elm$core$Dict$getMin = function (dict) {
 	}
 };
 var $elm$core$Dict$moveRedLeft = function (dict) {
-	if (((dict.$ === -1) && (dict.d.$ === -1)) && (dict.e.$ === -1)) {
-		if ((dict.e.d.$ === -1) && (!dict.e.d.a)) {
+	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
+		if ((dict.e.d.$ === 'RBNode_elm_builtin') && (dict.e.d.a.$ === 'Red')) {
 			var clr = dict.a;
 			var k = dict.b;
 			var v = dict.c;
@@ -7673,17 +7746,17 @@ var $elm$core$Dict$moveRedLeft = function (dict) {
 			var rRight = _v2.e;
 			return A5(
 				$elm$core$Dict$RBNode_elm_builtin,
-				0,
+				$elm$core$Dict$Red,
 				rlK,
 				rlV,
 				A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					1,
+					$elm$core$Dict$Black,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
 					rlL),
-				A5($elm$core$Dict$RBNode_elm_builtin, 1, rK, rV, rlR, rRight));
+				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rlR, rRight));
 		} else {
 			var clr = dict.a;
 			var k = dict.b;
@@ -7700,22 +7773,22 @@ var $elm$core$Dict$moveRedLeft = function (dict) {
 			var rV = _v5.c;
 			var rLeft = _v5.d;
 			var rRight = _v5.e;
-			if (clr === 1) {
+			if (clr.$ === 'Black') {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					1,
+					$elm$core$Dict$Black,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
 			} else {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					1,
+					$elm$core$Dict$Black,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
 			}
 		}
 	} else {
@@ -7723,8 +7796,8 @@ var $elm$core$Dict$moveRedLeft = function (dict) {
 	}
 };
 var $elm$core$Dict$moveRedRight = function (dict) {
-	if (((dict.$ === -1) && (dict.d.$ === -1)) && (dict.e.$ === -1)) {
-		if ((dict.d.d.$ === -1) && (!dict.d.d.a)) {
+	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
+		if ((dict.d.d.$ === 'RBNode_elm_builtin') && (dict.d.d.a.$ === 'Red')) {
 			var clr = dict.a;
 			var k = dict.b;
 			var v = dict.c;
@@ -7747,17 +7820,17 @@ var $elm$core$Dict$moveRedRight = function (dict) {
 			var rRight = _v4.e;
 			return A5(
 				$elm$core$Dict$RBNode_elm_builtin,
-				0,
+				$elm$core$Dict$Red,
 				lK,
 				lV,
-				A5($elm$core$Dict$RBNode_elm_builtin, 1, llK, llV, llLeft, llRight),
+				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
 				A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					1,
+					$elm$core$Dict$Black,
 					k,
 					v,
 					lRight,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight)));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight)));
 		} else {
 			var clr = dict.a;
 			var k = dict.b;
@@ -7774,22 +7847,22 @@ var $elm$core$Dict$moveRedRight = function (dict) {
 			var rV = _v6.c;
 			var rLeft = _v6.d;
 			var rRight = _v6.e;
-			if (clr === 1) {
+			if (clr.$ === 'Black') {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					1,
+					$elm$core$Dict$Black,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
 			} else {
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
-					1,
+					$elm$core$Dict$Black,
 					k,
 					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, 0, rK, rV, rLeft, rRight));
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
+					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
 			}
 		}
 	} else {
@@ -7798,7 +7871,7 @@ var $elm$core$Dict$moveRedRight = function (dict) {
 };
 var $elm$core$Dict$removeHelpPrepEQGT = F7(
 	function (targetKey, dict, color, key, value, left, right) {
-		if ((left.$ === -1) && (!left.a)) {
+		if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
 			var _v1 = left.a;
 			var lK = left.b;
 			var lV = left.c;
@@ -7810,13 +7883,13 @@ var $elm$core$Dict$removeHelpPrepEQGT = F7(
 				lK,
 				lV,
 				lLeft,
-				A5($elm$core$Dict$RBNode_elm_builtin, 0, key, value, lRight, right));
+				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, lRight, right));
 		} else {
 			_v2$2:
 			while (true) {
-				if ((right.$ === -1) && (right.a === 1)) {
-					if (right.d.$ === -1) {
-						if (right.d.a === 1) {
+				if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Black')) {
+					if (right.d.$ === 'RBNode_elm_builtin') {
+						if (right.d.a.$ === 'Black') {
 							var _v3 = right.a;
 							var _v4 = right.d;
 							var _v5 = _v4.a;
@@ -7837,7 +7910,7 @@ var $elm$core$Dict$removeHelpPrepEQGT = F7(
 		}
 	});
 var $elm$core$Dict$removeMin = function (dict) {
-	if ((dict.$ === -1) && (dict.d.$ === -1)) {
+	if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
 		var color = dict.a;
 		var key = dict.b;
 		var value = dict.c;
@@ -7845,8 +7918,8 @@ var $elm$core$Dict$removeMin = function (dict) {
 		var lColor = left.a;
 		var lLeft = left.d;
 		var right = dict.e;
-		if (lColor === 1) {
-			if ((lLeft.$ === -1) && (!lLeft.a)) {
+		if (lColor.$ === 'Black') {
+			if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
 				var _v3 = lLeft.a;
 				return A5(
 					$elm$core$Dict$RBNode_elm_builtin,
@@ -7857,7 +7930,7 @@ var $elm$core$Dict$removeMin = function (dict) {
 					right);
 			} else {
 				var _v4 = $elm$core$Dict$moveRedLeft(dict);
-				if (_v4.$ === -1) {
+				if (_v4.$ === 'RBNode_elm_builtin') {
 					var nColor = _v4.a;
 					var nKey = _v4.b;
 					var nValue = _v4.c;
@@ -7889,7 +7962,7 @@ var $elm$core$Dict$removeMin = function (dict) {
 };
 var $elm$core$Dict$removeHelp = F2(
 	function (targetKey, dict) {
-		if (dict.$ === -2) {
+		if (dict.$ === 'RBEmpty_elm_builtin') {
 			return $elm$core$Dict$RBEmpty_elm_builtin;
 		} else {
 			var color = dict.a;
@@ -7898,10 +7971,10 @@ var $elm$core$Dict$removeHelp = F2(
 			var left = dict.d;
 			var right = dict.e;
 			if (_Utils_cmp(targetKey, key) < 0) {
-				if ((left.$ === -1) && (left.a === 1)) {
+				if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Black')) {
 					var _v4 = left.a;
 					var lLeft = left.d;
-					if ((lLeft.$ === -1) && (!lLeft.a)) {
+					if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
 						var _v6 = lLeft.a;
 						return A5(
 							$elm$core$Dict$RBNode_elm_builtin,
@@ -7912,7 +7985,7 @@ var $elm$core$Dict$removeHelp = F2(
 							right);
 					} else {
 						var _v7 = $elm$core$Dict$moveRedLeft(dict);
-						if (_v7.$ === -1) {
+						if (_v7.$ === 'RBNode_elm_builtin') {
 							var nColor = _v7.a;
 							var nKey = _v7.b;
 							var nValue = _v7.c;
@@ -7948,7 +8021,7 @@ var $elm$core$Dict$removeHelp = F2(
 	});
 var $elm$core$Dict$removeHelpEQGT = F2(
 	function (targetKey, dict) {
-		if (dict.$ === -1) {
+		if (dict.$ === 'RBNode_elm_builtin') {
 			var color = dict.a;
 			var key = dict.b;
 			var value = dict.c;
@@ -7956,7 +8029,7 @@ var $elm$core$Dict$removeHelpEQGT = F2(
 			var right = dict.e;
 			if (_Utils_eq(targetKey, key)) {
 				var _v1 = $elm$core$Dict$getMin(right);
-				if (_v1.$ === -1) {
+				if (_v1.$ === 'RBNode_elm_builtin') {
 					var minKey = _v1.b;
 					var minValue = _v1.c;
 					return A5(
@@ -7985,13 +8058,13 @@ var $elm$core$Dict$removeHelpEQGT = F2(
 var $elm$core$Dict$remove = F2(
 	function (key, dict) {
 		var _v0 = A2($elm$core$Dict$removeHelp, key, dict);
-		if ((_v0.$ === -1) && (!_v0.a)) {
+		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
 			var _v1 = _v0.a;
 			var k = _v0.b;
 			var v = _v0.c;
 			var l = _v0.d;
 			var r = _v0.e;
-			return A5($elm$core$Dict$RBNode_elm_builtin, 1, k, v, l, r);
+			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
 		} else {
 			var x = _v0;
 			return x;
@@ -8001,7 +8074,7 @@ var $elm$core$Dict$update = F3(
 	function (targetKey, alter, dictionary) {
 		var _v0 = alter(
 			A2($elm$core$Dict$get, targetKey, dictionary));
-		if (!_v0.$) {
+		if (_v0.$ === 'Just') {
 			var value = _v0.a;
 			return A3($elm$core$Dict$insert, targetKey, value, dictionary);
 		} else {
@@ -8016,12 +8089,12 @@ var $elm$url$Url$Parser$addParam = F2(
 			var _v1 = _v0.b;
 			var rawValue = _v1.a;
 			var _v2 = $elm$url$Url$percentDecode(rawKey);
-			if (_v2.$ === 1) {
+			if (_v2.$ === 'Nothing') {
 				return dict;
 			} else {
 				var key = _v2.a;
 				var _v3 = $elm$url$Url$percentDecode(rawValue);
-				if (_v3.$ === 1) {
+				if (_v3.$ === 'Nothing') {
 					return dict;
 				} else {
 					var value = _v3.a;
@@ -8038,7 +8111,7 @@ var $elm$url$Url$Parser$addParam = F2(
 	});
 var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
 var $elm$url$Url$Parser$prepareQuery = function (maybeQuery) {
-	if (maybeQuery.$ === 1) {
+	if (maybeQuery.$ === 'Nothing') {
 		return $elm$core$Dict$empty;
 	} else {
 		var qry = maybeQuery.a;
@@ -8051,26 +8124,30 @@ var $elm$url$Url$Parser$prepareQuery = function (maybeQuery) {
 };
 var $elm$url$Url$Parser$parse = F2(
 	function (_v0, url) {
-		var parser = _v0;
+		var parser = _v0.a;
 		return $elm$url$Url$Parser$getFirstMatch(
 			parser(
 				A5(
 					$elm$url$Url$Parser$State,
 					_List_Nil,
-					$elm$url$Url$Parser$preparePath(url.ab),
-					$elm$url$Url$Parser$prepareQuery(url.ah),
-					url.Y,
+					$elm$url$Url$Parser$preparePath(url.path),
+					$elm$url$Url$Parser$prepareQuery(url.query),
+					url.fragment,
 					$elm$core$Basics$identity)));
 	});
-var $author$project$FeastDayActivities$FeastDayHelpers$Date = $elm$core$Basics$identity;
-var $elm$url$Url$Parser$Parser = $elm$core$Basics$identity;
+var $author$project$FeastDayActivities$FeastDayHelpers$Date = function (a) {
+	return {$: 'Date', a: a};
+};
+var $elm$url$Url$Parser$Parser = function (a) {
+	return {$: 'Parser', a: a};
+};
 var $elm$url$Url$Parser$mapState = F2(
 	function (func, _v0) {
-		var visited = _v0.x;
-		var unvisited = _v0.t;
-		var params = _v0.v;
-		var frag = _v0.u;
-		var value = _v0.p;
+		var visited = _v0.visited;
+		var unvisited = _v0.unvisited;
+		var params = _v0.params;
+		var frag = _v0.frag;
+		var value = _v0.value;
 		return A5(
 			$elm$url$Url$Parser$State,
 			visited,
@@ -8081,40 +8158,42 @@ var $elm$url$Url$Parser$mapState = F2(
 	});
 var $elm$url$Url$Parser$map = F2(
 	function (subValue, _v0) {
-		var parseArg = _v0;
-		return function (_v1) {
-			var visited = _v1.x;
-			var unvisited = _v1.t;
-			var params = _v1.v;
-			var frag = _v1.u;
-			var value = _v1.p;
-			return A2(
-				$elm$core$List$map,
-				$elm$url$Url$Parser$mapState(value),
-				parseArg(
-					A5($elm$url$Url$Parser$State, visited, unvisited, params, frag, subValue)));
-		};
+		var parseArg = _v0.a;
+		return $elm$url$Url$Parser$Parser(
+			function (_v1) {
+				var visited = _v1.visited;
+				var unvisited = _v1.unvisited;
+				var params = _v1.params;
+				var frag = _v1.frag;
+				var value = _v1.value;
+				return A2(
+					$elm$core$List$map,
+					$elm$url$Url$Parser$mapState(value),
+					parseArg(
+						A5($elm$url$Url$Parser$State, visited, unvisited, params, frag, subValue)));
+			});
 	});
 var $elm$url$Url$Parser$query = function (_v0) {
-	var queryParser = _v0;
-	return function (_v1) {
-		var visited = _v1.x;
-		var unvisited = _v1.t;
-		var params = _v1.v;
-		var frag = _v1.u;
-		var value = _v1.p;
-		return _List_fromArray(
-			[
-				A5(
-				$elm$url$Url$Parser$State,
-				visited,
-				unvisited,
-				params,
-				frag,
-				value(
-					queryParser(params)))
-			]);
-	};
+	var queryParser = _v0.a;
+	return $elm$url$Url$Parser$Parser(
+		function (_v1) {
+			var visited = _v1.visited;
+			var unvisited = _v1.unvisited;
+			var params = _v1.params;
+			var frag = _v1.frag;
+			var value = _v1.value;
+			return _List_fromArray(
+				[
+					A5(
+					$elm$url$Url$Parser$State,
+					visited,
+					unvisited,
+					params,
+					frag,
+					value(
+						queryParser(params)))
+				]);
+		});
 };
 var $elm$core$List$append = F2(
 	function (xs, ys) {
@@ -8134,14 +8213,15 @@ var $elm$core$List$concatMap = F2(
 	});
 var $elm$url$Url$Parser$slash = F2(
 	function (_v0, _v1) {
-		var parseBefore = _v0;
-		var parseAfter = _v1;
-		return function (state) {
-			return A2(
-				$elm$core$List$concatMap,
-				parseAfter,
-				parseBefore(state));
-		};
+		var parseBefore = _v0.a;
+		var parseAfter = _v1.a;
+		return $elm$url$Url$Parser$Parser(
+			function (state) {
+				return A2(
+					$elm$core$List$concatMap,
+					parseAfter,
+					parseBefore(state));
+			});
 	});
 var $elm$url$Url$Parser$questionMark = F2(
 	function (parser, queryParser) {
@@ -8151,34 +8231,37 @@ var $elm$url$Url$Parser$questionMark = F2(
 			$elm$url$Url$Parser$query(queryParser));
 	});
 var $elm$url$Url$Parser$s = function (str) {
-	return function (_v0) {
-		var visited = _v0.x;
-		var unvisited = _v0.t;
-		var params = _v0.v;
-		var frag = _v0.u;
-		var value = _v0.p;
-		if (!unvisited.b) {
-			return _List_Nil;
-		} else {
-			var next = unvisited.a;
-			var rest = unvisited.b;
-			return _Utils_eq(next, str) ? _List_fromArray(
-				[
-					A5(
-					$elm$url$Url$Parser$State,
-					A2($elm$core$List$cons, next, visited),
-					rest,
-					params,
-					frag,
-					value)
-				]) : _List_Nil;
-		}
-	};
+	return $elm$url$Url$Parser$Parser(
+		function (_v0) {
+			var visited = _v0.visited;
+			var unvisited = _v0.unvisited;
+			var params = _v0.params;
+			var frag = _v0.frag;
+			var value = _v0.value;
+			if (!unvisited.b) {
+				return _List_Nil;
+			} else {
+				var next = unvisited.a;
+				var rest = unvisited.b;
+				return _Utils_eq(next, str) ? _List_fromArray(
+					[
+						A5(
+						$elm$url$Url$Parser$State,
+						A2($elm$core$List$cons, next, visited),
+						rest,
+						params,
+						frag,
+						value)
+					]) : _List_Nil;
+			}
+		});
 };
-var $elm$url$Url$Parser$Internal$Parser = $elm$core$Basics$identity;
+var $elm$url$Url$Parser$Internal$Parser = function (a) {
+	return {$: 'Parser', a: a};
+};
 var $elm$core$Maybe$withDefault = F2(
 	function (_default, maybe) {
-		if (!maybe.$) {
+		if (maybe.$ === 'Just') {
 			var value = maybe.a;
 			return value;
 		} else {
@@ -8187,13 +8270,14 @@ var $elm$core$Maybe$withDefault = F2(
 	});
 var $elm$url$Url$Parser$Query$custom = F2(
 	function (key, func) {
-		return function (dict) {
-			return func(
-				A2(
-					$elm$core$Maybe$withDefault,
-					_List_Nil,
-					A2($elm$core$Dict$get, key, dict)));
-		};
+		return $elm$url$Url$Parser$Internal$Parser(
+			function (dict) {
+				return func(
+					A2(
+						$elm$core$Maybe$withDefault,
+						_List_Nil,
+						A2($elm$core$Dict$get, key, dict)));
+			});
 	});
 var $elm$url$Url$Parser$Query$string = function (key) {
 	return A2(
@@ -8219,7 +8303,8 @@ var $author$project$FeastDayActivities$FeastDayHelpers$route = A2(
 	$elm$url$Url$Parser$map,
 	function (m) {
 		return function (d) {
-			return {H: d, K: m};
+			return $author$project$FeastDayActivities$FeastDayHelpers$Date(
+				{date: d, month: m});
 		};
 	},
 	$author$project$FeastDayActivities$FeastDayHelpers$urlDateParser);
@@ -8236,7 +8321,7 @@ var $elm$virtual_dom$VirtualDom$attribute = F2(
 var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
 var $elm$json$Json$Encode$bool = _Json_wrap;
 var $elm$virtual_dom$VirtualDom$Custom = function (a) {
-	return {$: 3, a: a};
+	return {$: 'Custom', a: a};
 };
 var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
 var $elm$html$Html$Events$custom = F2(
@@ -8247,7 +8332,7 @@ var $elm$html$Html$Events$custom = F2(
 			$elm$virtual_dom$VirtualDom$Custom(decoder));
 	});
 var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 0, a: a};
+	return {$: 'Normal', a: a};
 };
 var $elm$html$Html$Events$on = F2(
 	function (event, decoder) {
@@ -8257,7 +8342,7 @@ var $elm$html$Html$Events$on = F2(
 			$elm$virtual_dom$VirtualDom$Normal(decoder));
 	});
 var $elm$virtual_dom$VirtualDom$MayPreventDefault = function (a) {
-	return {$: 2, a: a};
+	return {$: 'MayPreventDefault', a: a};
 };
 var $elm$html$Html$Events$preventDefaultOn = F2(
 	function (event, decoder) {
@@ -8275,7 +8360,7 @@ var $elm$virtual_dom$VirtualDom$property = F2(
 	});
 var $elm$html$Html$Attributes$property = $elm$virtual_dom$VirtualDom$property;
 var $elm$virtual_dom$VirtualDom$MayStopPropagation = function (a) {
-	return {$: 1, a: a};
+	return {$: 'MayStopPropagation', a: a};
 };
 var $elm$html$Html$Events$stopPropagationOn = F2(
 	function (event, decoder) {
@@ -8287,43 +8372,43 @@ var $elm$html$Html$Events$stopPropagationOn = F2(
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $zwilias$elm_html_string$Html$Types$attributeToHtml = function (attribute) {
 	switch (attribute.$) {
-		case 0:
+		case 'Attribute':
 			var key = attribute.a;
 			var value = attribute.b;
 			return A2($elm$html$Html$Attributes$attribute, key, value);
-		case 1:
+		case 'StringProperty':
 			var key = attribute.a;
 			var value = attribute.b;
 			return A2(
 				$elm$html$Html$Attributes$property,
 				key,
 				$elm$json$Json$Encode$string(value));
-		case 2:
+		case 'BoolProperty':
 			var key = attribute.a;
 			var value = attribute.b;
 			return A2(
 				$elm$html$Html$Attributes$property,
 				key,
 				$elm$json$Json$Encode$bool(value));
-		case 3:
+		case 'ValueProperty':
 			var key = attribute.a;
 			var value = attribute.b;
 			return A2($elm$html$Html$Attributes$property, key, value);
-		case 4:
+		case 'Style':
 			var key = attribute.a;
 			var value = attribute.b;
 			return A2($elm$html$Html$Attributes$style, key, value);
 		default:
 			switch (attribute.b.$) {
-				case 0:
+				case 'Normal':
 					var name = attribute.a;
 					var d = attribute.b.a;
 					return A2($elm$html$Html$Events$on, name, d);
-				case 1:
+				case 'MayStopPropagation':
 					var name = attribute.a;
 					var d = attribute.b.a;
 					return A2($elm$html$Html$Events$stopPropagationOn, name, d);
-				case 2:
+				case 'MayPreventDefault':
 					var name = attribute.a;
 					var d = attribute.b.a;
 					return A2($elm$html$Html$Events$preventDefaultOn, name, d);
@@ -8355,18 +8440,18 @@ var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $zwilias$elm_html_string$Html$Types$toHtml = function (node) {
-	if (!node.$) {
+	if (node.$ === 'Node') {
 		var tagName = node.a;
 		var attributes = node.b;
 		var children = node.c;
 		switch (children.$) {
-			case 0:
+			case 'NoChildren':
 				return A3(
 					$elm$html$Html$node,
 					tagName,
 					A2($elm$core$List$map, $zwilias$elm_html_string$Html$Types$attributeToHtml, attributes),
 					_List_Nil);
-			case 1:
+			case 'Regular':
 				var nodes = children.a;
 				return A3(
 					$elm$html$Html$node,
@@ -8427,13 +8512,14 @@ var $elm$html$Html$Attributes$href = function (url) {
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
 };
+var $elm$core$Debug$log = _Debug_log;
 var $author$project$FeastDayActivities$Main$urlPath = '/feastdayactivities';
 var $author$project$FeastDayActivities$FeastDayHelpers$filterActivities = F2(
 	function (isFilterType, activities) {
 		return A2(
 			$elm$core$List$concatMap,
 			function (activity) {
-				return isFilterType(activity.R) ? _List_fromArray(
+				return isFilterType(activity.activityType) ? _List_fromArray(
 					[activity]) : _List_Nil;
 			},
 			activities);
@@ -8442,7 +8528,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$audioActivities = functio
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 1;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Audio);
 		},
 		activities);
 };
@@ -8450,7 +8536,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$bookActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 7;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Book);
 		},
 		activities);
 };
@@ -8458,7 +8544,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$craftActivities = functio
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 8;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Crafts);
 		},
 		activities);
 };
@@ -8466,7 +8552,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$foodActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 5;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Food);
 		},
 		activities);
 };
@@ -8474,7 +8560,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$gameActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 6;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Game);
 		},
 		activities);
 };
@@ -8482,7 +8568,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$imageActivities = functio
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 2;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Images);
 		},
 		activities);
 };
@@ -8497,7 +8583,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$moreActivities = function
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 9;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$More);
 		},
 		activities);
 };
@@ -8505,7 +8591,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$printoutActivities = func
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 3;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Printout);
 		},
 		activities);
 };
@@ -8513,7 +8599,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$readingActivities = funct
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return activityType === 4;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading);
 		},
 		activities);
 };
@@ -8521,7 +8607,7 @@ var $author$project$FeastDayActivities$FeastDayHelpers$videoActivities = functio
 	return A2(
 		$author$project$FeastDayActivities$FeastDayHelpers$filterActivities,
 		function (activityType) {
-			return !activityType;
+			return _Utils_eq(activityType, $author$project$FeastDayActivities$FeastDayHelpers$Video);
 		},
 		activities);
 };
@@ -8542,8 +8628,8 @@ var $author$project$FeastDayActivities$Main$viewActivity = function (activity) {
 		_List_fromArray(
 			[
 				$elm$html$Html$Attributes$class('grid grid-cols-[100px_1fr]'),
-				$elm$html$Html$Attributes$href(activity.aM),
-				A2($elm$html$Html$Attributes$attribute, 'aria-label', activity.a_),
+				$elm$html$Html$Attributes$href(activity.link),
+				A2($elm$html$Html$Attributes$attribute, 'aria-label', activity.title),
 				$elm$html$Html$Attributes$target('_blank'),
 				$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
 				$elm$html$Html$Attributes$class('rounded m-5')
@@ -8554,7 +8640,7 @@ var $author$project$FeastDayActivities$Main$viewActivity = function (activity) {
 				$elm$html$Html$img,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$src(activity.aI),
+						$elm$html$Html$Attributes$src(activity.image),
 						$elm$html$Html$Attributes$class('w-20 h-20'),
 						$elm$html$Html$Attributes$class('rounded'),
 						$elm$html$Html$Attributes$class('object-cover')
@@ -8576,7 +8662,7 @@ var $author$project$FeastDayActivities$Main$viewActivity = function (activity) {
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text(activity.a_)
+								$elm$html$Html$text(activity.title)
 							])),
 						A2(
 						$elm$html$Html$div,
@@ -8586,7 +8672,7 @@ var $author$project$FeastDayActivities$Main$viewActivity = function (activity) {
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text(activity.aV)
+								$elm$html$Html$text(activity.snippet)
 							]))
 					]))
 			]));
@@ -8674,8 +8760,8 @@ var $author$project$FeastDayActivities$Main$viewEmbeddedVideo = function (video)
 						A2($elm$html$Html$Attributes$style, 'height', '100%'),
 						A2($elm$html$Html$Attributes$style, 'top', '0'),
 						A2($elm$html$Html$Attributes$style, 'left', '0'),
-						$elm$html$Html$Attributes$src(video.aM),
-						$elm$html$Html$Attributes$title(video.a_),
+						$elm$html$Html$Attributes$src(video.link),
+						$elm$html$Html$Attributes$title(video.title),
 						A2(
 						$elm$html$Html$Attributes$property,
 						'frameborder',
@@ -8693,7 +8779,7 @@ var $author$project$FeastDayActivities$Main$viewEmbeddedVideo = function (video)
 			]));
 };
 var $author$project$FeastDayActivities$Main$viewVideo = function (video) {
-	return A2($elm$core$String$contains, 'embed', video.aM) ? $author$project$FeastDayActivities$Main$viewEmbeddedVideo(video) : $author$project$FeastDayActivities$Main$viewActivity(video);
+	return A2($elm$core$String$contains, 'embed', video.link) ? $author$project$FeastDayActivities$Main$viewEmbeddedVideo(video) : $author$project$FeastDayActivities$Main$viewActivity(video);
 };
 var $author$project$FeastDayActivities$Main$viewVideos = function (videos) {
 	return $elm$core$List$isEmpty(videos) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
@@ -8733,7 +8819,7 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = function (feas
 	var activities = A2(
 		$elm$core$List$concatMap,
 		function ($) {
-			return $.aw;
+			return $.activities;
 		},
 		feastActivities);
 	return $elm$core$List$isEmpty(activities) ? $author$project$FeastDayActivities$Main$viewNoActivities : A2(
@@ -8789,7 +8875,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feast
 		A2(
 			$elm$core$List$map,
 			function ($) {
-				return $.aF;
+				return $.feast;
 			},
 			feasts));
 	return A2(
@@ -8814,6 +8900,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feast
 };
 var $author$project$FeastDayActivities$Main$viewDate = F3(
 	function (month, date, feasts) {
+		var _v0 = A2($elm$core$Debug$log, 'feasts', feasts);
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -9065,12 +9152,12 @@ var $author$project$FeastDayActivities$Main$viewFeast = function (feastActivitie
 		_List_Nil,
 		_List_fromArray(
 			[
-				$elm$html$Html$text(feastActivities.aF)
+				$elm$html$Html$text(feastActivities.feast)
 			]));
 };
 var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
 	function (month, feastDay) {
-		var link = $author$project$FeastDayActivities$Main$urlPath + ('?m=' + (month + ('&d=' + feastDay.H)));
+		var link = $author$project$FeastDayActivities$Main$urlPath + ('?m=' + (month + ('&d=' + feastDay.date)));
 		return A2(
 			$elm$html$Html$div,
 			_List_Nil,
@@ -9083,7 +9170,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
 						[
 							A2($elm$html$Html$Attributes$style, 'color', 'black'),
 							$elm$html$Html$Attributes$href(link),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', month + (' ' + feastDay.H)),
+							A2($elm$html$Html$Attributes$attribute, 'aria-label', month + (' ' + feastDay.date)),
 							$elm$html$Html$Attributes$class('grid grid-cols-calendar gap-3 items-center justify-items-center'),
 							$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
 							$elm$html$Html$Attributes$class('rounded')
@@ -9099,7 +9186,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
 								]),
 							_List_fromArray(
 								[
-									$elm$html$Html$text(feastDay.H)
+									$elm$html$Html$text(feastDay.date)
 								])),
 							A2(
 							$elm$html$Html$div,
@@ -9107,7 +9194,7 @@ var $author$project$FeastDayActivities$Main$viewFeastDay = F2(
 								[
 									$elm$html$Html$Attributes$class('justify-self-start')
 								]),
-							A2($elm$core$List$map, $author$project$FeastDayActivities$Main$viewFeast, feastDay.X))
+							A2($elm$core$List$map, $author$project$FeastDayActivities$Main$viewFeast, feastDay.feasts))
 						]))
 				]));
 	});
@@ -9171,7 +9258,7 @@ var $author$project$FeastDayActivities$Main$viewMonthPillBox = function (month) 
 };
 var $zwilias$elm_html_string$Html$Types$StringProperty = F2(
 	function (a, b) {
-		return {$: 1, a: a, b: b};
+		return {$: 'StringProperty', a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$stringProperty = $zwilias$elm_html_string$Html$Types$StringProperty;
 var $zwilias$elm_html_string$Html$String$Attributes$class = function (className) {
@@ -9179,10 +9266,10 @@ var $zwilias$elm_html_string$Html$String$Attributes$class = function (className)
 };
 var $zwilias$elm_html_string$Html$Types$Node = F3(
 	function (a, b, c) {
-		return {$: 0, a: a, b: b, c: c};
+		return {$: 'Node', a: a, b: b, c: c};
 	});
 var $zwilias$elm_html_string$Html$Types$Regular = function (a) {
-	return {$: 1, a: a};
+	return {$: 'Regular', a: a};
 };
 var $zwilias$elm_html_string$Html$String$node = F3(
 	function (tag, attributes, children) {
@@ -9195,7 +9282,7 @@ var $zwilias$elm_html_string$Html$String$node = F3(
 var $zwilias$elm_html_string$Html$String$div = $zwilias$elm_html_string$Html$String$node('div');
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
 var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
-	return {$: 1, a: a};
+	return {$: 'TextNode', a: a};
 };
 var $zwilias$elm_html_string$Html$String$text = $zwilias$elm_html_string$Html$Types$TextNode;
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
@@ -9204,7 +9291,7 @@ var $zwilias$elm_html_string$Html$String$Attributes$href = function (val) {
 };
 var $zwilias$elm_html_string$Html$Types$Attribute = F2(
 	function (a, b) {
-		return {$: 0, a: a, b: b};
+		return {$: 'Attribute', a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$attribute = $zwilias$elm_html_string$Html$Types$Attribute;
 var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
@@ -9212,7 +9299,7 @@ var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
 };
 var $zwilias$elm_html_string$Html$Types$Style = F2(
 	function (a, b) {
-		return {$: 4, a: a, b: b};
+		return {$: 'Style', a: a, b: b};
 	});
 var $zwilias$elm_html_string$Html$String$Attributes$style = $zwilias$elm_html_string$Html$Types$Style;
 var $zwilias$elm_html_string$Html$String$Attributes$target = function (val) {
@@ -9255,7 +9342,7 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));
 var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
-	var _v0 = $author$project$FeastDayActivities$FeastDayHelpers$splitList(feastMonth.X);
+	var _v0 = $author$project$FeastDayActivities$FeastDayHelpers$splitList(feastMonth.feasts);
 	var firstHalf = _v0.a;
 	var secondHalf = _v0.b;
 	return A2(
@@ -9323,7 +9410,7 @@ var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
 					]),
 				_List_fromArray(
 					[
-						A2($author$project$FeastDayActivities$Main$viewFeastMonthHeader, feastMonth.aB, feastMonth.K),
+						A2($author$project$FeastDayActivities$Main$viewFeastMonthHeader, feastMonth.color, feastMonth.month),
 						A2(
 						$elm$html$Html$div,
 						_List_fromArray(
@@ -9335,18 +9422,18 @@ var $author$project$FeastDayActivities$Main$viewMonth = function (feastMonth) {
 							]),
 						_List_fromArray(
 							[
-								A2($author$project$FeastDayActivities$Main$viewFeastDays, feastMonth.aL, firstHalf),
-								A2($author$project$FeastDayActivities$Main$viewFeastDays, feastMonth.aL, secondHalf)
+								A2($author$project$FeastDayActivities$Main$viewFeastDays, feastMonth.key, firstHalf),
+								A2($author$project$FeastDayActivities$Main$viewFeastDays, feastMonth.key, secondHalf)
 							]))
 					]))
 			]));
 };
 var $author$project$FeastDayActivities$Main$viewBody = function (route) {
-	if (!route.$) {
-		var date = route.a;
-		var _v1 = _Utils_Tuple2(date.K, date.H);
-		if (!_v1.a.$) {
-			if (!_v1.b.$) {
+	if (route.$ === 'Just') {
+		var date = route.a.a;
+		var _v1 = _Utils_Tuple2(date.month, date.date);
+		if (_v1.a.$ === 'Just') {
+			if (_v1.b.$ === 'Just') {
 				var m = _v1.a.a;
 				var d = _v1.b.a;
 				return A3(
@@ -9360,13 +9447,13 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 							A2(
 								$elm$core$List$map,
 								function ($) {
-									return $.X;
+									return $.feasts;
 								},
 								A2(
 									$elm$core$List$filter,
 									function (feastDay) {
 										return _Utils_eq(
-											$elm$core$String$toLower(feastDay.H),
+											$elm$core$String$toLower(feastDay.date),
 											$elm$core$String$toLower(d));
 									},
 									A2(
@@ -9377,10 +9464,10 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 												$elm$core$List$filter,
 												function (feastDay) {
 													return _Utils_eq(
-														$elm$core$String$toLower(feastDay.aL),
+														$elm$core$String$toLower(feastDay.key),
 														$elm$core$String$toLower(m));
 												},
-												$author$project$FeastDayActivities$FeastDays$feastDays))).X)))));
+												$author$project$FeastDayActivities$FeastDays$feastDays))).feasts)))));
 			} else {
 				var m = _v1.a.a;
 				var _v2 = _v1.b;
@@ -9393,7 +9480,7 @@ var $author$project$FeastDayActivities$Main$viewBody = function (route) {
 								$elm$core$List$filter,
 								function (feastDay) {
 									return _Utils_eq(
-										$elm$core$String$toLower(feastDay.aL),
+										$elm$core$String$toLower(feastDay.key),
 										$elm$core$String$toLower(m));
 								},
 								$author$project$FeastDayActivities$FeastDays$feastDays))));
@@ -9569,7 +9656,7 @@ var $author$project$Header$viewHeaderTitle = function (title) {
 var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
 };
-var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
+var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 'NoChildren'};
 var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
 	function (tag, attrs, _v0) {
 		return A3($zwilias$elm_html_string$Html$Types$Node, tag, attrs, $zwilias$elm_html_string$Html$Types$NoChildren);
@@ -9625,9 +9712,9 @@ var $author$project$Header$viewSubpageHeader = F2(
 				]));
 	});
 var $author$project$FeastDayActivities$Main$view = function (model) {
-	var currentRoute = $author$project$FeastDayActivities$FeastDayHelpers$parseRoute(model.Q);
+	var currentRoute = $author$project$FeastDayActivities$FeastDayHelpers$parseRoute(model.url);
 	return {
-		az: _List_fromArray(
+		body: _List_fromArray(
 			[
 				A2(
 				$elm$html$Html$div,
@@ -9646,10 +9733,10 @@ var $author$project$FeastDayActivities$Main$view = function (model) {
 						$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
 					]))
 			]),
-		a_: 'Feast Day Activities - Catholic Stories for Children'
+		title: 'Feast Day Activities - Catholic Stories for Children'
 	};
 };
 var $author$project$FeastDayActivities$Main$main = $elm$browser$Browser$application(
-	{aK: $author$project$FeastDayActivities$Main$init, aP: $author$project$FeastDayActivities$Main$UrlChanged, aQ: $author$project$FeastDayActivities$Main$LinkClicked, aY: $author$project$FeastDayActivities$Main$subscriptions, a$: $author$project$FeastDayActivities$Main$update, a0: $author$project$FeastDayActivities$Main$view});
+	{init: $author$project$FeastDayActivities$Main$init, onUrlChange: $author$project$FeastDayActivities$Main$UrlChanged, onUrlRequest: $author$project$FeastDayActivities$Main$LinkClicked, subscriptions: $author$project$FeastDayActivities$Main$subscriptions, update: $author$project$FeastDayActivities$Main$update, view: $author$project$FeastDayActivities$Main$view});
 _Platform_export({'FeastDayActivities':{'Main':{'init':$author$project$FeastDayActivities$Main$main(
-	$elm$json$Json$Decode$succeed(0))(0)}}});}(this));
+	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}}});}(this));

@@ -344,6 +344,36 @@ february =
                           , image = ""
                           , snippet = ""
                           }
+                        , { activityType = Video
+                          , title = "Ash Wednesday"
+                          , link = "https://www.youtube-nocookie.com/embed/9xMgWbg1Xs8"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Video
+                          , title = "Ash Wednesday"
+                          , link = "https://www.youtube-nocookie.com/embed/t671atw7Fgk"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Video
+                          , title = "Ash Wednesday"
+                          , link = "https://www.youtube-nocookie.com/embed/vIZYKohGDHE"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Food
+                          , title = "Lenten Pretzel Recipe (And A Printable Pretzel Prayer Poem)"
+                          , image = "https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg"
+                          , link = "https://www.catholicicing.com/pretzels-for-lent/"
+                          , snippet = "Did you know that the pretzel is a traditional food for lent? In fact, the pretzel was actually invented in order to be a simple Lenten snack!"
+                          }
+                        , { activityType = More
+                          , title = "Meatless Lent Recipes"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552"
+                          , link = "https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/"
+                          , snippet = "Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas."
+                          }
                         , { activityType = More
                           , title = "Ash Wednesday For Kids (Traditions, Printables, & Resources)"
                           , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
