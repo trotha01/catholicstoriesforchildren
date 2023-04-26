@@ -11,6 +11,14 @@ type alias Resource =
     }
 
 
+type alias ResourceGroup =
+    { name : String
+    , image : String
+    , description : String
+    , link : String
+    }
+
+
 viewResource : Resource -> Html msg
 viewResource resource =
     a

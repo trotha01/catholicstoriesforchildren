@@ -90,14 +90,6 @@ viewResourceGroup resourceGroup =
         ]
 
 
-type alias ResourceGroup =
-    { name : String
-    , image : String
-    , description : String
-    , link : String
-    }
-
-
 podcasts : ResourceGroup
 podcasts =
     { name = "Podcasts"

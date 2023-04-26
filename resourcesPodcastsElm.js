@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.N.C === region.S.C)
+	if (region.P.C === region.U.C)
 	{
-		return 'on line ' + region.N.C;
+		return 'on line ' + region.P.C;
 	}
-	return 'on lines ' + region.N.C + ' through ' + region.S.C;
+	return 'on lines ' + region.P.C + ' through ' + region.U.C;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aG,
-		impl.aT,
-		impl.aQ,
+		impl.aH,
+		impl.aU,
+		impl.aR,
 		function() { return function() {} }
 	);
 });
@@ -2705,8 +2705,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		r: func(record.r),
-		O: record.O,
-		L: record.L
+		Q: record.Q,
+		N: record.N
 	}
 });
 
@@ -2975,10 +2975,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.O;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.Q;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.L) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.N) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aG,
-		impl.aT,
-		impl.aQ,
+		impl.aH,
+		impl.aU,
+		impl.aR,
 		function(sendToApp, initialModel) {
-			var view = impl.aV;
+			var view = impl.aW;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aG,
-		impl.aT,
-		impl.aQ,
+		impl.aH,
+		impl.aU,
+		impl.aR,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.M && impl.M(sendToApp)
-			var view = impl.aV;
+			var divertHrefToApp = impl.O && impl.O(sendToApp)
+			var view = impl.aW;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3982,7 +3982,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aS) && (_VirtualDom_doc.title = title = doc.aS);
+				(title !== doc.aT) && (_VirtualDom_doc.title = title = doc.aT);
 			});
 		}
 	);
@@ -4038,12 +4038,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aI;
-	var onUrlRequest = impl.aJ;
+	var onUrlChange = impl.aJ;
+	var onUrlRequest = impl.aK;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		M: function(sendToApp)
+		O: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4060,7 +4060,7 @@ function _Browser_application(impl)
 					sendToApp(onUrlRequest(
 						(next
 							&& curr.ag === next.ag
-							&& curr.W === next.W
+							&& curr.Y === next.Y
 							&& curr.ad.a === next.ad.a
 						)
 							? $elm$browser$Browser$Internal(next)
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aG: function(flags)
+		aH: function(flags)
 		{
-			return A3(impl.aG, flags, _Browser_getUrl(), key);
+			return A3(impl.aH, flags, _Browser_getUrl(), key);
 		},
-		aV: impl.aV,
-		aT: impl.aT,
-		aQ: impl.aQ
+		aW: impl.aW,
+		aU: impl.aU,
+		aR: impl.aR
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aE: 'hidden', az: 'visibilitychange' }
+		? { aF: 'hidden', az: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aE: 'mozHidden', az: 'mozvisibilitychange' }
+		? { aF: 'mozHidden', az: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aE: 'msHidden', az: 'msvisibilitychange' }
+		? { aF: 'msHidden', az: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aE: 'webkitHidden', az: 'webkitvisibilitychange' }
-		: { aE: 'hidden', az: 'visibilitychange' };
+		? { aF: 'webkitHidden', az: 'webkitvisibilitychange' }
+		: { aF: 'hidden', az: 'visibilitychange' };
 }
 
 
@@ -4237,7 +4237,7 @@ function _Browser_getViewport()
 			at: _Browser_window.pageXOffset,
 			au: _Browser_window.pageYOffset,
 			as: _Browser_doc.documentElement.clientWidth,
-			V: _Browser_doc.documentElement.clientHeight
+			X: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4248,7 +4248,7 @@ function _Browser_getScene()
 	var elem = _Browser_doc.documentElement;
 	return {
 		as: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		V: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		X: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4273,13 +4273,13 @@ function _Browser_getViewportOf(id)
 		return {
 			am: {
 				as: node.scrollWidth,
-				V: node.scrollHeight
+				X: node.scrollHeight
 			},
 			ar: {
 				at: node.scrollLeft,
 				au: node.scrollTop,
 				as: node.clientWidth,
-				V: node.clientHeight
+				X: node.clientHeight
 			}
 		};
 	});
@@ -4314,13 +4314,13 @@ function _Browser_getElement(id)
 				at: x,
 				au: y,
 				as: _Browser_doc.documentElement.clientWidth,
-				V: _Browser_doc.documentElement.clientHeight
+				X: _Browser_doc.documentElement.clientHeight
 			},
-			aB: {
+			aC: {
 				at: x + rect.left,
 				au: y + rect.top,
 				as: rect.width,
-				V: rect.height
+				X: rect.height
 			}
 		};
 	});
@@ -4896,7 +4896,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {U: fragment, W: host, ab: path, ad: port_, ag: protocol, ah: query};
+		return {W: fragment, Y: host, ab: path, ad: port_, ag: protocol, ah: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5181,19 +5181,19 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aG: function (_v0) {
-				return _Utils_Tuple2(impl.aG, $elm$core$Platform$Cmd$none);
+			aH: function (_v0) {
+				return _Utils_Tuple2(impl.aH, $elm$core$Platform$Cmd$none);
 			},
-			aQ: function (_v1) {
+			aR: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aT: F2(
+			aU: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aT, msg, model),
+						A2(impl.aU, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aV: impl.aV
+			aW: impl.aW
 		});
 };
 var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
@@ -5811,13 +5811,13 @@ var $author$project$Resources$Podcasts$Main$viewAboutPodcasts = A2(
 		[
 			$zwilias$elm_html_string$Html$String$text('Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.')
 		]));
-var $author$project$Resources$Podcasts$Main$catholicKidsPodcast = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_Mz1VR_PBx.png?updatedAt=1679071655063', Z: 'https://podcasts.apple.com/us/podcast/catholic-kids-podcast/id1557527100', J: 'Catholic Kids Podcast'};
-var $author$project$Resources$Podcasts$Main$catholicKidsTriviaPodcast = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicKidsTriviaPodcast_rFHEiGK88.png?updatedAt=1679071809107', Z: 'https://podcasts.apple.com/us/podcast/catholic-kids-trivia-podcast/id1662532400', J: 'Catholic Kids Trivia Podcast'};
-var $author$project$Resources$Podcasts$Main$catholicSprouts = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/11_HUKazDTNih.png?updatedAt=1679069711765', Z: 'https://podcasts.apple.com/ca/podcast/catholic-sprouts-daily-podcast-for-catholic-kids/id1406174660', J: 'Catholic Sprouts'};
-var $author$project$Resources$Podcasts$Main$onTheNightTrain = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/On_The_Night_Train_Uy2SqRG8B.png?updatedAt=1679069840295', Z: 'https://podcasts.apple.com/us/podcast/on-the-night-train/id1638922447', J: 'On The Night Train'};
-var $author$project$Resources$Podcasts$Main$saintStoriesForKids = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/10_W0OwjM8Yu.png?updatedAt=1679069711783', Z: 'https://podcasts.apple.com/ca/podcast/saint-stories-for-kids/id1448514363', J: 'Saint Stories for Kids'};
-var $author$project$Resources$Podcasts$Main$saintsAlive = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/14_Aps0ku8wH.png?updatedAt=1679069710842', Z: 'https://podcasts.apple.com/us/podcast/saints-alive-podcast/id1598392451', J: 'Saints Alive'};
-var $author$project$Resources$Podcasts$Main$thatsTheWord = {X: 'https://ik.imagekit.io/catholicstories/ProfileImages/12_NwOXTTpkTi.png?updatedAt=1679069710890', Z: 'https://podcasts.apple.com/us/podcast/thats-the-word-with-fr-james-yamauchi/id1540449749', J: 'That\'s the word'};
+var $author$project$Resources$Podcasts$Main$catholicKidsPodcast = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_Mz1VR_PBx.png?updatedAt=1679071655063', K: 'https://podcasts.apple.com/us/podcast/catholic-kids-podcast/id1557527100', H: 'Catholic Kids Podcast'};
+var $author$project$Resources$Podcasts$Main$catholicKidsTriviaPodcast = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicKidsTriviaPodcast_rFHEiGK88.png?updatedAt=1679071809107', K: 'https://podcasts.apple.com/us/podcast/catholic-kids-trivia-podcast/id1662532400', H: 'Catholic Kids Trivia Podcast'};
+var $author$project$Resources$Podcasts$Main$catholicSprouts = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/11_HUKazDTNih.png?updatedAt=1679069711765', K: 'https://podcasts.apple.com/ca/podcast/catholic-sprouts-daily-podcast-for-catholic-kids/id1406174660', H: 'Catholic Sprouts'};
+var $author$project$Resources$Podcasts$Main$onTheNightTrain = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/On_The_Night_Train_Uy2SqRG8B.png?updatedAt=1679069840295', K: 'https://podcasts.apple.com/us/podcast/on-the-night-train/id1638922447', H: 'On The Night Train'};
+var $author$project$Resources$Podcasts$Main$saintStoriesForKids = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/10_W0OwjM8Yu.png?updatedAt=1679069711783', K: 'https://podcasts.apple.com/ca/podcast/saint-stories-for-kids/id1448514363', H: 'Saint Stories for Kids'};
+var $author$project$Resources$Podcasts$Main$saintsAlive = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/14_Aps0ku8wH.png?updatedAt=1679069710842', K: 'https://podcasts.apple.com/us/podcast/saints-alive-podcast/id1598392451', H: 'Saints Alive'};
+var $author$project$Resources$Podcasts$Main$thatsTheWord = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/12_NwOXTTpkTi.png?updatedAt=1679069710890', K: 'https://podcasts.apple.com/us/podcast/thats-the-word-with-fr-james-yamauchi/id1540449749', H: 'That\'s the word'};
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$Types$Attribute = F2(
 	function (a, b) {
@@ -5847,8 +5847,8 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 			[
 				$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7'),
 				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resource.J),
-				$zwilias$elm_html_string$Html$String$Attributes$href(resource.Z)
+				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resource.H),
+				$zwilias$elm_html_string$Html$String$Attributes$href(resource.K)
 			]),
 		_List_fromArray(
 			[
@@ -5861,7 +5861,7 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 						$zwilias$elm_html_string$Html$String$img,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$Attributes$src(resource.X),
+								$zwilias$elm_html_string$Html$String$Attributes$src(resource.J),
 								$zwilias$elm_html_string$Html$String$Attributes$class('w-20 h-20 object-cover')
 							]),
 						_List_Nil)
@@ -5876,7 +5876,7 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 						_List_Nil,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$text(resource.J)
+								$zwilias$elm_html_string$Html$String$text(resource.H)
 							]))
 					]))
 			]));
@@ -6226,13 +6226,13 @@ var $author$project$Resources$Podcasts$Main$view = A2(
 		]));
 var $author$project$Resources$Podcasts$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aG: {},
-		aT: function (_v0) {
+		aH: {},
+		aU: function (_v0) {
 			return function (model) {
 				return model;
 			};
 		},
-		aV: function (_v1) {
+		aW: function (_v1) {
 			return $zwilias$elm_html_string$Html$String$toHtml(
 				$zwilias$elm_html_string$Html$String$text(
 					A2($zwilias$elm_html_string$Html$String$toString, 0, $author$project$Resources$Podcasts$Main$view)));

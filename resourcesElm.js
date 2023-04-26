@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.O.D === region.T.D)
+	if (region.P.C === region.U.C)
 	{
-		return 'on line ' + region.O.D;
+		return 'on line ' + region.P.C;
 	}
-	return 'on lines ' + region.O.D + ' through ' + region.T.D;
+	return 'on lines ' + region.P.C + ' through ' + region.U.C;
 }
 
 
@@ -2705,8 +2705,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		r: func(record.r),
-		P: record.P,
-		M: record.M
+		Q: record.Q,
+		N: record.N
 	}
 });
 
@@ -2975,10 +2975,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.P;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.Q;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.M) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.N) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3968,7 +3968,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 		impl.aU,
 		impl.aR,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.N && impl.N(sendToApp)
+			var divertHrefToApp = impl.O && impl.O(sendToApp)
 			var view = impl.aW;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
@@ -3977,7 +3977,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.az);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.ay);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
@@ -4043,7 +4043,7 @@ function _Browser_application(impl)
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		N: function(sendToApp)
+		O: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4059,9 +4059,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ah === next.ah
-							&& curr.X === next.X
-							&& curr.ae.a === next.ae.a
+							&& curr.ag === next.ag
+							&& curr.Y === next.Y
+							&& curr.ad.a === next.ad.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aF: 'hidden', aA: 'visibilitychange' }
+		? { aF: 'hidden', az: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aF: 'mozHidden', aA: 'mozvisibilitychange' }
+		? { aF: 'mozHidden', az: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aF: 'msHidden', aA: 'msvisibilitychange' }
+		? { aF: 'msHidden', az: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aF: 'webkitHidden', aA: 'webkitvisibilitychange' }
-		: { aF: 'hidden', aA: 'visibilitychange' };
+		? { aF: 'webkitHidden', az: 'webkitvisibilitychange' }
+		: { aF: 'hidden', az: 'visibilitychange' };
 }
 
 
@@ -4232,12 +4232,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		an: _Browser_getScene(),
-		as: {
-			au: _Browser_window.pageXOffset,
-			av: _Browser_window.pageYOffset,
-			at: _Browser_doc.documentElement.clientWidth,
-			W: _Browser_doc.documentElement.clientHeight
+		am: _Browser_getScene(),
+		ar: {
+			at: _Browser_window.pageXOffset,
+			au: _Browser_window.pageYOffset,
+			as: _Browser_doc.documentElement.clientWidth,
+			X: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4247,8 +4247,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		at: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		W: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		as: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		X: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4271,15 +4271,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			an: {
-				at: node.scrollWidth,
-				W: node.scrollHeight
+			am: {
+				as: node.scrollWidth,
+				X: node.scrollHeight
 			},
-			as: {
-				au: node.scrollLeft,
-				av: node.scrollTop,
-				at: node.clientWidth,
-				W: node.clientHeight
+			ar: {
+				at: node.scrollLeft,
+				au: node.scrollTop,
+				as: node.clientWidth,
+				X: node.clientHeight
 			}
 		};
 	});
@@ -4309,18 +4309,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			an: _Browser_getScene(),
-			as: {
-				au: x,
-				av: y,
-				at: _Browser_doc.documentElement.clientWidth,
-				W: _Browser_doc.documentElement.clientHeight
+			am: _Browser_getScene(),
+			ar: {
+				at: x,
+				au: y,
+				as: _Browser_doc.documentElement.clientWidth,
+				X: _Browser_doc.documentElement.clientHeight
 			},
 			aC: {
-				au: x + rect.left,
-				av: y + rect.top,
-				at: rect.width,
-				W: rect.height
+				at: x + rect.left,
+				au: y + rect.top,
+				as: rect.width,
+				X: rect.height
 			}
 		};
 	});
@@ -4896,7 +4896,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {V: fragment, X: host, ac: path, ae: port_, ah: protocol, ai: query};
+		return {W: fragment, Y: host, ab: path, ad: port_, ag: protocol, ah: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5818,10 +5818,10 @@ var $author$project$Resources$Main$viewAboutResources = A2(
 					$zwilias$elm_html_string$Html$String$text('Find links to podcasts, videos, books and more. There are a lot of resources out there for Catholic parents and we are here to help you find them.')
 				]))
 		]));
-var $author$project$Resources$Main$books = {y: 'Find books here. It\'s hard to go wrong with a good Catholic book.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106', _: 'books', K: 'Books'};
-var $author$project$Resources$Main$podcasts = {y: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335', _: 'podcasts', K: 'Podcasts'};
-var $author$project$Resources$Main$subscriptions = {y: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068', _: 'subscriptions', K: 'Subscriptions'};
-var $author$project$Resources$Main$videos = {y: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', Y: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272', _: 'videos', K: 'Youtube Channels'};
+var $author$project$Resources$Main$books = {aA: 'Find books here. It\'s hard to go wrong with a good Catholic book.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106', K: 'books', H: 'Books'};
+var $author$project$Resources$Main$podcasts = {aA: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335', K: 'podcasts', H: 'Podcasts'};
+var $author$project$Resources$Main$subscriptions = {aA: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068', K: 'subscriptions', H: 'Subscriptions'};
+var $author$project$Resources$Main$videos = {aA: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272', K: 'videos', H: 'Youtube Channels'};
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$Types$Attribute = F2(
 	function (a, b) {
@@ -5847,8 +5847,8 @@ var $author$project$Resources$Main$viewResourceGroup = function (resourceGroup) 
 		_List_fromArray(
 			[
 				$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7'),
-				$zwilias$elm_html_string$Html$String$Attributes$href('/resources/' + resourceGroup._),
-				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resourceGroup.K)
+				$zwilias$elm_html_string$Html$String$Attributes$href('/resources/' + resourceGroup.K),
+				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resourceGroup.H)
 			]),
 		_List_fromArray(
 			[
@@ -5861,7 +5861,7 @@ var $author$project$Resources$Main$viewResourceGroup = function (resourceGroup) 
 						$zwilias$elm_html_string$Html$String$img,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$Attributes$src(resourceGroup.Y),
+								$zwilias$elm_html_string$Html$String$Attributes$src(resourceGroup.J),
 								$zwilias$elm_html_string$Html$String$Attributes$class('w-20 h-20 object-cover')
 							]),
 						_List_Nil)
@@ -5876,14 +5876,14 @@ var $author$project$Resources$Main$viewResourceGroup = function (resourceGroup) 
 						_List_Nil,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$text(resourceGroup.K)
+								$zwilias$elm_html_string$Html$String$text(resourceGroup.H)
 							])),
 						A2(
 						$zwilias$elm_html_string$Html$String$p,
 						_List_Nil,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$text(resourceGroup.y)
+								$zwilias$elm_html_string$Html$String$text(resourceGroup.aA)
 							]))
 					]))
 			]));

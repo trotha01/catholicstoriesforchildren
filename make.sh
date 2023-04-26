@@ -58,4 +58,10 @@ elm make --optimize \
   && elm make --optimize \
   src/Resources/Subscriptions/Main.elm \
   --output resourcesSubscriptionsElm.js \
+  && elm make --optimize \
+  src/Saints/Main.elm \
+  --output saintsElm.js \
+  && elm make --optimize \
+  src/Prayers/Main.elm \
+  --output prayersElm.js \
   && node build.js

@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.M.C === region.R.C)
+	if (region.Q.C === region.V.C)
 	{
-		return 'on line ' + region.M.C;
+		return 'on line ' + region.Q.C;
 	}
-	return 'on lines ' + region.M.C + ' through ' + region.R.C;
+	return 'on lines ' + region.Q.C + ' through ' + region.V.C;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aF,
-		impl.aX,
-		impl.aU,
+		impl.aH,
+		impl.aY,
+		impl.aV,
 		function() { return function() {} }
 	);
 });
@@ -2705,8 +2705,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		r: func(record.r),
-		N: record.N,
-		K: record.K
+		R: record.R,
+		O: record.O
 	}
 });
 
@@ -2975,10 +2975,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.N;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.R;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.K) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.O) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aF,
-		impl.aX,
-		impl.aU,
+		impl.aH,
+		impl.aY,
+		impl.aV,
 		function(sendToApp, initialModel) {
-			var view = impl.aY;
+			var view = impl.aZ;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aF,
-		impl.aX,
-		impl.aU,
+		impl.aH,
+		impl.aY,
+		impl.aV,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.L && impl.L(sendToApp)
-			var view = impl.aY;
+			var divertHrefToApp = impl.P && impl.P(sendToApp)
+			var view = impl.aZ;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3977,12 +3977,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.av);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.az);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aW) && (_VirtualDom_doc.title = title = doc.aW);
+				(title !== doc.aX) && (_VirtualDom_doc.title = title = doc.aX);
 			});
 		}
 	);
@@ -4038,12 +4038,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aK;
-	var onUrlRequest = impl.aL;
+	var onUrlChange = impl.aL;
+	var onUrlRequest = impl.aM;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		L: function(sendToApp)
+		P: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4059,9 +4059,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ac === next.ac
-							&& curr.V === next.V
-							&& curr._.a === next._.a
+							&& curr.ag === next.ag
+							&& curr.Z === next.Z
+							&& curr.ad.a === next.ad.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aF: function(flags)
+		aH: function(flags)
 		{
-			return A3(impl.aF, flags, _Browser_getUrl(), key);
+			return A3(impl.aH, flags, _Browser_getUrl(), key);
 		},
+		aZ: impl.aZ,
 		aY: impl.aY,
-		aX: impl.aX,
-		aU: impl.aU
+		aV: impl.aV
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aC: 'hidden', aw: 'visibilitychange' }
+		? { aF: 'hidden', aA: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aC: 'mozHidden', aw: 'mozvisibilitychange' }
+		? { aF: 'mozHidden', aA: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aC: 'msHidden', aw: 'msvisibilitychange' }
+		? { aF: 'msHidden', aA: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aC: 'webkitHidden', aw: 'webkitvisibilitychange' }
-		: { aC: 'hidden', aw: 'visibilitychange' };
+		? { aF: 'webkitHidden', aA: 'webkitvisibilitychange' }
+		: { aF: 'hidden', aA: 'visibilitychange' };
 }
 
 
@@ -4232,12 +4232,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		ai: _Browser_getScene(),
-		ao: {
-			aq: _Browser_window.pageXOffset,
-			ar: _Browser_window.pageYOffset,
-			ap: _Browser_doc.documentElement.clientWidth,
-			U: _Browser_doc.documentElement.clientHeight
+		am: _Browser_getScene(),
+		as: {
+			au: _Browser_window.pageXOffset,
+			av: _Browser_window.pageYOffset,
+			at: _Browser_doc.documentElement.clientWidth,
+			Y: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4247,8 +4247,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		ap: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		U: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		at: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		Y: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4271,15 +4271,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			ai: {
-				ap: node.scrollWidth,
-				U: node.scrollHeight
+			am: {
+				at: node.scrollWidth,
+				Y: node.scrollHeight
 			},
-			ao: {
-				aq: node.scrollLeft,
-				ar: node.scrollTop,
-				ap: node.clientWidth,
-				U: node.clientHeight
+			as: {
+				au: node.scrollLeft,
+				av: node.scrollTop,
+				at: node.clientWidth,
+				Y: node.clientHeight
 			}
 		};
 	});
@@ -4309,18 +4309,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			ai: _Browser_getScene(),
-			ao: {
-				aq: x,
-				ar: y,
-				ap: _Browser_doc.documentElement.clientWidth,
-				U: _Browser_doc.documentElement.clientHeight
+			am: _Browser_getScene(),
+			as: {
+				au: x,
+				av: y,
+				at: _Browser_doc.documentElement.clientWidth,
+				Y: _Browser_doc.documentElement.clientHeight
 			},
-			az: {
-				aq: x + rect.left,
-				ar: y + rect.top,
-				ap: rect.width,
-				U: rect.height
+			aC: {
+				au: x + rect.left,
+				av: y + rect.top,
+				at: rect.width,
+				Y: rect.height
 			}
 		};
 	});
@@ -4865,7 +4865,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {T: fragment, V: host, Y: path, _: port_, ac: protocol, ad: query};
+		return {X: fragment, Z: host, ab: path, ad: port_, ag: protocol, ah: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5146,7 +5146,7 @@ var $elm$core$Task$perform = F2(
 var $elm$browser$Browser$application = _Browser_application;
 var $author$project$Main$Model = F2(
 	function (key, url) {
-		return {aH: key, an: url};
+		return {aJ: key, ar: url};
 	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
@@ -5184,7 +5184,7 @@ var $elm$url$Url$addPrefixed = F3(
 	});
 var $elm$url$Url$toString = function (url) {
 	var http = function () {
-		var _v0 = url.ac;
+		var _v0 = url.ag;
 		if (!_v0) {
 			return 'http://';
 		} else {
@@ -5194,17 +5194,17 @@ var $elm$url$Url$toString = function (url) {
 	return A3(
 		$elm$url$Url$addPrefixed,
 		'#',
-		url.T,
+		url.X,
 		A3(
 			$elm$url$Url$addPrefixed,
 			'?',
-			url.ad,
+			url.ah,
 			_Utils_ap(
 				A2(
 					$elm$url$Url$addPort,
-					url._,
-					_Utils_ap(http, url.V)),
-				url.Y)));
+					url.ad,
+					_Utils_ap(http, url.Z)),
+				url.ab)));
 };
 var $author$project$Main$update = F2(
 	function (msg, model) {
@@ -5228,7 +5228,7 @@ var $author$project$Main$update = F2(
 			return _Utils_Tuple2(
 				_Utils_update(
 					model,
-					{an: url}),
+					{ar: url}),
 				$elm$core$Platform$Cmd$none);
 		}
 	});
@@ -6163,18 +6163,106 @@ var $author$project$Main$viewNewsletter = A3(
 						]))
 				]))
 		]));
+var $author$project$Main$more = {I: 'Find more resources here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/5_siQ_tckr-C.png?updatedAt=1682454350018', K: 'resources', D: 'More Resources'};
+var $author$project$Main$prayers = {I: 'Find prayers here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004', K: 'prayers', D: 'Prayers'};
+var $author$project$Main$saints = {I: 'Find saints here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/7_nqDiNpO9Q.png?updatedAt=1682454350040', K: 'saints', D: 'Saints'};
+var $author$project$Main$viewResourceGroup = function (resourceGroup) {
+	return A2(
+		$elm$html$Html$a,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7'),
+				$elm$html$Html$Attributes$href('/' + resourceGroup.K),
+				A2($elm$html$Html$Attributes$attribute, 'aria-label', resourceGroup.D)
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$img,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$src(resourceGroup.J),
+								$elm$html$Html$Attributes$class('w-20 h-20 object-cover')
+							]),
+						_List_Nil)
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$h2,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text(resourceGroup.D)
+							])),
+						A2(
+						$elm$html$Html$p,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text(resourceGroup.I)
+							]))
+					]))
+			]));
+};
+var $author$project$Main$viewResourceGroups = A2(
+	$elm$html$Html$div,
+	_List_Nil,
+	A2(
+		$elm$core$List$map,
+		$author$project$Main$viewResourceGroup,
+		_List_fromArray(
+			[$author$project$Main$saints, $author$project$Main$prayers, $author$project$Main$more])));
+var $author$project$Main$viewResources = A3(
+	$author$project$Main$viewSection,
+	'resources',
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'min-height', '100vh'),
+			A2($elm$html$Html$Attributes$style, 'position', 'relative'),
+			A2($elm$html$Html$Attributes$style, 'background-position', 'top'),
+			A2($elm$html$Html$Attributes$style, 'font-weight', '400'),
+			A2($elm$html$Html$Attributes$style, 'line-height', '1.7'),
+			A2($elm$html$Html$Attributes$style, 'background', '#FEF7F4'),
+			$elm$html$Html$Attributes$class('py-20 md:py-40')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$h2,
+					$author$project$Main$subHeaderStyle,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Resources')
+						])),
+					$author$project$Main$viewResourceGroups
+				]))
+		]));
 var $author$project$Helpers$Facebook = 5;
 var $author$project$Helpers$Instagram = 1;
 var $author$project$Helpers$Pinterest = 8;
 var $author$project$Helpers$Website = 0;
 var $author$project$Team$Team$imagePath = '/assets/Team/';
 var $author$project$Team$Team$kelly = {
-	ax: 'Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada.',
-	aD: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg',
-	aG: 'KB',
-	aJ: 'Kelly Briggs',
-	aN: 'Social Media Specialist',
-	aR: _List_fromArray(
+	I: 'Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada.',
+	J: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg',
+	aI: 'KB',
+	D: 'Kelly Briggs',
+	aO: 'Social Media Specialist',
+	aS: _List_fromArray(
 		[
 			_Utils_Tuple2(1, 'https://www.instagram.com/simplehomemom/'),
 			_Utils_Tuple2(5, 'https://www.facebook.com/simplehomemom'),
@@ -6182,8 +6270,8 @@ var $author$project$Team$Team$kelly = {
 			_Utils_Tuple2(0, 'https://www.simplehomemom.com/')
 		])
 };
-var $author$project$Team$Team$noeli = {ax: 'Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer.', aD: $author$project$Team$Team$imagePath + 'NoeliAcoba.PNG', aG: '', aJ: 'Noeli Acoba', aN: 'CFO', aR: _List_Nil};
-var $author$project$Team$Team$trevor = {ax: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), aD: $author$project$Team$Team$imagePath + 'TrevorRothaus.jpeg', aG: '', aJ: 'Trevor Rothaus', aN: 'CEO', aR: _List_Nil};
+var $author$project$Team$Team$noeli = {I: 'Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer.', J: $author$project$Team$Team$imagePath + 'NoeliAcoba.PNG', aI: '', D: 'Noeli Acoba', aO: 'CFO', aS: _List_Nil};
+var $author$project$Team$Team$trevor = {I: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), J: $author$project$Team$Team$imagePath + 'TrevorRothaus.jpeg', aI: '', D: 'Trevor Rothaus', aO: 'CEO', aS: _List_Nil};
 var $author$project$Team$Main$viewDescription = function (description) {
 	return A2(
 		$zwilias$elm_html_string$Html$String$div,
@@ -6447,7 +6535,7 @@ var $author$project$Team$Main$viewSocials = function (person) {
 		A2(
 			$elm$core$List$map,
 			$author$project$Helpers$viewSocial,
-			A2($elm$core$List$sortWith, $author$project$Team$Main$socialSort, person.aR)));
+			A2($elm$core$List$sortWith, $author$project$Team$Main$socialSort, person.aS)));
 };
 var $author$project$Team$Main$viewPerson = function (person) {
 	return A2(
@@ -6464,15 +6552,15 @@ var $author$project$Team$Main$viewPerson = function (person) {
 			]),
 		_List_fromArray(
 			[
-				A2($author$project$Team$Main$viewImage, person.aD, person.aG),
+				A2($author$project$Team$Main$viewImage, person.J, person.aI),
 				A2(
 				$zwilias$elm_html_string$Html$String$div,
 				_List_Nil,
 				_List_fromArray(
 					[
-						$author$project$Team$Main$viewName(person.aJ),
-						$author$project$Team$Main$viewPosition(person.aN),
-						$author$project$Team$Main$viewDescription(person.ax),
+						$author$project$Team$Main$viewName(person.D),
+						$author$project$Team$Main$viewPosition(person.aO),
+						$author$project$Team$Main$viewDescription(person.I),
 						$author$project$Team$Main$viewSocials(person)
 					]))
 			]));
@@ -6529,10 +6617,10 @@ var $author$project$Main$viewTeam = A3(
 					$elm$html$Html$text('Meet the Team')
 				]))
 		]));
-var $author$project$Team$Testimonials$ainsleyRawlingsTestimonial = {ax: 'My kids love the guardian angel song and video! The song is beautiful and easy for my littles to remember and sing along with. ❤️ Thank you!', aD: 'https://ik.imagekit.io/catholicstories/ProfileImages/ainsleyrawlings_hyB-0rd23.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325098991', aG: 'AR', aJ: 'Ainsley Rawlings', aN: 'Mother and Teacher', aR: _List_Nil};
-var $author$project$Team$Testimonials$camSmithTestimonial = {ax: 'I love how there is a story, animation, and even music to learning the prayers. We know that children often, if not always, learn first through their experience and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily! I will be showing these prayers to my infant child when he is older. 🙂', aD: 'https://ik.imagekit.io/catholicstories/ProfileImages/CamNguyen_ze-IRFU1d.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325311225', aG: 'CS', aJ: 'Cam Smith', aN: 'Mother and Social Worker', aR: _List_Nil};
-var $author$project$Team$Testimonials$kellyBriggsTestimonial = {ax: 'My three year old requests the Hail Mary animation often  it makes me so happy. I love it. Almost every time during our morning prayer time she asks.', aD: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg', aG: 'KB', aJ: 'Kelly Briggs', aN: 'Social Media Specialist', aR: _List_Nil};
-var $author$project$Team$Testimonials$meganReisterTestimonial = {ax: 'How fabulous!!! So looking forward to sharing this far and wide!!!', aD: 'https://spp.franciscan.edu/wp-content/uploads/sites/4/2019/02/Reister.jpg', aG: 'MR', aJ: 'Dr. Megan Reister', aN: 'Associate Professor of Special Education and Early Childhood', aR: _List_Nil};
+var $author$project$Team$Testimonials$ainsleyRawlingsTestimonial = {I: 'My kids love the guardian angel song and video! The song is beautiful and easy for my littles to remember and sing along with. ❤️ Thank you!', J: 'https://ik.imagekit.io/catholicstories/ProfileImages/ainsleyrawlings_hyB-0rd23.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325098991', aI: 'AR', D: 'Ainsley Rawlings', aO: 'Mother and Teacher', aS: _List_Nil};
+var $author$project$Team$Testimonials$camSmithTestimonial = {I: 'I love how there is a story, animation, and even music to learning the prayers. We know that children often, if not always, learn first through their experience and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily! I will be showing these prayers to my infant child when he is older. 🙂', J: 'https://ik.imagekit.io/catholicstories/ProfileImages/CamNguyen_ze-IRFU1d.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325311225', aI: 'CS', D: 'Cam Smith', aO: 'Mother and Social Worker', aS: _List_Nil};
+var $author$project$Team$Testimonials$kellyBriggsTestimonial = {I: 'My three year old requests the Hail Mary animation often  it makes me so happy. I love it. Almost every time during our morning prayer time she asks.', J: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg', aI: 'KB', D: 'Kelly Briggs', aO: 'Social Media Specialist', aS: _List_Nil};
+var $author$project$Team$Testimonials$meganReisterTestimonial = {I: 'How fabulous!!! So looking forward to sharing this far and wide!!!', J: 'https://spp.franciscan.edu/wp-content/uploads/sites/4/2019/02/Reister.jpg', aI: 'MR', D: 'Dr. Megan Reister', aO: 'Associate Professor of Special Education and Early Childhood', aS: _List_Nil};
 var $author$project$Main$viewTestimonials = A3(
 	$author$project$Main$viewSection,
 	'testimonials',
@@ -6611,7 +6699,7 @@ var $author$project$Main$viewBody = A2(
 			$elm$html$Html$Attributes$class('lg:text-2xl')
 		]),
 	_List_fromArray(
-		[$author$project$Main$viewIntro, $author$project$Main$viewTestimonials, $author$project$Main$viewAnimations, $author$project$Main$viewTeam, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive]));
+		[$author$project$Main$viewIntro, $author$project$Main$viewTestimonials, $author$project$Main$viewAnimations, $author$project$Main$viewTeam, $author$project$Main$viewContact, $author$project$Main$viewNewsletter, $author$project$Main$viewGive, $author$project$Main$viewResources]));
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
@@ -6825,7 +6913,7 @@ var $author$project$Header$viewHeader = F2(
 	});
 var $author$project$Main$view = function (model) {
 	return {
-		av: _List_fromArray(
+		az: _List_fromArray(
 			[
 				A2(
 				$elm$html$Html$div,
@@ -6841,10 +6929,10 @@ var $author$project$Main$view = function (model) {
 						$zwilias$elm_html_string$Html$String$toHtml($author$project$Footer$viewFooter)
 					]))
 			]),
-		aW: 'Catholic Stories for Children'
+		aX: 'Catholic Stories for Children'
 	};
 };
 var $author$project$Main$main = $elm$browser$Browser$application(
-	{aF: $author$project$Main$init, aK: $author$project$Main$UrlChanged, aL: $author$project$Main$LinkClicked, aU: $author$project$Main$subscriptions, aX: $author$project$Main$update, aY: $author$project$Main$view});
+	{aH: $author$project$Main$init, aL: $author$project$Main$UrlChanged, aM: $author$project$Main$LinkClicked, aV: $author$project$Main$subscriptions, aY: $author$project$Main$update, aZ: $author$project$Main$view});
 _Platform_export({'Main':{'init':$author$project$Main$main(
 	$elm$json$Json$Decode$succeed(0))(0)}});}(this));

@@ -12,6 +12,8 @@ var ResourcesBooksElm = require('./resourcesBooksElm.js')
 var ResourcesPodcastsElm = require('./resourcesPodcastsElm.js')
 var ResourcesVideosElm = require('./resourcesVideosElm.js')
 var ResourcesSubscriptionsElm = require('./resourcesSubscriptionsElm.js')
+var SaintsElm = require('./saintsElm.js')
+var PrayersElm = require('./prayersElm.js')
 
 var htmlPart1 = `<!doctype html>
 <html lang="en">
@@ -179,3 +181,5 @@ var resourcesPodcastsApp = ResourcesPodcastsElm.Elm.Resources.Podcasts.Main.init
 var resourcesBooksApp = ResourcesBooksElm.Elm.Resources.Books.Main.init({ node: fakeNode('./resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith') })
 var resourcesVideosApp = ResourcesVideosElm.Elm.Resources.Videos.Main.init({ node: fakeNode('./resources/videos/index.html', 'Video Resources - Catholic Stories for Children', 'Videos to guide kids in learning the Catholic faith') })
 var resourcesSubscriptionsApp = ResourcesSubscriptionsElm.Elm.Resources.Subscriptions.Main.init({ node: fakeNode('./resources/subscriptions/index.html', 'Subscription Resources - Catholic Stories for Children', 'Subscriptions to guide kids in learning the Catholic faith') })
+var saintsElmApp = SaintsElm.Elm.Saints.Main.init({ node: fakeNode('./saints/index.html', 'Saints - Catholic Stories for Children', 'A list of Catholic saints') })
+var prayersElmApp = PrayersElm.Elm.Prayers.Main.init({ node: fakeNode('./prayers/index.html', 'Prayers - Catholic Stories for Children', 'A list of Catholic prayers') })

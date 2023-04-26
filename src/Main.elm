@@ -10,6 +10,7 @@ import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
+import Resources.Helpers exposing (ResourceGroup)
 import Svg.Attributes exposing (d)
 import Team.Main exposing (viewPerson)
 import Team.Team exposing (fredrick, kelly, noeli, trevor)
@@ -127,6 +128,7 @@ viewBody =
         , viewContact
         , viewNewsletter
         , viewGive
+        , viewResources
         ]
 
 
@@ -561,6 +563,76 @@ viewGive =
             --     ]
             ]
         ]
+
+
+viewResources : Html msg
+viewResources =
+    viewSection "resources"
+        [ style "min-height" "100vh"
+        , style "position" "relative"
+        , style "background-position" "top"
+        , style "font-weight" "400"
+        , style "line-height" "1.7"
+        , style "background" "#FEF7F4"
+        , class "py-20 md:py-40"
+        ]
+        [ div
+            []
+            [ h2 subHeaderStyle
+                [ text "Resources" ]
+            , viewResourceGroups
+            ]
+        ]
+
+
+viewResourceGroups : Html msg
+viewResourceGroups =
+    div []
+        (List.map viewResourceGroup [ saints, prayers, more ])
+
+
+viewResourceGroup : ResourceGroup -> Html msg
+viewResourceGroup resourceGroup =
+    a
+        [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7"
+        , href ("/" ++ resourceGroup.link)
+        , attribute "aria-label" resourceGroup.name
+        ]
+        [ div []
+            [ img [ src resourceGroup.image, class "w-20 h-20 object-cover" ] []
+            ]
+        , div []
+            [ h2 [] [ text resourceGroup.name ]
+            , p [] [ text resourceGroup.description ]
+            ]
+        ]
+
+
+saints : ResourceGroup
+saints =
+    { name = "Saints"
+    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/7_nqDiNpO9Q.png?updatedAt=1682454350040"
+    , description = "Find saints here."
+    , link = "saints"
+    }
+
+
+prayers : ResourceGroup
+prayers =
+    { name = "Prayers"
+    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004"
+    , description = "Find prayers here."
+    , link = "prayers"
+    }
+
+
+more : ResourceGroup
+more =
+    { name = "More Resources"
+    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/5_siQ_tckr-C.png?updatedAt=1682454350018"
+    , description = "Find more resources here."
+    , link = "resources"
+    }
 
 
 viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Html msg
