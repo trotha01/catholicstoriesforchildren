@@ -6164,8 +6164,8 @@ var $author$project$Main$viewNewsletter = A3(
 				]))
 		]));
 var $author$project$Main$more = {I: 'Find more resources here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/5_siQ_tckr-C.png?updatedAt=1682454350018', K: 'resources', D: 'More Resources'};
-var $author$project$Main$prayers = {I: 'Find prayers here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004', K: 'prayers', D: 'Prayers'};
-var $author$project$Main$saints = {I: 'Find saints here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/7_nqDiNpO9Q.png?updatedAt=1682454350040', K: 'saints', D: 'Saints'};
+var $author$project$Main$prayers = {I: 'Find common Catholic prayers here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004', K: 'prayers', D: 'Prayers'};
+var $author$project$Main$saints = {I: 'Find a list of saints here.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/7_nqDiNpO9Q.png?updatedAt=1682454350040', K: 'saints', D: 'Saints'};
 var $author$project$Main$viewResourceGroup = function (resourceGroup) {
 	return A2(
 		$elm$html$Html$a,

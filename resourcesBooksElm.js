@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.P.C === region.U.C)
+	if (region.Q.F === region.W.F)
 	{
-		return 'on line ' + region.P.C;
+		return 'on line ' + region.Q.F;
 	}
-	return 'on lines ' + region.P.C + ' through ' + region.U.C;
+	return 'on lines ' + region.Q.F + ' through ' + region.W.F;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aH,
-		impl.aU,
-		impl.aR,
+		impl.aJ,
+		impl.aV,
+		impl.aT,
 		function() { return function() {} }
 	);
 });
@@ -2704,9 +2704,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		r: func(record.r),
-		Q: record.Q,
-		N: record.N
+		u: func(record.u),
+		R: record.R,
+		O: record.O
 	}
 });
 
@@ -2974,11 +2974,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.r;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.Q;
+		var message = !tag ? value : tag < 3 ? value.a : value.u;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.R;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.N) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.O) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aH,
-		impl.aU,
-		impl.aR,
+		impl.aJ,
+		impl.aV,
+		impl.aT,
 		function(sendToApp, initialModel) {
-			var view = impl.aW;
+			var view = impl.aX;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aH,
-		impl.aU,
-		impl.aR,
+		impl.aJ,
+		impl.aV,
+		impl.aT,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.O && impl.O(sendToApp)
-			var view = impl.aW;
+			var divertHrefToApp = impl.P && impl.P(sendToApp)
+			var view = impl.aX;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3977,12 +3977,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.ay);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.aA);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aT) && (_VirtualDom_doc.title = title = doc.aT);
+				(title !== doc.S) && (_VirtualDom_doc.title = title = doc.S);
 			});
 		}
 	);
@@ -4038,12 +4038,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aJ;
-	var onUrlRequest = impl.aK;
+	var onUrlChange = impl.aL;
+	var onUrlRequest = impl.aM;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		O: function(sendToApp)
+		P: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4059,9 +4059,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ag === next.ag
-							&& curr.Y === next.Y
-							&& curr.ad.a === next.ad.a
+							&& curr.ai === next.ai
+							&& curr._ === next._
+							&& curr.af.a === next.af.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aH: function(flags)
+		aJ: function(flags)
 		{
-			return A3(impl.aH, flags, _Browser_getUrl(), key);
+			return A3(impl.aJ, flags, _Browser_getUrl(), key);
 		},
-		aW: impl.aW,
-		aU: impl.aU,
-		aR: impl.aR
+		aX: impl.aX,
+		aV: impl.aV,
+		aT: impl.aT
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aF: 'hidden', az: 'visibilitychange' }
+		? { aH: 'hidden', aB: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aF: 'mozHidden', az: 'mozvisibilitychange' }
+		? { aH: 'mozHidden', aB: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aF: 'msHidden', az: 'msvisibilitychange' }
+		? { aH: 'msHidden', aB: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aF: 'webkitHidden', az: 'webkitvisibilitychange' }
-		: { aF: 'hidden', az: 'visibilitychange' };
+		? { aH: 'webkitHidden', aB: 'webkitvisibilitychange' }
+		: { aH: 'hidden', aB: 'visibilitychange' };
 }
 
 
@@ -4232,12 +4232,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		am: _Browser_getScene(),
-		ar: {
-			at: _Browser_window.pageXOffset,
-			au: _Browser_window.pageYOffset,
-			as: _Browser_doc.documentElement.clientWidth,
-			X: _Browser_doc.documentElement.clientHeight
+		ao: _Browser_getScene(),
+		at: {
+			av: _Browser_window.pageXOffset,
+			aw: _Browser_window.pageYOffset,
+			au: _Browser_doc.documentElement.clientWidth,
+			Z: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4247,8 +4247,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		as: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		X: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		au: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		Z: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4271,15 +4271,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			am: {
-				as: node.scrollWidth,
-				X: node.scrollHeight
+			ao: {
+				au: node.scrollWidth,
+				Z: node.scrollHeight
 			},
-			ar: {
-				at: node.scrollLeft,
-				au: node.scrollTop,
-				as: node.clientWidth,
-				X: node.clientHeight
+			at: {
+				av: node.scrollLeft,
+				aw: node.scrollTop,
+				au: node.clientWidth,
+				Z: node.clientHeight
 			}
 		};
 	});
@@ -4309,18 +4309,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			am: _Browser_getScene(),
-			ar: {
-				at: x,
-				au: y,
-				as: _Browser_doc.documentElement.clientWidth,
-				X: _Browser_doc.documentElement.clientHeight
+			ao: _Browser_getScene(),
+			at: {
+				av: x,
+				aw: y,
+				au: _Browser_doc.documentElement.clientWidth,
+				Z: _Browser_doc.documentElement.clientHeight
 			},
-			aC: {
-				at: x + rect.left,
-				au: y + rect.top,
-				as: rect.width,
-				X: rect.height
+			aE: {
+				av: x + rect.left,
+				aw: y + rect.top,
+				au: rect.width,
+				Z: rect.height
 			}
 		};
 	});
@@ -4798,25 +4798,25 @@ var $elm$core$Array$treeFromBuilder = F2(
 	});
 var $elm$core$Array$builderToArray = F2(
 	function (reverseNodeList, builder) {
-		if (!builder.a) {
+		if (!builder.d) {
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.c),
+				$elm$core$Elm$JsArray$length(builder.f),
 				$elm$core$Array$shiftStep,
 				$elm$core$Elm$JsArray$empty,
-				builder.c);
+				builder.f);
 		} else {
-			var treeLen = builder.a * $elm$core$Array$branchFactor;
+			var treeLen = builder.d * $elm$core$Array$branchFactor;
 			var depth = $elm$core$Basics$floor(
 				A2($elm$core$Basics$logBase, $elm$core$Array$branchFactor, treeLen - 1));
-			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.d) : builder.d;
-			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.a);
+			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.g) : builder.g;
+			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.d);
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.c) + treeLen,
+				$elm$core$Elm$JsArray$length(builder.f) + treeLen,
 				A2($elm$core$Basics$max, 5, depth * $elm$core$Array$shiftStep),
 				tree,
-				builder.c);
+				builder.f);
 		}
 	});
 var $elm$core$Basics$idiv = _Basics_idiv;
@@ -4829,7 +4829,7 @@ var $elm$core$Array$initializeHelp = F5(
 				return A2(
 					$elm$core$Array$builderToArray,
 					false,
-					{d: nodeList, a: (len / $elm$core$Array$branchFactor) | 0, c: tail});
+					{g: nodeList, d: (len / $elm$core$Array$branchFactor) | 0, f: tail});
 			} else {
 				var leaf = $elm$core$Array$Leaf(
 					A3($elm$core$Elm$JsArray$initialize, $elm$core$Array$branchFactor, fromIndex, fn));
@@ -4896,7 +4896,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {W: fragment, Y: host, ab: path, ad: port_, ag: protocol, ah: query};
+		return {Y: fragment, _: host, ad: path, af: port_, ai: protocol, aj: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5181,19 +5181,19 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aH: function (_v0) {
-				return _Utils_Tuple2(impl.aH, $elm$core$Platform$Cmd$none);
+			aJ: function (_v0) {
+				return _Utils_Tuple2(impl.aJ, $elm$core$Platform$Cmd$none);
 			},
-			aR: function (_v1) {
+			aT: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aU: F2(
+			aV: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aU, msg, model),
+						A2(impl.aV, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aW: impl.aW
+			aX: impl.aX
 		});
 };
 var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
@@ -5616,7 +5616,7 @@ var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
 		toStringHelper:
 		while (true) {
 			if (!tags.b) {
-				var _v1 = acc.n;
+				var _v1 = acc.q;
 				if (!_v1.b) {
 					return acc;
 				} else {
@@ -5629,15 +5629,15 @@ var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
 						$temp$acc = _Utils_update(
 						acc,
 						{
-							e: acc.e - 1,
-							g: A2(
+							h: acc.h - 1,
+							j: A2(
 								$elm$core$List$cons,
 								A2(
 									indenter,
-									acc.e - 1,
+									acc.h - 1,
 									$zwilias$elm_html_string$Html$Types$closingTag(tagName)),
-								acc.g),
-							n: rest
+								acc.j),
+							q: rest
 						});
 					indenter = $temp$indenter;
 					tags = $temp$tags;
@@ -5658,13 +5658,13 @@ var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
 								$temp$acc = _Utils_update(
 								acc,
 								{
-									g: A2(
+									j: A2(
 										$elm$core$List$cons,
 										A2(
 											indenter,
-											acc.e,
+											acc.h,
 											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.g)
+										acc.j)
 								});
 							indenter = $temp$indenter;
 							tags = $temp$tags;
@@ -5677,18 +5677,18 @@ var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
 								$temp$acc = _Utils_update(
 								acc,
 								{
-									e: acc.e + 1,
-									g: A2(
+									h: acc.h + 1,
+									j: A2(
 										$elm$core$List$cons,
 										A2(
 											indenter,
-											acc.e,
+											acc.h,
 											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.g),
-									n: A2(
+										acc.j),
+									q: A2(
 										$elm$core$List$cons,
 										_Utils_Tuple2(tagName, rest),
-										acc.n)
+										acc.q)
 								});
 							indenter = $temp$indenter;
 							tags = $temp$tags;
@@ -5701,18 +5701,18 @@ var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
 								$temp$acc = _Utils_update(
 								acc,
 								{
-									e: acc.e + 1,
-									g: A2(
+									h: acc.h + 1,
+									j: A2(
 										$elm$core$List$cons,
 										A2(
 											indenter,
-											acc.e,
+											acc.h,
 											A2($zwilias$elm_html_string$Html$Types$tag, tagName, attributes)),
-										acc.g),
-									n: A2(
+										acc.j),
+									q: A2(
 										$elm$core$List$cons,
 										_Utils_Tuple2(tagName, rest),
-										acc.n)
+										acc.q)
 								});
 							indenter = $temp$indenter;
 							tags = $temp$tags;
@@ -5727,13 +5727,13 @@ var $zwilias$elm_html_string$Html$Types$toStringHelper = F3(
 						$temp$acc = _Utils_update(
 						acc,
 						{
-							g: A2(
+							j: A2(
 								$elm$core$List$cons,
 								A2(
 									indenter,
-									acc.e,
+									acc.h,
 									$zwilias$elm_html_string$Html$Types$escapeHtmlText(string)),
-								acc.g)
+								acc.j)
 						});
 					indenter = $temp$indenter;
 					tags = $temp$tags;
@@ -5752,7 +5752,7 @@ var $zwilias$elm_html_string$Html$Types$toString = F2(
 				return '\n';
 			}
 		}();
-		var initialAcc = {e: 0, g: _List_Nil, n: _List_Nil};
+		var initialAcc = {h: 0, j: _List_Nil, q: _List_Nil};
 		var indenter = function () {
 			if (!depth) {
 				return $elm$core$Basics$always($elm$core$Basics$identity);
@@ -5768,7 +5768,7 @@ var $zwilias$elm_html_string$Html$Types$toString = F2(
 				indenter,
 				_List_fromArray(
 					[html]),
-				initialAcc).g);
+				initialAcc).j);
 	});
 var $zwilias$elm_html_string$Html$String$toString = function (indent) {
 	return $zwilias$elm_html_string$Html$Types$toString(indent);
@@ -5811,9 +5811,26 @@ var $author$project$Resources$Books$Main$viewAboutBooks = A2(
 		[
 			$zwilias$elm_html_string$Html$String$text('Find books here. It\'s hard to go wrong with a good Catholic book.')
 		]));
-var $author$project$Resources$Books$Main$catechismOfTheSevenSacraments = {I: 'https://ik.imagekit.io/catholicstories/Books/3_ibumLcYAy.png?updatedAt=1679069222330', J: 'https://www.amazon.com/Catechism-Seven-Sacraments-ONeill-Kevin/dp/0999508709/ref=sr_1_1?crid=2P68AEP6RA0O8&keywords=catechism+of+the+seven+sacraments&qid=1669329926&sprefix=catechism+of+the+seven+sacraments%2Caps%2C99&sr=8-1', L: 'Catechism of the Seven Sacraments by Mary O\'Neill Kevin O\'Neill'};
-var $author$project$Resources$Books$Main$saintsAroundTheWorld = {I: 'https://ik.imagekit.io/catholicstories/Books/2_YPCg6X-7F.png?updatedAt=1679069222320', J: 'https://saintsaroundtheworld.com', L: 'Saints Around the World by Meg Hunter-Kilmer'};
-var $author$project$Resources$Books$Main$thePursuitOfThePilferedCheese = {I: 'https://ik.imagekit.io/catholicstories/Books/1_EoJL0GWQs.png?updatedAt=1679069222311', J: 'https://www.amazon.com/Pursuit-Pilfered-Cheese-Haley-Stewart/dp/0819860514', L: 'The Pursuit of the Pilfered Cheese by Haley Stewart'};
+var $author$project$Resources$Books$Main$brotherFrancisBooks = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/16_V1sLznRg0.png?updatedAt=1679070333303', b: 'https://brotherfrancisstore.com/collections/books', c: 'Brother Francis Books'};
+var $author$project$Resources$Books$Main$cBPSaints = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/38_oB0pzZnMW8.png?updatedAt=1682716506417', b: 'https://catholicbookpublishing.com/browse/childrens-books-on-saints', c: 'Catholic Book Publishing\'s Children\'s Books on Saints'};
+var $author$project$Resources$Books$Main$catechismOfTheSevenSacraments = {a: 'https://ik.imagekit.io/catholicstories/Books/3_ibumLcYAy.png?updatedAt=1679069222330', b: 'https://www.amazon.com/Catechism-Seven-Sacraments-ONeill-Kevin/dp/0999508709/ref=sr_1_1?crid=2P68AEP6RA0O8&keywords=catechism+of+the+seven+sacraments&qid=1669329926&sprefix=catechism+of+the+seven+sacraments%2Caps%2C99&sr=8-1', c: 'Catechism of the Seven Sacraments by Mary O\'Neill Kevin O\'Neill'};
+var $author$project$Resources$Books$Main$catholicSprouts = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/26_2TkstMXTY.png?updatedAt=1682716507634', b: 'https://shop.catholicsprouts.com/collections/all', c: 'Catholic Sprouts Books and Materials'};
+var $author$project$Resources$Books$Main$diaryOfAGodMan = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/27_LJ8rjMXH6.png?updatedAt=1682716507484', b: 'https://www.diaryofagodman.com/books', c: 'Diary of a God-Man. A fully illustrated children\'s missal'};
+var $author$project$Resources$Books$Main$ewtnKidsBooks = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/30_SPGrEpxn4o.png?updatedAt=1682716506374', b: 'https://www.ewtnreligiouscatalogue.com/Catholic-Childrens-Books', c: 'EWTN Childrens Books'};
+var $author$project$Resources$Books$Main$firstFaithTreasury = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/33_v8d9TN1XkY.png?updatedAt=1682716506330', b: 'https://firstfaithtreasury.com/', c: 'First Faith Treasury'};
+var $author$project$Resources$Books$Main$holyHeroesBooks = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/25_OSP8-2xFJ.png?updatedAt=1682716507604', b: 'https://holyheroes.com/collections/catholic-childrens-books', c: 'Holy Heroes Books'};
+var $author$project$Resources$Books$Main$lightOfTheSaints = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/36_eINHZkemx9.png?updatedAt=1682716506020', b: 'https://bookstore.wordonfire.org/products/light-of-the-saints', c: 'Light of the Saints'};
+var $author$project$Resources$Books$Main$littleSaintStories = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/34_GtSZ5NI8_8.png?updatedAt=1682716506395', b: 'https://www.littlesaintstories.com/s/shop', c: 'Little Saint Stories'};
+var $author$project$Resources$Books$Main$loyolaPressBooks = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/23_UvXPxYgqml.png?updatedAt=1682716507758', b: 'https://www.loyolapress.com/', c: 'Loyola Press Books'};
+var $author$project$Resources$Books$Main$osvKidsBooks = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_DxY5MCRoK.png?updatedAt=1682716853025', b: 'https://osvkids.com/books/', c: 'OSV Kids Books'};
+var $author$project$Resources$Books$Main$paulineBooksAndMediaForKids = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/37_gMX8cczFD.png?updatedAt=1682716506298', b: 'https://paulinestore.com/kids-teens.html', c: 'Pauline Books and Media'};
+var $author$project$Resources$Books$Main$saintsAroundTheWorld = {a: 'https://ik.imagekit.io/catholicstories/Books/2_YPCg6X-7F.png?updatedAt=1679069222320', b: 'https://saintsaroundtheworld.com', c: 'Saints Around the World by Meg Hunter-Kilmer'};
+var $author$project$Resources$Books$Main$stPaulCenter = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/35_evg05JJAFh.png?updatedAt=1682716506043', b: 'https://stpaulcenter.com/product-category/children/', c: 'St Paul Center Children\'s Books'};
+var $author$project$Resources$Books$Main$tanBooks = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/32_22z_5JUPjM.png?updatedAt=1682716506412', b: 'https://tanbooks.com/catholic-kids-books/', c: 'Tan Books for Kids'};
+var $author$project$Resources$Books$Main$theLittleRoseShop = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/29_9r_mR-lb6.png?updatedAt=1682716506911', b: 'https://thelittleroseshop.com/collections/baby-kids', c: 'The Little Rose Shop Fabric Books'};
+var $author$project$Resources$Books$Main$thePursuitOfThePilferedCheese = {a: 'https://ik.imagekit.io/catholicstories/Books/1_EoJL0GWQs.png?updatedAt=1679069222311', b: 'https://www.amazon.com/Pursuit-Pilfered-Cheese-Haley-Stewart/dp/0819860514', c: 'The Pursuit of the Pilfered Cheese by Haley Stewart'};
+var $author$project$Resources$Books$Main$theotokosKids = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/28_INemNiAcr.png?updatedAt=1682716507584', b: 'https://theotokoskids.com/collections/books', c: 'Theotokos Kids Books'};
+var $author$project$Resources$Books$Main$thyOliveTree = {a: 'https://ik.imagekit.io/catholicstories/ProfileImages/24_ok9wTkcFo.png?updatedAt=1682716507750', b: 'https://www.thyolivetree.com/collections/childrens', c: 'Thy Olive Tree'};
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
 var $zwilias$elm_html_string$Html$Types$Attribute = F2(
 	function (a, b) {
@@ -5843,8 +5860,8 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 			[
 				$zwilias$elm_html_string$Html$String$Attributes$class('grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7'),
 				$zwilias$elm_html_string$Html$String$Attributes$target('_blank'),
-				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resource.L),
-				$zwilias$elm_html_string$Html$String$Attributes$href(resource.J)
+				A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', resource.c),
+				$zwilias$elm_html_string$Html$String$Attributes$href(resource.b)
 			]),
 		_List_fromArray(
 			[
@@ -5857,7 +5874,7 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 						$zwilias$elm_html_string$Html$String$img,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$Attributes$src(resource.I),
+								$zwilias$elm_html_string$Html$String$Attributes$src(resource.a),
 								$zwilias$elm_html_string$Html$String$Attributes$class('w-20 h-20 object-cover')
 							]),
 						_List_Nil)
@@ -5869,10 +5886,13 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 					[
 						A2(
 						$zwilias$elm_html_string$Html$String$h2,
-						_List_Nil,
 						_List_fromArray(
 							[
-								$zwilias$elm_html_string$Html$String$text(resource.L)
+								$zwilias$elm_html_string$Html$String$Attributes$class('leading-10')
+							]),
+						_List_fromArray(
+							[
+								$zwilias$elm_html_string$Html$String$text(resource.c)
 							]))
 					]))
 			]));
@@ -5884,7 +5904,7 @@ var $author$project$Resources$Books$Main$viewBooks = A2(
 		$elm$core$List$map,
 		$author$project$Resources$Helpers$viewResource,
 		_List_fromArray(
-			[$author$project$Resources$Books$Main$thePursuitOfThePilferedCheese, $author$project$Resources$Books$Main$saintsAroundTheWorld, $author$project$Resources$Books$Main$catechismOfTheSevenSacraments])));
+			[$author$project$Resources$Books$Main$thyOliveTree, $author$project$Resources$Books$Main$cBPSaints, $author$project$Resources$Books$Main$paulineBooksAndMediaForKids, $author$project$Resources$Books$Main$lightOfTheSaints, $author$project$Resources$Books$Main$stPaulCenter, $author$project$Resources$Books$Main$littleSaintStories, $author$project$Resources$Books$Main$firstFaithTreasury, $author$project$Resources$Books$Main$tanBooks, $author$project$Resources$Books$Main$osvKidsBooks, $author$project$Resources$Books$Main$ewtnKidsBooks, $author$project$Resources$Books$Main$theLittleRoseShop, $author$project$Resources$Books$Main$theotokosKids, $author$project$Resources$Books$Main$diaryOfAGodMan, $author$project$Resources$Books$Main$catholicSprouts, $author$project$Resources$Books$Main$holyHeroesBooks, $author$project$Resources$Books$Main$brotherFrancisBooks, $author$project$Resources$Books$Main$loyolaPressBooks, $author$project$Resources$Books$Main$thePursuitOfThePilferedCheese, $author$project$Resources$Books$Main$saintsAroundTheWorld, $author$project$Resources$Books$Main$catechismOfTheSevenSacraments])));
 var $zwilias$elm_html_string$Html$String$p = $zwilias$elm_html_string$Html$String$node('p');
 var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'rel', val);
@@ -6222,13 +6242,13 @@ var $author$project$Resources$Books$Main$view = A2(
 		]));
 var $author$project$Resources$Books$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aH: {},
-		aU: function (_v0) {
+		aJ: {},
+		aV: function (_v0) {
 			return function (model) {
 				return model;
 			};
 		},
-		aW: function (_v1) {
+		aX: function (_v1) {
 			return $zwilias$elm_html_string$Html$String$toHtml(
 				$zwilias$elm_html_string$Html$String$text(
 					A2($zwilias$elm_html_string$Html$String$toString, 0, $author$project$Resources$Books$Main$view)));

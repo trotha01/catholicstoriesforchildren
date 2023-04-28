@@ -5910,7 +5910,10 @@ var $author$project$Resources$Helpers$viewResource = function (resource) {
 					[
 						A2(
 						$zwilias$elm_html_string$Html$String$h2,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$zwilias$elm_html_string$Html$String$Attributes$class('leading-10')
+							]),
 						_List_fromArray(
 							[
 								$zwilias$elm_html_string$Html$String$text(resource.H)

@@ -31,7 +31,7 @@ viewResource resource =
             [ img [ src resource.image, class "w-20 h-20 object-cover" ] []
             ]
         , div []
-            [ h2 [] [ text resource.name ]
+            [ h2 [ class "leading-10" ] [ text resource.name ]
 
             -- , p [] [ text resourceGroup.description ]
             ]

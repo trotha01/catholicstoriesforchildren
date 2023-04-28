@@ -612,7 +612,7 @@ saints : ResourceGroup
 saints =
     { name = "Saints"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/7_nqDiNpO9Q.png?updatedAt=1682454350040"
-    , description = "Find saints here."
+    , description = "Find a list of saints here."
     , link = "saints"
     }
 
@@ -621,7 +621,7 @@ prayers : ResourceGroup
 prayers =
     { name = "Prayers"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004"
-    , description = "Find prayers here."
+    , description = "Find common Catholic prayers here."
     , link = "prayers"
     }
 
