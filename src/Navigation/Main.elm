@@ -32,22 +32,29 @@ view =
         , class "bg-csc-lightpurple"
         , class "pt-5"
         ]
-        [ viewNavButton "/" "Home"
-        , viewNavButton "/team" "About Us"
-        , viewNavButton "/animations" "Animations"
-        , viewNavButton "/contact" "Contact"
-        , viewNavButton "/resources" "Resources"
-        , viewNavButton "/give" "Give"
+        [ viewNavButton 1 "/" "Home"
+        , viewNavButton 2 "/team" "About Us"
+        , viewNavButton 3 "/animations" "Animations"
+        , viewNavButton 4 "/contact" "Contact"
+        , viewNavButton 5 "/resources" "Resources"
+        , viewNavButton 6 "/give" "Give"
         ]
 
 
-viewNavButton : String -> String -> Html msg
-viewNavButton link page =
+viewNavButton : Float -> String -> String -> Html msg
+viewNavButton index link page =
+    let
+        animationTime =
+            (index * 0.5)
+                |> Basics.clamp 1 3
+                |> String.fromFloat
+    in
     a
         [ href link
         , class "hover:bg-csc-lightpurple"
         , class "px-10 py-5"
         , class "rounded-t"
         , class "text-4xl text-semibold"
+        , style "animation" ("fadeIn " ++ animationTime ++ "s")
         ]
         [ span [ class "px-10 m-auto" ] [ text page ] ]

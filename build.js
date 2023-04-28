@@ -98,6 +98,12 @@ var htmlPart3 = `</title>
         color: #333;
       }
 
+      /* Helper keyframes */
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
       /* Media Changes */
 
       @media (max-width: 720px) {
