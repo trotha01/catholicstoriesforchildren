@@ -280,13 +280,13 @@ viewAnimations =
                         ]
                         []
                     ]
-                , div
-                    [ style "border-radius" "5px"
-                    , class "grayscale"
-                    , class "hover:cursor-not-allowed"
+                , a
+                    [ href "/animations/stmichael"
+                    , class "hover:scale-105 transition ease-in-out duration-50"
+                    , attribute "aria-label" "See the St Michael the Archangel Animation"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722"
+                        [ src "https://ik.imagekit.io/catholicstories/StMichaelWatchNow_VttSFGzj8.png?updatedAt=1682717154588"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "St Michael Animation"

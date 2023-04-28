@@ -6646,28 +6646,51 @@ var $elm$html$Html$Attributes$height = function (n) {
 		'height',
 		$elm$core$String$fromInt(n));
 };
-var $author$project$Animations$Helpers$viewVideoComingSoon = function (image) {
-	return A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				A2($elm$html$Html$Attributes$style, 'position', 'relative'),
-				$elm$html$Html$Attributes$height(0),
-				A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
-				A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
-				A2($elm$html$Html$Attributes$style, 'border-radius', '5px')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$img,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$src(image)
-					]),
-				_List_Nil)
-			]));
-};
+var $elm$html$Html$iframe = _VirtualDom_node('iframe');
+var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
+var $author$project$Animations$Helpers$viewVideo = F2(
+	function (videoTitle, link) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'position', 'relative'),
+					A2($elm$html$Html$Attributes$style, 'padding-bottom', '56.25%'),
+					$elm$html$Html$Attributes$height(0),
+					A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
+					A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
+					A2($elm$html$Html$Attributes$style, 'border-radius', '5px')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$iframe,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
+							A2($elm$html$Html$Attributes$style, 'width', '100%'),
+							A2($elm$html$Html$Attributes$style, 'height', '100%'),
+							A2($elm$html$Html$Attributes$style, 'top', '0'),
+							A2($elm$html$Html$Attributes$style, 'left', '0'),
+							$elm$html$Html$Attributes$src(link),
+							$elm$html$Html$Attributes$title(videoTitle),
+							A2(
+							$elm$html$Html$Attributes$property,
+							'frameborder',
+							$elm$json$Json$Encode$string('0')),
+							A2(
+							$elm$html$Html$Attributes$property,
+							'allow',
+							$elm$json$Json$Encode$string('accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')),
+							A2(
+							$elm$html$Html$Attributes$property,
+							'allowfullscreen',
+							$elm$json$Json$Encode$string('true'))
+						]),
+					_List_Nil)
+				]));
+	});
+var $author$project$Animations$StMichael$Main$viewVideoPlayers = A2($author$project$Animations$Helpers$viewVideo, 'St Michael | Prayer Time with Angels', 'https://www.youtube-nocookie.com/embed/y2-SqI_PLv4');
 var $author$project$Animations$StMichael$Main$viewBody = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -6700,7 +6723,7 @@ var $author$project$Animations$StMichael$Main$viewBody = A2(
 				[
 					$zwilias$elm_html_string$Html$String$toHtml($author$project$Newsroom$Main$viewSignUp)
 				])),
-			$author$project$Animations$Helpers$viewVideoComingSoon('https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466'),
+			$author$project$Animations$StMichael$Main$viewVideoPlayers,
 			$author$project$Animations$StMichael$Main$viewActivities,
 			$author$project$Animations$StMichael$Main$viewPrayer,
 			$author$project$Animations$StMichael$Main$aboutThePrayer,

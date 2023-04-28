@@ -71,9 +71,9 @@ viewBody =
         [ h1 [ class "my-10 leading-10" ] [ text "St Michael the Archangel Prayer" ]
         , aboutTheAnimation
         , div [ class "mb-10" ] [ viewSignUp |> Html.String.toHtml ]
-        , viewVideoComingSoon "https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466"
 
-        -- , viewVideoPlayers
+        -- , viewVideoComingSoon "https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466"
+        , viewVideoPlayers
         , viewActivities
         , viewPrayer
         , aboutThePrayer
@@ -90,8 +90,7 @@ viewVideoPlayers : Html msg
 viewVideoPlayers =
     viewVideo
         "St Michael | Prayer Time with Angels"
-        -- TODO: update link
-        "https://www.youtube-nocookie.com/embed/6hM-8TWJyWY"
+        "https://www.youtube-nocookie.com/embed/y2-SqI_PLv4"
 
 
 viewVideoPlayer : String -> Html msg

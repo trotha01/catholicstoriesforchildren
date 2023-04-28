@@ -5545,12 +5545,12 @@ var $author$project$Main$viewAnimations = A3(
 									_List_Nil)
 								])),
 							A2(
-							$elm$html$Html$div,
+							$elm$html$Html$a,
 							_List_fromArray(
 								[
-									A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-									$elm$html$Html$Attributes$class('grayscale'),
-									$elm$html$Html$Attributes$class('hover:cursor-not-allowed')
+									$elm$html$Html$Attributes$href('/animations/stmichael'),
+									$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out duration-50'),
+									A2($elm$html$Html$Attributes$attribute, 'aria-label', 'See the St Michael the Archangel Animation')
 								]),
 							_List_fromArray(
 								[
@@ -5558,7 +5558,7 @@ var $author$project$Main$viewAnimations = A3(
 									$elm$html$Html$img,
 									_List_fromArray(
 										[
-											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/StMichaelThumbnail_NT9bW1h_f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897722'),
+											$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/StMichaelWatchNow_VttSFGzj8.png?updatedAt=1682717154588'),
 											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
 											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
 											$elm$html$Html$Attributes$alt('St Michael Animation')
