@@ -176,6 +176,7 @@ var privacyPolicyApp = PrivacyPolicyElm.Elm.About.PrivacyPolicy.Main.init({ node
 fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', '.FeastDayActivities')
 fakeNodeWithJs('./animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary')
 fakeNodeWithJs('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel')
+fakeNodeWithJs('./animations/stmichael/index.html', 'St Michael Animation - Catholic Stories for Children', 'An animation to guide kids in learning the St Michael the Archangel prayer', '.Animations.StMichael')
 var resourcesApp = ResourcesElm.Elm.Resources.Main.init({ node: fakeNode('./resources/index.html', 'Resources - Catholic Stories for Children', 'Resources to guide kids in learning the Catholic faith') })
 var resourcesPodcastsApp = ResourcesPodcastsElm.Elm.Resources.Podcasts.Main.init({ node: fakeNode('./resources/podcasts/index.html', 'Podcast Resources - Catholic Stories for Children', 'Podcasts to guide kids in learning the Catholic faith') })
 var resourcesBooksApp = ResourcesBooksElm.Elm.Resources.Books.Main.init({ node: fakeNode('./resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith') })

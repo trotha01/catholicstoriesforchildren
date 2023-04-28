@@ -29,3 +29,16 @@ viewVideo videoTitle link =
             ]
             []
         ]
+
+
+viewVideoComingSoon : String -> Html msg
+viewVideoComingSoon image =
+    div
+        [ style "position" "relative"
+        , height 0
+        , style "overflow" "hidden"
+        , style "max-width" "100%"
+        , style "border-radius" "5px"
+        ]
+        [ img [ src image ] []
+        ]
