@@ -5706,6 +5706,8 @@ var $author$project$Animations$StMichael$Main$viewPrayer = A2(
 						]))
 				]))
 		]));
+var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
+var $elm$html$Html$Attributes$cite = $elm$html$Html$Attributes$stringProperty('cite');
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $author$project$Animations$StMichael$Main$viewPrayerHistory = A2(
 	$elm$html$Html$div,
@@ -5755,7 +5757,7 @@ var $author$project$Animations$StMichael$Main$viewPrayerHistory = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text(' by Kevin Symonds, Athanasius Schneider')
+							$elm$html$Html$text(' by Kevin Symonds.')
 						]))
 				])),
 			A2(
@@ -5816,14 +5818,36 @@ var $author$project$Animations$StMichael$Main$viewPrayerHistory = A2(
 						]))
 				])),
 			A2(
-			$elm$html$Html$p,
+			$elm$html$Html$blockquote,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('italic pl-5 pr-20 pt-1')
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('O God, our refuge and our strength, attend to and guarantee the prayers of your holy Church, so that we may efficaciously follow [You] by the intercession of the glorious and Immaculate Virgin Mary Mother of God, St. Joseph and your blessed Apostles Peter and Paul and all the Saints, whom in the present necessity we humbly implore. Through Christ our Lord. Amen')
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('italic')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('O God, our refuge and our strength, attend to and guarantee the prayers of your holy Church, so that we may efficaciously follow [You] by the intercession of the glorious and Immaculate Virgin Mary Mother of God, St. Joseph and your blessed Apostles Peter and Paul and all the Saints, whom in the present necessity we humbly implore. Through Christ our Lord. Amen')
+								]))
+						]))
 				])),
 			A2(
 			$elm$html$Html$h3,
@@ -5854,20 +5878,43 @@ var $author$project$Animations$StMichael$Main$viewPrayerHistory = A2(
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$p,
+					$elm$html$Html$blockquote,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('italic pl-5 pr-20 pt-1')
+							$elm$html$Html$Attributes$cite(''),
+							$elm$html$Html$Attributes$class('my-10'),
+							$elm$html$Html$Attributes$class('rounded px-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+							$elm$html$Html$Attributes$class('italic')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Sancte Michael Archangele, defende nos in proelio, contra nequitiam et insidias diaboli esto praesidium. Imperet illi Deus, supplices deprecamur: tuque, Princeps militiae coelestis, Satanam aliosque spiritus malignos, qui ad perditionem animarum pervagantur in mundo, divina virtue, in infernum detrude. Amen. (Ephemerides Liturgicae 69:57)')
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('inline'),
+									$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$p,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Sancte Michael Archangele, defende nos in proelio, contra nequitiam et insidias diaboli esto praesidium. Imperet illi Deus, supplices deprecamur: tuque, Princeps militiae coelestis, Satanam aliosque spiritus malignos, qui ad perditionem animarum pervagantur in mundo, divina virtue, in infernum detrude. Amen. (Ephemerides Liturgicae 69:57)')
+										]))
+								]))
 						])),
 					A2(
 					$elm$html$Html$p,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('italic pl-5 pr-20 pt-1')
+							$elm$html$Html$Attributes$class('italic'),
+							$elm$html$Html$Attributes$class('px-4 my-4')
 						]),
 					_List_fromArray(
 						[
@@ -5892,14 +5939,36 @@ var $author$project$Animations$StMichael$Main$viewPrayerHistory = A2(
 					$elm$html$Html$text('Pope Pius IX in his allocution of June 30, 1930, wanted it to be recited with an intention for Russia.')
 				])),
 			A2(
-			$elm$html$Html$p,
+			$elm$html$Html$blockquote,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('italic pl-5 pr-20 pt-1')
+					$elm$html$Html$Attributes$cite(''),
+					$elm$html$Html$Attributes$class('my-10'),
+					$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+					$elm$html$Html$Attributes$class('italic')
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('Therefore we must press upon Christ  the Redeemer of the human race, that he allow tranquility and the freedom to profess the faith to be restored to the afflicted children of Russia. And so that everyone can press [upon him], with, to be sure, little trouble and inconvenience, we desire that those same prayers which our predecessor of happy memory Leo XIII ordered priests to recite with the people after Holy [Mass] is finished should be said for this same intention, namely for Russia.')
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('inline'),
+							$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('italic')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Therefore we must press upon Christ  the Redeemer of the human race, that he allow tranquility and the freedom to profess the faith to be restored to the afflicted children of Russia. And so that everyone can press [upon him], with, to be sure, little trouble and inconvenience, we desire that those same prayers which our predecessor of happy memory Leo XIII ordered priests to recite with the people after Holy [Mass] is finished should be said for this same intention, namely for Russia.')
+								]))
+						]))
 				])),
 			A2(
 			$elm$html$Html$h3,
@@ -6075,7 +6144,7 @@ var $author$project$Animations$StMichael$Main$viewStoryHistory = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text(' by Kevin Symonds, Athanasius Schneider')
+							$elm$html$Html$text(' by Kevin Symonds.')
 						]))
 				])),
 			A2(
@@ -6132,17 +6201,39 @@ var $author$project$Animations$StMichael$Main$viewStoryHistory = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Vogl said that Pope Leo XIII composed a powerful prayer of exorcism for priests against the fallen angels and evil spirits.')
+							$elm$html$Html$text('. Vogl said that Pope Leo XIII composed a powerful prayer of exorcism for priests against the fallen angels and evil spirits.')
 						])),
 					A2(
-					$elm$html$Html$span,
+					$elm$html$Html$blockquote,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+							$elm$html$Html$Attributes$cite(''),
+							$elm$html$Html$Attributes$class('my-10'),
+							$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+							$elm$html$Html$Attributes$class('italic')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('After celebrating Mass one day he was in conference with the Cardinals. Suddenly he sank to the floor. Several doctors were summoned at once but found no sign of a pulse- the very life seemed to have ebbed away from the fragile and aging body. Suddenly he recovered and said: “What a horrible vision I have been shown!” He saw the ages to come, the seductive powers and ravings of the devils against the Church in every land. But St. Michael appeared in the moment of greatest distress and cast Satan and his cohorts back into the abyss of hell. Such was the occasion that caused Pope Leo XIII to prescribe this prayer for the universal Church.')
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('inline'),
+									$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block ')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('After celebrating Mass one day he was in conference with the Cardinals. Suddenly he sank to the floor. Several doctors were summoned at once but found no sign of a pulse- the very life seemed to have ebbed away from the fragile and aging body. Suddenly he recovered and said: “What a horrible vision I have been shown!” He saw the ages to come, the seductive powers and ravings of the devils against the Church in every land. But St. Michael appeared in the moment of greatest distress and cast Satan and his cohorts back into the abyss of hell. Such was the occasion that caused Pope Leo XIII to prescribe this prayer for the universal Church.')
+										]))
+								]))
 						]))
 				])),
 			A2(
@@ -6182,7 +6273,7 @@ var $author$project$Animations$StMichael$Main$viewStoryHistory = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Year 7 titled ')
+							$elm$html$Html$text(' Year 7 titled ')
 						])),
 					A2(
 					$elm$html$Html$span,
@@ -6202,14 +6293,36 @@ var $author$project$Animations$StMichael$Main$viewStoryHistory = A2(
 							$elm$html$Html$text('(An Exorcism and Konnersreuth: Angels and Demons).')
 						])),
 					A2(
-					$elm$html$Html$span,
+					$elm$html$Html$blockquote,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+							$elm$html$Html$Attributes$cite(''),
+							$elm$html$Html$Attributes$class('my-10'),
+							$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+							$elm$html$Html$Attributes$class('italic')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('After Leo XIII had celebrated a morning Mass, he went to a meeting with the Cardinals. Suddenly he collapsed into unconsciousness. The doctors who came to his aid found no cause for the collapse, although his pulse almost ceased. Suddenly he awoke and was fresh as ever. He reported that he had seen a terrible vision. He was granted to see the devil’s seductiveness and ravaging for the coming ages in all lands. In this distress, St Michael the Archangel appeared and cast Satan with all his demons back into the infernal abyss. Leo XIII thereupon ordered, shortly after 1880, the Common Prayer to St. Michael.')
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('inline'),
+									$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('After Leo XIII had celebrated a morning Mass, he went to a meeting with the Cardinals. Suddenly he collapsed into unconsciousness. The doctors who came to his aid found no cause for the collapse, although his pulse almost ceased. Suddenly he awoke and was fresh as ever. He reported that he had seen a terrible vision. He was granted to see the devil’s seductiveness and ravaging for the coming ages in all lands. In this distress, St Michael the Archangel appeared and cast Satan with all his demons back into the infernal abyss. Leo XIII thereupon ordered, shortly after 1880, the Common Prayer to St. Michael.')
+										]))
+								]))
 						]))
 				])),
 			A2(
@@ -6289,47 +6402,69 @@ var $author$project$Animations$StMichael$Main$viewStoryHistory = A2(
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Cardinal Giovanni Battista Nasalli Rocca di Corneliano, the Archbishop of Bologna 1922-1952, recounted the story in his Pastoral Letter for Lent, issued in Bologna in 1946')
+							$elm$html$Html$text('Cardinal Giovanni Battista Nasalli Rocca di Corneliano, the Archbishop of Bologna 1922-1952, recounted the story in his Pastoral Letter for Lent, issued in Bologna in 1946.')
 						])),
 					A2(
-					$elm$html$Html$span,
+					$elm$html$Html$blockquote,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+							$elm$html$Html$Attributes$cite(''),
+							$elm$html$Html$Attributes$class('my-10'),
+							$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+							$elm$html$Html$Attributes$class('italic')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('It wasn\'t for naught that the most wise Pontiff, Pope Leo XIII, whose superior intelligence and certainly not narrow-minded or small spirit, himself wrote that beautiful and powerful prayer, and then ordered its recitation by all priests after the celebration of the Holy Mass...')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('And that part of the prayer - \'who prowl about the world\' - has an historical explanation, which has been shared numerous times by the Holy Father\'s most faithful Secretary, who was very close to him throughout his pontificate, Msgr. Rinaldo Angelini. ')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Pope Leo XIII truly had a vision of demonic spirits, who were gathering on the Eternal City (Rome). From that experience - which he shared with the Prelate and certainly with others in confidentiality - comes the prayer which he wanted the whole Church to recite.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('This was the prayer which he recited (we heard this many times in the Vatican Basilica) with a strong, powerful voice, which resonated in an unforgettable way in the universal silence beneath the vaults of the most important temple of Christianity.')
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('inline'),
+									$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('It wasn\'t for naught that the most wise Pontiff, Pope Leo XIII, whose superior intelligence and certainly not narrow-minded or small spirit, himself wrote that beautiful and powerful prayer, and then ordered its recitation by all priests after the celebration of the Holy Mass...')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('And that part of the prayer - \'who prowl about the world\' - has an historical explanation, which has been shared numerous times by the Holy Father\'s most faithful Secretary, who was very close to him throughout his pontificate, Msgr. Rinaldo Angelini. ')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Pope Leo XIII truly had a vision of demonic spirits, who were gathering on the Eternal City (Rome). From that experience - which he shared with the Prelate and certainly with others in confidentiality - comes the prayer which he wanted the whole Church to recite.')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('This was the prayer which he recited (we heard this many times in the Vatican Basilica) with a strong, powerful voice, which resonated in an unforgettable way in the universal silence beneath the vaults of the most important temple of Christianity.')
+										]))
+								]))
 						]))
 				])),
 			A2(
@@ -6379,107 +6514,129 @@ var $author$project$Animations$StMichael$Main$viewStoryHistory = A2(
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('La Settimana del Clero')
+							$elm$html$Html$text('La Settimana del Clero.')
 						])),
 					A2(
-					$elm$html$Html$span,
+					$elm$html$Html$blockquote,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+							$elm$html$Html$Attributes$cite(''),
+							$elm$html$Html$Attributes$class('my-10'),
+							$elm$html$Html$Attributes$class('rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800'),
+							$elm$html$Html$Attributes$class('italic')
 						]),
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Permit me here to mention more than a little known fact which throws a vivid beam of light on the order of ideas that I mentioned. I have drawn the fact to a trusted source (and I am willing to reveal it, if required): and let each one weigh the consequence!')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('I don\'t remember the precise year. It was a little after 1890. One morning, the great Pontiff, Leo XIII - who had already gained the admiration of the entire civil world and the wrath of the international freemasons - had celebrated Holy Mass, and was assisting at another Mass (for his thanksgiving) as usual.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('At a certain point, he seemed to straighten vigorously his head, fixing his gaze intensely on something that was above the head of the celebrant. He looked at it intently, without batting an eyelid, but with a sense of dread and wonder, becoming pale and fearful. Something strange, something significant was happening to him... ')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Finally, as if keeping it to himself, giving a light but energetic touch of his hand, he got up. He started heading towards his private study. His closest friends and assistants [i familiari] hastily and anxiously followed him.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('\'Holy Father!\' they solemnly cried out. \'Do you not feel well? Do you need anything?\' He responded: \'No, nothing!\' And he closed himself in his study. After a half hour, he called to the Secretary of the Sacred Congregation of Rites, and gave him a piece of paper, ordering him to make copies and to send it to all the Ordinaries of the world.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('What did it contain? The prayer which we recite at the end of the Mass (cum popolo), imploring Mary and the fiery invocation to the Prince of heavenly powers, St Michael \'Sancte Michael Archangele, defendo nos in proelio\'...')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('imporing God to drive him to hell, \'et in infernum detrude!\'')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Then what happened? This is what happened.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('God had shown Satan to the Vicar of His divine Son on earth, just like He did with Job. Satan was bragging that he had already devastated the Church on a large scale. In fact, these were tumultuous times for Italy, for many nations in Europe, and a bit around the world. The freemasons ruled, and governments hadn\'t become docile instruments. With the audacity of a boaster, Satan put a challenge to God.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('- \'And if you give me a little more freedom, you could see what I would do for your church!\' - \'What would you do?\' - \'I would destroy it\' - \'Oh, that would be something to see. How long would it take?\' - \'Fifty or sixty years.\' \'Have more freedom, and the time that you need. Then we\'ll see what happens.')
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('inline'),
+									$elm$html$Html$Attributes$class('text-gray-500 dark:text-gray-400')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Permit me here to mention more than a little known fact which throws a vivid beam of light on the order of ideas that I mentioned. I have drawn the fact to a trusted source (and I am willing to reveal it, if required): and let each one weigh the consequence!')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('I don\'t remember the precise year. It was a little after 1890. One morning, the great Pontiff, Leo XIII - who had already gained the admiration of the entire civil world and the wrath of the international freemasons - had celebrated Holy Mass, and was assisting at another Mass (for his thanksgiving) as usual.')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('At a certain point, he seemed to straighten vigorously his head, fixing his gaze intensely on something that was above the head of the celebrant. He looked at it intently, without batting an eyelid, but with a sense of dread and wonder, becoming pale and fearful. Something strange, something significant was happening to him... ')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Finally, as if keeping it to himself, giving a light but energetic touch of his hand, he got up. He started heading towards his private study. His closest friends and assistants [i familiari] hastily and anxiously followed him.')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('\'Holy Father!\' they solemnly cried out. \'Do you not feel well? Do you need anything?\' He responded: \'No, nothing!\' And he closed himself in his study. After a half hour, he called to the Secretary of the Sacred Congregation of Rites, and gave him a piece of paper, ordering him to make copies and to send it to all the Ordinaries of the world.')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('What did it contain? The prayer which we recite at the end of the Mass (cum popolo), imploring Mary and the fiery invocation to the Prince of heavenly powers, St Michael \'Sancte Michael Archangele, defendo nos in proelio\'...')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('imporing God to drive him to hell, \'et in infernum detrude!\'')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Then what happened? This is what happened.')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('God had shown Satan to the Vicar of His divine Son on earth, just like He did with Job. Satan was bragging that he had already devastated the Church on a large scale. In fact, these were tumultuous times for Italy, for many nations in Europe, and a bit around the world. The freemasons ruled, and governments hadn\'t become docile instruments. With the audacity of a boaster, Satan put a challenge to God.')
+										])),
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('italic block pl-5 pr-20 pt-1')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('- \'And if you give me a little more freedom, you could see what I would do for your church!\' - \'What would you do?\' - \'I would destroy it\' - \'Oh, that would be something to see. How long would it take?\' - \'Fifty or sixty years.\' \'Have more freedom, and the time that you need. Then we\'ll see what happens.')
+										]))
+								]))
 						]))
 				]))
 		]));
