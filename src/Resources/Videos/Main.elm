@@ -76,6 +76,8 @@ viewVideos =
             , tomkin
             , catholicKidsMedia
             , brotherFrancis
+            , catholicSongsForKids
+            , catholicIcing
             ]
         )
 
@@ -117,4 +119,20 @@ christineInAction =
     { name = "Christine In Action"
     , link = "https://www.youtube.com/@ChristineInAction"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/christineinaction_Le5_7yr2K.jpeg?updatedAt=1682821244341"
+    }
+
+
+catholicSongsForKids : Resource
+catholicSongsForKids =
+    { name = "Catholic Songs for Kids"
+    , link = "https://www.youtube.com/@catholicsongsforkids"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/40_vS6tZTdD3.png?updatedAt=1682876930344"
+    }
+
+
+catholicIcing : Resource
+catholicIcing =
+    { name = "Catholic Icing"
+    , link = "https://www.youtube.com/@CatholicIcing"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/41_XrkKmwtXL.png?updatedAt=1682876930378"
     }
