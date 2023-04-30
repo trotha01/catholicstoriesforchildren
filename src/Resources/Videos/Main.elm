@@ -72,9 +72,10 @@ viewVideos =
     div []
         (List.map viewResource
             [ catholicStoriesForChildren
+            , christineInAction
+            , tomkin
             , catholicKidsMedia
             , brotherFrancis
-            , tomkin
             ]
         )
 
@@ -108,4 +109,12 @@ tomkin =
     { name = "Tomkin"
     , link = "https://www.youtube.com/playlist?list=PL9CQlldupc5_L0shwBi1w-n5liWhD0ArO"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/15_Wrw3_kbKK.png?updatedAt=1679070333309"
+    }
+
+
+christineInAction : Resource
+christineInAction =
+    { name = "Christine In Action"
+    , link = "https://www.youtube.com/@ChristineInAction"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/christineinaction_Le5_7yr2K.jpeg?updatedAt=1682821244341"
     }
