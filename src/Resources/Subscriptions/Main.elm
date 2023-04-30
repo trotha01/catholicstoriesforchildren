@@ -78,21 +78,22 @@ viewSubscriptions =
             , catholicFamilyCrate
             , magnifiKid
             , formed
+            , diaryOfAGodman
             ]
         )
 
 
 osvKids : Resource
 osvKids =
-    { name = "OSV Kids"
-    , link = "https://osvkids.com"
+    { name = "OSV Kids Magazine"
+    , link = "https://osvkids.com/magazine/"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/3_1__qbNDjJEy1.png?updatedAt=1679068242059"
     }
 
 
 saintOfTheMonth : Resource
 saintOfTheMonth =
-    { name = "Saint of the Month"
+    { name = "Saint of the Month Box"
     , link = "https://www.saintofthemonth.com"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/4_1__LjeiFaCGM1.png?updatedAt=1679068242210"
     }
@@ -143,4 +144,12 @@ formed =
     { name = "Formed"
     , link = "https://formed.org"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/9_6wjdaJHdc.png?updatedAt=1679068242300"
+    }
+
+
+diaryOfAGodman : Resource
+diaryOfAGodman =
+    { name = "Diary of a God-Man"
+    , link = "https://www.diaryofagodman.com/subscriptions"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/27_LJ8rjMXH6.png?updatedAt=1682716507484"
     }

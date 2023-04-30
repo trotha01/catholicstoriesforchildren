@@ -5864,12 +5864,13 @@ var $author$project$Newsroom$Main$viewSignUp = A2(
 			$author$project$Newsroom$Main$viewSignUpButton
 		]));
 var $author$project$Resources$Subscriptions$Main$catholicFamilyCrate = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/7_i5fOMR9CEB.png?updatedAt=1679068242443', K: 'https://catholicfamilycrate.com', H: 'Catholic Family Crate'};
+var $author$project$Resources$Subscriptions$Main$diaryOfAGodman = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/27_LJ8rjMXH6.png?updatedAt=1682716507484', K: 'https://www.diaryofagodman.com/subscriptions', H: 'Diary of a God-Man'};
 var $author$project$Resources$Subscriptions$Main$faithAndFamilyCollective = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/6_tZqBkQ3sW.png?updatedAt=1679068242133', K: 'https://faithandfamilycollective.com', H: 'Faith + Family Collective'};
 var $author$project$Resources$Subscriptions$Main$formed = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/9_6wjdaJHdc.png?updatedAt=1679068242300', K: 'https://formed.org', H: 'Formed'};
 var $author$project$Resources$Subscriptions$Main$magnifiKid = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/8_qucgsetg84.png?updatedAt=1679068242095', K: 'https://us.magnificat.net/home/magnifikid', H: 'MagnifiKid'};
 var $author$project$Resources$Subscriptions$Main$massBox = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/5_GX7izsR5Jp.png?updatedAt=1679068242472', K: 'https://themassbox.com', H: 'Mass Box'};
-var $author$project$Resources$Subscriptions$Main$osvKids = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_1__qbNDjJEy1.png?updatedAt=1679068242059', K: 'https://osvkids.com', H: 'OSV Kids'};
-var $author$project$Resources$Subscriptions$Main$saintOfTheMonth = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_1__LjeiFaCGM1.png?updatedAt=1679068242210', K: 'https://www.saintofthemonth.com', H: 'Saint of the Month'};
+var $author$project$Resources$Subscriptions$Main$osvKids = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_1__qbNDjJEy1.png?updatedAt=1679068242059', K: 'https://osvkids.com/magazine/', H: 'OSV Kids Magazine'};
+var $author$project$Resources$Subscriptions$Main$saintOfTheMonth = {J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_1__LjeiFaCGM1.png?updatedAt=1679068242210', K: 'https://www.saintofthemonth.com', H: 'Saint of the Month Box'};
 var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
 var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
 var $zwilias$elm_html_string$Html$String$nodeWithoutChildren = F3(
@@ -5931,7 +5932,7 @@ var $author$project$Resources$Subscriptions$Main$viewSubscriptions = A2(
 		$elm$core$List$map,
 		$author$project$Resources$Helpers$viewResource,
 		_List_fromArray(
-			[$author$project$Resources$Subscriptions$Main$osvKids, $author$project$Resources$Subscriptions$Main$saintOfTheMonth, $author$project$Resources$Subscriptions$Main$massBox, $author$project$Resources$Subscriptions$Main$faithAndFamilyCollective, $author$project$Resources$Subscriptions$Main$catholicFamilyCrate, $author$project$Resources$Subscriptions$Main$magnifiKid, $author$project$Resources$Subscriptions$Main$formed])));
+			[$author$project$Resources$Subscriptions$Main$osvKids, $author$project$Resources$Subscriptions$Main$saintOfTheMonth, $author$project$Resources$Subscriptions$Main$massBox, $author$project$Resources$Subscriptions$Main$faithAndFamilyCollective, $author$project$Resources$Subscriptions$Main$catholicFamilyCrate, $author$project$Resources$Subscriptions$Main$magnifiKid, $author$project$Resources$Subscriptions$Main$formed, $author$project$Resources$Subscriptions$Main$diaryOfAGodman])));
 var $author$project$Resources$Helpers$viewWorkInProgressNotice = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_fromArray(

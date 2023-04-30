@@ -71,26 +71,23 @@ viewBooks : Html Never
 viewBooks =
     div []
         (List.map viewResource
-            [ thyOliveTree
-            , cBPSaints
-            , paulineBooksAndMediaForKids
+            [ littleSaintStories
+            , theotokosKids
+            , osvKidsBooks
+            , theLittleRoseShop
+            , brotherFrancisBooks
+            , thyOliveTree
             , lightOfTheSaints
-            , stPaulCenter
-            , littleSaintStories
             , firstFaithTreasury
             , tanBooks
-            , osvKidsBooks
             , ewtnKidsBooks
-            , theLittleRoseShop
-            , theotokosKids
             , diaryOfAGodMan
             , catholicSprouts
             , holyHeroesBooks
-            , brotherFrancisBooks
             , loyolaPressBooks
-            , thePursuitOfThePilferedCheese
-            , saintsAroundTheWorld
-            , catechismOfTheSevenSacraments
+            , stPaulCenter
+            , cBPSaints
+            , paulineBooksAndMediaForKids
             ]
         )
 
