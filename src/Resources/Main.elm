@@ -70,7 +70,7 @@ viewAboutResources =
 viewResourceGroups : Html msg
 viewResourceGroups =
     div []
-        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions ])
+        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources ])
 
 
 viewResourceGroup : ResourceGroup -> Html msg
@@ -123,4 +123,13 @@ subscriptions =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068"
     , description = "Want monthly content at your front door? Check out these wonderful Catholic subscriptions."
     , link = "subscriptions"
+    }
+
+
+prayerResources : ResourceGroup
+prayerResources =
+    { name = "Prayer Resources"
+    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/prayerresources_gN76-j6pz.png?updatedAt=1683227269863"
+    , description = "Find more resources here to help build your prayer life"
+    , link = "prayer"
     }

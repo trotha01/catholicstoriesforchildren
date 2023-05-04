@@ -5820,6 +5820,7 @@ var $author$project$Resources$Main$viewAboutResources = A2(
 		]));
 var $author$project$Resources$Main$books = {aA: 'Find books here. It\'s hard to go wrong with a good Catholic book.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106', K: 'books', H: 'Books'};
 var $author$project$Resources$Main$podcasts = {aA: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335', K: 'podcasts', H: 'Podcasts'};
+var $author$project$Resources$Main$prayerResources = {aA: 'Find more resources here to help build your prayer life', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/prayerresources_gN76-j6pz.png?updatedAt=1683227269863', K: 'prayer', H: 'Prayer Resources'};
 var $author$project$Resources$Main$subscriptions = {aA: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068', K: 'subscriptions', H: 'Subscriptions'};
 var $author$project$Resources$Main$videos = {aA: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', J: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272', K: 'videos', H: 'Youtube Channels'};
 var $zwilias$elm_html_string$Html$String$a = $zwilias$elm_html_string$Html$String$node('a');
@@ -5895,7 +5896,7 @@ var $author$project$Resources$Main$viewResourceGroups = A2(
 		$elm$core$List$map,
 		$author$project$Resources$Main$viewResourceGroup,
 		_List_fromArray(
-			[$author$project$Resources$Main$books, $author$project$Resources$Main$podcasts, $author$project$Resources$Main$videos, $author$project$Resources$Main$subscriptions])));
+			[$author$project$Resources$Main$books, $author$project$Resources$Main$podcasts, $author$project$Resources$Main$videos, $author$project$Resources$Main$subscriptions, $author$project$Resources$Main$prayerResources])));
 var $zwilias$elm_html_string$Html$String$Attributes$rel = function (val) {
 	return A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'rel', val);
 };

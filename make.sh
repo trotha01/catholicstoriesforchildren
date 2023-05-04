@@ -62,6 +62,9 @@ elm make --optimize \
   src/Resources/Subscriptions/Main.elm \
   --output resourcesSubscriptionsElm.js \
   && elm make --optimize \
+  src/Resources/Prayer/Main.elm \
+  --output resourcesPrayerElm.js \
+  && elm make --optimize \
   src/Saints/Main.elm \
   --output saintsElm.js \
   && elm make --optimize \
