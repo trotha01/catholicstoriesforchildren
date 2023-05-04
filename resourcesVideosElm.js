@@ -5869,6 +5869,7 @@ var $author$project$Resources$Videos$Main$catholicKidsMedia = {J: 'https://ik.im
 var $author$project$Resources$Videos$Main$catholicSongsForKids = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/40_vS6tZTdD3.png?updatedAt=1682876930344', K: 'https://www.youtube.com/@catholicsongsforkids', H: 'Catholic Songs for Kids'};
 var $author$project$Resources$Videos$Main$catholicStoriesForChildren = {J: 'https://ik.imagekit.io/catholicstories/CSCLogo_JiNT9WUPX.png?updatedAt=1679070448402', K: 'https://www.youtube.com/@CatholicStoriesforChildren', H: 'Catholic Stories For Children'};
 var $author$project$Resources$Videos$Main$christineInAction = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/christineinaction_Le5_7yr2K.jpeg?updatedAt=1682821244341', K: 'https://www.youtube.com/@ChristineInAction', H: 'Christine In Action'};
+var $author$project$Resources$Videos$Main$prostradaDesigns = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/42_GMJuNZEVs.png?updatedAt=1683226627331', K: 'https://www.youtube.com/@prostradadesignsllc', H: 'Prostrada Designs'};
 var $author$project$Resources$Videos$Main$tomkin = {J: 'https://ik.imagekit.io/catholicstories/ProfileImages/15_Wrw3_kbKK.png?updatedAt=1679070333309', K: 'https://www.youtube.com/playlist?list=PL9CQlldupc5_L0shwBi1w-n5liWhD0ArO', H: 'Tomkin'};
 var $zwilias$elm_html_string$Html$String$h2 = $zwilias$elm_html_string$Html$String$node('h2');
 var $zwilias$elm_html_string$Html$Types$NoChildren = {$: 0};
@@ -5931,7 +5932,7 @@ var $author$project$Resources$Videos$Main$viewVideos = A2(
 		$elm$core$List$map,
 		$author$project$Resources$Helpers$viewResource,
 		_List_fromArray(
-			[$author$project$Resources$Videos$Main$catholicStoriesForChildren, $author$project$Resources$Videos$Main$christineInAction, $author$project$Resources$Videos$Main$tomkin, $author$project$Resources$Videos$Main$catholicKidsMedia, $author$project$Resources$Videos$Main$brotherFrancis, $author$project$Resources$Videos$Main$catholicSongsForKids, $author$project$Resources$Videos$Main$catholicIcing])));
+			[$author$project$Resources$Videos$Main$catholicStoriesForChildren, $author$project$Resources$Videos$Main$christineInAction, $author$project$Resources$Videos$Main$tomkin, $author$project$Resources$Videos$Main$catholicKidsMedia, $author$project$Resources$Videos$Main$brotherFrancis, $author$project$Resources$Videos$Main$catholicSongsForKids, $author$project$Resources$Videos$Main$catholicIcing, $author$project$Resources$Videos$Main$prostradaDesigns])));
 var $author$project$Resources$Helpers$viewWorkInProgressNotice = A2(
 	$zwilias$elm_html_string$Html$String$div,
 	_List_fromArray(

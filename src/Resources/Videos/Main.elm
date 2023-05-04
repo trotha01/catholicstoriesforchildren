@@ -78,6 +78,7 @@ viewVideos =
             , brotherFrancis
             , catholicSongsForKids
             , catholicIcing
+            , prostradaDesigns
             ]
         )
 
@@ -135,4 +136,12 @@ catholicIcing =
     { name = "Catholic Icing"
     , link = "https://www.youtube.com/@CatholicIcing"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/41_XrkKmwtXL.png?updatedAt=1682876930378"
+    }
+
+
+prostradaDesigns : Resource
+prostradaDesigns =
+    { name = "Prostrada Designs"
+    , link = "https://www.youtube.com/@prostradadesignsllc"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/42_GMJuNZEVs.png?updatedAt=1683226627331"
     }
