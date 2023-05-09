@@ -7223,7 +7223,7 @@ var $author$project$Signup$viewSubmitButton = function (model) {
 				A2($elm$html$Html$Attributes$style, 'border-radius', '0px 5px 5px 0px'),
 				A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
 				A2($elm$html$Html$Attributes$style, 'color', 'white'),
-				$elm$html$Html$Attributes$class('w-[105px] h-[56px]'),
+				$elm$html$Html$Attributes$class('w-[105px] h-[56px] text-lg'),
 				$elm$html$Html$Attributes$class(buttonStatusClass),
 				$elm$html$Html$Events$onClick($author$project$Signup$Submit),
 				$elm$html$Html$Attributes$disabled(isDisabled)

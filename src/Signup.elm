@@ -128,7 +128,7 @@ viewSubmitButton model =
         , style "border-radius" "0px 5px 5px 0px"
         , style "box-shadow" "#777 1px 1px 5px"
         , style "color" "white"
-        , class "w-[105px] h-[56px]"
+        , class "w-[105px] h-[56px] text-lg"
         , class buttonStatusClass
         , onClick Submit
         , disabled isDisabled
