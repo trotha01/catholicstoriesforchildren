@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aJ,
-		impl.aV,
-		impl.aT,
+		impl.aL,
+		impl.a$,
+		impl.aZ,
 		function() { return function() {} }
 	);
 });
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aJ,
-		impl.aV,
-		impl.aT,
+		impl.aL,
+		impl.a$,
+		impl.aZ,
 		function(sendToApp, initialModel) {
-			var view = impl.aX;
+			var view = impl.a1;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aJ,
-		impl.aV,
-		impl.aT,
+		impl.aL,
+		impl.a$,
+		impl.aZ,
 		function(sendToApp, initialModel) {
 			var divertHrefToApp = impl.P && impl.P(sendToApp)
-			var view = impl.aX;
+			var view = impl.a1;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -4038,8 +4038,8 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aL;
-	var onUrlRequest = impl.aM;
+	var onUrlChange = impl.aQ;
+	var onUrlRequest = impl.aR;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aJ: function(flags)
+		aL: function(flags)
 		{
-			return A3(impl.aJ, flags, _Browser_getUrl(), key);
+			return A3(impl.aL, flags, _Browser_getUrl(), key);
 		},
-		aX: impl.aX,
-		aV: impl.aV,
-		aT: impl.aT
+		a1: impl.a1,
+		a$: impl.a$,
+		aZ: impl.aZ
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aH: 'hidden', aB: 'visibilitychange' }
+		? { aI: 'hidden', aC: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aH: 'mozHidden', aB: 'mozvisibilitychange' }
+		? { aI: 'mozHidden', aC: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aH: 'msHidden', aB: 'msvisibilitychange' }
+		? { aI: 'msHidden', aC: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aH: 'webkitHidden', aB: 'webkitvisibilitychange' }
-		: { aH: 'hidden', aB: 'visibilitychange' };
+		? { aI: 'webkitHidden', aC: 'webkitvisibilitychange' }
+		: { aI: 'hidden', aC: 'visibilitychange' };
 }
 
 
@@ -4316,7 +4316,7 @@ function _Browser_getElement(id)
 				au: _Browser_doc.documentElement.clientWidth,
 				Z: _Browser_doc.documentElement.clientHeight
 			},
-			aE: {
+			aF: {
 				av: x + rect.left,
 				aw: y + rect.top,
 				au: rect.width,
@@ -5181,19 +5181,19 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aJ: function (_v0) {
-				return _Utils_Tuple2(impl.aJ, $elm$core$Platform$Cmd$none);
+			aL: function (_v0) {
+				return _Utils_Tuple2(impl.aL, $elm$core$Platform$Cmd$none);
 			},
-			aT: function (_v1) {
+			aZ: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aV: F2(
+			a$: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aV, msg, model),
+						A2(impl.a$, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aX: impl.aX
+			a1: impl.a1
 		});
 };
 var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
@@ -6239,13 +6239,13 @@ var $author$project$Resources$Books$Main$view = A2(
 		]));
 var $author$project$Resources$Books$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aJ: {},
-		aV: function (_v0) {
+		aL: {},
+		a$: function (_v0) {
 			return function (model) {
 				return model;
 			};
 		},
-		aX: function (_v1) {
+		a1: function (_v1) {
 			return $zwilias$elm_html_string$Html$String$toHtml(
 				$zwilias$elm_html_string$Html$String$text(
 					A2($zwilias$elm_html_string$Html$String$toString, 0, $author$project$Resources$Books$Main$view)));

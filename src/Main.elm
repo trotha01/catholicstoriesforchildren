@@ -11,6 +11,7 @@ import Html.String
 import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
 import Resources.Helpers exposing (ResourceGroup)
+import Signup exposing (..)
 import Svg.Attributes exposing (d)
 import Team.Main exposing (viewPerson)
 import Team.Team exposing (fredrick, kelly, noeli, trevor)
@@ -33,17 +34,24 @@ main =
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
+    , signup : Signup.Model
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( Model key url, Cmd.none )
+    ( { key = key
+      , url = url
+      , signup = Signup.init
+      }
+    , Cmd.none
+    )
 
 
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
+    | SignupMsg Signup.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -65,6 +73,13 @@ update msg model =
             ( { model | url = url }
             , Cmd.none
             )
+
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
 
 
 
@@ -88,7 +103,7 @@ view model =
             [ style "background-color" "#FEF7F4"
             ]
             [ viewHeader "Catholic Stories for Children" headerMargin |> Html.String.toHtml
-            , viewBody
+            , viewBody model
             , viewFooter |> Html.String.toHtml
             ]
         ]
@@ -115,13 +130,13 @@ section4Background =
     [ style "background" "#FEF7F4" ]
 
 
-viewBody : Html.Html msg
-viewBody =
+viewBody : Model -> Html.Html Msg
+viewBody model =
     div
         [ class "text-lg leading-loose"
         , class "lg:text-2xl"
         ]
-        [ viewIntro
+        [ viewIntro model
         , viewTestimonials
         , viewAnimations
         , viewTeam
@@ -132,8 +147,8 @@ viewBody =
         ]
 
 
-viewIntro : Html msg
-viewIntro =
+viewIntro : Model -> Html Msg
+viewIntro model =
     viewSection "videos"
         [ class "grid grid-cols-1 lg:grid-cols-2 gap-5"
         , class "max-w-[120rem]"
@@ -148,8 +163,7 @@ viewIntro =
                 [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
                 ]
             , div [ class "mt-10" ]
-                [ viewSignUp |> Html.String.toHtml
-                ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , div
             []

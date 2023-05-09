@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aE,
-		impl.aS,
-		impl.aP,
+		impl.aG,
+		impl.aY,
+		impl.aV,
 		function() { return function() {} }
 	);
 });
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aE,
-		impl.aS,
-		impl.aP,
+		impl.aG,
+		impl.aY,
+		impl.aV,
 		function(sendToApp, initialModel) {
-			var view = impl.aU;
+			var view = impl.a_;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aE,
-		impl.aS,
-		impl.aP,
+		impl.aG,
+		impl.aY,
+		impl.aV,
 		function(sendToApp, initialModel) {
 			var divertHrefToApp = impl.M && impl.M(sendToApp)
-			var view = impl.aU;
+			var view = impl.a_;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3982,7 +3982,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aR) && (_VirtualDom_doc.title = title = doc.aR);
+				(title !== doc.aX) && (_VirtualDom_doc.title = title = doc.aX);
 			});
 		}
 	);
@@ -4038,8 +4038,8 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aH;
-	var onUrlRequest = impl.aI;
+	var onUrlChange = impl.aM;
+	var onUrlRequest = impl.aN;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aE: function(flags)
+		aG: function(flags)
 		{
-			return A3(impl.aE, flags, _Browser_getUrl(), key);
+			return A3(impl.aG, flags, _Browser_getUrl(), key);
 		},
-		aU: impl.aU,
-		aS: impl.aS,
-		aP: impl.aP
+		a_: impl.a_,
+		aY: impl.aY,
+		aV: impl.aV
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aC: 'hidden', ax: 'visibilitychange' }
+		? { aD: 'hidden', ay: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aC: 'mozHidden', ax: 'mozvisibilitychange' }
+		? { aD: 'mozHidden', ay: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aC: 'msHidden', ax: 'msvisibilitychange' }
+		? { aD: 'msHidden', ay: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aC: 'webkitHidden', ax: 'webkitvisibilitychange' }
-		: { aC: 'hidden', ax: 'visibilitychange' };
+		? { aD: 'webkitHidden', ay: 'webkitvisibilitychange' }
+		: { aD: 'hidden', ay: 'visibilitychange' };
 }
 
 
@@ -4316,7 +4316,7 @@ function _Browser_getElement(id)
 				aq: _Browser_doc.documentElement.clientWidth,
 				V: _Browser_doc.documentElement.clientHeight
 			},
-			az: {
+			aA: {
 				ar: x + rect.left,
 				as: y + rect.top,
 				aq: rect.width,
@@ -5146,19 +5146,19 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aE: function (_v0) {
-				return _Utils_Tuple2(impl.aE, $elm$core$Platform$Cmd$none);
+			aG: function (_v0) {
+				return _Utils_Tuple2(impl.aG, $elm$core$Platform$Cmd$none);
 			},
-			aP: function (_v1) {
+			aV: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aS: F2(
+			aY: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aS, msg, model),
+						A2(impl.aY, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aU: impl.aU
+			a_: impl.a_
 		});
 };
 var $elm$html$Html$div = _VirtualDom_node('div');
@@ -6969,13 +6969,13 @@ var $author$project$Animations$StMichael$Main$view = A2(
 		]));
 var $author$project$Animations$StMichael$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aE: $author$project$Animations$StMichael$Main$init,
-		aS: function (_v0) {
+		aG: $author$project$Animations$StMichael$Main$init,
+		aY: function (_v0) {
 			return function (model) {
 				return model;
 			};
 		},
-		aU: function (_v1) {
+		a_: function (_v1) {
 			return $author$project$Animations$StMichael$Main$view;
 		}
 	});

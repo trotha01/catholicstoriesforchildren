@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aH,
-		impl.aU,
-		impl.aR,
+		impl.aJ,
+		impl.a_,
+		impl.aX,
 		function() { return function() {} }
 	);
 });
@@ -3928,11 +3928,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aH,
-		impl.aU,
-		impl.aR,
+		impl.aJ,
+		impl.a_,
+		impl.aX,
 		function(sendToApp, initialModel) {
-			var view = impl.aW;
+			var view = impl.a0;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3964,12 +3964,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.aH,
-		impl.aU,
-		impl.aR,
+		impl.aJ,
+		impl.a_,
+		impl.aX,
 		function(sendToApp, initialModel) {
 			var divertHrefToApp = impl.O && impl.O(sendToApp)
-			var view = impl.aW;
+			var view = impl.a0;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3982,7 +3982,7 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aT) && (_VirtualDom_doc.title = title = doc.aT);
+				(title !== doc.aZ) && (_VirtualDom_doc.title = title = doc.aZ);
 			});
 		}
 	);
@@ -4038,8 +4038,8 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.aJ;
-	var onUrlRequest = impl.aK;
+	var onUrlChange = impl.aO;
+	var onUrlRequest = impl.aP;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
@@ -4069,13 +4069,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		aH: function(flags)
+		aJ: function(flags)
 		{
-			return A3(impl.aH, flags, _Browser_getUrl(), key);
+			return A3(impl.aJ, flags, _Browser_getUrl(), key);
 		},
-		aW: impl.aW,
-		aU: impl.aU,
-		aR: impl.aR
+		a0: impl.a0,
+		a_: impl.a_,
+		aX: impl.aX
 	});
 }
 
@@ -4141,17 +4141,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { aF: 'hidden', az: 'visibilitychange' }
+		? { aG: 'hidden', aA: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { aF: 'mozHidden', az: 'mozvisibilitychange' }
+		? { aG: 'mozHidden', aA: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { aF: 'msHidden', az: 'msvisibilitychange' }
+		? { aG: 'msHidden', aA: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { aF: 'webkitHidden', az: 'webkitvisibilitychange' }
-		: { aF: 'hidden', az: 'visibilitychange' };
+		? { aG: 'webkitHidden', aA: 'webkitvisibilitychange' }
+		: { aG: 'hidden', aA: 'visibilitychange' };
 }
 
 
@@ -4316,7 +4316,7 @@ function _Browser_getElement(id)
 				as: _Browser_doc.documentElement.clientWidth,
 				X: _Browser_doc.documentElement.clientHeight
 			},
-			aC: {
+			aD: {
 				at: x + rect.left,
 				au: y + rect.top,
 				as: rect.width,
@@ -5181,19 +5181,19 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$sandbox = function (impl) {
 	return _Browser_element(
 		{
-			aH: function (_v0) {
-				return _Utils_Tuple2(impl.aH, $elm$core$Platform$Cmd$none);
+			aJ: function (_v0) {
+				return _Utils_Tuple2(impl.aJ, $elm$core$Platform$Cmd$none);
 			},
-			aR: function (_v1) {
+			aX: function (_v1) {
 				return $elm$core$Platform$Sub$none;
 			},
-			aU: F2(
+			a_: F2(
 				function (msg, model) {
 					return _Utils_Tuple2(
-						A2(impl.aU, msg, model),
+						A2(impl.a_, msg, model),
 						$elm$core$Platform$Cmd$none);
 				}),
-			aW: impl.aW
+			a0: impl.a0
 		});
 };
 var $zwilias$elm_html_string$Html$Types$TextNode = function (a) {
@@ -6230,13 +6230,13 @@ var $author$project$Resources$Videos$Main$view = A2(
 		]));
 var $author$project$Resources$Videos$Main$main = $elm$browser$Browser$sandbox(
 	{
-		aH: {},
-		aU: function (_v0) {
+		aJ: {},
+		a_: function (_v0) {
 			return function (model) {
 				return model;
 			};
 		},
-		aW: function (_v1) {
+		a0: function (_v1) {
 			return $zwilias$elm_html_string$Html$String$toHtml(
 				$zwilias$elm_html_string$Html$String$text(
 					A2($zwilias$elm_html_string$Html$String$toString, 0, $author$project$Resources$Videos$Main$view)));
