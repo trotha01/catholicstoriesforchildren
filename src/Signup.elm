@@ -100,7 +100,7 @@ view model =
             , style "padding" "10px 20px"
             , style "border-radius" "5px 0px 0px 5px"
             , style "box-shadow" "#777 1px 1px 5px"
-            , class "w-[230px] h-[56px]"
+            , class "w-[230px] h-[56px] text-lg"
             ]
             []
         , viewSubmitButton model

@@ -7270,7 +7270,7 @@ var $author$project$Signup$view = function (model) {
 						A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
 						A2($elm$html$Html$Attributes$style, 'border-radius', '5px 0px 0px 5px'),
 						A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-						$elm$html$Html$Attributes$class('w-[230px] h-[56px]')
+						$elm$html$Html$Attributes$class('w-[230px] h-[56px] text-lg')
 					]),
 				_List_Nil),
 				$author$project$Signup$viewSubmitButton(model),
