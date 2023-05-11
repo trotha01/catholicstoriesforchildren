@@ -6092,6 +6092,8 @@ var $elm$http$Http$expectString = function (toMsg) {
 		toMsg,
 		$elm$http$Http$resolve($elm$core$Result$Ok));
 };
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $author$project$Signup$gtagReportConversion = _Platform_outgoingPort('gtagReportConversion', $elm$json$Json$Encode$string);
 var $elm$regex$Regex$Match = F4(
 	function (match, index, number, submatches) {
 		return {aM: index, aP: match, aS: number, a1: submatches};
@@ -6314,7 +6316,6 @@ var $elm$http$Http$post = function (r) {
 	return $elm$http$Http$request(
 		{aC: r.aC, aH: r.aH, aJ: _List_Nil, aQ: 'POST', a3: $elm$core$Maybe$Nothing, au: $elm$core$Maybe$Nothing, U: r.U});
 };
-var $elm$json$Json$Encode$string = _Json_wrap;
 var $author$project$Signup$update = F2(
 	function (msg, model) {
 		switch (msg.$) {
@@ -6358,7 +6359,7 @@ var $author$project$Signup$update = F2(
 						_Utils_update(
 							model,
 							{A: false, r: 'Email sent!'}),
-						$elm$core$Platform$Cmd$none);
+						$author$project$Signup$gtagReportConversion(''));
 				} else {
 					var error = msg.a.a;
 					return _Utils_Tuple2(

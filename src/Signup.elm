@@ -1,4 +1,4 @@
-module Signup exposing (..)
+port module Signup exposing (..)
 
 import Helpers exposing (..)
 import Html exposing (..)
@@ -63,7 +63,7 @@ update msg model =
                 -- , message = response
                 , message = "Email sent!"
               }
-            , Cmd.none
+            , gtagReportConversion ""
             )
 
         FormSubmitted (Err error) ->
@@ -179,3 +179,6 @@ isValidEmail email =
             length email <= 256
     in
     List.length matches > 0 && validLength
+
+
+port gtagReportConversion : String -> Cmd msg

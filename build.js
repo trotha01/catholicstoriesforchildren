@@ -28,6 +28,24 @@ var htmlPart1 = `<!doctype html>
     gtag('config', 'G-TXRVE787GD');
   </script>
 
+  <!-- Event snippet for Newsletter Signup conversion
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11094481734/naEuCKW6gJ4YEMa2oaop',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+
     <meta charset='utf-8'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#EBD7F2">
@@ -136,6 +154,10 @@ var htmlPart4js = `
 
 var htmlPart4p2js = `.Main.init({
     node: document.getElementById('myapp')
+  });
+
+  app.ports.gtagReportConversion.subscribe(function(message) {
+    gtag_report_conversion();
   });
   </script>
 `
