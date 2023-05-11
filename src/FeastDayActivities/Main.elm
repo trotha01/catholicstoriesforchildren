@@ -114,6 +114,7 @@ viewBody route =
         Just (Date date) ->
             case ( date.month, date.date ) of
                 ( Just m, Just d ) ->
+                    -- span [] (List.map viewFeastMonthCSV feastDays) -- used for CSV output
                     feastDays
                         |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower m)
                         |> List.head
@@ -206,6 +207,7 @@ viewFeastActivities feastActivities =
 
     else
         div []
+            -- [ viewActivities "Video" (videoActivities activities) -- used for csv output
             [ viewVideos (videoActivities activities)
             , viewActivities "Audio" (audioActivities activities)
             , viewActivities "Crafts" (craftActivities activities)
@@ -303,6 +305,98 @@ viewActivities activityType activities =
             , div [ class "max-w-3xl m-auto" ]
                 (List.map viewActivity activities)
             ]
+
+
+type alias FeastMonth =
+    { key : String
+    , month : String
+    , feasts : List FeastDay
+    , color : String
+    }
+
+
+type alias FeastDay =
+    { date : String
+    , feasts : List FeastActivities
+    }
+
+
+type alias FeastActivities =
+    { feast : String
+    , activities : List Activity
+    }
+
+
+viewFeastMonthCSV : FeastMonth -> Html Msg
+viewFeastMonthCSV feastMonth =
+    span [] (List.map (viewFeastDayCSV feastMonth.month) feastMonth.feasts)
+
+
+viewFeastDayCSV : String -> FeastDay -> Html Msg
+viewFeastDayCSV month feastDay =
+    span [] (List.map (viewFeastActivitiesCSV (month ++ " " ++ feastDay.date ++ ", 2023")) feastDay.feasts)
+
+
+viewFeastActivitiesCSV : String -> FeastActivities -> Html Msg
+viewFeastActivitiesCSV date feastActivities =
+    span [] (List.map (viewActivityCSV date feastActivities.feast) feastActivities.activities)
+
+
+viewActivityCSV : String -> String -> Activity -> Html msg
+viewActivityCSV date feast activity =
+    p []
+        [ text
+            ("\""
+                ++ date
+                ++ "\",\""
+                ++ feast
+                ++ "\",\""
+                ++ activityTypeToString activity.activityType
+                ++ "\",\""
+                ++ activity.title
+                ++ "\",\""
+                ++ activity.image
+                ++ "\",\""
+                ++ activity.link
+                ++ "\",\""
+                ++ activity.snippet
+                ++ "\","
+            )
+        ]
+
+
+activityTypeToString : ActivityType -> String
+activityTypeToString activityType =
+    case activityType of
+        Video ->
+            "Video"
+
+        Audio ->
+            "Audio"
+
+        Images ->
+            "Images"
+
+        Printout ->
+            "Printout"
+
+        OnlineReading ->
+            "OnlineReading"
+
+        Food ->
+            "Food"
+
+        Game ->
+            "Game"
+
+        Book ->
+            "Book"
+
+        Crafts ->
+            "Crafts"
+
+        More ->
+            "More"
 
 
 viewActivity : Activity -> Html msg
