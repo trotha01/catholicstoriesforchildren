@@ -6618,8 +6618,7 @@ var $author$project$Main$viewSection = F3(
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$id(sectionId),
-						$elm$html$Html$Attributes$class('px-5 sm:pl-[150px] sm:pr-[100px] lg:pr-10'),
-						A2($elm$html$Html$Attributes$style, 'transform-style', 'preserve-3d'),
+						$elm$html$Html$Attributes$class('px-5 sm:pl-[150px] sm:pr-[100px]'),
 						A2($elm$html$Html$Attributes$style, 'min-height', '80vh')
 					]),
 				background),
@@ -7144,6 +7143,23 @@ var $author$project$Signup$viewMessage = function (model) {
 				$elm$html$Html$text(model.r)
 			]));
 };
+var $author$project$Signup$viewSampleImage = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('flex justify-center')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$img,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-2 rounded max-w-[250px]'),
+					$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___1080_px__P4HOL51vg.png?updatedAt=1684270935614')
+				]),
+			_List_Nil)
+		]));
 var $elm$html$Html$button = _VirtualDom_node('button');
 var $elm$html$Html$Attributes$disabled = $elm$html$Html$Attributes$boolProperty('disabled');
 var $elm$html$Html$Events$onClick = function (msg) {
@@ -7235,57 +7251,66 @@ var $author$project$Signup$viewSubmitButton = function (model) {
 var $author$project$Signup$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
 		_List_fromArray(
 			[
+				$elm$html$Html$Attributes$class('border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]')
+			]),
+		_List_fromArray(
+			[
+				$author$project$Signup$viewSampleImage,
 				A2(
-				$elm$html$Html$p,
+				$elm$html$Html$div,
+				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('pb-5')
-					]),
-				_List_fromArray(
-					[
-						$elm$html$Html$text('Want tips, resources, and Catholic animations? We are giving away our prayer printable to those who sign up today!')
-					])),
-				A2(
-				$elm$html$Html$input,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$type_('text'),
-						$elm$html$Html$Attributes$placeholder('First Name'),
-						A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true'),
-						A2($elm$html$Html$Attributes$style, 'display', 'none')
-					]),
-				_List_Nil),
-				A2(
-				$elm$html$Html$input,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$type_('email'),
-						$elm$html$Html$Attributes$placeholder('Email'),
-						$elm$html$Html$Attributes$value(model.z),
-						$elm$html$Html$Events$onInput($author$project$Signup$Email),
-						$author$project$Signup$onEnter($author$project$Signup$Submit),
-						A2($elm$html$Html$Attributes$attribute, 'required', 'true'),
-						A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
-						A2($elm$html$Html$Attributes$style, 'border-radius', '5px 0px 0px 5px'),
-						A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-						$elm$html$Html$Attributes$class('w-[230px] h-[56px] text-lg')
-					]),
-				_List_Nil),
-				$author$project$Signup$viewSubmitButton(model),
-				$author$project$Signup$viewMessage(model)
+						A2(
+						$elm$html$Html$p,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('pb-5')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Join our mail list and get our FREE printable reconciliation booklet for kids!')
+							])),
+						A2(
+						$elm$html$Html$input,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$type_('text'),
+								$elm$html$Html$Attributes$placeholder('First Name'),
+								A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true'),
+								A2($elm$html$Html$Attributes$style, 'display', 'none')
+							]),
+						_List_Nil),
+						A2(
+						$elm$html$Html$input,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$type_('email'),
+								$elm$html$Html$Attributes$placeholder('Email'),
+								$elm$html$Html$Attributes$value(model.z),
+								$elm$html$Html$Events$onInput($author$project$Signup$Email),
+								$author$project$Signup$onEnter($author$project$Signup$Submit),
+								A2($elm$html$Html$Attributes$attribute, 'required', 'true'),
+								A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
+								A2($elm$html$Html$Attributes$style, 'border-radius', '5px 0px 0px 5px'),
+								A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+								$elm$html$Html$Attributes$class('w-[198px] h-[56px] text-lg')
+							]),
+						_List_Nil),
+						$author$project$Signup$viewSubmitButton(model),
+						$author$project$Signup$viewMessage(model)
+					]))
 			]));
 };
 var $author$project$Main$viewIntro = function (model) {
 	return A3(
 		$author$project$Main$viewSection,
-		'videos',
+		'intro',
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$class('grid grid-cols-1 lg:grid-cols-2 gap-5'),
-				$elm$html$Html$Attributes$class('max-w-[120rem]'),
+				$elm$html$Html$Attributes$class('max-w-4xl m-auto'),
 				$elm$html$Html$Attributes$class('my-10')
 			]),
 		_List_fromArray(
@@ -7294,7 +7319,7 @@ var $author$project$Main$viewIntro = function (model) {
 				$elm$html$Html$div,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('mb-20')
+						$elm$html$Html$Attributes$class('mb-10')
 					]),
 				_List_fromArray(
 					[
@@ -7317,19 +7342,6 @@ var $author$project$Main$viewIntro = function (model) {
 						_List_fromArray(
 							[
 								$elm$html$Html$text('Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts.')
-							])),
-						A2(
-						$elm$html$Html$div,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('mt-10')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$map,
-								$author$project$Main$SignupMsg,
-								$author$project$Signup$view(model.G))
 							]))
 					])),
 				A2(
@@ -7376,6 +7388,19 @@ var $author$project$Main$viewIntro = function (model) {
 									]),
 								_List_Nil)
 							]))
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('mt-10')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$map,
+						$author$project$Main$SignupMsg,
+						$author$project$Signup$view(model.G))
 					]))
 			]));
 };

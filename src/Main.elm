@@ -149,12 +149,11 @@ viewBody model =
 
 viewIntro : Model -> Html Msg
 viewIntro model =
-    viewSection "videos"
-        [ class "grid grid-cols-1 lg:grid-cols-2 gap-5"
-        , class "max-w-[120rem]"
+    viewSection "intro"
+        [ class "max-w-4xl m-auto"
         , class "my-10"
         ]
-        [ div [ class "mb-20" ]
+        [ div [ class "mb-10" ]
             [ h2
                 [ class "mb-7 leading-10"
                 ]
@@ -162,8 +161,6 @@ viewIntro model =
             , p [ class "leading-10" ]
                 [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
                 ]
-            , div [ class "mt-10" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , div
             []
@@ -214,6 +211,8 @@ viewIntro model =
                     []
                 ]
             ]
+        , div [ class "mt-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         ]
 
 
@@ -653,8 +652,7 @@ viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Htm
 viewSection sectionId background body =
     section
         ([ id sectionId
-         , class "px-5 sm:pl-[150px] sm:pr-[100px] lg:pr-10"
-         , style "transform-style" "preserve-3d"
+         , class "px-5 sm:pl-[150px] sm:pr-[100px]"
          , style "min-height" "80vh"
          ]
             ++ background

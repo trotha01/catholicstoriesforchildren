@@ -78,33 +78,50 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ p
-            [ class "pb-5"
+    div
+        [ class "border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]"
+        ]
+        [ viewSampleImage
+        , div
+            []
+            [ p
+                [ class "pb-5"
+                ]
+                [ text "Join our mail list and get our FREE printable reconciliation booklet for kids!" ]
+            , input
+                [ type_ "text"
+                , placeholder "First Name"
+                , attribute "aria-hidden" "true"
+                , style "display" "none"
+                ]
+                []
+            , input
+                [ type_ "email"
+                , placeholder "Email"
+                , value model.email
+                , onInput Email
+                , onEnter Submit
+                , attribute "required" "true"
+                , style "padding" "10px 20px"
+                , style "border-radius" "5px 0px 0px 5px"
+                , style "box-shadow" "#777 1px 1px 5px"
+                , class "w-[198px] h-[56px] text-lg"
+                ]
+                []
+            , viewSubmitButton model
+            , viewMessage model
             ]
-            [ text "Want tips, resources, and Catholic animations? We are giving away our prayer printable to those who sign up today!" ]
-        , input
-            [ type_ "text"
-            , placeholder "First Name"
-            , attribute "aria-hidden" "true"
-            , style "display" "none"
+        ]
+
+
+viewSampleImage : Html msg
+viewSampleImage =
+    div [ class "flex justify-center" ]
+        [ img
+            [ class "mb-2 rounded max-w-[250px]"
+            , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___1080_px__P4HOL51vg.png?updatedAt=1684270935614"
             ]
             []
-        , input
-            [ type_ "email"
-            , placeholder "Email"
-            , value model.email
-            , onInput Email
-            , onEnter Submit
-            , attribute "required" "true"
-            , style "padding" "10px 20px"
-            , style "border-radius" "5px 0px 0px 5px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            , class "w-[230px] h-[56px] text-lg"
-            ]
-            []
-        , viewSubmitButton model
-        , viewMessage model
         ]
 
 
