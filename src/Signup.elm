@@ -83,33 +83,36 @@ view model =
         ]
         [ viewSampleImage
         , div
-            []
+            [ class "text-center" ]
             [ p
                 [ class "pb-5"
                 ]
                 [ text "Join our mail list and get our FREE printable reconciliation booklet for kids!" ]
-            , input
-                [ type_ "text"
-                , placeholder "First Name"
-                , attribute "aria-hidden" "true"
-                , style "display" "none"
-                ]
+            , div
                 []
-            , input
-                [ type_ "email"
-                , placeholder "Email"
-                , value model.email
-                , onInput Email
-                , onEnter Submit
-                , attribute "required" "true"
-                , style "padding" "10px 20px"
-                , style "border-radius" "5px 0px 0px 5px"
-                , style "box-shadow" "#777 1px 1px 5px"
-                , class "w-[198px] h-[56px] text-lg"
+                [ input
+                    [ type_ "text"
+                    , placeholder "First Name"
+                    , attribute "aria-hidden" "true"
+                    , style "display" "none"
+                    ]
+                    []
+                , input
+                    [ type_ "email"
+                    , placeholder "Email"
+                    , value model.email
+                    , onInput Email
+                    , onEnter Submit
+                    , attribute "required" "true"
+                    , style "padding" "10px 20px"
+                    , style "border-radius" "5px 0px 0px 5px"
+                    , style "box-shadow" "#777 1px 1px 5px"
+                    , class "w-[188px] sm:w-[240px] h-[56px] text-lg"
+                    ]
+                    []
+                , viewSubmitButton model
+                , viewMessage model
                 ]
-                []
-            , viewSubmitButton model
-            , viewMessage model
             ]
         ]
 
@@ -136,16 +139,16 @@ viewSubmitButton model =
                 ( "bg-[#8a4f97]", spinner, True )
 
             else
-                ( "bg-[#9200B3]", text "Sign Up", False )
+                ( "bg-[#9200B3]", text "Sign Me Up", False )
     in
     button
-        [ style "padding" "10px 20px"
+        [ style "padding" "10px 10px"
         , style "display" "inline-block"
         , style "border-radius" "5px"
         , style "border-radius" "0px 5px 5px 0px"
         , style "box-shadow" "#777 1px 1px 5px"
         , style "color" "white"
-        , class "w-[105px] h-[56px] text-lg"
+        , class "w-[115px] h-[56px] text-lg"
         , class buttonStatusClass
         , onClick Submit
         , disabled isDisabled

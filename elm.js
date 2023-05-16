@@ -7225,7 +7225,7 @@ var $author$project$Signup$viewSubmitButton = function (model) {
 			]));
 	var _v0 = model.A ? _Utils_Tuple3('bg-[#8a4f97]', spinner, true) : _Utils_Tuple3(
 		'bg-[#9200B3]',
-		$elm$html$Html$text('Sign Up'),
+		$elm$html$Html$text('Sign Me Up'),
 		false);
 	var buttonStatusClass = _v0.a;
 	var buttonContent = _v0.b;
@@ -7234,13 +7234,13 @@ var $author$project$Signup$viewSubmitButton = function (model) {
 		$elm$html$Html$button,
 		_List_fromArray(
 			[
-				A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
+				A2($elm$html$Html$Attributes$style, 'padding', '10px 10px'),
 				A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
 				A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
 				A2($elm$html$Html$Attributes$style, 'border-radius', '0px 5px 5px 0px'),
 				A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
 				A2($elm$html$Html$Attributes$style, 'color', 'white'),
-				$elm$html$Html$Attributes$class('w-[105px] h-[56px] text-lg'),
+				$elm$html$Html$Attributes$class('w-[115px] h-[56px] text-lg'),
 				$elm$html$Html$Attributes$class(buttonStatusClass),
 				$elm$html$Html$Events$onClick($author$project$Signup$Submit),
 				$elm$html$Html$Attributes$disabled(isDisabled)
@@ -7260,7 +7260,10 @@ var $author$project$Signup$view = function (model) {
 				$author$project$Signup$viewSampleImage,
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('text-center')
+					]),
 				_List_fromArray(
 					[
 						A2(
@@ -7274,33 +7277,39 @@ var $author$project$Signup$view = function (model) {
 								$elm$html$Html$text('Join our mail list and get our FREE printable reconciliation booklet for kids!')
 							])),
 						A2(
-						$elm$html$Html$input,
+						$elm$html$Html$div,
+						_List_Nil,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$type_('text'),
-								$elm$html$Html$Attributes$placeholder('First Name'),
-								A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true'),
-								A2($elm$html$Html$Attributes$style, 'display', 'none')
-							]),
-						_List_Nil),
-						A2(
-						$elm$html$Html$input,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$type_('email'),
-								$elm$html$Html$Attributes$placeholder('Email'),
-								$elm$html$Html$Attributes$value(model.z),
-								$elm$html$Html$Events$onInput($author$project$Signup$Email),
-								$author$project$Signup$onEnter($author$project$Signup$Submit),
-								A2($elm$html$Html$Attributes$attribute, 'required', 'true'),
-								A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
-								A2($elm$html$Html$Attributes$style, 'border-radius', '5px 0px 0px 5px'),
-								A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-								$elm$html$Html$Attributes$class('w-[198px] h-[56px] text-lg')
-							]),
-						_List_Nil),
-						$author$project$Signup$viewSubmitButton(model),
-						$author$project$Signup$viewMessage(model)
+								A2(
+								$elm$html$Html$input,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$type_('text'),
+										$elm$html$Html$Attributes$placeholder('First Name'),
+										A2($elm$html$Html$Attributes$attribute, 'aria-hidden', 'true'),
+										A2($elm$html$Html$Attributes$style, 'display', 'none')
+									]),
+								_List_Nil),
+								A2(
+								$elm$html$Html$input,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$type_('email'),
+										$elm$html$Html$Attributes$placeholder('Email'),
+										$elm$html$Html$Attributes$value(model.z),
+										$elm$html$Html$Events$onInput($author$project$Signup$Email),
+										$author$project$Signup$onEnter($author$project$Signup$Submit),
+										A2($elm$html$Html$Attributes$attribute, 'required', 'true'),
+										A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
+										A2($elm$html$Html$Attributes$style, 'border-radius', '5px 0px 0px 5px'),
+										A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+										$elm$html$Html$Attributes$class('w-[188px] sm:w-[240px] h-[56px] text-lg')
+									]),
+								_List_Nil),
+								$author$project$Signup$viewSubmitButton(model),
+								$author$project$Signup$viewMessage(model)
+							]))
 					]))
 			]));
 };
