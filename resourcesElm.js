@@ -6008,7 +6008,11 @@ var $author$project$Resources$Main$viewBody = A2(
 			$author$project$Resources$Main$viewResourceGroups,
 			$author$project$Resources$Helpers$viewWorkInProgressNotice
 		]));
+var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
+	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
+};
 var $zwilias$elm_html_string$Html$String$footer = $zwilias$elm_html_string$Html$String$node('footer');
+var $zwilias$elm_html_string$Html$String$span = $zwilias$elm_html_string$Html$String$node('span');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
 };
@@ -6026,6 +6030,62 @@ var $author$project$Footer$viewFooter = A2(
 		]),
 	_List_fromArray(
 		[
+			A2(
+			$zwilias$elm_html_string$Html$String$div,
+			_List_fromArray(
+				[
+					$zwilias$elm_html_string$Html$String$Attributes$class('flex items-center gap-2.5')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$zwilias$elm_html_string$Html$String$span,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$text('Follow us on')
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$a,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$href('https://www.facebook.com/catholicstoriesforchildren'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'CSC Facebook Page'),
+							$zwilias$elm_html_string$Html$String$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$img,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$Attributes$class('w-10 h-10'),
+									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/f_logo_RGB-Blue_250_3vs-yhXer.png?updatedAt=1684277030198'),
+									$zwilias$elm_html_string$Html$String$Attributes$alt('Facebook')
+								]),
+							_List_Nil)
+						])),
+					A2(
+					$zwilias$elm_html_string$Html$String$a,
+					_List_fromArray(
+						[
+							$zwilias$elm_html_string$Html$String$Attributes$href('https://www.instagram.com/catholicstoriesforchildren/'),
+							A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', 'CSC Instagram Page'),
+							$zwilias$elm_html_string$Html$String$Attributes$target('_blank')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$zwilias$elm_html_string$Html$String$img,
+							_List_fromArray(
+								[
+									$zwilias$elm_html_string$Html$String$Attributes$class('w-10 h-10'),
+									$zwilias$elm_html_string$Html$String$Attributes$src('https://ik.imagekit.io/catholicstories/Instagram_Glyph_Gradient_kFoMs9jIr.png?updatedAt=1684277127293'),
+									$zwilias$elm_html_string$Html$String$Attributes$alt('Instagram')
+								]),
+							_List_Nil)
+						]))
+				])),
 			A2(
 			$zwilias$elm_html_string$Html$String$p,
 			_List_Nil,
@@ -6167,9 +6227,6 @@ var $author$project$Header$viewHeaderTitle = function (title) {
 						$zwilias$elm_html_string$Html$String$text('Catholic Stories for Children')
 					]))
 			]));
-};
-var $zwilias$elm_html_string$Html$String$Attributes$alt = function (val) {
-	return A2($zwilias$elm_html_string$Html$String$Attributes$stringProperty, 'alt', val);
 };
 var $author$project$Logo$logo = A2(
 	$zwilias$elm_html_string$Html$String$img,
