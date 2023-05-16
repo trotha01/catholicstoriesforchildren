@@ -32,17 +32,18 @@ view =
         , class "bg-csc-lightpurple"
         , class "pt-5"
         ]
-        [ viewNavButton 1 "/" "Home"
-        , viewNavButton 2 "/team" "About Us"
-        , viewNavButton 3 "/animations" "Animations"
-        , viewNavButton 4 "/contact" "Contact"
-        , viewNavButton 5 "/resources" "Resources"
-        , viewNavButton 6 "/give" "Give"
+        [ viewNavButton 1 "_self" "/" "Home"
+        , viewNavButton 2 "_self" "/team" "About Us"
+        , viewNavButton 3 "_self" "/animations" "Animations"
+        , viewNavButton 4 "_self" "/contact" "Contact"
+        , viewNavButton 5 "_self" "/resources" "Resources"
+        , viewNavButton 6 "_self" "/give" "Give"
+        , viewNavButton 7 "_blank" "https://www.etsy.com/shop/CatholicStories" "Shop"
         ]
 
 
-viewNavButton : Float -> String -> String -> Html msg
-viewNavButton index link page =
+viewNavButton : Float -> String -> String -> String -> Html msg
+viewNavButton index linkTarget link page =
     let
         animationTime =
             (index * 0.5)
@@ -56,5 +57,6 @@ viewNavButton index link page =
         , class "rounded-t"
         , class "text-4xl text-semibold"
         , style "animation" ("fadeIn " ++ animationTime ++ "s")
+        , target linkTarget
         ]
         [ span [ class "px-10 m-auto" ] [ text page ] ]

@@ -6096,8 +6096,8 @@ var $author$project$Footer$viewFooter = A2(
 		]));
 var $zwilias$elm_html_string$Html$String$header = $zwilias$elm_html_string$Html$String$node('header');
 var $zwilias$elm_html_string$Html$String$nav = $zwilias$elm_html_string$Html$String$node('nav');
-var $author$project$Header$viewNavButton = F3(
-	function (height, link, page) {
+var $author$project$Header$viewNavButton = F4(
+	function (height, link, linkTarget, page) {
 		return A2(
 			$zwilias$elm_html_string$Html$String$a,
 			_List_fromArray(
@@ -6110,7 +6110,8 @@ var $author$project$Header$viewNavButton = F3(
 					$zwilias$elm_html_string$Html$String$Attributes$class('text-lg'),
 					$zwilias$elm_html_string$Html$String$Attributes$class('h-[60px] h-[' + (height + ']')),
 					$zwilias$elm_html_string$Html$String$Attributes$class('w-full'),
-					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', page)
+					A2($zwilias$elm_html_string$Html$String$Attributes$attribute, 'aria-label', page),
+					$zwilias$elm_html_string$Html$String$Attributes$target(linkTarget)
 				]),
 			_List_fromArray(
 				[
@@ -6122,15 +6123,16 @@ var $author$project$Header$desktopNavigation = function (height) {
 		$zwilias$elm_html_string$Html$String$nav,
 		_List_fromArray(
 			[
-				$zwilias$elm_html_string$Html$String$Attributes$class('h-full w-full grid grid-cols-5 content-center justify-items-center')
+				$zwilias$elm_html_string$Html$String$Attributes$class('h-full w-full grid grid-cols-6 content-center justify-items-center')
 			]),
 		_List_fromArray(
 			[
-				A3($author$project$Header$viewNavButton, height, '/team', 'About Us'),
-				A3($author$project$Header$viewNavButton, height, '/animations', 'Animations'),
-				A3($author$project$Header$viewNavButton, height, '/contact', 'Contact'),
-				A3($author$project$Header$viewNavButton, height, '/resources', 'Resources'),
-				A3($author$project$Header$viewNavButton, height, '/give', 'Give')
+				A4($author$project$Header$viewNavButton, height, '/animations', '_self', 'Animations'),
+				A4($author$project$Header$viewNavButton, height, 'https://www.etsy.com/shop/CatholicStories', '_blank', 'Shop'),
+				A4($author$project$Header$viewNavButton, height, '/resources', '_self', 'Resources'),
+				A4($author$project$Header$viewNavButton, height, '/contact', '_self', 'Contact'),
+				A4($author$project$Header$viewNavButton, height, '/give', '_self', 'Give'),
+				A4($author$project$Header$viewNavButton, height, '/team', '_self', 'About Us')
 			]));
 };
 var $author$project$Header$hamburgerMenu = A2(

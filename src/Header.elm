@@ -84,18 +84,19 @@ hamburgerMenu =
 desktopNavigation : String -> Html msg
 desktopNavigation height =
     nav
-        [ class "h-full w-full grid grid-cols-5 content-center justify-items-center"
+        [ class "h-full w-full grid grid-cols-6 content-center justify-items-center"
         ]
-        [ viewNavButton height "/team" "About Us"
-        , viewNavButton height "/animations" "Animations"
-        , viewNavButton height "/contact" "Contact"
-        , viewNavButton height "/resources" "Resources"
-        , viewNavButton height "/give" "Give"
+        [ viewNavButton height "/animations" "_self" "Animations"
+        , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
+        , viewNavButton height "/resources" "_self" "Resources"
+        , viewNavButton height "/contact" "_self" "Contact"
+        , viewNavButton height "/give" "_self" "Give"
+        , viewNavButton height "/team" "_self" "About Us"
         ]
 
 
-viewNavButton : String -> String -> String -> Html msg
-viewNavButton height link page =
+viewNavButton : String -> String -> String -> String -> Html msg
+viewNavButton height link linkTarget page =
     a
         [ href link
         , class "flex items-center justify-center"
@@ -103,11 +104,10 @@ viewNavButton height link page =
         , class "hover:border-b-2 hover:border-gray-700"
         , class "rounded-t"
         , class "text-lg"
-
-        -- , style "height" height
         , class ("h-[60px] h-[" ++ height ++ "]")
         , class "w-full"
         , attribute "aria-label" page
+        , target linkTarget
         ]
         [ text page ]
 
