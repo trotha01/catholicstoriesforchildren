@@ -6,7 +6,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
-import Saints.SaintList exposing (saintList)
+import Saints.SaintList exposing (Saint, saints)
 
 
 
@@ -91,5 +91,17 @@ viewSaints =
                     [ text "Catholic Saints Info" ]
                 ]
             ]
-        , saintList
+        , div [] (List.map viewSaint saints)
+        ]
+
+
+viewSaint : Saint -> Html msg
+viewSaint saint =
+    div []
+        [ a
+            [ href saint.catholicSaintsLink
+            , attribute "aria-label" saint.name
+            , target "_blank"
+            ]
+            [ text saint.name ]
         ]

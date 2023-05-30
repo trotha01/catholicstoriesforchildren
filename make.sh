@@ -28,25 +28,25 @@ elmmake() {
 
 pair_list=(
   src/Main.elm elm.js
-  src/Navigation/Main.elm navigationElm.js
-  src/Contact/Main.elm contactElm.js
-  src/Team/Main.elm teamElm.js
-  src/Give/Main.elm giveElm.js
-  src/Newsroom/Main.elm newsroomElm.js
-  src/Animations/Main.elm animationsElm.js
-  src/Animations/HailMary/Main.elm animations/hailmary/elm.js
-  src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
-  src/Animations/StMichael/Main.elm animations/stmichael/elm.js
-  src/FeastDayActivities/Main.elm feastdayactivities/elm.large.js
   src/About/PrivacyPolicy/Main.elm privacyPolicyElm.js
-  src/Resources/Main.elm resourcesElm.js
-  src/Resources/Books/Main.elm resourcesBooksElm.js
-  src/Resources/Podcasts/Main.elm resourcesPodcastsElm.js
-  src/Resources/Videos/Main.elm resourcesVideosElm.js
-  src/Resources/Subscriptions/Main.elm resourcesSubscriptionsElm.js
-  src/Resources/Prayer/Main.elm resourcesPrayerElm.js
-  src/Saints/Main.elm saintsElm.js
+  src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
+  src/Animations/HailMary/Main.elm animations/hailmary/elm.js
+  src/Animations/Main.elm animationsElm.js
+  src/Animations/StMichael/Main.elm animations/stmichael/elm.js
+  src/Contact/Main.elm contactElm.js
+  src/FeastDayActivities/Main.elm feastdayactivities/elm.large.js
+  src/Give/Main.elm giveElm.js
+  src/Navigation/Main.elm navigationElm.js
+  src/Newsroom/Main.elm newsroomElm.js
   src/Prayers/Main.elm prayersElm.js
+  src/Resources/Books/Main.elm resourcesBooksElm.js
+  src/Resources/Main.elm resourcesElm.js
+  src/Resources/Podcasts/Main.elm resourcesPodcastsElm.js
+  src/Resources/Prayer/Main.elm resourcesPrayerElm.js
+  src/Resources/Subscriptions/Main.elm resourcesSubscriptionsElm.js
+  src/Resources/Videos/Main.elm resourcesVideosElm.js
+  src/Saints/Main.elm saintsElm.js
+  src/Team/Main.elm teamElm.js
 )
 
 # Iterate through the list and pass each pair to the function
