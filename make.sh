@@ -5,8 +5,6 @@
 # and serve with:
 # python3 -m http.server 8000
 # (OLD python -m SimpleHTTPServer 8000)
-#
-# We build this way so the webpage doesn't need javascript
 
 set -ex
 

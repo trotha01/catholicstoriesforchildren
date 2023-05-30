@@ -410,7 +410,7 @@ viewActivity activity =
         , class "rounded m-5"
         ]
         [ img
-            [ src activity.image
+            [ src (imageSrc activity)
             , class "w-20 h-20"
             , class "rounded"
             , class "object-cover"

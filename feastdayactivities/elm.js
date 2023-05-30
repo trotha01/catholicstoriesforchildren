@@ -5745,80 +5745,194 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 	feasts: _List_fromArray(
 		[
 			{
-			date: '02',
+			date: '1',
 			feasts: _List_fromArray(
 				[
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/83Fkcb9SGek', snippet: '', title: 'The Presentation of Jesus'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', snippet: 'At the end of the fourth century, a woman named Etheria made a pilgrimage to Jerusalem. Her journal, discovered in 1887, gives an unprecedented...', title: 'Presentation of the Lord'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', snippet: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', title: 'How To Celebrate Candlemas With Catholic Children'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-ansgar/', snippet: 'Saint Ansgar was a Benedictine missionary who spent his life trying to convert northern Europe. It seems for every step he took forward, he ended up taking two backward.', title: 'Story of Saint Ansgar'}
 						]),
-					feast: 'The Presentation of the Lord'
-				}
-				])
-		},
-			{
-			date: '03',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/3yGRtx_ITgA', snippet: '', title: 'St. Blase'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', snippet: 'We know more about the devotion to Saint Blaise by Christians around the world than we know about the saint himself...', title: 'Saint Blaise’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase/', snippet: 'According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey)...', title: 'Saint Blaise'}
-						]),
-					feast: 'St Blase'
+					feast: 'Saint Ansgar'
 				},
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/BWJt5CZX3mc', snippet: '', title: 'St. Ansgar'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-brigid', snippet: 'By Julianne Stanz Transcript Saint Brigid is the patron saint of fire, healing, midwives, and childbirth. She’s a bit of a busy bee. We celebrate her feast day on February 1st, which is known as Imbolc, one of the great fire festivals of the Irish. As the shamrock became associated with Saint Patri...', title: 'Saint Brigid'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-brigid-feb-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Feast of Brigid, also known as Imbolc, celebrates the arrival of longer, warmer days and the early signs of spring. On Imbolc Eve Brigid visits virtuous households and blesses the inhabitants. St. Brigid represents Purity, Protection and Parturition', title: 'Brigid'}
 						]),
-					feast: 'St Ansgar'
+					feast: 'Saint Brigid'
 				}
 				])
 		},
 			{
-			date: '05',
+			date: '2',
 			feasts: _List_fromArray(
 				[
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/y42RPHsJX44', snippet: '', title: 'St. Agatha'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', snippet: 'As in the case of Agnes, another virgin-martyr of the early Church, almost nothing is historically certain about this saint except that she was martyred in Sicily during the persecution of Emperor Decius in 251...', title: 'Saint Agatha’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha/', snippet: 'Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories...', title: 'Saint Agatha'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/', snippet: 'There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family...', title: 'How To Celebrate Candlemas With Catholic Children'}
 						]),
-					feast: 'St Agatha'
+					feast: 'The Presentation of the Lord'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/', snippet: 'Being an observant Jewish couple, it stands to reason that Mary and Joseph went to the Temple for Mary’s purification—as prescribed by Mosaic Law—40 days after Jesus’ birth. The blessing of candles and the procession of light were added to this feast, giving it the popular name “Candlemas.”', title: 'Story of Presentation of the Lord'}
+						]),
+					feast: 'Presentation of the Lord'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-candlemas-feb-2-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Candlemas Candlemas, also known as the Feast of the Presentation of Our Lord Jesus, is a Christian Holy Day commemorating the presentation of Jesus at the Temple. It falls on February 2, which is traditionally the 40th day of the Christmas–Epiphany season. While it is customary for Chr...', title: 'Candlemas'}
+						]),
+					feast: 'Saint Candlemas'
 				}
 				])
 		},
 			{
-			date: '06',
+			date: '3',
 			feasts: _List_fromArray(
 				[
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/36uf0JQMJv4', snippet: '', title: 'St. Paul Miki'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', snippet: 'Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlooking Nagasaki...', title: 'Saint Paul Miki and Companions’ Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase/', snippet: 'According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey)...', title: 'Saint Blaise'}
+						]),
+					feast: 'Saint Blase'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/', snippet: 'Popularly known as the saint who protects from ailments of the throat, Saint Blaise was a bishop and martyr of the fourth century. We know little else about him, except that he suffered persecution even after the Edict of Toleration was to have freed the Roman world for worship.', title: 'Story of Saint Blaise'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase', snippet: 'If you are already familiar with St. Blaise, it is probably because of the blessing of throats—a Catholic custom on his feast. According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey). During a period of persecution, h...', title: 'Saint Blaise'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-blaise-feb-3-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Blaise’s Story \u00A0 We know more about the devotion to Saint\u00A0Blaise by Christians around the world than we know about the saint himself. His feast is observed as a holy day in some Eastern Churches. In 1222, the Council of Oxford prohibited servile labor in England on Blaise’s feast day. The Germ...', title: 'Blaise'}
+						]),
+					feast: 'Saint Blaise'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-ansgar-feb-3', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The “apostle of the north” (Scandinavia) had enough frustrations to become a saint—and he did. He became a Benedictine at Corbie, France, where he had been educated. Three years later, when the king of Denmark became a convert, Ansgar went to that country for three years of missionary work, without noticeable success...', title: 'Saint Ansgar'}
+						]),
+					feast: 'Saint Ansgar'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-blaise-feb-3', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Werburgh\'s Story \u200B The Legend of St Werburgh A Benedictine and Patroness St Werburgh was a Benedictine and patroness of Chester, Abbess of Weedon, Trentham, Hanbury, Minster in Sheppey, and Ely. She was born in Staffordshire early in the seventh century and died at Trentham in 3rd February in...', title: 'Saint Werburgh'}
+						]),
+					feast: 'Saint Werburgh'
+				}
+				])
+		},
+			{
+			date: '4',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-of-leonissa/', snippet: 'Saint Joseph of Leonissa was known for his austerity of life and single-minded commitment to preaching. Arrested and warned to change his ways, Joseph returned to his former behavior and was re-arrested and condemned to die. He escaped, however, and continued a life of preaching.', title: 'Story of Saint Joseph of Leonissa'}
+						]),
+					feast: 'Saint Joseph of Leonissa'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-rabanus-maurus', snippet: 'Come, Creator, Spirit, come from your bright heavenly throne, come take possession of our souls, and make them all your own.You who are called the Paraclete, best gift of God above, the living spring, the vital fire sweet christ’ning and true love. . . .O guide our minds with your best light, with l...', title: 'Saint Rabanus Maurus'}
+						]),
+					feast: 'Saint Rabanus Maurus'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-2-of-st-blaise-feb-3', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Joseph of Leonissa’s Story \u200B Joseph of Leonissa, OFM Cap.;\u00A0 was the third of eight children born at Leonessa (Italy) on January 8, 1556. At baptism he was given the name Eufranio. Impressed by the example of Matthew Silvestri, who had left the medical profession to embrace the Capuchin life an...', title: 'Joseph of Leonessa'}
+						]),
+					feast: 'Saint Joseph of Leonessa'
+				}
+				])
+		},
+			{
+			date: '5',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha/', snippet: 'Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories...', title: 'Saint Agatha'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/', snippet: 'One of the four virgin martyrs celebrated in the Catholic calendar of saints, Saint Agatha was arrested during the persecution of Decius in 251. Tortured for her beauty and tempted to violate her chastity, Agatha was eventually martyred.', title: 'Story of Saint Agatha'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha', snippet: 'Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories, Agatha was born in Sicily of noble...', title: 'Saint Agatha'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-agatha-feb-5-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of St. Agatha, also known as Agatha of Sicily, is one of the most highly venerated virgin martyrs of the Catholic Church. It is believed that she was born around 231 in either Catania or Palermo, Sicily to a rich and noble family. From her very early years, the notably beautiful Agatha de...', title: 'Agatha'}
+						]),
+					feast: 'Saint Agatha'
+				}
+				])
+		},
+			{
+			date: '6',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions/', snippet: 'When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government...', title: 'Saint Paul Miki and Companions'}
 						]),
-					feast: 'Sts Paul Miki and Companions'
+					feast: 'Saints Paul Miki and Companions'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/', snippet: 'A Jesuit Brother and native of Japan, Saint Paul Miki was crucified, along with 25 other Catholics, for preaching his belief in Jesus.', title: 'Story of Saint Paul Miki and Companions'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions', snippet: 'When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government. In 1587 he banished them and destroyed many of their churches. Some missi...', title: 'Saint Paul Miki and Companions'}
+						]),
+					feast: 'Saint Paul Miki and Companions'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-dorothy-of-caesarea-feb--1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint\u00A0Dorothy of Caesarea \u00A0 The Holy Martyr Dorothy and the Martyrs Christina, Callista and Theophilus lived in Caesarea of Cappadocia and suffered under Emperor Diocletian in either the year 288 or 300. \u200B St. Dorothy was a pious Christian maiden, distinguished by her great beauty, humi...', title: 'Dorothy of Caesarea'}
+						]),
+					feast: 'Saint Dorothy of Caesarea'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-paul-miki-companions-f-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint\u00A0Paul Miki and Companions’ Story \u200B Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlook...', title: 'Paul Miki & Companions'}
+						]),
+					feast: 'Saint Paul Miki & Companions'
 				}
 				])
 		},
 			{
-			date: '08',
+			date: '7',
 			feasts: _List_fromArray(
 				[
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', snippet: 'A careless and irreligious soldier for the city-state of Venice, Jerome was captured in a skirmish at an outpost town and chained in a dungeon...', title: 'Saint Jerome Emiliani’s Story'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-colette/', snippet: 'Saint Colette is known as a reformer of the Order of Saint Clare. Known as the Colettine Poor Clares, these nuns follow a more primitive rule of Saint Clare and are known for their austerity.', title: 'Story of Saint Colette'}
+						]),
+					feast: 'Saint Colette'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-dorothy-of-caesarea-feb-', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Theodore Stratelates\' Story \u200B The holy Martyr Theodore was from Euchaita of Galatia and dwelt in Heraclea of Pontus. He was a renowned commander in the military, and the report came to the Emperor Licinius that he was a Christian and abominated the idols. Licinius therefore sent certain men to...', title: 'Theodore Stratelates'}
+						]),
+					feast: 'Saint Theodore Stratelates'
+				}
+				])
+		},
+			{
+			date: '8',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-jerome-emiliani/', snippet: 'Jerome Emiliani was born in Venice. As a soldier, he was captured during battle and imprisoned. In a dungeon he thought about his life...', title: 'Saint Jerome Emiliani'}
 						]),
 					feast: 'Saint Jerome Emilani'
@@ -5826,12 +5940,54 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/9WsYj6dIyXM', snippet: '', title: 'St. Josephine Bakhita'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/', snippet: 'For many years, Josephine Bakhita was a slave but her spirit was always free and eventually that spirit prevailed.', title: 'Saint Josephine Bakhita’s Story'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-josephine-bakhita-resources-for-kids/', snippet: 'Let’s look at some celebrating the life of St. Bakhita for kids with crafts, printables, and even more resources.', title: 'St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita/', snippet: 'Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery...', title: 'Saint Josephine, Bakhita'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita/', snippet: 'Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery...', title: 'Saint Josephine, Bakhita'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/', snippet: 'Kidnapped at the age of nine and being too terrified to remember her name, Josephine acquired the name “Bakhit” which means “fortunate one.”', title: 'Story of Saint Josephine Bakhita'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-josephine-bakhita-feb-8-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint\u00A0Josephine Bakhita\'s Story \u200B Josephine Bakhita (1869-1947) \u00A0 Mother Josephine Bakhita was born in Sudan in 1869 and died in Schio (Vicenza)\u00A0\u00A0in 1947. This African flower, who knew the anguish of kidnapping and slavery, bloomed marvelously in Italy, in response to God\'s grace, with the Daughters...', title: 'Josephine Bakhita'}
 						]),
 					feast: 'Saint Josephine Bakhita'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-jerome-emiliani', snippet: 'Jerome Emiliani was born in Venice. As a soldier, he was captured during battle and imprisoned. In a dungeon he thought about his life, which had been far from virtuous. He decided to change and dedicated himself to the Virgin Mary. After a miraculous escape from prison, Jerome returned to Venice. H...', title: 'Saint Jerome Emiliani'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-jerome-emiliani-feb-8-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Jerome Emiliani’s Story \u200B Born wealthy, the son of Angelo and Eleanor Mauroceni Emiliani. His father died when Jerome was a teenager, and he ran away from home at age 15. After a dissolute youth, he became a soldier in Venice, Italy in 1506. Commanded the League of Cambrai forces at the fortre...', title: 'Jerome Emiliani'}
+						]),
+					feast: 'Saint Jerome Emiliani'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita', snippet: '“It is an act of justice for the rich to help the poor.” Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery, eventually working in Italy as a nanny for a wealthy family. It was during...', title: 'Saint Josephine, Bakhita, c. 1868-1947'}
+						]),
+					feast: 'Saint Josephine, Bakhita, c. 1868-1947'
+				}
+				])
+		},
+			{
+			date: '9',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/', snippet: 'An orphan at the age of 15, Saint Jerome Emiliani ran away from home and ran into some trouble. He ended up in prison where he had time to think. After a conversion, Saint Jerome studied for the priesthood and, after his ordination, he worked for abandoned children.', title: 'Story of Saint Jerome Emiliani'}
+						]),
+					feast: 'Saint Jerome Emiliani'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-miguel-febres-cordero', snippet: 'How would you like to have a teacher who was described like this: He was kind to everyone and treated all of his students, rich or poor, the same. He liked to be with the students, and they liked to be with him. All of the children in the school loved him. That is exactly what a saint said about tod...', title: 'Saint Miguel Febres Cordero'}
+						]),
+					feast: 'Saint Miguel Febres Cordero'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-apollonia-feb-9-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Apollonia’s Story \u200B The persecution of Christians began in Alexandria during the reign of the Emperor Philip. The first victim of the pagan mob was an old man named Metrius, who was tortured and then stoned to death. The second person who refused to worship their false idols was a Christian wo...', title: 'Apollonia'}
+						]),
+					feast: 'Saint Apollonia'
 				}
 				])
 		},
@@ -5842,9 +5998,10 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/_wBhZ5Z0suE', snippet: '', title: 'St. Scholastica'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', snippet: 'Twins often share the same interests and ideas with an equal intensity. Therefore, it is no surprise that Scholastica and her twin brother, Benedict, established religious communities within a few miles from each other...', title: 'Saint Scholastica’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica/', snippet: 'Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica...', title: 'Saint Scholastica'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica/', snippet: 'Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica...', title: 'Saint Scholastica'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/', snippet: 'Family ties and religious obligations may affect one another, but they are not necessarily opposed. Saint Scholastica’s relationship with her brother Saint Benedict, is a good example.', title: 'Story of Saint Scholastica'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica', snippet: 'Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica helped her brother found...', title: 'Saint Scholastica'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-scholastica-feb-10-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint\u00A0Scholastica\'s Story \u200B St. Scholastica, sister of St. Benedict, consecrated her\u00A0life\u00A0to\u00A0God\u00A0from her earliest youth. After her brother went to Monte Cassino, where he established his famous monastery, she took up her abode in the neighborhood at Plombariola, where she founded and governed a mon...', title: 'Scholastica'}
 						]),
 					feast: 'Saint Scholastica'
 				}
@@ -5857,15 +6014,68 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/BTAd8GqsQ14', snippet: '', title: 'Bernadette: The Princess of Lourdes | The Saints and Heroes Collection'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/Gde3rSZA_CQ', snippet: '', title: 'Our Lady of Lourdes'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/XGe_P7oaSgQ ', snippet: '', title: 'Story of Saint Bernadette | Stories of Saints'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-lourdes/', snippet: 'On December 8, 1854, Pope Pius IX proclaimed the dogma of the Immaculate Conception in the apostolic constitution Ineffabilis Deus. A little more than three years later, on February 11, 1858, a young lady appeared to Bernadette Soubirous...', title: 'The Story of Our Lady of Lourdes'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/our-lady-of-lourdes-craft/', snippet: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', title: 'Our Lady Of Lourdes Diorama (Printable Craft For Catholic Kids!)'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/our-lady-of-lourdes/', snippet: 'Each year over 2 million people make their way through the mountainous country of southeastern France to Lourdes. They come seeking cures, hoping to find answers, believing, and praying. At Lourdes...', title: 'Our Lady of Lourdes'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', link: 'https://www.catholicicing.com/rice-krispie-treat-grotto-for-our-lady/', snippet: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', title: 'Rice Krispie Treat Grotto Tor Our Lady Of Lourdes'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', link: 'https://www.catholicicing.com/rice-krispie-treat-grotto-for-our-lady/', snippet: 'It prints on 3 pages, and comes in both black & white AND in color, so you can choose if you want to color it yourself or not...', title: 'Rice Krispie Treat Grotto Tor Our Lady Of Lourdes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-lourdes/', snippet: 'Devotion to Our Lady of Lourdes runs deep in the hearts of the faithful as a sign of God’s care and healing. The mediation of Mary, his mother, is a real consolation to those who suffer any ill.', title: 'Story of Our Lady of Lourdes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/our-lady-of-lourdes', snippet: 'Each year over 2 million people make their way through the mountainous country of southeastern France to Lourdes. They come seeking cures, hoping to find answers, believing, and praying. At Lourdes, people recall the Lady dressed in white, with a blue sash, yellow roses at her feet, and a Rosary on...', title: 'Our Lady of Lourdes'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-our-lady-of-lourdes-feb-11', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint\u00A0Eulalia of Barcelona \u200B The daughter of a noble family, Eulalia lived near the city of Barcelona. During the persecutions under Diocletian, governor\u00A0Dacian\u00A0arrived in the city intent on enforcing the decrees. Some time later, Eulalia entered the city and confronted the governor for...', title: 'Our Lady of Lourdes'}
 						]),
 					feast: 'Our Lady of Lourdes'
+				}
+				])
+		},
+			{
+			date: '12',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-apollonia/', snippet: 'Saint Apollonia is the patron saint of dentists because her teeth were knocked out by an angry mob. Hardly the way we would wish a dentist to extract our teeth, but Saint Apollonia certainly evidenced great courage in her defiance of those who were attacking Christians.', title: 'Story of Saint Apollonia'}
+						]),
+					feast: 'Saint Apollonia'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-benedict-of-aniane', snippet: 'Next to St. Benedict himself, St. Benedict of Aniane influenced the shape of Benedictine monasticism in the West more than anyone else. Allied with Holy Roman emperors Charlemagne and Louis the Pious, he promulgated a strict and idealistic monastic reform that lasted nearly two centuries. And Benedi...', title: 'Saint Benedict of Aniane'}
+						]),
+					feast: 'Saint Benedict of Aniane'
+				}
+				])
+		},
+			{
+			date: '13',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-giles-mary-of-saint-joseph/', snippet: 'Simple, humble persons can sometimes be powerful in their effect on and work with the people of God. Saint Giles Mary of Saint Joseph was such a man. Giles Mary was loved on the streets of Naples for his goodness born of prayer.', title: 'Story of Saint Giles Mary of Saint Joseph'}
+						]),
+					feast: 'Saint Giles Mary of Saint Joseph'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-catherine-dei-ricci', snippet: 'We are curious about mystics who experience ecstasies and visions. But we tend to regard them as psychologically unbalanced persons. However, when we get to know a genuine mystic like St. Catherine dei Ricci we must abandon our stereotypical view. Catherine was a very competent woman who trained nun...', title: 'Saint Catherine dei Ricci'}
+						]),
+					feast: 'Saint Catherine dei Ricci'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-ermenilda-of-ely-feb-13', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of St. Catherine de Ricci \u200B St. Catherine was born in\u00A0Florence\u00A0in 1522. Her baptismal name was Alexandrina, but she took the name of Catherine upon entering religion. From her earliest infancy she manifested a great love of prayer, and in her sixth year, her father placed her in the\u00A0conven...', title: 'Catherine de Ricci'}
+						]),
+					feast: 'Saint Catherine de Ricci'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-our-lady-of-lourdes-feb-11-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Georgia \u200B A virgin hermitess near Clermont, Auvergne, France. \u200B Saint Gregory of Tours in his Historia Francorum tells us that when Saint Georgia was buried angels, in the form of doves, followed her coffin to her grave. \u200B https://the-american-catholic.com/2020/02/15/saint-of-the-day-q...', title: 'Ermenilda of Ely'}
+						]),
+					feast: 'Ermenilda of Ely'
 				}
 				])
 		},
@@ -5873,15 +6083,70 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 			date: '14',
 			feasts: _List_fromArray(
 				[
-					{activities: _List_Nil, feast: 'Saints Cyril, Monk, and Methodius'},
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/NeBoi1K37Kc', snippet: '', title: 'Ss. Cyril & Methodius'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-cyril-and-methodius/', snippet: 'Cyril and Methodius were brothers, born in Thessalonika, Greece. Cyril (825–869), a philosopher, studied in Constantinople and was ordained a priest. Methodius (826–884), for five years the governor of a Slavic region of the empire, became a monk...', title: 'Saints Cyril and Methodius'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/celebrating-st-valentines-day-with-catholic-kids/', snippet: 'Today I am going to share with you some pintables, resources, crafts, and books to celebrate the true meaning of St. Valentine’s Day with Catholic kids...', title: 'Celebrating St. Valentine’s Day With Catholic Kids'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/celebrating-st-valentines-day-with-catholic-kids/', snippet: 'Today I am going to share with you some pintables, resources, crafts, and books to celebrate the true meaning of St. Valentine’s Day with Catholic kids...', title: 'Celebrating St. Valentine’s Day With Catholic Kids'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-valentine', snippet: 'Everyone has heard about Saint Valentine. He’s the patron saint of lovers, and on his day people send anonymous cards or presents to the one they love. But who was Saint Valentine? Well, there was a priest named Valentine who lived in Rome in the third century. He was put in prison because he helpe...', title: 'Saint Valentine'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-valentine-feb-14-2', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint\u00A0Valentine \u00A0 On February 14around the year 278A.D., Valentine, a holy priest in Rome in the days of Emperor Claudius II, was executed. Under the rule of Claudius the Cruel, Rome was involved in many unpopular and bloody campaigns. The emperor had to maintain a strong army, but was...', title: 'Valentine'}
 						]),
 					feast: 'Saint Valentine'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saints-cyril-and-methodius/', snippet: 'Often missionaries face the difficulties of language and culture. Saints Cyril and Methodius were no exceptions. But they faced the difficulties by writing the foreign language in a new alphabet and translating the liturgy for the local people.', title: 'Story of Saints Cyril and Methodius'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-cyril-and-methodius', snippet: 'Cyril and Methodius were brothers, born in Thessalonika, Greece. Cyril (825–869), a philosopher, studied in Constantinople and was ordained a priest. Methodius (826–884), for five years the governor of a Slavic region of the empire, became a monk. In 861, the two brothers went as missionaries to Rus...', title: 'Saints Cyril and Methodius'}
+						]),
+					feast: 'Saints Cyril and Methodius'
+				}
+				])
+		},
+			{
+			date: '15',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-claude-de-la-colombiere/', snippet: 'Saint Claude de la Colombière met Saint Margaret Mary Alacoque and eventually became her confessor. Together they advanced devotion to the Sacred Heart at a time when God’s mercy needed emphasis. God raises the right people at the right time to keep his Church on the right path.', title: 'Story of Saint Claude de la Colombière'}
+						]),
+					feast: 'Saint Claude de la Colombière'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-claude-la-colombiere', snippet: 'All our life is sown with tiny thorns that produce in our hearts a thousand involuntary movements of hatred, envy, fear, impatience, a thousand little fleeting disappointments, a thousand slight worries, a thousand disturbances that momentarily alter our peace of soul. For example, a word escapes th...', title: 'Saint Claude la Colombiére'}
+						]),
+					feast: 'Saint Claude la Colombiére'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-lenten-companion-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint Claude de la Colombière \u00A0 This is a special day for the Jesuits, who claim today’s saint as one of their own. It’s also a special day for people who have a special devotion to the Sacred Heart of Jesus—a devotion Claude de la Colombière promoted, along with his friend and spiritua...', title: 'Claude de la Colombière'}
+						]),
+					feast: 'SaintClaude de la Colombière'
+				}
+				])
+		},
+			{
+			date: '16',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-gilbert-of-sempringham/', snippet: 'Saint Gilbert of Sempringham could have been a wealthy priest, but chose to live far more simply. He founded a religious congregation the Gilbertines, who followed his example of living poorly and caring for those who want. Saint Gilbert live past 100 years of age.', title: 'Story of Saint Gilbert of Sempringham'}
+						]),
+					feast: 'Saint Gilbert of Sempringham'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-juliana-of-cumae-feb-16', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint\u00A0Juliana of Cumae \u00A0 Saint Juliana of Cumae\u00A0(also known as Juliana of Nicomedia, died 305), virgin and martyr of the Church. Saint Juliana became widely venerated in Medieval times, with epic poems written about her battle and eventual victory over the Devil. Her Acts, recorded by t...', title: 'Juliana of Cumae'}
+						]),
+					feast: 'Saint Juliana of Cumae'
 				}
 				])
 		},
@@ -5892,10 +6157,30 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/PXEtTbAWGgc', snippet: '', title: 'The Seven Holy Founders'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites/', snippet: 'Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values...', title: 'The Seven Holy Founders of the of Servite Order'}
 						]),
 					feast: 'Seven Holy Founders of the Servite Order'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/seven-founders-of-the-servite-order/', snippet: 'Rather than just talk about the problems of the day, the Seven Founders of the Servite Order did something about it─they consciously left all and formed a new religious congregation to address the issues. They put their money where their mouths were.', title: 'Story of Seven Founders of the Servite Order'}
+						]),
+					feast: 'Seven Founders of the Servite Order'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites', snippet: 'Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values. Seven wealthy, well-known cloth merchants lived in Florence, Italy in the mid-thirteenth century: Bonfilius, Mo...', title: 'The Seven Holy Founders of the of Servite Order'}
+						]),
+					feast: 'The Seven Holy Founders of the of Servite Order'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-seven-holy-founders-of--1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of the Seven Founders of the Servite Order \u200B Can you imagine seven prominent men of Boston or Denver banding together, leaving their homes and professions, and going into solitude for a life directly given to God? That is what happened in the cultured and prosperous city of Florence in the...', title: 'The Seven Holy Founders of the Servite Order'}
+						]),
+					feast: 'The Seven Holy Founders of the Servite Order'
 				}
 				])
 		},
@@ -5909,6 +6194,67 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Images, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/GoogleArtsAndCulture__aIhfPvxu.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676432323426', link: 'https://artsandculture.google.com/entity/fra-angelico/m031b2?categoryId=artist', snippet: 'View ultra-high resolution images of Fra Angelico\'s paintings', title: 'Fra Angelico\'s Paintings'}
 						]),
 					feast: 'Blessed John of Fiesole (Fra Angelico)'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/blessed-john-of-fiesole/', snippet: 'Blessed John of Fiesole, a Dominican Friar, is also known as Fra Angelico. Famous for his devotional artwork John used his talents to praise God through paint. All talents can be used to praise God.', title: 'Story of Blessed John of Fiesole'}
+						]),
+					feast: 'Blessed John of Fiesole'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-amy-feb-20', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Fra Angelico\'s Story\u00A0 \u200B Fra Angelico was an Italian painter of the early Renaissance who combined the\u00A0life\u00A0of a devout\u00A0friar\u00A0with that of an accomplished painter. He was called Angelico (Italian for \'angelic\') and Beato (Italian for \'blessed\') because the paintings he did were of calm, religio...', title: 'Fra Angelico'}
+						]),
+					feast: 'Saint Fra Angelico'
+				}
+				])
+		},
+			{
+			date: '19',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-conrad-of-piacenza/', snippet: 'Saint Conrad offers a different slant of holiness. Married, he and his wife opted to live separate lives─she as a Poor Clare and he as a Franciscan hermit. All this after he set a fire which was spread by the wind and destroyed the nearby fields, forests, and town.', title: 'Story of Saint Conrad of Piacenza'}
+						]),
+					feast: 'Saint Conrad of Piacenza'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-seven-holy-founders-of-', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Odran Story \u200B The death of St Odran According to the Tripartite Life of Saint Patrick (Vita tripartita Sancti Patricii) St Odran’s death, in simpler terms, was a case of mistaken identity but \u00A0gave up his life to save St Patrick. When St Patrick arrived in Ireland\u00A0he went about destroying pag...', title: 'Saint Odran'}
+						]),
+					feast: 'Saint Odran'
+				}
+				])
+		},
+			{
+			date: '20',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saints-jacinta-and-francisco-marto/', snippet: 'Two young children who died early in life, Jacinta and Francisco Marto, gained the attention of the Church and the world when Mary appeared to them at Fatima. Without being martyred, they became witnesses and messengers of God’s goodness.', title: 'Story of Saints Jacinta and Francisco Marto'}
+						]),
+					feast: 'Saints Jacinta and Francisco Marto'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/blesseds-francisco-and-jacinta-marto', snippet: 'On a beautiful Sunday afternoon, May 13, 1917, three children were laughing and chatting as they kept watch over their families’ sheep. This afternoon they were building a playhouse out of brush and rocks. Suddenly a bright light flashed. They thought it was lightning. Then it flashed again. They sa...', title: 'Saints Francisco and Jacinta Marto'}
+						]),
+					feast: 'Saints Francisco and Jacinta Marto'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-amy-feb-20-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! When she was young, Saint Amata of Assisi rejected God and rebelled against morality. Eventually her aunt, Saint Clare of Assisi, converted her and brought the girl into her religious order...', title: 'Amy (Amata of Assisi)'}
+						]),
+					feast: 'Saint Amy (Amata of Assisi)'
 				}
 				])
 		},
@@ -5919,9 +6265,10 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/SClTqIzdiZk', snippet: '', title: 'St. Peter Damian'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-peter-damian/', snippet: 'Maybe because he was orphaned and had been treated shabbily by one of his brothers, Peter Damian was very good to the poor. It was the ordinary thing for him to have a poor person or two with him at table and he liked to minister personally to their needs...', title: 'Saint Peter Damian’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian/', snippet: 'Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time...', title: 'Saint Peter Damian'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian/', snippet: 'Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time...', title: 'Saint Peter Damian'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-peter-damian/', snippet: 'If it hadn’t been for an elder brother taking him under his wing, Saint Peter Damian may have taken a very different path in life. But with his brother’s guidance, he matured into a holy man, monk, and bishop. A man of prayer and devotion, Peter Damian was also a spiritual writer.', title: 'Story of Saint Peter Damian'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian', snippet: 'Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time. He was ordained to the priesthood, and in 1035, he entered a Benedictine monastery. The monks lived in small hermitages, with two monks in each. Peter was known for his...', title: 'Saint Peter Damian'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-peter-damian-feb-21-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Peter Damian’s Story \u200B Maybe because he was orphaned and had been treated shabbily by one of his brothers, Peter Damian was very good to the poor. It was the ordinary thing for him to have a poor person or two with him at table and he liked to minister personally to their needs. Peter escaped...', title: 'Peter Damian'}
 						]),
 					feast: 'Saint Peter Damian'
 				}
@@ -5934,15 +6281,32 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/Gn_5c-EYGZ4', snippet: '', title: 'Ash Wednesday'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/9xMgWbg1Xs8', snippet: '', title: 'Ash Wednesday'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/t671atw7Fgk', snippet: '', title: 'Ash Wednesday'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/vIZYKohGDHE', snippet: '', title: 'Ash Wednesday'},
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg', link: 'https://www.catholicicing.com/pretzels-for-lent/', snippet: 'Did you know that the pretzel is a traditional food for lent? In fact, the pretzel was actually invented in order to be a simple Lenten snack!', title: 'Lenten Pretzel Recipe (And A Printable Pretzel Prayer Poem)'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552', link: 'https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/', snippet: 'Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas.', title: 'Meatless Lent Recipes'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ash-wednesday-for-kids/', snippet: '', title: 'Ash Wednesday For Kids (Traditions, Printables, & Resources)'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552', link: 'https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/', snippet: 'Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas.', title: 'Meatless Lent Recipes'}
 						]),
 					feast: 'Ash Wednesday'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/chair-of-saint-peter/', snippet: 'Every cathedral has a “cathedra,” a bishop’s chair that is used only by the bishop when he presides in the cathedral. It’s a symbol of his authority as chief teacher and liturgist of the diocese. So, today we celebrate the authority of the chief bishop, Saint Peter and his successors, the popes.', title: 'Story of Chair of Saint Peter'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-lenten-companion-feb-20', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of the Chair of Saint Peter \u200B This feast commemorates Christ’s choosing Peter to sit in his place as the servant-authority of the whole Church. \u200B After the “lost weekend” of pain, doubt, and self-torment, Peter hears the Good News. Angels at the tomb say to Magdalene, “The Lord has risen!...', title: 'Chair of Saint Peter'}
+						]),
+					feast: 'Chair of Saint Peter'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/chair-of-peter', snippet: 'When the pope cautions world leaders, pleads for peace, or condemns social injustice, people listen and respond. What makes the world listen to this man? The answer lies in Scripture and in Tradition. Peter is named first among the apostles of Jesus; he was often their spokesman and leader; he was t...', title: 'The Chair of Saint Peter the Apostle'}
+						]),
+					feast: 'The Chair of Saint Peter the Apostle'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-chair-of-saint-peter-feb-22', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Margaret of Cortona\'s Story \u00A0 Margaret of Cortona, penitent, was born in Loviana in\u00A0Tuscany\u00A0in 1247. Her father was a small farmer. Margaret\'s mother died when she was seven years old. Her stepmother had little care for her high-spirited daughter. Rejected at home, Margaret eloped with a youth...', title: 'Margaret of Cortona'}
+						]),
+					feast: 'Saint Margaret of Cortona'
 				}
 				])
 		},
@@ -5953,11 +6317,72 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/IgX8kpUxBz4', snippet: '', title: 'St. Polycarp'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-polycarp/', snippet: 'Polycarp, bishop of Smyrna, disciple of Saint John the Apostle and friend of Saint Ignatius of Antioch, was a revered Christian leader during the first half of the second century...', title: 'Saint Polycarp’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp/', snippet: 'The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders...', title: 'Saint Polycarp'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp/', snippet: 'The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders...', title: 'Saint Polycarp'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-polycarp/', snippet: 'Without knowing a whole lot about Saint Polycarp, he has entered into the life of the Church because he was a martyr–a witness to the faith with his life. That level of testimony to the faith is notable.', title: 'Story of Saint Polycarp'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp', snippet: 'The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders in the first half of the second century. St. Ignatius of Antioc...', title: 'Saint Polycarp'},
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-peter-damian-feb-21', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Anne Line\'s Story \u200B St Anne is believed to have been born as \'Alice Higham\' or \'Heigham\', the eldest daughter of the Puritan William Higham of Jenkyn Maldon. William Higham was the son of\u00A0Roger Heigham,\u00A0MP, a Protestant reformer under\u00A0Henry VIII.\u00A0A recently scholarly and extensively annotated...', title: 'Polycarp'}
 						]),
 					feast: 'Saint Polycarp'
+				}
+				])
+		},
+			{
+			date: '24',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/blessed-luke-belludi/', snippet: 'Was Blessed Luke Belludi just at the right place at the right time, or was there something more at work in his happening to meet Saint Anthony and become his protégé? We would all agree that this is how the Lord works─through convenient happenstances.', title: 'Story of Blessed Luke Belludi'}
+						]),
+					feast: 'Blessed Luke Belludi'
+				}
+				])
+		},
+			{
+			date: '25',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/blessed-sebastian-of-aparicio/', snippet: 'Some holy people have a rather full life spread over a couple of vocations. Blessed Sebastian of Aparicio is such a person having been married twice before becoming a Franciscan.', title: 'Story of Blessed Sebastian of Aparicio'}
+						]),
+					feast: 'Blessed Sebastian of Aparicio'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-ethelbert', snippet: 'Pope Gregory decided he must send someone to spread the Christian message to England. The man he chose was Augustine, who set off from Rome with 40 companions in the year 596. The Romans no longer ruled Europe. Much of the North was overrun with brigands, robbers, and barbarians. On his journey thr...', title: 'Saint Ethelbert'}
+						]),
+					feast: 'Saint Ethelbert'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-lenten-companion-feb-24', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of\u00A0Saint\u00A0Walburga \u200B Walburga\u00A0belonged to an extraordinary English family, five of whom are saints. She herself also became a missionary in Germany and even to the present day has a curious place in German folklore.\u00A0Patrick Duffy\u00A0tells\u00A0her story. She was born in Wessex, England, about 710,...', title: 'Walburga'}
+						]),
+					feast: 'Saint Walburga'
+				}
+				])
+		},
+			{
+			date: '26',
+			feasts: _List_fromArray(
+				[
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-maria-bertilla-boscardin/', snippet: 'Courage, perseverance, and hope seem to characterize Saint Maria Bertilla Boscardin. In spite of all odds, she kept going and, in the process, helped many people find healing and peace.', title: 'Story of Saint Maria Bertilla Boscardin'}
+						]),
+					feast: 'Saint Maria Bertilla Boscardin'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-alexander', snippet: 'Trouble dogged St. Alexander from the moment he became bishop of Alexandria in 312. Immediately, he had to deal with opposition from Meletius of Lycopolis, whose rigorism toward lapsed Catholics had led him into schism. He also had problems with Kolluth, a priest who had usurped the power to ordain...', title: 'Saint Alexander'}
+						]),
+					feast: 'Saint Alexander'
 				}
 				])
 		},
@@ -5971,370 +6396,13 @@ var $author$project$FeastDayActivities$FeastDays$M02Feb$february = {
 							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg', link: 'https://mycatholic.life/saints/saints-of-the-liturgical-year/saint-gregory-of-narek/', snippet: 'The Apostles Saint Jude Thaddeus and Saint Bartholomew are believed to have traveled to Armenia to share the Gospel. In 301 A.D., the Armenian king was converted who, in turn, made Christianity the kingdom’s official religion, making Armenia the first nation to do so...', title: 'Saint Gregory of Narek'}
 						]),
 					feast: 'Saint Gregory of Narek'
-				}
-				])
-		}
-		]),
-	key: 'feb',
-	month: 'February'
-};
-var $author$project$FeastDayActivities$FeastDayHelpers$Book = {$: 'Book'};
-var $author$project$FeastDayActivities$FeastDayHelpers$Game = {$: 'Game'};
-var $author$project$FeastDayActivities$FeastDayHelpers$Printout = {$: 'Printout'};
-var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
-	color: '#9de3ec',
-	feasts: _List_fromArray(
-		[
-			{
-			date: '01',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', snippet: '', title: 'Hail Mary, Full of Grace'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HoAUG7htvkA', snippet: '', title: 'Born of Woman'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/mary-mother-of-god/', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity...', title: 'The Story of Mary, Mother of God'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Game, image: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', link: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', snippet: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', title: 'Mary, Mother of Our Church File Folder Game'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351', link: 'http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html', snippet: 'You only need some basic supplies for this one. Try to find heavy kraft paper if you can...', title: 'Pastel Resist Madonna - Art Project'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/how-to-draw-mary-and-baby-jesus/', snippet: 'A step by step video for kids', title: 'How To Draw Mary And Baby Jesus (Easy!)'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', snippet: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', title: 'Solemnity of Mary, the Holy Mother of God'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Smoked Sausage and Black-Eyed Peas'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Broccoli Cornbread Mini Muffins'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Sweet Buttermilk Cornbread'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'German New Years Cake'}
-						]),
-					feast: 'Mary, Mother of God'
-				}
-				])
-		},
-			{
-			date: '02',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/lwe8voh3H_4', snippet: '', title: 'Ss. Gregory & Basil'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-basil-the-great/', snippet: 'Basil was on his way to becoming a famous teacher when he decided to begin a religious life of gospel poverty...', title: 'Saint Basil the Great’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', title: 'Saint Basil the Great'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', snippet: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', title: 'Saint Gregory of Nazianzus'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: '', title: 'Vasilopita Bread'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: '', title: 'Vasilopita Cake'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', snippet: '', title: 'Hünkar Beğendi'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/make-a-jewel-cake-for-st-basil-on-new-years/', snippet: 'St. Basil’s feast day is on January 2, but it has become a Catholic tradition to make a “St. Basil’s Cake” on New Year’s to celebrate one of his miracles...', title: 'Jewel Cake'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-basils-hidden-jewel-cupcakes-easy-to-make/', snippet: 'Slice a small hole in the top of the cupcake using a butter knife, and stick a lifesaver candy “jewel” inside...', title: 'St Basil\'s Cupcakes'}
-						]),
-					feast: 'Saint Basil'
-				}
-				])
-		},
-			{
-			date: '03',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/muyR_oFp8oE', snippet: '', title: 'The Name Above All Names'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', link: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'Why We Celebrate the Holy Name of Jesus'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', title: 'Saint Gregory of Nazianzus'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/', snippet: 'Although Saint Paul might claim credit for promoting devotion to the Holy Name because Paul wrote in Philippians that God the Father gave Christ Jesus “that name that is above every name” (see 2:9), this devotion became popular because of 12th-century Cistercian monks and nuns but especially...', title: 'The Story of the Most Holy Name of Jesus'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', link: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'How To Draw The Most Holy Name Of Jesus'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Book, image: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', link: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', snippet: 'This booklet, "The Wonders of the Holy Name," reveals the simplest secret of holiness and happiness ever. For it shows us how we can pray "without ceasing," pray "always," and pray "at all times," as Holy Scripture exhorts us...', title: 'The Wonders of the Holy Name'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', title: 'Prosphora Orthodox Bread'}
-						]),
-					feast: 'The Most Holy Name of Jesus'
-				}
-				])
-		},
-			{
-			date: '04',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/896zFSI81X4', snippet: '', title: 'The First American Saint'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', snippet: '', title: 'Betty Bayley Becomes A Saint'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', snippet: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', title: 'Saint Elizabeth Ann Seton'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', title: 'Saint Elizabeth Ann Seton\'s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-elizabeth-ann-seton/', snippet: 'Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the Sisters of Charity. She opened the first American parish school and established the first American Catholic orphanage. All this she did in the span of 46 years while raising her five children...', title: 'Saint Elizabeth Ann Seton’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', link: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', snippet: 'A themed word search for older kids.', title: 'Elizabeth Ann Seton Word Find'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: '', title: 'Corn and Crab Bisque'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg/v1/crop/x_18,y_454,w_366,h_444/fill/w_439,h_532,al_c,lg_1,q_80,enc_auto/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: '', title: 'Oly Koeken, Vet Ballen, Vet Bollen, Ole Bollen, Oliekoecken....aka Oil Balls'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', link: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', snippet: 'See Catholic Icing for more activity ideas to celebrate this saint!', title: 'Catholic Icing'}
-						]),
-					feast: 'Saint Elizabeth Ann Seton'
-				}
-				])
-		},
-			{
-			date: '05',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs', snippet: '', title: 'St. John Neumann'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/', snippet: 'Perhaps because the United States got a later start in the history of the world, it has relatively few canonized saints, but their number is increasing. John Neumann was born in what is now the Czech Republic. After studying in Prague, he came to New York at 25 and was ordained a priest...', title: 'Saint John Neumann’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/saints/ff_images/85.jpg', link: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', snippet: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', title: 'Saints Fun Facts: St. John Neumann'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: 'John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America...', title: 'St. John Neumann\'s Story '},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: '', title: 'Svíčková with Dumplings'}
-						]),
-					feast: 'Saint John Newmann'
-				}
-				])
-		},
-			{
-			date: '06',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/nMeuF62R6hw', snippet: '', title: 'Feast of the Epiphany'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', snippet: '', title: 'My Time with Jesus - Epiphany'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/', snippet: 'Today’s feast of the Epiphany of the Lord is a feast that celebrates communication.  The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage...', title: 'Epiphany of the Lord'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', title: 'Gifts to our King'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/epiphany-house-blessing-with-chalk/', snippet: 'The Epiphany house blessing of the door is a really great Catholic tradition for families...', title: 'Epiphany House Blessing with Chalk'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/', snippet: 'I love to make wearable crafts with preschoolers, because they love wearing them...', title: 'K is for King'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/3-kings-epiphany-crafts/', snippet: 'Ornament Craft, peg doll wraps, and printable nativity set!', title: '3 Kings Epiphany Crafts For Kids'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/star-of-wonder-star-of-night/', snippet: '', title: 'Star Crafts'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/epiphany-crown-food-ideas/', snippet: 'I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany...', title: 'Epiphany Crown Food Ideas'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: '', title: 'La Galette des Rois: The French King Cake'}
-						]),
-					feast: 'The Epiphany of the Lord'
-				}
-				])
-		},
-			{
-			date: '06',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/files/images/saints/18.jpg', link: 'https://www.catholic.org/saints/saint.php?saint_id=18', snippet: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', title: 'St. Andre Bessette'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', snippet: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', title: 'Saint André Bessette’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/brwYgiR8vHo', snippet: '', title: 'Blessed Andre Bessette'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', snippet: '', title: 'The Story of Saint Brother Andre Bessette of Canada'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-andre-bessette/', snippet: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth...', title: 'Saint André Bessette’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', snippet: '', title: 'Maple Tourlouche Upside Down Cake\u200B'}
-						]),
-					feast: 'Saint André Bessette'
-				}
-				])
-		},
-			{
-			date: '07',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/b1yNa55xmjM', snippet: '', title: 'St. Raymond of Peñafort'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-raymond-of-penafort/', snippet: 'Since Raymond lived into his hundredth year, he had a chance to do many things. As a member of the Spanish nobility, he had the resources and the education to get a good start in life...', title: 'Saint Raymond of Peñafort’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', title: 'St. Raymond of Pennafort\'s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: '', title: 'Barcelona Vegan Potato Bombas'}
-						]),
-					feast: 'Saint Raymond of Penyafort'
-				}
-				])
-		},
-			{
-			date: '08',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/75F5qJw5YEY', snippet: '', title: 'Washed Away'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', title: 'The Story of the Feast of the Baptism of the Lord'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/', snippet: 'Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here.', title: 'Feast of the Baptism of the Lord'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: '', title: 'Jumping Jolly Juice'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/', snippet: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', title: 'Holy Water Bottle Craft'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/', snippet: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', title: 'Dove with Olive Branch'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/', snippet: 'You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra.', title: 'Dove with Gifts of the Holy Spirit'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/holy-spirit-craft-handprint-dove/', snippet: 'For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint...', title: 'Simple Handprint Dove'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: '', title: 'Greek Dipples'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/', snippet: 'Baptism is so important, and it’s a great thing to make sure that your kids truly understand...', title: 'Ideas for Teaching Catholic Kids About Baptism'}
-						]),
-					feast: 'The Baptism of the Lord'
-				}
-				])
-		},
-			{
-			date: '13',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/x5_l-pQ_Snk', snippet: '', title: 'St. Hilary of Poitiers'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', title: 'Saint Hilary of Poitiers’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-hilary-of-poitiers/', snippet: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church..', title: 'Saint Hilary of Poitiers’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: '', title: 'French Onion Soup'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png/v1/crop/x_0,y_72,w_443,h_358/fill/w_602,h_488,al_c,lg_1,q_85,enc_auto/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: '', title: 'Quiche Lorraine Quiche'}
-						]),
-					feast: 'Saint Hilary of Poitiers'
-				}
-				])
-		},
-			{
-			date: '17',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/LbetpKRyO7A', snippet: '', title: 'St Anthony of the Desert'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', title: 'Saint Anthony of Egypt’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-anthony-of-egypt/', snippet: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance.', title: 'Saint Anthony of Egypt’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: '', title: 'Uccelletti ~The little Birds of St. Anthony'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube.com/watch?v=XwoTugfbSzc', snippet: '', title: 'Uccelletti ~The little Birds of St. Anthony'}
-						]),
-					feast: 'Saint Anthony of Egypt'
-				}
-				])
-		},
-			{
-			date: '20',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-fabian/', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope...', title: 'Saint Fabian’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: '', title: 'Dove Dinner Rolls'}
-						]),
-					feast: 'Saint Fabian'
 				},
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-sebastian/', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: '', title: 'Roscos Orange Donuts'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-gabriel-of-our-lady-of-sorrows/', snippet: 'Disappointments, setbacks, loss, and suffering seem to define the life of Saint Gabriel of Our Lady of Sorrows. But undeterred by whatever happened, Saint Gabriel kept his focus and lived life well─so well that he was an example to both young and old.', title: 'Story of Saint Gabriel of Our Lady of Sorrows'}
 						]),
-					feast: 'Saint Sebastian'
-				}
-				])
-		},
-			{
-			date: '21',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', title: 'Saint Agnes’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agnes/', snippet: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', title: 'Saint Agnes’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_acfdf6a128df4af299dce373dfcd31e9~mv2.jpg/v1/fill/w_508,h_855,al_c,lg_1,q_85,enc_auto/Picture1_edited.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Port Sauce served over Goat Cheese Polenta', title: 'Pistachio Crusted Lamb Chops with Cherry'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg/v1/crop/x_14,y_0,w_1386,h_933/fill/w_790,h_532,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Delicious lemon pull-apart lamb', title: 'Lamb Pull Apart Bread'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg/v1/crop/x_354,y_83,w_590,h_493/fill/w_470,h_392,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: '', title: 'Agnesenplätzchen (St. Agnes Cookies)'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg/v1/crop/x_0,y_73,w_871,h_453/fill/w_792,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: '', title: 'One Hour Yeast Dinner Rolls'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-agnes-crafts-feast-jan-21/', snippet: 'Today, let’s look at some celebrating the feast day of St. Agnes with kids...', title: 'Celebrating The Feast Day Of St. Agnes With Kids'}
-						]),
-					feast: 'Saint Agnes'
-				}
-				])
-		},
-			{
-			date: '23',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', title: 'Saint Vincent of Zaragossa’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-of-zaragossa/', snippet: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', title: 'Saint Vincent of Zaragossa’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg/v1/crop/x_0,y_109,w_564,h_466/fill/w_646,h_534,al_c,lg_1,q_80,enc_auto/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: '', title: 'Basic Brioche'}
-						]),
-					feast: 'Saint Vincent of Zaragossa (US)'
-				},
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', title: 'Saint Marianne Cope’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-marianne-cope/', snippet: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', title: 'Saint Marianne Cope’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png/v1/fill/w_610,h_652,al_c,q_90,enc_auto/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: '', title: 'Char Siu'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_05315e6abad04487bfaa70c5bc4fa9df~mv2.png/v1/crop/x_8,y_73,w_875,h_1088/fill/w_694,h_864,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: '', title: 'Pineapple Upside-Down Cake'}
-						]),
-					feast: 'Saint Marianne Cope'
-				},
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: '', snippet: '', title: ''},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/pro-life-craft-for-kids/', snippet: ' Today, let’s look at some celebrating the feast day of St. Agnes with kids...', title: 'Pro Life Craft for Kids'}
-						]),
-					feast: 'Day of Prayer for the Legal Protection of Unborn Children'
-				}
-				])
-		},
-			{
-			date: '24',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', title: 'Saint Francis de Sales’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-francis-de-sales/', snippet: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', title: 'Saint Francis de Sales’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8c3cefd4508241babcfa2f8a3f961e35~mv2.png/v1/fill/w_882,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/PastedGraphic-25-1.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: '', title: 'Piperade'}
-						]),
-					feast: 'Saint Francis de Sales'
-				}
-				])
-		},
-			{
-			date: '25',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/conversion-of-saint-paul/', snippet: 'Saint Paul’s entire life can be explained in terms of one experience—his meeting with Jesus on the road to Damascus...', title: 'The Story of the Conversion of Saint Paul'}
-						]),
-					feast: 'The Conversion of Saint Paul'
-				}
-				])
-		},
-			{
-			date: '26',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', title: 'Saints Timothy and Titus’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saints-timothy-and-titus/', snippet: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', title: 'Saints Timothy and Titus’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png/v1/fill/w_354,h_322,al_c,lg_1,q_85,enc_auto/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '', title: 'Ajvar spread for bread'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg/v1/crop/x_38,y_0,w_326,h_225/fill/w_456,h_315,al_c,lg_1,q_80,enc_auto/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'Pogacha is a traditional Macedonian round loaf. It\'s usually made for special occasions.', title: 'Pogacha'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg/v1/crop/x_31,y_0,w_571,h_430/fill/w_658,h_496,al_c,lg_1,q_80,enc_auto/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', title: 'Kompir Mandza'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_081788385f104b9b95700584391731fa~mv2.png/v1/fill/w_636,h_476,al_c,lg_1,q_85,enc_auto/9c2964_081788385f104b9b95700584391731fa~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '"Potato Stew". Whenever Kompir Mandza is made, the house smells like heaven. The longer this stew cooks, the better.', title: 'Vanilici Cookie'}
-						]),
-					feast: 'Saint Timothy and Titus'
-				}
-				])
-		},
-			{
-			date: '27',
-			feasts: _List_fromArray(
-				[
-					{
-					activities: _List_fromArray(
-						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', title: 'Saint Angela Merici’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-angela-merici/', snippet: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', title: 'Saint Angela Merici’s story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png/v1/fill/w_608,h_504,al_c,lg_1,q_85,enc_auto/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Pasta Bolognese'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg/v1/fill/w_562,h_374,al_c,lg_1,q_80,enc_auto/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Custard'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png/v1/crop/x_12,y_0,w_982,h_592/fill/w_981,h_592,al_c,q_90,enc_auto/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Custard filled Dove Puff Pastries'}
-						]),
-					feast: 'Saint Angela Merici'
+					feast: 'Saint Gabriel of Our Lady of Sorrows'
 				}
 				])
 		},
@@ -6345,33 +6413,799 @@ var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', title: 'Saint Thomas Aquinas’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-thomas-aquinas/', snippet: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', title: 'Saint Thomas Aquinas’ Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png/v1/crop/x_0,y_0,w_569,h_468/fill/w_652,h_536,al_c,lg_1,q_85,enc_auto/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: '', title: 'Tiramisu'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/blessed-daniel-brottier/', snippet: 'Some people would call Blessed Daniel Brottier “lucky.” But in the eyes of faith, God’s providence and desire for Blessed Daniel to do great things in his kingdom is what protected him in some very dangerous situations. Blessed Daniel cooperated with that providence and became an example to all.', title: 'Story of Blessed Daniel Brottier'}
 						]),
-					feast: 'Saint Thomas Aquinas'
+					feast: 'Blessed Daniel Brottier'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-gabriel-francis-possenti', snippet: 'Hagiographers make sanctity seem impossible for us when they tell fanciful stories about a saint’s early life. How little saint so-and-so was always rapt in prayer, worked miracles, undertook severe mortifications, never had a sexual thought, and so on. Thank God for St. Gabriel Francis Possenti and...', title: 'Saint Gabriel Francis Possenti'}
+						]),
+					feast: 'Saint Gabriel Francis Possenti'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-angela-of-foligno', snippet: 'Angela of Foligno is a model for people who want to simplify their lifestyle. As a young adult she reveled in luxury and sensuality. She married a rich man of Foligno, Italy, and used his wealth to indulge herself in possessions. And her impetuous temperament nudged her into sinful behavior. However...', title: 'Saint Angela of Foligno'}
+						]),
+					feast: 'Saint Angela of Foligno'
 				}
 				])
 		},
 			{
-			date: '31',
+			date: '29',
 			feasts: _List_fromArray(
 				[
 					{
 					activities: _List_fromArray(
 						[
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/YoutubeLogo_YrXRl6n7P.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676253992177', link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', snippet: 'Thomas and his wife Helen guide their children in the ways of holiness by teaching them about the lives of the saints. Here they explore the life of the great apostle of the youth, St. Don Bosco.', title: 'My Catholic Family - Don Bosco'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/', snippet: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', title: 'Saint John Bosco’s Story'},
-							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', snippet: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', title: 'Saint John Bosco’s Story'}
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-oswald/', snippet: 'Saint Oswald knew people in high places─his uncle was the archbishop of Canterbury. But even though he received “favors” from his uncle, he served humbly and gained holiness through God’s grace.', title: 'Story of Saint Oswald'}
 						]),
-					feast: 'Saint John Bosco'
+					feast: 'Saint Oswald'
+				},
+					{
+					activities: _List_fromArray(
+						[
+							{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-john-cassian', snippet: 'Around 380, John Cassian migrated from Romania to Bethlehem, where he embraced the monastic life. After 385 he wandered the Egyptian desert, the heart of eastern monasticism. He visited abbots at monasteries and hermits in their caves, absorbing their teachings about the Christian life. The year 40...', title: 'Saint John Cassian'}
+						]),
+					feast: 'Saint John Cassian'
 				}
 				])
 		}
 		]),
-	key: 'jan',
-	month: 'January'
+	key: 'feb',
+	month: 'February'
 };
+var $author$project$FeastDayActivities$FeastDayHelpers$Book = {$: 'Book'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Game = {$: 'Game'};
+var $author$project$FeastDayActivities$FeastDayHelpers$Printout = {$: 'Printout'};
+var $author$project$FeastDayActivities$FeastDays$M01Jan$janFeasts = _List_fromArray(
+	[
+		{
+		date: '1',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y', snippet: '', title: 'Hail Mary, Full of Grace'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/HoAUG7htvkA', snippet: '', title: 'Born of Woman'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Game, image: 'https://3.bp.blogspot.com/_OdlDH5TOnZ8/S3nCLk9d_VI/AAAAAAAACCo/ogcGrC6sDPY/s320/MaryGameBoard.png', link: 'https://catholicblogger1.blogspot.com/2009/04/mary-is-mother-of-our-church.html', snippet: 'The objective of the game is to answer questions about Mary and receive a letter tile and spell Mary. Place your marker anywhere on the board...', title: 'Mary, Mother of Our Church File Folder Game'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/ThatArtistWoman_-lQHC5LdH.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401274351', link: 'http://www.thatartistwoman.org/2008/12/pastel-resist-madonna-art-project.html', snippet: 'You only need some basic supplies for this one. Try to find heavy kraft paper if you can...', title: 'Pastel Resist Madonna - Art Project'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/how-to-draw-mary-and-baby-jesus/', snippet: 'A step by step video for kids', title: 'How To Draw Mary And Baby Jesus (Easy!)'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary/', snippet: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that...', title: 'Solemnity of Mary, the Holy Mother of God'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38)...', title: 'The Story of Mary, Mother of God'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg/v1/fill/w_720,h_545,al_c,lg_1,q_85,enc_auto/9c2964_a235ca1bce84403c87d185b7daaa3e2c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Smoked Sausage and Black-Eyed Peas'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg/v1/crop/x_81,y_59,w_603,h_471/fill/w_676,h_565,al_c,lg_1,q_85,enc_auto/9c2964_e5144304a75546688cdc08cd771a4030~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Broccoli Cornbread Mini Muffins'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg/v1/fill/w_714,h_554,al_c,lg_1,q_85,enc_auto/9c2964_b4647017bd7c404d9ae193673bbbd2d6~mv2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'Sweet Buttermilk Cornbread'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg/v1/fill/w_583,h_423,al_c,lg_1,q_80,enc_auto/9c2964_0a4855c5e3e94eaab4557fc3213b9ecd~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: '', title: 'German New Years Cake'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/mary-mother-of-god/', snippet: 'Mary’s divine motherhood broadens the Christmas spotlight. Hers role as mother of God places her in a unique position in God’s redemptive plan.', title: 'Story of Mary, Mother of God'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/solemnity-of-mary', snippet: 'Way back in 431, there was a bitter controversy among theologians over the role of Mary in the Catholic Church. They debated the question: Who is Mary in God’s plan? In the end, the bishops declared that Mary is really the mother of Jesus and Jesus is really God. So it must be said that Mary is the...', title: 'Solemnity of Mary, the Holy Mother of God'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-solemnity-of-mary-the-holy-', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Mary, Mother of God \u200B Mary’s divine motherhood broadens the Christmas spotlight. Mary has an important role to play in the Incarnation of the Second Person of the Blessed Trinity. She consents to God’s invitation conveyed by the angel (Luke 1:26-38). Elizabeth proclaims: “Most blessed a...', title: 'Solemnity of Mary the Holy Mother of God'}
+					]),
+				feast: 'Mary, Mother of God'
+			}
+			])
+	},
+		{
+		date: '2',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/lwe8voh3H_4', snippet: '', title: 'Ss. Gregory & Basil'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: 'St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works...', title: 'Saint Basil the Great'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', snippet: 'After his baptism at 30, Gregory gladly accepted his friend Basil’s invitation to join him in a newly founded monastery. The solitude was broken when Gregory’s father, a bishop, needed help in his diocese and estate...', title: 'Saint Gregory of Nazianzus'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: '', title: 'Vasilopita Bread'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png/v1/fill/w_584,h_512,al_c,lg_1,q_85,enc_auto/9c2964_e91e23b66c7d434da5fc63652cbed30d~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: '', title: 'Vasilopita Cake'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_38dca455491840dc8f74daf2a335dc5d~mv2.jpg/v1/fill/w_659,h_473,al_c,lg_1,q_80,enc_auto/9_3_edited.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nazianzus-jan-2', snippet: '', title: 'Hünkar Beğendi'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/make-a-jewel-cake-for-st-basil-on-new-years/', snippet: 'St. Basil’s feast day is on January 2, but it has become a Catholic tradition to make a “St. Basil’s Cake” on New Year’s to celebrate one of his miracles...', title: 'Jewel Cake'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-basils-hidden-jewel-cupcakes-easy-to-make/', snippet: 'Slice a small hole in the top of the cupcake using a butter knife, and stick a lifesaver candy “jewel” inside...', title: 'St Basil\'s Cupcakes'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-basil-the-great/', snippet: 'Saint Basil is the Father of Eastern monasticism—as Saint Benedict is for western monasticism. Besides being a good pastor, Saint Basil also lead the fight against Arianism, a heresy that denied the divinity of Christ.', title: 'Story of Saint Basil the Great'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-basil-the-great-and-saint-gregory-nazianzen', snippet: 'Basil was educated in Caesarea, Constantinople, and Athens in the fourth century. He enjoyed stimulating university life. There he met Gregory Nazianzen, a quiet, scholarly man. The two became close friends. Basil traveled through the East and studied monastic life. As a result, he formed his own mo...', title: 'Saints Basil the Great and Gregory Nazianzen'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-basil-the-great-jan-2', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Basil\'s Story St. Basil was a very close friend of St. Gregoryn the Bishop of Nazianzus - Constantinople. Together they wrote an outstanding works. The Divine Liturgy of St. Basil the Great is the one most commonly used year around in the Coptic Church. The Basilian Liturgy drew heavily from th...', title: 'Basil the Great'}
+					]),
+				feast: 'Saints Basil the Great and Gregory Nazianzus'
+			}
+			])
+	},
+		{
+		date: '3',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/muyR_oFp8oE', snippet: '', title: 'The Name Above All Names'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg', link: 'https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'Why We Celebrate the Holy Name of Jesus'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', title: 'Saint Gregory of Nazianzus'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg', link: 'https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/', snippet: 'This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space...', title: 'How To Draw The Most Holy Name Of Jesus'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Book, image: 'https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg', link: 'https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909', snippet: 'This booklet, The Wonders of the Holy Name', title: 'The Wonders of the Holy Name'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel...', title: 'Prosphora Orthodox Bread'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel appeared to St. Joseph and instructed him that the Child’s name should be called J...', title: 'The Most Holy Name of Jesus'}
+					]),
+				feast: 'The Most Holy Name of Jesus'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/', snippet: 'Saint Paul tells us in his Letter to the Philippians that Jesus’ name is above every other name. It is the name in which we are all saved. Devotion to the Most Holy Name of Jesus is deeply rooted in Christian history.', title: 'Story of Most Holy Name of Jesus'}
+					]),
+				feast: 'Most Holy Name of Jesus'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-genevieve', snippet: 'On his way to combat heresy in Britain, St. Germanus of Auxerre made an overnight stop at Nanterre, France. In the crowd that gathered to hear him speak, Germanus spotted Genevieve (or Genovefa), a beautiful 7-year-old girl, and he foresaw her future holiness. When he asked little St. Genevieve if s...', title: 'Saint Genevieve'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Genevieve\'s Story \u200B St. Geneviève, French\u00A0Sainte Geneviève,\u00A0German\u00A0Sankt Genovefa, (born\u00A0c.\u00A0422,\u00A0Nanterre, France?—died\u00A0c.\u00A0500, Paris; feast day January 3),\u00A0 patron saint\u00A0of Paris, who allegedly saved that city from the\u00A0Huns. When she was seven, Geneviève was induced by Bishop\u00A0St. Germain of Aux...', title: 'Genevieve'}
+					]),
+				feast: 'Saint Genevieve'
+			}
+			])
+	},
+		{
+		date: '4',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/896zFSI81X4', snippet: '', title: 'The First American Saint'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/fR42gZv9T3A', snippet: '', title: 'Betty Bayley Becomes A Saint'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg', link: 'https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton/', snippet: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? ...', title: 'Saint Elizabeth Ann Seton'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: 'Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church...', title: 'Saint Elizabeth Ann Seton\'s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Printout, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/ElizabethAnnSetonWordSearch_IUJjxiyxd.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675555824047', link: 'https://setonshrine.org/wp-content/uploads/2016/02/Activity-Seton-Word-Search.pdf', snippet: 'A themed word search for older kids.', title: 'Elizabeth Ann Seton Word Find'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg/v1/fill/w_868,h_868,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_ea5027fa315445ffab9e8c41da1f901b~mv2_d_3188_3187_s_4_2.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: '', title: 'Corn and Crab Bisque'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg/v1/crop/x_18,y_454,w_366,h_444/fill/w_439,h_532,al_c,lg_1,q_80,enc_auto/9c2964_7b87e042e19046e88cf334473f82ec25~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: '', title: 'Oly Koeken, Vet Ballen, Vet Bollen, Ole Bollen, Oliekoecken....aka Oil Balls'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://www.catholicicing.com/wp-content/uploads/2016/02/header-social.jpg', link: 'https://www.activityvillage.co.uk/schoolhouse-photo-frame', snippet: 'See Catholic Icing for more activity ideas to celebrate this saint!', title: 'Catholic Icing'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-elizabeth-ann-seton/', snippet: 'Convert, wife, mother, widow, teacher, religious─Saint Elizabeth Ann Seton did it all. Yet, in many ways, she was an ordinary woman of her time who lived life in an extraordinary way.', title: 'Story of Saint Elizabeth Ann Seton'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-elizabeth-ann-seton', snippet: 'Who was the first person born in the United States to be declared a saint? Who opened the first American Catholic parish school and established the first American Catholic orphanage? Who founded the first native American religious community of women? The answers to all these questions are the same:...', title: 'Saint Elizabeth Ann Seton'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Elizabeth Ann Seton\'s Story \u200B Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the S...', title: 'Elizabeth Ann Seton'}
+					]),
+				feast: 'Saint Elizabeth Ann Seton'
+			}
+			])
+	},
+		{
+		date: '5',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs', snippet: '', title: 'St. John Neumann'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/saints/ff_images/85.jpg', link: 'https://www.catholic.org/saints/fun_facts_arch.php?saint=70', snippet: 'This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when...', title: 'Saints Fun Facts: St. John Neumann'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: 'John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America...', title: 'St. John Neumann\'s Story '},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: '', title: 'Svíčková with Dumplings'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/', snippet: 'Saint John Neumann was the first member of his community, the Redemptorists, to profess vows in the United States. He did missionary work in Maryland, Virginia, and Ohio, and became the bishop of Philadelphia. Noted for his humility and organizational skills, he helped form the Church in the New World.', title: 'Story of Saint John Neumann'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-john-neumann', snippet: 'As a boy, John Neumann lived in Bohemia, which is now part of Czech Republic. He studied hard, for he wanted to be a missionary priest in America. By the time he was twenty-four, he had learned six languages and had completed his studies for the priesthood. He was not ordained, however, because his...', title: 'Saint John Neumann'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! St.\u00A0John Neumann\'s Story\u00A0 John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America, he increased the number of Catholic schools in his diocese from two to 100. \u00A0 Sain...', title: 'John Neumann'}
+					]),
+				feast: 'Saint John Neumann'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-simeon-the-stylite', snippet: 'Many Christians give up something meaningful to them during Lent. Lent is a reminder of the 40 days when Jesus lived in the desert while he prepared himself for his work of teaching and healing. For him, it was a way to get away from everyday life and having to concentrate on praying without interru...', title: 'Saint Simeon the Stylite'}
+					]),
+				feast: 'Saint Simeon the Stylite'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Gifts to our King \u00A0 The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal. \u00A0 The gift of frankincense was a gift of experience. Known in the Bible to be a symbol of the divinity of God (Song of Solomon 1:3, Malachi 1:11), when F...', title: 'The Eve of the Epiphany'}
+					]),
+				feast: 'The Eve of the Epiphany'
+			}
+			])
+	},
+		{
+		date: '6',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/nMeuF62R6hw', snippet: '', title: 'Feast of the Epiphany'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/8vzYYJK1_pg', snippet: '', title: 'My Time with Jesus - Epiphany'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/', snippet: 'Today’s feast of the Epiphany of the Lord is a feast that celebrates communication. The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage...', title: 'Epiphany of the Lord'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: 'The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal...', title: 'Gifts to our King'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/epiphany-house-blessing-with-chalk/', snippet: 'The Epiphany house blessing of the door is a really great Catholic tradition for families...', title: 'Epiphany House Blessing with Chalk'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/', snippet: 'I love to make wearable crafts with preschoolers, because they love wearing them...', title: 'K is for King'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/3-kings-epiphany-crafts/', snippet: 'Ornament Craft, peg doll wraps, and printable nativity set!', title: '3 Kings Epiphany Crafts For Kids'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/star-of-wonder-star-of-night/', snippet: '', title: 'Star Crafts'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/epiphany-crown-food-ideas/', snippet: 'I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany...', title: 'Epiphany Crown Food Ideas'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1', snippet: '', title: 'La Galette des Rois: The French King Cake'}
+					]),
+				feast: 'The Epiphany of the Lord'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://www.catholic.org/files/images/saints/18.jpg', link: 'https://www.catholic.org/saints/saint.php?saint_id=18', snippet: 'When Alfred Bessette came to the Holy Cross Brothers in 1870, he carried with him a note from...', title: 'St. Andre Bessette'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', snippet: 'Brother André expressed a saint’s faith by a lifelong devotion to Saint Joseph. Sickness and weakness dogged André from birth. He was the eighth of 12 children born to a French Canadian couple near Montreal...', title: 'Saint André Bessette’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/brwYgiR8vHo', snippet: '', title: 'Blessed Andre Bessette'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/NGzM8sr6w7s', snippet: '', title: 'The Story of Saint Brother Andre Bessette of Canada'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg/v1/crop/x_0,y_0,w_614,h_408/fill/w_736,h_490,al_c,lg_1,q_85,enc_auto/9c2964_eca3f6a909d34f4fbfa492de547ebaae~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6', snippet: '', title: 'Maple Tourlouche Upside Down Cake\u200B'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-andre-bessette/', snippet: 'Saint André Bessette was orphaned at 12, and eventually worked in the United States during the Civil War. At 25, he became a Brother of the Holy Cross.', title: 'Story of Saint André Bessette'}
+					]),
+				feast: 'Saint André Bessette'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-gertrude-of-delft', snippet: 'While working as a servant-girl at Delft in the Netherlands, Gertrude was engaged to be married. But her fiancé broke up with her and married another woman. Broken-hearted at first, Gertrude gradually overcame her anguish and chose a new direction for her life. She joined the Béguines at Delft, spen...', title: 'Saint Gertrude of Delft'}
+					]),
+				feast: 'Saint Gertrude of Delft'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-andre-bessette-jan-6-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Balthazar\'s Story \u00A0 Balthasar, also known as Balthazar, Balthassar or Bithisarea was born presumably by calculations, around 25-20 BC and was one of the members of the legendary three wise men, mostly referred to as Magi, who went to visit and gift baby Jesus. He was referred to as the King of...', title: 'Andre Bessette'}
+					]),
+				feast: 'Saint Andre Bessette'
+			}
+			])
+	},
+		{
+		date: '7',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/b1yNa55xmjM', snippet: '', title: 'St. Raymond of Peñafort'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg/v1/fill/w_388,h_559,al_c,lg_1,q_80,enc_auto/9c2964_aa20a20c033d476993f14f7d92a235b7~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: 'Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher...', title: 'St. Raymond of Pennafort\'s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg/v1/crop/x_145,y_27,w_879,h_546/fill/w_879,h_546,al_c,q_85,enc_auto/9c2964_ef27b6ef1deb4e6ab35d6b07902bc923~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: '', title: 'Barcelona Vegan Potato Bombas'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-raymond-of-penafort/', snippet: 'Saint Raymond of Peñafort was a lawyer who used his talents to both compile legislation for easy access and to write legal treatises on penance for the use of confessors.', title: 'Story of Saint Raymond of Peñafort'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-raymond-of-penyafort', snippet: 'As a lawyer, priest, and preacher, St. Raymond of Penyafort made a significant mark on the history of Spain and the church. His preaching helped re-Christianize Spain after the Moors were overthrown. And his compilation of papal and conciliar decrees was the main source of canon law for seven centur...', title: 'Saint Raymond of Penyafort'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-raymond-of-penafort-jan--1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Raymond of Pennafort\'s Story \u200B Born in Spain, St. Raymond was a relative of the King of Aragon. From childhood he had a tender love and devotion to the Blessed Mother. He finished his studies at an early age, and became a famous teacher. He then gave up all his honors and entered the Order of th...', title: 'Raymond of Penafort'}
+					]),
+				feast: 'Saint Raymond of Peñafort'
+			}
+			])
+	},
+		{
+		date: '8',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/75F5qJw5YEY', snippet: '', title: 'Washed Away'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: 'The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany...', title: 'The Story of the Feast of the Baptism of the Lord'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960', link: 'https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/', snippet: 'Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here.', title: 'Feast of the Baptism of the Lord'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: '', title: 'Jumping Jolly Juice'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/', snippet: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', title: 'Holy Water Bottle Craft'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/', snippet: 'It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!', title: 'Dove with Olive Branch'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/', snippet: 'You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra.', title: 'Dove with Gifts of the Holy Spirit'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Crafts, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/holy-spirit-craft-handprint-dove/', snippet: 'For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint...', title: 'Simple Handprint Dove'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: '', title: 'Greek Dipples'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/', snippet: 'Baptism is so important, and it’s a great thing to make sure that your kids truly understand...', title: 'Ideas for Teaching Catholic Kids About Baptism'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man.', title: 'Baptism of the Lord'}
+					]),
+				feast: 'The Baptism of the Lord'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-angela-of-foligno/', snippet: 'Saint Angela of Foligno was a wife and mother who had little interest in the spiritual life until about age 40. After her husband and children died, Angela entered the Secular Franciscans, spending the rest of her life in prayer and service.', title: 'Story of Saint Angela of Foligno'}
+					]),
+				feast: 'Saint Angela of Foligno'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-thorfinn-of-hamar-jan-8-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Cistercian monk at the abbey of Tautra. Canon of the Cathedral of Nidaros (modern Trondheim, Norway) by 1277 when he was a witness of the Agreement of Tönsberg. Bishop. Exiled by King Eric for supporting the Archbishop of Nidaros in a dispute over state interference in Church matters. Took refuge at the abbey of TerDoest...', title: 'Thorfinn Of Hamar'}
+					]),
+				feast: 'Saint Thorfinn Of Hamar'
+			}
+			])
+	},
+		{
+		date: '9',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-adrian-of-canterbury/', snippet: 'An African by birth, Saint Adrian was assigned by the pope as Archbishop of Canterbury. Feeling unworthy, he declined the position, but the pope sent him to Canterbury anyway where he became an abbot and teacher.', title: 'Story of Saint Adrian of Canterbury'}
+					]),
+				feast: 'Saint Adrian of Canterbury'
+			}
+			])
+	},
+		{
+		date: '10',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-gregory-of-nyssa/', snippet: 'Saint Gregory of Nyssa, the brother of Saint Basil and the son of Saints Basil and Emmilia, was a married man when he began studying for the priesthood. He became Bishop of Nyssa and fought Arianism and was a prominent figure at the Council of Constantinople.', title: 'Story of Saint Gregory of Nyssa'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Gregory of Nyssa\'s Story \u200B Gregory of\u00A0Nyssa\u00A0St. Gregory of\u00A0Nyssa\u00A0(c. 330-c. 395) was a younger sibling in a\u00A0family\u00A0that gave the church many years of service and at least five saints. Before entering the monastery of his brother, Basil the Great, Gregory was a rhetorician. He may have been m...', title: 'Gregory of Nyssa'}
+					]),
+				feast: 'Saint Gregory of Nyssa'
+			}
+			])
+	},
+		{
+		date: '11',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/blessed-william-carter/', snippet: 'Born in London, Blessed William Carter was a printer who got in trouble for printing Catholic material during the reign of Queen Elizabeth I. Eventually brought to trial, he was convicted and hanged, drawn, and quartered on January 11, 1584.', title: 'Story of Blessed William Carter'}
+					]),
+				feast: 'Blessed William Carter'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-gregory-of-nyssa-jan-10', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Theodosius the Cenobiarch\'s Story \u200B Theodosius was born in Mogariassus, Asia Minor in 423. From a pious family, he began his studies at an early age, and became a lector while still a youth. As a young man, he set out on pilgrimage to the Holy Land. People say he was inspired by Abraham\'s jour...', title: 'Theodosius the Cenobiarch'}
+					]),
+				feast: 'Saint Theodosius the Cenobiarch'
+			}
+			])
+	},
+		{
+		date: '12',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-marguerite-bourgeoys/', snippet: 'Born in France but adopting Canada as her home, Saint Marguerite Bourgeoys definitely won the hearts of the Canadians. She moved to Canada at the request of the governor of the French settlement. She later founded a school for girls in Montreal and founded the Sisters of Notre Dame.', title: 'Story of Saint Marguerite Bourgeoys'}
+					]),
+				feast: 'Saint Marguerite Bourgeoys'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/aelred-of-rievaulx-1110-1167', snippet: 'How good, how delightful it is to live as brothers together!—Psalm 133:1 NJB Although St. Aelred lived a millennium ago, his life and writings have a distinctively contemporary feel. An extremely competent administrator of Rievaulx, a vast Yorkshire abbey in Northern England, yet even more a spirit...', title: 'Aelred of Rievaulx, 1110-1167'}
+					]),
+				feast: 'Aelred of Rievaulx, 1110-1167'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint Tatiana of Rome On January 25th, Saint Tatiana\'s Day is the Day of Russian Students and is a day of celebration in special higher and secondary educational institutions. The name of the day derives from the name of the Christian martyr Tatiana of Rome, whose memory is represented...', title: 'Tatiana'}
+					]),
+				feast: 'Saint Tatiana'
+			}
+			])
+	},
+		{
+		date: '13',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/x5_l-pQ_Snk', snippet: '', title: 'St. Hilary of Poitiers'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: 'This staunch defender of the divinity of Christ was a gentle and courteous man, devoted to writing some of the greatest theology on the Trinity, and was like his Master in being labeled a “disturber of the peace.” In a very troubled period in the Church...', title: 'Saint Hilary of Poitiers’ Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png/v1/fill/w_602,h_604,al_c,lg_1,q_90,enc_auto/9c2964_d6785e4f4b2a417ba2b23408c33603d2~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: '', title: 'French Onion Soup'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png/v1/crop/x_0,y_72,w_443,h_358/fill/w_602,h_488,al_c,lg_1,q_85,enc_auto/9c2964_ddca0ded74bd40ae8be680056db9abd6~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13-2', snippet: '', title: 'Quiche Lorraine Quiche'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-hilary-of-poitiers/', snippet: 'Saint Hilary of Poitiers was converted to Christianity through his reading of the Sacred Scriptures. A married man, he was chosen as Bishop of Poitiers in France where he arduously fought Arianism. As a result, he was sent into exile, but returned home to Poitiers before he died.', title: 'Story of Saint Hilary of Poitiers'}
+					]),
+				feast: 'Saint Hilary of Poitiers'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-hilary', snippet: 'Hilary was born to pagan parents of Poitiers, France, in 315. After training in the classics and philosophy, Hilary married. He and his wife had one daughter, Afra. All who knew Hilary said he was a friendly, charitable, gentle man. Hilary’s studies led him to read Scripture. He became convinced tha...', title: 'Saint Hilary'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-theodosius-the-cenobiarc', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Felix of Nola\u00A0Story \u200B It was in the 3rd century, in the midst of Emperor Decius’ terrible persecution of Catholics, that a breathless priest, all alone, was hurriedly fleeing for his life. It was St. Felix, an Italian by birth, who had already once been caught and imprisoned by the pagan Roman...', title: 'Hilary'}
+					]),
+				feast: 'Saint Hilary'
+			}
+			])
+	},
+		{
+		date: '14',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-gregory-nazianzen/', snippet: 'Saint Gregory Nazianzen paid a huge price for his faith. In conflict with the Emperor Valens, who defended the Arians, Saint Gregory worked hard to defend the Catholic faith.', title: 'Story of Saint Gregory Nazianzen'}
+					]),
+				feast: 'Saints Basil the Great and Gregory Nazianzus'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-felix-of-nola', snippet: 'A 100 years after St. Felix’s death, St. Paulinus of Nola told his story, adding without discernment appealing legends that had accumulated over the years. But we can trust the unadorned factual outline of Felix’s life. After Felix divested himself of all his possessions, St. Maximus, the bishop of...', title: 'Saint Felix of Nola'}
+					]),
+				feast: 'Saint Felix of Nola'
+			}
+			])
+	},
+		{
+		date: '15',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-devasahayam-pillai/', snippet: 'Born into an affluent Hindu family in 1712, Devasahayam Pillai converted to Christianity and was martyred for his chosen faith in 1752. At his 2012 beatification Pillai became the first Indian layman not connected to any religious institute to be beatified. Ten years later he was canonized by Pope Francis.', title: 'Story of Saint Devasahayam Pillai'}
+					]),
+				feast: 'Saint Devasahayam Pillai'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-the-hermit', snippet: 'St. Jerome wrote, or at least translated from the Greek, a little biography of St. Paul the Hermit. Some speculate that he did so in order to establish St. Paul’s reputation as the “first hermit” and to let the world know that the great St. Anthony had a predecessor. Others regard the story as so fu...', title: 'Saint Paul the Hermit'}
+					]),
+				feast: 'Saint Paul the Hermit'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-hilary-jan-13', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Little is known about the married life of Saint Joseph and the Virgin Mary. Only a few episodes are recorded in the Gospels, and each of those focuses on their son, Jesus. \u00A0 Yet, they are held up by the Church as the prime example of a holy marriage, and remain heavenly patrons for all married coupl...', title: 'Ita'}
+					]),
+				feast: 'Saint Ita'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-2-of-new-page', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Nina (fl. III/IV Century) was born in Cappadocia. Tradition says she was a relative of St. George who travelled to Iberia (Georgia) to convert the people to Christianity. Scholars believe she was a slave to whom the name Nino (the Georgian form of Nina) was given; she has also been identified as Christiana. The quiet piety of her life and her preaching converted many people, and when she cured Queen Nana of a seemingly incurable disease, Nina converted the queen. When King Mirian also became a Christian, he sent to Constantinople for bishops and priests. Nina continued to preach throughout Georgia until her death at Bodke. A church dedicated to the memory of St. George was built on the site of her grave.', title: 'Nina'}
+					]),
+				feast: 'Saint Nina'
+			}
+			])
+	},
+		{
+		date: '16',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-berard-and-companions/', snippet: 'Saint Francis considered Saints Berard and his companions as true Friars Minor because they were willing to lay their lives on the line for the faith. Such heroic virtue inspired Saint Anthony to join the Franciscans.', title: 'Story of Saint Berard and Companions'}
+					]),
+				feast: 'Saint Berard and Companions'
+			}
+			])
+	},
+		{
+		date: '17',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube-nocookie.com/embed/LbetpKRyO7A', snippet: '', title: 'St Anthony of the Desert'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: 'The life of Anthony will remind many people of Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance...', title: 'Saint Anthony of Egypt’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg/v1/fill/w_576,h_672,al_c,lg_1,q_85,enc_auto/9c2964_b3b1e854d0c2461c89fd7e9279cce745~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: '', title: 'Uccelletti ~The little Birds of St. Anthony'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: '', link: 'https://www.youtube.com/watch?v=XwoTugfbSzc', snippet: '', title: 'Uccelletti ~The little Birds of St. Anthony'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-anthony-of-egypt/', snippet: 'Saint Anthony was a solitary ascetic who practiced great mortification yet drew many people to himself. He responded by founding an early form of monastic life. He lived until age 105.', title: 'Story of Saint Anthony of Egypt'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-anthony', snippet: 'Anthony was born in Egypt in 250. At age 20, when his parents died, Anthony made sure his younger sister’s education could be completed in a community of holy women. He then sold all his possessions and left for a life of solitude in the desert. There an elderly hermit taught him about prayer and pe...', title: 'Saint Anthony'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-anthony-jan-17-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Anthony of Egypt’s Story \u200B The life of Anthony will remind many people of\u00A0Saint Francis of Assisi. At 20, Anthony was so moved by the Gospel message, “Go, sell what you have, and give to [the] poor” (Mark 10:21b), that he actually did just that with his large inheritance. He is different from...', title: 'Anthony'}
+					]),
+				feast: 'Saint Anthony of Egypt'
+			}
+			])
+	},
+		{
+		date: '18',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-charles-of-sezze/', snippet: 'Like many people, Saint Charles of Sezze thought he knew what God wanted, only to find out that he was mistaken. Instead of going to India as a missionary, Saint Charles settled in Rome where he cooked and cared for the friary and friary chapel. While being simple, Saint Charles was no simpleton as is obvious from his life story.', title: 'Story of Saint Charles of Sezze'}
+					]),
+				feast: 'Saint Charles of Sezze'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-margaret-of-hungary', snippet: 'Margaret was born to Béla IV, king of Hungary, at a moment when the country was threatened by enemies. So the king promised God that if things reversed in his favor he would dedicate his little princess to the religious life. The prayer was answered, and Béla put Margaret in the care of the Dominica...', title: 'Saint Margaret of Hungary'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-margaret-of-hungary-jan--1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of\u00A0Saint\u00A0Margaret of Hungary \u200B St. Margaret of\u00A0Hungary\u00A0Daughterof King Bela IV, she became a Dominican\u00A0novice\u00A0at twelve in a royal\u00A0convent\u00A0built on an island in the Danube. Although she was a princess among\u00A0nuns\u00A0who were of noble descent, she objected to any special treatment and went out...', title: 'Margaret of Hungary'}
+					]),
+				feast: 'Saint Margaret of Hungary'
+			}
+			])
+	},
+		{
+		date: '19',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-fabian/', snippet: 'Be careful of birds landing on your head. That happened to Saint Fabian, and it was taken as a sign that he should be elected pope. So he was. And he served for 14 years until he was martyred in 250.', title: 'Story of Saint Fabian'}
+					]),
+				feast: 'Saint Fabian'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-ita-jan-15', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Wulfstan\'s Story \u200B Wulfstan (1008-1095) +\u00A0Bishop\u00A0and reformer, also called Wulstan and Wolstan. Born at Long-Itch ington, Warwickshire, England, he studied at the abbeys of Evesham and Peterborough, received ordination, and joined the Benedictines at Worcester. Wulfstan served as treasurer of th...', title: 'Wulfstan'}
+					]),
+				feast: 'Saint Wulfstan'
+			}
+			])
+	},
+		{
+		date: '20',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: 'Fabian was a Roman layman who came into the city from his farm one day as clergy and people were preparing to elect a new pope. Eusebius, a Church historian, says a dove flew in and settled on the head of Fabian...', title: 'Saint Fabian’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg/v1/fill/w_420,h_318,al_c,lg_1,q_80,enc_auto/9c2964_44ef0bce111d4477ab39f31de9658584~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20', snippet: '', title: 'Dove Dinner Rolls'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-fabian-and-sebastian', snippet: 'Fabian was a pope, and Sebastian was believed to be a soldier. Both were faithful to Christ until death. The traditional story told about Saint Sebastian is that he was an army officer who was condemned to death for his belief in Jesus. His fellow soldiers shot him with arrows. Surviving this, he wa...', title: 'Saints Fabian and Sebastian'}
+					]),
+				feast: 'Saint Fabian'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian...', title: 'Saint Sebastian’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg/v1/crop/x_246,y_67,w_404,h_325/fill/w_566,h_358,al_c,lg_1,q_80,enc_auto/9c2964_3c7029aa08e445e1859f95e47c5e5fba~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: '', title: 'Roscos Orange Donuts'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-sebastian/', snippet: 'In art, Saint Sebastian is often depicted as standing near or strapped to a pole riddled with arrows. Indeed, he was executed by archers, but didn’t actually die. Later he was beaten to death with clubs. Little else is known about this third century martyr.', title: 'Story of Saint Sebastian'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-sebastian', snippet: 'Sebastian was the son a nobleman who was a Christian. He joined the Roman army in the year 283 and kept his Christian beliefs secret so he could be a spy in the army. Some Christians who knew the truth about Sebastian brought a woman named Zoe to him. She had lost the power of speech. Sebastian pray...', title: 'Saint Sebastian'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-sebastian-jan-20-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Sebastian’s Story \u200B Almost nothing is historically certain about Sebastian except that he was a Roman martyr, was venerated in Milan even in the time of Saint\u00A0Ambrose and was buried on the Appian Way, probably near the present Basilica of St. Sebastian. Devotion to him spread rapidly, and he i...', title: 'Sebastian'}
+					]),
+				feast: 'Saint Sebastian'
+			}
+			])
+	},
+		{
+		date: '21',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested...', title: 'Saint Agnes’ Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_acfdf6a128df4af299dce373dfcd31e9~mv2.jpg/v1/fill/w_508,h_855,al_c,lg_1,q_85,enc_auto/Picture1_edited.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Port Sauce served over Goat Cheese Polenta', title: 'Pistachio Crusted Lamb Chops with Cherry'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg/v1/crop/x_14,y_0,w_1386,h_933/fill/w_790,h_532,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9c2964_218dcdf0206e4c34a1ee4d15a9c41e9b~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'Delicious lemon pull-apart lamb', title: 'Lamb Pull Apart Bread'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg/v1/crop/x_354,y_83,w_590,h_493/fill/w_470,h_392,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_8858942166b04a8a97151d9b44009a4a~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: '', title: 'Agnesenplätzchen (St. Agnes Cookies)'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg/v1/crop/x_0,y_73,w_871,h_453/fill/w_792,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_9b37a19c3e0d4980aa6de55fcd42a278~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: '', title: 'One Hour Yeast Dinner Rolls'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/st-agnes-crafts-feast-jan-21/', snippet: 'Today, let’s look at some celebrating the feast day of St. Agnes with kids...', title: 'Celebrating The Feast Day Of St. Agnes With Kids'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-agnes/', snippet: 'Like other young martyrs, the death of Saint Agnes reminds us that length of years is not a requirement for a holy life. Little is known about Saint Agnes other than that she was a martyr.', title: 'Story of Saint Agnes'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agnes', snippet: '“A new kind of martyrdom!” exclaimed St. Ambrose, bishop of Milan. The assembly cheered and applauded. He was celebrating St. Agnes because she was a virgin, a martyr—and a child. She was executed at Rome in 304 during the Emperor Diocletian’s vicious persecution. Here are Ambrose’s observations on...', title: 'Saint Agnes'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-agnes-jan-21-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Agnes’ Story \u200B Almost nothing is known of this saint except that she was very young—12 or 13—when she was martyred in the last half of the third century. Various modes of death have been suggested—beheading, burning, strangling. Legend has it that Agnes was a beautiful girl whom many young men...', title: 'Agnes'}
+					]),
+				feast: 'Saint Agnes'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-our-lady-of-altagracia-jan--1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Our Lady of Altagracia A portrait of the\u00A0Virgin Mary\u00A0in a Nativity scene. It is 13 inches (33 centimeters) wide by 18 inches (45 centimeters) high, and is painted on cloth. It is a primitive work of the\u00A0Spanish\u00A0school, painted c.1500. The\u00A0Spanish\u00A0brothers Alfonso and Antonio Trejo, two...', title: 'Our Lady of Altagracia'}
+					]),
+				feast: 'Our Lady of Altagracia'
+			}
+			])
+	},
+		{
+		date: '22',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: 'Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him...', title: 'Saint Vincent of Zaragossa’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg/v1/crop/x_0,y_109,w_564,h_466/fill/w_646,h_534,al_c,lg_1,q_80,enc_auto/9c2964_e99a3b33dc1744a09e5612ea63da87b2~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: '', title: 'Basic Brioche'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-of-zaragossa/', snippet: 'Very little is known about Saint Vincent of Zaragossa other than some details about his martyrdom. We know that he was a deacon and that a large devoted following survived his death. Most of what we know comes from the “Acts” of Prudentius.', title: 'Story of Saint Vincent of Zaragossa'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Most of what we know about this saint comes from the poet Prudentius. His Acts have been rather freely colored by the imagination of their compiler. But Saint Augustine, in one of his sermons on Saint Vincent, speaks of having the Acts of his martyrdom before him. We are at least sure of his name, his being a deacon, the place of his death and burial...', title: 'Saint Vincent of Saragossa'}
+					]),
+				feast: 'Saint Vincent of Saragossa'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-our-lady-of-altagracia-jan-', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Domenico di Sora’s Story \u200B St Dominic of Sora (951-1032) was born in Foligno.\u00A0 He became\u00A0 Benedictine monk and founded a number of hermitages in Central Italy.\u00A0 The reforming Pope John XVIII (1003-9) placed these foundations under papal protection.\u00A0 The last of them was at Sora (in Lazio), whe...', title: 'Saint Domenico'}
+					]),
+				feast: 'Saint Domenico'
+			}
+			])
+	},
+		{
+		date: '23',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: 'Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the United States during her lifetime (1898)...', title: 'Saint Marianne Cope’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png/v1/fill/w_610,h_652,al_c,q_90,enc_auto/9c2964_1b501eda18be418d9f7b860a84c68bb0~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: '', title: 'Char Siu'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_05315e6abad04487bfaa70c5bc4fa9df~mv2.png/v1/crop/x_8,y_73,w_875,h_1088/fill/w_694,h_864,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: '', title: 'Pineapple Upside-Down Cake'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-marianne-cope/', snippet: 'Born in Germany, Saint Marianne Cope’s family soon moved to Utica, NY. In 1862 she entered the Sisters of the Third Order of Saint Francis where she served as superior for a number of years.', title: 'Story of Saint Marianne Cope'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Marianne Cope’s Story \u200B Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the...', title: 'Marianne Cope'}
+					]),
+				feast: 'Saint Marianne Cope'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: '', snippet: '', title: ''},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590', link: 'https://www.catholicicing.com/pro-life-craft-for-kids/', snippet: ' Today, let’s look at some celebrating the feast day of St. Agnes with kids...', title: 'Pro Life Craft for Kids'}
+					]),
+				feast: 'Day of Prayer for the Legal Protection of Unborn Children'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-vincent', snippet: 'Vincent was trained and ordained a deacon by Valerius, bishop of Saragossa, Spain, in the third century. The Roman emperors had made being a Christian punishable by death, so when Emperor Dacian discovered Bishop Valerius holding Christian services, he had him imprisoned. Vincent was soon caught vis...', title: 'Saint Vincent'}
+					]),
+				feast: 'Saint Vincent'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-ildefonsus-of-toledo', snippet: 'Spanish Catholics esteem St. Ildefonsus as one of their greatest saints, second only to Isidore of Seville. As archbishop of Toledo, he led the Spanish church from 658 to 667. Like Isidore, Ildefonsus contributed to the creation of the collaborative union of church and state that came to typify medi...', title: 'Saint Ildefonsus of Toledo'}
+					]),
+				feast: 'Saint Ildefonsus of Toledo'
+			}
+			])
+	},
+		{
+		date: '24',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: 'Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France...', title: 'Saint Francis de Sales’ Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8c3cefd4508241babcfa2f8a3f961e35~mv2.png/v1/fill/w_882,h_538,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/PastedGraphic-25-1.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: '', title: 'Piperade'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-francis-de-sales/', snippet: 'Saint Francis de Sales was born into a senatorial family where he was destined to work in government positions of authority. Instead, he felt a call to the priesthood and was ordained for the Diocese of Geneva.', title: 'Story of Saint Francis de Sales'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-francis-de-sales', snippet: 'Francis, the eldest of 13 children, was born into a family of nobility in France in 1567. His father sent him to study at the University of Paris. After six years, Francis was intellectually competent in many areas. Francis was also a skilled swordsman who enjoyed fencing, an expert horseman, and a...', title: 'Saint Francis de Sales'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-marianne-cope-jan-23', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Francis de Sales’ Story \u200B Francis was destined by his father to be a lawyer so that the young man could eventually take his elder’s place as a senator from the province of Savoy in France. For this reason Francis was sent to Padua to study law. After receiving his doctorate, he returned home a...', title: 'Francis de Sales'}
+					]),
+				feast: 'Saint Francis de Sales'
+			}
+			])
+	},
+		{
+		date: '25',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/conversion-of-saint-paul/', snippet: 'Saint Paul’s conversion on the road to Damascus was to be the turning point in his spiritual life. There he met Jesus and nothing was the same after that. Thereafter, all his zeal and energy were focused on the spread of the gospel message.', title: 'Story of Conversion of Saint Paul'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/the-conversion-of-saint-paul-the-apostle', snippet: 'St. Paul the Apostle was the greatest of the early Christian missionaries. He first appears in the Acts of the Apostles under the name of Saul. Saul was raised in the Jewish faith as a Pharisee trained in the strict observance of God’s Law. He believed the Law should be obeyed by himself and all Jew...', title: 'The Conversion of Saint Paul the Apostle'}
+					]),
+				feast: 'The Conversion of Saint Paul'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-henry-suso', snippet: 'Anyone who endures dryness at prayer or feels abandoned by God will find instruction, and perhaps some relief, in the experience of Henry Suso. A mystic who called himself the “servant of Eternal Wisdom,” he endured long stretches of spiritual darkness interrupted only by occasional bursts of bright...', title: 'Saint Henry Suso'}
+					]),
+				feast: 'Saint Henry Suso'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Dwynwen\'s Story \u200B Saint Dwynwen, a Welsh saint, was known for saying: \'Nothing wins hearts like cheerfulness.\' A member of the family of Brychan of Brecknock, she is venerated throughout Wales and Cornwall, England. \u00A0 Saint Dwynwen lived during the 5th century and legend has it that she was on...', title: 'Dwynwen'}
+					]),
+				feast: 'Saint Dwynwen'
+			}
+			])
+	},
+		{
+		date: '26',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it...', title: 'Saints Timothy and Titus’ Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png/v1/fill/w_354,h_322,al_c,lg_1,q_85,enc_auto/9c2964_8c70a07188c5476189c632fc0b989a36~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: '', title: 'Ajvar spread for bread'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg/v1/crop/x_38,y_0,w_326,h_225/fill/w_456,h_315,al_c,lg_1,q_80,enc_auto/9c2964_4dc9c528ff98423a9b5d7670a02f51a8~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'Pogacha is a traditional Macedonian round loaf. It\'s usually made for special occasions.', title: 'Pogacha'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg/v1/crop/x_31,y_0,w_571,h_430/fill/w_658,h_496,al_c,lg_1,q_80,enc_auto/9c2964_366a676ad30645999d174c7fc2e21bcf~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'Potato Stew\". Whenever Kompir Mandza is made', title: 'Kompir Mandza'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_081788385f104b9b95700584391731fa~mv2.png/v1/fill/w_636,h_476,al_c,lg_1,q_85,enc_auto/9c2964_081788385f104b9b95700584391731fa~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'Potato Stew\". Whenever Kompir Mandza is made', title: 'Vanilici Cookie'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saints-timothy-and-titus/', snippet: 'Saints Timothy and Titus were trusted friends and co-workers with Saint Paul through many of his trials. He eventually set both up as heads of local Churches and encouraged them as would a father. Saint Paul seems to have truly relished their support and friendship.', title: 'Story of Saints Timothy and Titus'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-titus', snippet: 'St. Paul spoke with great affection and respect for St. Titus. He addressed him as “true child of mine in the faith that we share,” suggesting that he had personally recruited Titus for Christ (see Titus 1:14). So Titus became one of Paul’s most trusted colleagues, serving as his secretary, travelin...', title: 'Saint Titus'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-francis-de-sales-jan-24', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saints Timothy and Titus’ Story \u200B What we know from the New Testament of Timothy’s life makes it sound like that of a modern harried bishop. He had the honor of being a fellow apostle with Paul, both sharing the privilege of preaching the gospel and suffering for it. Timothy had a Greek father and a...', title: 'Timothy & Titus'}
+					]),
+				feast: 'Saints Timothy and Titus'
+			}
+			])
+	},
+		{
+		date: '27',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: 'Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women...', title: 'Saint Angela Merici’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png/v1/fill/w_608,h_504,al_c,lg_1,q_85,enc_auto/9c2964_b356cd33ce644ca49cfb2a842e9aa5c4~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Pasta Bolognese'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg/v1/fill/w_562,h_374,al_c,lg_1,q_80,enc_auto/9c2964_6d4b21d08edc4f5da37d5aa2f0d1002c~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Custard'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png/v1/crop/x_12,y_0,w_982,h_592/fill/w_981,h_592,al_c,q_90,enc_auto/9c2964_e1b1c426f4cd42d7bfb9f5ec811537bc~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: '', title: 'Custard filled Dove Puff Pastries'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-angela-merici/', snippet: 'Saint Angela Merici was a courageous woman who saw a need and answered it even though society may not have been ready for her solution. Women teaching outside the convent, and what we call today a secular institute, were new forms of living and ministering which proved very beneficial to the Church.', title: 'Story of Saint Angela Merici'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-angela-merici', snippet: 'Women like St. Teresa of Ávila and St. Catherine of Genoa contributed significantly to the Catholic Reformation. But in the 16th-century church perhaps no woman responded more creatively to the need for reform than St. Angela Merici. She built communities that trained single women in Christian livin...', title: 'Saint Angela Merici'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-sts-timothy-titus-jan-26', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Angela Merici’s Story \u200B Angela has the double distinction of founding the first teaching congregation of women in the Church and what is now called a “secular institute” of religious women. As a young woman, she became a member of the Third Order of Saint\u00A0Francis, and lived a life of great aus...', title: 'Angela Merici'}
+					]),
+				feast: 'Saint Angela Merici'
+			}
+			])
+	},
+		{
+		date: '28',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: 'By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor...', title: 'Saint Thomas Aquinas’ Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Food, image: 'https://static.wixstatic.com/media/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png/v1/crop/x_0,y_0,w_569,h_468/fill/w_652,h_536,al_c,lg_1,q_85,enc_auto/9c2964_b8e3d414b6b747e9952fd84de9958f8e~mv2.png', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: '', title: 'Tiramisu'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-thomas-aquinas/', snippet: 'Saint Thomas Aquinas is well known for his writings, especially the “Summa Theologica.” But he was far more than a philosopher/theologian. He was a devout man who wrote beautiful prayers and hymns. Perhaps the best known is the “Pange Lingua.”', title: 'Story of Saint Thomas Aquinas'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-thomas-aquinas', snippet: 'Thomas Aquinas came from a wealthy Italian ruling family in the 13th century. At age five, he was sent to a Benedictine monastery at Monte Cassino in hopes that someday he would be abbot. But King Frederick III sent his troops to occupy the monastery as a fortress. Thomas then transferred to the Un...', title: 'Saint Thomas Aquinas'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-angela-merica-jan-27', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Thomas Aquinas’ Story \u200B By universal consent, Thomas Aquinas is the preeminent spokesman of the Catholic tradition of reason and of divine revelation. He is one of the great teachers of the medieval Catholic Church, honored with the titles Doctor of the Church and Angelic Doctor. At five he wa...', title: 'Thomas Aquinas'}
+					]),
+				feast: 'Saint Thomas Aquinas'
+			}
+			])
+	},
+		{
+		date: '29',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/servant-of-god-brother-juniper/', snippet: 'Brother Juniper was a simple man who joined Saint Francis in the earliest days of the Order. While Saint Francis praised him and wished he had a “whole forest of such Junipers,” nevertheless, he could be exasperating for his generosity. Even saints can be frustrating.', title: 'Story of Servant of God Brother Juniper'}
+					]),
+				feast: 'Servant of God Brother Juniper'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-blath-jan-29-1', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Blath, also called Flora, was the cook in St. Brigid\'s convent, in Kildare, Ireland. She was renowned for her holiness and for her steadfast loyalty to St. Brigid in good times and in bad. Blath is the Irish word for \'flower\', and so the Martyrology of Gorman makes a pun by recording her as \'blooming Blath\'. Her name is thus Latinized as Flora.', title: 'Blath'}
+					]),
+				feast: 'Saint Blath'
+			}
+			])
+	},
+		{
+		date: '30',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/blessed-mary-angela-truszkowska/', snippet: 'Blessed Mary Angela Truszkowska founded the Felician Sisters as a result of a conversion experience she had while convalescing from an illness. At the age of 44 she was forced to resign due to ill health. She lived however, into her ’70s.', title: 'Story of Blessed Mary Angela Truszkowska'}
+					]),
+				feast: 'Blessed Mary Angela Truszkowska'
+			}
+			])
+	},
+		{
+		date: '31',
+		feasts: _List_fromArray(
+			[
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Video, image: 'https://ik.imagekit.io/catholicstories/FeastDayActivities/YoutubeLogo_YrXRl6n7P.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676253992177', link: 'https://www.youtube.com/watch?v=wejhGYOGLgE', snippet: 'Thomas and his wife Helen guide their children in the ways of holiness by teaching them about the lives of the saints. Here they explore the life of the great apostle of the youth, St. Don Bosco.', title: 'My Catholic Family - Don Bosco'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', snippet: 'John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion...', title: 'Saint John Bosco’s Story'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$Audio, image: 'FranciscanMedia', link: 'https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/', snippet: 'Inspired by Saint Francis de Sales, Saint John Bosco founded the Salesians to continue his work among boys. Then, joining forces with Mary Mazzarello, he helped found the Salesian Sisters. All this during a time when established religious communities in Italy were closing their doors.', title: 'Story of Saint John Bosco'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$OnlineReading, image: 'LoyolaPress', link: 'http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-john-bosco', snippet: 'When John Bosco lived in Europe, many boys were orphaned and poor. Without families and religious training, these boys often got into fights, used bad language, and stole, hurting others. John Bosco might have been like that, too, if it hadn’t been for his devout mother. John was the youngest son o...', title: 'Saint John Bosco'},
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-st-john-bosco-jan-31', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! John Bosco’s theory of education could well be used in today’s schools. It was a preventive system, rejecting corporal punishment and placing students in surroundings removed from the likelihood of committing sin. He advocated frequent reception of the sacraments of Penance and Holy Communion. He combined catechetical training and fatherly guidance, seeking to unite the spiritual life with one’s work, study and play...', title: 'John Bosco'}
+					]),
+				feast: 'Saint John Bosco'
+			},
+				{
+				activities: _List_fromArray(
+					[
+						{activityType: $author$project$FeastDayActivities$FeastDayHelpers$More, image: 'SaintsFeastFamily', link: 'https://www.saintsfeastfamily.com/copy-of-proclamation-of-the-kingdom', snippet: 'SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint\u00A0Martina of Rome’s Story \u200B Saint Martina of Rome, Virgin and Martyr from the Liturgical Year, 1904 A third Roman virgin, wearing on her brow a Martyr’s crown, comes today to share the honors given to Agnes and Emerentiana, and offer her palm to the Lamb. Her name is Martina, which the pagans w...', title: 'Saint Martina of Rome'}
+					]),
+				feast: 'Saint Martina of Rome'
+			}
+			])
+	}
+	]);
+var $author$project$FeastDayActivities$FeastDays$M01Jan$january = {color: '#9de3ec', feasts: $author$project$FeastDayActivities$FeastDays$M01Jan$janFeasts, key: 'jan', month: 'January'};
 var $author$project$FeastDayActivities$FeastDays$M07Jul$july = {
 	color: '#b99eda',
 	feasts: _List_fromArray(
@@ -8614,6 +9448,31 @@ var $author$project$FeastDayActivities$FeastDayHelpers$videoActivities = functio
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$span = _VirtualDom_node('span');
 var $elm$html$Html$h4 = _VirtualDom_node('h4');
+var $elm$core$Dict$fromList = function (assocs) {
+	return A3(
+		$elm$core$List$foldl,
+		F2(
+			function (_v0, dict) {
+				var key = _v0.a;
+				var value = _v0.b;
+				return A3($elm$core$Dict$insert, key, value, dict);
+			}),
+		$elm$core$Dict$empty,
+		assocs);
+};
+var $author$project$FeastDayActivities$FeastDayHelpers$images = $elm$core$Dict$fromList(
+	_List_fromArray(
+		[
+			_Utils_Tuple2('FranciscanMedia', 'https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960'),
+			_Utils_Tuple2('LoyolaPress', 'https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg'),
+			_Utils_Tuple2('SaintsFeastFamily', 'https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg')
+		]));
+var $author$project$FeastDayActivities$FeastDayHelpers$imageSrc = function (activity) {
+	return A2(
+		$elm$core$Maybe$withDefault,
+		activity.image,
+		A2($elm$core$Dict$get, activity.image, $author$project$FeastDayActivities$FeastDayHelpers$images));
+};
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
@@ -8640,7 +9499,8 @@ var $author$project$FeastDayActivities$Main$viewActivity = function (activity) {
 				$elm$html$Html$img,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$src(activity.image),
+						$elm$html$Html$Attributes$src(
+						$author$project$FeastDayActivities$FeastDayHelpers$imageSrc(activity)),
 						$elm$html$Html$Attributes$class('w-20 h-20'),
 						$elm$html$Html$Attributes$class('rounded'),
 						$elm$html$Html$Attributes$class('object-cover')
