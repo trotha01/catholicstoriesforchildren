@@ -8,64 +8,54 @@
 
 set -ex
 
-elm make --optimize \
-  src/Main.elm \
-  --output elm.js \
-  && elm make --optimize \
-  src/Navigation/Main.elm \
-  --output navigationElm.js \
-  && elm make --optimize \
-  src/Contact/Main.elm \
-  --output contactElm.js \
-  && elm make --optimize \
-  src/Team/Main.elm \
-  --output teamElm.js \
-  && elm make --optimize \
-  src/Give/Main.elm \
-  --output giveElm.js \
-  && elm make --optimize \
-  src/Newsroom/Main.elm \
-  --output newsroomElm.js \
-  && elm make --optimize \
-  src/Animations/Main.elm \
-  --output animationsElm.js \
-  && elm make --optimize \
-  src/Animations/HailMary/Main.elm \
-  --output animations/hailmary/elm.js \
-  && elm make --optimize \
-  src/Animations/GuardianAngel/Main.elm \
-  --output animations/guardianangel/elm.js \
-  && elm make --optimize \
-  src/Animations/StMichael/Main.elm \
-  --output animations/stmichael/elm.js \
-  && elm make \
-  src/FeastDayActivities/Main.elm \
-  --output feastdayactivities/elm.js \
-  && elm make --optimize \
-  src/About/PrivacyPolicy/Main.elm \
-  --output privacyPolicyElm.js \
-  && elm make --optimize \
-  src/Resources/Main.elm \
-  --output resourcesElm.js \
-  && elm make --optimize \
-  src/Resources/Books/Main.elm \
-  --output resourcesBooksElm.js \
-  && elm make --optimize \
-  src/Resources/Podcasts/Main.elm \
-  --output resourcesPodcastsElm.js \
-  && elm make --optimize \
-  src/Resources/Videos/Main.elm \
-  --output resourcesVideosElm.js \
-  && elm make --optimize \
-  src/Resources/Subscriptions/Main.elm \
-  --output resourcesSubscriptionsElm.js \
-  && elm make --optimize \
-  src/Resources/Prayer/Main.elm \
-  --output resourcesPrayerElm.js \
-  && elm make --optimize \
-  src/Saints/Main.elm \
-  --output saintsElm.js \
-  && elm make --optimize \
-  src/Prayers/Main.elm \
-  --output prayersElm.js \
-  && node build.js
+elmmake() {
+  # Check if two arguments are provided
+  if [ $# -ne 2 ]; then
+      echo "ERROR: Please provide two numbers as arguments."
+      return 1
+  fi
+
+  # Store the arguments in variables
+  src=$1
+  output=$2
+
+  elm make --optimize \
+  $src --output "/tmp/$output" \
+  && uglifyjs "/tmp/$output" --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
+  | uglifyjs --mangle --output $output \
+  && rm "/tmp/$output"
+}
+
+pair_list=(
+  src/Main.elm elm.js
+  src/Navigation/Main.elm navigationElm.js
+  src/Contact/Main.elm contactElm.js
+  src/Team/Main.elm teamElm.js
+  src/Give/Main.elm giveElm.js
+  src/Newsroom/Main.elm newsroomElm.js
+  src/Animations/Main.elm animationsElm.js
+  src/Animations/HailMary/Main.elm animations/hailmary/elm.js
+  src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
+  src/Animations/StMichael/Main.elm animations/stmichael/elm.js
+  src/FeastDayActivities/Main.elm feastdayactivities/elm.large.js
+  src/About/PrivacyPolicy/Main.elm privacyPolicyElm.js
+  src/Resources/Main.elm resourcesElm.js
+  src/Resources/Books/Main.elm resourcesBooksElm.js
+  src/Resources/Podcasts/Main.elm resourcesPodcastsElm.js
+  src/Resources/Videos/Main.elm resourcesVideosElm.js
+  src/Resources/Subscriptions/Main.elm resourcesSubscriptionsElm.js
+  src/Resources/Prayer/Main.elm resourcesPrayerElm.js
+  src/Saints/Main.elm saintsElm.js
+  src/Prayers/Main.elm prayersElm.js
+)
+
+# Iterate through the list and pass each pair to the function
+for ((i=0; i<${#pair_list[@]}; i+=2)); do
+    src=${pair_list[$i]}
+    output=${pair_list[$i+1]}
+    elmmake "$src" "$output"
+done
+
+wait
+
+node build.js
