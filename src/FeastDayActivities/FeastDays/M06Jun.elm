@@ -16,12 +16,12 @@ june =
           }
         , { date = "02"
           , feasts =
-                [ { feast = "Saints Marcellinus and Peter", activities = [] }
+                [ { feast = "Saint Marcellinus and Saint Peter the Exorcist", activities = [] }
                 ]
           }
         , { date = "03"
           , feasts =
-                [ { feast = "Saints Charles Lwanga and Companions", activities = [] }
+                [ { feast = "Saint Charles Lwanga and Companions", activities = [] }
                 ]
           }
         , { date = "04"
@@ -31,17 +31,17 @@ june =
           }
         , { date = "05"
           , feasts =
-                [ { feast = "Saint Boniface", activities = [] }
+                [ { feast = "Saint Boniface of Crediton", activities = [] }
                 ]
           }
         , { date = "06"
           , feasts =
-                [ { feast = "Saint Norbert", activities = [] }
+                [ { feast = "Saint Norbert of Xanten", activities = [] }
                 ]
           }
         , { date = "09"
           , feasts =
-                [ { feast = "Saint Ephrem", activities = [] }
+                [ { feast = "Saint Ephrem of Syria", activities = [] }
                 ]
           }
         , { date = "11"
@@ -99,12 +99,13 @@ june =
           }
         , { date = "28"
           , feasts =
-                [ { feast = "Saint Irenaeus", activities = [] }
+                [ { feast = "Saint Irenaeus of Lyons", activities = [] }
                 ]
           }
         , { date = "29"
           , feasts =
-                [ { feast = "Saints Peter and Paul", activities = [] }
+                [ { feast = "Saint Peter the Apostle", activities = [] }
+                , { feast = "Saint Paul the Apostle", activities = [] }
                 ]
           }
         , { date = "30"

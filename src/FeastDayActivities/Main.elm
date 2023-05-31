@@ -13,6 +13,8 @@ import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
+import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
+import Saints.SaintList exposing (saints)
 import Url
 
 
@@ -192,11 +194,92 @@ viewFeast feastActivities =
     div [] [ text feastActivities.feast ]
 
 
-viewFeastActivities : List FeastActivities -> Html Msg
-viewFeastActivities feastActivities =
+activityFromLink : String -> String -> Maybe Activity
+activityFromLink saintName link =
     let
+        activityTitle =
+            activityTitleFromLink link
+
+        activityDescription =
+            activityDescriptionFromLink saintName link
+
+        activityImage =
+            activityImageFromLink link
+
+        activityType =
+            activityTypeFromLink link
+    in
+    if String.isEmpty link then
+        Nothing
+
+    else
+        Just
+            { activityType = activityType
+            , title = activityTitle
+            , image = activityImage
+            , link = link
+            , snippet = activityDescription
+            }
+
+
+viewFeastActivities : List FeastActivities -> Html Msg
+viewFeastActivities feastActivitiesList =
+    let
+        feastActivities =
+            List.concatMap .activities feastActivitiesList
+
+        feastNames =
+            List.map .feast feastActivitiesList
+                |> Debug.log "feast names"
+
+        cleanedFeastNames =
+            List.concatMap
+                (\name ->
+                    name
+                        |> String.split " and "
+                        |> List.map String.toLower
+                )
+                feastNames
+                |> Debug.log "cleaned feast names"
+
+        -- Helper functions to remove duplicate activities
+        addUniqueActivity : Activity -> List Activity -> List Activity
+        addUniqueActivity record uniqueRecords =
+            if List.any (\r -> r.link == record.link) uniqueRecords then
+                uniqueRecords
+
+            else
+                record :: uniqueRecords
+
+        removeDuplicates : List Activity -> List Activity
+        removeDuplicates records =
+            List.foldl addUniqueActivity [] records
+
+        saintActivities =
+            saints
+                |> List.filter (\saint -> List.member (String.toLower saint.name) cleanedFeastNames)
+                |> List.concatMap
+                    (\saint ->
+                        [ -- Only include the catholic video link if there isn't a playlist
+                          if saint.catholicSaintsInfoYoutubePlaylist == "" then
+                            activityFromLink saint.name saint.catholicOrgVideoLink
+
+                          else
+                            Nothing
+                        , activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist
+                        , activityFromLink saint.name saint.catholicCuisine
+                        , activityFromLink saint.name saint.christianiconographyInfo
+                        , activityFromLink saint.name saint.franciscanMediaLink
+                        , activityFromLink saint.name saint.catholicOrgLink
+                        , activityFromLink saint.name saint.catholicSaintsLink
+                        , activityFromLink saint.name saint.uCatholicLink
+                        ]
+                    )
+                |> List.filterMap Basics.identity
+                |> removeDuplicates
+
         activities =
-            List.concatMap .activities feastActivities
+            List.append feastActivities saintActivities
     in
     if List.isEmpty activities then
         viewNoActivities
