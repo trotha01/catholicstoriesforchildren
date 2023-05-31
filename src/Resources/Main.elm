@@ -76,7 +76,7 @@ viewResourceGroups =
 viewResourceGroup : ResourceGroup -> Html msg
 viewResourceGroup resourceGroup =
     a
-        [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7"
+        [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded p-7"
         , href ("/resources/" ++ resourceGroup.link)
         , attribute "aria-label" resourceGroup.name
         ]

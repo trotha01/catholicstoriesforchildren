@@ -19,11 +19,14 @@ elmmake() {
   src=$1
   output=$2
 
-  elm make --optimize \
-  $src --output "/tmp/$output" \
-  && uglifyjs "/tmp/$output" --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
-  | uglifyjs --mangle --output $output \
-  && rm "/tmp/$output"
+  # elm make --optimize \
+  # $src --output "/tmp/$output" \
+  # && uglifyjs "/tmp/$output" --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
+  # | uglifyjs --mangle --output $output \
+  # && rm "/tmp/$output"
+
+  # DEBUG
+  elm make $src --output "$output"
 }
 
 pair_list=(
@@ -34,7 +37,7 @@ pair_list=(
   src/Animations/Main.elm animationsElm.js
   src/Animations/StMichael/Main.elm animations/stmichael/elm.js
   src/Contact/Main.elm contactElm.js
-  src/FeastDayActivities/Main.elm feastdayactivities/elm.large.js
+  src/FeastDayActivities/Main.elm feastdayactivities/elm.js
   src/Give/Main.elm giveElm.js
   src/Navigation/Main.elm navigationElm.js
   src/Newsroom/Main.elm newsroomElm.js
@@ -45,7 +48,7 @@ pair_list=(
   src/Resources/Prayer/Main.elm resourcesPrayerElm.js
   src/Resources/Subscriptions/Main.elm resourcesSubscriptionsElm.js
   src/Resources/Videos/Main.elm resourcesVideosElm.js
-  src/Saints/Main.elm saintsElm.js
+  src/Saints/Main.elm saints/elm.js
   src/Team/Main.elm teamElm.js
 )
 
@@ -53,7 +56,7 @@ pair_list=(
 for ((i=0; i<${#pair_list[@]}; i+=2)); do
     src=${pair_list[$i]}
     output=${pair_list[$i+1]}
-    elmmake "$src" "$output"
+    elmmake "$src" "$output" &
 done
 
 wait
