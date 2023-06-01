@@ -12,9 +12,9 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
-import Newsroom.Main exposing (viewSignUp)
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
 import Saints.SaintList exposing (saints)
+import Signup exposing (..)
 import Url
 
 
@@ -33,17 +33,23 @@ main =
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
+    , signup : Signup.Model
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( Model key url, Cmd.none )
+    ( Model key
+        url
+        Signup.init
+    , Cmd.none
+    )
 
 
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
+    | SignupMsg Signup.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -72,6 +78,13 @@ update msg model =
             ( { model | url = url }
             , Cmd.none
             )
+
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
 
 
 
@@ -103,15 +116,15 @@ view model =
             , style "background-color" "#FEF7F4"
             ]
             [ viewSubpageHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
-            , viewBody currentRoute
+            , viewBody model currentRoute
             , viewFooter |> Html.String.toHtml
             ]
         ]
     }
 
 
-viewBody : Maybe Route -> Html Msg
-viewBody route =
+viewBody : Model -> Maybe Route -> Html Msg
+viewBody model route =
     case route of
         Just (Date date) ->
             case ( date.month, date.date ) of
@@ -133,13 +146,13 @@ viewBody route =
                         |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower m)
                         |> List.head
                         |> Maybe.withDefault january
-                        |> viewMonth
+                        |> viewMonth model
 
                 _ ->
-                    viewMonth january
+                    viewMonth model january
 
         _ ->
-            viewMonth january
+            viewMonth model january
 
 
 
@@ -510,8 +523,8 @@ viewActivity activity =
 -- MONTHLY VIEW
 
 
-viewMonth : FeastMonth -> Html Msg
-viewMonth feastMonth =
+viewMonth : Model -> FeastMonth -> Html Msg
+viewMonth model feastMonth =
     let
         ( firstHalf, secondHalf ) =
             splitList feastMonth.feasts
@@ -521,7 +534,8 @@ viewMonth feastMonth =
         [ h1 [ class "font-bold" ] [ text "2023 Feast Day Activities" ]
         , p [ class "text-2xl mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
         , p [ class "text-2xl mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
-        , viewSignUp |> Html.String.toHtml
+        , div [ class "mt-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         , div
             [ class "grid grid-cols-12"
             , class "text-base md:text-3xl lg:text-3xl"

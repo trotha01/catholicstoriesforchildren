@@ -79,10 +79,10 @@ view : Model -> Html Msg
 view model =
     div
         [ class "border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]"
+        , class "sm:grid sm:grid-cols-2"
         ]
-        [ viewSampleImage
-        , div
-            [ class "text-center" ]
+        [ div
+            [ class "text-center sm:mb-5" ]
             [ p
                 [ class "pb-5"
                 ]
@@ -106,13 +106,14 @@ view model =
                     , style "padding" "10px 20px"
                     , style "border-radius" "5px 0px 0px 5px"
                     , style "box-shadow" "#777 1px 1px 5px"
-                    , class "w-[188px] sm:w-[240px] h-[56px] text-lg"
+                    , class "w-[188px] md:w-[240px] h-[56px] text-lg"
                     ]
                     []
                 , viewSubmitButton model
                 , viewMessage model
                 ]
             ]
+        , div [ class "mt-5" ] [ viewSampleImage ]
         ]
 
 
@@ -120,7 +121,7 @@ viewSampleImage : Html msg
 viewSampleImage =
     div [ class "flex justify-center" ]
         [ img
-            [ class "mb-2 rounded max-w-[250px]"
+            [ class "rounded max-w-[250px]"
             , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___1080_px__P4HOL51vg.png?updatedAt=1684270935614"
             ]
             []
