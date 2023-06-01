@@ -75,17 +75,7 @@ february =
           }
         , { date = "3"
           , feasts =
-                [ { feast = "Saint Blase"
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Saint Blaise"
-                          , image = "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg"
-                          , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase/"
-                          , snippet = "According to tradition, Blaise had been a doctor before he was ordained a priest. He became the bishop of Sebaste (now in central Turkey)..."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Blaise"
+                [ { feast = "Saint Blaise"
                   , activities =
                         [ { activityType = Audio
                           , title = "Story of Saint Blaise"
@@ -131,17 +121,7 @@ february =
           }
         , { date = "4"
           , feasts =
-                [ { feast = "Saint Joseph of Leonissa"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Joseph of Leonissa"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-of-leonissa/"
-                          , snippet = "Saint Joseph of Leonissa was known for his austerity of life and single-minded commitment to preaching. Arrested and warned to change his ways, Joseph returned to his former behavior and was re-arrested and condemned to die. He escaped, however, and continued a life of preaching."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Rabanus Maurus"
+                [ { feast = "Saint Rabanus Maurus"
                   , activities =
                         [ { activityType = OnlineReading
                           , title = "Saint Rabanus Maurus"
@@ -158,6 +138,12 @@ february =
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-2-of-st-blaise-feb-3"
                           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Joseph of Leonissa’s Story \u{200B} Joseph of Leonissa, OFM Cap.;\u{00A0} was the third of eight children born at Leonessa (Italy) on January 8, 1556. At baptism he was given the name Eufranio. Impressed by the example of Matthew Silvestri, who had left the medical profession to embrace the Capuchin life an..."
+                          }
+                        , { activityType = Audio
+                          , title = "Story of Saint Joseph of Leonissa"
+                          , image = "FranciscanMedia"
+                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-of-leonissa/"
+                          , snippet = "Saint Joseph of Leonissa was known for his austerity of life and single-minded commitment to preaching. Arrested and warned to change his ways, Joseph returned to his former behavior and was re-arrested and condemned to die. He escaped, however, and continued a life of preaching."
                           }
                         ]
                   }
@@ -197,17 +183,7 @@ february =
           }
         , { date = "6"
           , feasts =
-                [ { feast = "Saints Paul Miki and Companions"
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Saint Paul Miki and Companions"
-                          , image = "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg"
-                          , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions/"
-                          , snippet = "When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government..."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Paul Miki and Companions"
+                [ { feast = "Saint Paul Miki and Companions"
                   , activities =
                         [ { activityType = Audio
                           , title = "Story of Saint Paul Miki and Companions"
@@ -221,6 +197,12 @@ february =
                           , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions"
                           , snippet = "When the first missionaries, like St. Francis Xavier, came to Japan in 1549 they were welcomed. Many Japanese became Christians. When the leader Hideyoshi took command, he feared that Christians would take over the government. In 1587 he banished them and destroyed many of their churches. Some missi..."
                           }
+                        , { activityType = More
+                          , title = "Paul Miki & Companions"
+                          , image = "SaintsFeastFamily"
+                          , link = "https://www.saintsfeastfamily.com/copy-of-st-paul-miki-companions-f-1"
+                          , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint\u{00A0}Paul Miki and Companions’ Story \u{200B} Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlook..."
+                          }
                         ]
                   }
                 , { feast = "Saint Dorothy of Caesarea"
@@ -230,16 +212,6 @@ february =
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-dorothy-of-caesarea-feb--1"
                           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of Saint\u{00A0}Dorothy of Caesarea \u{00A0} The Holy Martyr Dorothy and the Martyrs Christina, Callista and Theophilus lived in Caesarea of Cappadocia and suffered under Emperor Diocletian in either the year 288 or 300. \u{200B} St. Dorothy was a pious Christian maiden, distinguished by her great beauty, humi..."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Paul Miki & Companions"
-                  , activities =
-                        [ { activityType = More
-                          , title = "Paul Miki & Companions"
-                          , image = "SaintsFeastFamily"
-                          , link = "https://www.saintsfeastfamily.com/copy-of-st-paul-miki-companions-f-1"
-                          , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint\u{00A0}Paul Miki and Companions’ Story \u{200B} Nagasaki, Japan, is familiar to Americans as the city on which the second atomic bomb was dropped, immediately killing over 37,000 people. Three and a half centuries before, 26 martyrs of Japan were crucified on a hill, now known as the Holy Mountain, overlook..."
                           }
                         ]
                   }
@@ -271,17 +243,7 @@ february =
           }
         , { date = "8"
           , feasts =
-                [ { feast = "Saint Jerome Emilani"
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Saint Jerome Emiliani"
-                          , image = "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg"
-                          , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-jerome-emiliani/"
-                          , snippet = "Jerome Emiliani was born in Venice. As a soldier, he was captured during battle and imprisoned. In a dungeon he thought about his life..."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Josephine Bakhita"
+                [ { feast = "Saint Josephine Bakhita"
                   , activities =
                         [ { activityType = More
                           , title = "St. Josephine Bakhita Resources For Kids (Crafts, Printables, More!)"
@@ -322,16 +284,6 @@ february =
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-jerome-emiliani-feb-8-1"
                           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Jerome Emiliani’s Story \u{200B} Born wealthy, the son of Angelo and Eleanor Mauroceni Emiliani. His father died when Jerome was a teenager, and he ran away from home at age 15. After a dissolute youth, he became a soldier in Venice, Italy in 1506. Commanded the League of Cambrai forces at the fortre..."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Josephine, Bakhita, c. 1868-1947"
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Saint Josephine, Bakhita, c. 1868-1947"
-                          , image = "LoyolaPress"
-                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita"
-                          , snippet = "“It is an act of justice for the rich to help the poor.” Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery, eventually working in Italy as a nanny for a wealthy family. It was during..."
                           }
                         ]
                   }
@@ -483,16 +435,6 @@ february =
                           }
                         ]
                   }
-                , { feast = "Saint Catherine dei Ricci"
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Saint Catherine dei Ricci"
-                          , image = "LoyolaPress"
-                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-catherine-dei-ricci"
-                          , snippet = "We are curious about mystics who experience ecstasies and visions. But we tend to regard them as psychologically unbalanced persons. However, when we get to know a genuine mystic like St. Catherine dei Ricci we must abandon our stereotypical view. Catherine was a very competent woman who trained nun..."
-                          }
-                        ]
-                  }
                 , { feast = "Saint Catherine de Ricci"
                   , activities =
                         [ { activityType = More
@@ -500,6 +442,12 @@ february =
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-ermenilda-of-ely-feb-13"
                           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of St. Catherine de Ricci \u{200B} St. Catherine was born in\u{00A0}Florence\u{00A0}in 1522. Her baptismal name was Alexandrina, but she took the name of Catherine upon entering religion. From her earliest infancy she manifested a great love of prayer, and in her sixth year, her father placed her in the\u{00A0}conven..."
+                          }
+                        , { activityType = OnlineReading
+                          , title = "Saint Catherine dei Ricci"
+                          , image = "LoyolaPress"
+                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-catherine-dei-ricci"
+                          , snippet = "We are curious about mystics who experience ecstasies and visions. But we tend to regard them as psychologically unbalanced persons. However, when we get to know a genuine mystic like St. Catherine dei Ricci we must abandon our stereotypical view. Catherine was a very competent woman who trained nun..."
                           }
                         ]
                   }
@@ -573,21 +521,13 @@ february =
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-claude-de-la-colombiere/"
                           , snippet = "Saint Claude de la Colombière met Saint Margaret Mary Alacoque and eventually became her confessor. Together they advanced devotion to the Sacred Heart at a time when God’s mercy needed emphasis. God raises the right people at the right time to keep his Church on the right path."
                           }
-                        ]
-                  }
-                , { feast = "Saint Claude la Colombiére"
-                  , activities =
-                        [ { activityType = OnlineReading
+                        , { activityType = OnlineReading
                           , title = "Saint Claude la Colombiére"
                           , image = "LoyolaPress"
                           , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-claude-la-colombiere"
                           , snippet = "All our life is sown with tiny thorns that produce in our hearts a thousand involuntary movements of hatred, envy, fear, impatience, a thousand little fleeting disappointments, a thousand slight worries, a thousand disturbances that momentarily alter our peace of soul. For example, a word escapes th..."
                           }
-                        ]
-                  }
-                , { feast = "SaintClaude de la Colombière"
-                  , activities =
-                        [ { activityType = More
+                        , { activityType = More
                           , title = "Claude de la Colombière"
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-of-lenten-companion-1"
@@ -631,31 +571,13 @@ february =
                           , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites/"
                           , snippet = "Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values..."
                           }
-                        ]
-                  }
-                , { feast = "Seven Founders of the Servite Order"
-                  , activities =
-                        [ { activityType = Audio
+                        , { activityType = Audio
                           , title = "Story of Seven Founders of the Servite Order"
                           , image = "FranciscanMedia"
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/seven-founders-of-the-servite-order/"
                           , snippet = "Rather than just talk about the problems of the day, the Seven Founders of the Servite Order did something about it─they consciously left all and formed a new religious congregation to address the issues. They put their money where their mouths were."
                           }
-                        ]
-                  }
-                , { feast = "The Seven Holy Founders of the of Servite Order"
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "The Seven Holy Founders of the of Servite Order"
-                          , image = "LoyolaPress"
-                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/seven-founders-of-the-order-of-servites"
-                          , snippet = "Imagine that seven famous businessmen in New York left their homes and careers today to live together in solitude and prayer. The world would be surprised and led to reflect on its values. Seven wealthy, well-known cloth merchants lived in Florence, Italy in the mid-thirteenth century: Bonfilius, Mo..."
-                          }
-                        ]
-                  }
-                , { feast = "The Seven Holy Founders of the Servite Order"
-                  , activities =
-                        [ { activityType = More
+                        , { activityType = More
                           , title = "The Seven Holy Founders of the Servite Order"
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-of-the-seven-holy-founders-of--1"
@@ -667,7 +589,7 @@ february =
           }
         , { date = "18"
           , feasts =
-                [ { feast = "Blessed John of Fiesole (Fra Angelico)"
+                [ { feast = "Saint Fra Angelico"
                   , activities =
                         [ { activityType = Images
                           , title = "Fra Angelico's Paintings"
@@ -675,21 +597,13 @@ february =
                           , link = "https://artsandculture.google.com/entity/fra-angelico/m031b2?categoryId=artist"
                           , snippet = "View ultra-high resolution images of Fra Angelico's paintings"
                           }
-                        ]
-                  }
-                , { feast = "Blessed John of Fiesole"
-                  , activities =
-                        [ { activityType = Audio
+                        , { activityType = Audio
                           , title = "Story of Blessed John of Fiesole"
                           , image = "FranciscanMedia"
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-john-of-fiesole/"
                           , snippet = "Blessed John of Fiesole, a Dominican Friar, is also known as Fra Angelico. Famous for his devotional artwork John used his talents to praise God through paint. All talents can be used to praise God."
                           }
-                        ]
-                  }
-                , { feast = "Saint Fra Angelico"
-                  , activities =
-                        [ { activityType = More
+                        , { activityType = More
                           , title = "Fra Angelico"
                           , image = "SaintsFeastFamily"
                           , link = "https://www.saintsfeastfamily.com/copy-of-st-amy-feb-20"
@@ -733,11 +647,7 @@ february =
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/saints-jacinta-and-francisco-marto/"
                           , snippet = "Two young children who died early in life, Jacinta and Francisco Marto, gained the attention of the Church and the world when Mary appeared to them at Fatima. Without being martyred, they became witnesses and messengers of God’s goodness."
                           }
-                        ]
-                  }
-                , { feast = "Saints Francisco and Jacinta Marto"
-                  , activities =
-                        [ { activityType = OnlineReading
+                        , { activityType = OnlineReading
                           , title = "Saints Francisco and Jacinta Marto"
                           , image = "LoyolaPress"
                           , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/blesseds-francisco-and-jacinta-marto"
@@ -807,7 +717,7 @@ february =
                           }
                         ]
                   }
-                , { feast = "Chair of Saint Peter"
+                , { feast = "The Chair of Saint Peter the Apostle"
                   , activities =
                         [ { activityType = Audio
                           , title = "Story of Chair of Saint Peter"
@@ -821,11 +731,7 @@ february =
                           , link = "https://www.saintsfeastfamily.com/copy-of-lenten-companion-feb-20"
                           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Story of the Chair of Saint Peter \u{200B} This feast commemorates Christ’s choosing Peter to sit in his place as the servant-authority of the whole Church. \u{200B} After the “lost weekend” of pain, doubt, and self-torment, Peter hears the Good News. Angels at the tomb say to Magdalene, “The Lord has risen!..."
                           }
-                        ]
-                  }
-                , { feast = "The Chair of Saint Peter the Apostle"
-                  , activities =
-                        [ { activityType = OnlineReading
+                        , { activityType = OnlineReading
                           , title = "The Chair of Saint Peter the Apostle"
                           , image = "LoyolaPress"
                           , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/chair-of-peter"
