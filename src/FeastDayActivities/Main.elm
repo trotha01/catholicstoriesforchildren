@@ -1,6 +1,7 @@
 module FeastDayActivities.Main exposing (..)
 
 import Browser
+import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import FeastDayActivities.FeastDayHelpers exposing (..)
 import FeastDayActivities.FeastDays exposing (..)
@@ -15,6 +16,7 @@ import Json.Encode
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
 import Saints.SaintList exposing (saints)
 import Signup exposing (..)
+import Task
 import Url
 
 
@@ -50,6 +52,7 @@ type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
     | SignupMsg Signup.Msg
+    | NoOp
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -62,21 +65,21 @@ update msg model =
                         urlString =
                             Url.toString url
 
-                        isMonth =
+                        hasMonth =
                             List.any (\month -> String.contains month urlString) months
                     in
-                    if isMonth then
-                        ( model, Nav.pushUrl model.key (Url.toString url) )
+                    if hasMonth then
+                        ( { model | url = url }, Nav.pushUrl model.key (Url.toString url) )
 
                     else
-                        ( model, Nav.load (Url.toString url) )
+                        ( { model | url = url }, Nav.load (Url.toString url) )
 
                 Browser.External href ->
                     ( model, Nav.load href )
 
-        UrlChanged url ->
-            ( { model | url = url }
-            , Cmd.none
+        UrlChanged _ ->
+            ( model
+            , jumpToHeader
             )
 
         SignupMsg signupMsg ->
@@ -85,6 +88,16 @@ update msg model =
                     Signup.update signupMsg model.signup
             in
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        NoOp ->
+            ( model, Cmd.none )
+
+
+jumpToHeader : Cmd Msg
+jumpToHeader =
+    Dom.getElement "calendar-content"
+        |> Task.andThen (\i -> Dom.setViewportOf "body" 0 i.element.y)
+        |> Task.attempt (\_ -> NoOp)
 
 
 
@@ -114,6 +127,7 @@ view model =
             , style "overflow-x" "hidden"
             , style "overflow-y" "auto"
             , style "background-color" "#FEF7F4"
+            , id "body"
             ]
             [ viewSubpageHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
             , viewBody model currentRoute
@@ -164,6 +178,7 @@ viewDate month date feasts =
     div
         [ class "text-center"
         , class "mt-10 max-w-3xl mx-auto"
+        , id "calendar-content"
         ]
         [ div [ class "grid md:grid-cols-[200px,_1fr]" ]
             [ a
@@ -537,32 +552,35 @@ viewMonth model feastMonth =
         , div [ class "mt-10 mb-16" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
         , div
-            [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2"
-            , class "text-3xl md:text-3xl lg:text-3xl"
-            , class "mt-3"
-            , class "text-center"
-            , style "max-width" "800px"
-            , class "hcenter"
-            ]
-            (List.map (viewMonthPillBox feastMonth.month) months)
-        , div
-            [ style "width" "100vw"
-            , style "max-width" "800px"
-            , class "hcenter"
-            , style "position" "relative"
-            , style "font-size" "20px"
-            , class "mt-3 mb-12"
-            , class "grid grid-cols-2"
-            ]
-            [ viewFeastMonthHeader feastMonth.color feastMonth.month
-            , div
-                [ class "grid grid-cols-1 md:grid-cols-2"
-                , class "col-span-2"
-                , style "background-color" "white"
-                , style "padding" "50px"
+            []
+            [ div
+                [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2"
+                , class "text-3xl md:text-3xl lg:text-3xl"
+                , class "mt-3"
+                , class "text-center"
+                , style "max-width" "800px"
+                , class "hcenter"
                 ]
-                [ viewFeastDays feastMonth.key firstHalf
-                , viewFeastDays feastMonth.key secondHalf
+                (List.map (viewMonthPillBox feastMonth.month) months)
+            , div
+                [ style "width" "100vw"
+                , style "max-width" "800px"
+                , class "hcenter"
+                , style "position" "relative"
+                , style "font-size" "20px"
+                , class "mt-3 mb-12"
+                , class "grid grid-cols-2"
+                ]
+                [ viewFeastMonthHeader feastMonth.color feastMonth.month
+                , div
+                    [ class "grid grid-cols-1 md:grid-cols-2"
+                    , class "col-span-2"
+                    , style "background-color" "white"
+                    , style "padding" "50px"
+                    ]
+                    [ viewFeastDays feastMonth.key firstHalf
+                    , viewFeastDays feastMonth.key secondHalf
+                    ]
                 ]
             ]
         ]
