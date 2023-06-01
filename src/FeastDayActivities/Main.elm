@@ -534,12 +534,12 @@ viewMonth model feastMonth =
         [ h1 [ class "font-bold" ] [ text "2023 Feast Day Activities" ]
         , p [ class "text-2xl mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
         , p [ class "text-2xl mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
-        , div [ class "mt-10" ]
+        , div [ class "mt-10 mb-16" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
         , div
-            [ class "grid grid-cols-12"
-            , class "text-base md:text-3xl lg:text-3xl"
-            , class "mt-6"
+            [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2"
+            , class "text-3xl md:text-3xl lg:text-3xl"
+            , class "mt-3"
             , class "text-center"
             , style "max-width" "800px"
             , class "hcenter"
@@ -551,7 +551,7 @@ viewMonth model feastMonth =
             , class "hcenter"
             , style "position" "relative"
             , style "font-size" "20px"
-            , style "margin-top" "50px"
+            , class "mt-3 mb-12"
             , class "grid grid-cols-2"
             ]
             [ viewFeastMonthHeader feastMonth.color feastMonth.month
@@ -571,16 +571,11 @@ viewMonth model feastMonth =
 viewFeastMonthHeader : String -> String -> Html Msg
 viewFeastMonthHeader color month =
     h2
-        [ class "text-center"
-        , class "col-span-2"
-        , class "grid"
-        , class "content-center"
-        , class "uppercase"
-        , class "text-5xl"
+        [ class "grid col-span-2 content-center text-center"
+        , class "uppercase text-5xl"
+        , class "rounded"
         , style "font-family" "hvdComicSerifPro"
-        , style "background-color" color
-        , style "border-top" "3px solid black"
-        , style "border-bottom" "3px solid black"
+        , style "background-color" "#9de3ec"
         , style "height" "2.5em"
         ]
         [ text month
@@ -611,6 +606,7 @@ viewFeastDay month feastDay =
             , attribute "aria-label" (month ++ " " ++ feastDay.date)
             , class "grid grid-cols-calendar gap-3 items-center justify-items-center"
             , class "hover:bg-csc-lightpurple"
+            , class "transition hover:scale-105"
             , class "rounded"
             ]
             [ div
@@ -636,6 +632,7 @@ viewMonthPillBox month =
         , class "p-2"
         , class "cursor-pointer"
         , class "capitalize"
+        , class "transition hover:scale-105"
         , attribute "aria-label" month
         , href (urlPath ++ "?m=" ++ month)
         ]
