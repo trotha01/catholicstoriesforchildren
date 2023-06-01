@@ -329,12 +329,12 @@ viewVideos videos =
 
     else
         div [ class "mt-20" ]
-            [ h3
-                [ class "text-3xl"
-                , class "mb-7"
-                ]
-                [ text "Videos" ]
-            , div [ class "max-w-3xl m-auto" ]
+            [ -- h3
+              -- [ class "text-3xl"
+              -- , class "mb-7"
+              -- ]
+              -- [ text "Videos" ]
+              div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\video ->
                         viewVideo video
@@ -387,12 +387,12 @@ viewActivities activityType activities =
 
     else
         div [ class "mt-20" ]
-            [ h3
-                [ class "text-3xl"
-                , class "mb-7"
-                ]
-                [ text activityType ]
-            , div [ class "max-w-3xl m-auto" ]
+            [ -- h3
+              -- [ class "text-3xl"
+              -- , class "mb-7"
+              -- ]
+              -- [ text activityType ]
+              div [ class "max-w-3xl m-auto" ]
                 (List.map viewActivity activities)
             ]
 
