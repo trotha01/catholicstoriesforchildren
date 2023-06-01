@@ -172,7 +172,7 @@ viewDate month date feasts =
                 , attribute "aria-label" ("Back to " ++ month)
                 ]
                 -- TODO: Use a different image (this says July)
-                [ div [] [ text "🗓️" ]
+                [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
                 , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
                 ]
             , div

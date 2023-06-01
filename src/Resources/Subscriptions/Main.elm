@@ -87,7 +87,7 @@ osvKids : Resource
 osvKids =
     { name = "OSV Kids Magazine"
     , link = "https://osvkids.com/magazine/"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/3_1__qbNDjJEy1.png?updatedAt=1679068242059"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/3_1__qbNDjJEy1.png?updatedAt=1685581657645"
     }
 
 
@@ -95,7 +95,7 @@ saintOfTheMonth : Resource
 saintOfTheMonth =
     { name = "Saint of the Month Box"
     , link = "https://www.saintofthemonth.com"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/4_1__LjeiFaCGM1.png?updatedAt=1679068242210"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/4_1__LjeiFaCGM1.png?updatedAt=1685581640310"
     }
 
 
@@ -103,7 +103,7 @@ massBox : Resource
 massBox =
     { name = "Mass Box"
     , link = "https://themassbox.com"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/5_GX7izsR5Jp.png?updatedAt=1679068242472"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/5_GX7izsR5Jp.png?updatedAt=1685581558288"
     }
 
 
@@ -111,7 +111,7 @@ faithAndFamilyCollective : Resource
 faithAndFamilyCollective =
     { name = "Faith + Family Collective"
     , link = "https://faithandfamilycollective.com"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/6_tZqBkQ3sW.png?updatedAt=1679068242133"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/6_tZqBkQ3sW.png?updatedAt=1685581578667"
     }
 
 
@@ -119,7 +119,7 @@ catholicFamilyCrate : Resource
 catholicFamilyCrate =
     { name = "Catholic Family Crate"
     , link = "https://catholicfamilycrate.com"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/7_i5fOMR9CEB.png?updatedAt=1679068242443"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/7_i5fOMR9CEB.png?updatedAt=1685581542221"
     }
 
 
@@ -143,7 +143,7 @@ formed : Resource
 formed =
     { name = "Formed"
     , link = "https://formed.org"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/9_6wjdaJHdc.png?updatedAt=1679068242300"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/9_6wjdaJHdc.png?updatedAt=1685581568223"
     }
 
 
