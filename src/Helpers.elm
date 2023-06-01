@@ -1,7 +1,10 @@
 module Helpers exposing (..)
 
+import Html as H
+import Html.Events exposing (keyCode, on)
 import Html.String exposing (..)
 import Html.String.Attributes exposing (..)
+import Json.Decode as Decode
 import Json.Encode
 
 
@@ -252,3 +255,16 @@ externalLink label link children =
         , attribute "aria-label" label
         ]
         children
+
+
+onEnter : msg -> H.Attribute msg
+onEnter msg =
+    let
+        isEnter code =
+            if code == 13 then
+                Decode.succeed msg
+
+            else
+                Decode.fail "not ENTER"
+    in
+    on "keydown" (Decode.andThen isEnter keyCode)

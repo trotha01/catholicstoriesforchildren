@@ -7,6 +7,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onInput)
 import Html.String
 import Saints.SaintHelpers exposing (..)
 import Saints.SaintList exposing (Saint, saints)
@@ -29,17 +30,19 @@ main =
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
+    , query : String
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( Model key url, Cmd.none )
+    ( Model key url "", Cmd.none )
 
 
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
+    | SetQuery String
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -48,15 +51,22 @@ update msg model =
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
-                    ( model, Nav.pushUrl model.key (Url.toString url) )
+                    if String.contains "saints" (Url.toString url) then
+                        ( model, Nav.pushUrl model.key (Url.toString url) )
+
+                    else
+                        ( model, Nav.load (Url.toString url) )
 
                 Browser.External href ->
                     ( model, Nav.load href )
 
         UrlChanged url ->
-            ( { model | url = Debug.log "urlChanged" url }
+            ( { model | url = url }
             , Cmd.none
             )
+
+        SetQuery newQuery ->
+            ( { model | query = newQuery }, Cmd.none )
 
 
 
@@ -76,7 +86,7 @@ view : Model -> Browser.Document Msg
 view model =
     let
         currentRoute =
-            Debug.log "parsed route" (parseRoute model.url)
+            parseRoute model.url
     in
     { title = "Saints - Catholic Stories for Children"
     , body =
@@ -85,18 +95,18 @@ view model =
             [ viewSubpageHeader "Saints" headerMargin |> Html.String.toHtml
             , case currentRoute of
                 Just (SaintRoute s) ->
-                    viewBody s
+                    viewBody model s
 
                 Nothing ->
-                    viewBody Nothing
+                    viewBody model Nothing
             , viewFooter |> Html.String.toHtml
             ]
         ]
     }
 
 
-viewBody : Maybe String -> Html Msg
-viewBody saintName =
+viewBody : Model -> Maybe String -> Html Msg
+viewBody model saintName =
     div
         [ class "bg-[#FEF7F4]"
         ]
@@ -107,7 +117,7 @@ viewBody saintName =
                     viewSaintPage s
 
                 Nothing ->
-                    viewSaints
+                    viewSaints model
             ]
         ]
 
@@ -222,8 +232,44 @@ viewActivity saintName link =
             ]
 
 
-viewSaints : Html Msg
-viewSaints =
+saintSort : Saint -> Saint -> Order
+saintSort a b =
+    case
+        compare
+            (a.score |> String.toInt |> Maybe.withDefault 0)
+            (b.score |> String.toInt |> Maybe.withDefault 0)
+    of
+        LT ->
+            GT
+
+        EQ ->
+            EQ
+
+        GT ->
+            LT
+
+
+viewSaints : Model -> Html Msg
+viewSaints model =
+    let
+        query =
+            String.toLower model.query
+
+        filteredSaints =
+            if String.isEmpty query then
+                saints
+
+            else
+                List.filter
+                    (\s ->
+                        String.contains query (String.toLower s.name)
+                            || String.contains query (String.toLower s.alternativeNames)
+                            || String.contains query (String.toLower s.feastDay)
+                            || String.contains query (String.toLower s.patronOf)
+                    )
+                    saints
+                    |> List.sortWith saintSort
+    in
     div []
         [ h1
             [ class "text-center"
@@ -262,7 +308,16 @@ viewSaints =
                     [ text "Catholic Saints Info" ]
                 ]
             ]
-        , div [] (List.map viewSaint saints)
+        , input
+            [ type_ "text"
+            , placeholder "Search for a Saint"
+            , value model.query
+            , onInput SetQuery
+            , style "box-shadow" "#777 1px 1px 5px"
+            , class "rounded p-2 mb-2 text-lg"
+            ]
+            []
+        , div [] (List.map viewSaint filteredSaints)
         ]
 
 

@@ -3,9 +3,8 @@ port module Signup exposing (..)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (keyCode, on, onClick, onInput)
+import Html.Events exposing (onClick, onInput)
 import Http
-import Json.Decode as Decode
 import Json.Encode as Encode
 import Regex exposing (find)
 import Spinner
@@ -169,19 +168,6 @@ viewMessage model =
     div [ class color ]
         [ text model.message
         ]
-
-
-onEnter : Msg -> Attribute Msg
-onEnter msg =
-    let
-        isEnter code =
-            if code == 13 then
-                Decode.succeed msg
-
-            else
-                Decode.fail "not ENTER"
-    in
-    on "keydown" (Decode.andThen isEnter keyCode)
 
 
 isValidEmail : String -> Bool

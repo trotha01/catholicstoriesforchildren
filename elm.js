@@ -7102,7 +7102,7 @@ var $elm$json$Json$Decode$fail = _Json_fail;
 var $elm$json$Json$Decode$field = _Json_decodeField;
 var $elm$json$Json$Decode$int = _Json_decodeInt;
 var $elm$html$Html$Events$keyCode = A2($elm$json$Json$Decode$field, 'keyCode', $elm$json$Json$Decode$int);
-var $author$project$Signup$onEnter = function (msg) {
+var $author$project$Helpers$onEnter = function (msg) {
 	var isEnter = function (code) {
 		return (code === 13) ? $elm$json$Json$Decode$succeed(msg) : $elm$json$Json$Decode$fail('not ENTER');
 	};
@@ -7305,7 +7305,7 @@ var $author$project$Signup$view = function (model) {
 										$elm$html$Html$Attributes$placeholder('Email'),
 										$elm$html$Html$Attributes$value(model.email),
 										$elm$html$Html$Events$onInput($author$project$Signup$Email),
-										$author$project$Signup$onEnter($author$project$Signup$Submit),
+										$author$project$Helpers$onEnter($author$project$Signup$Submit),
 										A2($elm$html$Html$Attributes$attribute, 'required', 'true'),
 										A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
 										A2($elm$html$Html$Attributes$style, 'border-radius', '5px 0px 0px 5px'),

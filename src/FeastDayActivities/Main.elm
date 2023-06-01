@@ -230,7 +230,6 @@ viewFeastActivities feastActivitiesList =
 
         feastNames =
             List.map .feast feastActivitiesList
-                |> Debug.log "feast names"
 
         cleanedFeastNames =
             List.concatMap
@@ -240,7 +239,6 @@ viewFeastActivities feastActivitiesList =
                         |> List.map String.toLower
                 )
                 feastNames
-                |> Debug.log "cleaned feast names"
 
         -- Helper functions to remove duplicate activities
         addUniqueActivity : Activity -> List Activity -> List Activity
