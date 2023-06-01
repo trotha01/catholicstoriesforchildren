@@ -544,7 +544,7 @@ viewMonth model feastMonth =
             , style "max-width" "800px"
             , class "hcenter"
             ]
-            (List.map viewMonthPillBox months)
+            (List.map (viewMonthPillBox feastMonth.month) months)
         , div
             [ style "width" "100vw"
             , style "max-width" "800px"
@@ -622,12 +622,19 @@ viewFeastDay month feastDay =
         ]
 
 
-viewMonthPillBox : String -> Html msg
-viewMonthPillBox month =
+viewMonthPillBox : String -> String -> Html msg
+viewMonthPillBox currentMonth month =
     -- TODO: use nav html elements?
     a
         [ class "col-span-1"
-        , class "hover:bg-csc-lightblue"
+        , class
+            (if String.contains month (String.toLower currentMonth) then
+                "bg-csc-darkblue text-white"
+
+             else
+                ""
+            )
+        , class "hover:bg-csc-lightblue hover:text-black"
         , class "rounded"
         , class "p-2"
         , class "cursor-pointer"
