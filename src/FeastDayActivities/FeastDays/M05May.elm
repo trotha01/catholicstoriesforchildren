@@ -1,6 +1,6 @@
 module FeastDayActivities.FeastDays.M05May exposing (..)
 
-import FeastDayActivities.FeastDayHelpers exposing (FeastMonth)
+import FeastDayActivities.FeastDayHelpers exposing (..)
 
 
 may : FeastMonth
@@ -79,7 +79,16 @@ may =
           }
         , { date = "26"
           , feasts =
-                [ { feast = "Saint Philip Neri", activities = [] }
+                [ { feast = "Saint Philip Neri"
+                  , activities =
+                        [ { activityType = Audio
+                          , title = ""
+                          , image = ""
+                          , link = "https://castbox.fm/app/castbox/player/id4699401/id595842884?v=8.22.11&autoplay=0"
+                          , snippet = ""
+                          }
+                        ]
+                  }
                 ]
           }
         , { date = "27"

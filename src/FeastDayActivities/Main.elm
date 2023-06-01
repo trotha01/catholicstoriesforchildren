@@ -314,7 +314,7 @@ viewFeastActivities feastActivitiesList =
         div []
             -- [ viewActivities "Video" (videoActivities activities) -- used for csv output
             [ viewVideos (videoActivities activities)
-            , viewActivities "Audio" (audioActivities activities)
+            , viewAudioList (audioActivities activities)
             , viewActivities "Crafts" (craftActivities activities)
             , viewActivities "Printouts" (printoutActivities activities)
             , viewActivities "Games" (gameActivities activities)
@@ -334,6 +334,40 @@ viewNoActivities =
         , p
             []
             [ text "Please hang tight." ]
+        ]
+
+
+viewAudioList : List Activity -> Html Msg
+viewAudioList audioList =
+    if List.isEmpty audioList then
+        span [] []
+
+    else
+        div [ class "mt-20" ]
+            [ div [ class "max-w-3xl m-auto" ]
+                (List.map viewAudio audioList)
+            ]
+
+
+viewAudio : Activity -> Html Msg
+viewAudio audio =
+    if String.contains "castbox" audio.link then
+        viewEmbeddedAudio audio
+
+    else
+        viewActivity audio
+
+
+viewEmbeddedAudio : Activity -> Html msg
+viewEmbeddedAudio audio =
+    div []
+        [ iframe
+            [ src audio.link
+            , attribute "frameborder" "0"
+            , style "width" "100%"
+            , height 500
+            ]
+            []
         ]
 
 
