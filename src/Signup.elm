@@ -84,9 +84,9 @@ view model =
         [ div
             [ class "text-center sm:mb-5" ]
             [ p
-                [ class "pb-5"
+                [ class "pb-5 pl-1 text-left"
                 ]
-                [ text "Join our mail list and get our FREE printable reconciliation booklet for kids!" ]
+                [ text "Join our mail list and get our FREE printable reconciliation booklet for kids! We will also send you our new animations FREE!" ]
             , div
                 []
                 [ input
@@ -106,7 +106,7 @@ view model =
                     , style "padding" "10px 20px"
                     , style "border-radius" "5px 0px 0px 5px"
                     , style "box-shadow" "#777 1px 1px 5px"
-                    , class "w-[188px] md:w-[240px] h-[56px] text-lg"
+                    , class "w-[188px] md:w-[230px] h-[56px] text-lg"
                     ]
                     []
                 , viewSubmitButton model

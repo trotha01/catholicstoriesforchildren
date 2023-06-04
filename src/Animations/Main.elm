@@ -7,7 +7,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
-import Newsroom.Main exposing (viewSignUp)
 import Signup exposing (..)
 
 

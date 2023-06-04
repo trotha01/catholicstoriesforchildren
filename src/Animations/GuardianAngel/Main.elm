@@ -8,26 +8,40 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
-import Newsroom.Main exposing (viewSignUp)
+import Signup exposing (..)
 
 
 type alias Model =
-    {}
+    { signup : Signup.Model }
 
 
-main : Program () Model Never
+type Msg
+    = SignupMsg Signup.Msg
+
+
+main : Program () Model Msg
 main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
+    Browser.element
+        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
         }
 
 
-view : Html Never
-view =
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+
+view : Model -> Html Msg
+view model =
     div
         [ style "height" "100vh"
         , style "overflow-x" "hidden"
@@ -37,13 +51,13 @@ view =
         , style "background-color" "#FEF7F4"
         ]
         [ viewSubpageHeader "Guardian Angel" headerMargin |> Html.String.toHtml
-        , viewBody
+        , viewBody model
         , viewFooter |> Html.String.toHtml
         ]
 
 
-viewBody : Html Never
-viewBody =
+viewBody : Model -> Html Msg
+viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
@@ -52,7 +66,8 @@ viewBody =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Guardian Angel Prayer" ]
         , aboutTheAnimation
-        , div [ class "mb-10" ] [ viewSignUp |> Html.String.toHtml ]
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewVideoPlayers
         , viewPrayer
         , scripture

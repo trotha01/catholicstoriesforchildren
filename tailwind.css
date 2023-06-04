@@ -1144,6 +1144,18 @@ video {
   padding-top: 0.25rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1530,6 +1542,10 @@ video {
 
   .md\:w-\[240px\] {
     width: 240px;
+  }
+
+  .md\:w-\[230px\] {
+    width: 230px;
   }
 
   .md\:columns-2 {
