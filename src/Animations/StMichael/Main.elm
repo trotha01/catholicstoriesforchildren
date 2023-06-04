@@ -1,6 +1,6 @@
 module Animations.StMichael.Main exposing (..)
 
-import Animations.Helpers exposing (viewVideo, viewVideoComingSoon)
+import Animations.Helpers exposing (viewVideo)
 import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
@@ -9,12 +9,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Html.String
-import Newsroom.Main exposing (viewSignUp)
-
-
-type alias Model =
-    { prayerTab : LanguageOption
-    }
+import Signup exposing (..)
 
 
 type LanguageOption
@@ -23,29 +18,43 @@ type LanguageOption
     | Spanish
 
 
-type Msg
-    = PrayerTabClick LanguageOption
-
-
-init : Model
-init =
-    { prayerTab = English
+type alias Model =
+    { prayerTab : LanguageOption
+    , signup : Signup.Model
     }
 
 
-main : Program () Model Never
+type Msg
+    = PrayerTabClick LanguageOption
+    | SignupMsg Signup.Msg
+
+
+main : Program () Model Msg
 main =
-    Browser.sandbox
-        { init = init
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
+    Browser.element
+        { init = \_ -> ( { prayerTab = English, signup = Signup.init }, Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
         }
 
 
-view : Html Never
-view =
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        PrayerTabClick language ->
+            ( { model | prayerTab = language }, Cmd.none )
+
+
+view : Model -> Html Msg
+view model =
     div
         [ style "height" "100vh"
         , style "overflow-x" "hidden"
@@ -55,13 +64,13 @@ view =
         , style "background-color" "#FEF7F4"
         ]
         [ viewSubpageHeader "St Michael" headerMargin |> Html.String.toHtml
-        , viewBody
+        , viewBody model
         , viewFooter |> Html.String.toHtml
         ]
 
 
-viewBody : Html Never
-viewBody =
+viewBody : Model -> Html Msg
+viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
@@ -70,7 +79,8 @@ viewBody =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "St Michael the Archangel Prayer" ]
         , aboutTheAnimation
-        , div [ class "mb-10" ] [ viewSignUp |> Html.String.toHtml ]
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
 
         -- , viewVideoComingSoon "https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466"
         , viewVideoPlayers

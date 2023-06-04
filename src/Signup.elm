@@ -113,7 +113,7 @@ view model =
                 , viewMessage model
                 ]
             ]
-        , div [ class "mt-5" ] [ viewSampleImage ]
+        , div [] [ viewSampleImage ]
         ]
 
 
@@ -121,7 +121,7 @@ viewSampleImage : Html msg
 viewSampleImage =
     div [ class "flex justify-center" ]
         [ img
-            [ class "rounded max-w-[250px]"
+            [ class "rounded max-w-[180px]"
             , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___1080_px__P4HOL51vg.png?updatedAt=1684270935614"
             ]
             []
