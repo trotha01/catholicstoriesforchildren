@@ -10,11 +10,13 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Html.String
 import Newsroom.Main exposing (viewSignUp)
+import Signup exposing (..)
 
 
-type alias Model =
-    { videoTab : VideoOption
-    }
+
+-- type alias Model =
+--     { videoTab : VideoOption
+--     }
 
 
 type VideoOption
@@ -22,26 +24,60 @@ type VideoOption
     | ASL
 
 
-main : Program () Model Msg
-main =
-    Browser.sandbox
-        { init =
-            { videoTab = English
-            }
-        , view = view
-        , update = update
-        }
+
+-- main : Program () Model Msg
+-- main =
+--     Browser.sandbox
+--         { init =
+--             { videoTab = English
+--             }
+--         , view = view
+--         , update = update
+--         }
+-- type Msg
+--     = VideoTabClick VideoOption
+-- update : Msg -> Model -> Model
+-- update msg model =
+--     case msg of
+--         VideoTabClick videoTab ->
+--             { model | videoTab = videoTab }
+-- view : Model -> Html Msg
+-- view model =
+
+
+type alias Model =
+    { videoTab : VideoOption
+    , signup : Signup.Model
+    }
 
 
 type Msg
     = VideoTabClick VideoOption
+    | SignupMsg Signup.Msg
 
 
-update : Msg -> Model -> Model
+main : Program () Model Msg
+main =
+    Browser.element
+        { init = \_ -> ( { videoTab = English, signup = Signup.init }, Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
+        }
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        VideoTabClick videoTab ->
-            { model | videoTab = videoTab }
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        VideoTabClick language ->
+            ( { model | videoTab = language }, Cmd.none )
 
 
 view : Model -> Html Msg
@@ -69,7 +105,8 @@ viewBody model =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Hail Mary Animation for Children" ]
         , aboutTheAnimation
-        , div [ class "mb-10" ] [ viewSignUp |> Html.String.toHtml ]
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewVideoPlayers model
         , viewPrayer
         , aboutThePrayer

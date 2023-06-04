@@ -166,7 +166,7 @@ viewMessage model =
             else
                 "text-emerald-500"
     in
-    div [ class color ]
+    div [ class color, class "text-left pl-1" ]
         [ text model.message
         ]
 
