@@ -4,42 +4,55 @@ import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.String
 import Newsroom.Main exposing (viewSignUp)
+import Signup exposing (..)
 
 
 type alias Model =
-    {}
+    { signup : Signup.Model }
 
 
-main : Program () Model Never
+type Msg
+    = SignupMsg Signup.Msg
+
+
+main : Program () Model Msg
 main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-                    |> toString 0
-                    |> text
-                    |> toHtml
-        , update = \_ -> \model -> model
+    Browser.element
+        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
         }
 
 
-view : Html Never
-view =
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+
+view : Model -> Html Msg
+view model =
     div
         [ class "bg-[#FEF7F4]"
         ]
-        [ viewSubpageHeader "Team" headerMargin
-        , viewBody
-        , viewFooter
+        [ viewSubpageHeader "Animations" headerMargin |> Html.String.toHtml
+        , viewBody model
+        , viewFooter |> Html.String.toHtml
         ]
 
 
-viewBody : Html Never
-viewBody =
+viewBody : Model -> Html Msg
+viewBody model =
     div
         [ class "hcenter"
         , style "width" "80%"
@@ -62,7 +75,8 @@ viewBody =
                         ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
                     )
                 ]
-            , div [ class "mt-5" ] [ viewSignUp ]
+            , div [ class "mt-5" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , animations
         ]

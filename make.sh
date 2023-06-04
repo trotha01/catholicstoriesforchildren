@@ -34,7 +34,7 @@ pair_list=(
   src/About/PrivacyPolicy/Main.elm privacyPolicyElm.js
   src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
   src/Animations/HailMary/Main.elm animations/hailmary/elm.js
-  src/Animations/Main.elm animationsElm.js
+  src/Animations/Main.elm animations/elm.js
   src/Animations/StMichael/Main.elm animations/stmichael/elm.js
   src/Contact/Main.elm contactElm.js
   src/FeastDayActivities/Main.elm feastdayactivities/elm.js
