@@ -833,6 +833,10 @@ video {
   max-width: 180px;
 }
 
+.max-w-5xl {
+  max-width: 64rem;
+}
+
 .flex-none {
   flex: none;
 }

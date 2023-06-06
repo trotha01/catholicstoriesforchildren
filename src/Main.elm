@@ -150,7 +150,7 @@ viewBody model =
 viewIntro : Model -> Html Msg
 viewIntro model =
     viewSection "intro"
-        [ class "max-w-4xl m-auto"
+        [ class "max-w-5xl m-auto"
         , class "my-10"
         ]
         [ div [ class "mb-10" ]
