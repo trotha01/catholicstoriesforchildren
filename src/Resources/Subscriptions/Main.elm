@@ -135,7 +135,7 @@ magnifiKid : Resource
 magnifiKid =
     { name = "MagnifiKid"
     , link = "https://us.magnificat.net/home/magnifikid"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/8_qucgsetg84.png?updatedAt=1679068242095"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/8_qucgsetg84.png?updatedAt=1685581652225"
     }
 
 

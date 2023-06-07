@@ -70,14 +70,14 @@ viewAboutResources =
 viewResourceGroups : Html msg
 viewResourceGroups =
     div []
-        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources ])
+        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources, feastDayActivities ])
 
 
 viewResourceGroup : ResourceGroup -> Html msg
 viewResourceGroup resourceGroup =
     a
         [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded p-7"
-        , href ("/resources/" ++ resourceGroup.link)
+        , href resourceGroup.link
         , attribute "aria-label" resourceGroup.name
         ]
         [ div []
@@ -95,7 +95,7 @@ podcasts =
     { name = "Podcasts"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335"
     , description = "Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves."
-    , link = "podcasts"
+    , link = "/resources/podcasts"
     }
 
 
@@ -104,7 +104,7 @@ videos =
     { name = "Youtube Channels"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272"
     , description = "Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home."
-    , link = "videos"
+    , link = "/resources/videos"
     }
 
 
@@ -113,7 +113,7 @@ books =
     { name = "Books"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106"
     , description = "Find books here. It's hard to go wrong with a good Catholic book."
-    , link = "books"
+    , link = "/resources/books"
     }
 
 
@@ -122,7 +122,7 @@ subscriptions =
     { name = "Subscriptions"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068"
     , description = "Want monthly content at your front door? Check out these wonderful Catholic subscriptions."
-    , link = "subscriptions"
+    , link = "/resources/subscriptions"
     }
 
 
@@ -131,5 +131,14 @@ prayerResources =
     { name = "Prayer Resources"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/prayerresources_gN76-j6pz.png?updatedAt=1683227269863"
     , description = "Find more resources here to help build your prayer life"
-    , link = "prayer"
+    , link = "/resources/prayer"
+    }
+
+
+feastDayActivities : ResourceGroup
+feastDayActivities =
+    { name = "Feast Day Activities"
+    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png?updatedAt=1686096632436"
+    , description = "Find activities for feast days throughout the year"
+    , link = "/feastdayactivities"
     }
