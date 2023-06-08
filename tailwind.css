@@ -837,6 +837,10 @@ video {
   max-width: 64rem;
 }
 
+.max-w-\[330px\] {
+  max-width: 330px;
+}
+
 .flex-none {
   flex: none;
 }
@@ -1604,8 +1608,16 @@ video {
     margin-top: 1.25rem;
   }
 
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
   .lg\:block {
     display: block;
+  }
+
+  .lg\:grid {
+    display: grid;
   }
 
   .lg\:hidden {

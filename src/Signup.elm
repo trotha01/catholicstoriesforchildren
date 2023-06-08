@@ -80,10 +80,10 @@ view : Model -> Html Msg
 view model =
     div
         [ class "border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]"
-        , class "sm:grid sm:grid-cols-2"
+        , class "lg:grid lg:grid-cols-2"
         ]
         [ div
-            [ class "text-center sm:mb-5" ]
+            [ class "text-center mb-5" ]
             [ p
                 [ class "pb-5 pl-1 text-left"
                 ]
@@ -122,8 +122,8 @@ viewSampleImage : Html msg
 viewSampleImage =
     div [ class "flex justify-center" ]
         [ img
-            [ class "rounded max-w-[180px]"
-            , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___1080_px__P4HOL51vg.png?updatedAt=1684270935614"
+            [ class "rounded max-w-[330px]"
+            , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___720_px_1__1LbiEHkKK.png?updatedAt=1686266362421"
             ]
             []
         ]
