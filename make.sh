@@ -50,6 +50,7 @@ pair_list=(
   src/Resources/Videos/Main.elm resourcesVideosElm.js
   src/Saints/Main.elm saints/elm.js
   src/Team/Main.elm teamElm.js
+  src/ThankYou/Main.elm thankyou/elm.js
 )
 
 # Iterate through the list and pass each pair to the function

@@ -1,5 +1,6 @@
 port module Signup exposing (..)
 
+import Browser.Navigation as Nav
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -62,7 +63,7 @@ update msg model =
                 -- , message = response
                 , message = "Email sent!"
               }
-            , gtagReportConversion ""
+            , Cmd.batch [ gtagReportConversion "", Nav.load "/thankyou" ]
             )
 
         FormSubmitted (Err error) ->

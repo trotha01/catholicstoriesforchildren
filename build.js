@@ -25,7 +25,7 @@ var htmlPart1 = `<!doctype html>
     gtag('config', 'G-TXRVE787GD');
   </script>
 
-  <!-- Event snippet for Newsletter Signup conversion
+  <!-- This code is from google ads. Event snippet for Newsletter Signup conversion
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
   function gtag_report_conversion(url) {
@@ -153,9 +153,18 @@ var htmlPart4p2js = `.Main.init({
     node: document.getElementById('myapp')
   });
 
-  app.ports.gtagReportConversion.subscribe(function(message) {
-    gtag_report_conversion();
-  });
+  if (app.ports && app.ports.gtagReportConversion) {
+    app.ports.gtagReportConversion.subscribe(function(message) {
+      gtag_report_conversion();
+    });
+  }
+
+  if (app.ports && app.ports.goBack) {
+    app.ports.goBack.subscribe(function(message) {
+      window.history.back();
+    });
+  }
+
   </script>
 `
 
@@ -198,6 +207,7 @@ fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Cathol
 fakeNodeWithJs('./index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '')
 fakeNodeWithJs('./saints/index.html', 'Saints - Catholic Stories for Children', 'Catholic Saint List', '.Saints')
 fakeNodeWithJs('./animations/index.html', 'Animations - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.Animations')
+fakeNodeWithJs('./thankyou/index.html', 'Thank You - Catholic Stories for Children', 'Thank you for signing up for our mail list!', '.ThankYou')
 var contactApp = ContactElm.Elm.Contact.Main.init({ node: fakeNode('./contact/index.html', 'Contact us - Catholic Stories for Children', '') })
 var giveApp = GiveElm.Elm.Give.Main.init({ node: fakeNode('./give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏') })
 var navigationApp = NavigationElm.Elm.Navigation.Main.init({ node: fakeNode('./navigation/index.html', 'Navigation - Catholic Stories for Children', '') })

@@ -10,7 +10,7 @@
     gtag('config', 'G-TXRVE787GD');
   </script>
 
-  <!-- Event snippet for Newsletter Signup conversion
+  <!-- This code is from google ads. Event snippet for Newsletter Signup conversion
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
   function gtag_report_conversion(url) {
@@ -123,9 +123,18 @@
     node: document.getElementById('myapp')
   });
 
-  app.ports.gtagReportConversion.subscribe(function(message) {
-    gtag_report_conversion();
-  });
+  if (app.ports && app.ports.gtagReportConversion) {
+    app.ports.gtagReportConversion.subscribe(function(message) {
+      gtag_report_conversion();
+    });
+  }
+
+  if (app.ports && app.ports.goBack) {
+    app.ports.goBack.subscribe(function(message) {
+      window.history.back();
+    });
+  }
+
   </script>
 </body>
 </html>
