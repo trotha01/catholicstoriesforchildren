@@ -11,6 +11,7 @@ import Html.Events exposing (onInput)
 import Html.String
 import Saints.SaintHelpers exposing (..)
 import Saints.SaintList exposing (Saint, saints)
+import Signup exposing (..)
 import Url
 import Url.Builder exposing (..)
 
@@ -31,18 +32,26 @@ type alias Model =
     { key : Nav.Key
     , url : Url.Url
     , query : String
+    , signup : Signup.Model
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( Model key url "", Cmd.none )
+    ( { key = key
+      , url = url
+      , query = ""
+      , signup = Signup.init
+      }
+    , Cmd.none
+    )
 
 
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
     | SetQuery String
+    | SignupMsg Signup.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -67,6 +76,13 @@ update msg model =
 
         SetQuery newQuery ->
             ( { model | query = newQuery }, Cmd.none )
+
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
 
 
 
@@ -114,7 +130,7 @@ viewBody model saintName =
             [ class "max-w-4xl mx-auto p-10" ]
             [ case saintName of
                 Just s ->
-                    viewSaintPage s
+                    viewSaintPage model s
 
                 Nothing ->
                     viewSaints model
@@ -122,8 +138,8 @@ viewBody model saintName =
         ]
 
 
-viewSaintPage : String -> Html Msg
-viewSaintPage saintName =
+viewSaintPage : Model -> String -> Html Msg
+viewSaintPage model saintName =
     let
         maybeSaint =
             List.filter (\s -> s.name == saintName) saints
@@ -147,7 +163,10 @@ viewSaintPage saintName =
         Just saint ->
             div
                 []
-                [ viewBackButton
+                [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
+                , div [ class "mt-10" ]
+                    [ Signup.view model.signup |> Html.map SignupMsg ]
+                , div [ class "mt-10" ] [ viewBackButton ]
                 , h1
                     [ class "text-center"
                     , class "my-10"
@@ -277,7 +296,10 @@ viewSaints model =
             ]
             [ text "List of Saints and Blesseds" ]
         , div [ class "mb-10" ]
-            [ p [] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]
+            [ p [] [ text "Here at Catholic Stories for children, we are commited to providing valuable content for Catholic families. We help raise kids strong in the Catholic faith. We do this throught, stories, animations, music, and providing resources for Catholic families." ]
+            , div [ class "mt-10" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
+            , p [ class "mt-10" ] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]
             , p []
                 [ span [] [ text "Information about these saints can be found at " ]
                 , a
@@ -314,7 +336,7 @@ viewSaints model =
             , value model.query
             , onInput SetQuery
             , style "box-shadow" "#777 1px 1px 5px"
-            , class "rounded p-2 mb-2 text-lg"
+            , class "rounded p-4 mb-4 text-lg w-full text-xl"
             ]
             []
         , div [] (List.map viewSaint filteredSaints)
