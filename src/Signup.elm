@@ -122,7 +122,7 @@ viewSampleImage : Html msg
 viewSampleImage =
     div [ class "flex justify-center" ]
         [ img
-            [ class "rounded max-w-[330px]"
+            [ class "rounded w-full max-w-[330px]"
             , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___720_px_1__1LbiEHkKK.png?updatedAt=1686266362421"
             ]
             []

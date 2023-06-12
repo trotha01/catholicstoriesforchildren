@@ -580,15 +580,17 @@ viewMonth model feastMonth =
     in
     div
         [ class "mt-10 max-w-3xl mx-auto" ]
-        [ h1 [ class "font-bold" ] [ text "2023 Feast Day Activities" ]
-        , p [ class "text-2xl mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
-        , p [ class "text-2xl mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
-        , div [ class "mt-10 mb-16" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
+        [ div [ class "px-4" ]
+            [ h1 [ class "font-bold" ] [ text "2023 Feast Day Activities" ]
+            , p [ class "text-2xl mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
+            , p [ class "text-2xl mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
+            , div [ class "mt-10 mb-16" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
+            ]
         , div
             []
             [ div
-                [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2"
+                [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2 justify-items-center"
                 , class "text-3xl md:text-3xl lg:text-3xl"
                 , class "mt-3"
                 , class "text-center"

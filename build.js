@@ -166,6 +166,11 @@ var htmlPart4p2js = `.Main.init({
   }
 
   </script>
+
+  <!-- Calendly inline widget begin -->
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+
 `
 
 var htmlPart5 = `</body>
