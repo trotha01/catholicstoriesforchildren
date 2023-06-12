@@ -11,38 +11,13 @@ import Html.Events exposing (onClick)
 import Html.String
 import Newsroom.Main exposing (viewSignUp)
 import Signup exposing (..)
-
-
-
--- type alias Model =
---     { videoTab : VideoOption
---     }
+import Team.Main exposing (viewPersonImage)
+import Team.Team exposing (trevor)
 
 
 type VideoOption
     = English
     | ASL
-
-
-
--- main : Program () Model Msg
--- main =
---     Browser.sandbox
---         { init =
---             { videoTab = English
---             }
---         , view = view
---         , update = update
---         }
--- type Msg
---     = VideoTabClick VideoOption
--- update : Msg -> Model -> Model
--- update msg model =
---     case msg of
---         VideoTabClick videoTab ->
---             { model | videoTab = videoTab }
--- view : Model -> Html Msg
--- view model =
 
 
 type alias Model =
@@ -103,13 +78,19 @@ viewBody model =
         , class "m-auto"
         , class "p-5"
         ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Hail Mary Animation for Children" ]
+        [ h1 [ class "my-10 leading-10" ] [ text "Teaching Children about Mother Mary through Animated Stories" ]
         , aboutTheAnimation
-        , div [ class "mb-10" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewVideoPlayers model
         , viewPrayer
+        , moreAboutTheAnimation
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
+        , div [ class "mb-20" ]
+            [ viewResources
+            ]
         , aboutThePrayer
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         ]
 
 
@@ -183,13 +164,49 @@ aboutTheAnimation =
         , class "text-lg"
         , class "max-w-3xl"
         ]
-        [ p [ class "my-3" ]
-            [ text "Use this animation to help your kids learn the Hail Mary prayer though a story and repetition." ]
+        [ p [ class "my-3" ] [ text "Welcome to Catholic Stories for Children! I’m Trevor Rothaus, the founder. You’ve visited our website because, like me, you know that Mother Mary is one of the most people in our Catholic faith. She is admired for her unwavering faith, humility, and devotion to her son, Jesus Christ." ]
         , p [ class "my-3" ]
-            [ text
-                ("The animation is meant to be an aid for your children to slowly build a habit of prayer. "
-                    ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
-                )
+            [ span [] [ text "Her life and teachings have been a source of inspiration for Christians, and " ]
+            , span [ class "font-bold" ] [ text "Mother Mary’s story has been passed down from generation to generation." ]
+            ]
+        , p [ class "my-3" ] [ text "One way to teach children about Mother Mary is through animated stories. These stories convey her life and importance in a way that is engaging and memorable. By using animation, children can see the events of her life come to life before their eyes, making it easier for them to understand and remember." ]
+        , p [ class "my-3" ]
+            [ span [] [ text "Here is just one example of how we do this at Catholic Stories for Children." ]
+            , span [ class "font-bold" ] [ text " This animation helps kids learn the Hail Mary prayer through a story and repetition." ]
+            , span [] [ text " The animation is designed to be an aid for children to build a habit of prayer. You can use it during prayer time while kids still learn the words and the solemn manner to pray." ]
+            ]
+        ]
+
+
+moreAboutTheAnimation : Html msg
+moreAboutTheAnimation =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "max-w-3xl"
+        ]
+        [ p [ class "my-3" ] [ text "When creating the animated story about Mother Mary, we stay true to her character. Her devotion to God and love for her son are at the forefront, and the animation reflects this. By doing so, children can learn about her life and teachings in a way that is both entertaining and informative." ]
+        , p [ class "my-3" ] [ text "Would you agree?" ]
+        , p [ class "my-3" ] [ text "Our animations are great for homeschooling, hybrid schooling, and traditional religious education." ]
+        , p [ class "my-3" ] [ text "Here at Catholic Stories for Children, our animated stories cover prayer, including the Hail Mary prayer (above), the St Michael prayer, and the prayer to your Guardian Angel. These animations also explore the virtues, such as humility, faith, and compassion. Each story is carefully crafted to ensure that it is both engaging and educational." ]
+        , p [ class "my-3" ] [ text "Prayer is tremendously important in our Catholic faith, and building a habit of prayer has much to offer children. By creating animated stories that teach Catholic prayers and reflect Catholic virtues and teachings, we can help children learn about the faith in a way that is both entertaining and informative. These stories can inspire children to live a life of faith, love, and compassion, just like Mother Mary did." ]
+        , p [ class "my-3 font-bold" ] [ text "To learn more about what we do here in teaching children the Catholic faith through animation, I invite you to receive this free guide on reconciliation for kids. Inside, kids will learn what it means to have a contrite heart, how to do an examination of conscience, what happens in confession step-by-step, and how penance helps us." ]
+        ]
+
+
+viewResources : Html msg
+viewResources =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "max-w-3xl"
+        ]
+        [ p [ class "my-3 font-bold" ] [ text "Additional information about the prayer to Mother Mary" ]
+        , p [ class "my-3" ] [ text "Below, I have listed important prayers and resources about Mother Mary which you will find useful in sharing with children." ]
+        , p [ class "my-3" ] [ text "Thank you, and may God bless you," ]
+        , p [ class "my-3" ]
+            [ span [ class "my-3" ] [ text "Trevor Rothaus " ]
+            , viewPersonImage trevor |> Html.String.toHtml
             ]
         ]
 
@@ -197,8 +214,8 @@ aboutTheAnimation =
 viewPrayer : Html msg
 viewPrayer =
     div [ class "mt-10 text-lg" ]
-        [ h2 [ class "mb-3" ] [ text "The Prayer" ]
-        , p []
+        [ p [ class "mb-3 font-bold" ] [ text "The Prayer" ]
+        , p [ class "italic mb-4" ]
             [ span [ class "block" ] [ text "Hail Mary, full of grace, the Lord is with you;" ]
             , span [ class "block" ] [ text "blessed are you among women," ]
             , span [ class "block" ] [ text "and blessed is the fruit of your womb, Jesus." ]
@@ -218,7 +235,7 @@ aboutThePrayer =
         , class "py-5"
         , class "max-w-3xl"
         ]
-        [ h2 [] [ text "About the Hail Mary Prayer" ]
+        [ h2 [ class "font-bold leading-9" ] [ text "Additional information about the prayer to Mother Mary" ]
         , p [ class "my-10" ] [ text "The Hail Mary is a beautiful prayer to Mary, the Mother of Jesus. This prayer is filled with Scripture." ]
         , p [ class "my-10" ]
             [ text
@@ -284,7 +301,7 @@ aboutThePrayer =
                 ]
             ]
         , p [ class "my-10" ]
-            [ text "Lastly, we asks Mary to pray for us. "
-            , span [ class "font-semibold" ] [ text "Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen." ]
+            [ text "Lastly, we ask Mary to pray for us. "
+            , span [ class "font-semibold" ] [ text "'Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen.'" ]
             ]
         ]

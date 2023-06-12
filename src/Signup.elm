@@ -87,7 +87,7 @@ view model =
             [ p
                 [ class "pb-5 pl-1 text-left"
                 ]
-                [ text "Join our mail list and get our FREE printable reconciliation booklet for kids! We will also send you our new animations FREE!" ]
+                [ text "Enter your email address to guide your kids to a sincere confession. You will also receive updates on our work here at Catholic Stories for Children. We’d also enjoy learning what animated stories you think we should produce!" ]
             , div
                 []
                 [ input

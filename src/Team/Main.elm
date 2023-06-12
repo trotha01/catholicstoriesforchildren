@@ -138,7 +138,12 @@ viewPerson person =
         , style "border-radius" "4px"
         , style "padding" "20px"
         ]
-        [ viewImage person.image person.initials
+        [ div
+            [ style "margin" "0px 10px 40px 0"
+            , class "float-left relative"
+            ]
+            [ viewPersonImage person
+            ]
         , div []
             [ viewName person.name
             , viewPosition person.position
@@ -146,6 +151,11 @@ viewPerson person =
             , viewSocials person
             ]
         ]
+
+
+viewPersonImage : Person -> Html msg
+viewPersonImage person =
+    viewImage person.image person.initials
 
 
 viewSocials : Person -> Html msg
@@ -167,9 +177,7 @@ viewImage image initials =
     if image == "" then
         div
             [ -- POSITION
-              style "margin" "0px 10px 40px 0"
-            , style "float" "left"
-            , style "position" "relative"
+              style "position" "relative"
 
             -- SIZE
             , style "width" "52px"
@@ -192,12 +200,8 @@ viewImage image initials =
 
     else
         img
-            [ -- POSITION
-              style "margin" "0px 10px 40px 0"
-            , style "float" "left"
-
-            -- SIZE
-            , style "width" "52px"
+            [ -- SIZE
+              style "width" "52px"
             , style "height" "52px"
 
             -- STYLE

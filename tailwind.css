@@ -545,6 +545,10 @@ video {
   grid-column: span 2 / span 2;
 }
 
+.float-left {
+  float: left;
+}
+
 .m-5 {
   margin: 1.25rem;
 }
@@ -674,6 +678,10 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mb-14 {
+  margin-bottom: 3.5rem;
 }
 
 .block {
@@ -1239,6 +1247,10 @@ video {
 
 .leading-10 {
   line-height: 2.5rem;
+}
+
+.leading-9 {
+  line-height: 2.25rem;
 }
 
 .text-rose-600 {
