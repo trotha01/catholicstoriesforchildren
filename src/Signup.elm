@@ -87,7 +87,7 @@ view model =
             [ p
                 [ class "pb-5 pl-1 text-left"
                 ]
-                [ text "Enter your email address to guide your kids to a sincere confession. You will also receive updates on our work here at Catholic Stories for Children. We’d also enjoy learning what animated stories you think we should produce!" ]
+                [ text "Enter your email to grab our FREE Reconciliation Booklet." ]
             , div
                 []
                 [ input
@@ -115,6 +115,13 @@ view model =
                 ]
             ]
         , div [] [ viewSampleImage ]
+        , div [ class "text-left text-base col-span-2" ]
+            [ p [] [ text "What you'll receive:" ]
+            , p [] [ text "🌟 The confession booklet." ]
+            , p [] [ text "🌟 Tips and freebies for raising kids in the faith." ]
+            , p [] [ text "🌟 Updates on the animations." ]
+            , p [] [ text "🌟 We’d also enjoy learning what animated stories you think we should produce!" ]
+            ]
         ]
 
 
