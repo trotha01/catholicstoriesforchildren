@@ -99,8 +99,8 @@ update msg model =
                 Browser.External href ->
                     ( model, Nav.load href )
 
-        UrlChanged _ ->
-            ( model
+        UrlChanged url ->
+            ( { model | url = url }
             , jumpToHeader
             )
 
