@@ -1511,6 +1511,10 @@ video {
     height: "+t+";
   }
 
+  .md\:h-\[\"\+i\+\"\] {
+    height: "+i+";
+  }
+
   .md\:w-\[230px\] {
     width: 230px;
   }

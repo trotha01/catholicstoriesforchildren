@@ -6,6 +6,17 @@ import Browser.Navigation as Nav
 import FeastDayActivities.FeastDayHelpers exposing (..)
 import FeastDayActivities.FeastDays exposing (..)
 import FeastDayActivities.FeastDays.M01Jan exposing (january)
+import FeastDayActivities.FeastDays.M02Feb exposing (february)
+import FeastDayActivities.FeastDays.M03Mar exposing (march)
+import FeastDayActivities.FeastDays.M04Apr exposing (april)
+import FeastDayActivities.FeastDays.M05May exposing (may)
+import FeastDayActivities.FeastDays.M06Jun exposing (june)
+import FeastDayActivities.FeastDays.M07Jul exposing (july)
+import FeastDayActivities.FeastDays.M08Aug exposing (august)
+import FeastDayActivities.FeastDays.M09Sep exposing (september)
+import FeastDayActivities.FeastDays.M10Oct exposing (october)
+import FeastDayActivities.FeastDays.M11Nov exposing (november)
+import FeastDayActivities.FeastDays.M12Dec exposing (december)
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
@@ -17,6 +28,7 @@ import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageF
 import Saints.SaintList exposing (saints)
 import Signup exposing (..)
 import Task
+import Time exposing (Month(..))
 import Url
 
 
@@ -36,15 +48,23 @@ type alias Model =
     { key : Nav.Key
     , url : Url.Url
     , signup : Signup.Model
+    , time : Time.Posix
+    , timezone : Time.Zone
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( Model key
-        url
-        Signup.init
-    , Cmd.none
+    ( { key = key
+      , url = url
+      , signup = Signup.init
+      , time = Time.millisToPosix 0
+      , timezone = Time.utc
+      }
+    , Cmd.batch
+        [ Task.perform NewTime Time.now
+        , Task.perform NewZone Time.here
+        ]
     )
 
 
@@ -53,6 +73,8 @@ type Msg
     | UrlChanged Url.Url
     | SignupMsg Signup.Msg
     | NoOp
+    | NewTime Time.Posix
+    | NewZone Time.Zone
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -88,6 +110,12 @@ update msg model =
                     Signup.update signupMsg model.signup
             in
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        NewTime t ->
+            ( { model | time = t }, Cmd.none )
+
+        NewZone z ->
+            ( { model | timezone = z }, Cmd.none )
 
         NoOp ->
             ( model, Cmd.none )
@@ -139,6 +167,10 @@ view model =
 
 viewBody : Model -> Maybe Route -> Html Msg
 viewBody model route =
+    let
+        defaultMonth =
+            monthFromTime model.time
+    in
     case route of
         Just (Date date) ->
             case ( date.month, date.date ) of
@@ -147,7 +179,7 @@ viewBody model route =
                     feastDays
                         |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower m)
                         |> List.head
-                        |> Maybe.withDefault january
+                        |> Maybe.withDefault defaultMonth
                         |> .feasts
                         |> List.filter (\feastDay -> String.toLower feastDay.date == String.toLower d)
                         |> List.map .feasts
@@ -159,14 +191,14 @@ viewBody model route =
                     feastDays
                         |> List.filter (\feastDay -> String.toLower feastDay.key == String.toLower m)
                         |> List.head
-                        |> Maybe.withDefault january
+                        |> Maybe.withDefault defaultMonth
                         |> viewMonth model
 
                 _ ->
-                    viewMonth model january
+                    viewMonth model defaultMonth
 
         _ ->
-            viewMonth model january
+            viewMonth model defaultMonth
 
 
 
@@ -718,3 +750,48 @@ dateHR =
         , style "border-top" "4px solid #415c71"
         ]
         []
+
+
+monthFromTime : Time.Posix -> FeastMonth
+monthFromTime t =
+    t |> Time.toMonth Time.utc |> feastMonthFromMonth
+
+
+feastMonthFromMonth : Month -> FeastMonth
+feastMonthFromMonth month =
+    case month of
+        Jan ->
+            january
+
+        Feb ->
+            february
+
+        Mar ->
+            march
+
+        Apr ->
+            april
+
+        May ->
+            may
+
+        Jun ->
+            june
+
+        Jul ->
+            july
+
+        Aug ->
+            august
+
+        Sep ->
+            september
+
+        Oct ->
+            october
+
+        Nov ->
+            november
+
+        Dec ->
+            december
