@@ -350,6 +350,7 @@ viewFeastActivities model feastActivitiesList =
             List.append feastActivities saintActivities
     in
     if List.isEmpty activities then
+        -- TODO: show spinner if still loading
         viewNoActivities
 
     else

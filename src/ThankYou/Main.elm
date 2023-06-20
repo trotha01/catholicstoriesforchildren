@@ -9,6 +9,8 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Html.String
+import Team.Main exposing (viewPersonImage)
+import Team.Team exposing (trevor)
 import Url
 
 
@@ -99,7 +101,7 @@ viewBody =
                 [ class "text-center"
                 , class "my-10"
                 ]
-                [ text "Thank You!" ]
+                [ text "Thank you for connecting with Catholic Stories for Children!" ]
             , viewThankYou
             ]
         ]
@@ -110,21 +112,34 @@ viewThankYou =
     div
         []
         [ p [ class "my-4" ]
-            [ text "Thank you so much for joining our mailing list! We are thrilled to have you on board. Look out for an email containing your free printable. We will keep you in the loop with our latest animations and updates. Stay tuned for more fun content coming your way!"
+            [ text "Hello, I am Trevor Rothaus, found of Catholic Stories for Children. I want to personally thank you for connecting with us! We are thrilled to have you on board."
             ]
         , p [ class "my-4" ]
-            [ text "Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you. I deeply value your thoughts and opinions, as they play a crucial role in shaping the content we develop. I would be love to have a conversation with you."
+            [ text "In the coming minutes, look out for an email containing your free printable. Also, I would like to keep you in the loop regarding our latest animations and updates. We have so many exciting projects coming up to teach the Catholic faith to young people!"
             ]
         , p [ class "my-4" ]
-            [ text "To make it easy for you, I included a calendar signup below. Schedule a time that works best for you. During our talk, I would love to hear your feedback, suggestions, and any specific topics or themes you would like us to explore further."
+            [ span [ class "font-bold" ] [ text "Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you." ]
+            , span [] [ text " I deeply value your thoughts and opinions, as they play a crucial role in shaping the content we develop." ]
             ]
         , p [ class "my-4" ]
-            [ text "Your input will directly contribute to the creation of resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Catholic Stories for Children."
+            [ span [ class "font-bold underline" ] [ text "That being said, I would enjoy having a conversation with you." ]
+            , span [] [ text " You will find below my calendar. Please schedule a time that works best for you. During our talk, I would love to hear your feedback, suggestions, resources that you would like, and any specific topics or themes you would like us to explore further." ]
+            ]
+        , p [ class "my-4" ]
+            [ text "Your input will directly contribute to the creation of animations and resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Catholic Stories for Children."
+            ]
+        , p [ class "my-4" ]
+            [ span [ class "block" ] [ text "Thank you and may God bless you," ]
+            , span [ class "block" ] [ text "Trevor Rothaus" ]
+            , span [ class "block" ] [ text "CEO - Catholic Stories for Children" ]
+            , div []
+                [ viewPersonImage trevor |> Html.String.toHtml
+                ]
             ]
         , div
             [ class "calendly-inline-widget"
             , style "min-width" "320px"
-            , style "height" "700px"
+            , style "height" "900px"
             , attribute "data-url" "https://calendly.com/csc-trevor/30min"
             ]
             []
