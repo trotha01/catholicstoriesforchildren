@@ -10,10 +10,20 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
 import Html.String
 import Saints.SaintHelpers exposing (..)
-import Saints.SaintList exposing (Saint, saints)
+import Saints.SaintList as SaintList exposing (Saint)
 import Signup exposing (..)
+import Spinner
 import Url
 import Url.Builder exposing (..)
+
+
+type alias Model =
+    { key : Nav.Key
+    , url : Url.Url
+    , query : String
+    , signup : Signup.Model
+    , saintList : SaintList.Model
+    }
 
 
 main : Program () Model Msg
@@ -28,22 +38,15 @@ main =
         }
 
 
-type alias Model =
-    { key : Nav.Key
-    , url : Url.Url
-    , query : String
-    , signup : Signup.Model
-    }
-
-
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { key = key
       , url = url
       , query = ""
       , signup = Signup.init
+      , saintList = SaintList.init
       }
-    , Cmd.none
+    , SaintList.fetchSaints |> Cmd.map SaintListMsg
     )
 
 
@@ -52,6 +55,7 @@ type Msg
     | UrlChanged Url.Url
     | SetQuery String
     | SignupMsg Signup.Msg
+    | SaintListMsg SaintList.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -83,6 +87,13 @@ update msg model =
                     Signup.update signupMsg model.signup
             in
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        SaintListMsg saintListMsg ->
+            let
+                ( newSaintList, _ ) =
+                    SaintList.update saintListMsg model.saintList
+            in
+            ( { model | saintList = newSaintList }, Cmd.none )
 
 
 
@@ -142,11 +153,26 @@ viewSaintPage : Model -> String -> Html Msg
 viewSaintPage model saintName =
     let
         maybeSaint =
-            List.filter (\s -> s.name == saintName) saints
+            List.filter (\s -> s.name == saintName) model.saintList.saints
                 |> List.head
     in
     case maybeSaint of
         Nothing ->
+            let
+                spinnerOrError =
+                    if model.saintList.isLoading then
+                        div [ class "text-center" ]
+                            [ span [ class "mb-4" ] [ text "We are getting information for this saints, this may take some time." ]
+                            , div [ class "m-auto w-10 text-[#9200B3]" ]
+                                [ Spinner.purpleSpinner []
+                                ]
+                            ]
+
+                    else
+                        div []
+                            [ div [] [ text "Sorry, we had an error getting the information for this saint" ]
+                            ]
+            in
             div
                 []
                 [ viewBackButton
@@ -155,9 +181,7 @@ viewSaintPage model saintName =
                     , class "my-10"
                     ]
                     [ text saintName ]
-                , div []
-                    [ div [] [ text "Sorry, we had an error getting the information for this saint" ]
-                    ]
+                , spinnerOrError
                 ]
 
         Just saint ->
@@ -274,9 +298,16 @@ viewSaints model =
         query =
             String.toLower model.query
 
+        isLoadingClass =
+            if model.saintList.isLoading then
+                ""
+
+            else
+                "hidden"
+
         filteredSaints =
             if String.isEmpty query then
-                saints
+                model.saintList.saints
 
             else
                 List.filter
@@ -286,7 +317,7 @@ viewSaints model =
                             || String.contains query (String.toLower s.feastDay)
                             || String.contains query (String.toLower s.patronOf)
                     )
-                    saints
+                    model.saintList.saints
                     |> List.sortWith saintSort
     in
     div []
@@ -339,6 +370,12 @@ viewSaints model =
             , class "rounded p-4 mb-4 text-lg w-full text-xl"
             ]
             []
+        , div [ class ("text-center " ++ isLoadingClass) ]
+            [ span [ class "mb-4" ] [ text "We are getting the list of saints, this may take some time." ]
+            , div [ class "m-auto w-10 text-[#9200B3]" ]
+                [ Spinner.purpleSpinner []
+                ]
+            ]
         , div [] (List.map viewSaint filteredSaints)
         ]
 

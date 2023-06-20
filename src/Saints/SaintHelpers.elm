@@ -1,10 +1,9 @@
 module Saints.SaintHelpers exposing (..)
 
+import FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Url
 import Url.Parser exposing ((</>), (<?>), parse)
 import Url.Parser.Query as Query
-import FeastDayActivities.FeastDayHelpers exposing (ActivityType)
-import FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 
 
 type Route
@@ -24,7 +23,6 @@ route =
 urlSaintParser : Url.Parser.Parser (Maybe String -> a) a
 urlSaintParser =
     Url.Parser.s "saints" <?> Query.string "s"
-
 
 
 activityTitleFromLink : String -> String
@@ -112,6 +110,7 @@ activityImageFromLink link =
 
     else
         ""
+
 
 activityTypeFromLink : String -> ActivityType
 activityTypeFromLink link =

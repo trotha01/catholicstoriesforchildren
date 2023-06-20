@@ -25,7 +25,7 @@ import Html.Attributes exposing (..)
 import Html.String
 import Json.Encode
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
-import Saints.SaintList exposing (saints)
+import Saints.SaintList as SaintList
 import Signup exposing (..)
 import Task
 import Time exposing (Month(..))
@@ -50,6 +50,7 @@ type alias Model =
     , signup : Signup.Model
     , time : Time.Posix
     , timezone : Time.Zone
+    , saintList : SaintList.Model
     }
 
 
@@ -60,10 +61,12 @@ init flags url key =
       , signup = Signup.init
       , time = Time.millisToPosix 0
       , timezone = Time.utc
+      , saintList = SaintList.init
       }
     , Cmd.batch
         [ Task.perform NewTime Time.now
         , Task.perform NewZone Time.here
+        , SaintList.fetchSaints |> Cmd.map SaintListMsg
         ]
     )
 
@@ -75,6 +78,7 @@ type Msg
     | NoOp
     | NewTime Time.Posix
     | NewZone Time.Zone
+    | SaintListMsg SaintList.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -116,6 +120,13 @@ update msg model =
 
         NewZone z ->
             ( { model | timezone = z }, Cmd.none )
+
+        SaintListMsg saintListMsg ->
+            let
+                ( newSaintList, _ ) =
+                    SaintList.update saintListMsg model.saintList
+            in
+            ( { model | saintList = newSaintList }, Cmd.none )
 
         NoOp ->
             ( model, Cmd.none )
@@ -185,7 +196,7 @@ viewBody model route =
                         |> List.map .feasts
                         |> List.head
                         |> Maybe.withDefault []
-                        |> viewDate m d
+                        |> viewDate model m d
 
                 ( Just m, Nothing ) ->
                     feastDays
@@ -205,8 +216,8 @@ viewBody model route =
 -- DAY VIEW
 
 
-viewDate : String -> String -> List FeastActivities -> Html Msg
-viewDate month date feasts =
+viewDate : Model -> String -> String -> List FeastActivities -> Html Msg
+viewDate model month date feasts =
     div
         [ class "text-center"
         , class "mt-10 max-w-3xl mx-auto"
@@ -218,7 +229,6 @@ viewDate month date feasts =
                 , href (urlPath ++ "?m=" ++ month)
                 , attribute "aria-label" ("Back to " ++ month)
                 ]
-                -- TODO: Use a different image (this says July)
                 [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
                 , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
                 ]
@@ -234,7 +244,7 @@ viewDate month date feasts =
             [ class "mt-10 mb-40"
             , class "min-h-screen"
             ]
-            [ viewFeastActivities feasts ]
+            [ viewFeastActivities model feasts ]
         ]
 
 
@@ -282,8 +292,8 @@ activityFromLink saintName link =
             }
 
 
-viewFeastActivities : List FeastActivities -> Html Msg
-viewFeastActivities feastActivitiesList =
+viewFeastActivities : Model -> List FeastActivities -> Html Msg
+viewFeastActivities model feastActivitiesList =
     let
         feastActivities =
             List.concatMap .activities feastActivitiesList
@@ -314,7 +324,7 @@ viewFeastActivities feastActivitiesList =
             List.foldl addUniqueActivity [] records
 
         saintActivities =
-            saints
+            model.saintList.saints
                 |> List.filter (\saint -> List.member (String.toLower saint.name) cleanedFeastNames)
                 |> List.concatMap
                     (\saint ->
