@@ -7,7 +7,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onInput)
+import Html.Events exposing (onClick, onInput)
 import Html.String
 import Saints.SaintHelpers exposing (..)
 import Saints.SaintList as SaintList exposing (Saint)
@@ -23,7 +23,13 @@ type alias Model =
     , query : String
     , signup : Signup.Model
     , saintList : SaintList.Model
+    , patronageView : LongTextView
     }
+
+
+type LongTextView
+    = Full
+    | Partial
 
 
 main : Program () Model Msg
@@ -45,6 +51,7 @@ init flags url key =
       , query = ""
       , signup = Signup.init
       , saintList = SaintList.init
+      , patronageView = Partial
       }
     , SaintList.fetchSaints |> Cmd.map SaintListMsg
     )
@@ -56,6 +63,7 @@ type Msg
     | SetQuery String
     | SignupMsg Signup.Msg
     | SaintListMsg SaintList.Msg
+    | ChangePatronageView LongTextView
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -94,6 +102,9 @@ update msg model =
                     SaintList.update saintListMsg model.saintList
             in
             ( { model | saintList = newSaintList }, Cmd.none )
+
+        ChangePatronageView viewType ->
+            ( { model | patronageView = viewType }, Cmd.none )
 
 
 
@@ -202,9 +213,7 @@ viewSaintPage model saintName =
                     [ text saintName ]
                 , div []
                     [ viewFeastDay saint
-
-                    -- Need to cleanup patron data before viewing patronage
-                    -- , viewPatronage saint
+                    , viewPatronage model saint
                     , viewActivity saintName saint.catholicOrgVideoLink
                     , viewActivity saintName saint.catholicSaintsInfoYoutubePlaylist
                     , viewActivity saintName saint.catholicCuisine
@@ -229,13 +238,59 @@ viewBackButton =
         [ text "Back" ]
 
 
-viewPatronage : Saint -> Html msg
-viewPatronage saint =
-    if String.isEmpty saint.patronOf then
+viewPatronage : Model -> Saint -> Html Msg
+viewPatronage model saint =
+    let
+        showFullOrPartial =
+            case
+                model.patronageView
+            of
+                Full ->
+                    identity
+
+                Partial ->
+                    \s ->
+                        s
+                            |> String.split " "
+                            |> List.take 80
+                            |> String.join " "
+
+        patronageList =
+            saint.patronOf
+                -- Remove ; delimiter and quotes around each item
+                |> String.replace "';'" ", "
+                -- Remove the outer quotes
+                |> String.slice 1 -1
+                |> showFullOrPartial
+    in
+    if String.isEmpty patronageList then
         span [] []
 
     else
-        div [] [ text ("Patronage: " ++ saint.patronOf) ]
+        div []
+            [ span [ class "font-bold" ] [ text "Patronage: " ]
+            , span [] [ text (patronageList ++ " ") ]
+            , span
+                [ class "text-blue-500 cursor-pointer underline"
+                , onClick
+                    (ChangePatronageView
+                        (if model.patronageView == Full then
+                            Partial
+
+                         else
+                            Full
+                        )
+                    )
+                ]
+                [ text
+                    (if model.patronageView == Full then
+                        "View Less"
+
+                     else
+                        "View More"
+                    )
+                ]
+            ]
 
 
 viewFeastDay : Saint -> Html msg
@@ -244,22 +299,29 @@ viewFeastDay saint =
         span [] []
 
     else
-        div [] [ text ("Feast day: " ++ saint.feastDay) ]
+        div []
+            [ span [ class "font-bold" ] [ text "Feast day: " ]
+            , span [] [ text saint.feastDay ]
+            ]
 
 
 viewPodcastActivity : String -> String -> Html msg
 viewPodcastActivity saintName link =
-    div [ class "p-7" ]
-        [ iframe
-            [ src link
-            , attribute "allow" "autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-            , attribute "frameborder" "0"
-            , height 180
-            , style "width" "100%;max-width:660px;overflow:hidden;border-radius:10px;"
-            , attribute "sandbox" "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+    if String.isEmpty link then
+        span [] []
+
+    else
+        div [ class "p-7" ]
+            [ iframe
+                [ src link
+                , attribute "allow" "autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                , attribute "frameborder" "0"
+                , height 180
+                , style "width" "100%;max-width:660px;overflow:hidden;border-radius:10px;"
+                , attribute "sandbox" "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                ]
+                []
             ]
-            []
-        ]
 
 
 viewActivity : String -> String -> Html msg
