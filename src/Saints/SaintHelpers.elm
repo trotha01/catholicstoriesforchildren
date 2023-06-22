@@ -75,6 +75,9 @@ activityDescriptionFromLink saintName link =
     else if String.contains "franciscanmedia" link then
         "Listen to the story of " ++ saintName ++ " at Franciscan Media."
 
+    else if String.contains "saintsalivepodcast" link then
+        "Listen to the story of " ++ saintName ++ " with the Saints Alive Podcast."
+
     else if String.contains "christianiconography" link then
         "Learn about the iconography of " ++ saintName ++ "."
 
@@ -102,6 +105,9 @@ activityImageFromLink link =
     else if String.contains "franciscanmedia" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/FranciscanMediaLogo_9jff8EeGN.png?updatedAt=1685565018915"
 
+    else if String.contains "saintsalivepodcast" link then
+        "https://ik.imagekit.io/catholicstories/ProfileImages/14_Aps0ku8wH.png?updatedAt=1679069710842"
+
     else if String.contains "christianiconography" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/ChristianIconographyLogo_HythFJN2P.png?updatedAt=1685564536409"
 
@@ -127,6 +133,9 @@ activityTypeFromLink link =
         Video
 
     else if String.contains "franciscanmedia" link then
+        Audio
+
+    else if String.contains "saintsalivepodcast" link then
         Audio
 
     else if String.contains "christianiconography" link then

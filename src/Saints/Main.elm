@@ -185,6 +185,10 @@ viewSaintPage model saintName =
                 ]
 
         Just saint ->
+            let
+                saintsAliveLinks =
+                    String.split ";" saint.saintsAliveLink
+            in
             div
                 []
                 [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
@@ -204,8 +208,10 @@ viewSaintPage model saintName =
                     , viewActivity saintName saint.catholicOrgVideoLink
                     , viewActivity saintName saint.catholicSaintsInfoYoutubePlaylist
                     , viewActivity saintName saint.catholicCuisine
-                    , viewActivity saintName saint.christianiconographyInfo
+                    , div []
+                        (List.map (viewPodcastActivity saintName) saintsAliveLinks)
                     , viewActivity saintName saint.franciscanMediaLink
+                    , viewActivity saintName saint.christianiconographyInfo
                     , viewActivity saintName saint.catholicOrgLink
                     , viewActivity saintName saint.catholicSaintsLink
                     , viewActivity saintName saint.uCatholicLink
@@ -239,6 +245,21 @@ viewFeastDay saint =
 
     else
         div [] [ text ("Feast day: " ++ saint.feastDay) ]
+
+
+viewPodcastActivity : String -> String -> Html msg
+viewPodcastActivity saintName link =
+    div [ class "p-7" ]
+        [ iframe
+            [ src link
+            , attribute "allow" "autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+            , attribute "frameborder" "0"
+            , height 180
+            , style "width" "100%;max-width:660px;overflow:hidden;border-radius:10px;"
+            , attribute "sandbox" "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+            ]
+            []
+        ]
 
 
 viewActivity : String -> String -> Html msg
