@@ -255,13 +255,27 @@ viewPatronage model saint =
                             |> List.take 80
                             |> String.join " "
 
-        patronageList =
+        cleanedPatronage =
             saint.patronOf
                 -- Remove ; delimiter and quotes around each item
                 |> String.replace "';'" ", "
                 -- Remove the outer quotes
                 |> String.slice 1 -1
+
+        patronageList =
+            cleanedPatronage
                 |> showFullOrPartial
+
+        isShowingEverything =
+            String.length cleanedPatronage
+                == String.length patronageList
+
+        displayToggle =
+            if model.patronageView == Partial && isShowingEverything then
+                " hidden"
+
+            else
+                ""
     in
     if String.isEmpty patronageList then
         span [] []
@@ -271,7 +285,7 @@ viewPatronage model saint =
             [ span [ class "font-bold" ] [ text "Patronage: " ]
             , span [] [ text (patronageList ++ " ") ]
             , span
-                [ class "text-blue-500 cursor-pointer underline"
+                [ class ("text-blue-500 cursor-pointer underline" ++ displayToggle)
                 , onClick
                     (ChangePatronageView
                         (if model.patronageView == Full then
