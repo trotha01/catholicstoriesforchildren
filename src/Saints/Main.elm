@@ -358,21 +358,66 @@ viewActivity saintName link =
             ]
 
 
-saintSort : Saint -> Saint -> Order
-saintSort a b =
-    case
-        compare
-            (a.score |> String.toInt |> Maybe.withDefault 0)
-            (b.score |> String.toInt |> Maybe.withDefault 0)
-    of
-        LT ->
-            GT
+saintSort : Model -> Saint -> Saint -> Order
+saintSort model a b =
+    let
+        aMatchesName =
+            String.contains (String.toLower model.query) (String.toLower a.name)
 
-        EQ ->
-            EQ
+        bMatchesName =
+            String.contains (String.toLower model.query) (String.toLower b.name)
 
-        GT ->
-            LT
+        aMatchesAltName =
+            String.contains (String.toLower model.query) (String.toLower a.alternativeNames)
+
+        bMatchesAltName =
+            String.contains (String.toLower model.query) (String.toLower b.alternativeNames)
+
+        aMatchesPatronage =
+            String.contains (String.toLower model.query) (String.toLower a.patronOf)
+
+        bMatchesPatronage =
+            String.contains (String.toLower model.query) (String.toLower b.patronOf)
+    in
+    -- if the query matches one of the names, exit with that one first
+    -- if both names match, check the alt names, then patronage, then score
+    if aMatchesName && not bMatchesName then
+        LT
+
+    else if bMatchesName && not aMatchesName then
+        GT
+
+    else if aMatchesAltName && not bMatchesAltName then
+        LT
+
+    else if bMatchesAltName && not aMatchesAltName then
+        GT
+
+    else if aMatchesPatronage && not bMatchesPatronage then
+        LT
+
+    else if bMatchesPatronage && not aMatchesPatronage then
+        GT
+
+    else
+        let
+            aScore =
+                a.score |> String.toInt |> Maybe.withDefault 0
+
+            bScore =
+                b.score |> String.toInt |> Maybe.withDefault 0
+        in
+        case
+            compare aScore bScore
+        of
+            LT ->
+                GT
+
+            EQ ->
+                EQ
+
+            GT ->
+                LT
 
 
 viewSaints : Model -> Html Msg
@@ -395,13 +440,14 @@ viewSaints model =
             else
                 List.filter
                     (\s ->
-                        String.contains query (String.toLower s.name)
-                            || String.contains query (String.toLower s.alternativeNames)
-                            || String.contains query (String.toLower s.feastDay)
-                            || String.contains query (String.toLower s.patronOf)
+                        String.contains (String.toLower query) (String.toLower s.name)
+                            || String.contains (String.toLower query) (String.toLower s.alternativeNames)
+                            || String.contains (String.toLower query) (String.toLower s.feastDay)
+                            || String.contains (String.toLower query) (String.toLower s.patronOf)
                     )
                     model.saintList.saints
-                    |> List.sortWith saintSort
+                    -- TODO: update saint sort to take how close the match is into consideration
+                    |> List.sortWith (saintSort model)
     in
     div []
         [ h1
@@ -459,17 +505,156 @@ viewSaints model =
                 [ Spinner.purpleSpinner []
                 ]
             ]
-        , div [] (List.map viewSaint filteredSaints)
+        , div [] (List.map (viewSaint model) filteredSaints)
         ]
 
 
-viewSaint : Saint -> Html Msg
-viewSaint saint =
+viewSaint : Model -> Saint -> Html Msg
+viewSaint model saint =
+    let
+        nameHighlight =
+            highlightString False model.query saint.name
+
+        patronage =
+            saint.patronOf
+                -- Remove ; delimiter and quotes around each item
+                |> String.replace "';'" ", "
+                -- Remove the outer quotes
+                |> String.slice 1 -1
+
+        altNames =
+            saint.alternativeNames
+                -- Remove ; delimiter and quotes around each item
+                |> String.replace "';'" ", "
+                -- Remove the outer quotes
+                |> String.slice 1 -1
+
+        extra =
+            if model.query == "" then
+                span [] []
+
+            else if String.contains (String.toLower model.query) (String.toLower saint.name) then
+                -- We don't need to show anything extra if the name matches the query
+                span [] []
+
+            else if String.contains (String.toLower model.query) (String.toLower altNames) then
+                span []
+                    [ text "Also called: "
+                    , highlightString True model.query altNames
+                    ]
+
+            else if String.contains (String.toLower model.query) (String.toLower saint.feastDay) then
+                span []
+                    [ text "Feast Day: "
+                    , highlightString True model.query saint.feastDay
+                    ]
+
+            else if String.contains (String.toLower model.query) (String.toLower patronage) then
+                span []
+                    [ text "Patronage: "
+                    , highlightString True model.query patronage
+                    ]
+
+            else
+                span [] []
+    in
     div [ class "h-7" ]
         [ a
             [ href (absolute [ "saints" ] [ string "s" saint.name ])
             , attribute "aria-label" saint.name
             , class "transition hover:underline hover:text-sky-500"
             ]
-            [ text saint.name ]
+            [ span [ class "pr-3" ] [ nameHighlight ]
+            , span [ class "opacity-50" ] [ extra ]
+            ]
         ]
+
+
+highlightString : Bool -> String -> String -> Html msg
+highlightString clip substring string =
+    let
+        parts =
+            String.split (String.toLower substring) (String.toLower string)
+    in
+    if substring == "" || List.length parts == 1 then
+        span [] [ text string ]
+
+    else
+        case parts of
+            before :: after ->
+                let
+                    beforeText =
+                        String.left (String.length before) string
+                            -- Trim the before string.
+                            |> (\s ->
+                                    if clip then
+                                        String.right 10 s
+
+                                    else
+                                        s
+                               )
+                            |> dropBefore ";"
+
+                    beforeElipsis =
+                        if String.length before == String.length beforeText then
+                            ""
+
+                        else
+                            "..."
+
+                    highlightedText =
+                        String.slice (String.length before) (String.length before + String.length substring) string
+
+                    afterText =
+                        String.dropLeft (String.length before + String.length substring) string
+                            -- Trim the after string.
+                            |> (\s ->
+                                    if clip then
+                                        String.left 20 s
+
+                                    else
+                                        s
+                               )
+                            |> takeUntil ";"
+
+                    afterElipsis =
+                        if String.length afterText == String.length (String.dropLeft (String.length before + String.length substring) string) then
+                            ""
+
+                        else
+                            "..."
+                in
+                span []
+                    [ span [] [ text beforeElipsis ]
+                    , span [] [ text beforeText ]
+                    , span [ class "bg-yellow-200" ] [ text highlightedText ]
+                    , span [] [ text afterText ]
+                    , span [] [ text afterElipsis ]
+                    ]
+
+            _ ->
+                span [] [ text string ]
+
+
+takeUntil : String -> String -> String
+takeUntil delimiter string =
+    case String.split delimiter string of
+        before :: after ->
+            before
+
+        _ ->
+            string
+
+
+dropBefore : String -> String -> String
+dropBefore delimiter string =
+    if not (String.contains delimiter string) then
+        string
+
+    else
+        case String.split delimiter string of
+            before :: after ->
+                String.join ";" after
+
+            _ ->
+                string
