@@ -78,6 +78,7 @@ viewVideos =
             , brotherFrancis
             , catholicSongsForKids
             , catholicIcing
+            , opusJoyous
             , prostradaDesigns
             ]
         )
@@ -144,4 +145,12 @@ prostradaDesigns =
     { name = "Prostrada Designs"
     , link = "https://www.youtube.com/@prostradadesignsllc"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/42_GMJuNZEVs.png?updatedAt=1683226627331"
+    }
+
+
+opusJoyous : Resource
+opusJoyous =
+    { name = "Opus Joyous"
+    , link = "https://www.youtube.com/@OpusJoyous"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/opusjoyouslogo__bVhpC3Fj.jpeg?updatedAt=1687549207653"
     }
