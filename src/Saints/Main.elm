@@ -572,7 +572,7 @@ viewSaint model saint =
             else
                 span [] []
     in
-    div [ class "h-7" ]
+    div []
         [ a
             [ href (absolute [ "saints" ] [ string "s" saint.name ])
             , attribute "aria-label" saint.name
