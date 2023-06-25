@@ -80,6 +80,7 @@ viewBooks =
             , lightOfTheSaints
             , firstFaithTreasury
             , tanBooks
+            , ctsBooks
             , ewtnKidsBooks
             , diaryOfAGodMan
             , catholicSprouts
@@ -270,4 +271,12 @@ childrensBibles =
     { name = "Catechism of the Seven Sacraments by Mary O'Neill Kevin O'Neill"
     , link = "https://www.amazon.com/Catechism-Seven-Sacraments-ONeill-Kevin/dp/0999508709/ref=sr_1_1?crid=2P68AEP6RA0O8&keywords=catechism+of+the+seven+sacraments&qid=1669329926&sprefix=catechism+of+the+seven+sacraments%2Caps%2C99&sr=8-1"
     , image = "https://ik.imagekit.io/catholicstories/Books/3_ibumLcYAy.png?updatedAt=1679069222330"
+    }
+
+
+ctsBooks : Resource
+ctsBooks =
+    { name = "Catholic Truth Society"
+    , link = "https://www.ctsbooks.org/product-category/children-young-adults/"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CTS_Logo_vwbekKAI-.png?updatedAt=1687667974185"
     }

@@ -22,7 +22,7 @@ type alias ResourceGroup =
 viewResource : Resource -> Html msg
 viewResource resource =
     a
-        [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded py-7"
+        [ class "grid grid-cols-[100px_1fr] hover:bg-csc-lightpurple rounded p-7"
         , target "_blank"
         , attribute "aria-label" resource.name
         , href resource.link
