@@ -41,7 +41,7 @@ pair_list=(
   src/Give/Main.elm giveElm.js
   src/Navigation/Main.elm navigationElm.js
   src/Newsroom/Main.elm newsroomElm.js
-  src/Prayers/Main.elm prayersElm.js
+  src/Prayers/Main.elm prayers/elm.js
   src/Resources/Books/Main.elm resourcesBooksElm.js
   src/Resources/Main.elm resourcesElm.js
   src/Resources/Podcasts/Main.elm resourcesPodcastsElm.js
