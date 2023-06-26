@@ -135,7 +135,7 @@ activityTypeFromLink link =
     else if String.contains "franciscanmedia" link then
         Audio
 
-    else if String.contains "saintsalivepodcast" link then
+    else if String.contains "saintsalivepodcast" link || String.contains "podcasts" link then
         Audio
 
     else if String.contains "christianiconography" link then

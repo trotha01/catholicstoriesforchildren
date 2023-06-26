@@ -23,7 +23,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
-import Json.Encode
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
 import Saints.SaintList as SaintList
 import Signup exposing (..)
@@ -330,19 +329,21 @@ viewFeastActivities model feastActivitiesList =
                     (\saint ->
                         [ -- Only include the catholic video link if there isn't a playlist
                           if saint.catholicSaintsInfoYoutubePlaylist == "" then
-                            activityFromLink saint.name saint.catholicOrgVideoLink
+                            [ activityFromLink saint.name saint.catholicOrgVideoLink ]
 
                           else
-                            Nothing
-                        , activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist
-                        , activityFromLink saint.name saint.catholicCuisine
-                        , activityFromLink saint.name saint.christianiconographyInfo
-                        , activityFromLink saint.name saint.franciscanMediaLink
-                        , activityFromLink saint.name saint.catholicOrgLink
-                        , activityFromLink saint.name saint.catholicSaintsLink
-                        , activityFromLink saint.name saint.uCatholicLink
+                            []
+                        , [ activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist ]
+                        , [ activityFromLink saint.name saint.catholicCuisine ]
+                        , [ activityFromLink saint.name saint.christianiconographyInfo ]
+                        , [ activityFromLink saint.name saint.franciscanMediaLink ]
+                        , [ activityFromLink saint.name saint.catholicOrgLink ]
+                        , [ activityFromLink saint.name saint.catholicSaintsLink ]
+                        , [ activityFromLink saint.name saint.uCatholicLink ]
+                        , List.map (activityFromLink saint.name) (saint.saintsAliveLink |> String.split ";")
                         ]
                     )
+                |> List.concat
                 |> List.filterMap Basics.identity
                 |> removeDuplicates
 
@@ -358,134 +359,14 @@ viewFeastActivities model feastActivitiesList =
             -- [ viewActivities "Video" (videoActivities activities) -- used for csv output
             [ viewVideos (videoActivities activities)
             , viewAudioList (audioActivities activities)
-            , viewActivities "Crafts" (craftActivities activities)
-            , viewActivities "Printouts" (printoutActivities activities)
-            , viewActivities "Games" (gameActivities activities)
-            , viewActivities "Images" (imageActivities activities)
-            , viewActivities "Reading" (readingActivities activities)
-            , viewActivities "Recipes" (foodActivities activities)
-            , viewActivities "Books" (bookActivities activities)
-            , viewActivities "More" (moreActivities activities)
-            ]
-
-
-viewNoActivities : Html msg
-viewNoActivities =
-    div []
-        [ p []
-            [ text "We are still adding feast day activities!" ]
-        , p
-            []
-            [ text "Please hang tight." ]
-        ]
-
-
-viewAudioList : List Activity -> Html Msg
-viewAudioList audioList =
-    if List.isEmpty audioList then
-        span [] []
-
-    else
-        div [ class "mt-20" ]
-            [ div [ class "max-w-3xl m-auto" ]
-                (List.map viewAudio audioList)
-            ]
-
-
-viewAudio : Activity -> Html Msg
-viewAudio audio =
-    if String.contains "castbox" audio.link then
-        viewEmbeddedAudio audio
-
-    else
-        viewActivity audio
-
-
-viewEmbeddedAudio : Activity -> Html msg
-viewEmbeddedAudio audio =
-    div []
-        [ iframe
-            [ src audio.link
-            , attribute "frameborder" "0"
-            , style "width" "100%"
-            , height 500
-            ]
-            []
-        ]
-
-
-viewVideos : List Activity -> Html Msg
-viewVideos videos =
-    if List.isEmpty videos then
-        span [] []
-
-    else
-        div [ class "mt-20" ]
-            [ -- h3
-              -- [ class "text-3xl"
-              -- , class "mb-7"
-              -- ]
-              -- [ text "Videos" ]
-              div [ class "max-w-3xl m-auto" ]
-                (List.map
-                    (\video ->
-                        viewVideo video
-                    )
-                    videos
-                )
-            ]
-
-
-viewVideo : Activity -> Html msg
-viewVideo video =
-    if String.contains "embed" video.link then
-        viewEmbeddedVideo video
-
-    else
-        viewActivity video
-
-
-viewEmbeddedVideo : Activity -> Html msg
-viewEmbeddedVideo video =
-    div
-        [ style "position" "relative"
-        , style "padding-bottom" "56.25%"
-        , height 0
-        , style "overflow" "hidden"
-        , style "max-width" "100%"
-        , style "border-radius" "5px"
-        , class "m-5"
-        ]
-        [ iframe
-            [ style "position" "absolute"
-            , style "width" "100%"
-            , style "height" "100%"
-            , style "top" "0"
-            , style "left" "0"
-            , src video.link
-            , title video.title
-            , property "frameborder" (Json.Encode.string "0")
-            , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-            , property "allowfullscreen" (Json.Encode.string "true")
-            ]
-            []
-        ]
-
-
-viewActivities : String -> List Activity -> Html Msg
-viewActivities activityType activities =
-    if List.isEmpty activities then
-        span [] []
-
-    else
-        div [ class "mt-20" ]
-            [ -- h3
-              -- [ class "text-3xl"
-              -- , class "mb-7"
-              -- ]
-              -- [ text activityType ]
-              div [ class "max-w-3xl m-auto" ]
-                (List.map viewActivity activities)
+            , viewActivities (craftActivities activities)
+            , viewActivities (printoutActivities activities)
+            , viewActivities (gameActivities activities)
+            , viewActivities (imageActivities activities)
+            , viewActivities (readingActivities activities)
+            , viewActivities (foodActivities activities)
+            , viewActivities (bookActivities activities)
+            , viewActivities (moreActivities activities)
             ]
 
 
@@ -507,108 +388,6 @@ type alias FeastActivities =
     { feast : String
     , activities : List Activity
     }
-
-
-viewFeastMonthCSV : FeastMonth -> Html Msg
-viewFeastMonthCSV feastMonth =
-    span [] (List.map (viewFeastDayCSV feastMonth.month) feastMonth.feasts)
-
-
-viewFeastDayCSV : String -> FeastDay -> Html Msg
-viewFeastDayCSV month feastDay =
-    span [] (List.map (viewFeastActivitiesCSV (month ++ " " ++ feastDay.date ++ ", 2023")) feastDay.feasts)
-
-
-viewFeastActivitiesCSV : String -> FeastActivities -> Html Msg
-viewFeastActivitiesCSV date feastActivities =
-    span [] (List.map (viewActivityCSV date feastActivities.feast) feastActivities.activities)
-
-
-viewActivityCSV : String -> String -> Activity -> Html msg
-viewActivityCSV date feast activity =
-    p []
-        [ text
-            ("\""
-                ++ date
-                ++ "\",\""
-                ++ feast
-                ++ "\",\""
-                ++ activityTypeToString activity.activityType
-                ++ "\",\""
-                ++ activity.title
-                ++ "\",\""
-                ++ activity.image
-                ++ "\",\""
-                ++ activity.link
-                ++ "\",\""
-                ++ activity.snippet
-                ++ "\","
-            )
-        ]
-
-
-activityTypeToString : ActivityType -> String
-activityTypeToString activityType =
-    case activityType of
-        Video ->
-            "Video"
-
-        Audio ->
-            "Audio"
-
-        Images ->
-            "Images"
-
-        Printout ->
-            "Printout"
-
-        OnlineReading ->
-            "OnlineReading"
-
-        Food ->
-            "Food"
-
-        Game ->
-            "Game"
-
-        Book ->
-            "Book"
-
-        Crafts ->
-            "Crafts"
-
-        More ->
-            "More"
-
-
-viewActivity : Activity -> Html msg
-viewActivity activity =
-    a
-        [ class "grid grid-cols-[100px_1fr]"
-        , href activity.link
-        , attribute "aria-label" activity.title
-        , target "_blank"
-        , class "hover:bg-csc-lightpurple"
-        , class "rounded m-5"
-        ]
-        [ img
-            [ src (imageSrc activity)
-            , class "w-20 h-20"
-            , class "rounded"
-            , class "object-cover"
-            ]
-            []
-        , div [ class "grid grid-rows" ]
-            [ h4
-                [ class "text-xl text-left"
-                ]
-                [ text activity.title ]
-            , div
-                [ class "text-left"
-                ]
-                [ text activity.snippet ]
-            ]
-        ]
 
 
 
