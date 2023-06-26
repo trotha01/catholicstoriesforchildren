@@ -211,6 +211,30 @@ viewActivities activities =
             ]
 
 
+viewPrintouts : List Activity -> Html msg
+viewPrintouts activities =
+    if List.isEmpty activities then
+        span [] []
+
+    else
+        div [ class "mt-20" ]
+            [ div [ class "max-w-3xl m-auto" ]
+                (List.map
+                    (\activity ->
+                        viewPrintout activity
+                    )
+                    activities
+                )
+            ]
+
+
+viewPrintout : Activity -> Html msg
+viewPrintout activity =
+    a [ href activity.link ]
+        [ img [ src activity.link, class "max-w-xl" ] []
+        ]
+
+
 viewVideos : List Activity -> Html msg
 viewVideos videos =
     if List.isEmpty videos then
@@ -226,6 +250,42 @@ viewVideos videos =
                     videos
                 )
             ]
+
+
+viewVideo : Activity -> Html msg
+viewVideo video =
+    if String.contains "embed" video.link then
+        viewEmbeddedVideo video
+
+    else
+        viewActivity video
+
+
+viewEmbeddedVideo : Activity -> Html msg
+viewEmbeddedVideo video =
+    div
+        [ style "position" "relative"
+        , style "padding-bottom" "56.25%"
+        , height 0
+        , style "overflow" "hidden"
+        , style "max-width" "100%"
+        , style "border-radius" "5px"
+        , class "m-5"
+        ]
+        [ iframe
+            [ style "position" "absolute"
+            , style "width" "100%"
+            , style "height" "100%"
+            , style "top" "0"
+            , style "left" "0"
+            , src video.link
+            , title video.title
+            , property "frameborder" (Json.Encode.string "0")
+            , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+            , property "allowfullscreen" (Json.Encode.string "true")
+            ]
+            []
+        ]
 
 
 viewAudioList : List Activity -> Html msg
@@ -270,42 +330,6 @@ viewEmbeddedAudio activity =
                 ]
                 []
             ]
-
-
-viewVideo : Activity -> Html msg
-viewVideo video =
-    if String.contains "embed" video.link then
-        viewEmbeddedVideo video
-
-    else
-        viewActivity video
-
-
-viewEmbeddedVideo : Activity -> Html msg
-viewEmbeddedVideo video =
-    div
-        [ style "position" "relative"
-        , style "padding-bottom" "56.25%"
-        , height 0
-        , style "overflow" "hidden"
-        , style "max-width" "100%"
-        , style "border-radius" "5px"
-        , class "m-5"
-        ]
-        [ iframe
-            [ style "position" "absolute"
-            , style "width" "100%"
-            , style "height" "100%"
-            , style "top" "0"
-            , style "left" "0"
-            , src video.link
-            , title video.title
-            , property "frameborder" (Json.Encode.string "0")
-            , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-            , property "allowfullscreen" (Json.Encode.string "true")
-            ]
-            []
-        ]
 
 
 activityTypeToString : ActivityType -> String

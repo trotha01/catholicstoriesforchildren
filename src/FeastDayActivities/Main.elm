@@ -340,6 +340,7 @@ viewFeastActivities model feastActivitiesList =
                         , [ activityFromLink saint.name saint.catholicOrgLink ]
                         , [ activityFromLink saint.name saint.catholicSaintsLink ]
                         , [ activityFromLink saint.name saint.uCatholicLink ]
+                        , [ activityFromLink saint.name saint.coloringPageLink ]
                         , List.map (activityFromLink saint.name) (saint.saintsAliveLink |> String.split ";")
                         ]
                     )
@@ -360,7 +361,7 @@ viewFeastActivities model feastActivitiesList =
             [ viewVideos (videoActivities activities)
             , viewAudioList (audioActivities activities)
             , viewActivities (craftActivities activities)
-            , viewActivities (printoutActivities activities)
+            , viewPrintouts (printoutActivities activities)
             , viewActivities (gameActivities activities)
             , viewActivities (imageActivities activities)
             , viewActivities (readingActivities activities)

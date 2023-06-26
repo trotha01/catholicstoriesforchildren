@@ -84,6 +84,9 @@ activityDescriptionFromLink saintName link =
     else if String.contains "ucatholic" link then
         "Learn about  " ++ saintName ++ " with uCatholic."
 
+    else if String.contains "thecatholickid" link then
+        "Color with The Catholic Kid"
+
     else
         ""
 
@@ -114,6 +117,9 @@ activityImageFromLink link =
     else if String.contains "ucatholic" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/uCatholicLogo_ozBcyhYz5.png?updatedAt=1685566890685"
 
+    else if String.contains "thecatholickid" link then
+        ""
+
     else
         ""
 
@@ -143,6 +149,9 @@ activityTypeFromLink link =
 
     else if String.contains "ucatholic" link then
         OnlineReading
+
+    else if String.contains "thecatholickid" link then
+        Printout
 
     else
         More

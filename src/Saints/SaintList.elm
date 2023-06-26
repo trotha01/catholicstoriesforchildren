@@ -72,7 +72,7 @@ type alias Saint =
     , ewtnLink : String
     , teachingCatholicKidsLink : String
     , saintsAliveLink : String
-    , youtubeLinks : String
+    , coloringPageLink : String
     }
 
 
@@ -103,5 +103,5 @@ convertToSaint saintData =
     , ewtnLink = Array.get 17 saintData |> Maybe.withDefault ""
     , teachingCatholicKidsLink = Array.get 18 saintData |> Maybe.withDefault ""
     , saintsAliveLink = Array.get 19 saintData |> Maybe.withDefault ""
-    , youtubeLinks = Array.get 20 saintData |> Maybe.withDefault ""
+    , coloringPageLink = Array.get 20 saintData |> Maybe.withDefault ""
     }
