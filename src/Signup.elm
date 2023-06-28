@@ -87,7 +87,7 @@ view model =
             [ p
                 [ class "pb-5 pl-1 text-left"
                 ]
-                [ text "Enter your email to grab our FREE Reconciliation Booklet." ]
+                [ text "Enter your email to grab our FREE Ultimate Guide for Bringing Kids to Mass." ]
             , div
                 []
                 [ input
@@ -117,7 +117,7 @@ view model =
         , div [] [ viewSampleImage ]
         , div [ class "text-left text-base col-span-2" ]
             [ p [] [ text "What you'll receive:" ]
-            , p [] [ text "🌟 The confession booklet." ]
+            , p [] [ text "🌟 The Ultimate Mass Guide for Bringing Kids to Mass." ]
             , p [] [ text "🌟 Tips and freebies for raising kids in the faith." ]
             , p [] [ text "🌟 Updates on the animations." ]
             , p [] [ text "🌟 We’d also enjoy learning what animated stories you think we should produce!" ]
@@ -130,7 +130,7 @@ viewSampleImage =
     div [ class "flex justify-center" ]
         [ img
             [ class "rounded w-full max-w-[330px]"
-            , src "https://ik.imagekit.io/catholicstories/FREE_Reconciliation_Booklet__1080___720_px_1__1LbiEHkKK.png?updatedAt=1686266362421"
+            , src "https://ik.imagekit.io/catholicstories/FREE_Mass_Guide_WbtXzqb2I.png?updatedAt=1687994011730"
             ]
             []
         ]
