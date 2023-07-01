@@ -2,6 +2,8 @@ module Saints.Main exposing (..)
 
 import Browser
 import Browser.Navigation as Nav
+import FeastDayActivities.FeastDayHelpers exposing (viewVideos)
+import FeastDayActivities.Main exposing (activityFromLink)
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
@@ -214,8 +216,15 @@ viewSaintPage model saintName =
                 , div []
                     [ viewFeastDay saint
                     , viewPatronage model saint
-                    , viewActivity saintName saint.catholicOrgVideoLink
-                    , viewActivity saintName saint.catholicSaintsInfoYoutubePlaylist
+                    , viewVideos
+                        ((if saint.catholicSaintsInfoYoutubePlaylist /= "" then
+                            [ activityFromLink saintName saint.catholicSaintsInfoYoutubePlaylist ]
+
+                          else
+                            [ activityFromLink saintName saint.catholicSaintsInfoYoutubePlaylist ]
+                         )
+                            |> List.filterMap Basics.identity
+                        )
                     , viewActivity saintName saint.catholicCuisine
                     , div []
                         (List.map (viewPodcastActivity saintName) saintsAliveLinks)
