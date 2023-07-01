@@ -461,14 +461,14 @@ viewSaints model =
                 model.saintList.saints
 
             else
-                List.filter
-                    (\s ->
-                        String.contains (String.toLower query) (String.toLower s.name)
-                            || String.contains (String.toLower query) (String.toLower s.alternativeNames)
-                            || String.contains (String.toLower query) (String.toLower s.feastDay)
-                            || String.contains (String.toLower query) (String.toLower s.patronOf)
-                    )
-                    model.saintList.saints
+                model.saintList.saints
+                    |> List.filter
+                        (\s ->
+                            String.contains (String.toLower query) (String.toLower s.name)
+                                || String.contains (String.toLower query) (String.toLower s.alternativeNames)
+                                || String.contains (String.toLower (convertDate query)) (String.toLower s.feastDay)
+                                || String.contains (String.toLower query) (String.toLower s.patronOf)
+                        )
                     -- TODO: update saint sort to take how close the match is into consideration
                     |> List.sortWith (saintSort model)
     in
@@ -566,10 +566,10 @@ viewSaint model saint =
                     , highlightString True model.query altNames
                     ]
 
-            else if String.contains (String.toLower model.query) (String.toLower saint.feastDay) then
+            else if String.contains (String.toLower (convertDate model.query)) (String.toLower saint.feastDay) then
                 span []
                     [ text "Feast Day: "
-                    , highlightString True model.query saint.feastDay
+                    , highlightString True (convertDate model.query) saint.feastDay
                     ]
 
             else if String.contains (String.toLower model.query) (String.toLower patronage) then

@@ -1,6 +1,7 @@
 module Saints.SaintHelpers exposing (..)
 
 import FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
+import Regex
 import Url
 import Url.Parser exposing ((</>), (<?>), parse)
 import Url.Parser.Query as Query
@@ -155,3 +156,77 @@ activityTypeFromLink link =
 
     else
         More
+
+
+monthList : List String
+monthList =
+    [ "January"
+    , "February"
+    , "March"
+    , "April"
+    , "May"
+    , "June"
+    , "July"
+    , "August"
+    , "September"
+    , "October"
+    , "November"
+    , "December"
+    ]
+
+
+
+-- Function to separate the letters and numbers from a given string
+
+
+convertDate : String -> String
+convertDate input =
+    let
+        monthPattern =
+            Regex.fromString "([a-zA-Z]+)"
+                |> Maybe.withDefault Regex.never
+
+        datePattern =
+            Regex.fromString "([0-9]+)"
+                |> Maybe.withDefault Regex.never
+
+        date =
+            Regex.find datePattern input
+                |> List.head
+                |> Maybe.map .match
+                |> Maybe.withDefault ""
+                |> removeLeadingZero
+
+        month =
+            Regex.find monthPattern input
+                |> List.head
+                |> Maybe.map .match
+                |> Maybe.withDefault ""
+                |> String.toLower
+                |> (\monthQuery ->
+                        List.filter (\m -> String.contains monthQuery (String.toLower m)) monthList
+                   )
+                |> List.head
+                |> Maybe.withDefault ""
+
+        converted =
+            if date == "" && month == "" then
+                input
+                    |> String.trim
+
+            else
+                date
+                    ++ " "
+                    ++ month
+                    |> String.trim
+    in
+    converted
+
+
+removeLeadingZero : String -> String
+removeLeadingZero input =
+    if String.left 1 input == "0" then
+        String.dropLeft 1 input
+
+    else
+        input
