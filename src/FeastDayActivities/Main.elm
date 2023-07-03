@@ -336,6 +336,7 @@ viewFeastActivities model feastActivitiesList =
                         , [ activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist ]
                         , [ activityFromLink saint.name saint.catholicCuisine ]
                         , [ activityFromLink saint.name saint.christianiconographyInfo ]
+                        , [ activityFromLink saint.name saint.catholicSprouts ]
                         , [ activityFromLink saint.name saint.franciscanMediaLink ]
                         , [ activityFromLink saint.name saint.catholicOrgLink ]
                         , [ activityFromLink saint.name saint.catholicSaintsLink ]

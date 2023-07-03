@@ -228,6 +228,7 @@ viewSaintPage model saintName =
                     , viewActivity saintName saint.catholicCuisine
                     , div []
                         (List.map (viewPodcastActivity saintName) saintsAliveLinks)
+                    , viewActivity saintName saint.catholicSprouts
                     , viewActivity saintName saint.franciscanMediaLink
                     , viewActivity saintName saint.christianiconographyInfo
                     , viewActivity saintName saint.catholicOrgLink

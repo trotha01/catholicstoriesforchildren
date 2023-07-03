@@ -52,6 +52,9 @@ activityTitleFromLink link =
     else if String.contains "ucatholic" link then
         "uCatholic"
 
+    else if String.contains "embed.podcasts.apple" link then
+        "Podcast"
+
     else
         ""
 
@@ -88,6 +91,9 @@ activityDescriptionFromLink saintName link =
     else if String.contains "thecatholickid" link then
         "Color with The Catholic Kid"
 
+    else if String.contains "embed.podcasts.apple" link then
+        "Learn about " ++ saintName ++ " with this podcast."
+
     else
         ""
 
@@ -117,6 +123,9 @@ activityImageFromLink link =
 
     else if String.contains "ucatholic" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/uCatholicLogo_ozBcyhYz5.png?updatedAt=1685566890685"
+
+    else if String.contains "podcast/cs-" link then
+        "https://ik.imagekit.io/catholicstories/ProfileImages/11_HUKazDTNih.png?updatedAt=1679069711765"
 
     else if String.contains "thecatholickid" link then
         ""
