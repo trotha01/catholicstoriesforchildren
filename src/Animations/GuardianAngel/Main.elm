@@ -69,6 +69,7 @@ viewBody model =
         , div [ class "mb-10" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewVideoPlayers
+        , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , scripture
         , tradition
@@ -112,6 +113,49 @@ aboutTheAnimation =
                 ("This animation is meant to be an aid for your children to slowly build a habit of prayer. "
                     ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
                 )
+            ]
+        ]
+
+
+viewActivities : Html msg
+viewActivities =
+    div []
+        [ h2 [ class "mb-3 mt-5" ] [ text "Guardian Angel Activities" ]
+        , div [ class "grid grid-cols-2 gap-4" ]
+            [ div []
+                [ p [ class "h-14" ]
+                    [ text "Access coloring pages, copywork, discussion questions and more!"
+                    ]
+                , a
+                    [ attribute "aria-label" "Guardian Angel Activities"
+                    , href "/printables/Guardian-Angel-Activities.pdf"
+                    , target "_blank"
+                    ]
+                    [ img
+                        [ class "w-full max-w-[400px]"
+                        , class "transition ease-in-out hover:scale-110"
+                        , src "https://ik.imagekit.io/catholicstories/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png?updatedAt=1688494259496"
+                        ]
+                        []
+                    ]
+                ]
+            , div []
+                [ p [ class "h-14" ]
+                    [ text "Answers to Guardian Angel activity questions."
+                    ]
+                , a
+                    [ attribute "aria-label" "Guardian Angel Activities"
+                    , href "/printables/Guardian-Angel-Activity-Answers.pdf"
+                    , target "_blank"
+                    ]
+                    [ img
+                        [ class "w-full max-w-[400px]"
+                        , class "transition ease-in-out hover:scale-110"
+                        , src "https://ik.imagekit.io/catholicstories/Guardian_Angel_Activities_Answers_3__-3FACN8K8.png?updatedAt=1688495546612"
+                        ]
+                        []
+                    ]
+                ]
             ]
         ]
 
@@ -250,10 +294,6 @@ tradition =
                 ]
             ]
         ]
-
-
-
--- TODO: add this in
 
 
 magisterialTeachings : Html msg

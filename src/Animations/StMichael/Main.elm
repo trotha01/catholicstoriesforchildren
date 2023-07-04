@@ -84,7 +84,7 @@ viewBody model =
 
         -- , viewVideoComingSoon "https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466"
         , viewVideoPlayers
-        , viewActivities
+        , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , aboutThePrayer
         , viewPrayerHistory
@@ -219,21 +219,42 @@ viewPrayer =
 viewActivities : Html msg
 viewActivities =
     div []
-        [ h2 [ class "mb-3 mt-5" ] [ text "St Michael Activities" ]
-        , p []
-            [ text "Access coloring pages, copywork, discussion questions and more!"
-            ]
-        , a
-            [ attribute "aria-label" "St Michael Activities"
-            , href "/printables/Saint-Michael-Activities.pdf"
-            , target "_blank"
-            ]
-            [ img
-                [ class "max-w-[400px]"
-                , class "transition ease-in-out hover:scale-110"
-                , src "https://ik.imagekit.io/catholicstories/Saint_Michael_Activities_aLiVSlyfv.png?updatedAt=1682603552845"
+        [ h2 [ class "mb-3 mt-5" ] [ text "Saint Michael Activities" ]
+        , div [ class "grid grid-cols-2 gap-4" ]
+            [ div []
+                [ p [ class "h-14" ]
+                    [ text "Access coloring pages, copywork, discussion questions and more!"
+                    ]
+                , a
+                    [ attribute "aria-label" "Saint Michael Activities"
+                    , href "/printables/Saint-Michael-Activities.pdf"
+                    , target "_blank"
+                    ]
+                    [ img
+                        [ class "w-full max-w-[400px]"
+                        , class "transition ease-in-out hover:scale-110"
+                        , src "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Cover_J2Qt-zF3t.png?updatedAt=1688494130199"
+                        ]
+                        []
+                    ]
                 ]
-                []
+            , div []
+                [ p [ class "h-14" ]
+                    [ text "Answers to Saint Michael activity questions."
+                    ]
+                , a
+                    [ attribute "aria-label" "Saint Michael Activities"
+                    , href "/printables/Saint-Michael-Activity-Answers.pdf"
+                    , target "_blank"
+                    ]
+                    [ img
+                        [ class "w-full max-w-[400px]"
+                        , class "transition ease-in-out hover:scale-110"
+                        , src "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Answers_3__I3WnUgIL6.png?updatedAt=1688495548276"
+                        ]
+                        []
+                    ]
+                ]
             ]
         ]
 
@@ -571,10 +592,6 @@ tradition =
                 ]
             ]
         ]
-
-
-
--- TODO: add this in
 
 
 magisterialTeachings : Html msg
