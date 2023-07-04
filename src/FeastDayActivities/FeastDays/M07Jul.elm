@@ -51,7 +51,7 @@ july =
           }
         , { date = "14"
           , feasts =
-                [ { feast = "Saint Camillus de Lellis (18th in the US)", activities = [] }
+                [ { feast = "Saint Camillus of Lellis (18th in the US)", activities = [] }
                 , { feast = "Saint Kateri Tekakwitha", activities = [] }
                 ]
           }
@@ -62,7 +62,7 @@ july =
           }
         , { date = "16"
           , feasts =
-                [ { feast = "Our Lady of Mount Carmel", activities = [] }
+                [ { feast = "Our Lady of Carmel of the Maipú", activities = [] }
                 ]
           }
         , { date = "20"
@@ -97,7 +97,7 @@ july =
           }
         , { date = "29"
           , feasts =
-                [ { feast = "Saints Martha, Mary and Lazarus", activities = [] }
+                [ { feast = "Saint Martha of Bethany and Saint Mary of Bethany and Saint Lazarus of Bethany", activities = [] }
                 ]
           }
         , { date = "30"

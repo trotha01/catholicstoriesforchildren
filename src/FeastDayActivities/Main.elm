@@ -23,6 +23,7 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.String
+import Regex
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
 import Saints.SaintList as SaintList
 import Signup exposing (..)
@@ -300,12 +301,21 @@ viewFeastActivities model feastActivitiesList =
         feastNames =
             List.map .feast feastActivitiesList
 
+        removeParens =
+            case Regex.fromString " \\(.*\\)" of
+                Nothing ->
+                    identity
+
+                Just regex ->
+                    Regex.replace regex (\_ -> "")
+
         cleanedFeastNames =
             List.concatMap
                 (\name ->
                     name
                         |> String.split " and "
                         |> List.map String.toLower
+                        |> List.map removeParens
                 )
                 feastNames
 
