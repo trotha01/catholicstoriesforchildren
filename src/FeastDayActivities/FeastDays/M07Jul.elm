@@ -26,7 +26,7 @@ july =
           }
         , { date = "05"
           , feasts =
-                [ { feast = "Saint Anthony Zaccaria", activities = [] }
+                [ { feast = "Saint Anthony Mary Zaccaria", activities = [] }
                 ]
           }
         , { date = "06"
