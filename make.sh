@@ -42,12 +42,12 @@ pair_list=(
   src/Navigation/Main.elm navigationElm.js
   src/Newsroom/Main.elm newsroomElm.js
   src/Prayers/Main.elm prayers/elm.js
-  src/Resources/Books/Main.elm resourcesBooksElm.js
-  src/Resources/Main.elm resourcesElm.js
-  src/Resources/Podcasts/Main.elm resourcesPodcastsElm.js
-  src/Resources/Prayer/Main.elm resourcesPrayerElm.js
-  src/Resources/Subscriptions/Main.elm resourcesSubscriptionsElm.js
-  src/Resources/Videos/Main.elm resourcesVideosElm.js
+  src/Resources/Books/Main.elm resources/books/elm.js
+  src/Resources/Main.elm resources/elm.js
+  src/Resources/Podcasts/Main.elm resources/podcasts/elm.js
+  src/Resources/Prayer/Main.elm resources/prayer/elm.js
+  src/Resources/Subscriptions/Main.elm resources/subscriptions/elm.js
+  src/Resources/Videos/Main.elm resources/videos/elm.js
   src/Saints/Main.elm saints/elm.js
   src/Team/Main.elm teamElm.js
   src/ThankYou/Main.elm thankyou/elm.js

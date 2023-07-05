@@ -4,32 +4,45 @@ import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
-import Newsroom.Main exposing (viewSignUp)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.String
 import Resources.Helpers exposing (..)
+import Signup exposing (..)
 
 
 type alias Model =
-    {}
+    { signup : Signup.Model
+    }
 
 
-main : Program () Model Never
+type Msg
+    = SignupMsg Signup.Msg
+
+
+main : Program () Model Msg
 main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-                    |> toString 0
-                    |> text
-                    |> toHtml
-        , update = \_ -> \model -> model
+    Browser.element
+        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
         }
 
 
-view : Html Never
-view =
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+
+view : Model -> Html Msg
+view model =
     div
         [ style "height" "100vh"
         , style "overflow-x" "hidden"
@@ -38,14 +51,14 @@ view =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Prayer Resources" headerMargin
-        , viewBody
-        , viewFooter
+        [ viewSubpageHeader "Prayer Resources" headerMargin |> Html.String.toHtml
+        , viewBody model
+        , viewFooter |> Html.String.toHtml
         ]
 
 
-viewBody : Html Never
-viewBody =
+viewBody : Model -> Html Msg
+viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
@@ -53,21 +66,22 @@ viewBody =
         , class "mb-10"
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Prayer Resources" ]
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewAboutPrayerResources
-        , div [ class "my-10" ] [ viewSignUp ]
         , viewVideos
         , viewWorkInProgressNotice
         ]
 
 
-viewAboutPrayerResources : Html Never
+viewAboutPrayerResources : Html msg
 viewAboutPrayerResources =
     div []
         [ text "Find resources to help build your prayer life here."
         ]
 
 
-viewVideos : Html Never
+viewVideos : Html msg
 viewVideos =
     div []
         (List.map viewResource

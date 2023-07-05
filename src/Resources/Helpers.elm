@@ -1,7 +1,7 @@
 module Resources.Helpers exposing (..)
 
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 type alias Resource =

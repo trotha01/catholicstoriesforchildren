@@ -4,32 +4,45 @@ import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
-import Newsroom.Main exposing (viewSignUp)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.String
 import Resources.Helpers exposing (..)
+import Signup exposing (..)
 
 
 type alias Model =
-    {}
+    { signup : Signup.Model
+    }
 
 
-main : Program () Model msg
+type Msg
+    = SignupMsg Signup.Msg
+
+
+main : Program () Model Msg
 main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-                    |> toString 0
-                    |> text
-                    |> toHtml
-        , update = \_ -> \model -> model
+    Browser.element
+        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
         }
 
 
-view : Html msg
-view =
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        SignupMsg signupMsg ->
+            let
+                ( signup, cmd ) =
+                    Signup.update signupMsg model.signup
+            in
+            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+
+view : Model -> Html Msg
+view model =
     div
         [ style "height" "100vh"
         , style "overflow-x" "hidden"
@@ -38,14 +51,14 @@ view =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Resources" headerMargin
-        , viewBody
-        , viewFooter
+        [ viewSubpageHeader "Resources" headerMargin |> Html.String.toHtml
+        , viewBody model
+        , viewFooter |> Html.String.toHtml
         ]
 
 
-viewBody : Html msg
-viewBody =
+viewBody : Model -> Html Msg
+viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
@@ -54,7 +67,8 @@ viewBody =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Resources" ]
         , viewAboutResources
-        , div [ class "mb-10" ] [ viewSignUp ]
+        , div [ class "mb-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewResourceGroups
         , viewWorkInProgressNotice
         ]

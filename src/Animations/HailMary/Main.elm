@@ -9,7 +9,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Html.String
-import Newsroom.Main exposing (viewSignUp)
 import Signup exposing (..)
 import Team.Main exposing (viewPersonImage)
 import Team.Team exposing (trevor)
