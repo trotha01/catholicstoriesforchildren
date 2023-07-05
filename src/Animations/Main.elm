@@ -6,7 +6,6 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.String
 import Signup exposing (..)
 
 
@@ -44,9 +43,9 @@ view model =
     div
         [ class "bg-[#FEF7F4]"
         ]
-        [ viewSubpageHeader "Animations" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "Animations" headerMargin
         , viewBody model
-        , viewFooter |> Html.String.toHtml
+        , viewFooter
         ]
 
 

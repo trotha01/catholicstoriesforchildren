@@ -4,8 +4,8 @@ import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 type alias Model =
@@ -19,9 +19,6 @@ main =
         , view =
             \_ ->
                 view
-                    |> toString 0
-                    |> text
-                    |> toHtml
         , update = \_ -> \model -> model
         }
 
@@ -103,7 +100,7 @@ donateWithPaypal =
             , style "width" "200px"
             , style "text-align" "center"
             ]
-            [ Html.String.form
+            [ Html.form
                 [ action "https://www.paypal.com/donate", method "post", target "_top" ]
                 [ input [ type_ "hidden", name "hosted_button_id", value "ZA5YPU8KU6SL8" ] []
                 , input

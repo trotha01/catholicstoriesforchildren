@@ -1,9 +1,8 @@
 module Helpers exposing (..)
 
-import Html as H
+import Html as H exposing (..)
+import Html.Attributes exposing (..)
 import Html.Events exposing (keyCode, on)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
 import Json.Decode as Decode
 import Json.Encode
 

@@ -6,8 +6,6 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.String
-import List exposing (head)
 
 
 
@@ -33,9 +31,9 @@ view : Html Never
 view =
     div
         []
-        [ viewSubpageHeader "Prayers" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "Prayers" headerMargin
         , viewBody
-        , viewFooter |> Html.String.toHtml
+        , viewFooter
         ]
 
 

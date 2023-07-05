@@ -7,7 +7,6 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.String
 import Signup exposing (..)
 
 
@@ -50,9 +49,9 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Guardian Angel" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "Guardian Angel" headerMargin
         , viewBody model
-        , viewFooter |> Html.String.toHtml
+        , viewFooter
         ]
 
 

@@ -1,6 +1,5 @@
 module Icons exposing (youtube)
 
-import Html.String
 import Svg.String
 import Svg.String.Attributes exposing (..)
 

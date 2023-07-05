@@ -8,7 +8,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Html.String
 import Signup exposing (..)
 import Team.Main exposing (viewPersonImage)
 import Team.Team exposing (trevor)
@@ -64,9 +63,9 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Hail Mary" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "Hail Mary" headerMargin
         , viewBody model
-        , viewFooter |> Html.String.toHtml
+        , viewFooter
         ]
 
 
@@ -205,7 +204,7 @@ viewResources =
         , p [ class "my-3" ] [ text "Thank you, and may God bless you," ]
         , p [ class "my-3" ]
             [ span [ class "my-3" ] [ text "Trevor Rothaus " ]
-            , viewPersonImage trevor |> Html.String.toHtml
+            , viewPersonImage trevor
             ]
         ]
 

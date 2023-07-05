@@ -114,7 +114,32 @@
         }
       }
     </style>
-</head>
+<script src="elm.js"></script></head>
   <body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
-<div class="min-h-screen flex flex-col bg-csc-lightpurple pt-5"><a style="animation: fadeIn 1s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_self" href="/"><span class="px-10 m-auto">Home</span></a><a style="animation: fadeIn 1s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_self" href="/team"><span class="px-10 m-auto">About Us</span></a><a style="animation: fadeIn 1.5s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_self" href="/animations"><span class="px-10 m-auto">Animations</span></a><a style="animation: fadeIn 2s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_self" href="/contact"><span class="px-10 m-auto">Contact</span></a><a style="animation: fadeIn 2.5s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_self" href="/resources"><span class="px-10 m-auto">Resources</span></a><a style="animation: fadeIn 3s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_self" href="/give"><span class="px-10 m-auto">Give</span></a><a style="animation: fadeIn 3s" class="hover:bg-csc-lightpurple px-10 py-5 rounded-t text-4xl text-semibold" target="_blank" href="https://www.etsy.com/shop/CatholicStories"><span class="px-10 m-auto">Shop</span></a></div></body>
+
+  <div id="myapp"></div>
+  <script>
+  var app = Elm.Navigation.Main.init({
+    node: document.getElementById('myapp')
+  });
+
+  if (app.ports && app.ports.gtagReportConversion) {
+    app.ports.gtagReportConversion.subscribe(function(message) {
+      gtag_report_conversion();
+    });
+  }
+
+  if (app.ports && app.ports.goBack) {
+    app.ports.goBack.subscribe(function(message) {
+      window.history.back();
+    });
+  }
+
+  </script>
+
+  <!-- Calendly inline widget begin -->
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly inline widget end -->
+
+</body>
 </html>

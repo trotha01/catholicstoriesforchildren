@@ -2,8 +2,8 @@ module Navigation.Main exposing (..)
 
 import Browser
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 type alias Model =
@@ -17,9 +17,6 @@ main =
         , view =
             \_ ->
                 view
-                    |> toString 0
-                    |> text
-                    |> toHtml
         , update = \_ -> \model -> model
         }
 

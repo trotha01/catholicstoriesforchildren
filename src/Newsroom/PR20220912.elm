@@ -1,8 +1,8 @@
 module Newsroom.PR20220912 exposing (..)
 
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 view : Html Never

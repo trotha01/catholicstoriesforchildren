@@ -1,9 +1,7 @@
 module Logo exposing (..)
 
-import Html
-import Html.Attributes
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 logo : Html msg

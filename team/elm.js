@@ -4355,12 +4355,6 @@ function _Browser_load(url)
 		}
 	}));
 }
-var $author$project$ThankYou$Main$LinkClicked = function (a) {
-	return {$: 'LinkClicked', a: a};
-};
-var $author$project$ThankYou$Main$UrlChanged = function (a) {
-	return {$: 'UrlChanged', a: a};
-};
 var $elm$core$Basics$EQ = {$: 'EQ'};
 var $elm$core$Basics$GT = {$: 'GT'};
 var $elm$core$Basics$LT = {$: 'LT'};
@@ -5149,114 +5143,33 @@ var $elm$core$Task$perform = F2(
 			$elm$core$Task$Perform(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
-var $elm$browser$Browser$application = _Browser_application;
-var $author$project$ThankYou$Main$Model = F2(
-	function (key, url) {
-		return {key: key, url: url};
-	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
-var $author$project$ThankYou$Main$init = F3(
-	function (flags, url, key) {
-		return _Utils_Tuple2(
-			A2($author$project$ThankYou$Main$Model, key, url),
-			$elm$core$Platform$Cmd$none);
-	});
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
-var $author$project$ThankYou$Main$subscriptions = function (_v0) {
-	return $elm$core$Platform$Sub$none;
-};
-var $elm$json$Json$Encode$string = _Json_wrap;
-var $author$project$ThankYou$Main$goBack = _Platform_outgoingPort('goBack', $elm$json$Json$Encode$string);
-var $elm$browser$Browser$Navigation$load = _Browser_load;
-var $elm$url$Url$addPort = F2(
-	function (maybePort, starter) {
-		if (maybePort.$ === 'Nothing') {
-			return starter;
-		} else {
-			var port_ = maybePort.a;
-			return starter + (':' + $elm$core$String$fromInt(port_));
-		}
-	});
-var $elm$url$Url$addPrefixed = F3(
-	function (prefix, maybeSegment, starter) {
-		if (maybeSegment.$ === 'Nothing') {
-			return starter;
-		} else {
-			var segment = maybeSegment.a;
-			return _Utils_ap(
-				starter,
-				_Utils_ap(prefix, segment));
-		}
-	});
-var $elm$url$Url$toString = function (url) {
-	var http = function () {
-		var _v0 = url.protocol;
-		if (_v0.$ === 'Http') {
-			return 'http://';
-		} else {
-			return 'https://';
-		}
-	}();
-	return A3(
-		$elm$url$Url$addPrefixed,
-		'#',
-		url.fragment,
-		A3(
-			$elm$url$Url$addPrefixed,
-			'?',
-			url.query,
-			_Utils_ap(
-				A2(
-					$elm$url$Url$addPort,
-					url.port_,
-					_Utils_ap(http, url.host)),
-				url.path)));
-};
-var $author$project$ThankYou$Main$update = F2(
-	function (msg, model) {
-		switch (msg.$) {
-			case 'LinkClicked':
-				var urlRequest = msg.a;
-				if (urlRequest.$ === 'Internal') {
-					var url = urlRequest.a;
+var $elm$browser$Browser$sandbox = function (impl) {
+	return _Browser_element(
+		{
+			init: function (_v0) {
+				return _Utils_Tuple2(impl.init, $elm$core$Platform$Cmd$none);
+			},
+			subscriptions: function (_v1) {
+				return $elm$core$Platform$Sub$none;
+			},
+			update: F2(
+				function (msg, model) {
 					return _Utils_Tuple2(
-						model,
-						$elm$browser$Browser$Navigation$load(
-							$elm$url$Url$toString(url)));
-				} else {
-					var href = urlRequest.a;
-					return _Utils_Tuple2(
-						model,
-						$elm$browser$Browser$Navigation$load(href));
-				}
-			case 'UrlChanged':
-				var url = msg.a;
-				return _Utils_Tuple2(
-					_Utils_update(
-						model,
-						{url: url}),
-					$elm$browser$Browser$Navigation$load(
-						$elm$url$Url$toString(url)));
-			default:
-				return _Utils_Tuple2(
-					model,
-					$author$project$ThankYou$Main$goBack(''));
-		}
-	});
+						A2(impl.update, msg, model),
+						$elm$core$Platform$Cmd$none);
+				}),
+			view: impl.view
+		});
+};
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Helpers$headerMargin = 10;
-var $author$project$ThankYou$Main$GoBack = {$: 'GoBack'};
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
-var $elm$html$Html$button = _VirtualDom_node('button');
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
+var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
@@ -5266,32 +5179,320 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 'Normal', a: a};
-};
-var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var $elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var $elm$html$Html$Events$onClick = function (msg) {
-	return A2(
-		$elm$html$Html$Events$on,
-		'click',
-		$elm$json$Json$Decode$succeed(msg));
-};
-var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $elm$html$Html$span = _VirtualDom_node('span');
+var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$html$Html$Attributes$rel = _VirtualDom_attribute('rel');
+var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $author$project$Newsroom$Main$viewSignUpButton = A2(
+	$elm$html$Html$a,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$href('https://signup.catholicstoriesforchildren.com'),
+			$elm$html$Html$Attributes$rel('noopener'),
+			$elm$html$Html$Attributes$target('_blank'),
+			A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
+			A2($elm$html$Html$Attributes$style, 'padding', '10px 20px'),
+			A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
+			A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
+			A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
+			A2($elm$html$Html$Attributes$style, 'color', 'white'),
+			A2($elm$html$Html$Attributes$style, 'background-color', '#9200B3')
+		]),
+	_List_fromArray(
+		[
+			$elm$html$Html$text('Sign Up')
+		]));
+var $author$project$Newsroom$Main$viewSignUp = A2(
+	$elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('pb-5')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Want tips, resources, and Catholic animations? We are giving away our prayer printable to those who sign up today!')
+				])),
+			$author$project$Newsroom$Main$viewSignUpButton
+		]));
+var $author$project$Team$Main$viewAbout = A2(
+	$elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mb-4')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God.')
+				])),
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('mt-5')
+				]),
+			_List_fromArray(
+				[$author$project$Newsroom$Main$viewSignUp])),
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-7')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Vision')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Catholic Stories for Children is made with the vision that all Catholics have a strong love of God and neighbor.')
+				])),
+			A2(
+			$elm$html$Html$h2,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('my-7')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Mission')
+				])),
+			A2(
+			$elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Our hope is to help others along this journey with joyful stories.')
+				]))
+		]));
 var $author$project$Team$Team$imagePath = '/assets/Team/';
+var $author$project$Team$Team$aaron = {description: 'Fr. Aaron is the associate chaplain in Saint Irenaeus Parish in Cypress, CA.', image: $author$project$Team$Team$imagePath + 'FrAaron.jpeg', initials: '', name: 'Father Aaron Galvizo, A.M.', position: 'Alagad ni Maria', socials: _List_Nil};
+var $author$project$Team$Team$carlos = {description: 'Carlos is a CAD designer who also has a passion for dogs, comedy and food.', image: $author$project$Team$Team$imagePath + 'CarlosG.jpg', initials: '', name: 'Carlos Gutierrez', position: 'CAD Designer', socials: _List_Nil};
+var $author$project$Team$Team$cheri = {description: 'Truly silent.', image: $author$project$Team$Team$imagePath + 'Cheri.jpeg', initials: '', name: 'Cheri Loreto', position: 'Silent Advisor', socials: _List_Nil};
+var $author$project$Team$Team$chris = {description: 'Chris Pagel is the assistant dean of Graduate Business Programs and Career Services at ' + 'Chapman University\'s George L. Argyros School of Business and Economics.', image: $author$project$Team$Team$imagePath + 'ChrisPagel.jpeg', initials: '', name: 'Christopher Pagel', position: 'Assistant Dean', socials: _List_Nil};
+var $author$project$Team$Team$fredrick = {description: 'Fr. Fredrick is a former chaplain of Santa Margarita Catholic High School and CHOC, ' + ('former Parochial Vicar of St. Irenaeus Catholic Church, Church of St. Pius X, ' + 'and Our Lady of Mt. Carmel Church.'), image: $author$project$Team$Team$imagePath + 'FrDodik.jpeg', initials: '', name: 'Father Fredrick Miras, A.M.', position: 'Alagad ni Maria', socials: _List_Nil};
+var $author$project$Team$Team$boardOfAdvisors = _List_fromArray(
+	[$author$project$Team$Team$fredrick, $author$project$Team$Team$aaron, $author$project$Team$Team$chris, $author$project$Team$Team$cheri, $author$project$Team$Team$carlos]);
+var $author$project$Helpers$Behance = {$: 'Behance'};
+var $author$project$Helpers$Facebook = {$: 'Facebook'};
+var $author$project$Helpers$IMDB = {$: 'IMDB'};
+var $author$project$Helpers$Instagram = {$: 'Instagram'};
+var $author$project$Helpers$LinkedIn = {$: 'LinkedIn'};
+var $author$project$Helpers$SoundCloud = {$: 'SoundCloud'};
+var $author$project$Helpers$Spotify = {$: 'Spotify'};
+var $author$project$Helpers$Twitter = {$: 'Twitter'};
+var $author$project$Helpers$Website = {$: 'Website'};
+var $author$project$Helpers$YouTube = {$: 'YouTube'};
+var $author$project$Helpers$Pinterest = {$: 'Pinterest'};
+var $author$project$Team$Team$kelly = {
+	description: 'Kelly is a part-time social media specialist and homeschools her four children on the east coast of Canada.',
+	image: $author$project$Team$Team$imagePath + 'KellyBriggs.jpeg',
+	initials: 'KB',
+	name: 'Kelly Briggs',
+	position: 'Social Media Specialist',
+	socials: _List_fromArray(
+		[
+			_Utils_Tuple2($author$project$Helpers$Instagram, 'https://www.instagram.com/simplehomemom/'),
+			_Utils_Tuple2($author$project$Helpers$Facebook, 'https://www.facebook.com/simplehomemom'),
+			_Utils_Tuple2($author$project$Helpers$Pinterest, 'https://www.pinterest.com/simplehomemom/'),
+			_Utils_Tuple2($author$project$Helpers$Website, 'https://www.simplehomemom.com/')
+		])
+};
+var $author$project$Team$Team$contractors = _List_fromArray(
+	[
+		{
+		description: 'Will is a freelance animator based in Arlington, Virginia. ',
+		image: $author$project$Team$Team$imagePath + 'Will.jpeg',
+		initials: 'WM',
+		name: 'Will Maciejewski',
+		position: 'Producer and Animator',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Website, 'https://www.willmacmotion.com/'),
+				_Utils_Tuple2($author$project$Helpers$Instagram, 'https://www.instagram.com/willmacmotion/')
+			])
+	},
+		{
+		description: 'Emma is a graphic designer with an eye for detail and a desire ' + 'to captivate the wonder of the world through art. ',
+		image: $author$project$Team$Team$imagePath + 'EmmaGreene.jpeg',
+		initials: 'EG',
+		name: 'Emma Greene',
+		position: 'Designer and Illustrator',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Instagram, 'https://www.instagram.com/emmarosecreative')
+			])
+	},
+		{
+		description: 'Fernando is passionate for film, videogames and music. He is passionate about telling stories through sound. ',
+		image: '',
+		initials: 'FA',
+		name: 'Fernando J Alanis',
+		position: 'Sound Design and Re-Recording Mixer',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Website, 'https://www.alanissound.com/'),
+				_Utils_Tuple2($author$project$Helpers$IMDB, 'https://www.imdb.com/name/nm8854188/'),
+				_Utils_Tuple2($author$project$Helpers$Facebook, 'https://www.facebook.com/alanissound'),
+				_Utils_Tuple2($author$project$Helpers$LinkedIn, 'http://www.linkedin.com/in/alanissound')
+			])
+	},
+		{description: '', image: $author$project$Team$Team$imagePath + 'DanaMiller.jpeg', initials: 'DM', name: 'Dana Miller', position: 'Voice Actor', socials: _List_Nil},
+		{description: '', image: $author$project$Team$Team$imagePath + 'JadenLuo.jpeg', initials: 'JL', name: 'Jaden Luo', position: 'Voice Actor', socials: _List_Nil},
+		{
+		description: 'Mako Animation is a creative studio that offers visual communication strategies ' + ('for all kinds of projects. They are passionate about ' + ('bringing original stories to life\nwith a unique and ' + 'creative narrative.')),
+		image: $author$project$Team$Team$imagePath + 'makoTeam.png',
+		initials: 'MT',
+		name: 'Mako Animation',
+		position: 'Animation Team',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Website, 'https://makoanimation.mx/'),
+				_Utils_Tuple2($author$project$Helpers$Facebook, 'https://www.facebook.com/makoanimation/'),
+				_Utils_Tuple2($author$project$Helpers$Twitter, 'https://twitter.com/MakoAnimation'),
+				_Utils_Tuple2($author$project$Helpers$YouTube, 'https://www.youtube.com/channel/UCOszpOlqJxLtjpbTH7VN7Kg')
+			])
+	},
+		{
+		description: 'Nick and Alina have been collaborators in songwriting and performing since 2006. They have fused their creative fires to illuminate the trials and triumphs of the human experience. The duo impacts their audiences through powerful testimony, moving vocals and songs that burn through with Truth, Love, Inspiration, and Beauty.',
+		image: $author$project$Team$Team$imagePath + 'NickAndAlina.jpeg',
+		initials: 'ND',
+		name: 'Nick and Alina De La Torre',
+		position: 'Composer',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Website, 'http://nickandalina.com/'),
+				_Utils_Tuple2($author$project$Helpers$YouTube, 'https://www.youtube.com/nickalinadelatorre'),
+				_Utils_Tuple2($author$project$Helpers$Instagram, 'https://www.instagram.com/nickandalina/'),
+				_Utils_Tuple2($author$project$Helpers$Facebook, 'https://www.facebook.com/nickandalina/'),
+				_Utils_Tuple2($author$project$Helpers$Twitter, 'https://twitter.com/nickandalina_'),
+				_Utils_Tuple2($author$project$Helpers$Spotify, 'https://open.spotify.com/artist/3BHBEFqQWqROuXbQCSnb06?si=9Mh_b1M4T6S7nmsswkdHPQ&nd=1')
+			])
+	},
+		{description: '', image: '', initials: 'EN', name: 'Ethan Nagy', position: 'Singer and Voice Actor', socials: _List_Nil},
+		{description: '', image: '', initials: 'IR', name: 'Italia Rose', position: 'Singer and Voice Actor', socials: _List_Nil},
+		{description: '', image: '', initials: 'DG', name: 'Dominic Grodi', position: 'Singer and Voice Actor', socials: _List_Nil},
+		{
+		description: 'Sean is a composer for games, films, cartoons, trailers, and more. He is also a highly sought after composer for Catholic media. He is Roman Catholic, husband of 15 years, and father to six children.',
+		image: $author$project$Team$Team$imagePath + 'SeanBeeson.jpeg',
+		initials: 'SB',
+		name: 'Sean Beeson',
+		position: 'Composer',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Website, 'https://www.seanbeeson.com/'),
+				_Utils_Tuple2($author$project$Helpers$SoundCloud, 'https://soundcloud.com/sean-beeson'),
+				_Utils_Tuple2($author$project$Helpers$Facebook, 'https://www.facebook.com/gamecomposer'),
+				_Utils_Tuple2($author$project$Helpers$Twitter, 'https://twitter.com/seanbeeson'),
+				_Utils_Tuple2($author$project$Helpers$YouTube, 'https://www.youtube.com/user/Buckeye198181')
+			])
+	},
+		{
+		description: 'Ekaterina is a skilled artist presenting a unique approach to developing visually appealing designs.',
+		image: $author$project$Team$Team$imagePath + 'Ekaterina.png',
+		initials: 'ES',
+		name: 'Ekaterina Soyuznova',
+		position: 'Visual Development Artist',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Website, 'https://www.ekaterinasoyuznova.com/'),
+				_Utils_Tuple2($author$project$Helpers$Instagram, 'https://www.instagram.com/soyuznova_ekaterina/'),
+				_Utils_Tuple2($author$project$Helpers$Facebook, 'https://www.facebook.com/kate.soyuznova/'),
+				_Utils_Tuple2($author$project$Helpers$Twitter, 'https://twitter.com/Kati45413104'),
+				_Utils_Tuple2($author$project$Helpers$YouTube, 'https://www.youtube.com/channel/UCgc9v2t9OtqQEw_D4jKgbew')
+			])
+	},
+		{
+		description: 'Artist, 3D Motion Designer, Husband and Father.',
+		image: '',
+		initials: 'FS',
+		name: 'Francesco Schito',
+		position: '3D Artist',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$Instagram, 'https://www.instagram.com/francescoschito/?hl=en'),
+				_Utils_Tuple2($author$project$Helpers$YouTube, 'https://www.youtube.com/playlist?list=UUcaSHFPBBghZlWSePTZzwLw'),
+				_Utils_Tuple2($author$project$Helpers$IMDB, 'https://www.imdb.com/name/nm7877744/'),
+				_Utils_Tuple2($author$project$Helpers$Behance, 'https://www.behance.net/francescoschito')
+			])
+	},
+		{
+		description: 'Rachael is passionate about telling stories through books, film, and dance.',
+		image: $author$project$Team$Team$imagePath + 'RachaelWorkman.jpeg',
+		initials: 'RW',
+		name: 'Rachael Workman',
+		position: 'Screenwriter',
+		socials: _List_fromArray(
+			[
+				_Utils_Tuple2($author$project$Helpers$LinkedIn, 'https://www.linkedin.com/in/rachael-workman/')
+			])
+	},
+		$author$project$Team$Team$kelly
+	]);
+var $author$project$Team$Team$noeli = {description: 'Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer.', image: $author$project$Team$Team$imagePath + 'NoeliAcoba.PNG', initials: '', name: 'Noeli Acoba', position: 'CFO', socials: _List_Nil};
 var $author$project$Team$Team$trevor = {description: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), image: $author$project$Team$Team$imagePath + 'TrevorRothaus.jpeg', initials: '', name: 'Trevor Rothaus', position: 'CEO', socials: _List_Nil};
+var $author$project$Team$Team$staff = _List_fromArray(
+	[$author$project$Team$Team$trevor, $author$project$Team$Team$noeli]);
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
+var $author$project$Team$Main$viewDescription = function (description) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'anywhere'),
+				A2($elm$html$Html$Attributes$style, 'margin-top', '10px')
+			]),
+		_List_fromArray(
+			[
+				$elm$html$Html$text(description)
+			]));
+};
+var $author$project$Team$Main$viewName = function (name) {
+	return A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$text(name)
+			]));
+};
 var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
 var $author$project$Helpers$darkPurple = '#B99EDA';
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$Attributes$src = function (url) {
@@ -5346,203 +5547,312 @@ var $author$project$Team$Main$viewImage = F2(
 var $author$project$Team$Main$viewPersonImage = function (person) {
 	return A2($author$project$Team$Main$viewImage, person.image, person.initials);
 };
-var $author$project$ThankYou$Main$viewThankYou = A2(
+var $author$project$Team$Main$viewPosition = function (position) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'color', '#333'),
+				A2($elm$html$Html$Attributes$style, 'font-size', '.8em')
+			]),
+		_List_fromArray(
+			[
+				$elm$html$Html$text(position)
+			]));
+};
+var $author$project$Helpers$Vimeo = {$: 'Vimeo'};
+var $matthewsj$elm_ordering$Ordering$explicit = F3(
+	function (elements, x, y) {
+		var scanForY = function (items) {
+			scanForY:
+			while (true) {
+				if (items.b) {
+					var z = items.a;
+					var zs = items.b;
+					if (_Utils_eq(z, y)) {
+						return $elm$core$Basics$LT;
+					} else {
+						var $temp$items = zs;
+						items = $temp$items;
+						continue scanForY;
+					}
+				} else {
+					return $elm$core$Basics$GT;
+				}
+			}
+		};
+		var scanForX = function (items) {
+			scanForX:
+			while (true) {
+				if (items.b) {
+					var z = items.a;
+					var zs = items.b;
+					if (_Utils_eq(z, x)) {
+						return $elm$core$Basics$GT;
+					} else {
+						var $temp$items = zs;
+						items = $temp$items;
+						continue scanForX;
+					}
+				} else {
+					return $elm$core$Basics$LT;
+				}
+			}
+		};
+		var scanForEither = function (items) {
+			scanForEither:
+			while (true) {
+				if (items.b) {
+					var z = items.a;
+					var zs = items.b;
+					if (_Utils_eq(z, x)) {
+						return scanForY(zs);
+					} else {
+						if (_Utils_eq(z, y)) {
+							return scanForX(zs);
+						} else {
+							var $temp$items = zs;
+							items = $temp$items;
+							continue scanForEither;
+						}
+					}
+				} else {
+					return $elm$core$Basics$EQ;
+				}
+			}
+		};
+		return _Utils_eq(x, y) ? $elm$core$Basics$EQ : scanForEither(elements);
+	});
+var $author$project$Team$Team$socialOrdering = $matthewsj$elm_ordering$Ordering$explicit(
+	_List_fromArray(
+		[$author$project$Helpers$Website, $author$project$Helpers$Instagram, $author$project$Helpers$Twitter, $author$project$Helpers$Vimeo, $author$project$Helpers$IMDB, $author$project$Helpers$Facebook, $author$project$Helpers$LinkedIn, $author$project$Helpers$YouTube, $author$project$Helpers$Pinterest, $author$project$Helpers$Spotify, $author$project$Helpers$SoundCloud, $author$project$Helpers$Behance]));
+var $author$project$Team$Main$socialSort = F2(
+	function (_v0, _v1) {
+		var social1 = _v0.a;
+		var link1 = _v0.b;
+		var social2 = _v1.a;
+		var link2 = _v1.b;
+		return A2($author$project$Team$Team$socialOrdering, social1, social2);
+	});
+var $elm$core$List$sortWith = _List_sortWith;
+var $author$project$Helpers$favicon = F2(
+	function (alternativeText, link) {
+		return A2(
+			$elm$html$Html$img,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'aria-hidden', 'true'),
+					$elm$html$Html$Attributes$src(link),
+					A2($elm$html$Html$Attributes$style, 'width', '16px'),
+					A2($elm$html$Html$Attributes$style, 'height', '16px'),
+					$elm$html$Html$Attributes$alt(alternativeText)
+				]),
+			_List_Nil);
+	});
+var $author$project$Helpers$behanceLogo = A2($author$project$Helpers$favicon, 'behance', 'https://www.behance.net/favicon.ico');
+var $author$project$Helpers$facebookLogo = A2($author$project$Helpers$favicon, 'facebook', 'https://www.facebook.com/favicon.ico');
+var $author$project$Helpers$imdbLogo = A2($author$project$Helpers$favicon, 'imdb', 'https://www.imdb.com/favicon.ico');
+var $author$project$Helpers$instagramLogo = A2($author$project$Helpers$favicon, 'instagram', 'https://www.instagram.com/favicon.ico');
+var $author$project$Helpers$linkedInLogo = A2($author$project$Helpers$favicon, 'linkedin', 'https://www.linkedin.com/favicon.ico');
+var $author$project$Helpers$pinterestLogo = A2($author$project$Helpers$favicon, 'pinterest', 'https://www.pinterest.com/favicon.ico');
+var $author$project$Helpers$soundcloudLogo = A2($author$project$Helpers$favicon, 'soundcloud', 'https://soundcloud.com/favicon.ico');
+var $author$project$Helpers$spotifyLogo = A2($author$project$Helpers$favicon, 'spotify', 'https://www.spotify.com/favicon.ico');
+var $author$project$Helpers$twitterLogo = A2($author$project$Helpers$favicon, 'twitter', 'https://www.twitter.com/favicon.ico');
+var $author$project$Helpers$viewSocialLink = F3(
+	function (image, link, label) {
+		return A2(
+			$elm$html$Html$a,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$href(link),
+					A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
+					$elm$html$Html$Attributes$target('_blank'),
+					A2($elm$html$Html$Attributes$style, 'margin-right', '10px'),
+					A2($elm$html$Html$Attributes$attribute, 'aria-label', label),
+					$elm$html$Html$Attributes$class('inline-block')
+				]),
+			_List_fromArray(
+				[image]));
+	});
+var $author$project$Helpers$vimeoLogo = A2($author$project$Helpers$favicon, 'vimeo', 'https://vimeo.com/favicon.ico');
+var $author$project$Helpers$youtubeLogo = A2($author$project$Helpers$favicon, 'youtube', 'https://www.youtube.com/favicon.ico');
+var $author$project$Helpers$viewSocial = function (_v0) {
+	var social = _v0.a;
+	var link = _v0.b;
+	switch (social.$) {
+		case 'Website':
+			return A3(
+				$author$project$Helpers$viewSocialLink,
+				$elm$html$Html$text('🌐'),
+				link,
+				'website');
+		case 'Instagram':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$instagramLogo, link, 'instagram');
+		case 'Twitter':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$twitterLogo, link, 'twitter');
+		case 'Facebook':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$facebookLogo, link, 'facebook');
+		case 'LinkedIn':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$linkedInLogo, link, 'linkedin');
+		case 'Vimeo':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$vimeoLogo, link, 'vimeo');
+		case 'IMDB':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$imdbLogo, link, 'imdb');
+		case 'YouTube':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$youtubeLogo, link, 'youtube');
+		case 'Pinterest':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$pinterestLogo, link, 'pinterest');
+		case 'Spotify':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$spotifyLogo, link, 'spotify');
+		case 'SoundCloud':
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$soundcloudLogo, link, 'soundcloud');
+		default:
+			return A3($author$project$Helpers$viewSocialLink, $author$project$Helpers$behanceLogo, link, 'behance');
+	}
+};
+var $author$project$Team$Main$viewSocials = function (person) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'margin-top', '10px'),
+				$elm$html$Html$Attributes$class('flex items-center')
+			]),
+		A2(
+			$elm$core$List$map,
+			$author$project$Helpers$viewSocial,
+			A2($elm$core$List$sortWith, $author$project$Team$Main$socialSort, person.socials)));
+};
+var $author$project$Team$Main$viewPerson = function (person) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'display', 'grid'),
+				A2($elm$html$Html$Attributes$style, 'grid-template-columns', '72px 1fr'),
+				$elm$html$Html$Attributes$class('h-full'),
+				A2($elm$html$Html$Attributes$style, 'min-height', '115px'),
+				A2($elm$html$Html$Attributes$style, 'background', 'white'),
+				A2($elm$html$Html$Attributes$style, 'border-radius', '4px'),
+				A2($elm$html$Html$Attributes$style, 'padding', '20px')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'margin', '0px 10px 40px 0'),
+						$elm$html$Html$Attributes$class('float-left relative')
+					]),
+				_List_fromArray(
+					[
+						$author$project$Team$Main$viewPersonImage(person)
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$author$project$Team$Main$viewName(person.name),
+						$author$project$Team$Main$viewPosition(person.position),
+						$author$project$Team$Main$viewDescription(person.description),
+						$author$project$Team$Main$viewSocials(person)
+					]))
+			]));
+};
+var $author$project$Team$Main$viewPeople = F3(
+	function (title, description, people) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					A2($elm$html$Html$Attributes$style, 'margin-bottom', '100px')
+				]),
+			_Utils_ap(
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$h3,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-2xl')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text(title)
+							])),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('hcenter')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text(description)
+							]))
+					]),
+				A2(
+					$elm$core$List$map,
+					function (person) {
+						return A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('my-10')
+								]),
+							_List_fromArray(
+								[
+									$author$project$Team$Main$viewPerson(person)
+								]));
+					},
+					people)));
+	});
+var $author$project$Team$Main$viewTeam = A2(
 	$elm$html$Html$div,
 	_List_Nil,
 	_List_fromArray(
 		[
 			A2(
-			$elm$html$Html$p,
+			$elm$html$Html$h2,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('my-4')
+					$elm$html$Html$Attributes$class('my-10')
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('Hello, I am Trevor Rothaus, found of Catholic Stories for Children. I want to personally thank you for connecting with us! We are thrilled to have you on board.')
+					$elm$html$Html$text('The Team')
 				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('In the coming minutes, look out for an email containing your free printable. Also, I would like to keep you in the loop regarding our latest animations and updates. We have so many exciting projects coming up to teach the Catholic faith to young people!')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('font-bold')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(' I deeply value your thoughts and opinions, as they play a crucial role in shaping the content we develop.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('font-bold underline')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('That being said, I would enjoy having a conversation with you.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(' You will find below my calendar. Please schedule a time that works best for you. During our talk, I would love to hear your feedback, suggestions, resources that you would like, and any specific topics or themes you would like us to explore further.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Your input will directly contribute to the creation of animations and resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Catholic Stories for Children.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Thank you and may God bless you,')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Trevor Rothaus')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('CEO - Catholic Stories for Children')
-						])),
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$author$project$Team$Main$viewPersonImage($author$project$Team$Team$trevor)
-						]))
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('calendly-inline-widget'),
-					A2($elm$html$Html$Attributes$style, 'min-width', '320px'),
-					A2($elm$html$Html$Attributes$style, 'height', '900px'),
-					A2($elm$html$Html$Attributes$attribute, 'data-url', 'https://calendly.com/csc-trevor/30min')
-				]),
-			_List_Nil)
+			A3($author$project$Team$Main$viewPeople, 'Staff', '', $author$project$Team$Team$staff),
+			A3($author$project$Team$Main$viewPeople, 'Board of Advisors', '', $author$project$Team$Team$boardOfAdvisors),
+			A3($author$project$Team$Main$viewPeople, 'Talent', 'A number of talented artists, contractors, teams and people help bring these animations to life.', $author$project$Team$Team$contractors)
 		]));
-var $author$project$ThankYou$Main$viewBody = A2(
+var $author$project$Team$Main$viewBody = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
-			$elm$html$Html$Attributes$class('bg-[#FEF7F4]')
+			$elm$html$Html$Attributes$class('hcenter'),
+			A2($elm$html$Html$Attributes$style, 'width', '80%'),
+			A2($elm$html$Html$Attributes$style, 'max-width', '800px')
 		]),
 	_List_fromArray(
 		[
 			A2(
-			$elm$html$Html$div,
+			$elm$html$Html$h1,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('max-w-5xl m-auto p-10')
+					$elm$html$Html$Attributes$class('my-10')
 				]),
 			_List_fromArray(
 				[
-					A2(
-					$elm$html$Html$button,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-							$elm$html$Html$Attributes$class('inline-block text-lg rounded p-3 bg-[#9200B3] text-white cursor-pointer'),
-							$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'back button'),
-							$elm$html$Html$Events$onClick($author$project$ThankYou$Main$GoBack)
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Go Back')
-						])),
-					A2(
-					$elm$html$Html$h1,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('text-center'),
-							$elm$html$Html$Attributes$class('my-10')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Thank you for connecting with Catholic Stories for Children!')
-						])),
-					$author$project$ThankYou$Main$viewThankYou
-				]))
+					$elm$html$Html$text('About Us')
+				])),
+			$author$project$Team$Main$viewAbout,
+			$author$project$Team$Main$viewTeam
 		]));
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$footer = _VirtualDom_node('footer');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
-var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $elm$html$Html$span = _VirtualDom_node('span');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
 };
@@ -5806,24 +6116,31 @@ var $author$project$Header$viewSubpageHeader = F2(
 					rightHandSide(height)
 				]));
 	});
-var $author$project$ThankYou$Main$view = function (model) {
-	return {
-		body: _List_fromArray(
-			[
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2($author$project$Header$viewSubpageHeader, 'Thank You', $author$project$Helpers$headerMargin),
-						$author$project$ThankYou$Main$viewBody,
-						$author$project$Footer$viewFooter
-					]))
-			]),
-		title: 'Thank You'
-	};
-};
-var $author$project$ThankYou$Main$main = $elm$browser$Browser$application(
-	{init: $author$project$ThankYou$Main$init, onUrlChange: $author$project$ThankYou$Main$UrlChanged, onUrlRequest: $author$project$ThankYou$Main$LinkClicked, subscriptions: $author$project$ThankYou$Main$subscriptions, update: $author$project$ThankYou$Main$update, view: $author$project$ThankYou$Main$view});
-_Platform_export({'ThankYou':{'Main':{'init':$author$project$ThankYou$Main$main(
+var $author$project$Team$Main$view = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			A2($elm$html$Html$Attributes$style, 'height', '100vh'),
+			A2($elm$html$Html$Attributes$style, 'overflow-x', 'hidden'),
+			A2($elm$html$Html$Attributes$style, 'background-color', '#FEF7F4')
+		]),
+	_List_fromArray(
+		[
+			A2($author$project$Header$viewSubpageHeader, 'Team', $author$project$Helpers$headerMargin),
+			$author$project$Team$Main$viewBody,
+			$author$project$Footer$viewFooter
+		]));
+var $author$project$Team$Main$main = $elm$browser$Browser$sandbox(
+	{
+		init: {},
+		update: function (_v0) {
+			return function (model) {
+				return model;
+			};
+		},
+		view: function (_v1) {
+			return $author$project$Team$Main$view;
+		}
+	});
+_Platform_export({'Team':{'Main':{'init':$author$project$Team$Main$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}}});}(this));

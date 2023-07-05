@@ -4355,12 +4355,6 @@ function _Browser_load(url)
 		}
 	}));
 }
-var $author$project$ThankYou$Main$LinkClicked = function (a) {
-	return {$: 'LinkClicked', a: a};
-};
-var $author$project$ThankYou$Main$UrlChanged = function (a) {
-	return {$: 'UrlChanged', a: a};
-};
 var $elm$core$Basics$EQ = {$: 'EQ'};
 var $elm$core$Basics$GT = {$: 'GT'};
 var $elm$core$Basics$LT = {$: 'LT'};
@@ -5149,114 +5143,31 @@ var $elm$core$Task$perform = F2(
 			$elm$core$Task$Perform(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
-var $elm$browser$Browser$application = _Browser_application;
-var $author$project$ThankYou$Main$Model = F2(
-	function (key, url) {
-		return {key: key, url: url};
-	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
-var $author$project$ThankYou$Main$init = F3(
-	function (flags, url, key) {
-		return _Utils_Tuple2(
-			A2($author$project$ThankYou$Main$Model, key, url),
-			$elm$core$Platform$Cmd$none);
-	});
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
-var $author$project$ThankYou$Main$subscriptions = function (_v0) {
-	return $elm$core$Platform$Sub$none;
-};
-var $elm$json$Json$Encode$string = _Json_wrap;
-var $author$project$ThankYou$Main$goBack = _Platform_outgoingPort('goBack', $elm$json$Json$Encode$string);
-var $elm$browser$Browser$Navigation$load = _Browser_load;
-var $elm$url$Url$addPort = F2(
-	function (maybePort, starter) {
-		if (maybePort.$ === 'Nothing') {
-			return starter;
-		} else {
-			var port_ = maybePort.a;
-			return starter + (':' + $elm$core$String$fromInt(port_));
-		}
-	});
-var $elm$url$Url$addPrefixed = F3(
-	function (prefix, maybeSegment, starter) {
-		if (maybeSegment.$ === 'Nothing') {
-			return starter;
-		} else {
-			var segment = maybeSegment.a;
-			return _Utils_ap(
-				starter,
-				_Utils_ap(prefix, segment));
-		}
-	});
-var $elm$url$Url$toString = function (url) {
-	var http = function () {
-		var _v0 = url.protocol;
-		if (_v0.$ === 'Http') {
-			return 'http://';
-		} else {
-			return 'https://';
-		}
-	}();
-	return A3(
-		$elm$url$Url$addPrefixed,
-		'#',
-		url.fragment,
-		A3(
-			$elm$url$Url$addPrefixed,
-			'?',
-			url.query,
-			_Utils_ap(
-				A2(
-					$elm$url$Url$addPort,
-					url.port_,
-					_Utils_ap(http, url.host)),
-				url.path)));
-};
-var $author$project$ThankYou$Main$update = F2(
-	function (msg, model) {
-		switch (msg.$) {
-			case 'LinkClicked':
-				var urlRequest = msg.a;
-				if (urlRequest.$ === 'Internal') {
-					var url = urlRequest.a;
+var $elm$browser$Browser$sandbox = function (impl) {
+	return _Browser_element(
+		{
+			init: function (_v0) {
+				return _Utils_Tuple2(impl.init, $elm$core$Platform$Cmd$none);
+			},
+			subscriptions: function (_v1) {
+				return $elm$core$Platform$Sub$none;
+			},
+			update: F2(
+				function (msg, model) {
 					return _Utils_Tuple2(
-						model,
-						$elm$browser$Browser$Navigation$load(
-							$elm$url$Url$toString(url)));
-				} else {
-					var href = urlRequest.a;
-					return _Utils_Tuple2(
-						model,
-						$elm$browser$Browser$Navigation$load(href));
-				}
-			case 'UrlChanged':
-				var url = msg.a;
-				return _Utils_Tuple2(
-					_Utils_update(
-						model,
-						{url: url}),
-					$elm$browser$Browser$Navigation$load(
-						$elm$url$Url$toString(url)));
-			default:
-				return _Utils_Tuple2(
-					model,
-					$author$project$ThankYou$Main$goBack(''));
-		}
-	});
+						A2(impl.update, msg, model),
+						$elm$core$Platform$Cmd$none);
+				}),
+			view: impl.view
+		});
+};
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Helpers$headerMargin = 10;
-var $author$project$ThankYou$Main$GoBack = {$: 'GoBack'};
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
-var $elm$html$Html$button = _VirtualDom_node('button');
+var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
@@ -5266,281 +5177,195 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 'Normal', a: a};
-};
-var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var $elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var $elm$html$Html$Events$onClick = function (msg) {
-	return A2(
-		$elm$html$Html$Events$on,
-		'click',
-		$elm$json$Json$Decode$succeed(msg));
-};
-var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $elm$html$Html$p = _VirtualDom_node('p');
-var $elm$html$Html$span = _VirtualDom_node('span');
-var $author$project$Team$Team$imagePath = '/assets/Team/';
-var $author$project$Team$Team$trevor = {description: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), image: $author$project$Team$Team$imagePath + 'TrevorRothaus.jpeg', initials: '', name: 'Trevor Rothaus', position: 'CEO', socials: _List_Nil};
-var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
-var $author$project$Helpers$darkPurple = '#B99EDA';
-var $elm$html$Html$img = _VirtualDom_node('img');
-var $elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
-var $author$project$Team$Main$viewImage = F2(
-	function (image, initials) {
-		return (image === '') ? A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'position', 'relative'),
-					A2($elm$html$Html$Attributes$style, 'width', '52px'),
-					A2($elm$html$Html$Attributes$style, 'height', '52px'),
-					A2($elm$html$Html$Attributes$style, 'border-radius', '30px'),
-					A2($elm$html$Html$Attributes$style, 'border', '1px solid #777'),
-					A2($elm$html$Html$Attributes$style, 'background-color', $author$project$Helpers$darkPurple)
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
-							A2($elm$html$Html$Attributes$style, 'top', '50%'),
-							A2($elm$html$Html$Attributes$style, 'left', '50%'),
-							A2($elm$html$Html$Attributes$style, 'transform', 'translate(-50%, -50%)')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text(initials)
-						]))
-				])) : A2(
-			$elm$html$Html$img,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'width', '52px'),
-					A2($elm$html$Html$Attributes$style, 'height', '52px'),
-					A2($elm$html$Html$Attributes$style, 'border-radius', '30px'),
-					A2($elm$html$Html$Attributes$style, 'border', '1px solid #777'),
-					A2($elm$html$Html$Attributes$style, 'object-fit', 'cover'),
-					$elm$html$Html$Attributes$src(image),
-					$elm$html$Html$Attributes$alt(''),
-					A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true')
-				]),
-			_List_Nil);
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
 	});
-var $author$project$Team$Main$viewPersonImage = function (person) {
-	return A2($author$project$Team$Main$viewImage, person.image, person.initials);
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
+var $elm$html$Html$br = _VirtualDom_node('br');
+var $elm$html$Html$Attributes$height = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
 };
-var $author$project$ThankYou$Main$viewThankYou = A2(
-	$elm$html$Html$div,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Hello, I am Trevor Rothaus, found of Catholic Stories for Children. I want to personally thank you for connecting with us! We are thrilled to have you on board.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('In the coming minutes, look out for an email containing your free printable. Also, I would like to keep you in the loop regarding our latest animations and updates. We have so many exciting projects coming up to teach the Catholic faith to young people!')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('font-bold')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(' I deeply value your thoughts and opinions, as they play a crucial role in shaping the content we develop.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('font-bold underline')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('That being said, I would enjoy having a conversation with you.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(' You will find below my calendar. Please schedule a time that works best for you. During our talk, I would love to hear your feedback, suggestions, resources that you would like, and any specific topics or themes you would like us to explore further.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Your input will directly contribute to the creation of animations and resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Catholic Stories for Children.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Thank you and may God bless you,')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Trevor Rothaus')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('CEO - Catholic Stories for Children')
-						])),
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$author$project$Team$Main$viewPersonImage($author$project$Team$Team$trevor)
-						]))
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('calendly-inline-widget'),
-					A2($elm$html$Html$Attributes$style, 'min-width', '320px'),
-					A2($elm$html$Html$Attributes$style, 'height', '900px'),
-					A2($elm$html$Html$Attributes$attribute, 'data-url', 'https://calendly.com/csc-trevor/30min')
-				]),
-			_List_Nil)
-		]));
-var $author$project$ThankYou$Main$viewBody = A2(
+var $elm$json$Json$Encode$bool = _Json_wrap;
+var $elm$html$Html$Attributes$boolProperty = F2(
+	function (key, bool) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$bool(bool));
+	});
+var $elm$html$Html$Attributes$hidden = $elm$html$Html$Attributes$boolProperty('hidden');
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$virtual_dom$VirtualDom$property = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_property,
+			_VirtualDom_noInnerHtmlOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$property = $elm$virtual_dom$VirtualDom$property;
+var $elm$html$Html$span = _VirtualDom_node('span');
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
+var $elm$html$Html$Attributes$width = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'width',
+		$elm$core$String$fromInt(n));
+};
+var $author$project$Contact$Main$viewContactInfo = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
-			$elm$html$Html$Attributes$class('bg-[#FEF7F4]')
+			$elm$html$Html$Attributes$class('text-center')
 		]),
 	_List_fromArray(
 		[
 			A2(
 			$elm$html$Html$div,
+			_List_Nil,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('max-w-5xl m-auto p-10')
+					A2(
+					$elm$html$Html$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Please reach out.'),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil),
+							$elm$html$Html$text('I love to hear from you!')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'anywhere'),
+							$elm$html$Html$Attributes$class('mt-3 lg:mt-5')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'display', 'inline-block')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('trevor'),
+									A2(
+									$elm$html$Html$span,
+									_List_Nil,
+									_List_fromArray(
+										[
+											$elm$html$Html$text('@')
+										]))
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true'),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'innerHTML',
+									$elm$json$Json$Encode$string('🍯'))
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true'),
+									A2(
+									$elm$html$Html$Attributes$property,
+									'innerHTML',
+									$elm$json$Json$Encode$string('spam@catholicstoriesforchildren.com'))
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$height(0),
+									$elm$html$Html$Attributes$width(0),
+									A2($elm$html$Html$Attributes$style, 'display', 'none'),
+									$elm$html$Html$Attributes$hidden(true)
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('spam@catholicstoriesforchildren.com')
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('catholicstoriesforchildren'),
+									A2(
+									$elm$html$Html$span,
+									_List_Nil,
+									_List_fromArray(
+										[
+											$elm$html$Html$text('.'),
+											A2(
+											$elm$html$Html$span,
+											_List_Nil,
+											_List_fromArray(
+												[
+													$elm$html$Html$text('com')
+												]))
+										]))
+								]))
+						]))
+				]))
+		]));
+var $author$project$Contact$Main$viewBody = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('h-screen'),
+			$elm$html$Html$Attributes$class('bg-[#FEF7F4]'),
+			$elm$html$Html$Attributes$class('p-10')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$h1,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('text-center'),
+					$elm$html$Html$Attributes$class('my-10')
 				]),
 			_List_fromArray(
 				[
-					A2(
-					$elm$html$Html$button,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-							$elm$html$Html$Attributes$class('inline-block text-lg rounded p-3 bg-[#9200B3] text-white cursor-pointer'),
-							$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'back button'),
-							$elm$html$Html$Events$onClick($author$project$ThankYou$Main$GoBack)
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Go Back')
-						])),
-					A2(
-					$elm$html$Html$h1,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('text-center'),
-							$elm$html$Html$Attributes$class('my-10')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Thank you for connecting with Catholic Stories for Children!')
-						])),
-					$author$project$ThankYou$Main$viewThankYou
-				]))
+					$elm$html$Html$text('Contact Us')
+				])),
+			$author$project$Contact$Main$viewContactInfo
 		]));
 var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$html$Html$footer = _VirtualDom_node('footer');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
 var $author$project$Footer$toPx = function (x) {
@@ -5806,24 +5631,26 @@ var $author$project$Header$viewSubpageHeader = F2(
 					rightHandSide(height)
 				]));
 	});
-var $author$project$ThankYou$Main$view = function (model) {
-	return {
-		body: _List_fromArray(
-			[
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2($author$project$Header$viewSubpageHeader, 'Thank You', $author$project$Helpers$headerMargin),
-						$author$project$ThankYou$Main$viewBody,
-						$author$project$Footer$viewFooter
-					]))
-			]),
-		title: 'Thank You'
-	};
-};
-var $author$project$ThankYou$Main$main = $elm$browser$Browser$application(
-	{init: $author$project$ThankYou$Main$init, onUrlChange: $author$project$ThankYou$Main$UrlChanged, onUrlRequest: $author$project$ThankYou$Main$LinkClicked, subscriptions: $author$project$ThankYou$Main$subscriptions, update: $author$project$ThankYou$Main$update, view: $author$project$ThankYou$Main$view});
-_Platform_export({'ThankYou':{'Main':{'init':$author$project$ThankYou$Main$main(
+var $author$project$Contact$Main$view = A2(
+	$elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2($author$project$Header$viewSubpageHeader, 'Contact', $author$project$Helpers$headerMargin),
+			$author$project$Contact$Main$viewBody,
+			$author$project$Footer$viewFooter
+		]));
+var $author$project$Contact$Main$main = $elm$browser$Browser$sandbox(
+	{
+		init: {},
+		update: function (_v0) {
+			return function (model) {
+				return model;
+			};
+		},
+		view: function (_v1) {
+			return $author$project$Contact$Main$view;
+		}
+	});
+_Platform_export({'Contact':{'Main':{'init':$author$project$Contact$Main$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}}});}(this));

@@ -4355,12 +4355,6 @@ function _Browser_load(url)
 		}
 	}));
 }
-var $author$project$ThankYou$Main$LinkClicked = function (a) {
-	return {$: 'LinkClicked', a: a};
-};
-var $author$project$ThankYou$Main$UrlChanged = function (a) {
-	return {$: 'UrlChanged', a: a};
-};
 var $elm$core$Basics$EQ = {$: 'EQ'};
 var $elm$core$Basics$GT = {$: 'GT'};
 var $elm$core$Basics$LT = {$: 'LT'};
@@ -5149,114 +5143,29 @@ var $elm$core$Task$perform = F2(
 			$elm$core$Task$Perform(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
-var $elm$browser$Browser$application = _Browser_application;
-var $author$project$ThankYou$Main$Model = F2(
-	function (key, url) {
-		return {key: key, url: url};
-	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
-var $author$project$ThankYou$Main$init = F3(
-	function (flags, url, key) {
-		return _Utils_Tuple2(
-			A2($author$project$ThankYou$Main$Model, key, url),
-			$elm$core$Platform$Cmd$none);
-	});
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
-var $author$project$ThankYou$Main$subscriptions = function (_v0) {
-	return $elm$core$Platform$Sub$none;
+var $elm$browser$Browser$sandbox = function (impl) {
+	return _Browser_element(
+		{
+			init: function (_v0) {
+				return _Utils_Tuple2(impl.init, $elm$core$Platform$Cmd$none);
+			},
+			subscriptions: function (_v1) {
+				return $elm$core$Platform$Sub$none;
+			},
+			update: F2(
+				function (msg, model) {
+					return _Utils_Tuple2(
+						A2(impl.update, msg, model),
+						$elm$core$Platform$Cmd$none);
+				}),
+			view: impl.view
+		});
 };
 var $elm$json$Json$Encode$string = _Json_wrap;
-var $author$project$ThankYou$Main$goBack = _Platform_outgoingPort('goBack', $elm$json$Json$Encode$string);
-var $elm$browser$Browser$Navigation$load = _Browser_load;
-var $elm$url$Url$addPort = F2(
-	function (maybePort, starter) {
-		if (maybePort.$ === 'Nothing') {
-			return starter;
-		} else {
-			var port_ = maybePort.a;
-			return starter + (':' + $elm$core$String$fromInt(port_));
-		}
-	});
-var $elm$url$Url$addPrefixed = F3(
-	function (prefix, maybeSegment, starter) {
-		if (maybeSegment.$ === 'Nothing') {
-			return starter;
-		} else {
-			var segment = maybeSegment.a;
-			return _Utils_ap(
-				starter,
-				_Utils_ap(prefix, segment));
-		}
-	});
-var $elm$url$Url$toString = function (url) {
-	var http = function () {
-		var _v0 = url.protocol;
-		if (_v0.$ === 'Http') {
-			return 'http://';
-		} else {
-			return 'https://';
-		}
-	}();
-	return A3(
-		$elm$url$Url$addPrefixed,
-		'#',
-		url.fragment,
-		A3(
-			$elm$url$Url$addPrefixed,
-			'?',
-			url.query,
-			_Utils_ap(
-				A2(
-					$elm$url$Url$addPort,
-					url.port_,
-					_Utils_ap(http, url.host)),
-				url.path)));
-};
-var $author$project$ThankYou$Main$update = F2(
-	function (msg, model) {
-		switch (msg.$) {
-			case 'LinkClicked':
-				var urlRequest = msg.a;
-				if (urlRequest.$ === 'Internal') {
-					var url = urlRequest.a;
-					return _Utils_Tuple2(
-						model,
-						$elm$browser$Browser$Navigation$load(
-							$elm$url$Url$toString(url)));
-				} else {
-					var href = urlRequest.a;
-					return _Utils_Tuple2(
-						model,
-						$elm$browser$Browser$Navigation$load(href));
-				}
-			case 'UrlChanged':
-				var url = msg.a;
-				return _Utils_Tuple2(
-					_Utils_update(
-						model,
-						{url: url}),
-					$elm$browser$Browser$Navigation$load(
-						$elm$url$Url$toString(url)));
-			default:
-				return _Utils_Tuple2(
-					model,
-					$author$project$ThankYou$Main$goBack(''));
-		}
-	});
-var $elm$html$Html$div = _VirtualDom_node('div');
-var $author$project$Helpers$headerMargin = 10;
-var $author$project$ThankYou$Main$GoBack = {$: 'GoBack'};
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
-var $elm$html$Html$button = _VirtualDom_node('button');
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
@@ -5265,565 +5174,85 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			$elm$json$Json$Encode$string(string));
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
-var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 'Normal', a: a};
-};
-var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var $elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var $elm$html$Html$Events$onClick = function (msg) {
-	return A2(
-		$elm$html$Html$Events$on,
-		'click',
-		$elm$json$Json$Decode$succeed(msg));
-};
-var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $elm$html$Html$p = _VirtualDom_node('p');
-var $elm$html$Html$span = _VirtualDom_node('span');
-var $author$project$Team$Team$imagePath = '/assets/Team/';
-var $author$project$Team$Team$trevor = {description: 'Trevor is a former software engineer. He is currently studying for a ' + ('Masters in Theology at the Franciscan University of Stuebenville. ' + 'He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love.'), image: $author$project$Team$Team$imagePath + 'TrevorRothaus.jpeg', initials: '', name: 'Trevor Rothaus', position: 'CEO', socials: _List_Nil};
-var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
-var $author$project$Helpers$darkPurple = '#B99EDA';
-var $elm$html$Html$img = _VirtualDom_node('img');
-var $elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
-var $author$project$Team$Main$viewImage = F2(
-	function (image, initials) {
-		return (image === '') ? A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'position', 'relative'),
-					A2($elm$html$Html$Attributes$style, 'width', '52px'),
-					A2($elm$html$Html$Attributes$style, 'height', '52px'),
-					A2($elm$html$Html$Attributes$style, 'border-radius', '30px'),
-					A2($elm$html$Html$Attributes$style, 'border', '1px solid #777'),
-					A2($elm$html$Html$Attributes$style, 'background-color', $author$project$Helpers$darkPurple)
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
-							A2($elm$html$Html$Attributes$style, 'top', '50%'),
-							A2($elm$html$Html$Attributes$style, 'left', '50%'),
-							A2($elm$html$Html$Attributes$style, 'transform', 'translate(-50%, -50%)')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text(initials)
-						]))
-				])) : A2(
-			$elm$html$Html$img,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'width', '52px'),
-					A2($elm$html$Html$Attributes$style, 'height', '52px'),
-					A2($elm$html$Html$Attributes$style, 'border-radius', '30px'),
-					A2($elm$html$Html$Attributes$style, 'border', '1px solid #777'),
-					A2($elm$html$Html$Attributes$style, 'object-fit', 'cover'),
-					$elm$html$Html$Attributes$src(image),
-					$elm$html$Html$Attributes$alt(''),
-					A2($elm$html$Html$Attributes$attribute, 'ariaHidden', 'true')
-				]),
-			_List_Nil);
-	});
-var $author$project$Team$Main$viewPersonImage = function (person) {
-	return A2($author$project$Team$Main$viewImage, person.image, person.initials);
-};
-var $author$project$ThankYou$Main$viewThankYou = A2(
-	$elm$html$Html$div,
-	_List_Nil,
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Hello, I am Trevor Rothaus, found of Catholic Stories for Children. I want to personally thank you for connecting with us! We are thrilled to have you on board.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('In the coming minutes, look out for an email containing your free printable. Also, I would like to keep you in the loop regarding our latest animations and updates. We have so many exciting projects coming up to teach the Catholic faith to young people!')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('font-bold')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(' I deeply value your thoughts and opinions, as they play a crucial role in shaping the content we develop.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('font-bold underline')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('That being said, I would enjoy having a conversation with you.')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text(' You will find below my calendar. Please schedule a time that works best for you. During our talk, I would love to hear your feedback, suggestions, resources that you would like, and any specific topics or themes you would like us to explore further.')
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Your input will directly contribute to the creation of animations and resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Catholic Stories for Children.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('my-4')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Thank you and may God bless you,')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Trevor Rothaus')
-						])),
-					A2(
-					$elm$html$Html$span,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('block')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('CEO - Catholic Stories for Children')
-						])),
-					A2(
-					$elm$html$Html$div,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$author$project$Team$Main$viewPersonImage($author$project$Team$Team$trevor)
-						]))
-				])),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('calendly-inline-widget'),
-					A2($elm$html$Html$Attributes$style, 'min-width', '320px'),
-					A2($elm$html$Html$Attributes$style, 'height', '900px'),
-					A2($elm$html$Html$Attributes$attribute, 'data-url', 'https://calendly.com/csc-trevor/30min')
-				]),
-			_List_Nil)
-		]));
-var $author$project$ThankYou$Main$viewBody = A2(
-	$elm$html$Html$div,
-	_List_fromArray(
-		[
-			$elm$html$Html$Attributes$class('bg-[#FEF7F4]')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('max-w-5xl m-auto p-10')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$button,
-					_List_fromArray(
-						[
-							A2($elm$html$Html$Attributes$style, 'box-shadow', '#777 1px 1px 5px'),
-							$elm$html$Html$Attributes$class('inline-block text-lg rounded p-3 bg-[#9200B3] text-white cursor-pointer'),
-							$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'back button'),
-							$elm$html$Html$Events$onClick($author$project$ThankYou$Main$GoBack)
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Go Back')
-						])),
-					A2(
-					$elm$html$Html$h1,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('text-center'),
-							$elm$html$Html$Attributes$class('my-10')
-						]),
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Thank you for connecting with Catholic Stories for Children!')
-						])),
-					$author$project$ThankYou$Main$viewThankYou
-				]))
-		]));
+var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$a = _VirtualDom_node('a');
-var $elm$html$Html$footer = _VirtualDom_node('footer');
+var $elm$core$Basics$clamp = F3(
+	function (low, high, number) {
+		return (_Utils_cmp(number, low) < 0) ? low : ((_Utils_cmp(number, high) > 0) ? high : number);
+	});
+var $elm$core$String$fromFloat = _String_fromNumber;
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
 		'href',
 		_VirtualDom_noJavaScriptUri(url));
 };
+var $elm$html$Html$span = _VirtualDom_node('span');
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
-var $author$project$Footer$toPx = function (x) {
-	return $elm$core$String$fromInt(x) + 'px';
-};
-var $author$project$Footer$viewFooter = A2(
-	$elm$html$Html$footer,
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$Attributes$style,
-			'padding',
-			$author$project$Footer$toPx(30)),
-			A2($elm$html$Html$Attributes$style, 'background-color', 'black'),
-			A2($elm$html$Html$Attributes$style, 'color', 'white'),
-			A2($elm$html$Html$Attributes$style, 'transform-style', 'preserve-3d')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('flex items-center gap-2.5')
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$html$Html$span,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$elm$html$Html$text('Follow us on')
-						])),
-					A2(
-					$elm$html$Html$a,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$href('https://www.facebook.com/catholicstoriesforchildren'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'CSC Facebook Page'),
-							$elm$html$Html$Attributes$target('_blank')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$img,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('w-10 h-10'),
-									$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/f_logo_RGB-Blue_250_3vs-yhXer.png?updatedAt=1684277030198'),
-									$elm$html$Html$Attributes$alt('Facebook')
-								]),
-							_List_Nil)
-						])),
-					A2(
-					$elm$html$Html$a,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$href('https://www.instagram.com/catholicstoriesforchildren/'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'CSC Instagram Page'),
-							$elm$html$Html$Attributes$target('_blank')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$img,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('w-10 h-10'),
-									$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/Instagram_Glyph_Gradient_kFoMs9jIr.png?updatedAt=1684277127293'),
-									$elm$html$Html$Attributes$alt('Instagram')
-								]),
-							_List_Nil)
-						]))
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Copyright © 2023 Catholic Stories for Children. All rights reserved.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_Nil,
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
-				]))
-		]));
-var $elm$html$Html$header = _VirtualDom_node('header');
-var $elm$html$Html$nav = _VirtualDom_node('nav');
-var $author$project$Header$viewNavButton = F4(
-	function (height, link, linkTarget, page) {
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$Navigation$Main$viewNavButton = F4(
+	function (index, linkTarget, link, page) {
+		var animationTime = $elm$core$String$fromFloat(
+			A3($elm$core$Basics$clamp, 1, 3, index * 0.5));
 		return A2(
 			$elm$html$Html$a,
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$href(link),
-					$elm$html$Html$Attributes$class('flex items-center justify-center'),
 					$elm$html$Html$Attributes$class('hover:bg-csc-lightpurple'),
-					$elm$html$Html$Attributes$class('hover:border-b-2 hover:border-gray-700'),
+					$elm$html$Html$Attributes$class('px-10 py-5'),
 					$elm$html$Html$Attributes$class('rounded-t'),
-					$elm$html$Html$Attributes$class('text-lg'),
-					$elm$html$Html$Attributes$class('h-[60px] h-[' + (height + ']')),
-					$elm$html$Html$Attributes$class('w-full'),
-					A2($elm$html$Html$Attributes$attribute, 'aria-label', page),
+					$elm$html$Html$Attributes$class('text-4xl text-semibold'),
+					A2($elm$html$Html$Attributes$style, 'animation', 'fadeIn ' + (animationTime + 's')),
 					$elm$html$Html$Attributes$target(linkTarget)
 				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text(page)
+					A2(
+					$elm$html$Html$span,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('px-10 m-auto')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(page)
+						]))
 				]));
 	});
-var $author$project$Header$desktopNavigation = function (height) {
-	return A2(
-		$elm$html$Html$nav,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('h-full w-full grid grid-cols-6 content-center justify-items-center')
-			]),
-		_List_fromArray(
-			[
-				A4($author$project$Header$viewNavButton, height, '/animations', '_self', 'Animations'),
-				A4($author$project$Header$viewNavButton, height, 'https://www.etsy.com/shop/CatholicStories', '_blank', 'Shop'),
-				A4($author$project$Header$viewNavButton, height, '/resources', '_self', 'Resources'),
-				A4($author$project$Header$viewNavButton, height, '/contact', '_self', 'Contact'),
-				A4($author$project$Header$viewNavButton, height, '/give', '_self', 'Give'),
-				A4($author$project$Header$viewNavButton, height, '/team', '_self', 'About Us')
-			]));
-};
-var $author$project$Header$hamburgerMenu = A2(
-	$elm$html$Html$a,
+var $author$project$Navigation$Main$view = A2(
+	$elm$html$Html$div,
 	_List_fromArray(
 		[
-			$elm$html$Html$Attributes$href('/navigation'),
-			$elm$html$Html$Attributes$class('space-y-2'),
-			A2($elm$html$Html$Attributes$attribute, 'aria-label', 'menu')
+			$elm$html$Html$Attributes$class('min-h-screen'),
+			$elm$html$Html$Attributes$class('flex flex-col'),
+			$elm$html$Html$Attributes$class('bg-csc-lightpurple'),
+			$elm$html$Html$Attributes$class('pt-5')
 		]),
 	_List_fromArray(
 		[
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('w-8 h-0.5 m-auto bg-gray-600')
-				]),
-			_List_Nil),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('w-8 h-0.5 m-auto bg-gray-600')
-				]),
-			_List_Nil),
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('w-8 h-0.5 m-auto bg-gray-600')
-				]),
-			_List_Nil)
+			A4($author$project$Navigation$Main$viewNavButton, 1, '_self', '/', 'Home'),
+			A4($author$project$Navigation$Main$viewNavButton, 2, '_self', '/team', 'About Us'),
+			A4($author$project$Navigation$Main$viewNavButton, 3, '_self', '/animations', 'Animations'),
+			A4($author$project$Navigation$Main$viewNavButton, 4, '_self', '/contact', 'Contact'),
+			A4($author$project$Navigation$Main$viewNavButton, 5, '_self', '/resources', 'Resources'),
+			A4($author$project$Navigation$Main$viewNavButton, 6, '_self', '/give', 'Give'),
+			A4($author$project$Navigation$Main$viewNavButton, 7, '_blank', 'https://www.etsy.com/shop/CatholicStories', 'Shop')
 		]));
-var $author$project$Header$navigation = function (height) {
-	return A2(
-		$elm$html$Html$div,
-		_List_fromArray(
-			[
-				$elm$html$Html$Attributes$class('w-full')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('lg:hidden')
-					]),
-				_List_fromArray(
-					[$author$project$Header$hamburgerMenu])),
-				A2(
-				$elm$html$Html$div,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$class('hidden lg:block w-full')
-					]),
-				_List_fromArray(
-					[
-						$author$project$Header$desktopNavigation(height)
-					]))
-			]));
-};
-var $author$project$Header$viewHeaderTitle = function (title) {
-	return A2(
-		$elm$html$Html$a,
-		_List_fromArray(
-			[
-				A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-				$elm$html$Html$Attributes$class('colorDarkGray'),
-				$elm$html$Html$Attributes$class('invisible md:visible'),
-				$elm$html$Html$Attributes$class('justify-self-start'),
-				$elm$html$Html$Attributes$href('/')
-			]),
-		_List_fromArray(
-			[
-				A2(
-				$elm$html$Html$h1,
-				_List_fromArray(
-					[
-						A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
-						A2($elm$html$Html$Attributes$style, 'margin', '0px'),
-						$elm$html$Html$Attributes$class('text-[0px] md:text-2xl')
-					]),
-				_List_fromArray(
-					[
-						$elm$html$Html$text('Catholic Stories for Children')
-					]))
-			]));
-};
-var $author$project$Logo$logo = A2(
-	$elm$html$Html$img,
-	_List_fromArray(
-		[
-			$elm$html$Html$Attributes$src('/assets/logo_solid.svg'),
-			A2($elm$html$Html$Attributes$style, 'height', '30px'),
-			$elm$html$Html$Attributes$alt(''),
-			A2($elm$html$Html$Attributes$style, 'vertical-align', 'middle')
-		]),
-	_List_Nil);
-var $author$project$Header$viewLogo = A2(
-	$elm$html$Html$a,
-	_List_fromArray(
-		[
-			A2($elm$html$Html$Attributes$style, 'text-decoration', 'none'),
-			$elm$html$Html$Attributes$class('colorDarkGray'),
-			$elm$html$Html$Attributes$href('/'),
-			A2($elm$html$Html$Attributes$attribute, 'aria-label', 'home')
-		]),
-	_List_fromArray(
-		[$author$project$Logo$logo]));
-var $author$project$Header$viewSubpageHeader = F2(
-	function (currentPage, leftMargin) {
-		var isHomePage = currentPage === 'Catholic Stories for Children';
-		var _v0 = isHomePage ? _Utils_Tuple3('111px', $author$project$Header$navigation, 'grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]') : _Utils_Tuple3('60px', $author$project$Header$navigation, 'grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]');
-		var height = _v0.a;
-		var rightHandSide = _v0.b;
-		var gridColsClass = _v0.c;
-		return A2(
-			$elm$html$Html$header,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'background-color', '#3d5d75'),
-					A2($elm$html$Html$Attributes$style, 'background-image', 'linear-gradient(130deg, #9DE2EB , #EBD6F1)'),
-					$elm$html$Html$Attributes$class('h-[60px] md:h-[' + (height + ']')),
-					$elm$html$Html$Attributes$class('colorDarkGray'),
-					$elm$html$Html$Attributes$class('grid items-center justify-items-center'),
-					$elm$html$Html$Attributes$class(gridColsClass)
-				]),
-			_List_fromArray(
-				[
-					$author$project$Header$viewLogo,
-					$author$project$Header$viewHeaderTitle(currentPage),
-					rightHandSide(height)
-				]));
+var $author$project$Navigation$Main$main = $elm$browser$Browser$sandbox(
+	{
+		init: {},
+		update: function (_v0) {
+			return function (model) {
+				return model;
+			};
+		},
+		view: function (_v1) {
+			return $author$project$Navigation$Main$view;
+		}
 	});
-var $author$project$ThankYou$Main$view = function (model) {
-	return {
-		body: _List_fromArray(
-			[
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2($author$project$Header$viewSubpageHeader, 'Thank You', $author$project$Helpers$headerMargin),
-						$author$project$ThankYou$Main$viewBody,
-						$author$project$Footer$viewFooter
-					]))
-			]),
-		title: 'Thank You'
-	};
-};
-var $author$project$ThankYou$Main$main = $elm$browser$Browser$application(
-	{init: $author$project$ThankYou$Main$init, onUrlChange: $author$project$ThankYou$Main$UrlChanged, onUrlRequest: $author$project$ThankYou$Main$LinkClicked, subscriptions: $author$project$ThankYou$Main$subscriptions, update: $author$project$ThankYou$Main$update, view: $author$project$ThankYou$Main$view});
-_Platform_export({'ThankYou':{'Main':{'init':$author$project$ThankYou$Main$main(
+_Platform_export({'Navigation':{'Main':{'init':$author$project$Navigation$Main$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}}});}(this));

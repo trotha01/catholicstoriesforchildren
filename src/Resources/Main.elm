@@ -6,7 +6,6 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.String
 import Resources.Helpers exposing (..)
 import Signup exposing (..)
 
@@ -51,9 +50,9 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Resources" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "Resources" headerMargin
         , viewBody model
-        , viewFooter |> Html.String.toHtml
+        , viewFooter
         ]
 
 

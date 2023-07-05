@@ -31,16 +31,16 @@ elmmake() {
 
 pair_list=(
   src/Main.elm elm.js
-  src/About/PrivacyPolicy/Main.elm privacyPolicyElm.js
+  src/About/PrivacyPolicy/Main.elm about/privacy-policy/elm.js
   src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
   src/Animations/HailMary/Main.elm animations/hailmary/elm.js
   src/Animations/Main.elm animations/elm.js
   src/Animations/StMichael/Main.elm animations/stmichael/elm.js
-  src/Contact/Main.elm contactElm.js
+  src/Contact/Main.elm contact/elm.js
   src/FeastDayActivities/Main.elm feastdayactivities/elm.js
-  src/Give/Main.elm giveElm.js
-  src/Navigation/Main.elm navigationElm.js
-  src/Newsroom/Main.elm newsroomElm.js
+  src/Give/Main.elm give/elm.js
+  src/Navigation/Main.elm navigation/elm.js
+  src/Newsroom/Main.elm newsroom/elm.js
   src/Prayers/Main.elm prayers/elm.js
   src/Resources/Books/Main.elm resources/books/elm.js
   src/Resources/Main.elm resources/elm.js
@@ -49,7 +49,7 @@ pair_list=(
   src/Resources/Subscriptions/Main.elm resources/subscriptions/elm.js
   src/Resources/Videos/Main.elm resources/videos/elm.js
   src/Saints/Main.elm saints/elm.js
-  src/Team/Main.elm teamElm.js
+  src/Team/Main.elm team/elm.js
   src/ThankYou/Main.elm thankyou/elm.js
 )
 

@@ -1,8 +1,8 @@
 module Header exposing (viewHeader, viewSubpageHeader)
 
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Logo exposing (logo)
 
 
@@ -10,12 +10,12 @@ import Logo exposing (logo)
 -- MAIN
 
 
-viewHeader : String -> Int -> Html.String.Html msg
+viewHeader : String -> Int -> Html msg
 viewHeader currentPage leftMargin =
     viewSubpageHeader currentPage leftMargin
 
 
-viewSubpageHeader : String -> Int -> Html.String.Html msg
+viewSubpageHeader : String -> Int -> Html msg
 viewSubpageHeader currentPage leftMargin =
     let
         isHomePage =
@@ -145,7 +145,7 @@ backButton =
         ]
 
 
-viewLogo : Html.String.Html msg
+viewLogo : Html msg
 viewLogo =
     a
         [ style "text-decoration" "none"

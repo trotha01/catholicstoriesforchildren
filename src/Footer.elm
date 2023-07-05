@@ -1,7 +1,7 @@
 module Footer exposing (..)
 
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 toPx : Int -> String
@@ -9,7 +9,7 @@ toPx x =
     String.fromInt x ++ "px"
 
 
-viewFooter : Html.String.Html msg
+viewFooter : Html msg
 viewFooter =
     footer
         [ style "padding" (toPx 30)

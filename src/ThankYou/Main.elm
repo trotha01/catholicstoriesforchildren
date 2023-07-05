@@ -8,7 +8,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Html.String
 import Team.Main exposing (viewPersonImage)
 import Team.Team exposing (trevor)
 import Url
@@ -74,9 +73,9 @@ view model =
     , body =
         [ div
             []
-            [ viewSubpageHeader "Thank You" headerMargin |> Html.String.toHtml
+            [ viewSubpageHeader "Thank You" headerMargin
             , viewBody
-            , viewFooter |> Html.String.toHtml
+            , viewFooter
             ]
         ]
     }
@@ -133,7 +132,7 @@ viewThankYou =
             , span [ class "block" ] [ text "Trevor Rothaus" ]
             , span [ class "block" ] [ text "CEO - Catholic Stories for Children" ]
             , div []
-                [ viewPersonImage trevor |> Html.String.toHtml
+                [ viewPersonImage trevor
                 ]
             ]
         , div

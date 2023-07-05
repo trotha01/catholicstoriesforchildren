@@ -10,7 +10,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
-import Html.String
 import Saints.SaintHelpers exposing (..)
 import Saints.SaintList as SaintList exposing (Saint)
 import Signup exposing (..)
@@ -132,14 +131,14 @@ view model =
     , body =
         [ div
             []
-            [ viewSubpageHeader "Saints" headerMargin |> Html.String.toHtml
+            [ viewSubpageHeader "Saints" headerMargin
             , case currentRoute of
                 Just (SaintRoute s) ->
                     viewBody model s
 
                 Nothing ->
                     viewBody model Nothing
-            , viewFooter |> Html.String.toHtml
+            , viewFooter
             ]
         ]
     }

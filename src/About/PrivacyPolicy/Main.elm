@@ -4,8 +4,8 @@ import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 
@@ -23,9 +23,6 @@ main =
         , view =
             \_ ->
                 view
-                    |> toString 0
-                    |> text
-                    |> toHtml
         , update = \_ -> \model -> model
         }
 

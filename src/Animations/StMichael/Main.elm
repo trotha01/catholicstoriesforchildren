@@ -8,7 +8,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Html.String
 import Signup exposing (..)
 
 
@@ -63,9 +62,9 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "St Michael" headerMargin |> Html.String.toHtml
+        [ viewSubpageHeader "St Michael" headerMargin
         , viewBody model
-        , viewFooter |> Html.String.toHtml
+        , viewFooter
         ]
 
 

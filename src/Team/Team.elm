@@ -1,8 +1,8 @@
 module Team.Team exposing (..)
 
 import Helpers exposing (..)
-import Html.String exposing (..)
-import Html.String.Attributes exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Ordering
 
 

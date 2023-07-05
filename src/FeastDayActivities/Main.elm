@@ -22,7 +22,6 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.String
 import Regex
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
 import Saints.SaintList as SaintList
@@ -168,9 +167,9 @@ view model =
             , style "background-color" "#FEF7F4"
             , id "body"
             ]
-            [ viewSubpageHeader "Feast Day Activities" headerMargin |> Html.String.toHtml
+            [ viewSubpageHeader "Feast Day Activities" headerMargin
             , viewBody model currentRoute
-            , viewFooter |> Html.String.toHtml
+            , viewFooter
             ]
         ]
     }

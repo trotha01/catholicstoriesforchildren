@@ -7,14 +7,13 @@ import Header exposing (viewHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.String
 import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
 import Resources.Helpers exposing (ResourceGroup)
 import Signup exposing (..)
 import Svg.Attributes exposing (d)
 import Team.Main exposing (viewPerson)
-import Team.Team exposing (fredrick, kelly, noeli, trevor)
+import Team.Team exposing (kelly, noeli, trevor)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Url
 
@@ -102,9 +101,9 @@ view model =
         [ div
             [ style "background-color" "#FEF7F4"
             ]
-            [ viewHeader "Catholic Stories for Children" headerMargin |> Html.String.toHtml
+            [ viewHeader "Catholic Stories for Children" headerMargin
             , viewBody model
-            , viewFooter |> Html.String.toHtml
+            , viewFooter
             ]
         ]
     }
@@ -228,9 +227,9 @@ viewTeam =
             [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]"
             , class "my-10"
             ]
-            [ viewPerson trevor |> Html.String.toHtml
-            , viewPerson noeli |> Html.String.toHtml
-            , viewPerson kelly |> Html.String.toHtml
+            [ viewPerson trevor
+            , viewPerson noeli
+            , viewPerson kelly
             ]
         , a
             [ href "/team"
@@ -362,10 +361,10 @@ viewTestimonials =
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
         , div [ class " md:flex md:overflow-x-auto" ]
-            [ div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson ainsleyRawlingsTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson camSmithTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson meganReisterTestimonial |> Html.String.toHtml ]
-            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson kellyBriggsTestimonial |> Html.String.toHtml ]
+            [ div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson ainsleyRawlingsTestimonial ]
+            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson camSmithTestimonial ]
+            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson meganReisterTestimonial ]
+            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson kellyBriggsTestimonial ]
             ]
         ]
 
@@ -492,7 +491,7 @@ viewNewsletter =
                 ]
                 [ text "Latest News" ]
             , div [ class "mt-10" ]
-                [ viewSignUp |> Html.String.toHtml
+                [ viewSignUp
                 ]
             ]
         ]
