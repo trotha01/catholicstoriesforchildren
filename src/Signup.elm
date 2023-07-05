@@ -80,51 +80,57 @@ view : Model -> Html Msg
 view model =
     div
         [ class "border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]"
-        , class "lg:grid lg:grid-cols-2"
+        , class "lg:grid lg:grid-cols-[_1fr_225px]"
         ]
-        [ div
-            [ class "text-center mb-5" ]
-            [ p
-                [ class "pb-5 pl-1 text-left"
+        [ div []
+            [ div
+                [ class "mb-5" ]
+                [ p
+                    [ class "pb-5 pl-1 text-left"
+                    ]
+                    [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
+                , div
+                    []
+                    [ input
+                        [ type_ "text"
+                        , placeholder "First Name"
+                        , attribute "aria-hidden" "true"
+                        , style "display" "none"
+                        ]
+                        []
+                    , input
+                        [ type_ "email"
+                        , placeholder "Email"
+                        , value model.email
+                        , onInput Email
+                        , onEnter Submit
+                        , attribute "required" "true"
+                        , style "padding" "10px 20px"
+                        , style "border-radius" "5px 0px 0px 5px"
+                        , style "box-shadow" "#777 1px 1px 5px"
+                        , class "w-[188px] md:w-[230px] h-[56px] text-lg"
+                        ]
+                        []
+                    , viewSubmitButton model
+                    , viewMessage model
+                    ]
                 ]
-                [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
-            , div
-                []
-                [ input
-                    [ type_ "text"
-                    , placeholder "First Name"
-                    , attribute "aria-hidden" "true"
-                    , style "display" "none"
+            , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]
+                [ p [] [ text "Get inspired:" ]
+                , ul [ class "ml-4" ]
+                    [ li [ class "pl-1" ] [ text " Top tips from parents on bringing kids to Mass." ]
+                    , li [ class "pl-1" ] [ text " Best strategies on preparing kids for a heavenly Mass experience." ]
+                    , li [ class "pl-1" ] [ text " Faith-based techniques to get kids engaged in Mass." ]
+                    , li [ class "pl-1" ] [ text " It's FREE! Empower kids to love Mass this week!" ]
                     ]
-                    []
-                , input
-                    [ type_ "email"
-                    , placeholder "Email"
-                    , value model.email
-                    , onInput Email
-                    , onEnter Submit
-                    , attribute "required" "true"
-                    , style "padding" "10px 20px"
-                    , style "border-radius" "5px 0px 0px 5px"
-                    , style "box-shadow" "#777 1px 1px 5px"
-                    , class "w-[188px] md:w-[230px] h-[56px] text-lg"
+                , p [ class "pt-4" ] [ text "We will also send you:" ]
+                , ul [ class "ml-4" ]
+                    [ li [ class "pl-1" ] [ text " Updates on the animations." ]
+                    , li [ class "pl-1" ] [ text " Future freebies!" ]
                     ]
-                    []
-                , viewSubmitButton model
-                , viewMessage model
                 ]
             ]
         , div [] [ viewSampleImage ]
-        , div [ class "text-left text-base col-span-2" ]
-            [ p [] [ text "Get inspired:" ]
-            , p [] [ text "🌟 Top tips from parents on bringing kids to Mass." ]
-            , p [] [ text "🌟 Best strategies on preparing kids for a heavenly Mass experience." ]
-            , p [] [ text "🌟 Faith-based techniques to get kids engaged in Mass." ]
-            , p [] [ text "🌟 It's FREE! Empower kids this week!" ]
-            , p [ class "pt-4" ] [ text "We will also send you:" ]
-            , p [] [ text "🌟 Updates on the animations." ]
-            , p [] [ text "🌟 Future freebies!" ]
-            ]
         ]
 
 
@@ -133,7 +139,7 @@ viewSampleImage =
     div [ class "flex justify-center" ]
         [ img
             [ class "rounded w-full max-w-[330px]"
-            , src "https://ik.imagekit.io/catholicstories/FREE_Mass_Guide_WbtXzqb2I.png?updatedAt=1687994011730"
+            , src "https://ik.imagekit.io/catholicstories/Free_Mass_Guide_v3_1__E6fGtEQBXY.png?updatedAt=1688592154908"
             ]
             []
         ]
