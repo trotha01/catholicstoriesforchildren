@@ -87,7 +87,7 @@ view model =
             [ p
                 [ class "pb-5 pl-1 text-left"
                 ]
-                [ text "Enter your email to grab our FREE Ultimate Guide for Bringing Kids to Mass." ]
+                [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
             , div
                 []
                 [ input

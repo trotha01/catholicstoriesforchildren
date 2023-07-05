@@ -190,7 +190,7 @@ moreAboutTheAnimation =
         , p [ class "my-3" ] [ text "Our animations are great for homeschooling, hybrid schooling, and traditional religious education." ]
         , p [ class "my-3" ] [ text "Here at Catholic Stories for Children, our animated stories cover prayer, including the Hail Mary prayer (above), the St Michael prayer, and the prayer to your Guardian Angel. These animations also explore the virtues, such as humility, faith, and compassion. Each story is carefully crafted to ensure that it is both engaging and educational." ]
         , p [ class "my-3" ] [ text "Prayer is tremendously important in our Catholic faith, and building a habit of prayer has much to offer children. By creating animated stories that teach Catholic prayers and reflect Catholic virtues and teachings, we can help children learn about the faith in a way that is both entertaining and informative. These stories can inspire children to live a life of faith, love, and compassion, just like Mother Mary did." ]
-        , p [ class "my-3 font-bold" ] [ text "To learn more about what we do here in teaching children the Catholic faith through animation, I invite you to receive this free guide on reconciliation for kids. Inside, kids will learn what it means to have a contrite heart, how to do an examination of conscience, what happens in confession step-by-step, and how penance helps us." ]
+        , p [ class "my-3 font-bold" ] [ text "I invite you to receive this free guide on bringing kids to Mass. We asked parents for their top tips and put it together in this guide for you. This guide is completely free and you can start using it this week!" ]
         ]
 
 
