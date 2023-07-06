@@ -37,6 +37,9 @@ activityTitleFromLink link =
     else if String.contains "catholic.org" link then
         "Catholic Online"
 
+    else if String.contains "teachingcatholickids" link then
+        "Teaching Catholic Kids"
+
     else if String.contains "youtube.com/watch" link then
         "Video"
 
@@ -66,6 +69,9 @@ activityDescriptionFromLink saintName link =
 
     else if String.contains "catholiccuisine" link then
         "Find recipes relating to " ++ saintName ++ " that you can cook and enjoy!"
+
+    else if String.contains "teachingcatholickids" link then
+        "Saint stories, discussion questions, and activities."
 
     else if String.contains "catholic.org" link then
         "Read the story of " ++ saintName ++ " at Catholic Online."
@@ -106,6 +112,9 @@ activityImageFromLink link =
     else if String.contains "catholiccuisine" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicCuisineLogo_LFRz0f3wN.png?updatedAt=1685564638950"
 
+    else if String.contains "teachingcatholickids" link then
+        "https://ik.imagekit.io/catholicstories/ProfileImages/TeachingCatholicKids_j2Zik9ZLc.png?updatedAt=1688597870744"
+
     else if String.contains "catholic.org" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicOnlineLogo_wG6lD6N7k.png?updatedAt=1685564889945"
 
@@ -128,7 +137,7 @@ activityImageFromLink link =
         "https://ik.imagekit.io/catholicstories/ProfileImages/11_HUKazDTNih.png?updatedAt=1679069711765"
 
     else if String.contains "thecatholickid" link then
-        ""
+        "https://ik.imagekit.io/catholicstories/ProfileImages/TeachingCatholicKids_j2Zik9ZLc.png?updatedAt=1688597870744"
 
     else
         ""
@@ -143,6 +152,9 @@ activityTypeFromLink link =
         Food
 
     else if String.contains "catholic.org" link then
+        OnlineReading
+
+    else if String.contains "teachingcatholickids" link then
         OnlineReading
 
     else if String.contains "youtube" link then

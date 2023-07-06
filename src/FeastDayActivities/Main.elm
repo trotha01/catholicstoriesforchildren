@@ -26,6 +26,7 @@ import Regex
 import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
 import Saints.SaintList as SaintList
 import Signup exposing (..)
+import Spinner
 import Task
 import Time exposing (Month(..))
 import Url
@@ -347,6 +348,7 @@ viewFeastActivities model feastActivitiesList =
                         , [ activityFromLink saint.name saint.christianiconographyInfo ]
                         , [ activityFromLink saint.name saint.catholicSprouts ]
                         , [ activityFromLink saint.name saint.franciscanMediaLink ]
+                        , [ activityFromLink saint.name saint.teachingCatholicKidsLink ]
                         , [ activityFromLink saint.name saint.catholicOrgLink ]
                         , [ activityFromLink saint.name saint.catholicSaintsLink ]
                         , [ activityFromLink saint.name saint.uCatholicLink ]
@@ -361,8 +363,15 @@ viewFeastActivities model feastActivitiesList =
         activities =
             List.append feastActivities saintActivities
     in
-    if List.isEmpty activities then
-        -- TODO: show spinner if still loading
+    if model.saintList.isLoading then
+        div [ class "text-center " ]
+            [ div [ class "mb-4" ] [ text "We are getting the feast day activities, hang tight." ]
+            , div [ class "m-auto w-10 text-[#9200B3]" ]
+                [ Spinner.purpleSpinner []
+                ]
+            ]
+
+    else if List.isEmpty activities then
         viewNoActivities
 
     else

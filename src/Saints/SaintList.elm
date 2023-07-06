@@ -66,11 +66,14 @@ type alias Saint =
     , christianiconographyInfo : String
     , uCatholicLink : String
     , catholicSaintsInfoYoutubePlaylist : String
-    , catholicEncyclopediaLink : String
-    , myCatholicLifeLink : String
+
+    -- , catholicEncyclopediaLink : String
+    -- , myCatholicLifeLink : String
+    , representations : String
     , catholicReadingsOrgLink : String
     , ewtnLink : String
     , teachingCatholicKidsLink : String
+    , moreYoutubeLinks : String
     , saintsAliveLink : String
     , coloringPageLink : String
     , catholicSprouts : String
@@ -98,11 +101,14 @@ convertToSaint saintData =
     , christianiconographyInfo = Array.get 11 saintData |> Maybe.withDefault ""
     , uCatholicLink = Array.get 12 saintData |> Maybe.withDefault ""
     , catholicSaintsInfoYoutubePlaylist = Array.get 13 saintData |> Maybe.withDefault ""
-    , catholicEncyclopediaLink = Array.get 14 saintData |> Maybe.withDefault ""
-    , myCatholicLifeLink = Array.get 15 saintData |> Maybe.withDefault ""
-    , catholicReadingsOrgLink = Array.get 16 saintData |> Maybe.withDefault ""
-    , ewtnLink = Array.get 17 saintData |> Maybe.withDefault ""
-    , teachingCatholicKidsLink = Array.get 18 saintData |> Maybe.withDefault ""
+
+    -- , catholicEncyclopediaLink = Array.get 13 saintData |> Maybe.withDefault ""
+    -- , myCatholicLifeLink = Array.get 15 saintData |> Maybe.withDefault ""
+    , representations = Array.get 14 saintData |> Maybe.withDefault ""
+    , catholicReadingsOrgLink = Array.get 15 saintData |> Maybe.withDefault ""
+    , ewtnLink = Array.get 16 saintData |> Maybe.withDefault ""
+    , teachingCatholicKidsLink = Array.get 17 saintData |> Maybe.withDefault ""
+    , moreYoutubeLinks = Array.get 18 saintData |> Maybe.withDefault ""
     , saintsAliveLink = Array.get 19 saintData |> Maybe.withDefault ""
     , coloringPageLink = Array.get 20 saintData |> Maybe.withDefault ""
     , catholicSprouts = Array.get 21 saintData |> Maybe.withDefault ""

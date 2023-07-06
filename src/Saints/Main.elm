@@ -230,6 +230,7 @@ viewSaintPage model saintName =
                     , viewActivity saintName saint.catholicSprouts
                     , viewActivity saintName saint.franciscanMediaLink
                     , viewActivity saintName saint.christianiconographyInfo
+                    , viewActivity saintName saint.teachingCatholicKidsLink
                     , viewActivity saintName saint.catholicOrgLink
                     , viewActivity saintName saint.catholicSaintsLink
                     , viewActivity saintName saint.uCatholicLink
@@ -523,7 +524,7 @@ viewSaints model =
             ]
             []
         , div [ class ("text-center " ++ isLoadingClass) ]
-            [ span [ class "mb-4" ] [ text "We are getting the list of saints, this may take some time." ]
+            [ div [ class "mb-4" ] [ text "We are getting the list of saints, this may take some time." ]
             , div [ class "m-auto w-10 text-[#9200B3]" ]
                 [ Spinner.purpleSpinner []
                 ]
