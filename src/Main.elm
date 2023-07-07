@@ -13,7 +13,7 @@ import Resources.Helpers exposing (ResourceGroup)
 import Signup exposing (..)
 import Svg.Attributes exposing (d)
 import Team.Main exposing (viewPerson)
-import Team.Team exposing (kelly, noeli, trevor)
+import Team.Team exposing (carlos, kelly, trevor)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Url
 
@@ -228,7 +228,7 @@ viewTeam =
             , class "my-10"
             ]
             [ viewPerson trevor
-            , viewPerson noeli
+            , viewPerson carlos
             , viewPerson kelly
             ]
         , a

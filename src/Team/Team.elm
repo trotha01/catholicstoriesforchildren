@@ -42,7 +42,7 @@ imagePath =
 staff : List Person
 staff =
     [ trevor
-    , noeli
+    , carlos
     ]
 
 
@@ -60,20 +60,20 @@ trevor =
     }
 
 
-noeli : Person
-noeli =
-    { name = "Noeli Acoba"
+carlos : Person
+carlos =
+    { name = "Carlos Gutierrez"
     , initials = ""
     , position = "CFO"
-    , description = "Noeli is a Los Angeles-based circus artist and video editor who mixes virtual effects with circus performance to create stories of hope. She believes that her faith in God and prayer has helped her navigate an unconventional life, and she is excited to be part of Catholic Stories for Children. She is also a wife, cat mom, and regular café goer."
-    , image = imagePath ++ "NoeliAcoba.PNG"
+    , description = "Carlos is a CAD designer who also has a passion for dogs, comedy and food."
+    , image = imagePath ++ "CarlosG.jpg"
     , socials = []
     }
 
 
 boardOfAdvisors : List Person
 boardOfAdvisors =
-    [ fredrick, aaron, chris, cheri, carlos ]
+    [ fredrick, aaron, chris, cheri ]
 
 
 fredrick : Person
@@ -121,17 +121,6 @@ cheri =
     , position = "Silent Advisor"
     , description = "Truly silent."
     , image = imagePath ++ "Cheri.jpeg"
-    , socials = []
-    }
-
-
-carlos : Person
-carlos =
-    { name = "Carlos Gutierrez"
-    , initials = ""
-    , position = "CAD Designer"
-    , description = "Carlos is a CAD designer who also has a passion for dogs, comedy and food."
-    , image = imagePath ++ "CarlosG.jpg"
     , socials = []
     }
 
