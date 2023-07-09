@@ -36,7 +36,7 @@ july =
           }
         , { date = "09"
           , feasts =
-                [ { feast = "Saint Augustine Zhao Rong and Companion", activities = [] }
+                [ { feast = "Saint Augustine Tchao and Companion", activities = [] }
                 ]
           }
         , { date = "11"
