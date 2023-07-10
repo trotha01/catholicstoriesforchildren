@@ -41,12 +41,12 @@ july =
           }
         , { date = "11"
           , feasts =
-                [ { feast = "Saint Benedict", activities = [] }
+                [ { feast = "Saint Benedict of Nursia", activities = [] }
                 ]
           }
         , { date = "13"
           , feasts =
-                [ { feast = "Saint Henry", activities = [] }
+                [ { feast = "Saint Henry II", activities = [] }
                 ]
           }
         , { date = "14"
@@ -57,7 +57,7 @@ july =
           }
         , { date = "15"
           , feasts =
-                [ { feast = "Saint Bonaventure", activities = [] }
+                [ { feast = "Saint Bonaventure of Bagnoregio", activities = [] }
                 ]
           }
         , { date = "16"
@@ -67,7 +67,7 @@ july =
           }
         , { date = "20"
           , feasts =
-                [ { feast = "Saint Apollinaris", activities = [] }
+                [ { feast = "Saint Apollinaris of Ravenna", activities = [] }
                 ]
           }
         , { date = "21"
@@ -77,7 +77,7 @@ july =
           }
         , { date = "22"
           , feasts =
-                [ { feast = "Saint Mary Magdalene", activities = [] }
+                [ { feast = "Saint Mary Magdalen", activities = [] }
                 ]
           }
         , { date = "23"
@@ -87,12 +87,12 @@ july =
           }
         , { date = "24"
           , feasts =
-                [ { feast = "Saint Sharbel Makhlūf", activities = [] }
+                [ { feast = "Saint Charbel Makhlouf", activities = [] }
                 ]
           }
         , { date = "25"
           , feasts =
-                [ { feast = "Saint James", activities = [] }
+                [ { feast = "Saint James the Greater", activities = [] }
                 ]
           }
         , { date = "29"
