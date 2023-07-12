@@ -475,12 +475,10 @@ viewSaints model =
     in
     div []
         [ h1
-            [ class "text-center"
-            , class "my-10"
-            ]
+            []
             [ text "List of Saints and Blesseds" ]
-        , div [ class "mb-10" ]
-            [ p [] [ text "Here at Catholic Stories for children, we are commited to providing valuable content for Catholic families. We help raise kids strong in the Catholic faith. We do this throught, stories, animations, music, and providing resources for Catholic families." ]
+        , div [ class "mb-10 mt-5" ]
+            [ p [] [ text "Find the saints you are looking for here." ]
             , div [ class "mt-10" ]
                 [ Signup.view model.signup |> Html.map SignupMsg ]
             , p [ class "mt-10" ] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]

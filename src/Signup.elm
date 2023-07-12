@@ -80,7 +80,7 @@ view : Model -> Html Msg
 view model =
     div
         [ class "border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]"
-        , class "lg:grid lg:grid-cols-[_1fr_225px]"
+        , class "sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1"
         ]
         [ div []
             [ div
@@ -88,7 +88,7 @@ view model =
                 [ p
                     [ class "pb-5 pl-1 text-left"
                     ]
-                    [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
+                    [ text "Having trouble with kids in Mass? Get our guide!" ]
                 , div
                     []
                     [ input
@@ -108,7 +108,7 @@ view model =
                         , style "padding" "10px 20px"
                         , style "border-radius" "5px 0px 0px 5px"
                         , style "box-shadow" "#777 1px 1px 5px"
-                        , class "w-[188px] md:w-[230px] h-[56px] text-lg"
+                        , class "w-[172px] md:w-[230px] h-[56px] text-lg"
                         ]
                         []
                     , viewSubmitButton model
@@ -116,7 +116,8 @@ view model =
                     ]
                 ]
             , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]
-                [ p [] [ text "Get inspired:" ]
+                [ p [ class "mb-2" ] [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
+                , p [] [ text "Get inspired:" ]
                 , ul [ class "ml-4" ]
                     [ li [ class "pl-1" ] [ text " Top tips from parents on bringing kids to Mass." ]
                     , li [ class "pl-1" ] [ text " Best strategies on preparing kids for a heavenly Mass experience." ]
