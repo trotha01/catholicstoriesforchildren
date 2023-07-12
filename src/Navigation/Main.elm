@@ -26,16 +26,19 @@ view =
     div
         [ class "min-h-screen"
         , class "flex flex-col"
-        , class "bg-csc-lightpurple"
+        , class "bg-[#fef7f4]"
         , class "pt-5"
+        , class "text-semibold"
+        , class "text-xl sm:text-2xl md:text-3xl"
         ]
         [ viewNavButton 1 "_self" "/" "Home"
-        , viewNavButton 2 "_self" "/team" "About Us"
-        , viewNavButton 3 "_self" "/animations" "Animations"
-        , viewNavButton 4 "_self" "/contact" "Contact"
+        , viewNavButton 2 "_self" "/feastdayactivities" "Feast Day Activities"
+        , viewNavButton 3 "_self" "/saints" "Saints"
+        , viewNavButton 4 "_self" "/animations" "Animations"
         , viewNavButton 5 "_self" "/resources" "Resources"
-        , viewNavButton 6 "_self" "/give" "Give"
-        , viewNavButton 7 "_blank" "https://www.etsy.com/shop/CatholicStories" "Shop"
+        , viewNavButton 6 "_blank" "https://www.etsy.com/shop/CatholicStories" "Shop"
+        , viewNavButton 7 "_self" "/give" "Give"
+        , viewNavButton 8 "_self" "/team" "About Us"
         ]
 
 
@@ -52,7 +55,6 @@ viewNavButton index linkTarget link page =
         , class "hover:bg-csc-lightpurple"
         , class "px-10 py-5"
         , class "rounded-t"
-        , class "text-4xl text-semibold"
         , style "animation" ("fadeIn " ++ animationTime ++ "s")
         , target linkTarget
         ]

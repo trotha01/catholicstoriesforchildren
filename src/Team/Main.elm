@@ -85,6 +85,16 @@ viewAbout =
         , p [] [ text "Catholic Stories for Children is made with the vision that all Catholics have a strong love of God and neighbor." ]
         , h2 [ class "my-7" ] [ text "Mission" ]
         , p [] [ text "Our hope is to help others along this journey with joyful stories." ]
+        , h2 [ class "my-7" ] [ text "Contact" ]
+        , p []
+            [ text "Please reach out. I love to hear from you!"
+            ]
+        , p []
+            [ Helpers.email
+            ]
+        , p []
+            [ a [ href "https://calendly.com/csc-trevor/30min", class "text-blue-600", target "_blank" ] [ text "Schedule a meeting with me!" ]
+            ]
         ]
 
 

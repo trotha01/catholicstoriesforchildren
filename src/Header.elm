@@ -54,7 +54,7 @@ viewHeaderTitle title =
         [ h1
             [ style "font-family" "hvdComicSerifPro"
             , style "margin" "0px"
-            , class "text-[0px] md:text-2xl"
+            , class "text-[0px] md:text-xl"
             ]
             [ text "Catholic Stories for Children" ]
         ]
@@ -62,7 +62,7 @@ viewHeaderTitle title =
 
 navigation : String -> Html msg
 navigation height =
-    div [ class "w-full" ]
+    div [ class "w-full pr-2" ]
         [ div [ class "lg:hidden" ] [ hamburgerMenu ]
         , div [ class "hidden lg:block w-full" ] [ desktopNavigation height ]
         ]
@@ -84,14 +84,16 @@ hamburgerMenu =
 desktopNavigation : String -> Html msg
 desktopNavigation height =
     nav
-        [ class "h-full w-full grid grid-cols-6 content-center justify-items-center"
+        [ class "h-full w-full flex justify-end content-center justify-items-center gap-4 mr-4"
+        , class "text-base"
         ]
-        [ viewNavButton height "/animations" "_self" "Animations"
-        , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
+        [ viewNavButton height "/feastdayactivities" "_self" "Activities"
+        , viewNavButton height "/saints" "_self" "Saints"
+        , viewNavButton height "/animations" "_self" "Animations"
         , viewNavButton height "/resources" "_self" "Resources"
-        , viewNavButton height "/contact" "_self" "Contact"
+        , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
         , viewNavButton height "/give" "_self" "Give"
-        , viewNavButton height "/team" "_self" "About Us"
+        , viewNavButton height "/team" "_self" "About"
         ]
 
 
@@ -100,49 +102,15 @@ viewNavButton height link linkTarget page =
     a
         [ href link
         , class "flex items-center justify-center"
-        , class "hover:bg-csc-lightpurple"
-        , class "hover:border-b-2 hover:border-gray-700"
-        , class "rounded-t"
-        , class "text-lg"
+        , class "hover:scale-105 transition ease-in-out"
+        , class "hover:border-b-4 hover:border-[#9101b3]"
+        , class "rounded"
         , class ("h-[60px] h-[" ++ height ++ "]")
-        , class "w-full"
+        , class "p-2"
         , attribute "aria-label" page
         , target linkTarget
         ]
         [ text page ]
-
-
-viewMobileNavButton : String -> String -> Html msg
-viewMobileNavButton link page =
-    a
-        [ href link
-        , class "hover:bg-csc-lightpurple"
-        , class "hover:border-b-2"
-        , class "p-5"
-        , class "rounded-t"
-        , class "text-lg"
-        ]
-        [ text page ]
-
-
-backButton : Html msg
-backButton =
-    a
-        [ style "text-decoration" "none"
-        , href "/"
-        , class "colorDarkGray"
-        , class "grid grid-cols-2 items-center justify-items-center"
-        , class "visible md:invisible"
-        ]
-        [ img
-            [ src "/assets/backarrow.png"
-            , style "height" "14px"
-            ]
-            []
-        , span
-            []
-            [ text "Back" ]
-        ]
 
 
 viewLogo : Html msg
