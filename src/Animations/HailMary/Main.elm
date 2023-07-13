@@ -79,6 +79,7 @@ viewBody model =
         [ h1 [ class "my-10 leading-10" ] [ text "Teaching Children about Mother Mary through Animated Stories" ]
         , aboutTheAnimation
         , viewVideoPlayers model
+        , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , moreAboutTheAnimation
         , div [ class "mb-10" ]
@@ -183,7 +184,8 @@ moreAboutTheAnimation =
         , class "text-lg"
         , class "max-w-3xl"
         ]
-        [ p [ class "my-3" ] [ text "When creating the animated story about Mother Mary, we stay true to her character. Her devotion to God and love for her son are at the forefront, and the animation reflects this. By doing so, children can learn about her life and teachings in a way that is both entertaining and informative." ]
+        [ p [ class "mb-3 font-bold" ] [ text "Creating an animation on the Hail Mary prayer" ]
+        , p [ class "my-3" ] [ text "When creating the animated story about Mother Mary, we stay true to her character. Her devotion to God and love for her son are at the forefront, and the animation reflects this. By doing so, children can learn about her life and teachings in a way that is both entertaining and informative." ]
         , p [ class "my-3" ] [ text "Would you agree?" ]
         , p [ class "my-3" ] [ text "Our animations are great for homeschooling, hybrid schooling, and traditional religious education." ]
         , p [ class "my-3" ] [ text "Here at Catholic Stories for Children, our animated stories cover prayer, including the Hail Mary prayer (above), the St Michael prayer, and the prayer to your Guardian Angel. These animations also explore the virtues, such as humility, faith, and compassion. Each story is carefully crafted to ensure that it is both engaging and educational." ]
@@ -301,5 +303,48 @@ aboutThePrayer =
         , p [ class "my-10" ]
             [ text "Lastly, we ask Mary to pray for us. "
             , span [ class "font-semibold" ] [ text "'Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen.'" ]
+            ]
+        ]
+
+
+viewActivities : Html msg
+viewActivities =
+    div []
+        [ h2 [ class "mb-3 mt-5" ] [ text "Hail Mary Prayer Activities" ]
+        , div [ class "grid grid-cols-2 gap-4" ]
+            [ div []
+                [ p [ class "h-14" ]
+                    [ text "Access coloring pages, copywork, discussion questions and more!"
+                    ]
+                , a
+                    [ attribute "aria-label" "Hail Mary Prayer Activities"
+                    , href "/printables/Hail-Mary-Activities.pdf"
+                    , target "_blank"
+                    ]
+                    [ img
+                        [ class "w-full max-w-[400px]"
+                        , class "transition ease-in-out hover:scale-110"
+                        , src "https://ik.imagekit.io/catholicstories/9_1__-d-EPYcuW.png?updatedAt=1689288132704"
+                        ]
+                        []
+                    ]
+                ]
+            , div []
+                [ p [ class "h-14" ]
+                    [ text "Answers to Hail Mary Prayer activity questions."
+                    ]
+                , a
+                    [ attribute "aria-label" "Hail Mary Activity Answers"
+                    , href "/printables/Hail-Mary-Activity-Answers.pdf"
+                    , target "_blank"
+                    ]
+                    [ img
+                        [ class "w-full max-w-[400px]"
+                        , class "transition ease-in-out hover:scale-110"
+                        , src "https://ik.imagekit.io/catholicstories/10_1__s3i8dhFiH.png?updatedAt=1689288132684"
+                        ]
+                        []
+                    ]
+                ]
             ]
         ]

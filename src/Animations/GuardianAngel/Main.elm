@@ -143,7 +143,7 @@ viewActivities =
                     [ text "Answers to Guardian Angel activity questions."
                     ]
                 , a
-                    [ attribute "aria-label" "Guardian Angel Activities"
+                    [ attribute "aria-label" "Guardian Angel Activity Answers"
                     , href "/printables/Guardian-Angel-Activity-Answers.pdf"
                     , target "_blank"
                     ]
