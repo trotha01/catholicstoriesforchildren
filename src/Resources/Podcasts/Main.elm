@@ -86,6 +86,7 @@ viewPodcasts =
         (List.map viewResource
             [ saintStoriesForKids
             , catholicSprouts
+            , bibleInAYearWithTeddy
             , thatsTheWord
             , onTheNightTrain
             , saintsAlive
@@ -100,6 +101,14 @@ saintStoriesForKids =
     { name = "Saint Stories for Kids"
     , link = "https://podcasts.apple.com/ca/podcast/saint-stories-for-kids/id1448514363"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/10_W0OwjM8Yu.png?updatedAt=1679069711783"
+    }
+
+
+bibleInAYearWithTeddy : Resource
+bibleInAYearWithTeddy =
+    { name = "Kids Bible in a Year with Teddy"
+    , link = "https://podcasts.apple.com/us/podcast/kids-bible-in-a-year-with-teddy/id1676869671"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/kidsbibleinayearwithteddy_dLisfpvYA.png?updatedAt=1689211660566"
     }
 
 
