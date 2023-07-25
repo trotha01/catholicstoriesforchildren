@@ -633,8 +633,8 @@ prayers : ResourceGroup
 prayers =
     { name = "Prayers"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004"
-    , description = "Find common Catholic prayers here."
-    , link = "prayers"
+    , description = "Find prayers resources and information here."
+    , link = "resources/prayer"
     }
 
 
