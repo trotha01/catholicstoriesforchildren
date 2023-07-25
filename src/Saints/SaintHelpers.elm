@@ -26,8 +26,8 @@ urlSaintParser =
     Url.Parser.s "saints" <?> Query.string "s"
 
 
-activityTitleFromLink : String -> String
-activityTitleFromLink link =
+activityTitleFromLink : String -> String -> String
+activityTitleFromLink saintName link =
     if String.contains "catholicsaints.info" link then
         "Catholic Saints Info"
 
@@ -47,10 +47,10 @@ activityTitleFromLink link =
         "Video Playlist"
 
     else if String.contains "franciscanmedia" link then
-        "Franciscan Media"
+        "Story of " ++ saintName
 
     else if String.contains "christianiconography" link then
-        "Iconography"
+        saintName ++ " Iconography"
 
     else if String.contains "ucatholic" link then
         "uCatholic"

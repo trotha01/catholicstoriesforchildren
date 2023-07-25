@@ -200,26 +200,28 @@ viewActivityCSV date feast activity =
         ]
 
 
-viewActivities : List Activity -> Html msg
-viewActivities activities =
+viewActivities : String -> List Activity -> Html msg
+viewActivities title activities =
     if List.isEmpty activities then
         span [] []
 
     else
         div [ class "mt-20" ]
-            [ div [ class "max-w-3xl m-auto" ]
+            [ h3 [ class "font-semibold" ] [ text title ]
+            , div [ class "max-w-3xl m-auto" ]
                 (List.map viewActivity activities)
             ]
 
 
-viewPrintouts : List Activity -> Html msg
-viewPrintouts activities =
+viewPrintouts : String -> List Activity -> Html msg
+viewPrintouts title activities =
     if List.isEmpty activities then
         span [] []
 
     else
         div [ class "mt-20" ]
-            [ div [ class "max-w-3xl m-auto" ]
+            [ h3 [ class "font-semibold" ] [ text title ]
+            , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\activity ->
                         viewPrintout activity
@@ -243,7 +245,8 @@ viewVideos videos =
 
     else
         div [ class "mt-20" ]
-            [ div [ class "max-w-3xl m-auto" ]
+            [ h3 [ class "font-semibold" ] [ text "Videos to Watch" ]
+            , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\video ->
                         viewVideo video
@@ -296,7 +299,8 @@ viewAudioList audioList =
 
     else
         div [ class "mt-20" ]
-            [ div [ class "max-w-3xl m-auto" ]
+            [ h3 [ class "font-semibold" ] [ text "Podcasts to Hear" ]
+            , div [ class "max-w-3xl m-auto" ]
                 (List.map viewAudio audioList)
             ]
 
@@ -410,7 +414,8 @@ viewNoActivities =
 
 dateUrlFromTime : Time.Posix -> String
 dateUrlFromTime t =
-    t |> Time.toDay Time.utc
+    t
+        |> Time.toDay Time.utc
         |> (\d ->
                 if d < 10 then
                     "0" ++ String.fromInt d

@@ -316,7 +316,7 @@ activityFromLink : String -> String -> Maybe Activity
 activityFromLink saintName link =
     let
         activityTitle =
-            activityTitleFromLink link
+            activityTitleFromLink saintName link
 
         activityDescription =
             activityDescriptionFromLink saintName link
@@ -425,18 +425,18 @@ viewFeastActivities model feastActivitiesList =
             ]
 
     else
-        div []
+        div [ class "text-left" ]
             -- [ viewActivities "Video" (videoActivities activities) -- used for csv output
             [ viewVideos (videoActivities activities)
             , viewAudioList (audioActivities activities)
-            , viewActivities (craftActivities activities)
-            , viewPrintouts (printoutActivities activities)
-            , viewActivities (gameActivities activities)
-            , viewActivities (imageActivities activities)
-            , viewActivities (readingActivities activities)
-            , viewActivities (foodActivities activities)
-            , viewActivities (bookActivities activities)
-            , viewActivities (moreActivities activities)
+            , viewActivities "Crafts to Do" (craftActivities activities)
+            , viewPrintouts "Printouts to Enjoy" (printoutActivities activities)
+            , viewActivities "Games to Play" (gameActivities activities)
+            , viewActivities "Images to See" (imageActivities activities)
+            , viewActivities "Material to Read" (readingActivities activities)
+            , viewActivities "Food to Eat" (foodActivities activities)
+            , viewActivities "Books to Read" (bookActivities activities)
+            , viewActivities "More" (moreActivities activities)
             ]
 
 
