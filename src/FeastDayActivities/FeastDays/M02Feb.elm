@@ -9,7 +9,7 @@ february =
     , month = "February"
     , color = "#395d73"
     , feasts =
-        [ { date = "1"
+        [ { date = "01"
           , feasts =
                 [ { feast = "Saint Ansgar"
                   , activities =
@@ -39,7 +39,7 @@ february =
                   }
                 ]
           }
-        , { date = "2"
+        , { date = "02"
           , feasts =
                 [ { feast = "The Presentation of the Lord"
                   , activities =
@@ -73,7 +73,7 @@ february =
                   }
                 ]
           }
-        , { date = "3"
+        , { date = "03"
           , feasts =
                 [ { feast = "Saint Blaise"
                   , activities =
@@ -119,7 +119,7 @@ february =
                   }
                 ]
           }
-        , { date = "4"
+        , { date = "04"
           , feasts =
                 [ { feast = "Saint Rabanus Maurus"
                   , activities =
@@ -149,7 +149,7 @@ february =
                   }
                 ]
           }
-        , { date = "5"
+        , { date = "05"
           , feasts =
                 [ { feast = "Saint Agatha"
                   , activities =
@@ -181,7 +181,7 @@ february =
                   }
                 ]
           }
-        , { date = "6"
+        , { date = "06"
           , feasts =
                 [ { feast = "Saint Paul Miki and Companions"
                   , activities =
@@ -217,7 +217,7 @@ february =
                   }
                 ]
           }
-        , { date = "7"
+        , { date = "07"
           , feasts =
                 [ { feast = "Saint Colette"
                   , activities =
@@ -241,7 +241,7 @@ february =
                   }
                 ]
           }
-        , { date = "8"
+        , { date = "08"
           , feasts =
                 [ { feast = "Saint Josephine Bakhita"
                   , activities =
@@ -289,7 +289,7 @@ february =
                   }
                 ]
           }
-        , { date = "9"
+        , { date = "09"
           , feasts =
                 [ { feast = "Saint Jerome Emiliani"
                   , activities =

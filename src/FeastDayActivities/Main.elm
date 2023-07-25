@@ -244,7 +244,55 @@ viewDate model month date feasts =
             [ class "mt-10 mb-40"
             , class "min-h-screen"
             ]
-            [ viewFeastActivities model feasts ]
+            [ viewWeekdayActivities
+            , viewFeastActivities model feasts
+            ]
+        ]
+
+
+viewWeekdayActivities : Html msg
+viewWeekdayActivities =
+    div [ class "text-left" ]
+        [ h3 [ class "font-semibold" ] [ text "Common Daily Prayers" ]
+        , p [ class "mt-4" ] [ text "It is good to be able to center yourself on God throughout the years, months, and days. We have suggestions here to help order the hours of the day toward God. They are based on the Liturgy of the Hours. The suggestions here can be modified for you and your family. Especially with young kids that need to sleep in or go to bed early." ]
+        , div [ class "mt-4 grid grid-cols-[50px,_1fr]" ]
+            [ div [] [ text "6am" ]
+            , div []
+                [ a [ href "https://www.usccb.org/prayers/angelus", class "underline", target "_blank" ] [ text "Angelus" ]
+                , span [] [ text ". " ]
+                , a [ href "https://www.usccb.org/prayers/morning-offering", class "underline", target "_blank" ] [ text "Morning Offering" ]
+                , span [] [ text ". " ]
+                , a [ href "/animations/guardianangel", class "underline", target "_blank" ] [ text "Guardian Angel Prayer" ]
+                , span [] [ text ". " ]
+                , a [ href "https://visitationproject.org/pages/the-three-hail-marys", class "underline", target "_blank" ] [ text "Three Hail Marys devotion" ]
+                , span [] [ text ". " ]
+                ]
+            , div [] [ text "12pm" ]
+            , div []
+                [ a [ href "https://www.usccb.org/prayers/angelus", class "underline", target "_blank" ] [ text "Angelus" ]
+                , span [] [ text ". " ]
+                ]
+            , div [] [ text "3pm" ]
+            , div []
+                [ a [ href "https://www.thedivinemercy.org/message/devotions/pray-the-chaplet", class "underline", target "_blank" ] [ text "Divine Mercy Chaplet" ]
+                , span [] [ text ". " ]
+                ]
+            , div [] [ text "6pm" ]
+            , div []
+                [ a [ href "https://www.usccb.org/prayers/angelus", class "underline", target "_blank" ] [ text "Angelus" ]
+                , span [] [ text ". " ]
+                ]
+            , div [] [ text "9pm" ]
+            , div []
+                -- TODO: add the mystery of the day here
+                [ a [ href "https://www.thecatholickid.com/how-to-pray-the-rosary-for-kids/", class "underline", target "_blank" ] [ text "Rosary" ]
+                , span [] [ text ". " ]
+                , a [ href "https://www.ignatianspirituality.com/ignatian-prayer/the-examen/", class "underline", target "_blank" ] [ text "Evening Examen" ]
+                , span [] [ text ". " ]
+                , a [ href "https://visitationproject.org/pages/the-three-hail-marys", class "underline", target "_blank" ] [ text "Three Hail Marys devotion" ]
+                , span [] [ text ". " ]
+                ]
+            ]
         ]
 
 
@@ -364,7 +412,7 @@ viewFeastActivities model feastActivitiesList =
             List.append feastActivities saintActivities
     in
     if model.saintList.isLoading then
-        div [ class "text-center " ]
+        div [ class "text-center mt-4" ]
             [ div [ class "mb-4" ] [ text "We are getting the feast day activities, hang tight." ]
             , div [ class "m-auto w-10 text-[#9200B3]" ]
                 [ Spinner.purpleSpinner []
@@ -372,7 +420,9 @@ viewFeastActivities model feastActivitiesList =
             ]
 
     else if List.isEmpty activities then
-        viewNoActivities
+        div [ class "mt-4" ]
+            [ viewNoActivities
+            ]
 
     else
         div []

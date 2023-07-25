@@ -5,7 +5,7 @@ import FeastDayActivities.FeastDayHelpers exposing (..)
 
 janFeasts : List FeastDay
 janFeasts =
-    [ { date = "1"
+    [ { date = "01"
       , feasts =
             [ { feast = "Mary, Mother of God"
               , activities =
@@ -97,7 +97,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "2"
+    , { date = "02"
       , feasts =
             [ { feast = "Saints Basil the Great and Gregory Nazianzus"
               , activities =
@@ -171,7 +171,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "3"
+    , { date = "03"
       , feasts =
             [ { feast = "The Most Holy Name of Jesus"
               , activities =
@@ -247,7 +247,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "4"
+    , { date = "04"
       , feasts =
             [ { feast = "Saint Elizabeth Ann Seton"
               , activities =
@@ -321,7 +321,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "5"
+    , { date = "05"
       , feasts =
             [ { feast = "Saint John Neumann"
               , activities =
@@ -391,7 +391,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "6"
+    , { date = "06"
       , feasts =
             [ { feast = "The Epiphany of the Lord"
               , activities =
@@ -519,7 +519,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "7"
+    , { date = "07"
       , feasts =
             [ { feast = "Saint Raymond of Peñafort"
               , activities =
@@ -563,7 +563,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "8"
+    , { date = "08"
       , feasts =
             [ { feast = "The Baptism of the Lord"
               , activities =
@@ -657,7 +657,7 @@ janFeasts =
               }
             ]
       }
-    , { date = "9"
+    , { date = "09"
       , feasts =
             [ { feast = "Saint Adrian of Canterbury"
               , activities =

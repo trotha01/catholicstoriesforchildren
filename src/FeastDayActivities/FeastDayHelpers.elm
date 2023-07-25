@@ -4,6 +4,7 @@ import Dict exposing (Dict)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
+import Time
 import Url
 import Url.Parser exposing ((</>), (<?>), parse)
 import Url.Parser.Query as Query
@@ -400,8 +401,65 @@ viewNoActivities : Html msg
 viewNoActivities =
     div []
         [ p []
-            [ text "We are still adding feast day activities!" ]
+            [ text "No activities found for today's feast day. We are still working on adding activities." ]
         , p
             []
-            [ text "Please hang tight." ]
+            [ text "Thank you for your patience." ]
         ]
+
+
+dateUrlFromTime : Time.Posix -> String
+dateUrlFromTime t =
+    t |> Time.toDay Time.utc
+        |> (\d ->
+                if d < 10 then
+                    "0" ++ String.fromInt d
+
+                else
+                    String.fromInt d
+           )
+
+
+monthUrlFromTime : Time.Posix -> String
+monthUrlFromTime t =
+    t |> Time.toMonth Time.utc |> feastMonthFromMonth
+
+
+feastMonthFromMonth : Time.Month -> String
+feastMonthFromMonth month =
+    case month of
+        Time.Jan ->
+            "jan"
+
+        Time.Feb ->
+            "feb"
+
+        Time.Mar ->
+            "mar"
+
+        Time.Apr ->
+            "apr"
+
+        Time.May ->
+            "may"
+
+        Time.Jun ->
+            "jun"
+
+        Time.Jul ->
+            "jul"
+
+        Time.Aug ->
+            "aug"
+
+        Time.Sep ->
+            "sep"
+
+        Time.Oct ->
+            "oct"
+
+        Time.Nov ->
+            "nov"
+
+        Time.Dec ->
+            "dec"

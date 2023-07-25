@@ -768,6 +768,10 @@ video {
   height: 3.5rem;
 }
 
+.h-\[\"\+n\+\"\] {
+  height: "+n+";
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -920,6 +924,18 @@ video {
 
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-cols-\[20px\2c _1fr\] {
+  grid-template-columns: 20px 1fr;
+}
+
+.grid-cols-\[40px\2c _1fr\] {
+  grid-template-columns: 40px 1fr;
+}
+
+.grid-cols-\[50px\2c _1fr\] {
+  grid-template-columns: 50px 1fr;
 }
 
 .flex-col {

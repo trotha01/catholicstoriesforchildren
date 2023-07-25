@@ -206,6 +206,7 @@ fakeNodeWithJs('./animations/index.html', 'Animations - Catholic Stories for Chi
 fakeNodeWithJs('./animations/stmichael/index.html', 'St Michael Animation - Catholic Stories for Children', 'An animation to guide kids in learning the St Michael the Archangel prayer', '.Animations.StMichael')
 fakeNodeWithJs('./contact/index.html', 'Contact us - Catholic Stories for Children', '', '.Contact')
 fakeNodeWithJs('./feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activites for kids on the feast days', '.FeastDayActivities')
+fakeNodeWithJs('./feastdayactivities/today/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Catholic activites for kids today', '.FeastDayActivities.Today')
 fakeNodeWithJs('./give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏', '.Give')
 fakeNodeWithJs('./index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '')
 fakeNodeWithJs('./navigation/index.html', 'Navigation - Catholic Stories for Children', '', '.Navigation')

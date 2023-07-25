@@ -38,6 +38,7 @@ pair_list=(
   src/Animations/StMichael/Main.elm animations/stmichael/elm.js
   src/Contact/Main.elm contact/elm.js
   src/FeastDayActivities/Main.elm feastdayactivities/elm.js
+  src/FeastDayActivities/Today/Main.elm feastdayactivities/today/elm.js
   src/Give/Main.elm give/elm.js
   src/Navigation/Main.elm navigation/elm.js
   src/Newsroom/Main.elm newsroom/elm.js
