@@ -47,6 +47,6 @@ viewWorkInProgressNotice =
             [ img [ src "https://ik.imagekit.io/catholicstories/Construction_Cone_vLoPMhMZBm.png?updatedAt=1679070884463", class "w-20 h-20 object-cover" ] []
             ]
         , div []
-            [ p [] [ text "This page is a work-in-progress. We are working hard on adding resources this page for you." ]
+            [ p [] [ text "This page is a work-in-progress. We are working hard on adding resources for you." ]
             ]
         ]
