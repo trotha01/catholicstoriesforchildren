@@ -95,6 +95,11 @@ july =
                 [ { feast = "Saint James the Greater", activities = [] }
                 ]
           }
+        , { date = "26"
+          , feasts =
+                [ { feast = "Saint Joachim and Saint Anne", activities = [] }
+                ]
+          }
         , { date = "29"
           , feasts =
                 [ { feast = "Saint Martha of Bethany and Saint Mary of Bethany and Saint Lazarus of Bethany", activities = [] }
