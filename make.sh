@@ -43,6 +43,7 @@ pair_list=(
   src/Navigation/Main.elm navigation/elm.js
   src/Newsroom/Main.elm newsroom/elm.js
   src/Prayers/Main.elm prayers/elm.js
+  src/Prayer/Angelus/Main.elm prayer/angelus/elm.js
   src/Resources/Books/Main.elm resources/books/elm.js
   src/Resources/Main.elm resources/elm.js
   src/Resources/Podcasts/Main.elm resources/podcasts/elm.js

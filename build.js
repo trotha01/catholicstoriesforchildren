@@ -1,12 +1,5 @@
 var fs = require('fs')
 
-// var ContactElm = require('./contactElm.js')
-// var GiveElm = require('./giveElm.js')
-// var NavigationElm = require('./navigationElm.js')
-// var NewsroomElm = require('./newsroomElm.js')
-// var PrivacyPolicyElm = require('./privacyPolicyElm.js')
-// var TeamElm = require('./teamElm.js')
-
 var htmlPart1 = `<!doctype html>
 <html lang="en">
   <head>
@@ -212,6 +205,7 @@ fakeNodeWithJs('./index.html', 'Catholic Stories for Children', 'Catholic Storie
 fakeNodeWithJs('./navigation/index.html', 'Navigation - Catholic Stories for Children', '', '.Navigation')
 fakeNodeWithJs('./newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news', '.Newsroom')
 fakeNodeWithJs('./prayers/index.html', 'Prayers - Catholic Stories for Children', 'Catholic Prayers', '.Prayers')
+fakeNodeWithJs('./prayer/angelus/index.html', 'Angelus Prayer - Catholic Stories for Children', 'Angelus Prayers', '.Prayer.Angelus')
 fakeNodeWithJs('./resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith', '.Resources.Books')
 fakeNodeWithJs('./resources/index.html', 'Resources - Catholic Stories for Children', 'Resources to guide kids in learning the Catholic faith', '.Resources')
 fakeNodeWithJs('./resources/podcasts/index.html', 'Podcast Resources - Catholic Stories for Children', 'Podcasts to guide kids in learning the Catholic faith', '.Resources.Podcasts')
