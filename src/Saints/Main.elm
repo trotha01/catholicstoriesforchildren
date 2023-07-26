@@ -254,9 +254,18 @@ viewPatronage model saint =
                 -- Remove the outer quotes
                 |> String.slice 1 -1
 
+        capitalize s =
+            case String.uncons s of
+                Just ( c, tail ) ->
+                    String.cons (Char.toUpper c) tail
+
+                Nothing ->
+                    s
+
         patronageList =
             cleanedPatronage
                 |> showFullOrPartial
+                |> capitalize
 
         isShowingEverything =
             String.length cleanedPatronage
