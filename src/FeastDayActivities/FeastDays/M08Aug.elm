@@ -17,12 +17,12 @@ august =
         , { date = "02"
           , feasts =
                 [ { feast = "Saint Eusebius of Vercelli", activities = [] }
-                , { feast = "Saint Peter Julian Eymard", activities = [] }
+                , { feast = "Saint Peter Julian Eymund", activities = [] }
                 ]
           }
         , { date = "04"
           , feasts =
-                [ { feast = "Saint Jean Vianney (the Curé of Ars)", activities = [] }
+                [ { feast = "Saint John Mary Vianney (the Curé of Ars)", activities = [] }
                 ]
           }
         , { date = "05"
@@ -37,13 +37,13 @@ august =
           }
         , { date = "07"
           , feasts =
-                [ { feast = "Saint Sixtus II, Pope and Martyr", activities = [] }
+                [ { feast = "Pope Saint Sixtus II", activities = [] }
                 , { feast = "Saint Cajetan", activities = [] }
                 ]
           }
         , { date = "08"
           , feasts =
-                [ { feast = "Saint Dominic", activities = [] }
+                [ { feast = "Saint Dominic de Guzman", activities = [] }
                 ]
           }
         , { date = "09"
@@ -53,32 +53,32 @@ august =
           }
         , { date = "10"
           , feasts =
-                [ { feast = "Saint Lawrence", activities = [] }
+                [ { feast = "Saint Lawrence of Rome", activities = [] }
                 ]
           }
         , { date = "11"
           , feasts =
-                [ { feast = "Saint Clare", activities = [] }
+                [ { feast = "Saint Clare of Assisi", activities = [] }
                 ]
           }
         , { date = "12"
           , feasts =
-                [ { feast = "Saint Jane Frances de Chantal", activities = [] }
+                [ { feast = "Saint Jeanne de Chantal", activities = [] }
                 ]
           }
         , { date = "13"
           , feasts =
-                [ { feast = "Saints Pontian, Pope and Hippoloytus", activities = [] }
+                [ { feast = "Pope Saint Pontian and Saint Hippolytus of Rome", activities = [] }
                 ]
           }
         , { date = "14"
           , feasts =
-                [ { feast = "Saint Maximilian Mary Kolbe", activities = [] }
+                [ { feast = "Saint Maximilian Kolbe", activities = [] }
                 ]
           }
         , { date = "15"
           , feasts =
-                [ { feast = "Assumption of the Blessed Virgin Mary", activities = [] }
+                [ { feast = "Blessed Virgin Mary (Her Assumption)", activities = [] }
                 ]
           }
         , { date = "16"
@@ -118,8 +118,8 @@ august =
           }
         , { date = "25"
           , feasts =
-                [ { feast = "Saint Louis", activities = [] }
-                , { feast = "Saint Joseph of Calasanz", activities = [] }
+                [ { feast = "Saint Louis IX", activities = [] }
+                , { feast = "Saint Joseph Calasanz", activities = [] }
                 ]
           }
         , { date = "27"
@@ -134,7 +134,7 @@ august =
           }
         , { date = "29"
           , feasts =
-                [ { feast = "The Passion of Saint John the Baptist", activities = [] }
+                [ { feast = "Saint John the Baptist (His Passion)", activities = [] }
                 ]
           }
         ]
