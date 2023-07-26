@@ -512,6 +512,9 @@ viewSaints model =
                     [ text "Catholic Saints Info" ]
                 ]
             ]
+        , p []
+            [ span [ class "opacity-70" ] [ text "Try searching by name, date (July 25), or patronage (nurse)." ]
+            ]
         , input
             [ type_ "text"
             , placeholder "Search for a Saint"
@@ -527,7 +530,11 @@ viewSaints model =
                 [ Spinner.purpleSpinner []
                 ]
             ]
-        , div [] (List.map (viewSaint model) filteredSaints)
+        , if not model.saintList.isLoading && List.length filteredSaints == 0 then
+            p [] [ text "Sorry, we couldn't find any results for your search. " ]
+
+          else
+            div [] (List.map (viewSaint model) filteredSaints)
         ]
 
 
