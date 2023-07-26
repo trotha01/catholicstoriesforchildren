@@ -2,8 +2,7 @@ module Saints.Main exposing (..)
 
 import Browser
 import Browser.Navigation as Nav
-import FeastDayActivities.FeastDayHelpers exposing (viewVideos)
-import FeastDayActivities.Main exposing (activityFromLink)
+import FeastDayActivities.FeastDayHelpers exposing (activityDescriptionFromLink, activityFromLink, activityImageFromLink, activityTitleFromLink, viewAllActivities, viewVideos)
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
@@ -198,8 +197,9 @@ viewSaintPage model saintName =
 
         Just saint ->
             let
-                saintsAliveLinks =
-                    String.split ";" saint.saintsAliveLink
+                activities =
+                    activitiesFromSaint saint
+                        |> List.map Tuple.second
             in
             div
                 []
@@ -215,25 +215,7 @@ viewSaintPage model saintName =
                 , div []
                     [ viewFeastDay saint
                     , viewPatronage model saint
-                    , viewVideos
-                        ((if saint.catholicSaintsInfoYoutubePlaylist /= "" then
-                            [ activityFromLink saintName saint.catholicSaintsInfoYoutubePlaylist ]
-
-                          else
-                            [ activityFromLink saintName saint.catholicSaintsInfoYoutubePlaylist ]
-                         )
-                            |> List.filterMap Basics.identity
-                        )
-                    , viewActivity saintName saint.catholicCuisine
-                    , div []
-                        (List.map (viewPodcastActivity saintName) saintsAliveLinks)
-                    , viewActivity saintName saint.catholicSprouts
-                    , viewActivity saintName saint.franciscanMediaLink
-                    , viewActivity saintName saint.christianiconographyInfo
-                    , viewActivity saintName saint.teachingCatholicKidsLink
-                    , viewActivity saintName saint.catholicOrgLink
-                    , viewActivity saintName saint.catholicSaintsLink
-                    , viewActivity saintName saint.uCatholicLink
+                    , viewAllActivities model.saintList.isLoading activities
                     ]
                 ]
 

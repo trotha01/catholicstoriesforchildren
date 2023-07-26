@@ -23,10 +23,9 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Regex
-import Saints.SaintHelpers exposing (activityDescriptionFromLink, activityImageFromLink, activityTitleFromLink, activityTypeFromLink)
+import Saints.SaintHelpers exposing (activitiesFromSaint)
 import Saints.SaintList as SaintList
 import Signup exposing (..)
-import Spinner
 import Task
 import Time exposing (Month(..))
 import Url
@@ -312,34 +311,6 @@ viewFeast feastActivities =
     div [] [ text feastActivities.feast ]
 
 
-activityFromLink : String -> String -> Maybe Activity
-activityFromLink saintName link =
-    let
-        activityTitle =
-            activityTitleFromLink saintName link
-
-        activityDescription =
-            activityDescriptionFromLink saintName link
-
-        activityImage =
-            activityImageFromLink link
-
-        activityType =
-            activityTypeFromLink link
-    in
-    if String.isEmpty link then
-        Nothing
-
-    else
-        Just
-            { activityType = activityType
-            , title = activityTitle
-            , image = activityImage
-            , link = link
-            , snippet = activityDescription
-            }
-
-
 viewFeastActivities : Model -> List FeastActivities -> Html Msg
 viewFeastActivities model feastActivitiesList =
     let
@@ -399,62 +370,14 @@ viewFeastActivities model feastActivitiesList =
         saintActivities =
             model.saintList.saints
                 |> List.filter (\saint -> List.member (String.toLower saint.name) cleanedFeastNames)
-                |> List.concatMap
-                    (\saint ->
-                        [ -- Only include the catholic video link if there isn't a playlist
-                          if saint.catholicSaintsInfoYoutubePlaylist == "" then
-                            [ ( saint.name, activityFromLink saint.name saint.catholicOrgVideoLink ) ]
-
-                          else
-                            []
-                        , [ ( saint.name, activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.catholicCuisine ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.christianiconographyInfo ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.catholicSprouts ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.franciscanMediaLink ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.teachingCatholicKidsLink ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.catholicOrgLink ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.catholicSaintsLink ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.uCatholicLink ) ]
-                        , [ ( saint.name, activityFromLink saint.name saint.coloringPageLink ) ]
-                        , List.map (\link -> ( saint.name, activityFromLink saint.name link )) (saint.saintsAliveLink |> String.split ";")
-                        ]
-                    )
-                |> List.concat
-                |> List.filterMap (\( saint, link ) -> Maybe.map (\l -> ( saint, l )) link)
+                |> List.concatMap activitiesFromSaint
                 |> removeDuplicates
                 |> List.map (\( _, activity ) -> activity)
 
         activities =
             List.append feastActivities saintActivities
     in
-    if model.saintList.isLoading then
-        div [ class "text-center mt-4" ]
-            [ div [ class "mb-4" ] [ text "We are getting the feast day activities, hang tight." ]
-            , div [ class "m-auto w-10 text-[#9200B3]" ]
-                [ Spinner.purpleSpinner []
-                ]
-            ]
-
-    else if List.isEmpty activities then
-        div [ class "mt-4" ]
-            [ viewNoActivities
-            ]
-
-    else
-        div [ class "text-left" ]
-            -- [ viewActivities "Video" (videoActivities activities) -- used for csv output
-            [ viewVideos (videoActivities activities)
-            , viewAudioList (audioActivities activities)
-            , viewActivities "Crafts to Do" (craftActivities activities)
-            , viewPrintouts "Printouts to Enjoy" (printoutActivities activities)
-            , viewActivities "Games to Play" (gameActivities activities)
-            , viewActivities "Images to See" (imageActivities activities)
-            , viewActivities "Material to Read" (readingActivities activities)
-            , viewActivities "Food to Eat" (foodActivities activities)
-            , viewActivities "Books to Read" (bookActivities activities)
-            , viewActivities "More" (moreActivities activities)
-            ]
+    viewAllActivities model.saintList.isLoading activities
 
 
 type alias FeastMonth =
