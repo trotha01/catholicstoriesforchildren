@@ -167,57 +167,48 @@ viewSaintPage model saintName =
             List.filter (\s -> s.name == saintName) model.saintList.saints
                 |> List.head
     in
-    case maybeSaint of
-        Nothing ->
-            let
-                spinnerOrError =
-                    if model.saintList.isLoading then
-                        div [ class "text-center" ]
-                            [ span [ class "mb-4" ] [ text "We are getting information for this saints, this may take some time." ]
-                            , div [ class "m-auto w-10 text-[#9200B3]" ]
-                                [ Spinner.purpleSpinner []
+    div
+        []
+        [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
+        , div [ class "mt-10" ]
+            [ Signup.view model.signup |> Html.map SignupMsg ]
+        , div [ class "mt-10" ] [ viewBackButton ]
+        , h1
+            [ class "text-center"
+            , class "my-10"
+            ]
+            [ text saintName ]
+        , case maybeSaint of
+            Nothing ->
+                let
+                    spinnerOrError =
+                        if model.saintList.isLoading then
+                            div [ class "text-center" ]
+                                [ span [] [ text "We are getting information for this saint, this may take some time." ]
+                                , div [ class "m-auto w-10 text-[#9200B3] mt-4" ]
+                                    [ Spinner.purpleSpinner []
+                                    ]
                                 ]
-                            ]
 
-                    else
-                        div []
-                            [ div [] [ text "Sorry, we had an error getting the information for this saint" ]
-                            ]
-            in
-            div
-                []
-                [ viewBackButton
-                , h1
-                    [ class "text-center"
-                    , class "my-10"
-                    ]
-                    [ text saintName ]
-                , spinnerOrError
-                ]
+                        else
+                            div []
+                                [ div [] [ text "Sorry, we had an error getting the information for this saint" ]
+                                ]
+                in
+                div [] [ spinnerOrError ]
 
-        Just saint ->
-            let
-                activities =
-                    activitiesFromSaint saint
-                        |> List.map Tuple.second
-            in
-            div
-                []
-                [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
-                , div [ class "mt-10" ]
-                    [ Signup.view model.signup |> Html.map SignupMsg ]
-                , div [ class "mt-10" ] [ viewBackButton ]
-                , h1
-                    [ class "text-center"
-                    , class "my-10"
-                    ]
-                    [ text saintName ]
-                , div []
+            Just saint ->
+                let
+                    activities =
+                        activitiesFromSaint saint
+                            |> List.map Tuple.second
+                in
+                div []
                     [ viewFeastDay saint
                     , viewPatronage model saint
                     , viewAllActivities model.saintList.isLoading activities
                     ]
-                ]
+        ]
 
 
 viewBackButton : Html msg
