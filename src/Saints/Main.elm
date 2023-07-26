@@ -352,7 +352,7 @@ viewActivity : String -> String -> Html msg
 viewActivity saintName link =
     let
         activityTitle =
-            activityTitleFromLink link
+            activityTitleFromLink saintName link
 
         activityDescription =
             activityDescriptionFromLink saintName link

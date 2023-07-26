@@ -252,7 +252,7 @@ viewDate model month date feasts =
 
 viewWeekdayActivities : Html msg
 viewWeekdayActivities =
-    div [ class "text-left" ]
+    div [ class "text-left p-5" ]
         [ h3 [ class "font-semibold" ] [ text "Common Daily Prayers" ]
         , p [ class "mt-4" ] [ text "It is good to be able to center yourself on God throughout the years, months, and days. We have suggestions here to help order the hours of the day toward God. They are based on the Liturgy of the Hours. The suggestions here can be modified for you and your family. Especially with young kids that need to sleep in or go to bed early." ]
         , div [ class "mt-4 grid grid-cols-[50px,_1fr]" ]

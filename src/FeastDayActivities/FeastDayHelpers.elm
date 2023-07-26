@@ -207,7 +207,7 @@ viewActivities title activities =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold" ] [ text title ]
+            [ h3 [ class "font-semibold p-5" ] [ text title ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map viewActivity activities)
             ]
@@ -220,7 +220,7 @@ viewPrintouts title activities =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold" ] [ text title ]
+            [ h3 [ class "font-semibold p-5" ] [ text title ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\activity ->
@@ -234,7 +234,7 @@ viewPrintouts title activities =
 viewPrintout : Activity -> Html msg
 viewPrintout activity =
     a [ href activity.link ]
-        [ img [ src activity.link, class "max-w-xl" ] []
+        [ img [ src activity.link, class "max-w-xl w-full p-5" ] []
         ]
 
 
@@ -245,7 +245,7 @@ viewVideos videos =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold" ] [ text "Videos to Watch" ]
+            [ h3 [ class "font-semibold p-5" ] [ text "Videos to Watch" ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map
                     (\video ->
@@ -299,7 +299,7 @@ viewAudioList audioList =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold" ] [ text "Podcasts to Hear" ]
+            [ h3 [ class "font-semibold p-5" ] [ text "Podcasts to Hear" ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map viewAudio audioList)
             ]
@@ -324,7 +324,7 @@ viewEmbeddedAudio activity =
         span [] []
 
     else
-        div [ class "p-7" ]
+        div [ class "p-5" ]
             [ iframe
                 [ src link
                 , attribute "allow" "autoplay *; encrypted-media *; fullscreen *; clipboard-write"
