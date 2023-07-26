@@ -368,15 +368,31 @@ viewFeastActivities model feastActivitiesList =
                 feastNames
 
         -- Helper functions to remove duplicate activities
-        addUniqueActivity : Activity -> List Activity -> List Activity
-        addUniqueActivity record uniqueRecords =
-            if List.any (\r -> r.link == record.link) uniqueRecords then
-                uniqueRecords
+        addUniqueActivity : ( String, Activity ) -> List ( String, Activity ) -> List ( String, Activity )
+        addUniqueActivity ( saintName, record ) uniqueRecords =
+            if List.any (\( _, r ) -> r.link == record.link) uniqueRecords then
+                List.map
+                    (\( s, r ) ->
+                        -- TODO: sub saint name, with saint name and new saint name
+                        if r.link == record.link then
+                            ( s
+                            , { activityType = r.activityType
+                              , title = String.replace s (s ++ " and " ++ saintName) r.title
+                              , image = r.image
+                              , link = r.link
+                              , snippet = String.replace s (s ++ " and " ++ saintName) r.snippet
+                              }
+                            )
+
+                        else
+                            ( s, r )
+                    )
+                    uniqueRecords
 
             else
-                record :: uniqueRecords
+                ( saintName, record ) :: uniqueRecords
 
-        removeDuplicates : List Activity -> List Activity
+        removeDuplicates : List ( String, Activity ) -> List ( String, Activity )
         removeDuplicates records =
             List.foldl addUniqueActivity [] records
 
@@ -387,26 +403,27 @@ viewFeastActivities model feastActivitiesList =
                     (\saint ->
                         [ -- Only include the catholic video link if there isn't a playlist
                           if saint.catholicSaintsInfoYoutubePlaylist == "" then
-                            [ activityFromLink saint.name saint.catholicOrgVideoLink ]
+                            [ ( saint.name, activityFromLink saint.name saint.catholicOrgVideoLink ) ]
 
                           else
                             []
-                        , [ activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist ]
-                        , [ activityFromLink saint.name saint.catholicCuisine ]
-                        , [ activityFromLink saint.name saint.christianiconographyInfo ]
-                        , [ activityFromLink saint.name saint.catholicSprouts ]
-                        , [ activityFromLink saint.name saint.franciscanMediaLink ]
-                        , [ activityFromLink saint.name saint.teachingCatholicKidsLink ]
-                        , [ activityFromLink saint.name saint.catholicOrgLink ]
-                        , [ activityFromLink saint.name saint.catholicSaintsLink ]
-                        , [ activityFromLink saint.name saint.uCatholicLink ]
-                        , [ activityFromLink saint.name saint.coloringPageLink ]
-                        , List.map (activityFromLink saint.name) (saint.saintsAliveLink |> String.split ";")
+                        , [ ( saint.name, activityFromLink saint.name saint.catholicSaintsInfoYoutubePlaylist ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.catholicCuisine ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.christianiconographyInfo ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.catholicSprouts ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.franciscanMediaLink ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.teachingCatholicKidsLink ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.catholicOrgLink ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.catholicSaintsLink ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.uCatholicLink ) ]
+                        , [ ( saint.name, activityFromLink saint.name saint.coloringPageLink ) ]
+                        , List.map (\link -> ( saint.name, activityFromLink saint.name link )) (saint.saintsAliveLink |> String.split ";")
                         ]
                     )
                 |> List.concat
-                |> List.filterMap Basics.identity
+                |> List.filterMap (\( saint, link ) -> Maybe.map (\l -> ( saint, l )) link)
                 |> removeDuplicates
+                |> List.map (\( _, activity ) -> activity)
 
         activities =
             List.append feastActivities saintActivities

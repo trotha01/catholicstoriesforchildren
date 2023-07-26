@@ -29,7 +29,7 @@ urlSaintParser =
 activityTitleFromLink : String -> String -> String
 activityTitleFromLink saintName link =
     if String.contains "catholicsaints.info" link then
-        "Catholic Saints Info"
+        saintName ++ " Catholic Saints Info"
 
     else if String.contains "catholiccuisine" link then
         "Catholic Cuisine"
