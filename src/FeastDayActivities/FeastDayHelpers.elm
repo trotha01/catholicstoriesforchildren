@@ -281,7 +281,7 @@ viewVideos videos =
             , div []
                 (List.map
                     (\video ->
-                        viewVideo video
+                        div [ class "mb-10" ] [ viewVideo video ]
                     )
                     videos
                 )
@@ -547,6 +547,9 @@ activityTitleFromLink saintName link =
     else if String.contains "youtube.com/watch" link then
         "Video"
 
+    else if String.contains "swpals" link then
+        "Video"
+
     else if String.contains "youtube.com/playlist" link then
         "Video Playlist"
 
@@ -583,6 +586,9 @@ activityDescriptionFromLink saintName link =
     else if String.contains "youtube.com/watch" link then
         "Watch a video about " ++ saintName ++ " on YouTube."
 
+    else if String.contains "swpals" link then
+        "Watch a video about " ++ saintName ++ " on SWPals."
+
     else if String.contains "youtube.com/playlist" link then
         "Watch a video playlist about " ++ saintName ++ " on YouTube."
 
@@ -600,6 +606,9 @@ activityDescriptionFromLink saintName link =
 
     else if String.contains "thecatholickid" link then
         "Color with The Catholic Kid"
+
+    else if String.contains "catholicfamilycrate" link then
+        "Color with Catholic Family Crate"
 
     else if String.contains "embed.podcasts.apple" link then
         "Learn about " ++ saintName ++ " with this podcast."
@@ -625,6 +634,9 @@ activityImageFromLink link =
     else if String.contains "youtube" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/YoutubeLogo_pTffms4iT.png?updatedAt=1685565144465"
 
+    else if String.contains "swpals" link then
+        "https://ik.imagekit.io/catholicstories/ProfileImages/SWPals_9zKzvu6ZW.jpg?updatedAt=1690806342634"
+
     else if String.contains "franciscanmedia" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/FranciscanMediaLogo_9jff8EeGN.png?updatedAt=1685565018915"
 
@@ -642,6 +654,9 @@ activityImageFromLink link =
 
     else if String.contains "thecatholickid" link then
         "https://ik.imagekit.io/catholicstories/ProfileImages/TeachingCatholicKids_j2Zik9ZLc.png?updatedAt=1688597870744"
+
+    else if String.contains "catholicfamilycrate" link then
+        "https://ik.imagekit.io/catholicstories/ProfileImages/7_i5fOMR9CEB.png?updatedAt=1685581542221"
 
     else
         ""
@@ -664,6 +679,9 @@ activityTypeFromLink link =
     else if String.contains "youtube" link then
         Video
 
+    else if String.contains "swpals" link then
+        Video
+
     else if String.contains "franciscanmedia" link then
         Audio
 
@@ -677,6 +695,9 @@ activityTypeFromLink link =
         OnlineReading
 
     else if String.contains "thecatholickid" link then
+        Printout
+
+    else if String.contains "catholicfamilycrate" link then
         Printout
 
     else

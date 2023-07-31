@@ -44,8 +44,9 @@ activitiesFromSaint saint =
     , [ ( saint.name, activityFromLink saint.name saint.catholicOrgLink ) ]
     , [ ( saint.name, activityFromLink saint.name saint.catholicSaintsLink ) ]
     , [ ( saint.name, activityFromLink saint.name saint.uCatholicLink ) ]
-    , [ ( saint.name, activityFromLink saint.name saint.coloringPageLink ) ]
+    , List.map (\link -> ( saint.name, activityFromLink saint.name link )) (saint.coloringPageLink |> String.split ";")
     , List.map (\link -> ( saint.name, activityFromLink saint.name link )) (saint.saintsAliveLink |> String.split ";")
+    , List.map (\link -> ( saint.name, activityFromLink saint.name link )) (saint.videoLinks |> String.split ";")
     ]
         |> List.concat
         |> List.filterMap (\( saintName, link ) -> Maybe.map (\l -> ( saintName, l )) link)

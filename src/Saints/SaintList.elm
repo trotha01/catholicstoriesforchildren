@@ -77,6 +77,7 @@ type alias Saint =
     , saintsAliveLink : String
     , coloringPageLink : String
     , catholicSprouts : String
+    , videoLinks : String
     }
 
 
@@ -112,4 +113,5 @@ convertToSaint saintData =
     , saintsAliveLink = Array.get 19 saintData |> Maybe.withDefault ""
     , coloringPageLink = Array.get 20 saintData |> Maybe.withDefault ""
     , catholicSprouts = Array.get 21 saintData |> Maybe.withDefault ""
+    , videoLinks = Array.get 22 saintData |> Maybe.withDefault ""
     }
