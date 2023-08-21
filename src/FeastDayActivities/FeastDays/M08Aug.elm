@@ -98,7 +98,7 @@ august =
           }
         , { date = "21"
           , feasts =
-                [ { feast = "Saint Pius X", activities = [] }
+                [ { feast = "Pope Saint Pius X", activities = [] }
                 ]
           }
         , { date = "22"
