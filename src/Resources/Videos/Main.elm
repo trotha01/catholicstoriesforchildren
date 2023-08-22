@@ -87,6 +87,7 @@ viewVideos =
             [ catholicStoriesForChildren
             , christineInAction
             , tomkin
+            , juiceBox
             , catholicKidsMedia
             , brotherFrancis
             , catholicSongsForKids
@@ -143,6 +144,14 @@ catholicSongsForKids =
     { name = "Catholic Songs for Kids"
     , link = "https://www.youtube.com/@catholicsongsforkids"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/40_vS6tZTdD3.png?updatedAt=1682876930344"
+    }
+
+
+juiceBox : Resource
+juiceBox =
+    { name = "Spirit Juice Kids"
+    , link = "https://www.youtube.com/@SpiritJuiceKids"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/juicebox_flQW7t8YD.png?updatedAt=1692736674561"
     }
 
 
