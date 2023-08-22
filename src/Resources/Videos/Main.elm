@@ -90,8 +90,9 @@ viewVideos =
             , catholicKidsMedia
             , brotherFrancis
             , catholicSongsForKids
-            , catholicIcing
             , opusJoyous
+            , catholicIcing
+            , amyheysart
             , prostradaDesigns
             ]
         )
@@ -150,6 +151,14 @@ catholicIcing =
     { name = "Catholic Icing"
     , link = "https://www.youtube.com/@CatholicIcing"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/41_XrkKmwtXL.png?updatedAt=1682876930378"
+    }
+
+
+amyheysart : Resource
+amyheysart =
+    { name = "Amy Heyse Art"
+    , link = "https://www.youtube.com/@amyheyseart"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/AmyH_ld3G4EoVX.png?updatedAt=1692735921831"
     }
 
 
