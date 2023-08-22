@@ -93,7 +93,7 @@ viewAbout =
             [ Helpers.email
             ]
         , p []
-            [ a [ href "https://calendly.com/csc-trevor/30min", class "text-blue-600", target "_blank" ] [ text "Schedule a meeting with me!" ]
+            [ a [ href "https://calendar.app.google/PBwGTHVqb44PuRTH9", class "text-blue-600", target "_blank" ] [ text "Schedule a meeting with me!" ]
             ]
         ]
 

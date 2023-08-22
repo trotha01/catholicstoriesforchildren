@@ -135,13 +135,26 @@ viewThankYou =
                 [ viewPersonImage trevor
                 ]
             ]
+
+        -- , div
+        --     [ class "calendly-inline-widget"
+        --     , style "min-width" "320px"
+        --     , style "height" "900px"
+        --     , attribute "data-url" "https://calendly.com/csc-trevor/30min"
+        --     ]
+        --     []
         , div
-            [ class "calendly-inline-widget"
-            , style "min-width" "320px"
-            , style "height" "900px"
-            , attribute "data-url" "https://calendly.com/csc-trevor/30min"
+            [ class "bg-white rounded"
             ]
-            []
+            [ iframe
+                [ src "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1q_LityalnFrAKQ20-YIKG1HeQAv2DK8ExvFS1QacsSAj_HfKe-aZlqQAGpWvNWWJro6D6ynkV?gv=true"
+                , style "border" "0"
+                , style "width" "100%"
+                , height 600
+                , attribute "frameborder" "0"
+                ]
+                []
+            ]
         ]
 
 
