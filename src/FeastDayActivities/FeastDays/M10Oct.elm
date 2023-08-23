@@ -49,7 +49,7 @@ october =
           }
         , { date = "11"
           , feasts =
-                [ { feast = "Saint John Paul XXIII", activities = [] }
+                [ { feast = "Pope Saint John XXIII", activities = [] }
                 ]
           }
         , { date = "14"
