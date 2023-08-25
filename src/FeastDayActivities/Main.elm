@@ -377,7 +377,20 @@ viewFeastActivities model feastActivitiesList =
         activities =
             List.append feastActivities saintActivities
     in
-    viewAllActivities model.saintList.isLoading activities
+    div []
+        [ viewAllActivities model.saintList.isLoading activities
+        , div [ class "mt-20 rounded" ]
+            [ iframe
+                [ src "https://docs.google.com/forms/d/e/1FAIpQLSfBQ4oZgDKyYjH1UfaX1qFLW7UFprnO6OKZ5_X6pYoPkfi2fQ/viewform?embedded=true"
+                , width 640
+                , height 920
+                , attribute "frameborder" "0"
+                , attribute "marginheight" "0"
+                , attribute "marginwidth" "0"
+                ]
+                []
+            ]
+        ]
 
 
 type alias FeastMonth =
