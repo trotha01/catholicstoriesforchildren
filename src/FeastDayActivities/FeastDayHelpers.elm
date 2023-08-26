@@ -502,6 +502,217 @@ feastMonthFromMonth month =
             "dec"
 
 
+isLeapYear : Int -> Bool
+isLeapYear year =
+    (modBy 4 year == 0 && modBy 100 year /= 0) || (modBy 400 year == 0)
+
+
+previousDate : String -> String -> String -> ( String, String )
+previousDate year month day =
+    let
+        date =
+            String.toInt day |> Maybe.withDefault 0
+
+        intYear =
+            String.toInt year |> Maybe.withDefault 0
+    in
+    case month of
+        "jan" ->
+            if date - 1 > 0 then
+                ( "jan", String.fromInt <| date - 1 )
+
+            else
+                ( "dec", "31" )
+
+        "feb" ->
+            if date - 1 > 0 then
+                ( "feb", String.fromInt <| date - 1 )
+
+            else
+                ( "jan", "31" )
+
+        "mar" ->
+            if date - 1 > 0 then
+                ( "mar", String.fromInt <| date - 1 )
+
+            else if isLeapYear intYear then
+                ( "feb", "29" )
+
+            else
+                ( "feb", "28" )
+
+        "apr" ->
+            if date - 1 > 0 then
+                ( "apr", String.fromInt <| date - 1 )
+
+            else
+                ( "mar", "31" )
+
+        "may" ->
+            if date - 1 > 0 then
+                ( "may", String.fromInt <| date - 1 )
+
+            else
+                ( "apr", "30" )
+
+        "jun" ->
+            if date - 1 > 0 then
+                ( "jun", String.fromInt <| date - 1 )
+
+            else
+                ( "may", "31" )
+
+        "jul" ->
+            if date - 1 > 0 then
+                ( "jul", String.fromInt <| date - 1 )
+
+            else
+                ( "jun", "30" )
+
+        "aug" ->
+            if date - 1 > 0 then
+                ( "aug", String.fromInt <| date - 1 )
+
+            else
+                ( "jul", "30" )
+
+        "sep" ->
+            if date - 1 > 0 then
+                ( "sep", String.fromInt <| date - 1 )
+
+            else
+                ( "aug", "31" )
+
+        "oct" ->
+            if date - 1 > 0 then
+                ( "oct", String.fromInt <| date - 1 )
+
+            else
+                ( "sep", "30" )
+
+        "nov" ->
+            if date - 1 > 0 then
+                ( "nov", String.fromInt <| date - 1 )
+
+            else
+                ( "oct", "31" )
+
+        "dec" ->
+            if date - 1 > 0 then
+                ( "dec", String.fromInt <| date - 1 )
+
+            else
+                ( "nov", "30" )
+
+        _ ->
+            ( "jan", "1" )
+
+
+nextDate : String -> String -> String -> ( String, String )
+nextDate year month day =
+    let
+        date =
+            String.toInt day |> Maybe.withDefault 0
+
+        intYear =
+            String.toInt year |> Maybe.withDefault 0
+    in
+    case month of
+        "jan" ->
+            if date + 1 <= 31 then
+                ( "jan", String.fromInt <| date + 1 )
+
+            else
+                ( "feb", "1" )
+
+        "feb" ->
+            if isLeapYear intYear then
+                if date + 1 <= 29 then
+                    ( "feb", String.fromInt <| date + 1 )
+
+                else
+                    ( "mar", "1" )
+
+            else if date + 1 <= 28 then
+                ( "feb", String.fromInt <| date + 1 )
+
+            else
+                ( "mar", "1" )
+
+        "mar" ->
+            if date + 1 <= 31 then
+                ( "mar", String.fromInt <| date + 1 )
+
+            else
+                ( "apr", "1" )
+
+        "apr" ->
+            if date + 1 <= 30 then
+                ( "apr", String.fromInt <| date + 1 )
+
+            else
+                ( "may", "1" )
+
+        "may" ->
+            if date + 1 <= 31 then
+                ( "may", String.fromInt <| date + 1 )
+
+            else
+                ( "jun", "1" )
+
+        "jun" ->
+            if date + 1 <= 30 then
+                ( "jun", String.fromInt <| date + 1 )
+
+            else
+                ( "jul", "1" )
+
+        "jul" ->
+            if date + 1 <= 31 then
+                ( "jul", String.fromInt <| date + 1 )
+
+            else
+                ( "aug", "1" )
+
+        "aug" ->
+            if date + 1 <= 31 then
+                ( "aug", String.fromInt <| date + 1 )
+
+            else
+                ( "sep", "1" )
+
+        "sep" ->
+            if date + 1 <= 30 then
+                ( "sep", String.fromInt <| date + 1 )
+
+            else
+                ( "oct", "1" )
+
+        "oct" ->
+            if date + 1 <= 31 then
+                ( "oct", String.fromInt <| date + 1 )
+
+            else
+                ( "nov", "1" )
+
+        "nov" ->
+            if date + 1 <= 30 then
+                ( "nov", String.fromInt <| date + 1 )
+
+            else
+                ( "dec", "1" )
+
+        "dec" ->
+            if date + 1 <= 31 then
+                ( "dec", String.fromInt <| date + 1 )
+
+            else
+                ( "jan", "1" )
+
+        _ ->
+            ( "jan", "1" )
+
+
 activityFromLink : String -> String -> Maybe Activity
 activityFromLink saintName link =
     let

@@ -104,7 +104,11 @@ update msg model =
 
         UrlChanged url ->
             ( { model | url = url }
-            , jumpToHeader
+            , if String.contains "d=" (Url.toString url) then
+                jumpToTop
+
+              else
+                jumpToHeader
             )
 
         SignupMsg signupMsg ->
@@ -135,6 +139,13 @@ jumpToHeader : Cmd Msg
 jumpToHeader =
     Dom.getElement "calendar-content"
         |> Task.andThen (\i -> Dom.setViewportOf "body" 0 i.element.y)
+        |> Task.attempt (\_ -> NoOp)
+
+
+jumpToTop : Cmd Msg
+jumpToTop =
+    Dom.getElement "calendar-content"
+        |> Task.andThen (\i -> Dom.setViewportOf "body" 0 0)
         |> Task.attempt (\_ -> NoOp)
 
 
@@ -217,24 +228,56 @@ viewBody model route =
 
 viewDate : Model -> String -> String -> List FeastActivities -> Html Msg
 viewDate model month date feasts =
+    let
+        ( nextMonth, nextDay ) =
+            nextDate "2023" month date
+
+        ( prevMonth, prevDay ) =
+            previousDate "2023" month date
+
+        nextDateLink =
+            createFeastDayLink nextMonth nextDay
+
+        prevDateLink =
+            createFeastDayLink prevMonth prevDay
+    in
     div
         [ class "text-center"
         , class "mt-10 max-w-3xl mx-auto"
         , id "calendar-content"
         ]
-        [ div [ class "grid md:grid-cols-[200px,_1fr]" ]
-            [ a
-                [ class "text-7xl text-left m-5 md:m-0"
-                , href (urlPath ++ "?m=" ++ month)
-                , attribute "aria-label" ("Back to " ++ month)
-                ]
-                [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
-                , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
+        [ div [ class "p-5" ]
+            [ div [ class "grid grid-cols-3 mb-16" ]
+                [ a
+                    [ class "text-7xl text-left md:m-0"
+                    , href prevDateLink
+                    , attribute "aria-label" "Previous"
+                    ]
+                    [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] [] ]
+                    , div [ class "text-sm capitalize" ] [ text "Previous" ]
+                    ]
+                , a
+                    [ class "text-7xl text-left m-5 md:m-0 justify-self-center"
+                    , href (urlPath ++ "?m=" ++ month)
+                    , attribute "aria-label" ("Back to " ++ month)
+                    ]
+                    [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
+                    , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
+                    ]
+                , a
+                    [ class "text-7xl text-left md:m-0 justify-self-end"
+                    , href nextDateLink
+                    , attribute "aria-label" "Next"
+                    ]
+                    [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] [] ]
+                    , div [ class "text-sm capitalize" ] [ text "Next" ]
+                    ]
                 ]
             , div
                 []
-                [ h1 [ class "capitalize text-left mx-5 md:mx-0" ]
-                    [ text ("Catholic Activities for Children for " ++ month ++ " " ++ date ++ ", 2023")
+                [ h1 [ class "capitalize text-left" ]
+                    [ span [ class "block" ] [ text "Catholic Activities for Children" ]
+                    , span [ class "block" ] [ text ("for " ++ month ++ " " ++ date ++ ", 2023") ]
                     ]
                 , viewFeastDayHeader feasts
                 ]
@@ -301,9 +344,13 @@ viewFeastDayHeader feasts =
         concatFeasts =
             String.join " and " (List.map .feast feasts)
     in
-    div
-        [ class "grid m-auto max-w-2xl mx-5 md:mx-0" ]
-        [ h2 [ class "text-2xl text-left" ] [ text ("Feast of " ++ concatFeasts) ] ]
+    if concatFeasts == "" then
+        span [] []
+
+    else
+        div
+            [ class "grid m-auto" ]
+            [ h2 [ class "text-2xl text-left" ] [ text ("Feast of " ++ concatFeasts) ] ]
 
 
 viewFeast : FeastActivities -> Html Msg
@@ -490,11 +537,20 @@ viewFeastDays month list =
         )
 
 
+createFeastDayLink : String -> String -> String
+createFeastDayLink month date =
+    let
+        paddedDate =
+            String.padLeft 2 '0' date
+    in
+    urlPath ++ "?m=" ++ month ++ "&d=" ++ paddedDate
+
+
 viewFeastDay : String -> FeastDay -> Html Msg
 viewFeastDay month feastDay =
     let
         link =
-            urlPath ++ "?m=" ++ month ++ "&d=" ++ feastDay.date
+            createFeastDayLink month feastDay.date
     in
     div
         []

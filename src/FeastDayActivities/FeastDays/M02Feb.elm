@@ -915,15 +915,9 @@ february =
           }
         , { date = "29"
           , feasts =
-                [ { feast = "Saint Oswald"
+                [ { feast = "Saint Oswald of Worcester"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Oswald"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-oswald/"
-                          , snippet = "Saint Oswald knew people in high places─his uncle was the archbishop of Canterbury. But even though he received “favors” from his uncle, he served humbly and gained holiness through God’s grace."
-                          }
-                        ]
+                        []
                   }
                 , { feast = "Saint John Cassian"
                   , activities =
