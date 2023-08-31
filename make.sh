@@ -45,6 +45,7 @@ pair_list=(
   src/Prayers/Main.elm prayers/elm.js
   src/Prayer/Angelus/Main.elm prayer/angelus/elm.js
   src/Resources/Books/Main.elm resources/books/elm.js
+  src/Resources/Games/Main.elm resources/games/elm.js
   src/Resources/Main.elm resources/elm.js
   src/Resources/Podcasts/Main.elm resources/podcasts/elm.js
   src/Resources/Prayer/Main.elm resources/prayer/elm.js

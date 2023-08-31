@@ -207,6 +207,7 @@ fakeNodeWithJs('./newsroom/index.html', 'Newsroom - Catholic Stories for Childre
 fakeNodeWithJs('./prayers/index.html', 'Prayers - Catholic Stories for Children', 'Catholic Prayers', '.Prayers')
 fakeNodeWithJs('./prayer/angelus/index.html', 'Angelus Prayer - Catholic Stories for Children', 'Angelus Prayers', '.Prayer.Angelus')
 fakeNodeWithJs('./resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith', '.Resources.Books')
+fakeNodeWithJs('./resources/games/index.html', 'Game Resources - Catholic Stories for Children', 'Games to guide kids in learning the Catholic faith', '.Resources.Games')
 fakeNodeWithJs('./resources/index.html', 'Resources - Catholic Stories for Children', 'Resources to guide kids in learning the Catholic faith', '.Resources')
 fakeNodeWithJs('./resources/podcasts/index.html', 'Podcast Resources - Catholic Stories for Children', 'Podcasts to guide kids in learning the Catholic faith', '.Resources.Podcasts')
 fakeNodeWithJs('./resources/prayer/index.html', 'Prayer Resources - Catholic Stories for Children', 'Prayer resources to guide families in building a strong habit of prayer', '.Resources.Prayer')

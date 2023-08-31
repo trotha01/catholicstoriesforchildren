@@ -83,7 +83,7 @@ viewAboutResources =
 viewResourceGroups : Html msg
 viewResourceGroups =
     div []
-        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources, feastDayActivities ])
+        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources, feastDayActivities, gameResources ])
 
 
 viewResourceGroup : ResourceGroup -> Html msg
@@ -154,4 +154,13 @@ feastDayActivities =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png?updatedAt=1686096632436"
     , description = "Find activities for feast days throughout the year"
     , link = "/feastdayactivities"
+    }
+
+
+gameResources : ResourceGroup
+gameResources =
+    { name = "Games"
+    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/Game%20Icon_rb2djF7Hf.png?updatedAt=1693438195519"
+    , description = "Find game resources for a fun way to learn about the Catholic faith"
+    , link = "/resources/games"
     }
