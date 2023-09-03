@@ -11,12 +11,12 @@ september =
     , feasts =
         [ { date = "03"
           , feasts =
-                [ { feast = "Saint Gregory the Great, Pope and Doctor", activities = [] }
+                [ { feast = "Pope Saint Gregory the Great", activities = [] }
                 ]
           }
         , { date = "05"
           , feasts =
-                [ { feast = "Saint Mother Teresa of Calcutta", activities = [] }
+                [ { feast = "Saint Teresa of Calcutta", activities = [] }
                 ]
           }
         , { date = "08"
@@ -36,7 +36,7 @@ september =
           }
         , { date = "13"
           , feasts =
-                [ { feast = "Saint John Chrysostom, Bishop and Doctor", activities = [] }
+                [ { feast = "Saint John Chrysostom", activities = [] }
                 ]
           }
         , { date = "14"
@@ -51,60 +51,64 @@ september =
           }
         , { date = "16"
           , feasts =
-                [ { feast = "Saint Cornelius, Pope", activities = [] }
-                , { feast = "Saint Cyprian, Bishop", activities = [] }
+                [ { feast = "Pope Saint Cornelius", activities = [] }
+                , { feast = "Saint Cyprian of Carthage", activities = [] }
                 ]
           }
         , { date = "17"
           , feasts =
-                [ { feast = "Saint Hildegard of Bingen, Virgin and Doctor of the Church", activities = [] }
+                [ { feast = "Saint Hildegard von Bingen", activities = [] }
                 ]
           }
         , { date = "19"
           , feasts =
-                [ { feast = "Saint Januarius, Bishop and Martyr", activities = [] }
+                [ { feast = "Saint Januarius of Naples", activities = [] }
                 ]
           }
         , { date = "20"
           , feasts =
-                [ { feast = "Saint Andrew Kim Tae-gŏn, Priest", activities = [] }
-                , { feast = "Saint Paul Chŏng Ha-sang, and Companions, Martyrs", activities = [] }
+                [ { feast = "Saint Andrew Kim Taegon", activities = [] }
+                , { feast = "Saint Paul Chong Hasang", activities = [] }
+                , { feast = "Martyrs of Korea", activities = [] }
                 ]
           }
         , { date = "21"
           , feasts =
-                [ { feast = "Saint Matthew the Evangelist, Apostle", activities = [] }
+                [ { feast = "Saint Matthew the Apostle", activities = [] }
                 ]
           }
         , { date = "23"
           , feasts =
-                [ { feast = "Saint Pio of Pietrelcina, Priest", activities = [] }
+                [ { feast = "Saint Padre Pio", activities = [] }
                 ]
           }
         , { date = "26"
           , feasts =
-                [ { feast = "Saint Cosmas; Saint Damian, Martyrs", activities = [] }
+                [ { feast = "Saint Cosmas", activities = [] }
+                , { feast = "Saint Damian", activities = [] }
                 ]
           }
         , { date = "27"
           , feasts =
-                [ { feast = "Saint Vincent de Paul, Priest", activities = [] }
+                [ { feast = "Saint Vincent de Paul", activities = [] }
                 ]
           }
         , { date = "28"
           , feasts =
-                [ { feast = "Saint Wenceslaus, Martyr", activities = [] }
-                , { feast = "Saint Lawrence Ruiz and Companions, Martyrs", activities = [] }
+                [ { feast = "Saint Wenceslaus of Bohemia", activities = [] }
+                , { feast = "Saint Lorenzo Ruiz of Manila", activities = [] }
                 ]
           }
         , { date = "29"
           , feasts =
-                [ { feast = "Saints Michael, Gabriel and Raphael, Archangels", activities = [] }
+                [ { feast = "Michael the Archangel", activities = [] }
+                , { feast = "Raphael the Archangel", activities = [] }
+                , { feast = "Gabriel the Archangel", activities = [] }
                 ]
           }
         , { date = "30"
           , feasts =
-                [ { feast = "Saint Jerome, Priest and Doctor", activities = [] }
+                [ { feast = "Saint Jerome", activities = [] }
                 ]
           }
         ]
