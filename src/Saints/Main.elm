@@ -9,6 +9,7 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
+import Regex
 import Saints.SaintHelpers exposing (..)
 import Saints.SaintList as SaintList exposing (Saint)
 import Signup exposing (..)
@@ -449,7 +450,7 @@ viewSaints model =
                         (\s ->
                             String.contains (String.toLower query) (String.toLower s.name)
                                 || String.contains (String.toLower query) (String.toLower s.alternativeNames)
-                                || String.contains (String.toLower (convertDate query)) (String.toLower s.feastDay)
+                                || Regex.contains (Regex.fromString ("^" ++ String.toLower (convertDate query)) |> Maybe.withDefault Regex.never) (String.toLower s.feastDay)
                                 || String.contains (String.toLower query) (String.toLower s.patronOf)
                         )
                     -- TODO: update saint sort to take how close the match is into consideration
