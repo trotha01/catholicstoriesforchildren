@@ -87,6 +87,7 @@ viewGames =
             [ wanderlight
             , theCatholicCardGame
             , councilAtDaybreak
+            , holyHeroes
             , saintCards
             , superSaintCards
             , catholicArcade
@@ -139,4 +140,12 @@ catholicArcade =
     { name = "Catholic Arcade"
     , link = "https://opusjoyous.com/"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/64_P-dJU3ooLI.png?updatedAt=1693439790261"
+    }
+
+
+holyHeroes : Resource
+holyHeroes =
+    { name = "Holy Heroes Games"
+    , link = "https://holyheroes.com/collections/games"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/25_OSP8-2xFJ.png?updatedAt=1682716507604"
     }
