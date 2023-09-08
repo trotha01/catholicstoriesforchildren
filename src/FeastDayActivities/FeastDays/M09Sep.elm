@@ -1,6 +1,6 @@
 module FeastDayActivities.FeastDays.M09Sep exposing (..)
 
-import FeastDayActivities.FeastDayHelpers exposing (FeastMonth)
+import FeastDayActivities.FeastDayHelpers exposing (..)
 
 
 september : FeastMonth
@@ -21,7 +21,16 @@ september =
           }
         , { date = "08"
           , feasts =
-                [ { feast = "Birth of the Blessed Virgin Mary", activities = [] }
+                [ { feast = "Birth of the Blessed Virgin Mary"
+                  , activities =
+                        [ { activityType = More
+                          , title = "How To Celebrate The Nativity Of Mary"
+                          , image = "CatholicIcing"
+                          , link = "https://www.catholicicing.com/nativity-of-mary/"
+                          , snippet = "There are so many really fun and meaningful ways to celebrate the Nativity Of Mary with your kids, and today we are going to look at some food ideas, crafts, printables, and more!"
+                          }
+                        ]
+                  }
                 ]
           }
         , { date = "09"
