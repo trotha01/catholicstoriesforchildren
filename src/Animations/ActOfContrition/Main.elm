@@ -66,16 +66,17 @@ viewBody model =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer" ]
         , aboutTheAnimation
-        , div [ class "mb-10" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
+        , fundraising
+
+        -- , div [ class "mb-10" ]
+        --     [ Signup.view model.signup |> Html.map SignupMsg ]
         , viewVideoPlayers
         , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , scripture
         , tradition
         , magisterialTeachings
-
-        -- , aboutThePrayer
+        , aboutThePrayer
         ]
 
 
@@ -104,15 +105,44 @@ aboutTheAnimation =
         ]
         [ p [ class "my-3" ]
             [ text
-                ("Use this animation to help your children learn the Act of Contrition prayer though a story and song."
-                    ++ " It also will help your children understand the concept of a contrite heart, humility, forgiveness, confessing to a priest and more!"
-                )
+                "We are working on creating an animation to help children understand the concept of a contrite heart, humility, forgiveness, confessing to a priest, and more!"
             ]
         , p [ class "my-3" ]
-            [ text
-                ("This animation is also meant to be an aid for your children to build the virtue of humility. "
-                    ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
-                )
+            [ text "This is our most ambitious animation so far. It involves more people and will help teach more concepts in an engaging way."
+            , text " We are producing an Act of Contrition song and animation which will be made freely available for parents, catechists, schools, and parishes."
+            ]
+        , p [ class "my-3" ]
+            [ text " Your donation means they won't have to pay a thing to help their kids grow in the Catholic faith."
+            , text " Your donation will help kids around the world learn humility, reconciliation, penance, how to have a contrite heart, and more.  Any donation amount will help us pay for the screenwriters, illustrators, composers, voice actors, singers, storyboard artists, animators, and all the hands helping produce this animation."
+            ]
+        ]
+
+
+fundraising : Html msg
+fundraising =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "max-w-3xl"
+        ]
+        -- PROGRESS
+        [ div [ class "bg-neutral-200 rounded" ]
+            [ div
+                [ class "bg-[#9200B3] p-1 text-center text-xs font-medium leading-none text-white rounded"
+
+                -- 9,000 out of 42,000
+                , class "w-[21%]"
+                ]
+                [ text "21%" ]
+            ]
+        , p [ class "mb-3 text-sm" ]
+            [ text "$9,000 of $42,000 has been raised so far! (updated daily)" ]
+        , donationButton "Bring this animation to life"
+
+        -- CTA
+        , p [ class "my-3" ]
+            [ text "On October 2 we will be launching a Kickstarter to raise the remainder of the funds."
+            , text " Why donate now? Donations here will avoid the 5% Kickstarter fee and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Kickstarter goal will be. "
             ]
         ]
 
@@ -123,9 +153,12 @@ viewActivities =
         [ h2 [ class "mb-3 mt-5" ] [ text "Confession for Kids Printout" ]
         , div [ class "grid" ]
             [ div []
-                [ p [ class "h-14" ]
-                    [ text "Access a confession guide for kids. You can print it double-sided and fold into a little booklet to bring to Confession."
+                [ p [ class "my-3" ]
+                    [ text "With each animation, we create printouts to go along with them. We will be creating activities to go along with the Act of Contrition Animation. Right now, we are making our confession guide for kids available to you at no cost. You can print it double-sided and fold it into a little booklet to bring to Confession."
                     ]
+                , p [ class "my-3" ]
+                    [ text "After the animation is funded, we will create Act of Contrition activities to foster in kids the power of forgiveness and a contrite heart." ]
+                , donationButton "I would like these activities"
                 , a
                     [ attribute "aria-label" "Confession Guide for Kids"
                     , href "/printables/Little-Reconciliation-Booklet.pdf"
@@ -162,6 +195,11 @@ viewPrayer =
             , span [ class "block" ] [ text "Our Savior Jesus Christ suffered and died for us." ]
             , span [ class "block" ] [ text "In his name, my God, have mercy." ]
             ]
+        , p [ class "mt-5" ]
+            [ text "Each animation has a composed song made to match the tone of the prayer while staying reverent to the nature of prayer. Music and repetition are powerful tools that can help aid in children's memory retention while improving the learning experience. This is much more enojoyable than simply memorizing words."
+            , text " In addition, having the song embedded into the animation will help bring understanding to the words in the prayer."
+            ]
+        , donationButton "I would like this song"
         ]
 
 
@@ -173,8 +211,10 @@ aboutThePrayer =
         , class "py-5"
         , class "max-w-3xl"
         ]
-        [ h2 [] [ text "About the Act of Contrition Prayer" ]
-        , p [ class "my-3" ] [ text "" ]
+        [ h2 [] [ text "About the Act of Contrition Animation" ]
+        , p [ class "my-3" ] [ text "We research every prayer we make for the animations. We do not water down the faith and ensure that the animation is authentic Catholic teaching." ]
+        , p [ class "my-3" ] [ text "We adhere to the teachings of the Magisterium and help kids learn to live the beauty of the Catholic faith." ]
+        , donationButton "Bring the animation to life"
         ]
 
 
@@ -197,12 +237,12 @@ scripture =
         , p []
             [ customBlockquote """Bless the LORD, my soul; and do not forget all his gifts, Who pardons all your sins, and heals all your ills.""" """Psalm 103:2–3.""" ]
         , p [ class "" ]
-            [ text "We also find Christ sending forth his apostles to forgive sins. He commisions his apostles to carry on his work and he gives them the power to forgive sins in his name." ]
+            [ text "We also find Christ sending forth his apostles to forgive sins. He commissions his apostles to carry on his work and he gives them the power to forgive sins in his name." ]
         , p [ class "" ]
             [ customBlockquote """[Jesus] said to them again, “Peace be with you. As the Father has sent me, so I send you.” And when he had said this, he breathed on them and said to them, “Receive the holy Spirit. Whose sins you forgive are forgiven them, and whose sins you retain are retained.”""" """John 20:21-23"""
             ]
         , p [ class "" ]
-            [ text "St Paul reminds us of this commision and power to forgive when writing to the Corinthians" ]
+            [ text "St Paul reminds us of this commission and power to forgive when writing to the Corinthians" ]
         , p [ class "" ]
             [ customBlockquote """Whomever you forgive anything, so do I.""" """2 Corinthians 2:10a"""
             ]
@@ -296,7 +336,7 @@ magisterialTeachings =
         ]
         [ h2 [ class "mb-10" ] [ text "Popes and The Magisterium" ]
         , p [ class "" ]
-            [ text "We can also find the Church councels talking about the Sacrament of Reconciliation." ]
+            [ text "We can also find the Church councils talking about the Sacrament of Reconciliation." ]
         , blockquote
             [ Html.Attributes.cite ""
             , class "my-10"
@@ -353,3 +393,21 @@ customBlockquote quote attribute =
             [ text attribute
             ]
         ]
+
+
+donationButton : String -> Html msg
+donationButton buttonText =
+    a
+        [ style "padding" "10px 10px"
+        , style "display" "inline-block"
+        , style "border-radius" "5px"
+        , style "border-radius" "5px"
+        , style "box-shadow" "#777 1px 1px 5px"
+        , style "color" "white"
+        , class "text-lg"
+        , class "bg-[#9200B3]"
+        , href "https://www.paypal.com/donate/?hosted_button_id=TB5BTND8DXU86"
+        , target "_blank"
+        , attribute "aria-label" "Bring this animation to life"
+        ]
+        [ text buttonText ]
