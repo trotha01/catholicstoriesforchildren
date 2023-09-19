@@ -1431,8 +1431,18 @@ video {
   content: var(--tw-content);
 }
 
+.marker\:content-\[\\\'\1F31F\FE0F\\\'\] *::marker {
+  --tw-content: \'🌟️\';
+  content: var(--tw-content);
+}
+
 .marker\:content-\[\'\1F31F\FE0F\'\]::marker {
   --tw-content: '🌟️';
+  content: var(--tw-content);
+}
+
+.marker\:content-\[\\\'\1F31F\FE0F\\\'\]::marker {
+  --tw-content: \'🌟️\';
   content: var(--tw-content);
 }
 

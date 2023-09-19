@@ -193,6 +193,7 @@ var fakeNodeWithJs = function (path, title, description, elmModule) {
 
 
 fakeNodeWithJs('./about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy')
+fakeNodeWithJs('./animations/actofcontrition/index.html', 'Act of Contrition Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Act of Contrition prayer', '.Animations.ActOfContrition')
 fakeNodeWithJs('./animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel')
 fakeNodeWithJs('./animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary')
 fakeNodeWithJs('./animations/index.html', 'Animations - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.Animations')

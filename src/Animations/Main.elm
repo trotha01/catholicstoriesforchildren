@@ -128,10 +128,10 @@ animations =
                 ]
                 []
             ]
-        , div
-            [ style "border-radius" "5px"
-            , class "grayscale"
-            , class "hover:cursor-not-allowed"
+        , a
+            [ href "/animations/actofcontrition"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
             ]
             [ img
                 [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
