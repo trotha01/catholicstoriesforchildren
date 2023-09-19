@@ -50,7 +50,16 @@ september =
           }
         , { date = "14"
           , feasts =
-                [ { feast = "Exaltation of the Holy Cross", activities = [] }
+                [ { feast = "Exaltation of the Holy Cross"
+                  , activities =
+                        [ { activityType = More
+                          , title = "Celebrating The Exaltation Of The Holy Cross With Kids"
+                          , image = "CatholicIcing"
+                          , link = "https://www.catholicicing.com/celebrating-the-exaltation-of-the-holy-cross-with-kids/"
+                          , snippet = "When living the liturgical year at home, celebrating the exaltation of the holy cross with kids is a fun feast day to keep in mind! It comes around every year on September 14."
+                          }
+                        ]
+                  }
                 ]
           }
         , { date = "15"
