@@ -363,7 +363,7 @@ kelly =
 viewPeople : String -> String -> List Person -> Html msg
 viewPeople title description people =
     div []
-        ([ h3 [ class "text-2xl" ] [ text title ]
+        ([ h3 [ class "text-2xl my-5" ] [ text title ]
          , div
             [ class "hcenter"
             ]
