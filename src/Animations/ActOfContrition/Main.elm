@@ -8,6 +8,7 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Signup exposing (..)
+import Team.Team exposing (..)
 
 
 type alias Model =
@@ -69,6 +70,7 @@ viewBody model =
         , viewVideoPlayers
         , aboutTheAnimation
         , fundraising
+        , team
 
         -- , div [ class "mb-10" ]
         --     [ Signup.view model.signup |> Html.map SignupMsg ]
@@ -149,6 +151,24 @@ fundraising =
         , p [ class "my-3" ]
             [ text "On October 2, we will be launching a Kickstarter to raise the remainder of the funds."
             , text " Why donate now? Donations here will avoid the 5% Kickstarter fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Kickstarter goal will be. Any amount helps."
+            ]
+        ]
+
+
+team : Html msg
+team =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "max-w-3xl"
+        , class "mt-20"
+        ]
+        [ viewPeople "Who is Creating This Animation?"
+            "We are working with a number of talented musicians, artists, screenwriters, animators, and more to bring these animations to life."
+            [ nickAndAlina, seanBeeson, rachaelWorkmanMcLaughlin, ekaterina, makoAnimation ]
+        , p []
+            [ text "You can find everyone we are working with on "
+            , a [ href "/team", class "underline" ] [ text "our About Us page." ]
             ]
         ]
 

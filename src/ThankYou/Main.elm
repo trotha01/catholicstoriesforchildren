@@ -8,8 +8,7 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Team.Main exposing (viewPersonImage)
-import Team.Team exposing (trevor)
+import Team.Team exposing (trevor, viewPersonImage)
 import Url
 
 
