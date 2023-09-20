@@ -7,7 +7,6 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (custom)
 import Signup exposing (..)
 
 
@@ -64,13 +63,15 @@ viewBody model =
         , class "p-5"
         , class "mb-10"
         ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer" ]
+        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer Song and Animation" ]
+        , progressBar
+        , div [ class "mb-10" ] [ donationButton "Bring this animation to life" ]
+        , viewVideoPlayers
         , aboutTheAnimation
         , fundraising
 
         -- , div [ class "mb-10" ]
         --     [ Signup.view model.signup |> Html.map SignupMsg ]
-        , viewVideoPlayers
         , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , scripture
@@ -105,15 +106,31 @@ aboutTheAnimation =
         ]
         [ p [ class "my-3" ]
             [ text
-                "We are working on creating an animation to help children understand the concept of a contrite heart, humility, forgiveness, confessing to a priest, and more!"
+                "Children are spending six or more hours per day on screens according to the CDC. Do you know much Catholic content is on the other side of that screen? Not much. Most of the things kids are watching are detrimental to their well being. Social media and streaming services have taken over as their primary educators. Kids are growing up without much of an understanding of the Catholic faith and without knowing how to grow in virtue. Their morals are coming from top influencers. Things like the Act of Contrition or going to confession are the last things on their mind."
+            ]
+        , p [ class "my-3" ]
+            [ text
+                "It’s time to start making a change. We want to meet kids where they are at. That is why we are making animations. We are teaching kids basic Catholic prayers like the Act of Contrition prayer because prayer has the power to transform kids towards sainthood. Mother Teresa said, “I used to believe that prayer changes things, but now I know that prayer changes us, and we change things.” We can helping kids to grow to be lights in the world today through these animations and through this Act of Contrition animation."
+            ]
+        , p [ class "my-3" ]
+            [ text
+                "These animations are not meant to help kids memorize prayer words. They are made to help kids understand the words they are saying and who they are praying to. One of the best ways to transmit understanding is by telling a story. And that is exactly what we are doing here. We are not making generic lessons or lectures, we want kids to enjoy the content. We are using the power of storytelling to help kids understand the concepts around the Act of Contrition prayer."
+            ]
+        , p [ class "my-3" ]
+            [ text
+                "This Act of Contrition animation will not only help kids learn the words to this prayer, it will also help kids understand the concepts of a contrite heart, humility, forgiveness, confessing to a priest, and more. Kids can start building a habit of saying sorry to God for their sins, “I am sorry for my sins with all my heart. In choosing to do wrong, and failing to do good, I have sinned against you, whom I should love above all things.” They can start building the habit of making a resolve to lead a better life, “I firmly intend, with your help, to do penance, to sin no more, and to avoid whatever leads me to sin.” Through this Act of Contrition animation, kids can grow in understanding that Jesus can forgive any sin through His mercy."
+            ]
+        , p [ class "my-3" ]
+            [ text
+                "Learning the Act of Contrition prayer and the concepts around it help kids grow in virtue. When the concepts are understood, and kids have built a habit for apologizing to God for things they have done wrong, they will have an easier time with humility, with apologizing to others, and with forgiving others."
             ]
         , p [ class "my-3" ]
             [ text "This is our most ambitious animation so far. It involves more people and will help teach more concepts in an engaging way."
-            , text " We are producing an Act of Contrition song and animation which will be made freely available for parents, catechists, schools, and parishes."
+            , text " We are producing an Act of Contrition song to help kids enjoy learning the prayer. We are making a graphic novel to go along with the animation to further help instill the concepts from the Act of Contrition prayer. And the animation which will be made freely available for parents, catechists, schools, and parishes."
             ]
         , p [ class "my-3" ]
-            [ text " Your donation means they won't have to pay a thing to help their kids grow in the Catholic faith."
-            , text " Your donation will help kids around the world learn humility, reconciliation, penance, how to have a contrite heart, and more.  Any donation amount will help us pay for the screenwriters, illustrators, composers, voice actors, singers, storyboard artists, animators, and all the hands helping produce this animation."
+            [ text " Your donation means they won't have to pay a thing to let kids see the Act of Contrition animation and help their kids grow in the Catholic faith."
+            , text " Your donation will help kids around the world learn humility, reconciliation, penance, how to have a contrite heart, and more.  Any donation amount will help us pay for the screenwriters, illustrators, composers, voice actors, singers, storyboard artists, animators, and all the hands helping bring this animation to life."
             ]
         ]
 
@@ -125,7 +142,20 @@ fundraising =
         , class "text-lg"
         , class "max-w-3xl"
         ]
-        -- PROGRESS
+        [ progressBar
+        , donationButton "Bring this animation to life"
+
+        -- CTA
+        , p [ class "my-3" ]
+            [ text "On October 2, we will be launching a Kickstarter to raise the remainder of the funds."
+            , text " Why donate now? Donations here will avoid the 5% Kickstarter fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Kickstarter goal will be. Any amount helps."
+            ]
+        ]
+
+
+progressBar : Html msg
+progressBar =
+    div []
         [ div [ class "bg-neutral-200 rounded" ]
             [ div
                 [ class "bg-[#9200B3] p-1 text-center text-xs font-medium leading-none text-white rounded"
@@ -137,13 +167,6 @@ fundraising =
             ]
         , p [ class "mb-3 text-sm" ]
             [ text "$9,000 of $42,000 has been raised so far! (updated daily)" ]
-        , donationButton "Bring this animation to life"
-
-        -- CTA
-        , p [ class "my-3" ]
-            [ text "On October 2 we will be launching a Kickstarter to raise the remainder of the funds."
-            , text " Why donate now? Donations here will avoid the 5% Kickstarter fee and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Kickstarter goal will be. "
-            ]
         ]
 
 
