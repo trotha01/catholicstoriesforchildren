@@ -64,7 +64,7 @@ viewBody model =
         , class "p-5"
         , class "mb-10"
         ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer Song and Animation" ]
+        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer, Song and Animation" ]
         , progressBar
         , div [ class "mb-10" ] [ donationButton "Bring this animation to life" ]
         , viewVideoPlayers
