@@ -1,5 +1,6 @@
 module Main exposing (Model, main, view, viewBanner)
 
+import Animations.ActOfContrition.Main exposing (donationButton, progressBar)
 import Browser
 import Browser.Navigation as Nav
 import Footer exposing (viewFooter)
@@ -12,8 +13,7 @@ import Newsroom.Main exposing (viewSignUp)
 import Resources.Helpers exposing (ResourceGroup)
 import Signup exposing (..)
 import Svg.Attributes exposing (d)
-import Team.Main exposing (viewPerson)
-import Team.Team exposing (carlos, kelly, trevor)
+import Team.Team exposing (carlos, kelly, trevor, viewPerson)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Url
 
@@ -201,7 +201,7 @@ viewIntro model =
                     , style "height" "100%"
                     , style "top" "0"
                     , style "left" "0"
-                    , src "https://www.youtube-nocookie.com/embed/uxP6KFTER60"
+                    , src "https://www.youtube-nocookie.com/embed/KSGStToDQdA"
                     , title "About Catholic Stories for Children"
                     , property "frameborder" (Json.Encode.string "0")
                     , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
@@ -210,6 +210,20 @@ viewIntro model =
                     []
                 ]
             ]
+        , div [ class "mt-5" ] [ progressBar ]
+        , a
+            [ style "padding" "10px 10px"
+            , style "display" "inline-block"
+            , style "border-radius" "5px"
+            , style "border-radius" "5px"
+            , style "box-shadow" "#777 1px 1px 5px"
+            , style "color" "white"
+            , class "text-lg"
+            , class "bg-[#9200B3]"
+            , href "/animations/actofcontrition"
+            , attribute "aria-label" "Check out our upcoming animation"
+            ]
+            [ text "Check out our upcoming animation!" ]
         , div [ class "mt-10" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
         ]

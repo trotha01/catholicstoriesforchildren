@@ -157,7 +157,7 @@ viewSubmitButton model =
                 ( "bg-[#8a4f97]", spinner, True )
 
             else
-                ( "bg-[#9200B3]", text "Sign Me Up", False )
+                ( "bg-[#bf321b]", text "Sign Me Up", False )
     in
     button
         [ style "padding" "10px 10px"

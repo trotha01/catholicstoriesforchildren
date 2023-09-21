@@ -64,7 +64,7 @@ viewBody model =
         , class "p-5"
         , class "mb-10"
         ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer, Song and Animation" ]
+        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer, Song and Animation Kickstart" ]
         , progressBar
         , div [ class "mb-10" ] [ donationButton "Bring this animation to life" ]
         , viewVideoPlayers
@@ -122,10 +122,10 @@ aboutTheAnimation =
                 [ text
                     "These animations are not meant to help kids memorize prayer words. They are made to help kids understand the words they are saying and who they are praying to. One of the best ways to transmit understanding is by telling a story. And that is exactly what we are doing here. We are not making generic lessons or lectures, we want kids to enjoy the content. We are using the power of storytelling to help kids understand the concepts around the Act of Contrition prayer."
                 ]
-            , img [ class "rounded object-cover h-full", src "/assets/images/churchexterior.jpg", alt "church exterior" ] []
+            , img [ class "rounded object-cover sm:h-full", src "/assets/images/churchexterior.jpg", alt "church exterior" ] []
             ]
         , div [ class "grid grid-cols-1 sm:grid-cols-2 gap-2", class "my-10" ]
-            [ img [ class "rounded object-cover h-full", src "/assets/images/confessionalWithPriest.jpg", alt "Confessional with priest waving" ] []
+            [ img [ class "rounded object-cover sm:h-full", src "/assets/images/confessionalWithPriest.jpg", alt "Confessional with priest waving" ] []
             , p []
                 [ text
                     "This Act of Contrition animation will not only help kids learn the words to this prayer, it will also help kids understand the concepts of a contrite heart, humility, forgiveness, confessing to a priest, and more. Kids can start building a habit of saying sorry to God for their sins, “I am sorry for my sins with all my heart. In choosing to do wrong, and failing to do good, I have sinned against you, whom I should love above all things.” They can start building the habit of making a resolve to lead a better life, “I firmly intend, with your help, to do penance, to sin no more, and to avoid whatever leads me to sin.” Through this Act of Contrition animation, kids can grow in understanding that Jesus can forgive any sin through His mercy."
@@ -190,7 +190,7 @@ progressBar =
     div []
         [ div [ class "bg-neutral-200 rounded" ]
             [ div
-                [ class "bg-[#9200B3] p-1 text-center text-xs font-medium leading-none text-white rounded"
+                [ class "bg-[#9200B3] p-1 text-center text-xs font-medium text-white leading-none rounded"
 
                 -- 9,000 out of 42,000
                 , class "w-[21%]"
