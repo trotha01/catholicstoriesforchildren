@@ -65,7 +65,7 @@ viewBody model =
         , class "mb-10"
         ]
         [ h1 [ class "mt-10 mb-2 leading-10" ]
-            [ text "This Animation Will Help Kids Grow in Humility"
+            [ text "This Act of Contrition Animation Will Help Kids Grow in Humility"
             ]
         , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well being. But we can make a change." ]
         , p [ class "mb-5" ] [ text "At Catholic Stories for Children, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow towards sainthood." ]
