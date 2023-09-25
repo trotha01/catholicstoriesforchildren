@@ -3,7 +3,7 @@ module Animations.ActOfContrition.Main exposing (..)
 import Animations.Helpers exposing (viewVideo)
 import Browser
 import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
+import Header exposing (viewDonationPageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -50,7 +50,7 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Guardian Angel" headerMargin
+        [ viewDonationPageHeader "Guardian Angel" headerMargin
         , viewBody model
         , viewFooter
         ]
@@ -64,8 +64,12 @@ viewBody model =
         , class "p-5"
         , class "mb-10"
         ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Act of Contrition Prayer, Song and Animation Kickstart" ]
-        , progressBar
+        [ h1 [ class "mt-10 mb-2 leading-10" ]
+            [ text "This Animation Will Help Kids Grow in Humility"
+            ]
+        , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well being. But we can make a change." ]
+        , p [ class "mb-5" ] [ text "At Catholic Stories for Children, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow towards sainthood." ]
+        , div [ class "mb-5" ] [ progressBar ]
         , div [ class "mb-10" ] [ donationButton "BACK THIS PROJECT" ]
         , viewVideoPlayers
         , aboutTheAnimation
@@ -107,7 +111,7 @@ aboutTheAnimation =
         , class "max-w-3xl"
         ]
         [ h3 [ class "mt-20 mb-10 text-2xl" ] [ text "Overview" ]
-        , h4 [ class "mt-10 font-bold" ] [ text "Why Animation?" ]
+        , h4 [ class "mt-10 font-bold text-2xl" ] [ text "Animation meets kids at their level" ]
         , p []
             [ text
                 "Children are spending six or more hours per day on screens according to the CDC. Do you know much Catholic content is on the other side of that screen? Not much. Most of the things kids are watching are detrimental to their well being. Social media and streaming services have taken over as their primary educators. Kids are growing up without much of an understanding of the Catholic faith and without knowing how to grow in virtue. Their morals are coming from top influencers. Things like the Act of Contrition or going to confession are the last things on their mind. It’s time to start making a change. We want to meet kids where they are at. That is why we are making animations."
@@ -115,7 +119,7 @@ aboutTheAnimation =
         , div [ class "grid grid-cols-1 sm:grid-cols-2 gap-2", class "mt-10" ]
             [ img [ class "rounded", src "/assets/images/felicitySheet.jpg", alt "Felicity Character Sheet" ] []
             , div []
-                [ h4 [ class "font-bold" ] [ text "Why Prayer?" ]
+                [ h4 [ class "font-bold text-2xl" ] [ text "Prayer transforms kids towards sainthood" ]
                 , p []
                     [ text
                         "We are teaching kids basic Catholic prayers like the Act of Contrition prayer because prayer has the power to transform kids towards sainthood. Mother Teresa said, “I used to believe that prayer changes things, but now I know that prayer changes us, and we change things.” We can help kids grow to be lights in the world today."
@@ -124,7 +128,7 @@ aboutTheAnimation =
             ]
         , div [ class "grid grid-cols-1 sm:grid-cols-2 gap-2", class "mt-10" ]
             [ div []
-                [ h4 [ class "font-bold" ] [ text "Enjoyable Storytelling" ]
+                [ h4 [ class "font-bold text-2xl" ] [ text "Storytelling boosts comprehension" ]
                 , p []
                     [ text
                         "These animations are not meant to help kids memorize prayer words. They are made to help kids understand the words they are saying and who they are praying to. One of the best ways to transmit understanding is by telling a story. We are not making generic lessons or lectures, we want kids to enjoy the content. We are using the power of storytelling to help kids understand the concepts around the Act of Contrition prayer."
@@ -135,7 +139,7 @@ aboutTheAnimation =
         , div [ class "grid grid-cols-1 sm:grid-cols-2 gap-2", class "mt-10" ]
             [ img [ class "rounded object-cover sm:h-full", src "/assets/images/confessionalWithPriest.jpg", alt "Confessional with priest waving" ] []
             , div []
-                [ h4 [ class "font-bold" ] [ text "Learning Forgiveness" ]
+                [ h4 [ class "font-bold text-2xl" ] [ text "Kids learn forgiveness" ]
                 , p []
                     [ text
                         "This Act of Contrition animation will not only help kids understand this prayer, it will also help kids understand the concepts of a contrite heart, humility, forgiveness, confessing to a priest, and more. Kids can start building a habit of saying sorry to God for their sins, “I am sorry for my sins with all my heart. In choosing to do wrong, and failing to do good, I have sinned against you, whom I should love above all things.” They can start building the habit of making a resolve to lead a better life, “I firmly intend, with your help, to do penance, to sin no more, and to avoid whatever leads me to sin.” Through this Act of Contrition animation, kids can grow in understanding that Jesus can forgive any sin through His mercy."
@@ -144,7 +148,7 @@ aboutTheAnimation =
             ]
         , div [ class "grid grid-cols-1 sm:grid-cols-2 gap-2", class "mt-10" ]
             [ div []
-                [ h4 [ class "font-bold" ] [ text "Growing in Virtue" ]
+                [ h4 [ class "font-bold text-2xl" ] [ text "Kids grow in virtue" ]
                 , p []
                     [ text
                         "Learning the Act of Contrition prayer and the concepts around it help kids grow in virtue. When the concepts are understood, and kids have built a habit for apologizing to God for things they have done wrong, they will have an easier time with humility, with apologizing to others, and with forgiving others."
@@ -152,7 +156,7 @@ aboutTheAnimation =
                 ]
             , img [ class "rounded", src "/assets/images/priest.jpg", alt "priest character sheet" ] []
             ]
-        , h4 [ class "mt-10 font-bold" ] [ text "Why is this so expensive?" ]
+        , h4 [ class "mt-10 font-bold text-2xl" ] [ text "Available to Every Kid For Free" ]
         , p [ class "" ]
             [ text "High quality songs and animations are not easy to produce. This is our most ambitious animation so far. It involves more people and will help teach a number of concepts in an engaging way."
             , text " We are producing an Act of Contrition song to help kids enjoy learning the prayer. We are making a graphic novel to go along with the animation to further help instill the concepts from the Act of Contrition prayer. Your support will help this animation to be made freely available for parents, catechists, schools, and parishes."

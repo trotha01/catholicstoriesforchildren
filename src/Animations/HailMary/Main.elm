@@ -9,8 +9,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Signup exposing (..)
-import Team.Main exposing (viewPersonImage)
-import Team.Team exposing (trevor)
+import Team.Team exposing (trevor, viewPersonImage)
 
 
 type VideoOption

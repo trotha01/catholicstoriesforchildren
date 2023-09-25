@@ -1,4 +1,4 @@
-module Header exposing (viewHeader, viewSubpageHeader)
+module Header exposing (viewDonationPageHeader, viewHeader, viewSubpageHeader)
 
 import Helpers exposing (..)
 import Html exposing (..)
@@ -37,24 +37,56 @@ viewSubpageHeader currentPage leftMargin =
         , class gridColsClass
         ]
         [ viewLogo
-        , viewHeaderTitle currentPage
+        , viewHeaderTitle True currentPage
         , rightHandSide height
         ]
 
 
-viewHeaderTitle : String -> Html msg
-viewHeaderTitle title =
+viewDonationPageHeader : String -> Int -> Html msg
+viewDonationPageHeader currentPage leftMargin =
+    -- Donation pages perform better without links in the header
+    -- https://www.nextafter.com/blog/donation-page-secrets/
+    let
+        ( height, gridColsClass ) =
+            ( "60px", "grid-cols-[150px_1fr]" )
+    in
+    header
+        [ style "background-color" "#3d5d75"
+        , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
+        , class ("h-[60px] md:h-[" ++ height ++ "]")
+        , class "colorDarkGray"
+        , class "grid items-center justify-items-center"
+        , class gridColsClass
+        ]
+        [ viewLogo
+        , viewHeaderTitle False currentPage
+
+        -- , rightHandSide height
+        ]
+
+
+viewHeaderTitle : Bool -> String -> Html msg
+viewHeaderTitle includesLinks title =
+    let
+        ( textClass, visibleClass ) =
+            if includesLinks then
+                -- hide text on small screens if we are showing links
+                ( "text-[0px] md:text-xl", "invisible md:visible" )
+
+            else
+                ( "text-lg md:text-xl", "" )
+    in
     a
         [ style "text-decoration" "none"
         , class "colorDarkGray"
-        , class "invisible md:visible"
+        , class visibleClass
         , class "justify-self-start"
         , href "/"
         ]
         [ h1
             [ style "font-family" "hvdComicSerifPro"
             , style "margin" "0px"
-            , class "text-[0px] md:text-xl"
+            , class textClass
             ]
             [ text "Catholic Stories for Children" ]
         ]
