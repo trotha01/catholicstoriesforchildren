@@ -180,8 +180,8 @@ fundraising =
 
         -- CTA
         , p [ class "my-10" ]
-            [ text "On October 2, we will be launching a Kickstarter to raise the remainder of the funds."
-            , text " Why donate now? Donations here will avoid the 5% Kickstarter fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Kickstarter goal will be. Any amount helps."
+            [ text "On October 2, we will be launching a Crowdfunding Campaign to raise the remainder of the funds."
+            , text " Why donate now? Donations here will avoid the Crowdfunding Campaign Platform fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Crowdfunding Campaign goal will be. Any amount helps."
             ]
         ]
 
