@@ -483,11 +483,11 @@ progressBar =
                 -- [ class "bg-[#ebd7f2] p-1 text-center text-xs font-medium text-white leading-none rounded"
                 [ class "bg-csc-darkblue p-1 text-center text-xs font-medium text-white leading-none rounded"
 
-                -- 9,000 out of 42,000
+                -- 9,010 out of 42,000
                 , class "w-[21%]"
                 ]
                 [ text "21%" ]
             ]
         , p [ class "mb-3 text-sm" ]
-            [ text "$9,000 of $42,000 has been raised so far! (updated daily)" ]
+            [ text "$9,010 of $42,000 has been raised so far! (updated daily)" ]
         ]
