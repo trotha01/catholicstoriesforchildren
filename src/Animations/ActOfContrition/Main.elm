@@ -479,15 +479,13 @@ progressBar =
     div []
         [ div [ class "bg-neutral-200 rounded" ]
             [ div
-                -- [ class "bg-[#9200B3] p-1 text-center text-xs font-medium text-white leading-none rounded"
-                -- [ class "bg-[#ebd7f2] p-1 text-center text-xs font-medium text-white leading-none rounded"
                 [ class "bg-csc-darkblue p-1 text-center text-xs font-medium text-white leading-none rounded"
 
-                -- 9,010 out of 42,000
-                , class "w-[21%]"
+                -- 9,110 out of 42,000
+                , class "w-[22%]"
                 ]
-                [ text "21%" ]
+                [ text "22%" ]
             ]
         , p [ class "mb-3 text-sm" ]
-            [ text "$9,010 of $42,000 has been raised so far! (updated daily)" ]
+            [ text "$9,110 of $42,000 has been raised so far! (updated daily)" ]
         ]

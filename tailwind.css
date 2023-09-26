@@ -820,6 +820,10 @@ video {
   width: 21%;
 }
 
+.w-\[22\%\] {
+  width: 22%;
+}
+
 .min-w-\[340px\] {
   min-width: 340px;
 }
@@ -1704,16 +1708,16 @@ video {
     display: flex;
   }
 
+  .md\:h-\[\"\+i\+\"\] {
+    height: "+i+";
+  }
+
   .md\:h-\[\"\+t\+\"\] {
     height: "+t+";
   }
 
   .md\:h-\[\"\+e\+\"\] {
     height: "+e+";
-  }
-
-  .md\:h-\[\"\+i\+\"\] {
-    height: "+i+";
   }
 
   .md\:w-\[230px\] {
