@@ -79,16 +79,17 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div
-        [ class "border-4 border-solid border-[#460156] p-3 rounded-md bg-[#ffc7c7]"
-        , class "sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1"
+        [-- , class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
+         -- , class "sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1"
         ]
         [ div []
             [ div
                 [ class "mb-5" ]
                 [ p
-                    [ class "pb-5 pl-1 text-left"
+                    [ class "pb-2 pl-1 text-left"
                     ]
-                    [ text "Having trouble with kids in Mass? Get our guide!" ]
+                    -- [ text "Having trouble with kids in Mass? Get our guide!" ]
+                    [ text "Get free animations for kids. Stay updated with new ones!" ]
                 , div
                     []
                     [ input
@@ -115,23 +116,25 @@ view model =
                     , viewMessage model
                     ]
                 ]
-            , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]
-                [ p [ class "mb-2" ] [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
-                , p [] [ text "Get inspired:" ]
-                , ul [ class "ml-4" ]
-                    [ li [ class "pl-1" ] [ text " Top tips from parents on bringing kids to Mass." ]
-                    , li [ class "pl-1" ] [ text " Best strategies on preparing kids for a heavenly Mass experience." ]
-                    , li [ class "pl-1" ] [ text " Faith-based techniques to get kids engaged in Mass." ]
-                    , li [ class "pl-1" ] [ text " It's FREE! Empower kids to love Mass this week!" ]
-                    ]
-                , p [ class "pt-4" ] [ text "We will also send you:" ]
-                , ul [ class "ml-4" ]
-                    [ li [ class "pl-1" ] [ text " Updates on the animations." ]
-                    , li [ class "pl-1" ] [ text " Future freebies!" ]
-                    ]
-                ]
+
+            -- , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]
+            --     [ p [ class "mb-2" ] [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
+            --     , p [] [ text "Get inspired:" ]
+            --     , ul [ class "ml-4" ]
+            --         [ li [ class "pl-1" ] [ text " Top tips from parents on bringing kids to Mass." ]
+            --         , li [ class "pl-1" ] [ text " Best strategies on preparing kids for a heavenly Mass experience." ]
+            --         , li [ class "pl-1" ] [ text " Faith-based techniques to get kids engaged in Mass." ]
+            --         , li [ class "pl-1" ] [ text " It's FREE! Empower kids to love Mass this week!" ]
+            --         ]
+            --     , p [ class "pt-4" ] [ text "We will also send you:" ]
+            --     , ul [ class "ml-4" ]
+            --         [ li [ class "pl-1" ] [ text " Updates on the animations." ]
+            --         , li [ class "pl-1" ] [ text " Future freebies!" ]
+            --         ]
+            --     ]
             ]
-        , div [] [ viewSampleImage ]
+
+        -- , div [] [ viewSampleImage ]
         ]
 
 
@@ -157,7 +160,7 @@ viewSubmitButton model =
                 ( "bg-[#8a4f97]", spinner, True )
 
             else
-                ( "bg-[#bf321b]", text "Sign Me Up", False )
+                ( "bg-[#9200B3]", text "Sign Me Up", False )
     in
     button
         [ style "padding" "10px 10px"

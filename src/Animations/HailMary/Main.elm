@@ -81,13 +81,27 @@ viewBody model =
         , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , moreAboutTheAnimation
-        , div [ class "mb-10" ]
+        , div [ class "mb-20" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
         , div [ class "mb-20" ]
             [ viewResources
             ]
         , aboutThePrayer
-        , div [ class "mb-10" ]
+        , a
+            [ href "/animations/actofcontrition"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
+            , class "block mb-2"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Act of Contrition Animation"
+                ]
+                []
+            ]
+        , div [ class "mb-20" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
         ]
 
@@ -189,7 +203,21 @@ moreAboutTheAnimation =
         , p [ class "my-3" ] [ text "Our animations are great for homeschooling, hybrid schooling, and traditional religious education." ]
         , p [ class "my-3" ] [ text "Here at Catholic Stories for Children, our animated stories cover prayer, including the Hail Mary prayer (above), the St Michael prayer, and the prayer to your Guardian Angel. These animations also explore the virtues, such as humility, faith, and compassion. Each story is carefully crafted to ensure that it is both engaging and educational." ]
         , p [ class "my-3" ] [ text "Prayer is tremendously important in our Catholic faith, and building a habit of prayer has much to offer children. By creating animated stories that teach Catholic prayers and reflect Catholic virtues and teachings, we can help children learn about the faith in a way that is both entertaining and informative. These stories can inspire children to live a life of faith, love, and compassion, just like Mother Mary did." ]
-        , p [ class "my-3 font-bold" ] [ text "I invite you to receive this free guide on bringing kids to Mass. We asked parents for their top tips and put it together in this guide for you. This guide is completely free and you can start using it this week!" ]
+        , p [ class "my-3 font-bold" ] [ text "I invite you to see what we have coming up. We are working on a beautiful animation to help kids learn and understand the Act of Contrition prayer." ]
+        , a
+            [ href "/animations/actofcontrition"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
+            , class "block mb-20"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Act of Contrition Animation"
+                ]
+                []
+            ]
         ]
 
 

@@ -160,6 +160,8 @@ viewIntro model =
             , p [ class "leading-10" ]
                 [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
                 ]
+            , div [ class "mt-10" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , div
             []
@@ -217,16 +219,15 @@ viewIntro model =
             , style "border-radius" "5px"
             , style "border-radius" "5px"
             , style "box-shadow" "#777 1px 1px 5px"
-            , style "color" "white"
             , class "text-lg"
-            , class "bg-[#9200B3]"
+
+            -- , class "bg-[#9200B3]"
             , href "/animations/actofcontrition"
             , attribute "aria-label" "Check out our upcoming animation"
+            , class "bg-csc-yellow"
+            , class "font-bold"
             ]
             [ text "Check out our upcoming animation!" ]
-
-        -- , div [ class "mt-10" ]
-        --     [ Signup.view model.signup |> Html.map SignupMsg ]
         ]
 
 

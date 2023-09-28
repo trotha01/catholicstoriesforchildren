@@ -462,10 +462,8 @@ viewSaints model =
             [ text "List of Saints and Blesseds" ]
         , div [ class "mb-10 mt-5" ]
             [ p [] [ text "Find the saints you are looking for here." ]
-            , div [ class "mt-10" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
-            , p [ class "mt-10" ] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]
-            , p []
+            , p [ class "mt-2" ] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]
+            , p [ class "mb-5" ]
                 [ span [] [ text "Information about these saints can be found at " ]
                 , a
                     [ href "https://www.catholic.org/saints/stindex.php"
@@ -494,6 +492,21 @@ viewSaints model =
                     ]
                     [ text "Catholic Saints Info" ]
                 ]
+            , a
+                [ href "/animations/actofcontrition"
+                , class "hover:scale-105 transition ease-in-out duration-50"
+                , attribute "aria-label" "Act of Contrition Animation Coming Soon"
+                ]
+                [ img
+                    [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+                    , style "border-radius" "5px"
+                    , style "width" "-webkit-fill-available"
+                    , alt "Act of Contrition Animation"
+                    ]
+                    []
+                ]
+            , div [ class "mt-2 mb-20" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , p []
             [ span [ class "opacity-70" ] [ text "Try searching by name, date (July 25), or patronage (nurse)." ]

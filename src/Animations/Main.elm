@@ -68,14 +68,13 @@ viewBody model =
             , p [ class "my-5" ]
                 [ text
                     ("Do you want your children to grow in gratitude? Start with the prayer before meals."
-                        ++ "Do you want your children to grow in humility? Start with the Act of Contrition."
-                        ++ "Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
+                        ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
+                        ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
                         ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
                     )
                 ]
-
-            -- , div [ class "mt-5" ]
-            --     [ Signup.view model.signup |> Html.map SignupMsg ]
+            , div [ class "mt-2" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , animations
         ]

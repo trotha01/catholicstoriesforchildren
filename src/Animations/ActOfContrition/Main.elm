@@ -213,7 +213,7 @@ viewActivities =
                 [ p [ class "my-3" ]
                     [ text "With each animation, we create printouts to go along with them to help further foster understanding of the prayer and concepts. We will be creating activities to go along with the Act of Contrition Animation."
                     ]
-                , donationButton "I would like these activities!"
+                , donationButton "BACK THIS PROJECT"
                 , p [ class "my-3" ]
                     [ text "Until then, we are making our little reconciliation booklet for kids available to you at no cost. You can print it double-sided and fold it into a little booklet to bring to Confession."
                     ]
@@ -257,7 +257,7 @@ viewPrayer =
             [ text "Each animation has a composed song made to match the tone of the prayer while staying reverent to the nature of prayer. Music and repetition are powerful tools that can help aid in children's memory retention and improve the learning experience. This is much more enojoyable than simply memorizing words."
             , text " In addition, having the song embedded into the animation will help bring understanding to the words in the prayer."
             ]
-        , donationButton "I would like this song!"
+        , donationButton "BACK THIS PROJECT"
         ]
 
 

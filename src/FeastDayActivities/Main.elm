@@ -476,23 +476,21 @@ viewMonth model feastMonth =
             [ h1 [] [ text "2023 Feast Day Activities" ]
             , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
             , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
-
-            -- , div [ class "mt-10 mb-16" ]
-            --     [ Signup.view model.signup |> Html.map SignupMsg ]
             , a
-                [ style "padding" "10px 10px"
-                , style "display" "inline-block"
-                , style "border-radius" "5px"
-                , style "border-radius" "5px"
-                , style "box-shadow" "#777 1px 1px 5px"
-                , style "color" "white"
-                , class "text-lg"
-                , class "mb-10"
-                , class "bg-[#9200B3]"
-                , href "/animations/actofcontrition"
-                , attribute "aria-label" "Check out our upcoming animation"
+                [ href "/animations/actofcontrition"
+                , class "hover:scale-105 transition ease-in-out duration-50"
+                , attribute "aria-label" "Act of Contrition Animation Coming Soon"
                 ]
-                [ text "Check out our upcoming animation!" ]
+                [ img
+                    [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+                    , style "border-radius" "5px"
+                    , style "width" "-webkit-fill-available"
+                    , alt "Act of Contrition Animation"
+                    ]
+                    []
+                ]
+            , div [ class "mt-2 mb-20" ]
+                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , div
             []

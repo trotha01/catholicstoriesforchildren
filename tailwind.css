@@ -600,6 +600,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -1144,6 +1149,11 @@ video {
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
+.bg-csc-darkpurple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 158 218 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1268,6 +1278,10 @@ video {
 
 .pt-1 {
   padding-top: 0.25rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .text-left {
