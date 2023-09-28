@@ -201,7 +201,7 @@ viewIntro model =
                     , style "height" "100%"
                     , style "top" "0"
                     , style "left" "0"
-                    , src "https://www.youtube-nocookie.com/embed/KSGStToDQdA"
+                    , src "https://www.youtube-nocookie.com/embed/ppNG8UFgUdo"
                     , title "About Catholic Stories for Children"
                     , property "frameborder" (Json.Encode.string "0")
                     , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
@@ -319,10 +319,10 @@ viewAnimations =
                         ]
                         []
                     ]
-                , div
-                    [ style "border-radius" "5px"
-                    , class "grayscale"
-                    , class "hover:cursor-not-allowed"
+                , a
+                    [ href "/animations/actofcontrition"
+                    , class "hover:scale-105 transition ease-in-out duration-50"
+                    , attribute "aria-label" "Act of Contrition Animation Coming Soon"
                     ]
                     [ img
                         [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"

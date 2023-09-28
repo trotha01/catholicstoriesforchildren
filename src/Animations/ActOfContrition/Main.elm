@@ -91,7 +91,7 @@ viewVideoPlayers : Html msg
 viewVideoPlayers =
     viewVideo
         "Act of Contrition Promo"
-        "https://www.youtube-nocookie.com/embed/KSGStToDQdA"
+        "https://www.youtube-nocookie.com/embed/ppNG8UFgUdo"
 
 
 viewVideoPlayer : String -> Html msg

@@ -816,10 +816,6 @@ video {
   width: 50%;
 }
 
-.w-\[21\%\] {
-  width: 21%;
-}
-
 .w-\[22\%\] {
   width: 22%;
 }
@@ -1146,11 +1142,6 @@ video {
 .bg-neutral-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#ebd7f2\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(235 215 242 / var(--tw-bg-opacity));
 }
 
 .object-cover {
