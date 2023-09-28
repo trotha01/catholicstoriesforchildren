@@ -210,7 +210,7 @@ viewIntro model =
                     []
                 ]
             ]
-        , div [ class "mt-5" ] [ progressBar ]
+        , div [ class "mt-10" ] [ progressBar ]
         , a
             [ style "padding" "10px 10px"
             , style "display" "inline-block"
@@ -224,8 +224,9 @@ viewIntro model =
             , attribute "aria-label" "Check out our upcoming animation"
             ]
             [ text "Check out our upcoming animation!" ]
-        , div [ class "mt-10" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
+
+        -- , div [ class "mt-10" ]
+        --     [ Signup.view model.signup |> Html.map SignupMsg ]
         ]
 
 
@@ -286,7 +287,7 @@ viewAnimations =
                     , attribute "aria-label" "See the Hail Mary Animation"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348"
+                        [ src "/assets/images/AnimationImageLinks/HailMary.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "Hail Mary Animation"
@@ -299,7 +300,7 @@ viewAnimations =
                     , attribute "aria-label" "See the Guardian Angel Animation"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnailWatchNow_BjJTzxGXi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675312385506"
+                        [ src "/assets/images/AnimationImageLinks/GuardianAngel.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "Guardian Angel Animation"
@@ -312,7 +313,7 @@ viewAnimations =
                     , attribute "aria-label" "See the St Michael the Archangel Animation"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/StMichaelWatchNow_VttSFGzj8.png?updatedAt=1682717154588"
+                        [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "St Michael Animation"
@@ -325,7 +326,7 @@ viewAnimations =
                     , attribute "aria-label" "Act of Contrition Animation Coming Soon"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
+                        [ src "/assets/images/AnimationImageLinks/ActOfContrition.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "Act of Contrition Animation"
@@ -338,7 +339,7 @@ viewAnimations =
                     , class "hover:cursor-not-allowed"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552"
+                        [ src "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "Prayer Before Meals Animation"
@@ -351,7 +352,7 @@ viewAnimations =
                     , class "hover:cursor-not-allowed"
                     ]
                     [ img
-                        [ src "https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276"
+                        [ src "/assets/images/AnimationImageLinks/SaintAnthony.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "St Anthony Animation"

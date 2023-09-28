@@ -73,8 +73,9 @@ viewBody model =
                         ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
                     )
                 ]
-            , div [ class "mt-5" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
+
+            -- , div [ class "mt-5" ]
+            --     [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
         , animations
         ]
@@ -95,7 +96,7 @@ animations =
             , attribute "aria-label" "See the Hail Mary Animation"
             ]
             [ img
-                [ src "https://ik.imagekit.io/catholicstories/HailMaryThumbnail__gib_kTB5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792895348"
+                [ src "/assets/images/AnimationImageLinks/HailMary.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Hail Mary Animation"
@@ -108,7 +109,7 @@ animations =
             , attribute "aria-label" "See the Guardian Angel Animation"
             ]
             [ img
-                [ src "https://ik.imagekit.io/catholicstories/GuardianAngelThumbnailWatchNow_BjJTzxGXi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1675312385506"
+                [ src "/assets/images/AnimationImageLinks/GuardianAngel.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Guardian Angel Animation"
@@ -121,7 +122,7 @@ animations =
             , attribute "aria-label" "See the St Michael the Archangel Animation"
             ]
             [ img
-                [ src "https://ik.imagekit.io/catholicstories/StMichaelWatchNow_VttSFGzj8.png?updatedAt=1682717154588"
+                [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "St Michael Animation"
@@ -134,7 +135,7 @@ animations =
             , attribute "aria-label" "Act of Contrition Animation Coming Soon"
             ]
             [ img
-                [ src "https://ik.imagekit.io/catholicstories/ActOfContritionThumbnail_ZhqDBSv-_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897691"
+                [ src "/assets/images/AnimationImageLinks/ActOfContrition.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Act of Contrition Animation"
@@ -147,7 +148,7 @@ animations =
             , class "hover:cursor-not-allowed"
             ]
             [ img
-                [ src "https://ik.imagekit.io/catholicstories/PrayerBeforeMealsThumbnail_BEdVorQ-U.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897552"
+                [ src "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Prayer Before Meals Animation"
@@ -160,7 +161,7 @@ animations =
             , class "hover:cursor-not-allowed"
             ]
             [ img
-                [ src "https://ik.imagekit.io/catholicstories/StAnthonyThumbnail_zew-tMMcf.png?ik-sdk-version=javascript-1.4.3&updatedAt=1673792897276"
+                [ src "/assets/images/AnimationImageLinks/SaintAnthony.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "St Anthony Animation"
