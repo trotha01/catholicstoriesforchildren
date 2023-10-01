@@ -59,31 +59,53 @@ view model =
 viewBody : Model -> Html Msg
 viewBody model =
     div
-        [ class "max-w-3xl"
+        [ class "max-w-5xl"
         , class "m-auto"
         , class "p-5"
         , class "mb-10"
+        , class "md:grid md:grid-cols-[_1fr_320px] md:gap-5"
         ]
-        [ h1 [ class "mt-10 mb-2 leading-10" ]
-            [ text "This Act of Contrition Animation Will Help Kids Grow in Humility"
-            ]
-        , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well-being. But we can make a change." ]
-        , p [ class "mb-5" ] [ text "At Catholic Stories for Children, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow toward sainthood." ]
-        , div [ class "mb-5" ] [ progressBar ]
-        , div [ class "mb-10" ] [ donationButton "BACK THIS PROJECT" ]
-        , viewVideoPlayers
-        , aboutTheAnimation
-        , fundraising
-        , team
+        [ div
+            []
+            [ h1 [ class "mt-10 mb-2 leading-10" ]
+                [ text "This Act of Contrition Animation Will Help Kids Grow in Humility"
+                ]
+            , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well-being. But we can make a change." ]
+            , p [ class "mb-5" ] [ text "At Catholic Stories for Children, a 501c3 nonprofit, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow toward sainthood." ]
+            , div [ class "mb-5" ] [ progressBar ]
+            , div [ class "mb-10" ] [ donationButton "BACK THIS PROJECT" ]
+            , viewVideoPlayers
+            , aboutTheAnimation
+            , fundraising
+            , team
 
-        -- , div [ class "mb-10" ]
-        --     [ Signup.view model.signup |> Html.map SignupMsg ]
-        , div [ class "py-4" ] [ viewActivities ]
-        , viewPrayer
-        , scripture
-        , tradition
-        , magisterialTeachings
-        , aboutThePrayer
+            -- , div [ class "mb-10" ]
+            --     [ Signup.view model.signup |> Html.map SignupMsg ]
+            , div [ class "py-4" ] [ viewActivities ]
+            , viewPrayer
+            , scripture
+            , tradition
+            , magisterialTeachings
+            , aboutThePrayer
+            ]
+        , div []
+            [ iframe
+                [ src "https://donorbox.org/embed/act-of-contrition-animation"
+                , name "donorbox"
+                , attribute "allowpaymentrequest" "allowpaymentrequest"
+                , attribute "rseamless" "seamless"
+                , attribute "frameborder" "0"
+                , attribute "scrolling" "no"
+                , height 900
+
+                -- , style "width" "100%"
+                , style "width" "320px"
+                , style "max-width" "500px"
+                , style "min-width" "250px"
+                , style "max-height" "none!important"
+                ]
+                []
+            ]
         ]
 
 
@@ -276,7 +298,7 @@ viewPrayer =
             , span [ class "block" ] [ text "Our Savior Jesus Christ suffered and died for us." ]
             , span [ class "block" ] [ text "In his name, my God, have mercy." ]
             ]
-        , p [ class "mt-5" ]
+        , p [ class "my-5" ]
             [ text "Each animation has a composed song made to match the tone of the prayer while staying reverent to the nature of prayer. Music and repetition are powerful tools that can help aid in children's memory retention and improve the learning experience. This is much more enojoyable than simply memorizing words."
             , text " In addition, having the song embedded into the animation will help bring understanding to the words in the prayer."
             ]
@@ -480,7 +502,6 @@ donationButton : String -> Html msg
 donationButton buttonText =
     a
         [ style "padding" "10px 10px"
-        , style "display" "inline-block"
         , style "border-radius" "5px"
         , style "border-radius" "5px"
         , style "box-shadow" "#777 1px 1px 5px"
@@ -490,25 +511,46 @@ donationButton buttonText =
         -- , class "bg-[#b99eda]"
         , class "bg-csc-yellow"
         , class "font-bold"
-        , href "https://www.paypal.com/donate/?hosted_button_id=TB5BTND8DXU86"
+        , href "https://donorbox.org/act-of-contrition-animation"
+        , class "custom-dbox-popup"
+
+        -- , href "https://www.paypal.com/donate/?hosted_button_id=TB5BTND8DXU86"
         , target "_blank"
         , attribute "aria-label" buttonText
+        , class "inline md:hidden"
         ]
         [ text buttonText ]
 
 
 progressBar : Html msg
 progressBar =
-    div []
-        [ div [ class "bg-neutral-200 rounded" ]
-            [ div
-                [ class "bg-csc-darkblue p-1 text-center text-xs font-medium text-white leading-none rounded"
-
-                -- 9,110 out of 42,000
-                , class "w-[22%]"
-                ]
-                [ text "22%" ]
+    div [ class "md:hidden" ]
+        [ iframe
+            [ src "https://donorbox.org/embed/act-of-contrition-animation?donation_meter_color=%23395d73&only_donation_meter=true"
+            , name "donorbox"
+            , attribute "frameborder" "0"
+            , attribute "scrolling" "no"
+            , attribute "seamless" "seamless"
+            , height 93
+            , style "width" "100%"
+            , style "max-width" "332px"
+            , style "min-width" "250px"
+            , style "min-height" "90px"
+            , style "max-height" "none!important"
             ]
-        , p [ class "mb-3 text-sm" ]
-            [ text "$9,110 of $42,000 has been raised so far! (updated daily)" ]
+            []
         ]
+
+
+
+-- [ div [ class "bg-neutral-200 rounded", class "hidden" ] [] ]
+--     [ div
+--         [ class "bg-csc-darkblue p-1 text-center text-xs font-medium text-white leading-none rounded"
+--         -- 9,110 out of 42,000
+--         , class "w-[22%]"
+--         ]
+--         [ text "22%" ]
+--     ]
+-- , p [ class "mb-3 text-sm" ]
+--     [ text "$9,110 of $42,000 has been raised so far! (updated daily)" ]
+-- ]

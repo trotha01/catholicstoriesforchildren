@@ -11,6 +11,9 @@ var htmlPart1 = `<!doctype html>
     gtag('js', new Date());
     gtag('config', 'G-TXRVE787GD');
   </script>
+  <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
+  <script type="text/javascript" defer src="https://donorbox.org/install-popup-button.js"></script>
+  <script> window.DonorBox = { widgetLinkClassName: 'custom-dbox-popup' } </script> 
 
   <!-- This code is from google ads. Event snippet for Newsletter Signup conversion
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
