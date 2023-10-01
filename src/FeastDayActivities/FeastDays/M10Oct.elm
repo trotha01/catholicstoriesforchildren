@@ -11,7 +11,7 @@ october =
     , feasts =
         [ { date = "01"
           , feasts =
-                [ { feast = "Saint Therese of the Child Jesus", activities = [] }
+                [ { feast = "Saint Thérèse of Lisieux", activities = [] }
                 ]
           }
         , { date = "02"
@@ -43,7 +43,7 @@ october =
         , { date = "09"
           , feasts =
                 [ { feast = "Saint John Henry Newman", activities = [] }
-                , { feast = "Saint Denis", activities = [] }
+                , { feast = "Saint Denis of Paris", activities = [] }
                 , { feast = "Saint John Leonardi", activities = [] }
                 ]
           }
@@ -54,17 +54,17 @@ october =
           }
         , { date = "14"
           , feasts =
-                [ { feast = "Saint Callistus I", activities = [] }
+                [ { feast = "Pope Saint Callistus I", activities = [] }
                 ]
           }
         , { date = "15"
           , feasts =
-                [ { feast = "Saint Teresa of Jesus", activities = [] }
+                [ { feast = "Saint Teresa of Ávila", activities = [] }
                 ]
           }
         , { date = "16"
           , feasts =
-                [ { feast = "Saint Hedwig", activities = [] }
+                [ { feast = "Saint Hedwig of Andechs", activities = [] }
                 , { feast = "Saint Margaret Mary Alacoque", activities = [] }
                 ]
           }
@@ -80,7 +80,9 @@ october =
           }
         , { date = "19"
           , feasts =
-                [ { feast = "Saints Jean de Bébeuf, Isaac Jogues, Priests and Martyrs; and their Companions", activities = [] }
+                [ { feast = "Saint Isaac Jogues", activities = [] }
+                , { feast = "Saint John de Brébeuf", activities = [] }
+                , { feast = "Martyrs of North America", activities = [] }
                 ]
           }
         , { date = "20"
@@ -105,7 +107,8 @@ october =
           }
         , { date = "28"
           , feasts =
-                [ { feast = "Saint Simon and Saint Jude", activities = [] }
+                [ { feast = "Saint Simon the Apostle", activities = [] }
+                , { feast = "Saint Jude Thaddeus", activities = [] }
                 ]
           }
         ]
