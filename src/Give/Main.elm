@@ -6,6 +6,7 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Signup exposing (..)
 
 
 type alias Model =
@@ -48,7 +49,22 @@ viewBody =
         ]
         [ h1 [ class "my-10" ] [ text "Give" ]
         , donateAbout
-        , donateWithPatreon
+        , a
+            [ href "/animations/actofcontrition"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
+            , class "block mt-20 mb-2"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Act of Contrition Animation"
+                ]
+                []
+            ]
+
+        -- , donateWithPatreon
         , div [ style "margin-bottom" "6em" ] []
         , h2 [ class "text-center" ] [ text "Other ways to give" ]
         , div [ style "margin-bottom" "4em" ] []
