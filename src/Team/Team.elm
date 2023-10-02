@@ -151,7 +151,7 @@ nickAndAlina =
     { name = "Nick and Alina De La Torre"
     , initials = "ND"
     , position = "Composer"
-    , description = "Nick and Alina have been collaborators in songwriting and performing since 2006. They have fused their creative fires to illuminate the trials and triumphs of the human experience. The duo impacts their audiences through powerful testimony, moving vocals and songs that burn through with Truth, Love, Inspiration, and Beauty. They are the founders of Awaken Catholic, producing songs, podcasts, and more reaching more than 2.2 million streams per month."
+    , description = "Nick and Alina have been collaborators in songwriting and performing since 2006. They have fused their creative fires to illuminate the trials and triumphs of the human experience. The duo impacts their audiences through powerful testimony, moving vocals, and songs that burn through with Truth, Love, Inspiration, and Beauty. They are the founders of Awaken Catholic, producing songs, podcasts, and more reaching more than 2.2 million streams per month."
     , image = imagePath ++ "NickAndAlina.jpeg"
     , socials =
         [ ( Website, "http://nickandalina.com/" )
@@ -169,7 +169,7 @@ seanBeeson =
     { name = "Sean Beeson"
     , initials = "SB"
     , position = "Composer"
-    , description = "Sean Beeson is a composer for games, films, cartoons, trailers, and more. He is a highly sought after composer for Catholic media. He has composed for the movies Mother Teresa: No Greater Love, St. Joseph: Our Spiritual Father, In Solidarity with Ukrane, and more. He is Roman Catholic, husband of 15 years, and father to six children."
+    , description = "Sean Beeson is a composer for games, films, cartoons, trailers, and more. He is a highly sought-after composer for Catholic media. He has composed for the movies Mother Teresa: No Greater Love, St. Joseph: Our Spiritual Father, In Solidarity with Ukraine, and more. He is Roman Catholic, husband of 15 years, and father to six children."
     , image = imagePath ++ "SeanBeeson.jpeg"
     , socials =
         [ ( Website, "https://www.seanbeeson.com/" )
@@ -223,7 +223,7 @@ rachaelWorkmanMcLaughlin =
     { name = "Rachael Workman-McLaughlin"
     , initials = "RW"
     , position = "Screenwriter"
-    , description = "Rachael is passionate about telling stories through books, film, and dance. She is a graduate from John Paul the Great Catholic University and brings experience from Spirit Juice Studios and Family Theatre Productions."
+    , description = "Rachael is passionate about telling stories through books, film, and dance. She is a graduate of John Paul the Great Catholic University and brings experience from Spirit Juice Studios and Family Theatre Productions."
     , image = imagePath ++ "RachaelWorkman.jpeg"
     , socials = [ ( LinkedIn, "https://www.linkedin.com/in/rachael-workman/" ) ]
     }

@@ -136,7 +136,7 @@ aboutTheAnimation =
         , h4 [ class "mt-10 font-bold text-2xl" ] [ text "Animation meets kids at their level" ]
         , p []
             [ text
-                "Children are spending six or more hours per day on screens according to the CDC. Do you know how omuch Catholic content is on the other side of that screen? Not much. Most of the things kids are watching are detrimental to their well-being. Social media and streaming services have taken over as their primary educators. Kids are growing up without much of an understanding of the Catholic faith and without knowing how to grow in virtue. Their morals are coming from top influencers. Things like the Act of Contrition or going to confession are the last things on their mind. It’s time to start making a change. We want to meet kids where they are at. That is why we are making animations."
+                "Children are spending six or more hours per day on screens according to the CDC. Do you know how much Catholic content is on the other side of that screen? Not much. Most of the things kids are watching are detrimental to their well-being. Social media and streaming services have taken over as their primary educators. Kids are growing up without much of an understanding of the Catholic faith and without knowing how to grow in virtue. Their morals are coming from top influencers. Things like the Act of Contrition or going to confession are the last things on their mind. It’s time to start making a change. We want to meet kids where they are at. That is why we are making animations."
             ]
         , div [ class "grid grid-cols-1 sm:grid-cols-2 gap-2", class "mt-10" ]
             [ img [ class "rounded", src "/assets/images/felicitySheet.jpg", alt "Felicity Character Sheet" ] []
@@ -260,7 +260,7 @@ viewActivities =
                     ]
                 , donationButton "BACK THIS PROJECT"
                 , p [ class "my-3" ]
-                    [ text "Until then, we are making our little reconciliation booklet for kids available to you at no cost. You can print it double-sided and fold it into a little booklet to bring to Confession. Consider this our free gift to you. (Print Instructions: flip on short edge, Double-sided)"
+                    [ text "Until then, we are making our little reconciliation booklet for kids available to you at no cost. You can print it double-sided and fold it into a little booklet to bring to Confession. Consider this our free gift to you. (Print Instructions: flip on the short edge, Double-sided)"
                     ]
                 , a
                     [ attribute "aria-label" "Confession Guide for Kids"
@@ -285,21 +285,21 @@ viewPrayer =
     div [ class "my-10 text-lg" ]
         [ h2 [ class "my-5 leading-10" ] [ text "The Prayer and Song" ]
         , p []
-            [ span [ class "block" ] [ text "My God," ]
-            , span [ class "block" ] [ text "I am sorry for my sins with all my heart." ]
-            , span [ class "block" ] [ text "In choosing to do wrong" ]
-            , span [ class "block" ] [ text "and failing to do good," ]
-            , span [ class "block" ] [ text "I have sinned against you" ]
-            , span [ class "block" ] [ text "whom I should love above all things." ]
-            , span [ class "block" ] [ text "I firmly intend, with your help," ]
-            , span [ class "block" ] [ text "to do penance," ]
-            , span [ class "block" ] [ text "to sin no more," ]
-            , span [ class "block" ] [ text "and to avoid whatever leads me to sin." ]
-            , span [ class "block" ] [ text "Our Savior Jesus Christ suffered and died for us." ]
+            [ span [ class "block" ] [ text "My God, " ]
+            , span [ class "block" ] [ text "I am sorry for my sins with all my heart. " ]
+            , span [ class "block" ] [ text "In choosing to do wrong " ]
+            , span [ class "block" ] [ text "and failing to do good, " ]
+            , span [ class "block" ] [ text "I have sinned against you " ]
+            , span [ class "block" ] [ text "whom I should love above all things. " ]
+            , span [ class "block" ] [ text "I firmly intend, with your help, " ]
+            , span [ class "block" ] [ text "to do penance, " ]
+            , span [ class "block" ] [ text "to sin no more, " ]
+            , span [ class "block" ] [ text "and to avoid whatever leads me to sin. " ]
+            , span [ class "block" ] [ text "Our Savior Jesus Christ suffered and died for us. " ]
             , span [ class "block" ] [ text "In his name, my God, have mercy." ]
             ]
         , p [ class "my-5" ]
-            [ text "Each animation has a composed song made to match the tone of the prayer while staying reverent to the nature of prayer. Music and repetition are powerful tools that can help aid in children's memory retention and improve the learning experience. This is much more enojoyable than simply memorizing words."
+            [ text "Each animation has a composed song made to match the tone of the prayer while staying reverent to the nature of prayer. Music and repetition are powerful tools that can help aid in children's memory retention and improve the learning experience. This is much more enjoyable than simply memorizing words."
             , text " In addition, having the song embedded into the animation will help bring understanding to the words in the prayer."
             ]
         , donationButton "BACK THIS PROJECT"
@@ -345,7 +345,7 @@ scripture =
             [ customBlockquote """[Jesus] said to them again, “Peace be with you. As the Father has sent me, so I send you.” And when he had said this, he breathed on them and said to them, “Receive the holy Spirit. Whose sins you forgive are forgiven them, and whose sins you retain are retained.”""" """John 20:21-23"""
             ]
         , p [ class "" ]
-            [ text "St Paul reminds us of this commission and power to forgive when writing to the Corinthians" ]
+            [ text "St. Paul reminds us of this commission and power to forgive when writing to the Corinthians" ]
         , p [ class "" ]
             [ customBlockquote """Whomever you forgive anything, so do I.""" """2 Corinthians 2:10a"""
             ]
