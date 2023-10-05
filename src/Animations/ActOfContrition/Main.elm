@@ -68,7 +68,7 @@ viewBody model =
         [ div
             []
             [ h1 [ class "mt-10 mb-2 leading-10" ]
-                [ text "This Act of Contrition Animation Will Help Kids Grow in Humility"
+                [ text "An Animation to Teach the Act of Contrition"
                 ]
             , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well-being. But we can make a change." ]
             , p [ class "mb-5" ] [ text "At Catholic Stories for Children, a 501c3 nonprofit, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow toward sainthood." ]
