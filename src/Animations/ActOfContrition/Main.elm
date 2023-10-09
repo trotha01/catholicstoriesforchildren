@@ -259,17 +259,19 @@ viewActivities =
                     [ text "With each animation, we create printouts to go along with them to help further foster understanding of the prayer and concepts. We will be creating activities to go along with the Act of Contrition Animation."
                     ]
                 , donationButton "BACK THIS PROJECT"
-                , p [ class "my-3" ]
-                    [ text "Until then, we are making our little reconciliation booklet for kids available to you at no cost. You can print it double-sided and fold it into a little booklet to bring to Confession. Consider this our free gift to you. (Print Instructions: flip on the short edge, Double-sided)"
+                , p [ class "my-10" ]
+                    [ text "Until then, we are making our little reconciliation booklet for kids available to you at no cost. It includes the steps before, during, and after the Sacrament of Reconciliation as well as suggested prayers and questions to help examine the conscience. You can print it and fold it into a little booklet to bring to Confession. To access, help bring this animation to life by: 1) Sharing this crowdfund campaign. 2) Sending us a message with a screenshot and we'll send you this Reconciliation Booklet!"
                     ]
-                , a
+                , div
                     [ attribute "aria-label" "Confession Guide for Kids"
-                    , href "/printables/Little-Reconciliation-Booklet.pdf"
-                    , target "_blank"
+
+                    -- , href "/printables/Little-Reconciliation-Booklet.pdf"
+                    -- , target "_blank"
                     ]
                     [ img
                         [ class "w-full max-w-[400px]"
-                        , class "transition ease-in-out hover:scale-110"
+
+                        -- , class "transition ease-in-out hover:scale-110"
                         , alt "Little Reconciliation Booklet"
                         , src "/assets/images/LittleReconciliationBookletFlyer.png"
                         ]
