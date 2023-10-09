@@ -219,15 +219,16 @@ fundraising =
         [ class "mx-auto col-span-2 w-full"
         , class "text-lg"
         , class "max-w-3xl"
+        , class "mb-10"
         ]
         [ progressBar
         , donationButton "BACK THIS PROJECT"
 
         -- CTA
-        , p [ class "my-10" ]
-            [ text "On October 2, we will be launching a Crowdfunding Campaign to raise the remainder of the funds."
-            , text " Why donate now? Donations here will avoid the Crowdfunding Campaign Platform fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Crowdfunding Campaign goal will be. Any amount helps."
-            ]
+        -- , p [ class "my-10" ]
+        --     [ text "On October 2, we will be launching a Crowdfunding Campaign to raise the remainder of the funds."
+        --     , text " Why donate now? Donations here will avoid the Crowdfunding Campaign Platform fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Crowdfunding Campaign goal will be. Any amount helps."
+        --     ]
         ]
 
 
@@ -242,10 +243,11 @@ team =
         [ viewPeople "Who is Creating This Animation?"
             "We are working with a number of talented musicians, artists, screenwriters, animators, and more to bring these animations to life."
             [ nickAndAlina, seanBeeson, rachaelWorkmanMcLaughlin, ekaterina, makoAnimation ]
-        , p []
-            [ text "You can find everyone we are working with on "
-            , a [ href "/team", class "underline" ] [ text "our About Us page." ]
-            ]
+
+        -- , p []
+        --     [ text "You can find everyone we are working with on "
+        --     , a [ href "/team", class "underline" ] [ text "our About Us page." ]
+        --     ]
         ]
 
 
@@ -351,10 +353,11 @@ scripture =
         , p [ class "" ]
             [ customBlockquote """Whomever you forgive anything, so do I.""" """2 Corinthians 2:10a"""
             ]
-        , p [ class "" ]
-            [ text "You can find more details at "
-            , a [ class "underline", target "_blank", href "https://www.catholic.com/magazine/online-edition/is-confession-in-scripture" ] [ text "Catholic Answers." ]
-            ]
+
+        -- , p [ class "" ]
+        --     [ text "You can find more details at "
+        --     , a [ class "underline", target "_blank", href "https://www.catholic.com/magazine/online-edition/is-confession-in-scripture" ] [ text "Catholic Answers." ]
+        --     ]
         ]
 
 
@@ -424,10 +427,11 @@ tradition =
                 [ text "Hippolytus, Apostolic Tradition 3 [A.D. 215]"
                 ]
             ]
-        , p [ class "" ]
-            [ text "You can find more quotes from Church Fathers about confession at "
-            , a [ class "underline", target "_blank", href "https://www.catholic.com/tract/confession" ] [ text "Catholic Answers." ]
-            ]
+
+        -- , p [ class "" ]
+        --     [ text "You can find more quotes from Church Fathers about confession at "
+        --     , a [ class "underline", target "_blank", href "https://www.catholic.com/tract/confession" ] [ text "Catholic Answers." ]
+        --     ]
         ]
 
 
