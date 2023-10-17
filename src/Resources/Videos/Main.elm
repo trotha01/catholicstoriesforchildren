@@ -104,10 +104,12 @@ viewVideos =
             , juiceBox
             , catholicKidsMedia
             , brotherFrancis
+            , amyheysart
+            , heidiWitte
+            , sacredHeartofJesusConvent
             , catholicSongsForKids
             , opusJoyous
             , catholicIcing
-            , amyheysart
             , prostradaDesigns
             ]
         )
@@ -198,4 +200,20 @@ opusJoyous =
     { name = "Opus Joyous"
     , link = "https://www.youtube.com/@OpusJoyous"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/opusjoyouslogo__bVhpC3Fj.jpeg?updatedAt=1687549207653"
+    }
+
+
+sacredHeartofJesusConvent : Resource
+sacredHeartofJesusConvent =
+    { name = "Sacred Heart of Jesus Convent"
+    , link = "https://www.youtube.com/@SacredHeartofJesusConvent/about"
+    , image = "/assets/images/SacredHeartofJesusConvent.png"
+    }
+
+
+heidiWitte : Resource
+heidiWitte =
+    { name = "Heidi Witte"
+    , link = "https://www.youtube.com/@kidsliturgy"
+    , image = "/assets/images/HeidiWitte.png"
     }
