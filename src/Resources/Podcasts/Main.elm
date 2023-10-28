@@ -100,10 +100,11 @@ viewPodcasts =
         (List.map viewResource
             [ saintStoriesForKids
             , catholicSprouts
+            , saintsAlive
+            , theSaints
             , bibleInAYearWithTeddy
             , thatsTheWord
             , onTheNightTrain
-            , saintsAlive
             , catholicKidsPodcast
             , catholicKidsTriviaPodcast
             ]
@@ -155,6 +156,14 @@ saintsAlive =
     { name = "Saints Alive"
     , link = "https://podcasts.apple.com/us/podcast/saints-alive-podcast/id1598392451"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/14_Aps0ku8wH.png?updatedAt=1679069710842"
+    }
+
+
+theSaints : Resource
+theSaints =
+    { name = "The Saints"
+    , link = "https://themerrybeggars.com/shows/the-saints"
+    , image = "/assets/images/TheSaints.png"
     }
 
 

@@ -96,7 +96,7 @@ viewVideoPlayers : Html msg
 viewVideoPlayers =
     viewVideo
         "Guardian Angel | Prayer Time with Angels"
-        "https://www.youtube-nocookie.com/embed/03hmpXjV_ck"
+        "https://www.youtube-nocookie.com/embed/03hmpXjV_ck?playlist=03hmpXjV_ck&loop=1"
 
 
 viewVideoPlayer : String -> Html msg

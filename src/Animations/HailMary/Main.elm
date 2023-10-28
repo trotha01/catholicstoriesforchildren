@@ -161,12 +161,12 @@ viewVideoPlayers model =
 
 englishVideoLink : String
 englishVideoLink =
-    "https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y"
+    "https://www.youtube-nocookie.com/embed/HW0DzGEoa1Y?playlist=HW0DzGEoa1Y&loop=1"
 
 
 aslVideoLink : String
 aslVideoLink =
-    "https://www.youtube-nocookie.com/embed/QNVNbLiqznI"
+    "https://www.youtube-nocookie.com/embed/QNVNbLiqznI?playlist=QNVNbLiqznI&loop=1"
 
 
 aboutTheAnimation : Html msg
