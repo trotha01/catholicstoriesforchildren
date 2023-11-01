@@ -169,7 +169,7 @@ seanBeeson =
     { name = "Sean Beeson"
     , initials = "SB"
     , position = "Composer"
-    , description = "Sean Beeson is a composer for games, films, cartoons, trailers, and more. He is a highly sought-after composer for Catholic media. He has composed for the movies Mother Teresa: No Greater Love, St. Joseph: Our Spiritual Father, In Solidarity with Ukraine, and more. He is Roman Catholic, husband of 15 years, and father to six children."
+    , description = "Sean Beeson is a composer for games, films, cartoons, trailers, and more. He is a highly sought-after composer for Catholic media. He has composed for the movies Mother Teresa: No Greater Love, St. Joseph: Our Spiritual Father, In Solidarity with Ukraine, and more. He is Roman Catholic, husband of 15 years, and father to seven children."
     , image = imagePath ++ "SeanBeeson.jpeg"
     , socials =
         [ ( Website, "https://www.seanbeeson.com/" )
