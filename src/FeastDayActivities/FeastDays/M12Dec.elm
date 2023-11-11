@@ -21,12 +21,12 @@ december =
           }
         , { date = "06"
           , feasts =
-                [ { feast = "Saint Nicholas", activities = [] }
+                [ { feast = "Saint Nicholas of Myra", activities = [] }
                 ]
           }
         , { date = "07"
           , feasts =
-                [ { feast = "Saint Ambrose", activities = [] }
+                [ { feast = "Saint Ambrose of Milan", activities = [] }
                 ]
           }
         , { date = "08"
@@ -46,7 +46,7 @@ december =
           }
         , { date = "11"
           , feasts =
-                [ { feast = "Saint Damasus I", activities = [] }
+                [ { feast = "Pope Saint Damasus I", activities = [] }
                 ]
           }
         , { date = "12"
@@ -81,12 +81,12 @@ december =
           }
         , { date = "26"
           , feasts =
-                [ { feast = "Saint Stephen", activities = [] }
+                [ { feast = "Saint Stephen the Martyr", activities = [] }
                 ]
           }
         , { date = "27"
           , feasts =
-                [ { feast = "Saint John the Apostle and Evangelist", activities = [] }
+                [ { feast = "Saint John the Apostle", activities = [] }
                 ]
           }
         , { date = "28"
@@ -96,17 +96,17 @@ december =
           }
         , { date = "29"
           , feasts =
-                [ { feast = "Saint Thomas Becket", activities = [] }
+                [ { feast = "Saint Thomas a Becket", activities = [] }
                 ]
           }
         , { date = "30"
           , feasts =
-                [ { feast = "The Holy Family of Jesus, Mary, and Joseph", activities = [] }
+                [ { feast = "Holy Family", activities = [] }
                 ]
           }
         , { date = "31"
           , feasts =
-                [ { feast = "Saint Sylvester I", activities = [] }
+                [ { feast = "Pope Saint Sylvester I", activities = [] }
                 ]
           }
         ]

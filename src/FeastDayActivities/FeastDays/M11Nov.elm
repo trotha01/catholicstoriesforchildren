@@ -36,7 +36,7 @@ november =
           }
         , { date = "10"
           , feasts =
-                [ { feast = "Saint Leo the Great", activities = [] }
+                [ { feast = "Pope Saint Leo the Great", activities = [] }
                 ]
           }
         , { date = "11"
@@ -46,7 +46,7 @@ november =
           }
         , { date = "12"
           , feasts =
-                [ { feast = "Saint Josaphat", activities = [] }
+                [ { feast = "Saint Josaphat Kuncevyc", activities = [] }
                 ]
           }
         , { date = "13"
@@ -93,14 +93,15 @@ november =
           }
         , { date = "23"
           , feasts =
-                [ { feast = "Saint Clement I", activities = [] }
-                , { feast = "Blessed Miguel Agustín Pro", activities = [] }
-                , { feast = "Saint Columban", activities = [] }
+                [ { feast = "Pope Saint Clement I", activities = [] }
+                , { feast = "Blessed Miguel Agustin Pro", activities = [] }
+                , { feast = "Saint Columbanus", activities = [] }
                 ]
           }
         , { date = "24"
           , feasts =
-                [ { feast = "Saint Andrew Dung-Lac, Priest and his Companions", activities = [] }
+                [ { feast = "Saint Anrê Tran An Dung", activities = [] }
+                , { feast = "Martyrs of Vietnam", activities = [] }
                 ]
           }
         , { date = "25"
