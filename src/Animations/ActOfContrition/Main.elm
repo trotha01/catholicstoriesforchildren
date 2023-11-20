@@ -63,7 +63,8 @@ viewBody model =
         , class "m-auto"
         , class "p-5"
         , class "mb-10"
-        , class "md:grid md:grid-cols-[_1fr_320px] md:gap-5"
+
+        -- , class "md:grid md:grid-cols-[_1fr_320px] md:gap-5"
         ]
         [ div
             []
@@ -72,8 +73,9 @@ viewBody model =
                 ]
             , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well-being. But we can make a change." ]
             , p [ class "mb-5" ] [ text "At Catholic Stories for Children, a 501c3 nonprofit, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow toward sainthood." ]
-            , div [ class "mb-5" ] [ progressBar ]
-            , div [ class "mb-10" ] [ donationButton "BACK THIS PROJECT" ]
+
+            -- , div [ class "mb-5" ] [ progressBar ]
+            -- , div [ class "mb-10" ] [ donationButton "BACK THIS PROJECT" ]
             , viewVideoPlayers
             , aboutTheAnimation
             , fundraising
@@ -88,24 +90,24 @@ viewBody model =
             , magisterialTeachings
             , aboutThePrayer
             ]
-        , div []
-            [ iframe
-                [ src "https://donorbox.org/embed/act-of-contrition-animation"
-                , name "donorbox"
-                , attribute "allowpaymentrequest" "allowpaymentrequest"
-                , attribute "rseamless" "seamless"
-                , attribute "frameborder" "0"
-                , attribute "scrolling" "no"
-                , height 900
 
-                -- , style "width" "100%"
-                , style "width" "320px"
-                , style "max-width" "500px"
-                , style "min-width" "250px"
-                , style "max-height" "none!important"
-                ]
-                []
-            ]
+        -- , div []
+        --     [ iframe
+        --         [ src "https://donorbox.org/embed/act-of-contrition-animation"
+        --         , name "donorbox"
+        --         , attribute "allowpaymentrequest" "allowpaymentrequest"
+        --         , attribute "rseamless" "seamless"
+        --         , attribute "frameborder" "0"
+        --         , attribute "scrolling" "no"
+        --         , height 900
+        --         -- , style "width" "100%"
+        --         , style "width" "320px"
+        --         , style "max-width" "500px"
+        --         , style "min-width" "250px"
+        --         , style "max-height" "none!important"
+        --         ]
+        --         []
+        --     ]
         ]
 
 
@@ -221,14 +223,13 @@ fundraising =
         , class "max-w-3xl"
         , class "mb-10"
         ]
-        [ progressBar
-        , donationButton "BACK THIS PROJECT"
-
-        -- CTA
-        -- , p [ class "my-10" ]
-        --     [ text "On October 2, we will be launching a Crowdfunding Campaign to raise the remainder of the funds."
-        --     , text " Why donate now? Donations here will avoid the Crowdfunding Campaign Platform fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Crowdfunding Campaign goal will be. Any amount helps."
-        --     ]
+        -- [ progressBar
+        -- , donationButton "BACK THIS PROJECT"
+        [-- CTA
+         -- , p [ class "my-10" ]
+         --     [ text "On October 2, we will be launching a Crowdfunding Campaign to raise the remainder of the funds."
+         --     , text " Why donate now? Donations here will avoid the Crowdfunding Campaign Platform fee for us and 100% of your proceeds here are tax-deductible in the US. The more we raise now, the more attainable our Crowdfunding Campaign goal will be. Any amount helps."
+         --     ]
         ]
 
 

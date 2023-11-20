@@ -212,7 +212,8 @@ viewIntro model =
                     []
                 ]
             ]
-        , div [ class "mt-10" ] [ progressBar ]
+
+        -- , div [ class "mt-10" ] [ progressBar ]
         , a
             [ style "padding" "10px 10px"
             , style "display" "inline-block"
