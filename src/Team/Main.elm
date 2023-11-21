@@ -7,6 +7,7 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Newsroom.Main exposing (viewSignUp)
+import Resources.Helpers exposing (Resource, viewResource)
 import Team.Team exposing (..)
 
 
@@ -66,6 +67,7 @@ viewBody =
         ]
         [ h1 [ class "my-10" ] [ text "About Us" ]
         , viewAbout
+        , viewInTheMedia
         , viewTeam
         ]
 
@@ -95,6 +97,64 @@ viewAbout =
             [ a [ href "https://calendar.app.google/PBwGTHVqb44PuRTH9", class "text-blue-600", target "_blank" ] [ text "Schedule a meeting with me!" ]
             ]
         ]
+
+
+viewInTheMedia : Html msg
+viewInTheMedia =
+    div []
+        [ h2 [ class "my-10" ]
+            [ text "In The Media"
+            ]
+        , div []
+            (List.map viewResource
+                [ spiritFilledMedia
+                , makeJoyNormal
+                , christianChannel
+                , inHisImage
+                , churchMilitant
+                ]
+            )
+        ]
+
+
+spiritFilledMedia : Resource
+spiritFilledMedia =
+    { name = "Spirit Filled Media Podcast"
+    , link = "https://www.buzzsprout.com/1467955/10425762-finding-your-way-catholic-stories-for-children-guest-trevor-rothaus "
+    , image = "/assets/images/ProfilePictures/SpiritFilledMedia.png"
+    }
+
+
+makeJoyNormal : Resource
+makeJoyNormal =
+    { name = "Make Joy Normal Podcast"
+    , link = "https://podcasts.apple.com/ca/podcast/catholic-stories-for-children-an-interview-with/id1512837291?i=1000631285156"
+    , image = "/assets/images/ProfilePictures/MakeJoyNormal.png"
+    }
+
+
+christianChannel : Resource
+christianChannel =
+    { name = "Christian Channel"
+    , link = "https://youtu.be/p4yi5EFbPAI?si=L0jtHxwFyyS4jMjC"
+    , image = "/assets/images/ProfilePictures/ChristianChannel.png"
+    }
+
+
+inHisImage : Resource
+inHisImage =
+    { name = "In His Image Podcast"
+    , link = "https://youtu.be/eqOmqdlNIDw?si=E9xTDcqQV_nFFQs-"
+    , image = "/assets/images/ProfilePictures/InHisDesign.png"
+    }
+
+
+churchMilitant : Resource
+churchMilitant =
+    { name = "Church Militant"
+    , link = "https://www.churchmilitant.com/news/article/new-animation-teaches-st-michael-prayer"
+    , image = "/assets/images/ProfilePictures/ChurchMilitant.png"
+    }
 
 
 viewTeam : Html msg
