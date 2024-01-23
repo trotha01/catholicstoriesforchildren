@@ -116,6 +116,7 @@ viewBooks =
             , stPaulCenter
             , cBPSaints
             , paulineBooksAndMediaForKids
+            , ctbBooks
             ]
         )
 
@@ -306,4 +307,12 @@ ctsBooks =
     { name = "Catholic Truth Society"
     , link = "https://www.ctsbooks.org/product-category/children-young-adults/"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CTS_Logo_vwbekKAI-.png?updatedAt=1687667974185"
+    }
+
+
+ctbBooks : Resource
+ctbBooks =
+    { name = "Catholic Teen Books"
+    , link = "https://www.catholicteenbooks.com/"
+    , image = "/assets/images/ProfilePictures/CatholicTeenBooks.png"
     }
