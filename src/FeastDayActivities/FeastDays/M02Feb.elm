@@ -49,11 +49,7 @@ february =
                           , link = "https://www.catholicicing.com/ideas-for-celebrating-candlemas-feb-2/"
                           , snippet = "There are tons of fun and traditional ways to celebrate Candlemas with Catholic kids so let’s look at some ideas that may work for your family..."
                           }
-                        ]
-                  }
-                , { feast = "Presentation of the Lord"
-                  , activities =
-                        [ { activityType = Audio
+                        , { activityType = Audio
                           , title = "Story of Presentation of the Lord"
                           , image = "FranciscanMedia"
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/presentation-of-the-lord/"
@@ -493,6 +489,22 @@ february =
                           }
                         ]
                   }
+                , { feast = "Ash Wednesday"
+                  , activities =
+                        [ { activityType = Food
+                          , title = "Lenten Pretzel Recipe (And A Printable Pretzel Prayer Poem)"
+                          , image = "https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg"
+                          , link = "https://www.catholicicing.com/pretzels-for-lent/"
+                          , snippet = "Did you know that the pretzel is a traditional food for lent? In fact, the pretzel was actually invented in order to be a simple Lenten snack!"
+                          }
+                        , { activityType = More
+                          , title = "Meatless Lent Recipes"
+                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552"
+                          , link = "https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/"
+                          , snippet = "Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas."
+                          }
+                        ]
+                  }
                 , { feast = "Saints Cyril and Methodius"
                   , activities =
                         [ { activityType = Audio
@@ -701,23 +713,7 @@ february =
           }
         , { date = "22"
           , feasts =
-                [ { feast = "Ash Wednesday"
-                  , activities =
-                        [ { activityType = Food
-                          , title = "Lenten Pretzel Recipe (And A Printable Pretzel Prayer Poem)"
-                          , image = "https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg"
-                          , link = "https://www.catholicicing.com/pretzels-for-lent/"
-                          , snippet = "Did you know that the pretzel is a traditional food for lent? In fact, the pretzel was actually invented in order to be a simple Lenten snack!"
-                          }
-                        , { activityType = More
-                          , title = "Meatless Lent Recipes"
-                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552"
-                          , link = "https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/"
-                          , snippet = "Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas."
-                          }
-                        ]
-                  }
-                , { feast = "The Chair of Saint Peter the Apostle"
+                [ { feast = "The Chair of Saint Peter the Apostle"
                   , activities =
                         [ { activityType = Audio
                           , title = "Story of Chair of Saint Peter"

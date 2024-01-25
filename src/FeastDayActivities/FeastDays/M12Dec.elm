@@ -29,14 +29,10 @@ december =
                 [ { feast = "Saint Ambrose of Milan", activities = [] }
                 ]
           }
-        , { date = "08"
-          , feasts =
-                [ { feast = "Immaculate Conception of the Blessed Virgin Mary", activities = [] }
-                ]
-          }
         , { date = "09"
           , feasts =
-                [ { feast = "Saint Juan Diego", activities = [] }
+                [ { feast = "Immaculate Conception of the Blessed Virgin Mary", activities = [] }
+                , { feast = "Saint Juan Diego", activities = [] }
                 ]
           }
         , { date = "10"

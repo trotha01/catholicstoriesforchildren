@@ -1161,6 +1161,22 @@ janFeasts =
                       }
                     ]
               }
+            , { feast = "Day of Prayer for the Legal Protection of Unborn Children"
+              , activities =
+                    [ { activityType = OnlineReading
+                      , title = ""
+                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                      , link = ""
+                      , snippet = ""
+                      }
+                    , { activityType = More
+                      , title = "Pro Life Craft for Kids"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/pro-life-craft-for-kids/"
+                      , snippet = " Today, let’s look at some celebrating the feast day of St. Agnes with kids..."
+                      }
+                    ]
+              }
             ]
       }
     , { date = "23"
@@ -1196,22 +1212,6 @@ janFeasts =
                       , image = "SaintsFeastFamily"
                       , link = "https://www.saintsfeastfamily.com/copy-of-st-vincent-jan-22"
                       , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Marianne Cope’s Story \u{200B} Though leprosy scared off most people in 19th-century Hawaii, that disease sparked great generosity in the woman who came to be known as Mother Marianne of Molokai. Her courage helped tremendously to improve the lives of its victims in Hawaii, a territory annexed to the..."
-                      }
-                    ]
-              }
-            , { feast = "Day of Prayer for the Legal Protection of Unborn Children"
-              , activities =
-                    [ { activityType = OnlineReading
-                      , title = ""
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = ""
-                      , snippet = ""
-                      }
-                    , { activityType = More
-                      , title = "Pro Life Craft for Kids"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/pro-life-craft-for-kids/"
-                      , snippet = " Today, let’s look at some celebrating the feast day of St. Agnes with kids..."
                       }
                     ]
               }

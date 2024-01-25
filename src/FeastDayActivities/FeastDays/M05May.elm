@@ -24,6 +24,11 @@ may =
                 [ { feast = "Saints Philip and James", activities = [] }
                 ]
           }
+        , { date = "9"
+          , feasts =
+                [ { feast = "The Ascension of the Lord (or 12th)", activities = [] }
+                ]
+          }
         , { date = "10"
           , feasts =
                 [ { feast = "Saint Damien de Veuster of Moloka'i", activities = [] }
@@ -32,7 +37,8 @@ may =
           }
         , { date = "12"
           , feasts =
-                [ { feast = "Saints Nereus and Achilleus", activities = [] }
+                [ { feast = "The Ascension of the Lord (or the 9th)", activities = [] }
+                , { feast = "Saints Nereus and Achilleus", activities = [] }
                 , { feast = "Saint Pancras", activities = [] }
                 ]
           }
@@ -51,19 +57,14 @@ may =
                 [ { feast = "Saint Isidore", activities = [] }
                 ]
           }
-        , { date = "18"
+        , { date = "19"
           , feasts =
-                [ { feast = "The Ascension of the Lord (or 21st)", activities = [] }
+                [ { feast = "Pentecost Sunday", activities = [] }
                 ]
           }
         , { date = "20"
           , feasts =
                 [ { feast = "Saint Bernardine of Siena", activities = [] }
-                ]
-          }
-        , { date = "21"
-          , feasts =
-                [ { feast = "The Ascension of the Lord (or 18th)", activities = [] }
                 ]
           }
         , { date = "22"
@@ -94,11 +95,6 @@ may =
         , { date = "27"
           , feasts =
                 [ { feast = "Saint Augustine of Canterbury", activities = [] }
-                ]
-          }
-        , { date = "28"
-          , feasts =
-                [ { feast = "Pentecost Sunday", activities = [] }
                 ]
           }
         , { date = "29"

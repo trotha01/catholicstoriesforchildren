@@ -44,6 +44,6 @@ viewFooter =
                     []
                 ]
             ]
-        , p [] [ text "Copyright © 2023 Catholic Stories for Children. All rights reserved." ]
+        , p [] [ text "Copyright © 2024 Catholic Stories for Children. All rights reserved." ]
         , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883" ]
         ]

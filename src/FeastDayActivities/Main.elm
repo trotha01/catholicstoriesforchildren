@@ -230,10 +230,10 @@ viewDate : Model -> String -> String -> List FeastActivities -> Html Msg
 viewDate model month date feasts =
     let
         ( nextMonth, nextDay ) =
-            nextDate "2023" month date
+            nextDate "2024" month date
 
         ( prevMonth, prevDay ) =
-            previousDate "2023" month date
+            previousDate "2024" month date
 
         nextDateLink =
             createFeastDayLink nextMonth nextDay
@@ -277,7 +277,7 @@ viewDate model month date feasts =
                 []
                 [ h1 [ class "capitalize text-left" ]
                     [ span [ class "block" ] [ text "Catholic Activities for Children" ]
-                    , span [ class "block" ] [ text ("for " ++ month ++ " " ++ date ++ ", 2023") ]
+                    , span [ class "block" ] [ text ("for " ++ month ++ " " ++ date ++ ", 2024") ]
                     ]
                 , viewFeastDayHeader feasts
                 ]
@@ -473,7 +473,7 @@ viewMonth model feastMonth =
     div
         [ class "mt-10 max-w-3xl mx-auto" ]
         [ div [ class "px-4" ]
-            [ h1 [] [ text "2023 Feast Day Activities" ]
+            [ h1 [] [ text "2024 Feast Day Activities" ]
             , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
             , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
             , a

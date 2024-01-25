@@ -171,7 +171,7 @@ viewFeastMonthCSV feastMonth =
 
 viewFeastDayCSV : String -> FeastDay -> Html msg
 viewFeastDayCSV month feastDay =
-    span [] (List.map (viewFeastActivitiesCSV (month ++ " " ++ feastDay.date ++ ", 2023")) feastDay.feasts)
+    span [] (List.map (viewFeastActivitiesCSV (month ++ " " ++ feastDay.date ++ ", 2024")) feastDay.feasts)
 
 
 viewFeastActivitiesCSV : String -> FeastActivities -> Html msg
