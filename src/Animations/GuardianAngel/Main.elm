@@ -7,21 +7,30 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 import Signup exposing (..)
 
 
+type VideoOption
+    = English
+    | Urdu
+
+
 type alias Model =
-    { signup : Signup.Model }
+    { videoTab : VideoOption
+    , signup : Signup.Model
+    }
 
 
 type Msg
-    = SignupMsg Signup.Msg
+    = VideoTabClick VideoOption
+    | SignupMsg Signup.Msg
 
 
 main : Program () Model Msg
 main =
     Browser.element
-        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
+        { init = \_ -> ( { videoTab = English, signup = Signup.init }, Cmd.none )
         , view = view
         , update = update
         , subscriptions = \_ -> Sub.none
@@ -37,6 +46,9 @@ update msg model =
                     Signup.update signupMsg model.signup
             in
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        VideoTabClick language ->
+            ( { model | videoTab = language }, Cmd.none )
 
 
 view : Model -> Html Msg
@@ -81,7 +93,7 @@ viewBody model =
             ]
         , div [ class "mb-20" ]
             [ Signup.view model.signup |> Html.map SignupMsg ]
-        , viewVideoPlayers
+        , viewVideoPlayers model
         , div [ class "py-4" ] [ viewActivities ]
         , viewPrayer
         , scripture
@@ -92,11 +104,67 @@ viewBody model =
         ]
 
 
-viewVideoPlayers : Html msg
-viewVideoPlayers =
-    viewVideo
-        "Guardian Angel | Prayer Time with Angels"
-        "https://www.youtube-nocookie.com/embed/03hmpXjV_ck?playlist=03hmpXjV_ck&loop=1"
+englishVideoLink : String
+englishVideoLink =
+    "https://www.youtube-nocookie.com/embed/03hmpXjV_ck?playlist=03hmpXjV_ck&loop=1"
+
+
+urduVideoLink : String
+urduVideoLink =
+    "https://www.youtube-nocookie.com/embed/uG7xjTRSSaI?si=woQ6x00jpIiqEPMN"
+
+
+viewVideoPlayers : Model -> Html Msg
+viewVideoPlayers model =
+    div
+        []
+        [ viewVideoPlayerTabs model
+        , case model.videoTab of
+            English ->
+                viewVideo "Guardian Angel | Prayer Time with Angels" englishVideoLink
+
+            Urdu ->
+                viewVideo "Guardian Angel | Prayer Time with Angels" urduVideoLink
+        ]
+
+
+viewVideoPlayerTabs : Model -> Html Msg
+viewVideoPlayerTabs model =
+    let
+        selectedClass =
+            "active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500"
+
+        nonSelectedClass =
+            "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+
+        ( englishClass, aslClass ) =
+            case model.videoTab of
+                English ->
+                    ( selectedClass, nonSelectedClass )
+
+                Urdu ->
+                    ( nonSelectedClass, selectedClass )
+    in
+    div [ class "text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
+        [ ul
+            [ class "flex flex-wrap -mb-px" ]
+            [ li [ class "mr-2" ]
+                [ button
+                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ englishClass)
+                    , onClick (VideoTabClick English)
+                    ]
+                    [ text "English" ]
+                ]
+            , li
+                [ class "mr-2" ]
+                [ button
+                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ aslClass)
+                    , onClick (VideoTabClick Urdu)
+                    ]
+                    [ text "Urdu" ]
+                ]
+            ]
+        ]
 
 
 viewVideoPlayer : String -> Html msg
