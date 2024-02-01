@@ -14,6 +14,7 @@ import Team.Team exposing (trevor, viewPersonImage)
 
 type VideoOption
     = English
+    | Urdu
     | ASL
 
 
@@ -115,13 +116,16 @@ viewVideoPlayerTabs model =
         nonSelectedClass =
             "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
 
-        ( englishClass, aslClass ) =
+        ( englishClass, aslClass, urduClass ) =
             case model.videoTab of
                 English ->
-                    ( selectedClass, nonSelectedClass )
+                    ( selectedClass, nonSelectedClass, nonSelectedClass )
 
                 ASL ->
-                    ( nonSelectedClass, selectedClass )
+                    ( nonSelectedClass, selectedClass, nonSelectedClass )
+
+                Urdu ->
+                    ( nonSelectedClass, nonSelectedClass, selectedClass )
     in
     div [ class "text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
         [ ul
@@ -141,6 +145,14 @@ viewVideoPlayerTabs model =
                     ]
                     [ text "ASL" ]
                 ]
+            , li
+                [ class "mr-2" ]
+                [ button
+                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ urduClass)
+                    , onClick (VideoTabClick Urdu)
+                    ]
+                    [ text "Urdu" ]
+                ]
             ]
         ]
 
@@ -156,6 +168,9 @@ viewVideoPlayers model =
 
             ASL ->
                 viewVideo "Hail Mary, Full of Grace Video" aslVideoLink
+
+            Urdu ->
+                viewVideo "Hail Mary, Full of Grace Video" urduVideoLink
         ]
 
 
@@ -169,6 +184,11 @@ aslVideoLink =
     "https://www.youtube-nocookie.com/embed/QNVNbLiqznI?playlist=QNVNbLiqznI&loop=1"
 
 
+urduVideoLink : String
+urduVideoLink =
+    "https://www.youtube-nocookie.com/embed/NN7gd5xqDw8?si=tUB20FMCCdN2Mafx"
+
+
 aboutTheAnimation : Html msg
 aboutTheAnimation =
     div
@@ -176,7 +196,7 @@ aboutTheAnimation =
         , class "text-lg"
         , class "max-w-3xl"
         ]
-        [ p [ class "my-3" ] [ text "Welcome to Catholic Stories for Children! I’m Trevor Rothaus, the founder. You’ve visited our website because, like me, you know that Mother Mary is one of the most people in our Catholic faith. She is admired for her unwavering faith, humility, and devotion to her son, Jesus Christ." ]
+        [ p [ class "my-3" ] [ text "Mother Mary is one of the most important people in our Catholic faith. She is admired for her unwavering faith, humility, and devotion to her son, Jesus Christ." ]
         , p [ class "my-3" ]
             [ span [] [ text "Her life and teachings have been a source of inspiration for Christians, and " ]
             , span [ class "font-bold" ] [ text "Mother Mary’s story has been passed down from generation to generation." ]
