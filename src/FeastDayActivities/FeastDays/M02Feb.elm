@@ -12,14 +12,7 @@ february =
         [ { date = "01"
           , feasts =
                 [ { feast = "Saint Ansgar"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Ansgar"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-ansgar/"
-                          , snippet = "Saint Ansgar was a Benedictine missionary who spent his life trying to convert northern Europe. It seems for every step he took forward, he ended up taking two backward."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Brigid"
                   , activities =
