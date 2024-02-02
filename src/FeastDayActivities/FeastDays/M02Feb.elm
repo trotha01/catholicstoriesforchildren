@@ -57,7 +57,7 @@ february =
                           }
                         ]
                   }
-                , { feast = "Saint Candlemas"
+                , { feast = "Candlemas"
                   , activities =
                         [ { activityType = More
                           , title = "Candlemas"
