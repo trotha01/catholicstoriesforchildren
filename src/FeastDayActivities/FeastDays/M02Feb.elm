@@ -66,13 +66,7 @@ february =
           , feasts =
                 [ { feast = "Saint Blaise"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Blaise"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-blaise/"
-                          , snippet = "Popularly known as the saint who protects from ailments of the throat, Saint Blaise was a bishop and martyr of the fourth century. We know little else about him, except that he suffered persecution even after the Edict of Toleration was to have freed the Roman world for worship."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Blaise"
                           , image = "LoyolaPress"
                           , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-blase"
@@ -128,12 +122,6 @@ february =
                           , link = "https://www.saintsfeastfamily.com/copy-2-of-st-blaise-feb-3"
                           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Joseph of Leonissa’s Story \u{200B} Joseph of Leonissa, OFM Cap.;\u{00A0} was the third of eight children born at Leonessa (Italy) on January 8, 1556. At baptism he was given the name Eufranio. Impressed by the example of Matthew Silvestri, who had left the medical profession to embrace the Capuchin life an..."
                           }
-                        , { activityType = Audio
-                          , title = "Story of Saint Joseph of Leonissa"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-of-leonissa/"
-                          , snippet = "Saint Joseph of Leonissa was known for his austerity of life and single-minded commitment to preaching. Arrested and warned to change his ways, Joseph returned to his former behavior and was re-arrested and condemned to die. He escaped, however, and continued a life of preaching."
-                          }
                         ]
                   }
                 ]
@@ -154,12 +142,6 @@ february =
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-agatha/"
                           , snippet = "One of the four virgin martyrs celebrated in the Catholic calendar of saints, Saint Agatha was arrested during the persecution of Decius in 251. Tortured for her beauty and tempted to violate her chastity, Agatha was eventually martyred."
                           }
-                        , { activityType = OnlineReading
-                          , title = "Saint Agatha"
-                          , image = "LoyolaPress"
-                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-agatha"
-                          , snippet = "Saint Agatha is the patroness of nurses, foundry workers, miners, jewelers, and Alpine guides. She is invoked against fire, earthquakes, famine, thunderstorms, and volcanic eruptions. In Italy, her feast day is celebrated with fireworks. According to some stories, Agatha was born in Sicily of noble..."
-                          }
                         , { activityType = More
                           , title = "Agatha"
                           , image = "SaintsFeastFamily"
@@ -174,13 +156,7 @@ february =
           , feasts =
                 [ { feast = "Saint Paul Miki and Companions"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Paul Miki and Companions"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-paul-miki-and-companions/"
-                          , snippet = "A Jesuit Brother and native of Japan, Saint Paul Miki was crucified, along with 25 other Catholics, for preaching his belief in Jesus."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Paul Miki and Companions"
                           , image = "LoyolaPress"
                           , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-paul-miki-and-companions"
@@ -209,14 +185,7 @@ february =
         , { date = "07"
           , feasts =
                 [ { feast = "Saint Colette"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Colette"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-colette/"
-                          , snippet = "Saint Colette is known as a reformer of the Order of Saint Clare. Known as the Colettine Poor Clares, these nuns follow a more primitive rule of Saint Clare and are known for their austerity."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Theodore Stratelates"
                   , activities =
@@ -246,12 +215,6 @@ february =
                           , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-josephine-bakhita/"
                           , snippet = "Saint Josephine, affectionately known as Bakhita (“fortunate one”), was born in the southern Sudan region of Darfur. She was kidnapped as a child and sold into slavery..."
                           }
-                        , { activityType = Audio
-                          , title = "Story of Saint Josephine Bakhita"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-josephine-bakhita/"
-                          , snippet = "Kidnapped at the age of nine and being too terrified to remember her name, Josephine acquired the name “Bakhit” which means “fortunate one.”"
-                          }
                         , { activityType = More
                           , title = "Josephine Bakhita"
                           , image = "SaintsFeastFamily"
@@ -280,17 +243,7 @@ february =
           }
         , { date = "09"
           , feasts =
-                [ { feast = "Saint Jerome Emiliani"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Jerome Emiliani"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-jerome-emiliani/"
-                          , snippet = "An orphan at the age of 15, Saint Jerome Emiliani ran away from home and ran into some trouble. He ended up in prison where he had time to think. After a conversion, Saint Jerome studied for the priesthood and, after his ordination, he worked for abandoned children."
-                          }
-                        ]
-                  }
-                , { feast = "Saint Miguel Febres Cordero"
+                [ { feast = "Saint Miguel Febres Cordero"
                   , activities =
                         [ { activityType = OnlineReading
                           , title = "Saint Miguel Febres Cordero"
@@ -506,12 +459,6 @@ february =
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/saints-cyril-and-methodius/"
                           , snippet = "Often missionaries face the difficulties of language and culture. Saints Cyril and Methodius were no exceptions. But they faced the difficulties by writing the foreign language in a new alphabet and translating the liturgy for the local people."
                           }
-                        , { activityType = OnlineReading
-                          , title = "Saints Cyril and Methodius"
-                          , image = "LoyolaPress"
-                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saints-cyril-and-methodius"
-                          , snippet = "Cyril and Methodius were brothers, born in Thessalonika, Greece. Cyril (825–869), a philosopher, studied in Constantinople and was ordained a priest. Methodius (826–884), for five years the governor of a Slavic region of the empire, became a monk. In 861, the two brothers went as missionaries to Rus..."
-                          }
                         ]
                   }
                 ]
@@ -545,14 +492,7 @@ february =
         , { date = "16"
           , feasts =
                 [ { feast = "Saint Gilbert of Sempringham"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Gilbert of Sempringham"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-gilbert-of-sempringham/"
-                          , snippet = "Saint Gilbert of Sempringham could have been a wealthy priest, but chose to live far more simply. He founded a religious congregation the Gilbertines, who followed his example of living poorly and caring for those who want. Saint Gilbert live past 100 years of age."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Juliana of Cumae"
                   , activities =
@@ -621,14 +561,7 @@ february =
         , { date = "19"
           , feasts =
                 [ { feast = "Saint Conrad of Piacenza"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Conrad of Piacenza"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-conrad-of-piacenza/"
-                          , snippet = "Saint Conrad offers a different slant of holiness. Married, he and his wife opted to live separate lives─she as a Poor Clare and he as a Franciscan hermit. All this after he set a fire which was spread by the wind and destroyed the nearby fields, forests, and town."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Odran"
                   , activities =
@@ -682,18 +615,6 @@ february =
                           , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian/"
                           , snippet = "Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time..."
                           }
-                        , { activityType = Audio
-                          , title = "Story of Saint Peter Damian"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-peter-damian/"
-                          , snippet = "If it hadn’t been for an elder brother taking him under his wing, Saint Peter Damian may have taken a very different path in life. But with his brother’s guidance, he matured into a holy man, monk, and bishop. A man of prayer and devotion, Peter Damian was also a spiritual writer."
-                          }
-                        , { activityType = OnlineReading
-                          , title = "Saint Peter Damian"
-                          , image = "LoyolaPress"
-                          , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-peter-damian"
-                          , snippet = "Born in Ravenna, Italy, in 1007, Peter Damian knew hardship as a child. He became a successful teacher, but only for a short time. He was ordained to the priesthood, and in 1035, he entered a Benedictine monastery. The monks lived in small hermitages, with two monks in each. Peter was known for his..."
-                          }
                         , { activityType = More
                           , title = "Peter Damian"
                           , image = "SaintsFeastFamily"
@@ -744,13 +665,7 @@ february =
           , feasts =
                 [ { feast = "Saint Polycarp"
                   , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Saint Polycarp"
-                          , image = "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg"
-                          , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-polycarp/"
-                          , snippet = "The story of Polycarp’s martyrdom is the earliest recorded account of a Christian martyr. Polycarp was a disciple of St. John the apostle. While still quite young, he became the bishop of Smyrna and was one of the most respected leaders..."
-                          }
-                        , { activityType = Audio
+                        [ { activityType = Audio
                           , title = "Story of Saint Polycarp"
                           , image = "FranciscanMedia"
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-polycarp/"
@@ -775,28 +690,14 @@ february =
         , { date = "24"
           , feasts =
                 [ { feast = "Blessed Luke Belludi"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Blessed Luke Belludi"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-luke-belludi/"
-                          , snippet = "Was Blessed Luke Belludi just at the right place at the right time, or was there something more at work in his happening to meet Saint Anthony and become his protégé? We would all agree that this is how the Lord works─through convenient happenstances."
-                          }
-                        ]
+                  , activities = []
                   }
                 ]
           }
         , { date = "25"
           , feasts =
                 [ { feast = "Blessed Sebastian of Aparicio"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Blessed Sebastian of Aparicio"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-sebastian-of-aparicio/"
-                          , snippet = "Some holy people have a rather full life spread over a couple of vocations. Blessed Sebastian of Aparicio is such a person having been married twice before becoming a Franciscan."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Ethelbert"
                   , activities =
@@ -823,14 +724,7 @@ february =
         , { date = "26"
           , feasts =
                 [ { feast = "Saint Maria Bertilla Boscardin"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Maria Bertilla Boscardin"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-maria-bertilla-boscardin/"
-                          , snippet = "Courage, perseverance, and hope seem to characterize Saint Maria Bertilla Boscardin. In spite of all odds, she kept going and, in the process, helped many people find healing and peace."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Alexander"
                   , activities =
@@ -857,28 +751,14 @@ february =
                         ]
                   }
                 , { feast = "Saint Gabriel of Our Lady of Sorrows"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Saint Gabriel of Our Lady of Sorrows"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-gabriel-of-our-lady-of-sorrows/"
-                          , snippet = "Disappointments, setbacks, loss, and suffering seem to define the life of Saint Gabriel of Our Lady of Sorrows. But undeterred by whatever happened, Saint Gabriel kept his focus and lived life well─so well that he was an example to both young and old."
-                          }
-                        ]
+                  , activities = []
                   }
                 ]
           }
         , { date = "28"
           , feasts =
                 [ { feast = "Blessed Daniel Brottier"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Story of Blessed Daniel Brottier"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-daniel-brottier/"
-                          , snippet = "Some people would call Blessed Daniel Brottier “lucky.” But in the eyes of faith, God’s providence and desire for Blessed Daniel to do great things in his kingdom is what protected him in some very dangerous situations. Blessed Daniel cooperated with that providence and became an example to all."
-                          }
-                        ]
+                  , activities = []
                   }
                 , { feast = "Saint Gabriel Francis Possenti"
                   , activities =
