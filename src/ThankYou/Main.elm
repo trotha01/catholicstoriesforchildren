@@ -110,10 +110,10 @@ viewThankYou =
     div
         []
         [ p [ class "my-4" ]
-            [ text "Hello, I am Trevor Rothaus, founder of Catholic Stories for Children. I want to personally thank you for connecting with us! We are thrilled to have you on board."
+            [ text "Hello, I want to personally thank you for connecting with us! We are thrilled to have you on board."
             ]
         , p [ class "my-4" ]
-            [ text "In the coming minutes, look out for an email containing your free printable. Also, I would like to keep you in the loop regarding our latest animations and updates. We have so many exciting projects coming up to teach the Catholic faith to young people!"
+            [ text "In the coming minutes, look out for an email containing your free printable. I will also be keeping you in the loop regarding our upcoming animations and activities. We have so many exciting projects coming up to teach the Catholic faith to kids!"
             ]
         , p [ class "my-4" ]
             [ span [ class "font-bold" ] [ text "Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you." ]
@@ -129,10 +129,7 @@ viewThankYou =
         , p [ class "my-4" ]
             [ span [ class "block" ] [ text "Thank you and may God bless you," ]
             , span [ class "block" ] [ text "Trevor Rothaus" ]
-            , span [ class "block" ] [ text "CEO - Catholic Stories for Children" ]
-            , div []
-                [ viewPersonImage trevor
-                ]
+            , span [ class "block" ] [ text "Founder - Catholic Stories for Children" ]
             ]
 
         -- , div
