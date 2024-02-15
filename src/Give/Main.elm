@@ -321,7 +321,7 @@ donateSection title body =
         , style "background-color" "white"
         , style "color" "black"
         , style "border-radius" "5px"
-        , class "p-5 max-w-2xl"
+        , class "p-5 max-w-2xl shadow"
         ]
         [ div
             [ class "pb-5 m-1"
