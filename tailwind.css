@@ -604,6 +604,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.mx-11 {
+  margin-left: 2.75rem;
+  margin-right: 2.75rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -834,6 +839,10 @@ video {
 
 .min-w-\[340px\] {
   min-width: 340px;
+}
+
+.min-w-\[325px\] {
+  min-width: 325px;
 }
 
 .max-w-xl {
@@ -1236,6 +1245,11 @@ video {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+
+.px-11 {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
 }
 
 .pb-2 {

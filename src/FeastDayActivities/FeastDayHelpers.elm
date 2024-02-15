@@ -240,7 +240,7 @@ viewActivities title activities =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold p-5" ] [ text title ]
+            [ h3 [ class "font-semibold my-5" ] [ text title ]
             , div []
                 (List.map viewActivity activities)
             ]
@@ -253,7 +253,7 @@ viewPrintouts title activities =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold p-5" ] [ text title ]
+            [ h3 [ class "font-semibold my-5" ] [ text title ]
             , div []
                 (List.map
                     (\activity ->
@@ -267,7 +267,7 @@ viewPrintouts title activities =
 viewPrintout : Activity -> Html msg
 viewPrintout activity =
     a [ href activity.link ]
-        [ img [ src activity.link, class "max-w-xl w-full p-5" ] []
+        [ img [ src activity.link, class "max-w-xl w-full my-5" ] []
         ]
 
 
@@ -278,7 +278,7 @@ viewVideos videos =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold p-5" ] [ text "Videos to Watch" ]
+            [ h3 [ class "font-semibold my-5" ] [ text "Videos to Watch" ]
             , div []
                 (List.map
                     (\video ->
@@ -307,7 +307,7 @@ viewEmbeddedVideo video =
         , style "overflow" "hidden"
         , style "max-width" "100%"
         , style "border-radius" "5px"
-        , class "m-5"
+        , class "my-5"
         ]
         [ iframe
             [ style "position" "absolute"
@@ -332,7 +332,7 @@ viewAudioList audioList =
 
     else
         div [ class "mt-20" ]
-            [ h3 [ class "font-semibold p-5" ] [ text "Podcasts to Hear" ]
+            [ h3 [ class "font-semibold my-5" ] [ text "Podcasts to Hear" ]
             , div [ class "max-w-3xl m-auto" ]
                 (List.map viewAudio audioList)
             ]
@@ -357,7 +357,7 @@ viewEmbeddedAudio activity =
         span [] []
 
     else
-        div [ class "p-5" ]
+        div [ class "my-5" ]
             [ iframe
                 [ src link
                 , attribute "allow" "autoplay *; encrypted-media *; fullscreen *; clipboard-write"
@@ -412,7 +412,7 @@ viewActivity activity =
         , attribute "aria-label" activity.title
         , target "_blank"
         , class "hover:bg-csc-lightpurple"
-        , class "rounded m-5"
+        , class "rounded my-5"
         ]
         [ img
             [ src (imageSrc activity)

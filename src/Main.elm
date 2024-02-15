@@ -378,10 +378,10 @@ viewTestimonials =
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
         , div [ class " md:flex md:overflow-x-auto" ]
-            [ div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson ainsleyRawlingsTestimonial ]
-            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson camSmithTestimonial ]
-            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson meganReisterTestimonial ]
-            , div [ class "flex-none md:w-1/3 min-w-[340px] my-10 md:mr-20" ] [ viewPerson kellyBriggsTestimonial ]
+            [ div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson ainsleyRawlingsTestimonial ]
+            , div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson camSmithTestimonial ]
+            , div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson meganReisterTestimonial ]
+            , div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson kellyBriggsTestimonial ]
             ]
         ]
 
@@ -668,7 +668,7 @@ viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Htm
 viewSection sectionId background body =
     section
         ([ id sectionId
-         , class "px-5 sm:pl-[150px] sm:pr-[100px]"
+         , class "px-11 sm:pl-[150px] sm:pr-[100px]"
          , style "min-height" "80vh"
          ]
             ++ background

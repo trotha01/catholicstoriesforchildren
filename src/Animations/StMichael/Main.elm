@@ -83,7 +83,7 @@ viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
-        , class "p-5"
+        , class "py-5 px-11"
         , class "mb-10"
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "St Michael the Archangel Prayer" ]

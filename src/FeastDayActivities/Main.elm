@@ -243,10 +243,10 @@ viewDate model month date feasts =
     in
     div
         [ class "text-center"
-        , class "mt-10 max-w-3xl mx-auto"
+        , class "mt-10 max-w-3xl mx-auto px-11"
         , id "calendar-content"
         ]
-        [ div [ class "p-5" ]
+        [ div [ class "py-5" ]
             [ div [ class "grid grid-cols-3 mb-16" ]
                 [ a
                     [ class "text-7xl text-left md:m-0"
@@ -294,7 +294,7 @@ viewDate model month date feasts =
 
 viewWeekdayActivities : Html msg
 viewWeekdayActivities =
-    div [ class "text-left p-5" ]
+    div [ class "text-left py-5" ]
         [ h3 [ class "font-semibold" ] [ text "Common Daily Prayers" ]
         , p [ class "mt-4" ] [ text "It is good to be able to center yourself on God throughout the years, months, and days. We have suggestions here to help order the hours of the day toward God. They are based on the Liturgy of the Hours. The suggestions here can be modified for you and your family. Especially with young kids that need to sleep in or go to bed early." ]
         , div [ class "mt-4 grid grid-cols-[50px,_1fr]" ]
@@ -472,7 +472,7 @@ viewMonth model feastMonth =
     in
     div
         [ class "mt-10 max-w-3xl mx-auto" ]
-        [ div [ class "px-4" ]
+        [ div [ class "px-11" ]
             [ h1 [] [ text "2024 Feast Day Activities" ]
             , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
             , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]

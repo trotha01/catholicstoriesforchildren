@@ -45,9 +45,9 @@ viewBody : Html Never
 viewBody =
     div
         [ class "m-auto"
-        , class "max-w-3xl"
+        , class "max-w-3xl py-5 px-11"
         ]
-        [ h1 [ class "my-10" ] [ text "Give" ]
+        [ h1 [ class "mb-10" ] [ text "Give" ]
         , donateAbout
         , a
             [ href "/animations/actofcontrition"
@@ -292,11 +292,9 @@ donateSection title body =
         [ style "margin-bottom" "100px"
         , style "background-color" "white"
         , style "color" "black"
-        , style "width" "80%"
         , style "max-width" "600px"
-        , style "margin" "40px auto"
-        , style "padding" "40px 20px"
         , style "border-radius" "5px"
+        , class "p-5"
         ]
         [ div
             [ class "pb-5 m-1"

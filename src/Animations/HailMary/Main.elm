@@ -74,7 +74,7 @@ viewBody model =
     div
         [ class "max-w-3xl"
         , class "m-auto"
-        , class "p-5"
+        , class "py-5 px-11"
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Teaching Children about Mother Mary through Animated Stories" ]
         , aboutTheAnimation

@@ -52,11 +52,10 @@ view model =
 viewBody : Model -> Html Msg
 viewBody model =
     div
-        [ class "hcenter"
-        , style "width" "80%"
+        [ class "hcenter py-5 px-11"
         , style "max-width" "800px"
         ]
-        [ h1 [ class "mt-10 leading-10" ] [ text "Start teaching your children with Catholic animations" ]
+        [ h1 [ class "leading-10" ] [ text "Start teaching your children with Catholic animations" ]
         , div [ class "my-10" ]
             [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
             , p [ class "my-5" ]

@@ -61,7 +61,7 @@ viewBody model =
     div
         [ class "max-w-5xl"
         , class "m-auto"
-        , class "p-5"
+        , class "py-5 px-11"
         , class "mb-10"
 
         -- , class "md:grid md:grid-cols-[_1fr_320px] md:gap-5"
