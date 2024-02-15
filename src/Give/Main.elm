@@ -49,27 +49,29 @@ viewBody =
         ]
         [ h1 [ class "mb-10" ] [ text "Give" ]
         , donateAbout
-        , a
-            [ href "/animations/actofcontrition"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
-            , class "block mt-20 mb-2"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Act of Contrition Animation"
-                ]
-                []
-            ]
 
+        -- , a
+        --     [ href "/animations/actofcontrition"
+        --     , class "hover:scale-105 transition ease-in-out duration-50"
+        --     , attribute "aria-label" "Act of Contrition Animation Coming Soon"
+        --     , class "block mt-20 mb-2"
+        --     ]
+        --     [ img
+        --         [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+        --         , style "border-radius" "5px"
+        --         , style "width" "-webkit-fill-available"
+        --         , alt "Act of Contrition Animation"
+        --         ]
+        --         []
+        --     ]
         -- , donateWithPatreon
         , div [ style "margin-bottom" "6em" ] []
-        , h2 [ class "text-center" ] [ text "Other ways to give" ]
+        , donateWithDonorbox
+        , h2 [ class "text-center max-w-3xl" ] [ text "Other ways to give" ]
         , div [ style "margin-bottom" "4em" ] []
         , prayForUs
-        , donateWithPaypal
+
+        -- , donateWithPaypal
         , donateWithVehicle
         , sponsor
         , volunteer
@@ -105,6 +107,32 @@ prayForUs =
             , style "transform" "translate(-50%)"
             ]
             [ text "We believe in the power of prayer. Please pray for us in this work. We are praying for you. 🙏" ]
+        )
+
+
+donateWithDonorbox : Html msg
+donateWithDonorbox =
+    donateSection "Donate"
+        (div [ class "w-52 m-auto" ]
+            [ a
+                [ class "dbox-donation-page-button m-auto"
+                , href "https://donorbox.org/catholic-stories-for-children?default_interval=m"
+                , style "background" "rgb(254, 189, 17)"
+                , style "color" "rgb(0, 0, 0)"
+                , style "text-decoration" "none"
+                , style "font-family" "Verdana, sans-serif"
+                , style "display" "flex"
+                , style "font-size" "16px"
+                , style "padding" "8px 24px"
+                , style "border-radius" "5px"
+                , style "gap" "8px"
+                , style "width" "fit-content"
+                , style "line-height" "24px"
+                ]
+                [ img [ src "https://donorbox.org/images/white_logo.svg", style "width" "20px" ] []
+                , text "Donate"
+                ]
+            ]
         )
 
 
@@ -292,9 +320,8 @@ donateSection title body =
         [ style "margin-bottom" "100px"
         , style "background-color" "white"
         , style "color" "black"
-        , style "max-width" "600px"
         , style "border-radius" "5px"
-        , class "p-5"
+        , class "p-5 max-w-2xl"
         ]
         [ div
             [ class "pb-5 m-1"
