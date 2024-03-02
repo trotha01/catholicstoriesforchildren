@@ -275,12 +275,6 @@ february =
                           , link = "https://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-scholastica/"
                           , snippet = "Saint Scholastica was the twin sister of Saint Benedict. Benedict studied in Rome but then decided to devote all of his life to the search for God. He organized several community dwellings and finally established a very important monastery at Monte Cassino. Then Scholastica..."
                           }
-                        , { activityType = Audio
-                          , title = "Story of Saint Scholastica"
-                          , image = "FranciscanMedia"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-scholastica/"
-                          , snippet = "Family ties and religious obligations may affect one another, but they are not necessarily opposed. Saint Scholastica’s relationship with her brother Saint Benedict, is a good example."
-                          }
                         , { activityType = OnlineReading
                           , title = "Saint Scholastica"
                           , image = "LoyolaPress"

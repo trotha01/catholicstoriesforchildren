@@ -19,12 +19,6 @@ april =
                           , image = ""
                           , snippet = ""
                           }
-                        , { activityType = Audio
-                          , title = "Saint Francis of Paola’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-francis-of-paola/"
-                          , snippet = "Francis of Paola was a man who deeply loved contemplative solitude and wished only to be the “least in the household of God.” Yet, when the Church called him to active service in the world, he became a miracle-worker and influenced the course of nations..."
-                          }
                         , { activityType = OnlineReading
                           , title = "Saint Francis of Paola, Hermit"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
@@ -59,13 +53,7 @@ april =
           , feasts =
                 [ { feast = "Saint Vincent Ferrer"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint Vincent Ferrer’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-vincent-ferrer/"
-                          , snippet = "The polarization in the Church today is a mild breeze compared with the tornado that ripped the Church apart during the lifetime of this saint. If any saint is a patron of reconciliation, Vincent Ferrer is..."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Vincent Ferrer, Priest"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-5-saint-vincent-ferrer-priest/"
@@ -80,13 +68,7 @@ april =
                 [ { feast = "Divine Mercy Sunday", activities = [] }
                 , { feast = "Saint John Baptist de la Salle"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint John Baptist de La Salle"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-john-baptist-de-la-salle/"
-                          , snippet = "Complete dedication to what he saw as God’s will for him dominated the life of John Baptist de La Salle. In 1950, Pope Pius XII named him patron of schoolteachers for his efforts in upgrading school instruction..."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint John Baptist de la Salle, Priest"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-7-saint-john-baptist-de-la-salle-priest/"

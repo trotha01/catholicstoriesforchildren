@@ -13,13 +13,7 @@ march =
           , feasts =
                 [ { feast = "Saint Katharine Drexel"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint Katharine Drexel’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-katharine-drexel/"
-                          , snippet = "If your father is an international banker and you ride in a private railroad car, you are not likely to be drawn into a life of voluntary poverty. But if your mother opens your home to the poor three days each week and your father spends half an hour each evening in prayer, it is not impossible that you will devote your life to the poor and give away millions of dollars. Katharine Drexel did that..."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Katharine Drexel"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-3-saint-katharine-drexel-virgin-usa-optional-memorial/"
@@ -85,13 +79,7 @@ march =
           , feasts =
                 [ { feast = "Saint John of God"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint John of God’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-john-of-god/"
-                          , snippet = "Having given up active Christian belief while a soldier, John was 40 before the depth of his sinfulness began to dawn on him. He decided to give the rest of his life to God’s service, and headed at once for Africa where he hoped to free captive Christians and, possibly, be martyred..."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint John of God"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-8-saint-john-of-god-religious/"
@@ -105,13 +93,7 @@ march =
           , feasts =
                 [ { feast = "Saint Frances of Rome"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint Frances of Rome’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-frances-of-rome/"
-                          , snippet = "Frances’ life combines aspects of secular and religious life. A devoted and loving wife, she longed for a lifestyle of prayer and service, so she organized a group of women to minister to the needs of Rome’s poor..."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Frances of Rome"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-9-saint-frances-of-rome-religious/"
@@ -125,13 +107,7 @@ march =
           , feasts =
                 [ { feast = "Saint Patrick"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint Patrick’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-patrick/"
-                          , snippet = "Legends about Patrick abound; but truth is best served by our seeing two solid qualities in him: He was humble and he was courageous. The determination to accept suffering and success with equal indifference guided the life of God’s instrument for winning most of Ireland for Christ."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Patrick"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-17-saint-patrick-bishop/"
@@ -175,13 +151,7 @@ march =
           , feasts =
                 [ { feast = "Saint Cyril of Jerusalem"
                   , activities =
-                        [ { activityType = Audio
-                          , title = "Saint Cyril of Jerusalem’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-cyril-of-jerusalem/"
-                          , snippet = "The crises that the Church faces today may seem minor when compared with the threat posed by the Arian heresy, which denied the divinity of Christ and almost overcame Christianity in the fourth century. Cyril was to be caught up in the controversy, accused of Arianism by Saint Jerome, and ultimately vindicated both by the men of his own time and by being declared a Doctor of the Church in 1822..."
-                          }
-                        , { activityType = OnlineReading
+                        [ { activityType = OnlineReading
                           , title = "Saint Cyril of Jerusalem"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-18-saint-cyril-of-jerusalem-bishop-and-doctor/"
