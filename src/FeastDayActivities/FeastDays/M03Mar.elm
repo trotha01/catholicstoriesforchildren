@@ -161,7 +161,7 @@ march =
                   }
                 ]
           }
-        , { date = "20"
+        , { date = "19"
           , feasts =
                 [ { feast = "Saint Joseph Husband of the Blessed Virgin Mary"
                   , activities =
