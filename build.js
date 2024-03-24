@@ -1,6 +1,6 @@
 var fs = require('fs')
 
-var htmlPart1 = `<!doctype html>
+var htmlHeadStart = `<!doctype html>
 <html lang="en">
   <head>
   <!-- Google tag (gtag.js) -->
@@ -38,16 +38,9 @@ var htmlPart1 = `<!doctype html>
     <meta name="theme-color" content="#EBD7F2">
     <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
     <link href="/tailwind.css" rel="stylesheet">
-    <meta name="description" content="`
-
-var htmlPart2 = `">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preload" href="/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
-
-    <title>`
-
-var htmlPart3 = `</title>
     <style>
       * {
         box-sizing: border-box;
@@ -123,27 +116,14 @@ var htmlPart3 = `</title>
         }
       }
     </style>
-`
+    <script src="elm.js"></script>`
 
-var htmlPart3js =
-  `<script src="elm.js"></script>`
+var htmlBodyStart =
+  `<body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
+  <div id="myapp"></div>`
 
-var htmlPart4 =
-  `</head>
-  <body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
-`
-
-// Used only for pages with json
-var htmlPart4js = `
-  <div id="myapp"></div>
-  <script>
-  var app = Elm`
-
-var htmlPart4p2js = `.Main.init({
-    node: document.getElementById('myapp')
-  });
-
-  if (app.ports && app.ports.gtagReportConversion) {
+var htmlBodyEnd = `
+if (app.ports && app.ports.gtagReportConversion) {
     app.ports.gtagReportConversion.subscribe(function(message) {
       gtag_report_conversion();
     });
@@ -160,40 +140,26 @@ var htmlPart4p2js = `.Main.init({
   <!-- Calendly inline widget begin -->
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <!-- Calendly inline widget end -->
-
-`
-
-var htmlPart5 = `<link rel="stylesheet" type="text/css" href="https://donorbox.org/animate-popup-donate-button.css"><script type="text/javascript" id="donorbox-donate-button-installer" src="https://donorbox.org/install-donate-button.js" data-href="https://donorbox.org/catholic-stories-for-children?default_interval=o" data-style="background: rgb(254, 189, 17); color: rgb(0, 0, 0); text-decoration: none; font-family: Verdana, sans-serif; display: flex; font-size: 16px; padding: 8px 24px; border-radius: 5px; gap: 8px; width: fit-content; line-height: 24px; position: fixed; top: 50%; transform: translate(0px, 0px) rotate(-90deg); z-index: 9999; overflow: hidden; left: -45px;" data-img-src="https://donorbox.org/images/white_logo.svg"></script>
+<link rel="stylesheet" type="text/css" href="https://donorbox.org/animate-popup-donate-button.css"><script type="text/javascript" id="donorbox-donate-button-installer" src="https://donorbox.org/install-donate-button.js" data-href="https://donorbox.org/catholic-stories-for-children?default_interval=o" data-style="background: rgb(254, 189, 17); color: rgb(0, 0, 0); text-decoration: none; font-family: Verdana, sans-serif; display: flex; font-size: 16px; padding: 8px 24px; border-radius: 5px; gap: 8px; width: fit-content; line-height: 24px; position: fixed; top: 50%; transform: translate(0px, 0px) rotate(-90deg); z-index: 9999; overflow: hidden; left: -45px;" data-img-src="https://donorbox.org/images/white_logo.svg"></script>
 </body>
 </html>`
-
-var fakeNode = function (path, title, description) {
-  return {
-    replaceData: function (d, e, f) {
-      fs.writeFile(
-        path,
-        htmlPart1 + description + htmlPart2 + title + htmlPart3 + htmlPart4 + f + htmlPart5,
-        function (err) {
-          if (err) {
-            console.log(err)
-          }
-        }
-      )
-    },
-  }
-}
 
 var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail) {
   fs.writeFile(
     '.' + path,
-    htmlPart1 + description + htmlPart2 + title + htmlPart3 + htmlPart3js
+    htmlHeadStart
+    + `<meta name="description" content="` + description + `">`
+    + `<title>` + title + `</title>`
     + `<meta property="og:title" content="` + title + `">`
     + `<meta property="og:description" content="` + description + `">`
     + `<meta property="og:url" content="https://catholicstoriesforchildren.com` + path + `">`
     + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
-    + `<meta property="twitter:card" content="Summary Card with Large Image">`
+    + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
-    + htmlPart4 + htmlPart4js + elmModule + htmlPart4p2js + htmlPart5,
+    + `</head>`
+    + htmlBodyStart
+    + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
+    + htmlBodyEnd,
     function (err) {
       if (err) {
         console.log(err)
