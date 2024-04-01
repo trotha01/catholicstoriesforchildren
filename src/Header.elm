@@ -1,4 +1,4 @@
-module Header exposing (viewDonationPageHeader, viewHeader, viewSubpageHeader)
+module Header exposing (viewHeader, viewPageHeaderNoLinks, viewSubpageHeader)
 
 import Helpers exposing (..)
 import Html exposing (..)
@@ -42,8 +42,8 @@ viewSubpageHeader currentPage leftMargin =
         ]
 
 
-viewDonationPageHeader : String -> Int -> Html msg
-viewDonationPageHeader currentPage leftMargin =
+viewPageHeaderNoLinks : String -> Int -> Html msg
+viewPageHeaderNoLinks currentPage leftMargin =
     -- Donation pages perform better without links in the header
     -- https://www.nextafter.com/blog/donation-page-secrets/
     let

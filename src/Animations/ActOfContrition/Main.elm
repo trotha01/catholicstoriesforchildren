@@ -3,7 +3,7 @@ module Animations.ActOfContrition.Main exposing (..)
 import Animations.Helpers exposing (viewVideo)
 import Browser
 import Footer exposing (viewFooter)
-import Header exposing (viewDonationPageHeader)
+import Header exposing (viewPageHeaderNoLinks)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -50,7 +50,7 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewDonationPageHeader "Guardian Angel" headerMargin
+        [ viewPageHeaderNoLinks "Guardian Angel" headerMargin
         , viewBody model
         , viewFooter
         ]

@@ -53,6 +53,7 @@ pair_list=(
   src/Resources/Subscriptions/Main.elm resources/subscriptions/elm.js
   src/Resources/Videos/Main.elm resources/videos/elm.js
   src/Saints/Main.elm saints/elm.js
+  src/Signup/Main.elm signup/elm.js
   src/Team/Main.elm team/elm.js
   src/ThankYou/Main.elm thankyou/elm.js
 )

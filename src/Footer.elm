@@ -15,7 +15,6 @@ viewFooter =
         [ style "padding" (toPx 30)
         , style "background-color" "black"
         , style "color" "white"
-        , style "transform-style" "preserve-3d"
         ]
         [ div [ class "flex items-center gap-2.5" ]
             [ span [] [ text "Follow us on" ]
