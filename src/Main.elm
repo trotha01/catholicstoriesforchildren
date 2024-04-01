@@ -214,21 +214,20 @@ viewIntro model =
             ]
 
         -- , div [ class "mt-10" ] [ progressBar ]
-        , a
-            [ style "padding" "10px 10px"
-            , style "display" "inline-block"
-            , style "border-radius" "5px"
-            , style "border-radius" "5px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            , class "text-lg"
-
-            -- , class "bg-[#9200B3]"
-            , href "/animations/actofcontrition"
-            , attribute "aria-label" "Check out our upcoming animation"
-            , class "bg-csc-yellow"
-            , class "font-bold"
-            ]
-            [ text "Check out our upcoming animation!" ]
+        -- , a
+        --     [ style "padding" "10px 10px"
+        --     , style "display" "inline-block"
+        --     , style "border-radius" "5px"
+        --     , style "border-radius" "5px"
+        --     , style "box-shadow" "#777 1px 1px 5px"
+        --     , class "text-lg"
+        --     -- , class "bg-[#9200B3]"
+        --     , href "/animations/actofcontrition"
+        --     , attribute "aria-label" "Check out our upcoming animation"
+        --     , class "bg-csc-yellow"
+        --     , class "font-bold"
+        --     ]
+        --     [ text "Check out our upcoming animation!" ]
         ]
 
 

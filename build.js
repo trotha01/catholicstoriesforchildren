@@ -137,6 +137,9 @@ if (app.ports && app.ports.gtagReportConversion) {
 
   </script>
 
+  <!-- beehiiv UTM parameters attribution tracking -->
+  <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
+
   <!-- Calendly inline widget begin -->
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <!-- Calendly inline widget end -->

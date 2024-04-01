@@ -90,31 +90,42 @@ view model =
                     ]
                     -- [ text "Having trouble with kids in Mass? Get our guide!" ]
                     [ text "Get free animations for kids. Stay updated with new ones!" ]
-                , div
-                    []
-                    [ input
-                        [ type_ "text"
-                        , placeholder "First Name"
-                        , attribute "aria-hidden" "true"
-                        , style "display" "none"
-                        ]
-                        []
-                    , input
-                        [ type_ "email"
-                        , placeholder "Email"
-                        , value model.email
-                        , onInput Email
-                        , onEnter Submit
-                        , attribute "required" "true"
-                        , style "padding" "10px 20px"
-                        , style "border-radius" "5px 0px 0px 5px"
-                        , style "box-shadow" "#777 1px 1px 5px"
-                        , class "w-[172px] md:w-[230px] h-[56px] text-lg"
-                        ]
-                        []
-                    , viewSubmitButton model
-                    , viewMessage model
+                , Html.iframe
+                    [ src "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
+                    , height 52
+                    , attribute "frameborder" "0"
+                    , attribute "scrolling" "no"
+                    , style "margin" "0"
+                    , style "border-radius" "0px !important"
+                    , style "background-color" "transparent"
                     ]
+                    []
+
+                -- , div
+                --     []
+                --     [ input
+                --         [ type_ "text"
+                --         , placeholder "First Name"
+                --         , attribute "aria-hidden" "true"
+                --         , style "display" "none"
+                --         ]
+                --         []
+                --     , input
+                --         [ type_ "email"
+                --         , placeholder "Email"
+                --         , value model.email
+                --         , onInput Email
+                --         , onEnter Submit
+                --         , attribute "required" "true"
+                --         , style "padding" "10px 20px"
+                --         , style "border-radius" "5px 0px 0px 5px"
+                --         , style "box-shadow" "#777 1px 1px 5px"
+                --         , class "w-[172px] md:w-[230px] h-[56px] text-lg"
+                --         ]
+                --         []
+                --     , viewSubmitButton model
+                --     , viewMessage model
+                -- ]
                 ]
 
             -- , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]

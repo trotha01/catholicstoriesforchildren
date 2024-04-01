@@ -86,14 +86,16 @@ viewBody =
         [ class "bg-[#FEF7F4]"
         ]
         [ div [ class "max-w-5xl m-auto p-10" ]
-            [ button
+            [ a
                 [ style "box-shadow" "#777 1px 1px 5px"
                 , class "inline-block text-lg rounded p-3 bg-[#9200B3] text-white cursor-pointer"
                 , class "hover:scale-105 transition ease-in-out"
                 , attribute "aria-label" "back button"
-                , onClick GoBack
+
+                -- , onClick GoBack
+                , href "/"
                 ]
-                [ text "Go Back"
+                [ text "Go home"
                 ]
             , h1
                 [ class "text-center"
