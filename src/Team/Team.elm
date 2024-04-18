@@ -54,7 +54,7 @@ trevor =
     , position = "CEO"
     , description =
         "Trevor is a former software engineer. He is currently studying for a "
-            ++ "Masters in Theology at the Franciscan University of Stuebenville. "
+            ++ "MA in Theology at the Franciscan University of Steubenville. "
             ++ "He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love."
     , image = imagePath ++ "TrevorRothaus.jpeg"
     , socials = []
