@@ -112,6 +112,7 @@ viewBooks =
             , diaryOfAGodMan
             , catholicSprouts
             , holyHeroesBooks
+            , jennaEpkey
             , loyolaPressBooks
             , stPaulCenter
             , cBPSaints
@@ -315,4 +316,12 @@ ctbBooks =
     { name = "Catholic Teen Books"
     , link = "https://www.catholicteenbooks.com/"
     , image = "/assets/images/ProfilePictures/CatholicTeenBooks.png"
+    }
+
+
+jennaEpkey : Resource
+jennaEpkey =
+    { name = "Jenna Epkey Catholic Kids Books"
+    , link = "https://www.catholicteenbooks.com/"
+    , image = "/assets/images/ProfilePictures/JennaEpkey.png"
     }
