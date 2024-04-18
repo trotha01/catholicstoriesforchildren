@@ -322,6 +322,6 @@ ctbBooks =
 jennaEpkey : Resource
 jennaEpkey =
     { name = "Jenna Epkey Catholic Kids Books"
-    , link = "https://www.catholicteenbooks.com/"
+    , link = "https://www.amazon.com/stores/Jenna-Epkey/author/B0CWPDDMRM"
     , image = "/assets/images/ProfilePictures/JennaEpkey.png"
     }
