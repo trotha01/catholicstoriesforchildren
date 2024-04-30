@@ -74,7 +74,7 @@ carlos =
 
 boardOfAdvisors : List Person
 boardOfAdvisors =
-    [ fredrick, aaron, chris, cheri ]
+    [ fredrick, aaron, chris ]
 
 
 fredrick : Person
@@ -111,17 +111,6 @@ chris =
         "Chris Pagel is the assistant dean of Graduate Business Programs and Career Services at "
             ++ "Chapman University's George L. Argyros School of Business and Economics."
     , image = imagePath ++ "ChrisPagel.jpeg"
-    , socials = []
-    }
-
-
-cheri : Person
-cheri =
-    { name = "Cheri Loreto"
-    , initials = ""
-    , position = "Silent Advisor"
-    , description = "Truly silent."
-    , image = imagePath ++ "Cheri.jpeg"
     , socials = []
     }
 
