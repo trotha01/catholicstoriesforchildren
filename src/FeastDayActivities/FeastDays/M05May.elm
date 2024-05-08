@@ -16,12 +16,12 @@ may =
           }
         , { date = "02"
           , feasts =
-                [ { feast = "Saint Athanasius", activities = [] }
+                [ { feast = "Saint Athanasius of Alexandria", activities = [] }
                 ]
           }
         , { date = "03"
           , feasts =
-                [ { feast = "Saints Philip and James", activities = [] }
+                [ { feast = "Saint Philip the Apostle and Saint James the Lesser", activities = [] }
                 ]
           }
         , { date = "9"
@@ -31,15 +31,16 @@ may =
           }
         , { date = "10"
           , feasts =
-                [ { feast = "Saint Damien de Veuster of Moloka'i", activities = [] }
+                [ { feast = "Saint Damien of Molokai", activities = [] }
                 , { feast = "Saint John of Ávila", activities = [] }
                 ]
           }
         , { date = "12"
           , feasts =
                 [ { feast = "The Ascension of the Lord (or the 9th)", activities = [] }
-                , { feast = "Saints Nereus and Achilleus", activities = [] }
-                , { feast = "Saint Pancras", activities = [] }
+                , { feast = "Saint Nereus of Terracina", activities = [] }
+                , { feast = "Saint Achilleus of Terracina", activities = [] }
+                , { feast = "Saint Pancras of Rome", activities = [] }
                 ]
           }
         , { date = "13"
@@ -49,12 +50,12 @@ may =
           }
         , { date = "14"
           , feasts =
-                [ { feast = "Saint Mattias the Apostle", activities = [] }
+                [ { feast = "Saint Matthew the Apostle", activities = [] }
                 ]
           }
         , { date = "15"
           , feasts =
-                [ { feast = "Saint Isidore", activities = [] }
+                [ { feast = "Saint Isidore the Farmer", activities = [] }
                 ]
           }
         , { date = "19"
@@ -64,7 +65,7 @@ may =
           }
         , { date = "20"
           , feasts =
-                [ { feast = "Saint Bernardine of Siena", activities = [] }
+                [ { feast = "Saint Bernadine of Siena", activities = [] }
                 ]
           }
         , { date = "22"
@@ -75,7 +76,7 @@ may =
         , { date = "25"
           , feasts =
                 [ { feast = "Saint Bede the Venerable", activities = [] }
-                , { feast = "Saint Gregory VII", activities = [] }
+                , { feast = "Pope Saint Gregory VII", activities = [] }
                 ]
           }
         , { date = "26"

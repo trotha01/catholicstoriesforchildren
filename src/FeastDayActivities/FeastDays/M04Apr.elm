@@ -142,7 +142,7 @@ april =
           }
         , { date = "30"
           , feasts =
-                [ { feast = "Saint Pius V.", activities = [] }
+                [ { feast = "Pope Saint Pius V", activities = [] }
                 ]
           }
         ]
