@@ -65,7 +65,8 @@ may =
           }
         , { date = "20"
           , feasts =
-                [ { feast = "Saint Bernadine of Siena", activities = [] }
+                [ { feast = "Blessed Virgin Mary, Mother of the Church", activities = [] }
+                , { feast = "Saint Bernadine of Siena", activities = [] }
                 ]
           }
         , { date = "22"
@@ -98,10 +99,9 @@ may =
                 [ { feast = "Saint Augustine of Canterbury", activities = [] }
                 ]
           }
-        , { date = "29"
+        , { date = "20"
           , feasts =
-                [ { feast = "Blessed Virgin Mary, Mother of the Church", activities = [] }
-                , { feast = "Saint Paul VI", activities = [] }
+                [ { feast = "Saint Paul VI", activities = [] }
                 ]
           }
         , { date = "31"
