@@ -16,17 +16,13 @@ june =
           }
         , { date = "02"
           , feasts =
-                [ { feast = "Saint Marcellinus and Saint Peter the Exorcist", activities = [] }
+                [ { feast = "The Most Holy Trinity", activities = [] }
+                , { feast = "Saint Marcellinus and Saint Peter the Exorcist", activities = [] }
                 ]
           }
         , { date = "03"
           , feasts =
                 [ { feast = "Saint Charles Lwanga and Companions", activities = [] }
-                ]
-          }
-        , { date = "04"
-          , feasts =
-                [ { feast = "The Most Holy Trinity", activities = [] }
                 ]
           }
         , { date = "05"
@@ -39,6 +35,16 @@ june =
                 [ { feast = "Saint Norbert of Xanten", activities = [] }
                 ]
           }
+        , { date = "8"
+          , feasts =
+                [ { feast = "Sacred Heart of Jesus", activities = [] }
+                ]
+          }
+        , { date = "9"
+          , feasts =
+                [ { feast = "Immaculate Heart of Mary", activities = [] }
+                ]
+          }
         , { date = "09"
           , feasts =
                 [ { feast = "Saint Ephrem of Syria", activities = [] }
@@ -46,23 +52,12 @@ june =
           }
         , { date = "11"
           , feasts =
-                [ { feast = "The Most Holy Body and Blood of Christ", activities = [] }
-                , { feast = "Saint Barnabas the Apostle", activities = [] }
+                [ { feast = "Saint Barnabas the Apostle", activities = [] }
                 ]
           }
         , { date = "13"
           , feasts =
                 [ { feast = "Saint Anthony of Padua", activities = [] }
-                ]
-          }
-        , { date = "16"
-          , feasts =
-                [ { feast = "Sacred Heart of Jesus", activities = [] }
-                ]
-          }
-        , { date = "17"
-          , feasts =
-                [ { feast = "Immaculate Heart of Mary", activities = [] }
                 ]
           }
         , { date = "19"
