@@ -86,9 +86,9 @@ viewAbout =
         , p [] [ text "Catholic Stories for Children is made with the vision that all Catholics have a strong love of God and neighbor." ]
         , h2 [ class "my-7" ] [ text "Mission" ]
         , p [] [ text "Our hope is to help others along this journey with joyful stories." ]
-        , h2 [ class "my-7" ] [ text "Contact" ]
+        , h2 [ class "my-7", id "contact" ] [ text "Contact" ]
         , p []
-            [ text "Please reach out. I love to hear from you!"
+            [ text "Please reach out. I love to hear from you!!!"
             ]
         , p []
             [ Helpers.email

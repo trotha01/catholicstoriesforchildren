@@ -32,6 +32,7 @@ elmmake() {
 pair_list=(
   src/Main.elm elm.js
   src/About/PrivacyPolicy/Main.elm about/privacy-policy/elm.js
+  src/About/TermsAndConditions/Main.elm about/terms-and-conditions/elm.js
   src/Animations/ActOfContrition/Main.elm animations/actofcontrition/elm.js
   src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
   src/Animations/HailMary/Main.elm animations/hailmary/elm.js

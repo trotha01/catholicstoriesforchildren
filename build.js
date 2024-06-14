@@ -42,6 +42,10 @@ var htmlHeadStart = `<!doctype html>
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preload" href="/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+    <!-- style for the cookie consent popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+
     <style>
       * {
         box-sizing: border-box;
@@ -148,6 +152,9 @@ if (app.ports && app.ports.gtagReportConversion) {
   <!--
   <link rel="stylesheet" type="text/css" href="https://donorbox.org/animate-popup-donate-button.css"><script type="text/javascript" id="donorbox-donate-button-installer" src="https://donorbox.org/install-donate-button.js" data-href="https://donorbox.org/catholic-stories-for-children?default_interval=o" data-style="background: rgb(254, 189, 17); color: rgb(0, 0, 0); text-decoration: none; font-family: Verdana, sans-serif; display: flex; font-size: 16px; padding: 8px 24px; border-radius: 5px; gap: 8px; width: fit-content; line-height: 24px; position: fixed; top: 50%; transform: translate(0px, 0px) rotate(-90deg); z-index: 9999; overflow: hidden; left: -45px;" data-img-src="https://donorbox.org/images/white_logo.svg"></script>
   -->
+
+  <!-- Cookie consent popup -->
+  <script type="module" src="cookieconsent-config.js"></script>
 </body>
 </html>`
 
@@ -177,6 +184,7 @@ var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail) {
 
 
 fakeNodeWithJs('/about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png')
+fakeNodeWithJs('/about/terms-and-conditions/index.html', 'Terms and Conditions - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png')
 fakeNodeWithJs('/animations/actofcontrition/index.html', 'Act of Contrition Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Act of Contrition prayer', '.Animations.ActOfContrition', '/assets/images/thumbnails/CSCThumbnail.png')
 fakeNodeWithJs('/animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel', '/assets/images/thumbnails/CSCThumbnail.png')
 fakeNodeWithJs('/animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary', '/assets/images/thumbnails/CSCThumbnail.png')
