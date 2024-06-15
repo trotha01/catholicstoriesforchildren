@@ -36,7 +36,9 @@ view =
         , viewNavButton 3 "_self" "/saints" "Saints"
         , viewNavButton 4 "_self" "/animations" "Animations"
         , viewNavButton 5 "_self" "/resources" "Resources"
-        , viewNavButton 6 "_blank" "https://www.etsy.com/shop/CatholicStories" "Shop"
+
+        -- , viewNavButton 6 "_blank" "https://www.etsy.com/shop/CatholicStories" "Shop"
+        , viewNavButton 6 "_blank" "/shop" "Shop"
         , viewNavButton 7 "_self" "/give" "Give"
         , viewNavButton 8 "_self" "/team" "About Us"
         ]
