@@ -425,18 +425,20 @@ viewFeastActivities model feastActivitiesList =
             List.append feastActivities saintActivities
     in
     div []
-        [ viewAllActivities model.saintList.isLoading activities
-        , div [ class "mt-20 rounded" ]
-            [ iframe
-                [ src "https://docs.google.com/forms/d/e/1FAIpQLSfBQ4oZgDKyYjH1UfaX1qFLW7UFprnO6OKZ5_X6pYoPkfi2fQ/viewform?embedded=true"
-                , width 640
-                , height 920
-                , attribute "frameborder" "0"
-                , attribute "marginheight" "0"
-                , attribute "marginwidth" "0"
-                ]
-                []
-            ]
+        [ simpleSignup
+        , viewAllActivities model.saintList.isLoading (Debug.log "activitieS" activities)
+
+        -- , div [ class "mt-20 rounded" ]
+        --     [ iframe
+        --         [ src "https://docs.google.com/forms/d/e/1FAIpQLSfBQ4oZgDKyYjH1UfaX1qFLW7UFprnO6OKZ5_X6pYoPkfi2fQ/viewform?embedded=true"
+        --         , width 640
+        --         , height 920
+        --         , attribute "frameborder" "0"
+        --         , attribute "marginheight" "0"
+        --         , attribute "marginwidth" "0"
+        --         ]
+        --         []
+        -- ]
         ]
 
 
@@ -677,3 +679,25 @@ feastMonthFromMonth month =
 
         Dec ->
             december
+
+
+simpleSignup : Html msg
+simpleSignup =
+    div
+        [ class "mt-20 mb-5" ]
+        [ p
+            [ class "pb-2 pl-1 text-left"
+            ]
+            -- [ text "Having trouble with kids in Mass? Get our guide!" ]
+            [ text "Get free Catholic animations, printables, and more Catholic activities!" ]
+        , Html.iframe
+            [ src "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
+            , height 52
+            , attribute "frameborder" "0"
+            , attribute "scrolling" "no"
+            , style "margin" "0"
+            , style "border-radius" "0px !important"
+            , style "background-color" "transparent"
+            ]
+            []
+        ]
