@@ -39,6 +39,7 @@ view model =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         , style "position" "relative"
+        , style "min-height" "700px"
         ]
         [ viewPageHeaderNoLinks "Sign Up" headerMargin
         , viewBody model
