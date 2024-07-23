@@ -102,7 +102,9 @@ viewGames =
             , theCatholicCardGame
             , councilAtDaybreak
             , holyHeroes
-            , saintCards
+            , brotherFrancisGames
+
+            -- , saintCards
             , superSaintCards
             , catholicArcade
             ]
@@ -133,19 +135,28 @@ councilAtDaybreak =
     }
 
 
-saintCards : Resource
-saintCards =
-    { name = "Saint Cards"
-    , link = "https://www.saintcards.com/"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/63_d1sooSovJJ.png?updatedAt=1693439790316"
-    }
+
+-- saintCards : Resource
+-- saintCards =
+--     { name = "Saint Cards"
+--     , link = "https://www.saintcards.com/"
+--     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/62_Z__x8cDHl.png?updatedAt=1693439790262"
+--     }
 
 
 superSaintCards : Resource
 superSaintCards =
     { name = "Super Saint Cards"
     , link = "https://armadei.com/product/super-saints/"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/62_Z__x8cDHl.png?updatedAt=1693439790262"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/63_d1sooSovJJ.png?updatedAt=1693439790316"
+    }
+
+
+brotherFrancisGames : Resource
+brotherFrancisGames =
+    { name = "Brother Francis Games"
+    , link = "https://brotherfrancisstore.com/collections/games"
+    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/16_V1sLznRg0.png?updatedAt=1679070333303"
     }
 
 
