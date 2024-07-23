@@ -10572,13 +10572,7 @@ var $author$project$Saints$SaintHelpers$activitiesFromSaint = function (saint) {
 					A2($elm$core$String$split, ';', saint.videoLinks))
 				])));
 };
-var $elm$html$Html$Attributes$height = function (n) {
-	return A2(
-		_VirtualDom_attribute,
-		'height',
-		$elm$core$String$fromInt(n));
-};
-var $elm$html$Html$iframe = _VirtualDom_node('iframe');
+var $elm$core$Debug$log = _Debug_log;
 var $elm$core$List$member = F2(
 	function (x, xs) {
 		return A2(
@@ -10588,7 +10582,6 @@ var $elm$core$List$member = F2(
 			},
 			xs);
 	});
-var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$regex$Regex$replace = _Regex_replaceAtMost(_Regex_infinity);
 var $elm$core$String$replace = F3(
 	function (before, after, string) {
@@ -10597,6 +10590,46 @@ var $elm$core$String$replace = F3(
 			after,
 			A2($elm$core$String$split, before, string));
 	});
+var $elm$html$Html$Attributes$height = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
+};
+var $elm$html$Html$iframe = _VirtualDom_node('iframe');
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$FeastDayActivities$Main$simpleSignup = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mt-20 mb-5')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('pb-2 pl-1 text-left')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Get free Catholic animations, printables, and more Catholic activities!')
+				])),
+			A2(
+			$elm$html$Html$iframe,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$src('https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true'),
+					$elm$html$Html$Attributes$height(52),
+					A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
+					A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
+					A2($elm$html$Html$Attributes$style, 'margin', '0'),
+					A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
+					A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
+				]),
+			_List_Nil)
+		]));
 var $author$project$FeastDayActivities$FeastDayHelpers$filterActivities = F2(
 	function (isFilterType, activities) {
 		return A2(
@@ -11253,39 +11286,11 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = F2(
 			_List_Nil,
 			_List_fromArray(
 				[
+					$author$project$FeastDayActivities$Main$simpleSignup,
 					A2(
-					$elm$html$Html$div,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$class('mt-20 mb-5')
-						]),
-					_List_fromArray(
-						[
-							A2(
-							$elm$html$Html$p,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('pb-2 pl-1 text-left')
-								]),
-							_List_fromArray(
-								[
-									$elm$html$Html$text('Get free Catholic animations, printables, and more Catholic activities!')
-								])),
-							A2(
-							$elm$html$Html$iframe,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$src('https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true'),
-									$elm$html$Html$Attributes$height(52),
-									A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
-									A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
-									A2($elm$html$Html$Attributes$style, 'margin', '0'),
-									A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
-									A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
-								]),
-							_List_Nil)
-						])),
-					A2($author$project$FeastDayActivities$FeastDayHelpers$viewAllActivities, model.saintList.isLoading, activities)
+					$author$project$FeastDayActivities$FeastDayHelpers$viewAllActivities,
+					model.saintList.isLoading,
+					A2($elm$core$Debug$log, 'activitieS', activities))
 				]));
 	});
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
@@ -11993,7 +11998,7 @@ var $author$project$Signup$view = function (model) {
 									]),
 								_List_fromArray(
 									[
-										$elm$html$Html$text('Get free animations for kids. Stay updated with new ones!')
+										$elm$html$Html$text('Receive free animations, activities, resources, and more!')
 									])),
 								A2(
 								$elm$html$Html$iframe,
@@ -12341,10 +12346,87 @@ var $author$project$FeastDayActivities$Main$viewBody = F2(
 			return A2($author$project$FeastDayActivities$Main$viewMonth, model, defaultMonth);
 		}
 	});
+var $author$project$Footer$socialLink = F5(
+	function (link, label, imgSrc, imgAlt, txt) {
+		return A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('flex align-center')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$a,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$href(link),
+							A2($elm$html$Html$Attributes$attribute, 'aria-label', label),
+							$elm$html$Html$Attributes$target('_blank'),
+							$elm$html$Html$Attributes$class('mb-5')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$img,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('w-5 h-5 inline-block'),
+									$elm$html$Html$Attributes$src(imgSrc),
+									$elm$html$Html$Attributes$alt(imgAlt)
+								]),
+							_List_Nil),
+							A2(
+							$elm$html$Html$span,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('ml-3')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text(txt)
+								]))
+						]))
+				]));
+	});
+var $author$project$Footer$facebook = A5($author$project$Footer$socialLink, 'https://www.facebook.com/catholicstoriesforchildren', 'CSC Facebook Page', 'https://ik.imagekit.io/catholicstories/f_logo_RGB-Blue_250_3vs-yhXer.png?updatedAt=1684277030198', 'Facebook', 'Facebook');
 var $elm$html$Html$footer = _VirtualDom_node('footer');
+var $author$project$Footer$instagram = A5($author$project$Footer$socialLink, 'https://www.instagram.com/catholicstoriesforchildren/', 'CSC Instagram Page', 'https://ik.imagekit.io/catholicstories/Instagram_Glyph_Gradient_kFoMs9jIr.png?updatedAt=1684277127293', 'Instagram', 'Instagram');
 var $author$project$Footer$toPx = function (x) {
 	return $elm$core$String$fromInt(x) + 'px';
 };
+var $author$project$Signup$view2 = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mb-5')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('pb-2 pl-1 text-left')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Receive free animations, activities, resources, and more!')
+				])),
+			A2(
+			$elm$html$Html$iframe,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$src('https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true'),
+					$elm$html$Html$Attributes$height(52),
+					A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
+					A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
+					A2($elm$html$Html$Attributes$style, 'margin', '0'),
+					A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
+					A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
+				]),
+			_List_Nil)
+		]));
 var $author$project$Footer$viewFooter = A2(
 	$elm$html$Html$footer,
 	_List_fromArray(
@@ -12352,9 +12434,7 @@ var $author$project$Footer$viewFooter = A2(
 			A2(
 			$elm$html$Html$Attributes$style,
 			'padding',
-			$author$project$Footer$toPx(30)),
-			A2($elm$html$Html$Attributes$style, 'background-color', 'black'),
-			A2($elm$html$Html$Attributes$style, 'color', 'white')
+			$author$project$Footer$toPx(30))
 		]),
 	_List_fromArray(
 		[
@@ -12362,71 +12442,189 @@ var $author$project$Footer$viewFooter = A2(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('flex items-center gap-2.5')
+					$elm$html$Html$Attributes$class('text-center mb-5')
 				]),
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$span,
+					$elm$html$Html$div,
 					_List_Nil,
 					_List_fromArray(
 						[
-							$elm$html$Html$text('Follow us on')
+							A2(
+							$elm$html$Html$div,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$h2,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('mb-7')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Access Free Animations')
+										]))
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('text-center grid justify-center mb-10')
+								]),
+							_List_fromArray(
+								[$author$project$Signup$view2]))
 						])),
 					A2(
-					$elm$html$Html$a,
+					$elm$html$Html$div,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$href('https://www.facebook.com/catholicstoriesforchildren'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'CSC Facebook Page'),
-							$elm$html$Html$Attributes$target('_blank')
+							$elm$html$Html$Attributes$class('md:grid md:grid-cols-3 md:justify-items-center')
 						]),
 					_List_fromArray(
 						[
 							A2(
-							$elm$html$Html$img,
+							$elm$html$Html$div,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$class('w-10 h-10'),
-									$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/f_logo_RGB-Blue_250_3vs-yhXer.png?updatedAt=1684277030198'),
-									$elm$html$Html$Attributes$alt('Facebook')
+									$elm$html$Html$Attributes$class('text-left')
 								]),
-							_List_Nil)
-						])),
-					A2(
-					$elm$html$Html$a,
-					_List_fromArray(
-						[
-							$elm$html$Html$Attributes$href('https://www.instagram.com/catholicstoriesforchildren/'),
-							A2($elm$html$Html$Attributes$attribute, 'aria-label', 'CSC Instagram Page'),
-							$elm$html$Html$Attributes$target('_blank')
-						]),
-					_List_fromArray(
-						[
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$h3,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('font-bold text-lg')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text('About Us')
+												]))
+										])),
+									A2(
+									$elm$html$Html$div,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('mb-3')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts.')
+										]))
+								])),
 							A2(
-							$elm$html$Html$img,
+							$elm$html$Html$div,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$class('w-10 h-10'),
-									$elm$html$Html$Attributes$src('https://ik.imagekit.io/catholicstories/Instagram_Glyph_Gradient_kFoMs9jIr.png?updatedAt=1684277127293'),
-									$elm$html$Html$Attributes$alt('Instagram')
+									$elm$html$Html$Attributes$class('md:mx-5')
 								]),
-							_List_Nil)
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$img,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class('rounded max-w-[16rem]'),
+											$elm$html$Html$Attributes$src('/assets/FullTitle_900x900_NoBackground.png')
+										]),
+									_List_Nil)
+								])),
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('text-left')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$div,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											$elm$html$Html$h3,
+											_List_fromArray(
+												[
+													$elm$html$Html$Attributes$class('font-bold text-lg mb-3')
+												]),
+											_List_fromArray(
+												[
+													$elm$html$Html$text('Follow Us')
+												]))
+										])),
+									A2(
+									$elm$html$Html$div,
+									_List_Nil,
+									_List_fromArray(
+										[$author$project$Footer$instagram, $author$project$Footer$facebook]))
+								]))
 						]))
 				])),
 			A2(
-			$elm$html$Html$p,
-			_List_Nil,
+			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$text('Copyright © 2024 Catholic Stories for Children. All rights reserved.')
-				])),
-			A2(
-			$elm$html$Html$p,
-			_List_Nil,
+					$elm$html$Html$Attributes$class('text-xs')
+				]),
 			_List_fromArray(
 				[
-					$elm$html$Html$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
+					A2(
+					$elm$html$Html$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Copyright © 2024 Catholic Stories for Children. All rights reserved.')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883')
+						])),
+					A2(
+					$elm$html$Html$p,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$href('/about/privacy-policy'),
+									$elm$html$Html$Attributes$class('underline')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Privacy Policy')
+								])),
+							A2(
+							$elm$html$Html$span,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text(' | ')
+								])),
+							A2(
+							$elm$html$Html$a,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$href('/about/terms-and-conditions'),
+									$elm$html$Html$Attributes$class('underline')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Terms & Conditions')
+								]))
+						]))
 				]))
 		]));
 var $elm$html$Html$header = _VirtualDom_node('header');

@@ -76,6 +76,27 @@ update msg model =
             )
 
 
+view2 : Html msg
+view2 =
+    div
+        [ class "mb-5" ]
+        [ p
+            [ class "pb-2 pl-1 text-left"
+            ]
+            [ text "Receive free animations, activities, resources, and more!" ]
+        , Html.iframe
+            [ src "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
+            , height 52
+            , attribute "frameborder" "0"
+            , attribute "scrolling" "no"
+            , style "margin" "0"
+            , style "border-radius" "0px !important"
+            , style "background-color" "transparent"
+            ]
+            []
+        ]
+
+
 view : Model -> Html Msg
 view model =
     div
@@ -89,7 +110,7 @@ view model =
                     [ class "pb-2 pl-1 text-left"
                     ]
                     -- [ text "Having trouble with kids in Mass? Get our guide!" ]
-                    [ text "Get free animations for kids. Stay updated with new ones!" ]
+                    [ text "Receive free animations, activities, resources, and more!" ]
                 , Html.iframe
                     [ src "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
                     , height 52
