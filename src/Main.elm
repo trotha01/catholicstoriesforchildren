@@ -136,8 +136,8 @@ viewBody model =
         , class "lg:text-2xl"
         ]
         [ viewIntro model
-        , viewTestimonials
         , viewAnimations
+        , viewTestimonials
         , viewTeam
         , viewContact
         , viewNewsletter
