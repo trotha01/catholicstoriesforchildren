@@ -11810,7 +11810,6 @@ var $author$project$FeastDayActivities$Main$viewDate = F4(
 						]))
 				]));
 	});
-var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$virtual_dom$VirtualDom$map = _VirtualDom_map;
 var $elm$html$Html$map = $elm$virtual_dom$VirtualDom$map;
 var $elm$core$List$drop = F2(
@@ -11991,10 +11990,20 @@ var $author$project$Signup$view = function (model) {
 						_List_fromArray(
 							[
 								A2(
+								$elm$html$Html$span,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('font-bold')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Access Free Animations')
+									])),
+								A2(
 								$elm$html$Html$p,
 								_List_fromArray(
 									[
-										$elm$html$Html$Attributes$class('pb-2 pl-1 text-left')
+										$elm$html$Html$Attributes$class('pb-2 text-left')
 									]),
 								_List_fromArray(
 									[
@@ -12190,27 +12199,6 @@ var $author$project$FeastDayActivities$Main$viewMonth = F2(
 									$elm$html$Html$text('You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living.')
 								])),
 							A2(
-							$elm$html$Html$a,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$href('/animations/actofcontrition'),
-									$elm$html$Html$Attributes$class('hover:scale-105 transition ease-in-out duration-50'),
-									A2($elm$html$Html$Attributes$attribute, 'aria-label', 'Act of Contrition Animation Coming Soon')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$img,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$src('/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png'),
-											A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-											A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-											$elm$html$Html$Attributes$alt('Act of Contrition Animation')
-										]),
-									_List_Nil)
-								])),
-							A2(
 							$elm$html$Html$div,
 							_List_fromArray(
 								[
@@ -12346,6 +12334,7 @@ var $author$project$FeastDayActivities$Main$viewBody = F2(
 			return A2($author$project$FeastDayActivities$Main$viewMonth, model, defaultMonth);
 		}
 	});
+var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $author$project$Footer$socialLink = F5(
 	function (link, label, imgSrc, imgAlt, txt) {
 		return A2(

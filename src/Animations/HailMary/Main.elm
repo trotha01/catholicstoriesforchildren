@@ -88,22 +88,6 @@ viewBody model =
             [ viewResources
             ]
         , aboutThePrayer
-        , a
-            [ href "/animations/actofcontrition"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
-            , class "block mb-2"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Act of Contrition Animation"
-                ]
-                []
-            ]
-        , div [ class "mb-20" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
         ]
 
 

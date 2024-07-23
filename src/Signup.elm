@@ -106,8 +106,9 @@ view model =
         [ div []
             [ div
                 [ class "mb-5" ]
-                [ p
-                    [ class "pb-2 pl-1 text-left"
+                [ span [ class "font-bold" ] [ text "Access Free Animations" ]
+                , p
+                    [ class "pb-2 text-left"
                     ]
                     -- [ text "Having trouble with kids in Mass? Get our guide!" ]
                     [ text "Receive free animations, activities, resources, and more!" ]
