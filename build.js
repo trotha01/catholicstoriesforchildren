@@ -120,8 +120,7 @@ var htmlHeadStart = `<!doctype html>
           transform: translate(-50%);
         }
       }
-    </style>
-    <script src="elm.js"></script>`
+    </style>`
 
 var htmlBodyStart =
   `<body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
@@ -158,7 +157,7 @@ if (app.ports && app.ports.gtagReportConversion) {
 </body>
 </html>`
 
-var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail) {
+var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail, elmPath) {
   fs.writeFile(
     '.' + path,
     htmlHeadStart
@@ -170,6 +169,7 @@ var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail) {
     + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
     + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
+    + `<script src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
     + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
@@ -183,32 +183,33 @@ var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail) {
 }
 
 
-fakeNodeWithJs('/about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/about/terms-and-conditions/index.html', 'Terms and Conditions - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/animations/actofcontrition/index.html', 'Act of Contrition Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Act of Contrition prayer', '.Animations.ActOfContrition', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/animations/index.html', 'Animations - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.Animations', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/animations/stmichael/index.html', 'St Michael Animation - Catholic Stories for Children', 'An animation to guide kids in learning the St Michael the Archangel prayer', '.Animations.StMichael', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/contact/index.html', 'Contact us - Catholic Stories for Children', '', '.Contact', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activities for kids on the feast days', '.FeastDayActivities', '/assets/images/thumbnails/FeastDayActivityThumbnail.png')
-fakeNodeWithJs('/feastdayactivities/today/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Catholic activities for kids today', '.FeastDayActivities.Today', '/assets/images/thumbnails/FeastDayActivityThumbnail.png')
-fakeNodeWithJs('/give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏', '.Give', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/navigation/index.html', 'Navigation - Catholic Stories for Children', '', '.Navigation', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news', '.Newsroom', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/opportunities/index.html', 'Opportunities - Catholic Stories for Children', 'Find opportunities to be involved', '.Opportunities', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/prayers/index.html', 'Prayers - Catholic Stories for Children', 'Catholic Prayers', '.Prayers', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/prayer/angelus/index.html', 'Angelus Prayer - Catholic Stories for Children', 'Angelus Prayers', '.Prayer.Angelus', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith', '.Resources.Books', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/games/index.html', 'Game Resources - Catholic Stories for Children', 'Games to guide kids in learning the Catholic faith', '.Resources.Games', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/index.html', 'Resources - Catholic Stories for Children', 'Resources to guide kids in learning the Catholic faith', '.Resources', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/podcasts/index.html', 'Podcast Resources - Catholic Stories for Children', 'Podcasts to guide kids in learning the Catholic faith', '.Resources.Podcasts', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/prayer/index.html', 'Prayer Resources - Catholic Stories for Children', 'Prayer resources to guide families in building a strong habit of prayer', '.Resources.Prayer', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/subscriptions/index.html', 'Subscription Resources - Catholic Stories for Children', 'Subscriptions to guide kids in learning the Catholic faith', '.Resources.Subscriptions', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/resources/videos/index.html', 'Video Resources - Catholic Stories for Children', 'Videos to guide kids in learning the Catholic faith', '.Resources.Videos', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/saints/index.html', 'Saints - Catholic Stories for Children', 'Catholic Saint List', '.Saints', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/shop/index.html', 'Shop - Catholic Stories for Children', 'Catholic Saint List', '.Shop', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/signup/index.html', 'Signup - Catholic Stories for Children', 'Signup', '.Signup', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/team/index.html', 'The Team - Catholic Stories for Children', 'A number of talented artists, contractors, teams and people help bring these animations to life.', '.Team', '/assets/images/thumbnails/CSCThumbnail.png')
-fakeNodeWithJs('/thankyou/index.html', 'Thank You - Catholic Stories for Children', 'Thank you for signing up for our mail list!', '.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png')
+fakeNodeWithJs('/about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/about/terms-and-conditions/index.html', 'Terms and Conditions - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/animations/actofcontrition/index.html', 'Act of Contrition Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Act of Contrition prayer', '.Animations.ActOfContrition', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/animations/index.html', 'Animations - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.Animations', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/animations/stmichael/index.html', 'St Michael Animation - Catholic Stories for Children', 'An animation to guide kids in learning the St Michael the Archangel prayer', '.Animations.StMichael', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/contact/index.html', 'Contact us - Catholic Stories for Children', '', '.Contact', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activities for kids on the feast days', '.FeastDayActivities', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
+fakeNodeWithJs('/feastdayactivities/today/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Catholic activities for kids today', '.FeastDayActivities.Today', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
+fakeNodeWithJs('/give/index.html', 'Give - Catholic Stories for Children', 'Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏', '.Give', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/navigation/index.html', 'Navigation - Catholic Stories for Children', '', '.Navigation', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news', '.Newsroom', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/404.html', 'Not Found - Catholic Stories for Children', 'This page is not found', '.NotFound', '/assets/images/thumbnails/CSCThumbnail.png', './notfound/')
+fakeNodeWithJs('/opportunities/index.html', 'Opportunities - Catholic Stories for Children', 'Find opportunities to be involved', '.Opportunities', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/prayers/index.html', 'Prayers - Catholic Stories for Children', 'Catholic Prayers', '.Prayers', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/prayer/angelus/index.html', 'Angelus Prayer - Catholic Stories for Children', 'Angelus Prayers', '.Prayer.Angelus', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/books/index.html', 'Book Resources - Catholic Stories for Children', 'Books to guide kids in learning the Catholic faith', '.Resources.Books', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/games/index.html', 'Game Resources - Catholic Stories for Children', 'Games to guide kids in learning the Catholic faith', '.Resources.Games', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/index.html', 'Resources - Catholic Stories for Children', 'Resources to guide kids in learning the Catholic faith', '.Resources', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/podcasts/index.html', 'Podcast Resources - Catholic Stories for Children', 'Podcasts to guide kids in learning the Catholic faith', '.Resources.Podcasts', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/prayer/index.html', 'Prayer Resources - Catholic Stories for Children', 'Prayer resources to guide families in building a strong habit of prayer', '.Resources.Prayer', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/subscriptions/index.html', 'Subscription Resources - Catholic Stories for Children', 'Subscriptions to guide kids in learning the Catholic faith', '.Resources.Subscriptions', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/resources/videos/index.html', 'Video Resources - Catholic Stories for Children', 'Videos to guide kids in learning the Catholic faith', '.Resources.Videos', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/saints/index.html', 'Saints - Catholic Stories for Children', 'Catholic Saint List', '.Saints', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/shop/index.html', 'Shop - Catholic Stories for Children', 'Catholic Saint List', '.Shop', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/signup/index.html', 'Signup - Catholic Stories for Children', 'Signup', '.Signup', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/team/index.html', 'The Team - Catholic Stories for Children', 'A number of talented artists, contractors, teams and people help bring these animations to life.', '.Team', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/thankyou/index.html', 'Thank You - Catholic Stories for Children', 'Thank you for signing up for our mail list!', '.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png', './')

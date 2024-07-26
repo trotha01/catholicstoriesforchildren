@@ -43,6 +43,7 @@ pair_list=(
   src/FeastDayActivities/Today/Main.elm feastdayactivities/today/elm.js
   src/Give/Main.elm give/elm.js
   src/Navigation/Main.elm navigation/elm.js
+  src/NotFound/Main.elm notfound/elm.js
   src/Newsroom/Main.elm newsroom/elm.js
   src/Opportunities/Main.elm opportunities/elm.js
   src/Prayers/Main.elm prayers/elm.js
