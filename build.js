@@ -197,7 +197,7 @@ fakeNodeWithJs('/give/index.html', 'Give - Catholic Stories for Children', 'Your
 fakeNodeWithJs('/index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/navigation/index.html', 'Navigation - Catholic Stories for Children', '', '.Navigation', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news', '.Newsroom', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/404.html', 'Not Found - Catholic Stories for Children', 'This page is not found', '.NotFound', '/assets/images/thumbnails/CSCThumbnail.png', './notfound/')
+fakeNodeWithJs('/404.html', 'Not Found - Catholic Stories for Children', 'This page is not found', '.NotFound', '/assets/images/thumbnails/CSCThumbnail.png', '/notfound/')
 fakeNodeWithJs('/opportunities/index.html', 'Opportunities - Catholic Stories for Children', 'Find opportunities to be involved', '.Opportunities', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/prayers/index.html', 'Prayers - Catholic Stories for Children', 'Catholic Prayers', '.Prayers', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/prayer/angelus/index.html', 'Angelus Prayer - Catholic Stories for Children', 'Angelus Prayers', '.Prayer.Angelus', '/assets/images/thumbnails/CSCThumbnail.png', './')
