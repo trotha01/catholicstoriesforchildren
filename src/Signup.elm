@@ -8,6 +8,7 @@ import Html.Events exposing (onClick, onInput)
 import Http
 import Json.Encode as Encode
 import Regex exposing (find)
+import Shop.ShopHelpers exposing (littleReconciliationBooklet, viewShopItem)
 import Spinner
 import String exposing (length)
 
@@ -97,78 +98,86 @@ view2 =
         ]
 
 
+view3 : Html msg
+view3 =
+    div
+        [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
+        ]
+        [ viewShopItem littleReconciliationBooklet ]
+
+
 view : Model -> Html Msg
 view model =
     div
-        [-- , class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
-         -- , class "sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1"
+        [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
         ]
-        [ div []
-            [ div
-                [ class "mb-5" ]
-                [ span [ class "font-bold" ] [ text "Access Free Animations" ]
-                , p
-                    [ class "pb-2 text-left"
-                    ]
-                    -- [ text "Having trouble with kids in Mass? Get our guide!" ]
-                    [ text "Receive free animations, activities, resources, and more!" ]
-                , Html.iframe
-                    [ src "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
-                    , height 52
-                    , attribute "frameborder" "0"
-                    , attribute "scrolling" "no"
-                    , style "margin" "0"
-                    , style "border-radius" "0px !important"
-                    , style "background-color" "transparent"
-                    ]
-                    []
+        [ viewShopItem littleReconciliationBooklet ]
 
-                -- , div
-                --     []
-                --     [ input
-                --         [ type_ "text"
-                --         , placeholder "First Name"
-                --         , attribute "aria-hidden" "true"
-                --         , style "display" "none"
-                --         ]
-                --         []
-                --     , input
-                --         [ type_ "email"
-                --         , placeholder "Email"
-                --         , value model.email
-                --         , onInput Email
-                --         , onEnter Submit
-                --         , attribute "required" "true"
-                --         , style "padding" "10px 20px"
-                --         , style "border-radius" "5px 0px 0px 5px"
-                --         , style "box-shadow" "#777 1px 1px 5px"
-                --         , class "w-[172px] md:w-[230px] h-[56px] text-lg"
-                --         ]
-                --         []
-                --     , viewSubmitButton model
-                --     , viewMessage model
-                -- ]
-                ]
 
-            -- , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]
-            --     [ p [ class "mb-2" ] [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
-            --     , p [] [ text "Get inspired:" ]
-            --     , ul [ class "ml-4" ]
-            --         [ li [ class "pl-1" ] [ text " Top tips from parents on bringing kids to Mass." ]
-            --         , li [ class "pl-1" ] [ text " Best strategies on preparing kids for a heavenly Mass experience." ]
-            --         , li [ class "pl-1" ] [ text " Faith-based techniques to get kids engaged in Mass." ]
-            --         , li [ class "pl-1" ] [ text " It's FREE! Empower kids to love Mass this week!" ]
-            --         ]
-            --     , p [ class "pt-4" ] [ text "We will also send you:" ]
-            --     , ul [ class "ml-4" ]
-            --         [ li [ class "pl-1" ] [ text " Updates on the animations." ]
-            --         , li [ class "pl-1" ] [ text " Future freebies!" ]
-            --         ]
-            --     ]
-            ]
 
-        -- , div [] [ viewSampleImage ]
-        ]
+-- div []
+-- [ div
+--     [ class "mb-5" ]
+--     [ span [ class "font-bold" ] [ text "Access Free Animations" ]
+--     , p
+--         [ class "pb-2 text-left"
+--         ]
+--         -- [ text "Having trouble with kids in Mass? Get our guide!" ]
+--         [ text "Receive free animations, activities, resources, and more!" ]
+--     , Html.iframe
+--         [ src "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
+--         , height 52
+--         , attribute "frameborder" "0"
+--         , attribute "scrolling" "no"
+--         , style "margin" "0"
+--         , style "border-radius" "0px !important"
+--         , style "background-color" "transparent"
+--         ]
+--         []
+-- , div
+--     []
+--     [ input
+--         [ type_ "text"
+--         , placeholder "First Name"
+--         , attribute "aria-hidden" "true"
+--         , style "display" "none"
+--         ]
+--         []
+--     , input
+--         [ type_ "email"
+--         , placeholder "Email"
+--         , value model.email
+--         , onInput Email
+--         , onEnter Submit
+--         , attribute "required" "true"
+--         , style "padding" "10px 20px"
+--         , style "border-radius" "5px 0px 0px 5px"
+--         , style "box-shadow" "#777 1px 1px 5px"
+--         , class "w-[172px] md:w-[230px] h-[56px] text-lg"
+--         ]
+--         []
+--     , viewSubmitButton model
+--     , viewMessage model
+-- ]
+-- ]
+-- , div [ class "text-left text-base col-span-2 marker:content-['🌟️']" ]
+--     [ p [ class "mb-2" ] [ text "Enter your email to receive our FREE Ultimate Guide for Bringing Kids to Mass." ]
+--     , p [] [ text "Get inspired:" ]
+--     , ul [ class "ml-4" ]
+--         [ li [ class "pl-1" ] [ text " Top tips from parents on bringing kids to Mass." ]
+--         , li [ class "pl-1" ] [ text " Best strategies on preparing kids for a heavenly Mass experience." ]
+--         , li [ class "pl-1" ] [ text " Faith-based techniques to get kids engaged in Mass." ]
+--         , li [ class "pl-1" ] [ text " It's FREE! Empower kids to love Mass this week!" ]
+--         ]
+--     , p [ class "pt-4" ] [ text "We will also send you:" ]
+--     , ul [ class "ml-4" ]
+--         [ li [ class "pl-1" ] [ text " Updates on the animations." ]
+--         , li [ class "pl-1" ] [ text " Future freebies!" ]
+--         ]
+--     ]
+-- ]
+-- , div [] [ viewSampleImage ]
+-- ]
 
 
 viewSampleImage : Html msg

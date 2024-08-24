@@ -10590,6 +10590,8 @@ var $elm$core$String$replace = F3(
 			after,
 			A2($elm$core$String$split, before, string));
 	});
+var $author$project$Shop$ShopHelpers$littleReconciliationBooklet = {beehiivLink: 'https://embeds.beehiiv.com/dd054c75-c35e-4456-9bd5-8663c5ad9e52?slim=true', description: 'Get the free guide to help little Catholics through the Sacrament of Reconciliation.', etsyLink: '', image: '/assets/images/shop/2.png', name: 'Little Reconciliation Booklet'};
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
 		_VirtualDom_attribute,
@@ -10598,38 +10600,108 @@ var $elm$html$Html$Attributes$height = function (n) {
 };
 var $elm$html$Html$iframe = _VirtualDom_node('iframe');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $author$project$FeastDayActivities$Main$simpleSignup = A2(
+var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
+var $author$project$Shop$ShopHelpers$viewShopItem = function (resourceGroup) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('rounded p-7 text-left')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$img,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$src(resourceGroup.image),
+								$elm$html$Html$Attributes$class('w-72 h-72 object-fit')
+							]),
+						_List_Nil)
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('mb-3')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$h2,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('mb-3 leading-8')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text(resourceGroup.name)
+							])),
+						A2(
+						$elm$html$Html$p,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text(resourceGroup.description)
+							]))
+					])),
+				A2(
+				$elm$html$Html$iframe,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$src(resourceGroup.beehiivLink),
+						$elm$html$Html$Attributes$height(52),
+						A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
+						A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
+						A2($elm$html$Html$Attributes$style, 'margin', '0'),
+						A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
+						A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
+					]),
+				_List_Nil),
+				(resourceGroup.etsyLink !== '') ? A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$a,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$href(resourceGroup.etsyLink),
+								$elm$html$Html$Attributes$target('_blank'),
+								$elm$html$Html$Attributes$class('text-blue-600 underline')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Click here to go to Etsy')
+							])),
+						A2(
+						$elm$html$Html$span,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('. Enter email above for coupon code.')
+							]))
+					])) : A2($elm$html$Html$span, _List_Nil, _List_Nil)
+			]));
+};
+var $author$project$Signup$view3 = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
-			$elm$html$Html$Attributes$class('mt-20 mb-5')
+			$elm$html$Html$Attributes$class('p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]'),
+			$elm$html$Html$Attributes$class('sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1')
 		]),
 	_List_fromArray(
 		[
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('pb-2 pl-1 text-left')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Get free Catholic animations, printables, and more Catholic activities!')
-				])),
-			A2(
-			$elm$html$Html$iframe,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$src('https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true'),
-					$elm$html$Html$Attributes$height(52),
-					A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
-					A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
-					A2($elm$html$Html$Attributes$style, 'margin', '0'),
-					A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
-					A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
-				]),
-			_List_Nil)
+			$author$project$Shop$ShopHelpers$viewShopItem($author$project$Shop$ShopHelpers$littleReconciliationBooklet)
 		]));
+var $author$project$FeastDayActivities$Main$simpleSignup = $author$project$Signup$view3;
 var $author$project$FeastDayActivities$FeastDayHelpers$filterActivities = F2(
 	function (isFilterType, activities) {
 		return A2(
@@ -10804,7 +10876,6 @@ var $author$project$FeastDayActivities$FeastDayHelpers$imageSrc = function (acti
 		activity.image,
 		A2($elm$core$Dict$get, activity.image, $author$project$FeastDayActivities$FeastDayHelpers$images));
 };
-var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
 var $author$project$FeastDayActivities$FeastDayHelpers$viewActivity = function (activity) {
 	return A2(
 		$elm$html$Html$a,
@@ -11293,7 +11364,6 @@ var $author$project$FeastDayActivities$Main$viewFeastActivities = F2(
 					A2($elm$core$Debug$log, 'activitieS', activities))
 				]));
 	});
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $author$project$FeastDayActivities$Main$viewFeastDayHeader = function (feasts) {
 	var concatFeasts = A2(
 		$elm$core$String$join,
@@ -11973,57 +12043,14 @@ var $author$project$FeastDayActivities$FeastDayHelpers$splitList = function (lis
 var $author$project$Signup$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
 		_List_fromArray(
 			[
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$div,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$class('mb-5')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$span,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('font-bold')
-									]),
-								_List_fromArray(
-									[
-										$elm$html$Html$text('Access Free Animations')
-									])),
-								A2(
-								$elm$html$Html$p,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$class('pb-2 text-left')
-									]),
-								_List_fromArray(
-									[
-										$elm$html$Html$text('Receive free animations, activities, resources, and more!')
-									])),
-								A2(
-								$elm$html$Html$iframe,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$src('https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true'),
-										$elm$html$Html$Attributes$height(52),
-										A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
-										A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
-										A2($elm$html$Html$Attributes$style, 'margin', '0'),
-										A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
-										A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
-									]),
-								_List_Nil)
-							]))
-					]))
+				$elm$html$Html$Attributes$class('p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]'),
+				$elm$html$Html$Attributes$class('sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1')
+			]),
+		_List_fromArray(
+			[
+				$author$project$Shop$ShopHelpers$viewShopItem($author$project$Shop$ShopHelpers$littleReconciliationBooklet)
 			]));
 };
 var $author$project$FeastDayActivities$Main$dateWidth = '50px';
