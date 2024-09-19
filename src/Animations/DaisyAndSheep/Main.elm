@@ -1,4 +1,4 @@
-module Animations.Main exposing (..)
+module Animations.DaisyAndSheep.Main exposing (..)
 
 import Browser
 import Footer exposing (viewFooter)
@@ -57,19 +57,11 @@ viewBody model =
         ]
         [ h1 [ class "leading-10" ] [ text "Start teaching your children with Catholic animations" ]
         , div [ class "my-10" ]
-            [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
+            [ p [ class "my-5" ] [ text "Use these animations to help your kids learn about the Catholic Mass and fun facts about the Cathoilc Church." ]
             , p [ class "my-5" ]
                 [ text
-                    ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
-                        ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
-                    )
-                ]
-            , p [ class "my-5" ]
-                [ text
-                    ("Do you want your children to grow in gratitude? Start with the prayer before meals."
-                        ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
-                        ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
-                        ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
+                    ("Walk step by step through the Mass with these animations. Your kids will start to "
+                        ++ "learn each part and become more engaged as they understand what is happening every Sunday!"
                     )
                 ]
             , div [ class "mt-2" ]
@@ -89,48 +81,30 @@ animations =
         , class "mb-20"
         ]
         [ a
-            [ href "/animations/hailmary"
+            [ href "/animations/daisyandsheep/liturgicalkiss"
             , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Hail Mary Animation"
+            , attribute "aria-label" "See the Liturgical Kiss Animation"
             ]
             [ img
-                [ src "/assets/images/AnimationImageLinks/HailMary.png"
+                [ src "/assets/images/AnimationImageLinks/LiturgicalKiss.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
-                , alt "Hail Mary Animation"
-                ]
-                []
-            ]
-        , a
-            [ href "/animations/prayertimewithangels"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Prayer Time with Angels animation"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Prayer Time with Angels animations"
+                , alt "Liturgical Kiss Animation"
                 ]
                 []
             ]
         , div
-            [ -- href "/animations/daisyandsheep"
+            [ -- href "/animations/daisyandsheep/astronomyprogram"
               class "hover:cursor-not-allowed"
             , attribute "aria-label" "Daisy and Sheep animations coming soon"
             ]
             [ img
-                [ src "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
+                [ src "/assets/images/AnimationImageLinks/AstronomyProgram.png"
                 , class "grayscale"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
-                , alt "Daisy and Sheep Animations"
+                , alt "Astronomy Program Animation"
                 ]
                 []
             ]
-        , div
-            [ style "clear" "both"
-            , style "width" "1px"
-            ]
-            []
         ]

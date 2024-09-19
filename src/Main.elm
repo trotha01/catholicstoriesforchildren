@@ -296,67 +296,29 @@ viewAnimations =
                         []
                     ]
                 , a
-                    [ href "/animations/guardianangel"
+                    [ href "/animations/prayertimewithangels"
                     , class "hover:scale-105 transition ease-in-out duration-50"
-                    , attribute "aria-label" "See the Guardian Angel Animation"
+                    , attribute "aria-label" "See the Prayer Time with Angels animation"
                     ]
                     [ img
-                        [ src "/assets/images/AnimationImageLinks/GuardianAngel.png"
+                        [ src "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
-                        , alt "Guardian Angel Animation"
-                        ]
-                        []
-                    ]
-                , a
-                    [ href "/animations/stmichael"
-                    , class "hover:scale-105 transition ease-in-out duration-50"
-                    , attribute "aria-label" "See the St Michael the Archangel Animation"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "St Michael Animation"
-                        ]
-                        []
-                    ]
-                , a
-                    [ href "/animations/actofcontrition"
-                    , class "hover:scale-105 transition ease-in-out duration-50"
-                    , attribute "aria-label" "Act of Contrition Animation Coming Soon"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/ActOfContrition.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "Act of Contrition Animation"
+                        , alt "Prayer Time with Angels animations"
                         ]
                         []
                     ]
                 , div
-                    [ style "border-radius" "5px"
-                    , class "grayscale"
-                    , class "hover:cursor-not-allowed"
+                    [ -- href "/animations/daisyandsheep"
+                      class "hover:cursor-not-allowed"
+                    , attribute "aria-label" "Daisy and Sheep animations coming soon"
                     ]
                     [ img
-                        [ src "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
+                        [ src "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
+                        , class "grayscale"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
-                        , alt "Prayer Before Meals Animation"
-                        ]
-                        []
-                    ]
-                , div
-                    [ style "border-radius" "5px"
-                    , class "grayscale"
-                    , class "hover:cursor-not-allowed"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/SaintAnthony.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "St Anthony Animation"
+                        , alt "Daisy and Sheep Animations"
                         ]
                         []
                     ]

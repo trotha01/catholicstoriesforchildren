@@ -10658,6 +10658,7 @@ var $author$project$Shop$ShopHelpers$viewShopItem = function (resourceGroup) {
 						$elm$html$Html$Attributes$height(52),
 						A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
 						A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
+						A2($elm$html$Html$Attributes$attribute, 'width', '100%'),
 						A2($elm$html$Html$Attributes$style, 'margin', '0'),
 						A2($elm$html$Html$Attributes$style, 'border-radius', '0px !important'),
 						A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
@@ -10694,8 +10695,7 @@ var $author$project$Signup$view3 = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
-			$elm$html$Html$Attributes$class('p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]'),
-			$elm$html$Html$Attributes$class('sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1')
+			$elm$html$Html$Attributes$class('p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]')
 		]),
 	_List_fromArray(
 		[
@@ -12045,8 +12045,7 @@ var $author$project$Signup$view = function (model) {
 		$elm$html$Html$div,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$class('p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]'),
-				$elm$html$Html$Attributes$class('sm:grid sm:grid-cols-[_1fr_225px] sm:gap-1')
+				$elm$html$Html$Attributes$class('p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]')
 			]),
 		_List_fromArray(
 			[
