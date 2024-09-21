@@ -1718,16 +1718,8 @@ video {
     height: 100%;
   }
 
-  .sm\:grid-cols-\[_1fr_225px\] {
-    grid-template-columns: 1fr 225px;
-  }
-
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sm\:gap-1 {
-    gap: 0.25rem;
   }
 
   .sm\:px-11 {

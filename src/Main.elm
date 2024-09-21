@@ -308,14 +308,13 @@ viewAnimations =
                         ]
                         []
                     ]
-                , div
-                    [ -- href "/animations/daisyandsheep"
-                      class "hover:cursor-not-allowed"
-                    , attribute "aria-label" "Daisy and Sheep animations coming soon"
+                , a
+                    [ href "/animations/daisyandsheep"
+                    , class "hover:scale-105 transition ease-in-out duration-50"
+                    , attribute "aria-label" "Daisy and Sheep animations"
                     ]
                     [ img
                         [ src "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
-                        , class "grayscale"
                         , style "border-radius" "5px"
                         , style "width" "-webkit-fill-available"
                         , alt "Daisy and Sheep Animations"

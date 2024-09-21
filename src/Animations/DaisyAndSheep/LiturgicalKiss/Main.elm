@@ -92,12 +92,12 @@ viewBody model =
 
 englishVideoLink : String
 englishVideoLink =
-    "https://www.youtube-nocookie.com/embed/AWBtqmWbIfg"
+    "https://www.youtube-nocookie.com/embed/i6zBgnZQq9U"
 
 
 spanishVideoLink : String
 spanishVideoLink =
-    "https://www.youtube-nocookie.com/embed/kBV_rNkIcqU"
+    "https://www.youtube-nocookie.com/embed/xy0R3PKzrY8"
 
 
 viewVideoPlayers : Model -> Html Msg
