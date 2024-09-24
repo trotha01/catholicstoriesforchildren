@@ -97,7 +97,7 @@ englishVideoLink =
 
 spanishVideoLink : String
 spanishVideoLink =
-    "https://www.youtube-nocookie.com/embed/xy0R3PKzrY8"
+    "https://www.youtube-nocookie.com/embed/vgUZq1hhmXM"
 
 
 viewVideoPlayers : Model -> Html Msg
