@@ -93,14 +93,13 @@ animations =
                 ]
                 []
             ]
-        , div
-            [ -- href "/animations/daisyandsheep/astronomyprogram"
-              class "hover:cursor-not-allowed"
+        , a
+            [ href "/animations/daisyandsheep/astronomyprogram"
+            , class "hover:scale-105 transition ease-in-out duration-50"
             , attribute "aria-label" "Daisy and Sheep animations coming soon"
             ]
             [ img
                 [ src "/assets/images/AnimationImageLinks/AstronomyProgram.png"
-                , class "grayscale"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Astronomy Program Animation"
