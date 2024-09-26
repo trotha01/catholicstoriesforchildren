@@ -44,6 +44,7 @@ staff : List Person
 staff =
     [ trevor
     , carlos
+    , lindsey
     ]
 
 
@@ -57,6 +58,18 @@ trevor =
             ++ "MA in Theology at the Franciscan University of Steubenville. "
             ++ "He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love."
     , image = imagePath ++ "TrevorRothaus.jpeg"
+    , socials = []
+    }
+
+
+lindsey : Person
+lindsey =
+    { name = "Lindsey Bruno"
+    , initials = ""
+    , position = "Creative Consultant and Content Creator"
+    , description =
+        "Lindsey is a Jill-of-all-trades with a background in entertainment production (theater, theme-park, opera, film), events, music, and education. A Catholic convert from an evangelical background, she is passionate about passing along the riches of the faith - especially to those who may not recognize her treasure trove! Having worked for Disney in the parks and at Imagineering for over a decade, Lindsey has developed a taste for artistic excellence and hopes to bring a high level of quality to the Catholic creative sphere. Like Tolkien, she is a big believer in the power of myth and fairy tales for developing minds, she aims to tell stories that prepare children for a life of adventure, meaning, virtue, and purpose. She currently serves CSC as a creative consultant and content creator."
+    , image = imagePath ++ "LindseyBruno.jpg"
     , socials = []
     }
 
