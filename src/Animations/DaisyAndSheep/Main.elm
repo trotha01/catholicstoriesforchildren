@@ -96,13 +96,26 @@ animations =
         , a
             [ href "/animations/daisyandsheep/astronomyprogram"
             , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "Daisy and Sheep animations coming soon"
+            , attribute "aria-label" "See the Astronmy Program Animation"
             ]
             [ img
                 [ src "/assets/images/AnimationImageLinks/AstronomyProgram.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Astronomy Program Animation"
+                ]
+                []
+            ]
+        , a
+            [ href "/animations/daisyandsheep/penitentialact"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Penitential Act Animation"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/PenitentialAct.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Penitential Act Animation"
                 ]
                 []
             ]

@@ -36,6 +36,7 @@ pair_list=(
   src/Animations/DaisyAndSheep/Main.elm animations/daisyandsheep/elm.js
   src/Animations/DaisyAndSheep/LiturgicalKiss/Main.elm animations/daisyandsheep/liturgicalkiss/elm.js
   src/Animations/DaisyAndSheep/AstronomyProgram/Main.elm animations/daisyandsheep/astronomyprogram/elm.js
+  src/Animations/DaisyAndSheep/PenitentialAct/Main.elm animations/daisyandsheep/penitentialact/elm.js
   src/Animations/PrayerTimeWithAngels/Main.elm animations/prayertimewithangels/elm.js
   src/Animations/ActOfContrition/Main.elm animations/actofcontrition/elm.js
   src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
