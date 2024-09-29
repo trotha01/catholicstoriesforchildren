@@ -426,7 +426,7 @@ viewFeastActivities model feastActivitiesList =
     in
     div []
         [ simpleSignup
-        , viewAllActivities model.saintList.isLoading (Debug.log "activitieS" activities)
+        , viewAllActivities model.saintList.isLoading activities
 
         -- , div [ class "mt-20 rounded" ]
         --     [ iframe
