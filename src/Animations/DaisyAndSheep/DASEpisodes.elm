@@ -99,4 +99,26 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Guardian Angel"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/guardianangel.png"
+            , pdfLink = "/printables/daisyandsheep/Guardian Angel.pdf"
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Guardian Angel | Daisy and Sheep"
+            , spanish = "Ángel de la Guarda | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube-nocookie.com/embed/C-FmlvV9JWI"
+            , spanish = "https://www.youtube-nocookie.com/embed/HhoLRdTxTYc"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]

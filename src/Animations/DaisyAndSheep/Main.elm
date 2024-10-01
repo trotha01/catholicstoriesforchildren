@@ -259,20 +259,24 @@ viewActivities episode =
                         []
                     ]
                 ]
-            , div []
-                [ a
-                    [ attribute "aria-label" (episode.title ++ " Activity Answers")
-                    , href episode.activities.answerPdfLink
-                    , target "_blank"
-                    ]
-                    [ img
-                        [ class "w-full max-w-[400px]"
-                        , class "transition ease-in-out hover:scale-110"
-                        , src episode.activities.answerThumbnailLink
+            , if episode.activities.answerPdfLink == "" then
+                span [] []
+
+              else
+                div []
+                    [ a
+                        [ attribute "aria-label" (episode.title ++ " Activity Answers")
+                        , href episode.activities.answerPdfLink
+                        , target "_blank"
                         ]
-                        []
+                        [ img
+                            [ class "w-full max-w-[400px]"
+                            , class "transition ease-in-out hover:scale-110"
+                            , src episode.activities.answerThumbnailLink
+                            ]
+                            []
+                        ]
                     ]
-                ]
             ]
         ]
 
@@ -322,6 +326,19 @@ animations =
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Penitential Act Animation"
+                ]
+                []
+            ]
+        , a
+            [ href "/animations/daisyandsheep?e=guardianangel"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Guardian Angel Animation"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/GuardianAngel.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Guardian Angel Animation"
                 ]
                 []
             ]
