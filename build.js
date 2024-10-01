@@ -217,4 +217,5 @@ fakeNodeWithJs('/saints/index.html', 'Saints - Catholic Stories for Children', '
 fakeNodeWithJs('/shop/index.html', 'Shop - Catholic Stories for Children', 'Catholic Saint List', '.Shop', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/signup/index.html', 'Signup - Catholic Stories for Children', 'Signup', '.Signup', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/team/index.html', 'The Team - Catholic Stories for Children', 'A number of talented artists, contractors, teams and people help bring these animations to life.', '.Team', '/assets/images/thumbnails/CSCThumbnail.png', './')
+fakeNodeWithJs('/team/join/index.html', 'Join The Team - Catholic Stories for Children', 'Join the talented artists, contractors and people help bring these animations to life.', '.Team.Join', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/thankyou/index.html', 'Thank You - Catholic Stories for Children', 'Thank you for signing up for our mail list!', '.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png', './')

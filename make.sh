@@ -64,6 +64,7 @@ pair_list=(
   src/Shop/Main.elm shop/elm.js
   src/Signup/Main.elm signup/elm.js
   src/Team/Main.elm team/elm.js
+  src/Team/Join/Main.elm team/join/elm.js
   src/ThankYou/Main.elm thankyou/elm.js
 )
 
