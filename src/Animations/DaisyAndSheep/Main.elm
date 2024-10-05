@@ -209,7 +209,7 @@ viewEpisodes model =
             , div [ class "mt-2" ]
                 [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
-        , animations
+        , animations model
         ]
 
 
@@ -281,8 +281,12 @@ viewActivities episode =
         ]
 
 
-animations : Html msg
-animations =
+animations : Model -> Html msg
+animations model =
+    let
+        releasedEpisodes =
+            List.filter (\e -> Time.posixToMillis e.releaseDate < Time.posixToMillis model.time) episodes
+    in
     div
         [ class "w-full"
         , class "grid grid-cols-1 lg:grid-cols-2"
@@ -290,58 +294,31 @@ animations =
         , class "m-auto"
         , class "mb-20"
         ]
-        [ a
-            [ href "/animations/daisyandsheep?e=liturgicalkiss"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Liturgical Kiss Animation"
+        (List.map
+            (\e ->
+                viewAnimationLink
+                    ("/animations/daisyandsheep?e=" ++ episodeUrlParam e)
+                    e.thumbnail
+                    e.title
+            )
+            releasedEpisodes
+        )
+
+
+viewAnimationLink : String -> String -> String -> Html msg
+viewAnimationLink link imgSrc altName =
+    a
+        [ href link
+        , class "hover:scale-105 transition ease-in-out duration-50"
+        , attribute "aria-label" ("See the " ++ altName)
+        ]
+        [ img
+            [ src imgSrc
+            , style "border-radius" "5px"
+            , style "width" "-webkit-fill-available"
+            , alt altName
             ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/LiturgicalKiss.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Liturgical Kiss Animation"
-                ]
-                []
-            ]
-        , a
-            [ href "/animations/daisyandsheep?e=astronomyprogram"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Astronmy Program Animation"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/AstronomyProgram.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Astronomy Program Animation"
-                ]
-                []
-            ]
-        , a
-            [ href "/animations/daisyandsheep?e=penitentialact"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Penitential Act Animation"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/PenitentialAct.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Penitential Act Animation"
-                ]
-                []
-            ]
-        , a
-            [ href "/animations/daisyandsheep?e=guardianangel"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Guardian Angel Animation"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/GuardianAngel.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Guardian Angel Animation"
-                ]
-                []
-            ]
+            []
         ]
 
 
