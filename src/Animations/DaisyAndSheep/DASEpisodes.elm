@@ -149,4 +149,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "The Virgin Mary, Mother"
+      , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.png"
+      , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/maryapparitions.png"
+            , pdfLink = "/printables/daisyandsheep/Mary Apparitions.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/maryapparitionsanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/Mary Apparitions Answers.pdf"
+            }
+      , videoTitles =
+            { english = "Mary, my mother | Daisy and Sheep"
+            , spanish = "Mary, my mother | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube-nocookie.com/embed/w_v9goHWsNs"
+            , spanish = "https://www.youtube-nocookie.com/embed/LLDGWewq1lM"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
