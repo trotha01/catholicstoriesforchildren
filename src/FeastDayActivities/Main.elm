@@ -241,53 +241,59 @@ viewDate model month date feasts =
         prevDateLink =
             createFeastDayLink prevMonth prevDay
     in
-    div
-        [ class "text-center"
-        , class "mt-10 max-w-3xl mx-auto px-11"
-        , id "calendar-content"
-        ]
-        [ div [ class "py-5" ]
-            [ div [ class "grid grid-cols-3 mb-16" ]
-                [ a
-                    [ class "text-7xl text-left md:m-0"
-                    , href prevDateLink
-                    , attribute "aria-label" "Previous"
+    div []
+        [ div
+            [ class "text-center"
+            , class "mt-10 max-w-3xl mx-auto px-11"
+            , id "calendar-content"
+            ]
+            [ div [ class "py-5" ]
+                [ div [ class "grid grid-cols-3 mb-16" ]
+                    [ a
+                        [ class "text-7xl text-left md:m-0"
+                        , href prevDateLink
+                        , attribute "aria-label" "Previous"
+                        ]
+                        [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] [] ]
+                        , div [ class "text-sm capitalize" ] [ text "Previous" ]
+                        ]
+                    , a
+                        [ class "text-7xl text-left m-5 md:m-0 justify-self-center"
+                        , href (urlPath ++ "?m=" ++ month)
+                        , attribute "aria-label" ("Back to " ++ month)
+                        ]
+                        [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
+                        , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
+                        ]
+                    , a
+                        [ class "text-7xl text-left md:m-0 justify-self-end"
+                        , href nextDateLink
+                        , attribute "aria-label" "Next"
+                        ]
+                        [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] [] ]
+                        , div [ class "text-sm capitalize" ] [ text "Next" ]
+                        ]
                     ]
-                    [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] [] ]
-                    , div [ class "text-sm capitalize" ] [ text "Previous" ]
+                , div
+                    []
+                    [ h1 [ class "capitalize text-left" ]
+                        [ span [ class "block" ] [ text "Catholic Activities for Children" ]
+                        , span [ class "block" ] [ text ("for " ++ month ++ " " ++ date ++ ", 2024") ]
+                        ]
+                    , viewFeastDayHeader feasts
                     ]
-                , a
-                    [ class "text-7xl text-left m-5 md:m-0 justify-self-center"
-                    , href (urlPath ++ "?m=" ++ month)
-                    , attribute "aria-label" ("Back to " ++ month)
-                    ]
-                    [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
-                    , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
-                    ]
-                , a
-                    [ class "text-7xl text-left md:m-0 justify-self-end"
-                    , href nextDateLink
-                    , attribute "aria-label" "Next"
-                    ]
-                    [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] [] ]
-                    , div [ class "text-sm capitalize" ] [ text "Next" ]
-                    ]
-                ]
-            , div
-                []
-                [ h1 [ class "capitalize text-left" ]
-                    [ span [ class "block" ] [ text "Catholic Activities for Children" ]
-                    , span [ class "block" ] [ text ("for " ++ month ++ " " ++ date ++ ", 2024") ]
-                    ]
-                , viewFeastDayHeader feasts
                 ]
             ]
         , div
             [ class "mt-10 mb-40"
             , class "min-h-screen"
             ]
-            [ viewWeekdayActivities
-            , viewFeastActivities model feasts
+            [ div [ class "mt-2 mb-20" ]
+                [ Signup.view4 |> Html.map SignupMsg ]
+            , div [ class "max-w-3xl mx-auto" ]
+                [ viewFeastActivities model feasts
+                , div [ class "mt-10" ] [ viewWeekdayActivities ]
+                ]
             ]
         ]
 
@@ -425,8 +431,7 @@ viewFeastActivities model feastActivitiesList =
             List.append feastActivities saintActivities
     in
     div []
-        [ simpleSignup
-        , viewAllActivities model.saintList.isLoading activities
+        [ viewAllActivities model.saintList.isLoading activities
 
         -- , div [ class "mt-20 rounded" ]
         --     [ iframe
@@ -472,17 +477,19 @@ viewMonth model feastMonth =
         ( firstHalf, secondHalf ) =
             splitList feastMonth.feasts
     in
-    div
-        [ class "mt-10 max-w-3xl mx-auto" ]
-        [ div [ class "px-11" ]
-            [ h1 [] [ text "2024 Feast Day Activities" ]
-            , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
-            , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
-            , div [ class "mt-2 mb-20" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
+    div []
+        [ div
+            [ class "mt-10 max-w-3xl mx-auto" ]
+            [ div [ class "px-11" ]
+                [ h1 [] [ text "2024 Feast Day Activities" ]
+                , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
+                , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
+                ]
             ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
         , div
-            []
+            [ class "max-w-3xl mx-auto" ]
             [ div
                 [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2 justify-items-center"
                 , class "text-3xl md:text-3xl lg:text-3xl"
