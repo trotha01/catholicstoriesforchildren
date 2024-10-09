@@ -58,18 +58,18 @@ view model =
 
 viewBody : Model -> Html Msg
 viewBody model =
-    div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "p-5"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Resources" ]
-        , viewAboutResources
-        , div [ class "mb-20" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
-        , viewResourceGroups
-        , viewWorkInProgressNotice
+    div []
+        [ div [ class "max-w-3xl m-auto p-5" ]
+            [ h1 [ class "my-10 leading-10" ] [ text "Resources" ]
+            , viewAboutResources
+            ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
+        , div
+            [ class "max-w-3xl m-auto p-5" ]
+            [ viewResourceGroups
+            , viewWorkInProgressNotice
+            ]
         ]
 
 
