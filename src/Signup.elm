@@ -8,7 +8,7 @@ import Html.Events exposing (onClick, onInput)
 import Http
 import Json.Encode as Encode
 import Regex exposing (find)
-import Shop.ShopHelpers exposing (littleReconciliationBooklet, viewShopItem)
+import Shop.ShopHelpers exposing (littleReconciliationBooklet, viewShopItem, viewShopItem2)
 import Spinner
 import String exposing (length)
 
@@ -104,6 +104,15 @@ view3 =
         [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
         ]
         [ viewShopItem littleReconciliationBooklet ]
+
+
+view4 : Html msg
+view4 =
+    div
+        [ class "flex justify-center py-3 bg-[#ffc7c7]"
+        ]
+        [ div [ class "max-w-3xl" ] [ viewShopItem2 littleReconciliationBooklet ]
+        ]
 
 
 view : Model -> Html Msg

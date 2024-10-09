@@ -61,6 +61,42 @@ viewShopItem resourceGroup =
         ]
 
 
+viewShopItem2 : ShopItem -> Html msg
+viewShopItem2 resourceGroup =
+    div
+        [ class "rounded text-left sm:flex"
+        ]
+        [ div [ class "flex justify-center" ]
+            [ img [ src resourceGroup.image, class "max-w-72 max-h-72 object-contain" ] []
+            ]
+        , div [ class "p-5" ]
+            [ div [ class "mb-3" ]
+                [ h2 [ class "mb-3 leading-8" ] [ text resourceGroup.name ]
+                , p [] [ text resourceGroup.description ]
+                ]
+            , Html.iframe
+                [ src resourceGroup.beehiivLink
+                , height 52
+                , attribute "frameborder" "0"
+                , attribute "scrolling" "no"
+                , attribute "width" "100%"
+                , style "margin" "0"
+                , style "border-radius" "0px !important"
+                , style "background-color" "transparent"
+                ]
+                []
+            , if resourceGroup.etsyLink /= "" then
+                div []
+                    [ a [ href resourceGroup.etsyLink, target "_blank", class "text-blue-600 underline" ] [ text "Click here to go to Etsy" ]
+                    , span [] [ text ". Enter email above for coupon code." ]
+                    ]
+
+              else
+                span [] []
+            ]
+        ]
+
+
 massGuide : ShopItem
 massGuide =
     { name = "The Ultimate Mass Guide"

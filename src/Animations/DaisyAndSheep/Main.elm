@@ -194,21 +194,24 @@ viewBody model urlRoute =
 viewEpisodes : Model -> Html Msg
 viewEpisodes model =
     div
-        [ class "hcenter py-5 px-11"
-        , style "max-width" "800px"
+        [ class "hcenter"
         ]
-        [ h1 [ class "leading-10", id "top" ] [ text "Start teaching your children with Catholic animations" ]
-        , div [ class "my-10" ]
-            [ p [ class "my-5" ] [ text "Use these animations to help your kids learn about the Catholic Mass and fun facts about the Cathoilc Church." ]
-            , p [ class "my-5" ]
-                [ text
-                    ("Walk step by step through the Mass with these animations. Your kids will start to "
-                        ++ "learn each part and become more engaged as they understand what is happening every Sunday!"
-                    )
-                ]
-            , div [ class "mt-2" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
+        [ div
+            [ class "hcenter py-5 px-11 max-w-3xl"
             ]
+            [ h1 [ class "leading-10", id "top" ] [ text "Start teaching your children with Catholic animations" ]
+            , div [ class "my-10" ]
+                [ p [ class "my-5" ] [ text "Use these animations to help your kids learn about the Catholic Mass and fun facts about the Cathoilc Church." ]
+                , p [ class "my-5" ]
+                    [ text
+                        ("Walk step by step through the Mass with these animations. Your kids will start to "
+                            ++ "learn each part and become more engaged as they understand what is happening every Sunday!"
+                        )
+                    ]
+                ]
+            ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
         , animations model
         ]
 
@@ -289,7 +292,7 @@ animations model =
     in
     div
         [ class "w-full"
-        , class "grid grid-cols-1 lg:grid-cols-2"
+        , class "grid grid-cols-1 lg:grid-cols-2 gap-5"
         , class "max-w-7xl"
         , class "m-auto"
         , class "mb-20"
@@ -309,7 +312,7 @@ viewAnimationLink : String -> String -> String -> Html msg
 viewAnimationLink link imgSrc altName =
     a
         [ href link
-        , class "hover:scale-105 transition ease-in-out duration-50"
+        , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
         , attribute "aria-label" ("See the " ++ altName)
         ]
         [ img
