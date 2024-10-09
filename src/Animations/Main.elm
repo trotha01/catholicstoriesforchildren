@@ -52,29 +52,30 @@ view model =
 viewBody : Model -> Html Msg
 viewBody model =
     div
-        [ class "hcenter py-5 px-11"
-        , style "max-width" "800px"
-        ]
-        [ h1 [ class "leading-10" ] [ text "Start teaching your children with Catholic animations" ]
-        , div [ class "my-10" ]
-            [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
-            , p [ class "my-5" ]
-                [ text
-                    ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
-                        ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
-                    )
+        [ class "hcenter" ]
+        [ div
+            [ class "hcenter py-5 px-11 max-w-3xl" ]
+            [ h1 [ class "leading-10" ] [ text "Start teaching your children with Catholic animations" ]
+            , div [ class "my-10" ]
+                [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
+                , p [ class "my-5" ]
+                    [ text
+                        ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
+                            ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
+                        )
+                    ]
+                , p [ class "my-5" ]
+                    [ text
+                        ("Do you want your children to grow in gratitude? Start with the prayer before meals."
+                            ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
+                            ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
+                            ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
+                        )
+                    ]
                 ]
-            , p [ class "my-5" ]
-                [ text
-                    ("Do you want your children to grow in gratitude? Start with the prayer before meals."
-                        ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
-                        ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
-                        ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
-                    )
-                ]
-            , div [ class "mt-2" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
             ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
         , animations
         ]
 
@@ -83,14 +84,14 @@ animations : Html msg
 animations =
     div
         [ class "w-full"
-        , class "grid grid-cols-1 lg:grid-cols-2"
+        , class "grid grid-cols-1 lg:grid-cols-2 gap-5"
         , class "max-w-7xl"
         , class "m-auto"
         , class "mb-20"
         ]
         [ a
             [ href "/animations/hailmary"
-            , class "hover:scale-105 transition ease-in-out duration-50"
+            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
             , attribute "aria-label" "See the Hail Mary Animation"
             ]
             [ img
@@ -103,7 +104,7 @@ animations =
             ]
         , a
             [ href "/animations/prayertimewithangels"
-            , class "hover:scale-105 transition ease-in-out duration-50"
+            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
             , attribute "aria-label" "See the Prayer Time with Angels animation"
             ]
             [ img
@@ -116,7 +117,7 @@ animations =
             ]
         , a
             [ href "/animations/daisyandsheep"
-            , class "hover:scale-105 transition ease-in-out duration-50"
+            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
             , attribute "aria-label" "Daisy and Sheep animations"
             ]
             [ img
