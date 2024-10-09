@@ -149,8 +149,7 @@ viewBody model saintName =
     div
         [ class "bg-[#FEF7F4]"
         ]
-        [ div
-            [ class "max-w-4xl mx-auto p-10" ]
+        [ div []
             [ case saintName of
                 Just s ->
                     viewSaintPage model s
@@ -170,45 +169,49 @@ viewSaintPage model saintName =
     in
     div
         []
-        [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
-        , div [ class "mt-10" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
-        , div [ class "mt-10" ] [ viewBackButton ]
-        , h1
-            [ class "text-center"
-            , class "my-10"
-            ]
-            [ text saintName ]
-        , case maybeSaint of
-            Nothing ->
-                let
-                    spinnerOrError =
-                        if model.saintList.isLoading then
-                            div [ class "text-center" ]
-                                [ span [] [ text "We are getting information for this saint, this may take some time." ]
-                                , div [ class "m-auto w-10 text-[#9200B3] mt-4" ]
-                                    [ Spinner.purpleSpinner []
+        [ -- div [ class "max-w-3xl mx-auto pt-10 pb-2" ]
+          -- [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
+          -- ]
+          div [ class "mb-2" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
+        , div [ class "max-w-3xl mx-auto" ]
+            [ div [ class "mt-10" ] [ viewBackButton ]
+            , h1
+                [ class "text-center"
+                , class "my-10"
+                ]
+                [ text saintName ]
+            , case maybeSaint of
+                Nothing ->
+                    let
+                        spinnerOrError =
+                            if model.saintList.isLoading then
+                                div [ class "text-center" ]
+                                    [ span [] [ text "We are getting information for this saint, this may take some time." ]
+                                    , div [ class "m-auto w-10 text-[#9200B3] mt-4" ]
+                                        [ Spinner.purpleSpinner []
+                                        ]
                                     ]
-                                ]
 
-                        else
-                            div []
-                                [ div [] [ text "Sorry, we had an error getting the information for this saint" ]
-                                ]
-                in
-                div [] [ spinnerOrError ]
+                            else
+                                div []
+                                    [ div [] [ text "Sorry, we had an error getting the information for this saint" ]
+                                    ]
+                    in
+                    div [] [ spinnerOrError ]
 
-            Just saint ->
-                let
-                    activities =
-                        activitiesFromSaint saint
-                            |> List.map Tuple.second
-                in
-                div []
-                    [ viewFeastDay saint
-                    , viewPatronage model saint
-                    , viewAllActivities model.saintList.isLoading activities
-                    ]
+                Just saint ->
+                    let
+                        activities =
+                            activitiesFromSaint saint
+                                |> List.map Tuple.second
+                    in
+                    div []
+                        [ viewFeastDay saint
+                        , viewPatronage model saint
+                        , viewAllActivities model.saintList.isLoading activities
+                        ]
+            ]
         ]
 
 
@@ -457,67 +460,72 @@ viewSaints model =
                     |> List.sortWith (saintSort model)
     in
     div []
-        [ h1
-            []
-            [ text "List of Saints and Blesseds" ]
-        , div [ class "mb-10 mt-5" ]
-            [ p [] [ text "Find the saints you are looking for here." ]
-            , p [ class "mt-2" ] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]
-            , p [ class "mb-5" ]
-                [ span [] [ text "Information about these saints can be found at " ]
-                , a
-                    [ href "https://www.catholic.org/saints/stindex.php"
-                    , rel "noopener"
-                    , target "_blank"
-                    , class "underline"
-                    , attribute "aria-label" "Catholic Online"
+        [ div
+            [ class "max-w-3xl mx-auto pt-10" ]
+            [ h1
+                []
+                [ text "List of Saints and Blesseds" ]
+            , div [ class "mb-10 mt-5" ]
+                [ p [] [ text "Find the saints you are looking for here." ]
+                , p [ class "mt-2" ] [ text "This is an extensive but not exhaustive list of the saints and blesseds recognized by the Catholic Church." ]
+                , p [ class "mb-5" ]
+                    [ span [] [ text "Information about these saints can be found at " ]
+                    , a
+                        [ href "https://www.catholic.org/saints/stindex.php"
+                        , rel "noopener"
+                        , target "_blank"
+                        , class "underline"
+                        , attribute "aria-label" "Catholic Online"
+                        ]
+                        [ text "Catholic Online" ]
+                    , span [] [ text ", " ]
+                    , a
+                        [ href "https://mycatholic.life/saints/"
+                        , rel "noopener"
+                        , target "_blank"
+                        , class "underline"
+                        , attribute "aria-label" "My Catholic Lif"
+                        ]
+                        [ text "My Catholic Life" ]
+                    , span [] [ text ", or " ]
+                    , a
+                        [ href "https://catholicsaints.info/"
+                        , rel "noopener"
+                        , target "_blank"
+                        , class "underline"
+                        , attribute "aria-label" "Catholic Saints Info"
+                        ]
+                        [ text "Catholic Saints Info" ]
                     ]
-                    [ text "Catholic Online" ]
-                , span [] [ text ", " ]
-                , a
-                    [ href "https://mycatholic.life/saints/"
-                    , rel "noopener"
-                    , target "_blank"
-                    , class "underline"
-                    , attribute "aria-label" "My Catholic Lif"
-                    ]
-                    [ text "My Catholic Life" ]
-                , span [] [ text ", or " ]
-                , a
-                    [ href "https://catholicsaints.info/"
-                    , rel "noopener"
-                    , target "_blank"
-                    , class "underline"
-                    , attribute "aria-label" "Catholic Saints Info"
-                    ]
-                    [ text "Catholic Saints Info" ]
-                ]
-            , div [ class "mt-2 mb-20" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
-            ]
-        , p []
-            [ span [ class "opacity-70" ] [ text "Try searching by name, date (July 25), or patronage (nurse)." ]
-            ]
-        , input
-            [ type_ "text"
-            , placeholder "Search for a Saint"
-            , value model.query
-            , onInput SetQuery
-            , style "box-shadow" "#777 1px 1px 5px"
-            , class "rounded p-4 mb-4 text-lg w-full text-xl"
-            ]
-            []
-        , div [ class ("text-center " ++ isLoadingClass) ]
-            [ div [ class "mb-4" ] [ text "We are getting the list of saints, this may take some time." ]
-            , div [ class "m-auto w-10 text-[#9200B3]" ]
-                [ Spinner.purpleSpinner []
                 ]
             ]
-        , if not model.saintList.isLoading && List.length filteredSaints == 0 then
-            p [] [ text "Sorry, we couldn't find any results for your search. " ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
+        , div [ class "max-w-3xl mx-auto pb-10" ]
+            [ p []
+                [ span [ class "opacity-70" ] [ text "Try searching by name, date (July 25), or patronage (nurse)." ]
+                ]
+            , input
+                [ type_ "text"
+                , placeholder "Search for a Saint"
+                , value model.query
+                , onInput SetQuery
+                , style "box-shadow" "#777 1px 1px 5px"
+                , class "rounded p-4 mb-4 text-lg w-full text-xl"
+                ]
+                []
+            , div [ class ("text-center " ++ isLoadingClass) ]
+                [ div [ class "mb-4" ] [ text "We are getting the list of saints, this may take some time." ]
+                , div [ class "m-auto w-10 text-[#9200B3]" ]
+                    [ Spinner.purpleSpinner []
+                    ]
+                ]
+            , if not model.saintList.isLoading && List.length filteredSaints == 0 then
+                p [] [ text "Sorry, we couldn't find any results for your search. " ]
 
-          else
-            div [] (List.map (viewSaint model) filteredSaints)
+              else
+                div [] (List.map (viewSaint model) filteredSaints)
+            ]
         ]
 
 
