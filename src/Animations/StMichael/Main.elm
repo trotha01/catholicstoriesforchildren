@@ -80,28 +80,27 @@ view model =
 
 viewBody : Model -> Html Msg
 viewBody model =
-    div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "py-5 px-11"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "St Michael the Archangel Prayer" ]
-        , aboutTheAnimation
-        , div [ class "mb-20" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
+    div []
+        [ div [ class "max-w-3xl m-auto py-5 px-11" ]
+            [ h1 [ class "my-10 leading-10" ] [ text "St Michael the Archangel Prayer" ]
+            , aboutTheAnimation
+            ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
 
         -- , viewVideoComingSoon "https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466"
-        , viewVideoPlayers model
-        , div [ class "py-4" ] [ viewActivities ]
-        , viewPrayer
-        , aboutThePrayer
-        , viewPrayerHistory
-        , viewStoryHistory
+        , div [ class "max-w-3xl m-auto py-5 px-11 mb-10" ]
+            [ viewVideoPlayers model
+            , div [ class "py-4" ] [ viewActivities ]
+            , viewPrayer
+            , aboutThePrayer
+            , viewPrayerHistory
+            , viewStoryHistory
 
-        -- , scripture
-        -- , tradition
-        -- , magisterialTeachings
+            -- , scripture
+            -- , tradition
+            -- , magisterialTeachings
+            ]
         ]
 
 

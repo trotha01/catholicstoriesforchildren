@@ -137,34 +137,35 @@ viewBody model =
         ]
         [ viewIntro model
         , viewAnimations
-        , viewTestimonials
-        , viewTeam
+        , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTestimonials ]
+        , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTeam ]
         , viewContact
         , viewNewsletter
         , viewGive
-        , viewResources
+        , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewResources ]
         ]
 
 
 viewIntro : Model -> Html Msg
 viewIntro model =
     viewSection "intro"
-        [ class "max-w-5xl m-auto"
-        , class "my-10"
+        [ class "my-10"
         ]
-        [ div [ class "mb-10" ]
-            [ h2
-                [ class "mb-7 leading-10"
+        [ div []
+            [ div [ class "mb-10 max-w-5xl m-auto" ]
+                [ h2
+                    [ class "mb-7 leading-10"
+                    ]
+                    [ text "Start teaching your children with Catholic animations" ]
+                , p [ class "leading-10" ]
+                    [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
+                    ]
                 ]
-                [ text "Start teaching your children with Catholic animations" ]
-            , p [ class "leading-10" ]
-                [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
-                ]
-            , div [ class "mt-10" ]
-                [ Signup.view model.signup |> Html.map SignupMsg ]
+            , div [ class "mt-2 mb-20" ]
+                [ Signup.view4 |> Html.map SignupMsg ]
             ]
         , div
-            []
+            [ class "max-w-5xl m-auto" ]
             -- INTRO VIDEO
             [ --     div
               --     [ style "position" "relative"
@@ -273,7 +274,7 @@ viewAnimations =
                 [ h2 subHeaderStyle
                     [ text "Animations" ]
                 ]
-            , p [ class "text-center pb-3" ]
+            , p [ class "text-center pb-3 px-10" ]
                 [ text "These animations are made to help kids learn the Hail Mary prayer, the prayer to their guardian angel, and more!"
                 ]
             , div
@@ -628,7 +629,6 @@ viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Htm
 viewSection sectionId background body =
     section
         ([ id sectionId
-         , class "px-11 sm:pl-[150px] sm:pr-[100px]"
          , style "min-height" "80vh"
          ]
             ++ background

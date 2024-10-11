@@ -70,21 +70,21 @@ view model =
 viewBody : Model -> Html Msg
 viewBody model =
     div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "py-5 px-11"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Guardian Angel Prayer" ]
-        , aboutTheAnimation
-        , div [ class "mb-20" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
-        , viewVideoPlayers model
-        , div [ class "py-4" ] [ viewActivities ]
-        , viewPrayer
-        , scripture
-        , tradition
-        , magisterialTeachings
+        []
+        [ div [ class "max-w-3xl m-auto py-5 px-11" ]
+            [ h1 [ class "my-10 leading-10" ] [ text "Guardian Angel Prayer" ]
+            , aboutTheAnimation
+            ]
+        , div [ class "mt-2 mb-20" ]
+            [ Signup.view4 |> Html.map SignupMsg ]
+        , div [ class "max-w-3xl m-auto py-5 px-11 mb-10" ]
+            [ viewVideoPlayers model
+            , div [ class "py-4" ] [ viewActivities ]
+            , viewPrayer
+            , scripture
+            , tradition
+            , magisterialTeachings
+            ]
 
         -- , aboutThePrayer
         ]
