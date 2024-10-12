@@ -172,4 +172,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Prayers of the Faithful"
+      , thumbnail = "/assets/images/AnimationImageLinks/PrayersOfTheFaithful.png"
+      , releaseDate = Time.millisToPosix 1728741600000 -- Saturday, October 12, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/prayersofthefaithful.png"
+            , pdfLink = "/printables/daisyandsheep/Prayers of the Faithful.pdf"
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Prayers of the Faithful | Daisy and Sheep"
+            , spanish = "Prayers of the Faithful | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube-nocookie.com/embed/Khn3A6UFCXg"
+            , spanish = "https://www.youtube-nocookie.com/embed/vURcMiGvR9s"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
