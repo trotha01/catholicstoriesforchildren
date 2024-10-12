@@ -173,7 +173,7 @@ episodes =
             }
       }
     , { title = "Prayer of the Faithful"
-      , thumbnail = "/assets/images/AnimationImageLinks/PrayersOfTheFaithful.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.png"
       , releaseDate = Time.millisToPosix 1728741600000 -- Saturday, October 12, 2024 7:00:00 AM GMT-07:00
       , about = span [] []
       , activities =
