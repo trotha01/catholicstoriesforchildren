@@ -195,4 +195,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Communion of Saints"
+      , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.png"
+      , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/communionofsaints.png"
+            , pdfLink = "/printables/daisyandsheep/Communion of Saints.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/communionofsaintsanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/Communion of Saints Answers.pdf"
+            }
+      , videoTitles =
+            { english = "Communion of Saints | Daisy and Sheep"
+            , spanish = "Communion of Saints | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube-nocookie.com/embed/cbb2iRzz9pc"
+            , spanish = "https://www.youtube-nocookie.com/embed/3o5bCo0gQyM"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
