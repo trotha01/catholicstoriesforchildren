@@ -218,4 +218,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Eucharistic Wine"
+      , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.png"
+      , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/eucharisticwine.png"
+            , pdfLink = "/printables/daisyandsheep/Eucharistic Wine.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/eucharisticwineanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/Eucharistic Wine Answers.pdf"
+            }
+      , videoTitles =
+            { english = "Eucharistic Wine | Daisy and Sheep"
+            , spanish = "Eucharistic Wine | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube-nocookie.com/embed/u-hMEMTnfVY"
+            , spanish = "https://www.youtube-nocookie.com/embed/8RTTl5yKQEg"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
