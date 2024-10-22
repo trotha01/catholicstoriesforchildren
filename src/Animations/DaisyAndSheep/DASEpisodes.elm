@@ -241,4 +241,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Pope Names"
+      , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.png"
+      , releaseDate = Time.millisToPosix 1729605600000 -- Tuesday, October 21, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/popenames.png"
+            , pdfLink = "/printables/daisyandsheep/Pope Names.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/popenamesanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/Pope Names Answers.pdf"
+            }
+      , videoTitles =
+            { english = "Pope Names | Daisy and Sheep"
+            , spanish = "Pope Names | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/rijyDOxbcbo"
+            , spanish = "https://www.youtube.com/embed/XmzSx4vMne0"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
