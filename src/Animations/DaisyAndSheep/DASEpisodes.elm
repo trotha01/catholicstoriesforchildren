@@ -264,4 +264,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Preparing the Altar"
+      , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.png"
+      , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/preparingthealtar.png"
+            , pdfLink = "/printables/daisyandsheep/Preparing the Altar.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/preparingthealtaranswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/Preparing The Altar Answers.pdf"
+            }
+      , videoTitles =
+            { english = "Preparing the Altar | Daisy and Sheep"
+            , spanish = "Preparing the Altar | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/8ql_OwO4JjI"
+            , spanish = "https://www.youtube.com/embed/-pwWI-xypn4"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
