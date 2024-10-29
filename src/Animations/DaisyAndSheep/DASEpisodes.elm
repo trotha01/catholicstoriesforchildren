@@ -287,4 +287,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Being a Saint"
+      , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.png"
+      , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/beingasaint.png"
+            , pdfLink = "/printables/daisyandsheep/Being a Saint.pdf"
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Being a Saint | Daisy and Sheep"
+            , spanish = "Being a Saint | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/-XrR2uYSyWg"
+            , spanish = "https://www.youtube.com/embed/ECA41xh2qTY"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
