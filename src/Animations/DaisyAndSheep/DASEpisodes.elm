@@ -310,4 +310,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Holy Holy Holy"
+      , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = ""
+            , pdfLink = ""
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Being a Saint | Daisy and Sheep"
+            , spanish = "Being a Saint | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/Zpde2k4gvPc"
+            , spanish = "https://www.youtube.com/embed/rihM8lIOKKg"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
