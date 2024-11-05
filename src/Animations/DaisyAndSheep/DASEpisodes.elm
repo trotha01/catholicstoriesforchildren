@@ -321,14 +321,37 @@ episodes =
             , answerPdfLink = ""
             }
       , videoTitles =
-            { english = "Being a Saint | Daisy and Sheep"
-            , spanish = "Being a Saint | Daisy and Sheep"
+            { english = "Holy Holy Holy | Daisy and Sheep"
+            , spanish = "Holy Holy Holy | Daisy and Sheep"
             , urdu = ""
             , asl = ""
             }
       , videoLinks =
             { english = "https://www.youtube.com/embed/Zpde2k4gvPc"
             , spanish = "https://www.youtube.com/embed/rihM8lIOKKg"
+            , urdu = ""
+            , asl = ""
+            }
+      }
+    , { title = "Doctors of the Church"
+      , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/doctorofthechurch.png"
+            , pdfLink = "/printables/daisyandsheep/Doctors of the Church.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/doctorofthechurchanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/Doctors of the Church Answers.pdf"
+            }
+      , videoTitles =
+            { english = "Doctors of the church | Daisy and Sheep"
+            , spanish = "Doctors of the church | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/"
+            , spanish = "https://www.youtube.com/embed/"
             , urdu = ""
             , asl = ""
             }
