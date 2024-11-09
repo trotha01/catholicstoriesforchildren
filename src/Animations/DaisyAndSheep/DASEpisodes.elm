@@ -344,14 +344,37 @@ episodes =
             , answerPdfLink = "/printables/daisyandsheep/Doctors of the Church Answers.pdf"
             }
       , videoTitles =
-            { english = "Doctors of the church | Daisy and Sheep"
-            , spanish = "Doctors of the church | Daisy and Sheep"
+            { english = "Doctors of the Church | Daisy and Sheep"
+            , spanish = "Doctors of the Church | Daisy and Sheep"
             , urdu = ""
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube.com/embed/"
-            , spanish = "https://www.youtube.com/embed/"
+            { english = "https://www.youtube.com/embed/rupDa-FbT2E"
+            , spanish = "https://www.youtube.com/embed/0xOCqUbtlqA"
+            , urdu = ""
+            , asl = ""
+            }
+      }
+    , { title = "Dewfall"
+      , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = ""
+            , pdfLink = ""
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "The Dewfall | Daisy and Sheep"
+            , spanish = "The Dewfall | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/KjNv5g0B7Bk"
+            , spanish = "https://www.youtube.com/embed/YRG4D4P0UA8"
             , urdu = ""
             , asl = ""
             }
