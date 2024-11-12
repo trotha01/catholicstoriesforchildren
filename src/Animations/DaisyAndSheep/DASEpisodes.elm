@@ -379,4 +379,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "The Sacraments"
+      , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/sacraments.png"
+            , pdfLink = "/printables/daisyandsheep/Sacraments.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/sacramentsanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/SacramentsAnswers.pdf"
+            }
+      , videoTitles =
+            { english = "The Sacraments | Daisy and Sheep"
+            , spanish = "The Sacraments | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/KjNv5g0B7Bk"
+            , spanish = "https://www.youtube.com/embed/YRG4D4P0UA8"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
