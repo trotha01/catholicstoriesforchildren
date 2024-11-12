@@ -396,8 +396,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube.com/embed/KjNv5g0B7Bk"
-            , spanish = "https://www.youtube.com/embed/YRG4D4P0UA8"
+            { english = "https://www.youtube.com/embed/BF1kL8R075M"
+            , spanish = "https://www.youtube.com/embed/mID8IVUWlf4"
             , urdu = ""
             , asl = ""
             }
