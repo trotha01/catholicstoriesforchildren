@@ -402,4 +402,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "The Lamb of God"
+      , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/lambofgod.png"
+            , pdfLink = "/printables/daisyandsheep/LambOfGod.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/lambofgodanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/LambOfGodAnswers.pdf"
+            }
+      , videoTitles =
+            { english = "Lamb of God | Daisy and Sheep"
+            , spanish = "Lamb of God | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/EpCX6CmlR0I"
+            , spanish = "https://www.youtube.com/embed/19Ty4oGCkI0"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
