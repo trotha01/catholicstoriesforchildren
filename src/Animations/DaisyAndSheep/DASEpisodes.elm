@@ -361,10 +361,10 @@ episodes =
       , releaseDate = Time.millisToPosix 0
       , about = span [] []
       , activities =
-            { thumbnailLink = ""
-            , pdfLink = ""
-            , answerThumbnailLink = ""
-            , answerPdfLink = ""
+            { thumbnailLink = "/assets/images/daisyandsheep/thedewfall.png"
+            , pdfLink = "/printables/daisyandsheep/TheDewfall.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/thedewfallanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/TheDewfallAnswers.pdf"
             }
       , videoTitles =
             { english = "The Dewfall | Daisy and Sheep"
@@ -421,6 +421,29 @@ episodes =
       , videoLinks =
             { english = "https://www.youtube.com/embed/EpCX6CmlR0I"
             , spanish = "https://www.youtube.com/embed/19Ty4oGCkI0"
+            , urdu = ""
+            , asl = ""
+            }
+      }
+    , { title = "The 7 Gifts"
+      , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/the7gifts.png"
+            , pdfLink = "/printables/daisyandsheep/The7Gifts.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/the7giftsanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/The7GiftsAnswers.pdf"
+            }
+      , videoTitles =
+            { english = "The 7 Gifts | Daisy and Sheep"
+            , spanish = "The 7 Gifts | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/9oCveljpiMA"
+            , spanish = "https://www.youtube.com/embed/TrZNL11Jpvs"
             , urdu = ""
             , asl = ""
             }
