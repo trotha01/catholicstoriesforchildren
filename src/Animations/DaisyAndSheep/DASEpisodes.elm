@@ -448,4 +448,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Transubstantiation"
+      , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/transubstantiation.png"
+            , pdfLink = "/printables/daisyandsheep/Transubstantiation.pdf"
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Transubstantiation | Daisy and Sheep"
+            , spanish = "Transubstantiation | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/16ms4F1PIaE"
+            , spanish = "https://www.youtube.com/embed/DAWC8VYmgm0"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
