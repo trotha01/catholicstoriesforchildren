@@ -471,4 +471,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Ash Wednsesday"
+      , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.png"
+      , releaseDate = Time.millisToPosix 1732633200000
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/ashwednesday.png"
+            , pdfLink = "/printables/daisyandsheep/ashwednesday.pdf"
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Ash Wednesday | Daisy and Sheep"
+            , spanish = "Ash Wednesday | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/5AEzncj0UIk"
+            , spanish = "https://www.youtube.com/embed/NEiFT8ewEw0"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
