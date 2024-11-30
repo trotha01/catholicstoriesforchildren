@@ -494,4 +494,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Liturgical Colors"
+      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/liturgicalcolors.png"
+            , pdfLink = "/printables/daisyandsheep/liturgicalcolors.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/liturgicalcolorsanswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/liturgicalcolorsanswers.pdf"
+            }
+      , videoTitles =
+            { english = "Liturgical Colors | Daisy and Sheep"
+            , spanish = "Liturgical Colors | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/VHgrRVss19g"
+            , spanish = "https://www.youtube.com/embed/BwbvZLdnPmU"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
