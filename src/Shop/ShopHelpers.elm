@@ -157,6 +157,16 @@ scripturalRosary =
     }
 
 
+adventColoringBook : ShopItem
+adventColoringBook =
+    { name = "Advent Coloring Book"
+    , image = "/assets/images/shop/7.png"
+    , description = "Prepare for Christmas with Mary and Joseph with our free little Scriptural coloring book."
+    , beehiivLink = "https://embeds.beehiiv.com/938df27a-3a99-4f47-901a-b9ffb25d8bad?slim=true"
+    , etsyLink = ""
+    }
+
+
 guardianAngelActivities : ShopItem
 guardianAngelActivities =
     { name = "Guardian Angel Activities"
