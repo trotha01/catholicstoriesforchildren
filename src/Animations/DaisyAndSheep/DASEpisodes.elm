@@ -517,4 +517,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Easter"
+      , thumbnail = "/assets/images/AnimationImageLinks/Easter.png"
+      , releaseDate = Time.millisToPosix 1733238000000
+      , about = span [] []
+      , activities =
+            { thumbnailLink = "/assets/images/daisyandsheep/easter.png"
+            , pdfLink = "/printables/daisyandsheep/easter.pdf"
+            , answerThumbnailLink = "/assets/images/daisyandsheep/easteranswers.png"
+            , answerPdfLink = "/printables/daisyandsheep/easteranswers.pdf"
+            }
+      , videoTitles =
+            { english = "Easter | Daisy and Sheep"
+            , spanish = "Easter | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/J1QydSx3N5M"
+            , spanish = "https://www.youtube.com/embed/0Epu9Gu4UvQ"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
