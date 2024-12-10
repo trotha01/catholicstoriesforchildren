@@ -540,4 +540,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Vatican Bank"
+      , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = ""
+            , pdfLink = ""
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Vatican Bank | Daisy and Sheep"
+            , spanish = "Vatican Bank | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/hiVG7LS3sTQ"
+            , spanish = "https://www.youtube.com/embed/apbCO8i9azI"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
