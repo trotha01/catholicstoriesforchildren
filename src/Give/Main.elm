@@ -33,7 +33,7 @@ view =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
+        , style "background-color" "rgb(122 223 146)"
         ]
         [ viewSubpageHeader "Give" headerMargin
         , viewBody
@@ -47,7 +47,7 @@ viewBody =
         [ class "m-auto"
         , class "max-w-3xl py-5 px-11"
         ]
-        [ h1 [ class "mb-10" ] [ text "Give" ]
+        [ h1 [ class "my-10" ] [ text "Give" ]
         , donateAbout
 
         -- , a
@@ -86,7 +86,9 @@ donateAbout =
         [ p
             [ style "margin-bottom" "1em"
             ]
-            [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
+            -- [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
+            [ text "Here at Catholic Stories for Children, we are passionate Catholic educators dedicated to helping children grow in their love for God and neighbor. Through creative, faith-based animations, we make Catholic teachings come alive in a fun and meaningful way for kids. Every child deserves the chance to learn and deepen their faith." ]
+        , p [ class "m-auto max-w-3xl", style "margin-bottom" "1em" ] [ text "With your support, we can keep these animations FREE for families everywhere. Every donation helps us nurture the faith of the next generation. Let's continue making a difference, together!" ]
         , p
             [ class "m-auto"
             , class "max-w-3xl"
