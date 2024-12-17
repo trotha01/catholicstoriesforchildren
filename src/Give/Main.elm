@@ -33,7 +33,7 @@ view =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style "background-color" "rgb(122 223 146)"
+        , style "background-color" "rgb(230 245 242)"
         ]
         [ viewSubpageHeader "Give" headerMargin
         , viewBody
@@ -67,6 +67,7 @@ viewBody =
         -- , donateWithPatreon
         , div [ style "margin-bottom" "6em" ] []
         , donateWithDonorbox
+        , div [ class "mb-10" ] [ dASChristmasImage ]
         , h2 [ class "text-center max-w-3xl" ] [ text "Other ways to give" ]
         , div [ style "margin-bottom" "4em" ] []
         , prayForUs
@@ -76,6 +77,13 @@ viewBody =
         , sponsor
         , volunteer
         , wordsOfEncouragement
+        ]
+
+
+dASChristmasImage : Html msg
+dASChristmasImage =
+    div [ class "flex justify-center" ]
+        [ img [ class "rounded max-w-[16rem] text-center", src "/assets/images/DASWinter.png" ] []
         ]
 
 
