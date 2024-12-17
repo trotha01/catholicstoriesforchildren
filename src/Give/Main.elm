@@ -109,6 +109,7 @@ donateAbout =
 prayForUs : Html msg
 prayForUs =
     donateSection "Pray for us"
+        ""
         (p
             [ style "text-align" "center"
             , style "width" "80%"
@@ -123,6 +124,7 @@ prayForUs =
 donateWithDonorbox : Html msg
 donateWithDonorbox =
     donateSection "Donate"
+        ""
         (div [ class "w-52 m-auto" ]
             [ a
                 [ class "dbox-donation-page-button m-auto"
@@ -149,6 +151,7 @@ donateWithDonorbox =
 donateWithPaypal : Html msg
 donateWithPaypal =
     donateSection "Donate via Paypal"
+        ""
         (div
             [ style "margin" "auto"
             , style "width" "200px"
@@ -259,6 +262,7 @@ donateWithPatreon =
 donateWithVehicle : Html msg
 donateWithVehicle =
     donateSection "Donate Your Vehicle"
+        "/assets/images/vehicles.png"
         (a
             [ href "http://www.cars2charities.org/donation?donateto=1585"
             , rel "noopener"
@@ -277,6 +281,7 @@ donateWithVehicle =
 sponsor : Html msg
 sponsor =
     donateSection "Sponsorship"
+        ""
         (div
             [ style "text-align" "center"
             , style "left" "50%"
@@ -292,6 +297,7 @@ sponsor =
 volunteer : Html msg
 volunteer =
     donateSection "Volunteer"
+        ""
         (div
             [ style "text-align" "center"
             , style "width" "80%"
@@ -309,6 +315,7 @@ volunteer =
 wordsOfEncouragement : Html msg
 wordsOfEncouragement =
     donateSection "Words of Encouragement"
+        ""
         (div
             [ style "text-align" "center"
             , style "width" "80%"
@@ -324,8 +331,8 @@ wordsOfEncouragement =
         )
 
 
-donateSection : String -> Html msg -> Html msg
-donateSection title body =
+donateSection : String -> String -> Html msg -> Html msg
+donateSection title imageSrc body =
     div
         [ style "margin-bottom" "100px"
         , style "background-color" "white"
@@ -333,7 +340,14 @@ donateSection title body =
         , style "border-radius" "5px"
         , class "p-5 max-w-2xl shadow"
         ]
-        [ div
+        [ div [ class "flex justify-center" ]
+            [ if imageSrc == "" then
+                span [] []
+
+              else
+                img [ class "rounded max-w-[16rem] text-center", src imageSrc ] []
+            ]
+        , div
             [ class "pb-5 m-1"
             ]
             [ h3 [ class "text-center text-xl" ] [ text title ]
