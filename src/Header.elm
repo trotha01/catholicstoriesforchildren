@@ -126,7 +126,7 @@ desktopNavigation height =
 
         -- , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
         , viewNavButton height "/shop" "_blank" "Shop"
-        , viewNavButton height "/give" "_self" "Give"
+        , viewNavButton height "/give" "_self" "Donate"
         , viewNavButton height "/team" "_self" "About"
         ]
 

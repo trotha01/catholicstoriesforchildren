@@ -39,7 +39,7 @@ view =
 
         -- , viewNavButton 6 "_blank" "https://www.etsy.com/shop/CatholicStories" "Shop"
         , viewNavButton 6 "_blank" "/shop" "Shop"
-        , viewNavButton 7 "_self" "/give" "Give"
+        , viewNavButton 7 "_self" "/give" "Donate"
         , viewNavButton 8 "_self" "/team" "About Us"
         ]
 
