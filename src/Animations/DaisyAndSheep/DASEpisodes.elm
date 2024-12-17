@@ -563,4 +563,27 @@ episodes =
             , asl = ""
             }
       }
+    , { title = "Church Meaning"
+      , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.png"
+      , releaseDate = Time.millisToPosix 0
+      , about = span [] []
+      , activities =
+            { thumbnailLink = ""
+            , pdfLink = ""
+            , answerThumbnailLink = ""
+            , answerPdfLink = ""
+            }
+      , videoTitles =
+            { english = "Church Meaning | Daisy and Sheep"
+            , spanish = "Church Meaning | Daisy and Sheep"
+            , urdu = ""
+            , asl = ""
+            }
+      , videoLinks =
+            { english = "https://www.youtube.com/embed/mvbDFeU0Z2U"
+            , spanish = "https://www.youtube.com/embed/EN_pyJnAmzs"
+            , urdu = ""
+            , asl = ""
+            }
+      }
     ]
