@@ -35,8 +35,8 @@ view =
         , style "scroll-behavior" "smooth"
         , style "background-color" "rgb(230 245 242)"
         ]
-        [ viewSubpageHeader "Give" headerMargin
-        , viewBody
+        [ -- viewSubpageHeader "Donate" headerMargin
+          viewBody
         , viewFooter
         ]
 
@@ -47,7 +47,7 @@ viewBody =
         [ class "m-auto"
         , class "max-w-3xl py-5 px-11"
         ]
-        [ h1 [ class "my-10" ] [ text "Give" ]
+        [ h1 [ class "my-10" ] [ text "Donate" ]
         , donateAbout
 
         -- , a
