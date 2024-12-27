@@ -65,8 +65,7 @@ viewBody =
         --         []
         --     ]
         -- , donateWithPatreon
-        , div [ style "margin-bottom" "6em" ] []
-        , donateWithDonorbox
+        , div [ class "mb-10" ] [ donateWithZeffy ]
         , div [ class "mb-10" ] [ dASChristmasImage ]
         , h2 [ class "text-center max-w-3xl" ] [ text "Other ways to give" ]
         , div [ style "margin-bottom" "4em" ] []
@@ -119,6 +118,30 @@ prayForUs =
             ]
             [ text "We believe in the power of prayer. Please pray for us in this work. We are praying for you. 🙏" ]
         )
+
+
+donateWithZeffy : Html msg
+donateWithZeffy =
+    div [ class "w-52 m-auto" ]
+        [ a
+            [ class "dbox-donation-page-button m-auto"
+            , href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e"
+            , target "_blank"
+            , style "background" "rgb(254, 189, 17)"
+            , style "color" "rgb(0, 0, 0)"
+            , style "text-decoration" "none"
+            , style "font-family" "Verdana, sans-serif"
+            , style "display" "flex"
+            , style "font-size" "18px"
+            , style "padding" "14px 34px"
+            , style "border-radius" "5px"
+            , style "gap" "8px"
+            , style "width" "fit-content"
+            , style "line-height" "24px"
+            ]
+            [ text "DONATE"
+            ]
+        ]
 
 
 donateWithDonorbox : Html msg
