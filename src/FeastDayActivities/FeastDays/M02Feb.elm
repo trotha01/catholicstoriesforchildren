@@ -429,22 +429,6 @@ february =
                           }
                         ]
                   }
-                , { feast = "Ash Wednesday"
-                  , activities =
-                        [ { activityType = Food
-                          , title = "Lenten Pretzel Recipe (And A Printable Pretzel Prayer Poem)"
-                          , image = "https://2.bp.blogspot.com/_pUXaddJMQyw/TU9zVNqMGvI/AAAAAAAAEt4/SFvGzWmY7ZY/s400/rice+krispie+grotto+2.jpg"
-                          , link = "https://www.catholicicing.com/pretzels-for-lent/"
-                          , snippet = "Did you know that the pretzel is a traditional food for lent? In fact, the pretzel was actually invented in order to be a simple Lenten snack!"
-                          }
-                        , { activityType = More
-                          , title = "Meatless Lent Recipes"
-                          , image = "https://ik.imagekit.io/catholicstories/ProfileImages/Cultivating_Catholics_Logo_GpMJodURB.png?updatedAt=1680400021552"
-                          , link = "https://cultivatingcatholics.com/product/free-meatless-lent-recipes-instant-download/"
-                          , snippet = "Tired of pizza and fish for dinner during Fridays in Lent? Here are 10 meat-free (and seafood-free!) meal ideas."
-                          }
-                        ]
-                  }
                 , { feast = "Saints Cyril and Methodius"
                   , activities =
                         [ { activityType = Audio

@@ -481,7 +481,11 @@ viewMonth model feastMonth =
         [ div
             [ class "mt-10 max-w-3xl mx-auto" ]
             [ div [ class "px-11" ]
-                [ h1 [] [ text "2024 Feast Day Activities" ]
+                [ if feastMonth.month == "December" then
+                    h1 [] [ text "2024 Feast Day Activities" ]
+
+                  else
+                    h1 [] [ text "2025 Feast Day Activities" ]
                 , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
                 , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
                 ]

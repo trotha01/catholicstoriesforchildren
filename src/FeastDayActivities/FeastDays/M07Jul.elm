@@ -44,6 +44,12 @@ july =
                 [ { feast = "Saint Benedict of Nursia", activities = [] }
                 ]
           }
+        , { date = "12"
+          , feasts =
+                [ { feast = "Saint Louis Martin", activities = [] }
+                , { feast = "Saint Marie-Azélie Guérin Martin", activities = [] }
+                ]
+          }
         , { date = "13"
           , feasts =
                 [ { feast = "Saint Henry II", activities = [] }

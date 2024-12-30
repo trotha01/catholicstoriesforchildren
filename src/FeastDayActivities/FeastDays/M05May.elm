@@ -24,11 +24,6 @@ may =
                 [ { feast = "Saint Philip the Apostle and Saint James the Lesser", activities = [] }
                 ]
           }
-        , { date = "9"
-          , feasts =
-                [ { feast = "The Ascension of the Lord (or 12th)", activities = [] }
-                ]
-          }
         , { date = "10"
           , feasts =
                 [ { feast = "Saint Damien of Molokai", activities = [] }
@@ -37,8 +32,7 @@ may =
           }
         , { date = "12"
           , feasts =
-                [ { feast = "The Ascension of the Lord (or the 9th)", activities = [] }
-                , { feast = "Saint Nereus of Terracina", activities = [] }
+                [ { feast = "Saint Nereus of Terracina", activities = [] }
                 , { feast = "Saint Achilleus of Terracina", activities = [] }
                 , { feast = "Saint Pancras of Rome", activities = [] }
                 ]
@@ -56,17 +50,13 @@ may =
         , { date = "15"
           , feasts =
                 [ { feast = "Saint Isidore the Farmer", activities = [] }
-                ]
-          }
-        , { date = "19"
-          , feasts =
-                [ { feast = "Pentecost Sunday", activities = [] }
+                , { feast = "Saint Dymphna", activities = [] }
                 ]
           }
         , { date = "20"
           , feasts =
-                [ { feast = "Blessed Virgin Mary, Mother of the Church", activities = [] }
-                , { feast = "Saint Bernadine of Siena", activities = [] }
+                [ { feast = "Saint Bernadine of Siena", activities = [] }
+                , { feast = "Saint Paul VI", activities = [] }
                 ]
           }
         , { date = "22"
@@ -99,9 +89,11 @@ may =
                 [ { feast = "Saint Augustine of Canterbury", activities = [] }
                 ]
           }
-        , { date = "20"
+        , { date = "29"
           , feasts =
-                [ { feast = "Saint Paul VI", activities = [] }
+                [ { feast = "The Ascension of the Lord (or June 1)" -- moves
+                  , activities = []
+                  }
                 ]
           }
         , { date = "31"
