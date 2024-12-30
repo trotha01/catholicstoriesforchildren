@@ -323,77 +323,7 @@ janFeasts =
       }
     , { date = "05"
       , feasts =
-            [ { feast = "Saint John Neumann"
-              , activities =
-                    [ { activityType = Video
-                      , title = "St. John Neumann"
-                      , image = ""
-                      , link = "https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs"
-                      , snippet = ""
-                      }
-                    , { activityType = OnlineReading
-                      , title = "Saints Fun Facts: St. John Neumann"
-                      , image = "https://www.catholic.org/saints/ff_images/85.jpg"
-                      , link = "https://www.catholic.org/saints/fun_facts_arch.php?saint=70"
-                      , snippet = "This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when..."
-                      }
-                    , { activityType = OnlineReading
-                      , title = "St. John Neumann's Story "
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1"
-                      , snippet = "John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America..."
-                      }
-                    , { activityType = Food
-                      , title = "Svíčková with Dumplings"
-                      , image = "https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1"
-                      , snippet = ""
-                      }
-                    , { activityType = Audio
-                      , title = "Story of Saint John Neumann"
-                      , image = "FranciscanMedia"
-                      , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/"
-                      , snippet = "Saint John Neumann was the first member of his community, the Redemptorists, to profess vows in the United States. He did missionary work in Maryland, Virginia, and Ohio, and became the bishop of Philadelphia. Noted for his humility and organizational skills, he helped form the Church in the New World."
-                      }
-                    , { activityType = OnlineReading
-                      , title = "Saint John Neumann"
-                      , image = "LoyolaPress"
-                      , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-john-neumann"
-                      , snippet = "As a boy, John Neumann lived in Bohemia, which is now part of Czech Republic. He studied hard, for he wanted to be a missionary priest in America. By the time he was twenty-four, he had learned six languages and had completed his studies for the priesthood. He was not ordained, however, because his..."
-                      }
-                    , { activityType = More
-                      , title = "John Neumann"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! St.\u{00A0}John Neumann's Story\u{00A0} John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America, he increased the number of Catholic schools in his diocese from two to 100. \u{00A0} Sain..."
-                      }
-                    ]
-              }
-            , { feast = "Saint Simeon the Stylite"
-              , activities =
-                    [ { activityType = OnlineReading
-                      , title = "Saint Simeon the Stylite"
-                      , image = "LoyolaPress"
-                      , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-simeon-the-stylite"
-                      , snippet = "Many Christians give up something meaningful to them during Lent. Lent is a reminder of the 40 days when Jesus lived in the desert while he prepared himself for his work of teaching and healing. For him, it was a way to get away from everyday life and having to concentrate on praying without interru..."
-                      }
-                    ]
-              }
-            , { feast = "The Eve of the Epiphany"
-              , activities =
-                    [ { activityType = More
-                      , title = "The Eve of the Epiphany"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Gifts to our King \u{00A0} The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal. \u{00A0} The gift of frankincense was a gift of experience. Known in the Bible to be a symbol of the divinity of God (Song of Solomon 1:3, Malachi 1:11), when F..."
-                      }
-                    ]
-              }
-            ]
-      }
-    , { date = "06"
-      , feasts =
-            [ { feast = "The Epiphany of the Lord"
+            [ { feast = "The Epiphany of the Lord" -- moves
               , activities =
                     [ { activityType = Video
                       , title = "Feast of the Epiphany"
@@ -457,7 +387,78 @@ janFeasts =
                       }
                     ]
               }
-            , { feast = "Saint André Bessette"
+            , { feast = "Saint John Neumann"
+              , activities =
+                    [ { activityType = Video
+                      , title = "St. John Neumann"
+                      , image = ""
+                      , link = "https://www.youtube-nocookie.com/embed/7CEbPb-Y0gs"
+                      , snippet = ""
+                      }
+                    , { activityType = OnlineReading
+                      , title = "Saints Fun Facts: St. John Neumann"
+                      , image = "https://www.catholic.org/saints/ff_images/85.jpg"
+                      , link = "https://www.catholic.org/saints/fun_facts_arch.php?saint=70"
+                      , snippet = "This American saint was born in Bohemia in 1811. He was looking forward to being ordained in 1835 when..."
+                      }
+                    , { activityType = OnlineReading
+                      , title = "St. John Neumann's Story "
+                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1"
+                      , snippet = "John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America..."
+                      }
+                    , { activityType = Food
+                      , title = "Svíčková with Dumplings"
+                      , image = "https://static.wixstatic.com/media/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png/v1/crop/x_15,y_14,w_726,h_550/fill/w_726,h_550,al_c,q_90,enc_auto/9c2964_380d753f39684036b7a1360c29e0532c~mv2.png"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1"
+                      , snippet = ""
+                      }
+                    , { activityType = Audio
+                      , title = "Story of Saint John Neumann"
+                      , image = "FranciscanMedia"
+                      , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-john-neumann/"
+                      , snippet = "Saint John Neumann was the first member of his community, the Redemptorists, to profess vows in the United States. He did missionary work in Maryland, Virginia, and Ohio, and became the bishop of Philadelphia. Noted for his humility and organizational skills, he helped form the Church in the New World."
+                      }
+                    , { activityType = OnlineReading
+                      , title = "Saint John Neumann"
+                      , image = "LoyolaPress"
+                      , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-john-neumann"
+                      , snippet = "As a boy, John Neumann lived in Bohemia, which is now part of Czech Republic. He studied hard, for he wanted to be a missionary priest in America. By the time he was twenty-four, he had learned six languages and had completed his studies for the priesthood. He was not ordained, however, because his..."
+                      }
+                    , { activityType = More
+                      , title = "John Neumann"
+                      , image = "SaintsFeastFamily"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-st-john-neumann-jan-5-1"
+                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! St.\u{00A0}John Neumann's Story\u{00A0} John was appointed bishop of Philadelphia in 1852. As bishop, he was the first to organize a diocesan Catholic school system. A founder of Catholic education in the United States of America, he increased the number of Catholic schools in his diocese from two to 100. \u{00A0} Sain..."
+                      }
+                    ]
+              }
+            , { feast = "Saint Simeon the Stylite"
+              , activities =
+                    [ { activityType = OnlineReading
+                      , title = "Saint Simeon the Stylite"
+                      , image = "LoyolaPress"
+                      , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-simeon-the-stylite"
+                      , snippet = "Many Christians give up something meaningful to them during Lent. Lent is a reminder of the 40 days when Jesus lived in the desert while he prepared himself for his work of teaching and healing. For him, it was a way to get away from everyday life and having to concentrate on praying without interru..."
+                      }
+                    ]
+              }
+
+            -- , { feast = "The Eve of the Epiphany"
+            --   , activities =
+            --         [ { activityType = More
+            --           , title = "The Eve of the Epiphany"
+            --           , image = "SaintsFeastFamily"
+            --           , link = "https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1"
+            --           , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Gifts to our King \u{00A0} The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal. \u{00A0} The gift of frankincense was a gift of experience. Known in the Bible to be a symbol of the divinity of God (Song of Solomon 1:3, Malachi 1:11), when F..."
+            --           }
+            --         ]
+            --   }
+            ]
+      }
+    , { date = "06"
+      , feasts =
+            [ { feast = "Saint André Bessette"
               , activities =
                     [ { activityType = OnlineReading
                       , title = "St. Andre Bessette"
@@ -565,77 +566,7 @@ janFeasts =
       }
     , { date = "08"
       , feasts =
-            [ { feast = "The Baptism of the Lord"
-              , activities =
-                    [ { activityType = Video
-                      , title = "Washed Away"
-                      , image = ""
-                      , link = "https://www.youtube-nocookie.com/embed/75F5qJw5YEY"
-                      , snippet = ""
-                      }
-                    , { activityType = OnlineReading
-                      , title = "The Story of the Feast of the Baptism of the Lord"
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = "The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany..."
-                      }
-                    , { activityType = Audio
-                      , title = "Feast of the Baptism of the Lord"
-                      , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                      , link = "https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/"
-                      , snippet = "Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here."
-                      }
-                    , { activityType = Food
-                      , title = "Jumping Jolly Juice"
-                      , image = "https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = ""
-                      }
-                    , { activityType = Crafts
-                      , title = "Holy Water Bottle Craft"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/"
-                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Dove with Olive Branch"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/"
-                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Dove with Gifts of the Holy Spirit"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/"
-                      , snippet = "You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra."
-                      }
-                    , { activityType = Crafts
-                      , title = "Simple Handprint Dove"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/holy-spirit-craft-handprint-dove/"
-                      , snippet = "For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint..."
-                      }
-                    , { activityType = Food
-                      , title = "Greek Dipples"
-                      , image = "https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = ""
-                      }
-                    , { activityType = More
-                      , title = "Ideas for Teaching Catholic Kids About Baptism"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/"
-                      , snippet = "Baptism is so important, and it’s a great thing to make sure that your kids truly understand..."
-                      }
-                    , { activityType = More
-                      , title = "Baptism of the Lord"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man."
-                      }
-                    ]
-              }
-            , { feast = "Saint Angela of Foligno"
+            [ { feast = "Saint Angela of Foligno"
               , activities =
                     [ { activityType = Audio
                       , title = "Story of Saint Angela of Foligno"
@@ -829,7 +760,77 @@ janFeasts =
       }
     , { date = "15"
       , feasts =
-            [ { feast = "Saint Devasahayam Pillai"
+            [ { feast = "The Baptism of the Lord" -- moves
+              , activities =
+                    [ { activityType = Video
+                      , title = "Washed Away"
+                      , image = ""
+                      , link = "https://www.youtube-nocookie.com/embed/75F5qJw5YEY"
+                      , snippet = ""
+                      }
+                    , { activityType = OnlineReading
+                      , title = "The Story of the Feast of the Baptism of the Lord"
+                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = "The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany..."
+                      }
+                    , { activityType = Audio
+                      , title = "Feast of the Baptism of the Lord"
+                      , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
+                      , link = "https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/"
+                      , snippet = "Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here."
+                      }
+                    , { activityType = Food
+                      , title = "Jumping Jolly Juice"
+                      , image = "https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = ""
+                      }
+                    , { activityType = Crafts
+                      , title = "Holy Water Bottle Craft"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/"
+                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
+                      }
+                    , { activityType = Crafts
+                      , title = "Dove with Olive Branch"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/"
+                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
+                      }
+                    , { activityType = Crafts
+                      , title = "Dove with Gifts of the Holy Spirit"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/"
+                      , snippet = "You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra."
+                      }
+                    , { activityType = Crafts
+                      , title = "Simple Handprint Dove"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/holy-spirit-craft-handprint-dove/"
+                      , snippet = "For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint..."
+                      }
+                    , { activityType = Food
+                      , title = "Greek Dipples"
+                      , image = "https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = ""
+                      }
+                    , { activityType = More
+                      , title = "Ideas for Teaching Catholic Kids About Baptism"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/"
+                      , snippet = "Baptism is so important, and it’s a great thing to make sure that your kids truly understand..."
+                      }
+                    , { activityType = More
+                      , title = "Baptism of the Lord"
+                      , image = "SaintsFeastFamily"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man."
+                      }
+                    ]
+              }
+            , { feast = "Saint Devasahayam Pillai"
               , activities =
                     [ { activityType = Audio
                       , title = "Story of Saint Devasahayam Pillai"
