@@ -137,6 +137,16 @@ liturgicalCalendar2024 =
     }
 
 
+liturgicalCalendar2025 : ShopItem
+liturgicalCalendar2025 =
+    { name = "2025 Liturgical Calendar"
+    , image = "/assets/images/shop/5.png"
+    , description = "A 2025 Liturgical Calendar, feast days, and coloring page!"
+    , beehiivLink = "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
+    , etsyLink = ""
+    }
+
+
 prayerLetters : ShopItem
 prayerLetters =
     { name = "Prayer Cards"

@@ -8,7 +8,7 @@ import Html.Events exposing (onClick, onInput)
 import Http
 import Json.Encode as Encode
 import Regex exposing (find)
-import Shop.ShopHelpers exposing (adventColoringBook, littleReconciliationBooklet, viewShopItem, viewShopItem2)
+import Shop.ShopHelpers exposing (littleReconciliationBooklet, liturgicalCalendar2025, viewShopItem, viewShopItem2)
 import Spinner
 import String exposing (length)
 
@@ -103,7 +103,7 @@ view3 =
     div
         [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
         ]
-        [ viewShopItem adventColoringBook ]
+        [ viewShopItem liturgicalCalendar2025 ]
 
 
 view4 : Html msg
@@ -111,7 +111,7 @@ view4 =
     div
         [ class "flex justify-center py-3 bg-[#ffc7c7]"
         ]
-        [ div [ class "max-w-3xl" ] [ viewShopItem2 adventColoringBook ]
+        [ div [ class "max-w-3xl" ] [ viewShopItem2 liturgicalCalendar2025 ]
         ]
 
 
@@ -120,7 +120,7 @@ view model =
     div
         [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
         ]
-        [ viewShopItem adventColoringBook ]
+        [ viewShopItem liturgicalCalendar2025 ]
 
 
 
