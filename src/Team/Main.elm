@@ -111,7 +111,9 @@ viewInTheMedia =
                 , makeJoyNormal
                 , christianChannel
                 , inHisImage
-                , churchMilitant
+
+                -- , churchMilitant
+                , cfnLive
                 ]
             )
         ]
@@ -146,6 +148,14 @@ inHisImage =
     { name = "In His Image Podcast"
     , link = "https://youtu.be/eqOmqdlNIDw?si=E9xTDcqQV_nFFQs-"
     , image = "/assets/images/ProfilePictures/InHisDesign.png"
+    }
+
+
+cfnLive : Resource
+cfnLive =
+    { name = "CFN Live"
+    , link = "https://vimeo.com/963295296/89fc748d09?share=copy"
+    , image = "/assets/images/ProfilePictures/CFN.png"
     }
 
 
