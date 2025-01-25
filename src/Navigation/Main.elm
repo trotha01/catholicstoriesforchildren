@@ -32,7 +32,7 @@ view =
         , class "text-xl sm:text-2xl md:text-3xl"
         ]
         [ viewNavButton 1 "_self" "/" "Home"
-        , viewNavButton 2 "_self" "/feastdayactivities" "Feast Day Activities"
+        , viewNavButton 2 "_self" "/feastdayactivities" "Calendar"
         , viewNavButton 3 "_self" "/saints" "Saints"
         , viewNavButton 4 "_self" "/animations" "Animations"
         , viewNavButton 5 "_self" "/resources" "Resources"

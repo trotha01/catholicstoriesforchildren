@@ -119,7 +119,7 @@ desktopNavigation height =
         [ class "h-full w-full flex justify-end content-center justify-items-center gap-4 mr-4"
         , class "text-base"
         ]
-        [ viewNavButton height "/feastdayactivities" "_self" "Activities"
+        [ viewNavButton height "/feastdayactivities" "_self" "Calendar"
         , viewNavButton height "/saints" "_self" "Saints"
         , viewNavButton height "/animations" "_self" "Animations"
         , viewNavButton height "/resources" "_self" "Resources"
