@@ -100,6 +100,7 @@ viewBody model =
             -- , scripture
             -- , tradition
             -- , magisterialTeachings
+            , viewAnotherPage
             ]
         ]
 
@@ -702,5 +703,31 @@ magisterialTeachings =
                 [ class "mt-2" ]
                 [ text "Pope Benedict XVI, Angelus, Oct. 2, 2011]"
                 ]
+            ]
+        ]
+
+
+viewAnotherPage : Html msg
+viewAnotherPage =
+    div
+        [ class "mx-auto my-4 col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "font-bold leading-9" ] [ text "Daisy and Sheep Animations" ]
+        , p [ class "my-10" ] [ text "Make sure to also check our our Daisy and Sheep Animations! Learn the Mass and Catholic fun facts with Daisy and Sheep!" ]
+        , a
+            [ href "/animations/daisyandsheep"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Daisy and Sheep animations"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Daisy and Sheep Animations"
+                ]
+                []
             ]
         ]

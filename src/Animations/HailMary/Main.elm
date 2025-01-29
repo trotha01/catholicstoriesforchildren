@@ -88,6 +88,7 @@ viewBody model =
             [ viewResources
             ]
         , aboutThePrayer
+        , viewAnotherPage
         ]
 
 
@@ -334,6 +335,32 @@ aboutThePrayer =
         , p [ class "my-10" ]
             [ text "Lastly, we ask Mary to pray for us. "
             , span [ class "font-semibold" ] [ text "'Holy Mary, Mother of God, pray for us sinners now and at the hour of death. Amen.'" ]
+            ]
+        ]
+
+
+viewAnotherPage : Html msg
+viewAnotherPage =
+    div
+        [ class "mx-auto my-4 col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "font-bold leading-9" ] [ text "Prayer Time with Angels Animations" ]
+        , p [ class "my-10" ] [ text "Make sure to also check our our Prayer time with Angels Animations! Learn the prayer to your Guardian Angel and the St. Michael Prayer with Theo and Felicity!" ]
+        , a
+            [ href "/animations/prayertimewithangels"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Prayer Time with Angels animation"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Prayer Time with Angels animations"
+                ]
+                []
             ]
         ]
 

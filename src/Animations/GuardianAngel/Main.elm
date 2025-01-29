@@ -84,6 +84,7 @@ viewBody model =
             , scripture
             , tradition
             , magisterialTeachings
+            , viewAnotherPage
             ]
 
         -- , aboutThePrayer
@@ -407,5 +408,31 @@ magisterialTeachings =
                 [ class "mt-2" ]
                 [ text "Pope Benedict XVI, Angelus, Oct. 2, 2011]"
                 ]
+            ]
+        ]
+
+
+viewAnotherPage : Html msg
+viewAnotherPage =
+    div
+        [ class "mx-auto my-4 col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "font-bold leading-9" ] [ text "Saint Michael Animation" ]
+        , p [ class "my-10" ] [ text "Make sure to also check our our Saint Michael Animation! Learn the St. Michael Prayer with Theo and Felicity!" ]
+        , a
+            [ href "/animations/stmichael"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Saint Michael animation"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Saint Michael Animations"
+                ]
+                []
             ]
         ]
