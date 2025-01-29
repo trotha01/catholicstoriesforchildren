@@ -21,12 +21,12 @@ viewSubpageHeader currentPage leftMargin =
         isHomePage =
             currentPage == "Catholic Stories for Children"
 
-        ( height, rightHandSide, gridColsClass ) =
+        ( height, gridColsClass ) =
             if isHomePage then
-                ( "111px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
+                ( "111px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
 
             else
-                ( "60px", navigation, "grid-cols-[150px_1fr_150px] lg:grid-cols-[150px_1fr_600px]" )
+                ( "60px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
     in
     header
         [ style "background-color" "#3d5d75"
@@ -38,7 +38,7 @@ viewSubpageHeader currentPage leftMargin =
         ]
         [ viewLogo
         , viewHeaderTitle True currentPage
-        , rightHandSide height
+        , navigation height
         ]
 
 
@@ -126,6 +126,7 @@ desktopNavigation height =
 
         -- , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
         , viewNavButton height "/shop" "_blank" "Shop"
+        , viewNavButton height "https://blog.catholicstoriesforchildren.com/" "_blank" "Blog"
         , viewNavButton height "/give" "_self" "Donate"
         , viewNavButton height "/team" "_self" "About"
         ]

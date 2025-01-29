@@ -44,12 +44,17 @@ viewShopItem resourceGroup =
             , height 52
             , attribute "frameborder" "0"
             , attribute "scrolling" "no"
-            , attribute "width" "100%"
+
+            -- , attribute "width" "100%"
+            , attribute "width" "480"
+            , attribute "height" "150"
             , style "margin" "0"
-            , style "border-radius" "0px !important"
+            , style "border-radius" "5px"
             , style "background-color" "transparent"
             ]
             []
+
+        -- <iframe src="https://blog.catholicstoriesforchildren.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
         , if resourceGroup.etsyLink /= "" then
             div []
                 [ a [ href resourceGroup.etsyLink, target "_blank", class "text-blue-600 underline" ] [ text "Click here to go to Etsy" ]
@@ -79,9 +84,12 @@ viewShopItem2 resourceGroup =
                 , height 52
                 , attribute "frameborder" "0"
                 , attribute "scrolling" "no"
-                , attribute "width" "100%"
+
+                -- , attribute "width" "100%"
+                , attribute "width" "480"
+                , attribute "height" "150"
                 , style "margin" "0"
-                , style "border-radius" "0px !important"
+                , style "border-radius" "5px"
                 , style "background-color" "transparent"
                 ]
                 []
@@ -142,7 +150,7 @@ liturgicalCalendar2025 =
     { name = "2025 Liturgical Calendar"
     , image = "/assets/images/shop/5.png"
     , description = "A 2025 Liturgical Calendar, feast days, and coloring page!"
-    , beehiivLink = "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
+    , beehiivLink = "https://blog.catholicstoriesforchildren.com/embed" -- "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
     , etsyLink = ""
     }
 
