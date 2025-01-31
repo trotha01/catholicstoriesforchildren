@@ -41,6 +41,7 @@ pair_list=(
   src/Animations/ActOfContrition/Main.elm animations/actofcontrition/elm.js
   src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
   src/Animations/HailMary/Main.elm animations/hailmary/elm.js
+  src/Animations/SongsOfTheSaints/Main.elm animations/songsofthesaints/elm.js
   src/Animations/Main.elm animations/elm.js
   src/Animations/StMichael/Main.elm animations/stmichael/elm.js
   src/Contact/Main.elm contact/elm.js

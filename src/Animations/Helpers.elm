@@ -31,6 +31,14 @@ viewVideo videoTitle link =
         ]
 
 
+viewVideoDescription : Html msg -> Html msg
+viewVideoDescription videoDescription =
+    div
+        []
+        [ videoDescription
+        ]
+
+
 viewVideoComingSoon : String -> Html msg
 viewVideoComingSoon image =
     div

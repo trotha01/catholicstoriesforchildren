@@ -128,6 +128,19 @@ animations =
                 ]
                 []
             ]
+        , a
+            [ href "/animations/songsofthesaints"
+            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
+            , attribute "aria-label" "Songs of the Saints animations"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/SongsOfTheSaints.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Songs of the Saints Animations"
+                ]
+                []
+            ]
         , div
             [ style "clear" "both"
             , style "width" "1px"
