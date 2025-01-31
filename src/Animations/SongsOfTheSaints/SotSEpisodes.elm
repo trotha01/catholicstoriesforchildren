@@ -66,7 +66,7 @@ episodes =
                         ]
                     , br [] []
                     , p []
-                        [ text "The series, Songs of the Saints, will let you encounter different saints. Each video opens with the Song of the Saints book. As you enter this book, you enter into an interment moment in the life of a saint."
+                        [ text "The series, Songs of the Saints, will let you encounter different saints. Each video opens with the Song of the Saints book. As you enter this book, you enter into an intimate moment in the life of a saint."
                         ]
                     , br [] []
                     , p []
