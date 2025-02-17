@@ -152,7 +152,7 @@ viewIntro model =
         [ class "my-10"
         ]
         [ div []
-            [ div [ class "mb-10 max-w-5xl m-auto" ]
+            [ div [ class "mb-10 max-w-5xl m-auto  px-11 md:px-0" ]
                 [ h2
                     [ class "mb-7 leading-10"
                     ]
