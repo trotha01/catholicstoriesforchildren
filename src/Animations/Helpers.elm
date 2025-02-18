@@ -60,23 +60,29 @@ type alias AnimationLink =
     }
 
 
-viewAnimationLinks : List AnimationLink -> Html msg
-viewAnimationLinks animationLinks =
+viewAnimationLinks : String -> List AnimationLink -> Html msg
+viewAnimationLinks title animationLinks =
     div
         [ class "w-full"
-        , class "grid grid-cols-1 lg:grid-cols-2 gap-10"
         , class "max-w-7xl"
         , class "m-auto"
         , class "mb-20 px-20"
         ]
-        (List.map viewAnimationLink animationLinks
-            ++ [ div
-                    [ style "clear" "both"
-                    , style "width" "1px"
-                    ]
-                    []
-               ]
-        )
+        [ h2 [ class "mb-10" ]
+            [ text title
+            ]
+        , div
+            [ class "grid grid-cols-1 lg:grid-cols-2 gap-10"
+            ]
+            (List.map viewAnimationLink animationLinks
+                ++ [ div
+                        [ style "clear" "both"
+                        , style "width" "1px"
+                        ]
+                        []
+                   ]
+            )
+        ]
 
 
 viewAnimationLink : AnimationLink -> Html msg

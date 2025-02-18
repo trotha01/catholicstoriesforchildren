@@ -77,7 +77,7 @@ viewBody model =
             ]
         , div [ class "mt-2 mb-20 text-black" ]
             [ Signup.view4 |> Html.map SignupMsg ]
-        , viewAnimationLinks animationLinks
+        , viewAnimationLinks "Animations" animationLinks
         ]
 
 

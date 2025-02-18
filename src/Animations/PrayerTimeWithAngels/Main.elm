@@ -55,9 +55,9 @@ viewBody model =
     div [ class "hcenter" ]
         [ div
             [ class "hcenter py-5 px-11 max-w-3xl" ]
-            [ h1 [ class "leading-10" ] [ text "Start teaching your children with Catholic animations" ]
+            [ h1 [ class "leading-10 my-10" ] [ text "Prayer Time with Angels" ]
             , div [ class "my-10" ]
-                [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
+                [ p [ class "my-5" ] [ text "Join Theo and Felicity as their guardian angels teach and help them understand different Catholic prayers." ]
                 , p [ class "my-5" ]
                     [ text
                         ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
@@ -76,7 +76,7 @@ viewBody model =
             ]
         , div [ class "mt-2 mb-20" ]
             [ Signup.view4 |> Html.map SignupMsg ]
-        , viewAnimationLinks prayerTimeWithAngelsAnimationLinks
+        , viewAnimationLinks "Episodes" prayerTimeWithAngelsAnimationLinks
         ]
 
 

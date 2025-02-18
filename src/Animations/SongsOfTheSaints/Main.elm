@@ -200,9 +200,9 @@ viewEpisodes model =
         [ div
             [ class "hcenter py-5 px-11 max-w-3xl"
             ]
-            [ h1 [ class "leading-10", id "top" ] [ text "Start teaching your children with Catholic animations" ]
+            [ h1 [ class "leading-10 my-10", id "top" ] [ text "Songs of the Saints" ]
             , div [ class "my-10" ]
-                [ p [ class "my-5" ] [ text "Use these animations to help your kids learn about the Catholic Mass and fun facts about the Cathoilc Church." ]
+                [ p [ class "my-5" ] [ text "Join the saints in a moment of their lives. Each will sing a prayer that they likely would have known and prayed to help them through the difficulties in their lives." ]
                 , p [ class "my-5" ]
                     [ text
                         ("Walk step by step through the Mass with these animations. Your kids will start to "
@@ -250,20 +250,26 @@ animations model =
     in
     div
         [ class "w-full"
-        , class "grid grid-cols-1 lg:grid-cols-2 gap-5"
         , class "max-w-7xl"
         , class "m-auto"
         , class "mb-20 px-20"
         ]
-        (List.map
-            (\e ->
-                viewAnimationLink
-                    ("/animations/songsofthesaints?e=" ++ episodeUrlParam e)
-                    e.thumbnail
-                    e.title
+        [ h2 [ class "mb-10" ]
+            [ text "Episodes"
+            ]
+        , div
+            [ class "grid grid-cols-1 lg:grid-cols-2 gap-10"
+            ]
+            (List.map
+                (\e ->
+                    viewAnimationLink
+                        ("/animations/songsofthesaints?e=" ++ episodeUrlParam e)
+                        e.thumbnail
+                        e.title
+                )
+                releasedEpisodes
             )
-            releasedEpisodes
-        )
+        ]
 
 
 viewAnimationLink : String -> String -> String -> Html msg
