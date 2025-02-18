@@ -1,5 +1,6 @@
 module Animations.PrayerTimeWithAngels.Main exposing (..)
 
+import Animations.Helpers exposing (AnimationLink, viewAnimationLinks)
 import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
@@ -41,7 +42,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div
-        [ class "bg-[#FEF7F4]"
+        [ class "bg-[#282c2e] text-white"
         ]
         [ viewSubpageHeader "Animations" headerMargin
         , viewBody model
@@ -75,87 +76,35 @@ viewBody model =
             ]
         , div [ class "mt-2 mb-20" ]
             [ Signup.view4 |> Html.map SignupMsg ]
-        , animations
+        , viewAnimationLinks prayerTimeWithAngelsAnimationLinks
         ]
 
 
-animations : Html msg
-animations =
-    div
-        [ class "w-full"
-        , class "grid grid-cols-1 lg:grid-cols-2"
-        , class "max-w-7xl"
-        , class "m-auto"
-        , class "mb-20"
-        ]
-        [ a
-            [ href "/animations/guardianangel"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Guardian Angel Animation"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/GuardianAngel.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Guardian Angel Animation"
-                ]
-                []
-            ]
-        , a
-            [ href "/animations/stmichael"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the St Michael the Archangel Animation"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "St Michael Animation"
-                ]
-                []
-            ]
-        , a
-            [ href "/animations/actofcontrition"
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "Act of Contrition Animation Coming Soon"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/ActOfContrition.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Act of Contrition Animation"
-                ]
-                []
-            ]
-        , div
-            [ style "border-radius" "5px"
-            , class "grayscale"
-            , class "hover:cursor-not-allowed"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Prayer Before Meals Animation"
-                ]
-                []
-            ]
-        , div
-            [ style "border-radius" "5px"
-            , class "grayscale"
-            , class "hover:cursor-not-allowed"
-            ]
-            [ img
-                [ src "/assets/images/AnimationImageLinks/SaintAnthony.png"
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "St Anthony Animation"
-                ]
-                []
-            ]
-        , div
-            [ style "clear" "both"
-            , style "width" "1px"
-            ]
-            []
-        ]
+prayerTimeWithAngelsAnimationLinks : List AnimationLink
+prayerTimeWithAngelsAnimationLinks =
+    [ { link = "/animations/guardianangel"
+      , imgSrc = "/assets/images/AnimationImageLinks/GuardianAngel.png"
+      , ariaLabel = "See the Guardian Angel Animation"
+      , isLive = True
+      }
+    , { link = "/animations/stmichael"
+      , imgSrc = "/assets/images/AnimationImageLinks/SaintMichael.png"
+      , ariaLabel = "See the St Michael the Archangel Animation"
+      , isLive = True
+      }
+    , { link = "/animations/actofcontrition"
+      , imgSrc = "/assets/images/AnimationImageLinks/ActOfContrition.png"
+      , ariaLabel = "Act of Contrition Animation Coming Soon"
+      , isLive = True
+      }
+    , { link = "/animations/prayerbeforemeals"
+      , imgSrc = "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
+      , ariaLabel = "Prayer Before Meals Animation Coming Soon"
+      , isLive = False
+      }
+    , { link = "/animations/saintanthony"
+      , imgSrc = "/assets/images/AnimationImageLinks/SaintAnthony.png"
+      , ariaLabel = "St Anthony Animation Coming Soon"
+      , isLive = False
+      }
+    ]

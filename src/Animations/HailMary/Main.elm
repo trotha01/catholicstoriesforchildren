@@ -61,7 +61,7 @@ view model =
         , style "overflow-y" "auto"
         , style "perspective" "300px"
         , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
+        , class "bg-[#282c2e] text-white"
         ]
         [ viewSubpageHeader "Hail Mary" headerMargin
         , viewBody model

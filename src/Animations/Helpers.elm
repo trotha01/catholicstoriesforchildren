@@ -50,3 +50,64 @@ viewVideoComingSoon image =
         ]
         [ img [ src image ] []
         ]
+
+
+type alias AnimationLink =
+    { link : String
+    , imgSrc : String
+    , ariaLabel : String
+    , isLive : Bool
+    }
+
+
+viewAnimationLinks : List AnimationLink -> Html msg
+viewAnimationLinks animationLinks =
+    div
+        [ class "w-full"
+        , class "grid grid-cols-1 lg:grid-cols-2 gap-10"
+        , class "max-w-7xl"
+        , class "m-auto"
+        , class "mb-20 px-20"
+        ]
+        (List.map viewAnimationLink animationLinks
+            ++ [ div
+                    [ style "clear" "both"
+                    , style "width" "1px"
+                    ]
+                    []
+               ]
+        )
+
+
+viewAnimationLink : AnimationLink -> Html msg
+viewAnimationLink animationLink =
+    if animationLink.isLive then
+        a
+            [ href animationLink.link
+            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-[0_10px_8px_rgb(0,0,0)]"
+            , attribute "aria-label" animationLink.ariaLabel
+            ]
+            [ img
+                [ src animationLink.imgSrc
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Prayer Time with Angels animations"
+                ]
+                []
+            ]
+
+    else
+        div
+            [ href animationLink.link
+            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-[0_10px_8px_rgb(0,0,0)]"
+            , attribute "aria-label" animationLink.ariaLabel
+            , class "grayscale hover:cursor-not-allowed"
+            ]
+            [ img
+                [ src animationLink.imgSrc
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Prayer Time with Angels animations"
+                ]
+                []
+            ]

@@ -110,7 +110,7 @@ view3 =
 view4 : Html msg
 view4 =
     div
-        [ class "flex justify-center py-3 bg-[#ffc7c7]"
+        [ class "flex justify-center py-3 bg-[#ffc7c7] text-black"
         ]
         [ div [ class "max-w-3xl" ] [ viewShopItem2 liturgicalCalendar2025 ]
         ]

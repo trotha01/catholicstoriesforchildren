@@ -162,7 +162,7 @@ view model =
     { title = "Songs of the Saints Animations - Catholic Stories for Children"
     , body =
         [ div
-            [ class "bg-[#FEF7F4]"
+            [ class "bg-[#282c2e] text-white"
             ]
             [ viewSubpageHeader "Animations" headerMargin
             , viewBody model currentRoute
@@ -253,7 +253,7 @@ animations model =
         , class "grid grid-cols-1 lg:grid-cols-2 gap-5"
         , class "max-w-7xl"
         , class "m-auto"
-        , class "mb-20"
+        , class "mb-20 px-20"
         ]
         (List.map
             (\e ->
@@ -270,7 +270,7 @@ viewAnimationLink : String -> String -> String -> Html msg
 viewAnimationLink link imgSrc altName =
     a
         [ href link
-        , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
+        , class "hover:scale-105 transition ease-out duration-50 drop-shadow-[0_10px_8px_rgb(0,0,0)]"
         , attribute "aria-label" ("See the " ++ altName)
         ]
         [ img
