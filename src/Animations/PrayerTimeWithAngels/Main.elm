@@ -83,17 +83,17 @@ viewBody model =
 prayerTimeWithAngelsAnimationLinks : List AnimationLink
 prayerTimeWithAngelsAnimationLinks =
     [ { link = "/animations/guardianangel"
-      , imgSrc = "/assets/images/AnimationImageLinks/GuardianAngel.png"
+      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/GuardianAngelPrayer.png"
       , ariaLabel = "See the Guardian Angel Animation"
       , isLive = True
       }
     , { link = "/animations/stmichael"
-      , imgSrc = "/assets/images/AnimationImageLinks/SaintMichael.png"
+      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.png"
       , ariaLabel = "See the St Michael the Archangel Animation"
       , isLive = True
       }
     , { link = "/animations/actofcontrition"
-      , imgSrc = "/assets/images/AnimationImageLinks/ActOfContrition.png"
+      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/AOC.png"
       , ariaLabel = "Act of Contrition Animation Coming Soon"
       , isLive = True
       }
