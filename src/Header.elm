@@ -125,7 +125,7 @@ desktopNavigation height =
         , viewNavButton height "/resources" "_self" "Resources"
 
         -- , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
-        , viewNavButton height "/shop" "_blank" "Shop"
+        , viewNavButton height "/shop" "_self" "Shop"
         , viewNavButton height "https://blog.catholicstoriesforchildren.com/" "_blank" "Blog"
         , viewNavButton height "/give" "_self" "Donate"
         , viewNavButton height "/team" "_self" "About"
