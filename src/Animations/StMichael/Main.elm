@@ -105,6 +105,18 @@ viewBody model =
         ]
 
 
+viewAbout : Html msg
+viewAbout =
+    div []
+        [ aboutTheAnimation
+        , viewPrayer
+        , aboutThePrayer
+        , viewPrayerHistory
+        , viewStoryHistory
+        , viewAnotherPage
+        ]
+
+
 englishVideoLink : String
 englishVideoLink =
     "https://www.youtube-nocookie.com/embed/y2-SqI_PLv4?playlist=y2-SqI_PLv4&loop=1"

@@ -133,14 +133,6 @@ viewThankYou =
             , span [ class "block" ] [ text "Trevor Rothaus" ]
             , span [ class "block" ] [ text "Founder - Catholic Stories for Children" ]
             ]
-
-        -- , div
-        --     [ class "calendly-inline-widget"
-        --     , style "min-width" "320px"
-        --     , style "height" "900px"
-        --     , attribute "data-url" "https://calendly.com/csc-trevor/30min"
-        --     ]
-        --     []
         , div
             [ class "bg-white rounded"
             ]

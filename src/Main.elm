@@ -1,7 +1,8 @@
 module Main exposing (Model, main, view, viewBanner)
 
-import Animations.ActOfContrition.Main exposing (donationButton, progressBar)
+import Animations.View
 import Browser
+import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import Footer exposing (viewFooter)
 import Header exposing (viewHeader)
@@ -10,11 +11,14 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
+import NotFound.Main
 import Resources.Helpers exposing (ResourceGroup)
 import Signup exposing (..)
 import Svg.Attributes exposing (d)
+import Task
 import Team.Team exposing (carlos, kelly, trevor, viewPerson)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
+import Time
 import Url
 
 
@@ -30,27 +34,95 @@ main =
         }
 
 
+type Page
+    = Home
+    | Productions
+    | NotFound
+
+
+type Language
+    = English
+    | Spanish
+    | Urdu
+    | Asl
+
+
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
     , signup : Signup.Model
+    , page : Page
+    , time : Time.Posix
+    , timezone : Time.Zone
+    , language : Language
+    , productionsModel : Animations.View.Model
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-    ( { key = key
-      , url = url
-      , signup = Signup.init
-      }
-    , Cmd.none
+    let
+        ( productionsModel, productionsCmd ) =
+            Animations.View.init flags url key
+
+        ( isRedirectedUrl, newPath, redirectedUrl ) =
+            redirectUrl url
+
+        initModel =
+            { key = key
+            , url = redirectedUrl
+            , signup = Signup.init
+            , page = Home
+            , time = Time.millisToPosix 0
+            , timezone = Time.utc
+            , language = English
+            , productionsModel = productionsModel
+            }
+
+        ( redirectedModel, redirectedMsg ) =
+            if isRedirectedUrl then
+                update (LinkClicked (Browser.Internal redirectedUrl)) initModel
+
+            else
+                ( initModel, Cmd.none )
+    in
+    ( redirectedModel
+    , Cmd.batch
+        [ Task.perform NewTime Time.now
+        , Task.perform NewZone Time.here
+        , Cmd.map ProductionsMsg productionsCmd
+        , redirectedMsg
+        ]
     )
+
+
+redirectUrl : Url.Url -> ( Bool, String, Url.Url )
+redirectUrl url =
+    case url.query of
+        Just q ->
+            if String.contains "redirect" q then
+                let
+                    newPath =
+                        String.dropLeft 9 q
+                in
+                ( True, newPath, { url | path = newPath, query = Nothing } )
+
+            else
+                ( False, "", url )
+
+        Nothing ->
+            ( False, "", url )
 
 
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
     | SignupMsg Signup.Msg
+    | NoOp
+    | NewTime Time.Posix
+    | NewZone Time.Zone
+    | LanguageChange Language
+    | ProductionsMsg Animations.View.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -62,15 +134,22 @@ update msg model =
                     let
                         urlString =
                             Url.toString url
+
+                        isProductionsPage =
+                            String.contains "animations" urlString
                     in
-                    ( model, Nav.load (Url.toString url) )
+                    if isProductionsPage then
+                        ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else
+                        ( model, Nav.load (Url.toString url) )
 
                 Browser.External href ->
                     ( model, Nav.load href )
 
         UrlChanged url ->
             ( { model | url = url }
-            , Cmd.none
+            , scrollToTopCmd
             )
 
         SignupMsg signupMsg ->
@@ -79,6 +158,31 @@ update msg model =
                     Signup.update signupMsg model.signup
             in
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        NewTime t ->
+            ( { model | time = t }, Cmd.none )
+
+        NewZone z ->
+            ( { model | timezone = z }, Cmd.none )
+
+        LanguageChange language ->
+            ( { model | language = language }, Cmd.none )
+
+        ProductionsMsg productionsMsg ->
+            let
+                ( updatedProductionsModel, cmd ) =
+                    Animations.View.update productionsMsg model.productionsModel
+            in
+            ( { model | productionsModel = updatedProductionsModel }, Cmd.map ProductionsMsg cmd )
+
+        NoOp ->
+            ( model, Cmd.none )
+
+
+scrollToTopCmd : Cmd Msg
+scrollToTopCmd =
+    Dom.setViewport 0 0
+        |> Task.perform (\_ -> NoOp)
 
 
 
@@ -96,6 +200,31 @@ subscriptions _ =
 
 view : Model -> Browser.Document Msg
 view model =
+    let
+        { title, body } =
+            case model.page of
+                Home ->
+                    viewHome model
+
+                Productions ->
+                    let
+                        b =
+                            Animations.View.view model.url model.productionsModel
+                    in
+                    { title = b.title, body = b.body |> List.map (Html.map ProductionsMsg) }
+
+                NotFound ->
+                    let
+                        b =
+                            NotFound.Main.view
+                    in
+                    { title = "Tony Help, Page Not Found", body = [ Html.map (\_ -> NoOp) b ] }
+    in
+    { title = title, body = body }
+
+
+viewHome : Model -> Browser.Document Msg
+viewHome model =
     { title = "Catholic Stories for Children"
     , body =
         [ div
@@ -107,26 +236,6 @@ view model =
             ]
         ]
     }
-
-
-section1Background : List (Attribute msg)
-section1Background =
-    [ style "background" "#fff" ]
-
-
-section2Background : List (Attribute msg)
-section2Background =
-    [ style "background" "#fff" ]
-
-
-section3Background : List (Attribute msg)
-section3Background =
-    [ style "background" "#EBD7F2" ]
-
-
-section4Background : List (Attribute msg)
-section4Background =
-    [ style "background" "#FEF7F4" ]
 
 
 viewBody : Model -> Html.Html Msg
@@ -213,22 +322,6 @@ viewIntro model =
                     []
                 ]
             ]
-
-        -- , div [ class "mt-10" ] [ progressBar ]
-        -- , a
-        --     [ style "padding" "10px 10px"
-        --     , style "display" "inline-block"
-        --     , style "border-radius" "5px"
-        --     , style "border-radius" "5px"
-        --     , style "box-shadow" "#777 1px 1px 5px"
-        --     , class "text-lg"
-        --     -- , class "bg-[#9200B3]"
-        --     , href "/animations/actofcontrition"
-        --     , attribute "aria-label" "Check out our upcoming animation"
-        --     , class "bg-csc-yellow"
-        --     , class "font-bold"
-        --     ]
-        --     [ text "Check out our upcoming animation!" ]
         ]
 
 

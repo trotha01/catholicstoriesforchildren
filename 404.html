@@ -9,9 +9,6 @@
     gtag('js', new Date());
     gtag('config', 'G-TXRVE787GD');
   </script>
-  <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
-  <script type="text/javascript" defer src="https://donorbox.org/install-popup-button.js"></script>
-  <script> window.DonorBox = { widgetLinkClassName: 'custom-dbox-popup' } </script> 
 
   <!-- This code is from google ads. Event snippet for Newsletter Signup conversion
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
@@ -118,7 +115,23 @@
           transform: translate(-50%);
         }
       }
-    </style><meta name="description" content="This page is not found"><title>Not Found - Catholic Stories for Children</title><meta property="og:title" content="Not Found - Catholic Stories for Children"><meta property="og:description" content="This page is not found"><meta property="og:url" content="https://catholicstoriesforchildren.com/404.html"><meta property="og:image" content="https://catholicstoriesforchildren.com/assets/images/thumbnails/CSCThumbnail.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="https://catholicstoriesforchildren.com/assets/images/thumbnails/CSCThumbnail.png"><script src="/notfound/elm.js"></script></head><body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
+    </style><meta name="description" content="This page is not found"><title>Not Found - Catholic Stories for Children</title><meta property="og:title" content="Not Found - Catholic Stories for Children"><meta property="og:description" content="This page is not found"><meta property="og:url" content="https://catholicstoriesforchildren.com/404.html"><meta property="og:image" content="https://catholicstoriesforchildren.com/assets/images/thumbnails/CSCThumbnail.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="https://catholicstoriesforchildren.com/assets/images/thumbnails/CSCThumbnail.png"><script>
+  var path = window.location.pathname;
+  var redirectUrl = "/index.html";
+
+  const params = new URLSearchParams(window.location.search);
+  const episode = params.get("e"); // null if it doesn't exist, or the value if it does
+
+  
+  // Preserve the path in URL by using JavaScript History API
+  if (path !== "/") {
+    if (episode) {
+     window.location.replace(redirectUrl + "?redirect=" + path.replace(/\/+$/, "") + "/1/" + episode.toLowerCase());
+    } else {
+      window.location.replace(redirectUrl + "?redirect=" + path);
+  }
+  }
+</script><script src="/notfound/elm.js"></script></head><body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
   <div id="myapp"></div><script>var app = Elm.NotFound.Main.init({ node: document.getElementById('myapp') });
 if (app.ports && app.ports.gtagReportConversion) {
     app.ports.gtagReportConversion.subscribe(function(message) {
@@ -133,17 +146,6 @@ if (app.ports && app.ports.gtagReportConversion) {
   }
 
   </script>
-
-  <!-- beehiiv UTM parameters attribution tracking -->
-  <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
-
-  <!-- Calendly inline widget begin -->
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <!-- Calendly inline widget end -->
-
-  <!--
-  <link rel="stylesheet" type="text/css" href="https://donorbox.org/animate-popup-donate-button.css"><script type="text/javascript" id="donorbox-donate-button-installer" src="https://donorbox.org/install-donate-button.js" data-href="https://donorbox.org/catholic-stories-for-children?default_interval=o" data-style="background: rgb(254, 189, 17); color: rgb(0, 0, 0); text-decoration: none; font-family: Verdana, sans-serif; display: flex; font-size: 16px; padding: 8px 24px; border-radius: 5px; gap: 8px; width: fit-content; line-height: 24px; position: fixed; top: 50%; transform: translate(0px, 0px) rotate(-90deg); z-index: 9999; overflow: hidden; left: -45px;" data-img-src="https://donorbox.org/images/white_logo.svg"></script>
-  -->
 
   <!-- Cookie consent popup -->
   <script type="module" src="cookieconsent-config.js"></script>

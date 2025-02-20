@@ -261,7 +261,8 @@ viewActivities =
                 [ p [ class "my-3" ]
                     [ text "With each animation, we create printouts to go along with them to help further foster understanding of the prayer and concepts. We will be creating activities to go along with the Act of Contrition Animation."
                     ]
-                , donationButton "BACK THIS PROJECT"
+
+                -- , donationButton "BACK THIS PROJECT"
                 , p [ class "my-10" ]
                     [ text "Until then, we are making our little reconciliation booklet for kids available to you at no cost. It includes the steps before, during, and after the Sacrament of Reconciliation as well as suggested prayers and questions to help examine the conscience. You can print it and fold it into a little booklet to bring to Confession. To access, help bring this animation to life by: 1) Sharing this crowdfund campaign. 2) Sending us a message with a screenshot and we'll send you this Reconciliation Booklet!"
                     ]
@@ -307,7 +308,8 @@ viewPrayer =
             [ text "Each animation has a composed song made to match the tone of the prayer while staying reverent to the nature of prayer. Music and repetition are powerful tools that can help aid in children's memory retention and improve the learning experience. This is much more enjoyable than simply memorizing words."
             , text " In addition, having the song embedded into the animation will help bring understanding to the words in the prayer."
             ]
-        , donationButton "BACK THIS PROJECT"
+
+        -- , donationButton "BACK THIS PROJECT"
         ]
 
 
@@ -322,7 +324,8 @@ aboutThePrayer =
         [ h2 [ class "my-5 leading-10" ] [ text "About the Act of Contrition Animation" ]
         , p [ class "my-3" ] [ text "We research every prayer we make for the animations. We do not water down the faith and ensure that the animation is authentic Catholic teaching." ]
         , p [ class "my-3" ] [ text "We adhere to the teachings of the Magisterium and help kids learn to live the beauty of the Catholic faith." ]
-        , donationButton "BACK THIS PROJECT"
+
+        -- , donationButton "BACK THIS PROJECT"
         ]
 
 

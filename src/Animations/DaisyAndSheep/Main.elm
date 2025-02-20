@@ -26,6 +26,7 @@ type alias Model =
     , time : Time.Posix
     , timezone : Time.Zone
     , videoTab : VideoOption
+    , series : String
     }
 
 
@@ -66,6 +67,7 @@ init flags url key =
       , time = Time.millisToPosix 0
       , timezone = Time.utc
       , videoTab = English
+      , series = "daisyandsheep"
       }
     , Cmd.batch
         [ Task.perform NewTime Time.now
@@ -85,7 +87,7 @@ update msg model =
                             Url.toString url
 
                         isDASPage =
-                            String.contains "daisyandsheep" urlString
+                            String.contains model.series urlString
                     in
                     if isDASPage then
                         ( { model | url = url }, Nav.pushUrl model.key (Url.toString url) )
@@ -174,7 +176,7 @@ view model =
 viewBody : Model -> Maybe Route -> Html Msg
 viewBody model urlRoute =
     case urlRoute of
-        Just (Episode animationEpisode) ->
+        Just (EpisodeRoute animationEpisode) ->
             case animationEpisode.episode of
                 Just episodeUrl ->
                     case episodeFromURL episodeUrl of
@@ -191,6 +193,28 @@ viewBody model urlRoute =
             viewEpisodes model
 
 
+viewDescription : Html msg
+viewDescription =
+    div
+        [ class "hcenter py-5 px-11 max-w-3xl"
+        ]
+        [ h1 [ class "leading-10 my-10", id "top" ] [ text "Daisy and Sheep" ]
+        , div [ class "my-10" ]
+            [ p [ class "my-5" ] [ text "Follow along with Daisy and Sheep and learn about the Catholic Mass and fun facts about the Catholic Church!" ]
+            , p [ class "my-5" ]
+                [ text
+                    ("Walk step by step through the Mass with these animations. Your kids will start to "
+                        ++ "learn each part and become more engaged as they understand what is happening every Sunday!"
+                    )
+                ]
+            , p [ class "my-5" ]
+                [ text
+                    "Many of the episodes have activities, reflection questions, guided imaginative prayer and more!"
+                ]
+            ]
+        ]
+
+
 viewEpisodes : Model -> Html Msg
 viewEpisodes model =
     div
@@ -199,7 +223,7 @@ viewEpisodes model =
         [ div
             [ class "hcenter py-5 px-11 max-w-3xl"
             ]
-            [ h1 [ class "leading-10 my-10", id "top" ] [ text "Daisy and Sheep" ]
+            [ h1 [ class "leading-10 my-10", id "top" ] [ text "Daisy and Sheep 2" ]
             , div [ class "my-10" ]
                 [ p [ class "my-5" ] [ text "Follow along with Daisy and Sheep and learn about the Catholic Mass and fun facts about the Catholic Church!" ]
                 , p [ class "my-5" ]
@@ -216,11 +240,13 @@ viewEpisodes model =
             ]
         , div [ class "mt-2 mb-20 text-black" ]
             [ Signup.view4 |> Html.map SignupMsg ]
-        , animations model
+
+        -- , animations model
+        -- , viewAnimationThumbnails "Episodes" <| List.map episodeToThumbnailData episodes
         ]
 
 
-viewEpisode : Model -> DASEpisode msg -> Html Msg
+viewEpisode : Model -> Episode msg -> Html Msg
 viewEpisode model episode =
     div
         [ class "max-w-3xl"
@@ -244,7 +270,7 @@ viewEpisode model episode =
         ]
 
 
-viewActivities : DASEpisode msg -> Html Msg
+viewActivities : Episode msg -> Html Msg
 viewActivities episode =
     div []
         [ h2 [ class "mb-3 mt-5" ] [ text (episode.title ++ " Activities") ]
@@ -336,7 +362,7 @@ viewAnimationLink link imgSrc altName =
 
 
 type Route
-    = Episode AnimationEpisode
+    = EpisodeRoute AnimationEpisode
 
 
 type alias AnimationEpisode =
@@ -357,7 +383,7 @@ urlDateParser =
 
 route : Url.Parser.Parser (Route -> a) a
 route =
-    Url.Parser.map (\e -> Episode { episode = e }) urlDateParser
+    Url.Parser.map (\e -> EpisodeRoute { episode = e }) urlDateParser
 
 
 removeSpaces : String -> String
@@ -365,12 +391,12 @@ removeSpaces str =
     String.filter (\c -> c /= ' ') str
 
 
-episodeUrlParam : DASEpisode msg -> String
+episodeUrlParam : Episode msg -> String
 episodeUrlParam episode =
     episode.title |> removeSpaces |> String.toLower
 
 
-episodeFromURL : String -> Maybe (DASEpisode msg)
+episodeFromURL : String -> Maybe (Episode msg)
 episodeFromURL urlString =
     List.foldl
         (\episode responseEpisode ->
@@ -384,7 +410,7 @@ episodeFromURL urlString =
         episodes
 
 
-viewVideoPlayers : Model -> DASEpisode msg -> Html Msg
+viewVideoPlayers : Model -> Episode msg -> Html Msg
 viewVideoPlayers model page =
     div
         []
@@ -404,7 +430,7 @@ viewVideoPlayers model page =
         ]
 
 
-viewVideoPlayerTabs : Model -> DASEpisode msg -> Html Msg
+viewVideoPlayerTabs : Model -> Episode msg -> Html Msg
 viewVideoPlayerTabs model page =
     let
         selectedClass =

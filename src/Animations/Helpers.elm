@@ -3,6 +3,60 @@ module Animations.Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
+import Svg.Attributes exposing (d)
+import Time
+
+
+type alias Production msg =
+    { title : String
+    , thumbnail : String
+    , link : String
+    , about : Html msg
+    , seasons : List (Season msg)
+    }
+
+
+type alias Season msg =
+    { number : Int
+    , description : Html msg
+    , episodes : List (Episode msg)
+    }
+
+
+type alias Episode msg =
+    { title : String
+    , thumbnail : String
+    , releaseDate : Time.Posix
+    , isDisabled : Bool
+    , link : String
+    , about : Html msg
+    , activities :
+        { thumbnailLink : String
+        , pdfLink : String
+        , answerThumbnailLink : String
+        , answerPdfLink : String
+        }
+    , videoTitles :
+        { english : String
+        , spanish : String
+        , urdu : String
+        , asl : String
+        }
+    , videoLinks :
+        { english : String
+        , spanish : String
+        , urdu : String
+        , asl : String
+        }
+    }
+
+
+type alias AnimationLink =
+    { link : String
+    , imgSrc : String
+    , ariaLabel : String
+    , isLive : Bool
+    }
 
 
 viewVideo : String -> String -> Html msg
@@ -52,16 +106,16 @@ viewVideoComingSoon image =
         ]
 
 
-type alias AnimationLink =
-    { link : String
-    , imgSrc : String
-    , ariaLabel : String
-    , isLive : Bool
+type alias ThumbnailData =
+    { title : String
+    , thumbnail : String
+    , link : String
+    , isDisabled : Bool
     }
 
 
-viewAnimationLinks : String -> List AnimationLink -> Html msg
-viewAnimationLinks title animationLinks =
+viewAnimationThumbnails : String -> List ThumbnailData -> Html msg
+viewAnimationThumbnails title thumbnails =
     div
         [ class "w-full"
         , class "max-w-7xl"
@@ -74,7 +128,7 @@ viewAnimationLinks title animationLinks =
         , div
             [ class "grid grid-cols-1 lg:grid-cols-2 gap-10"
             ]
-            (List.map viewAnimationLink animationLinks
+            (List.map viewAnimationThumbnail thumbnails
                 ++ [ div
                         [ style "clear" "both"
                         , style "width" "1px"
@@ -85,35 +139,56 @@ viewAnimationLinks title animationLinks =
         ]
 
 
-viewAnimationLink : AnimationLink -> Html msg
-viewAnimationLink animationLink =
-    if animationLink.isLive then
-        a
-            [ href animationLink.link
-            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-[0_10px_8px_rgb(0,0,0)]"
-            , attribute "aria-label" animationLink.ariaLabel
-            ]
-            [ img
-                [ src animationLink.imgSrc
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Prayer Time with Angels animations"
-                ]
-                []
-            ]
+viewAnimationThumbnail : ThumbnailData -> Html msg
+viewAnimationThumbnail thumbnail =
+    let
+        ( element, thumbnailStyle ) =
+            if thumbnail.isDisabled then
+                ( div, [ class "grayscale hover:cursor-not-allowed" ] )
 
-    else
-        div
-            [ href animationLink.link
-            , class "hover:scale-105 transition ease-out duration-50 drop-shadow-[0_10px_8px_rgb(0,0,0)]"
-            , attribute "aria-label" animationLink.ariaLabel
-            , class "grayscale hover:cursor-not-allowed"
+            else
+                ( a, [] )
+    in
+    element
+        ([ href thumbnail.link
+         , attribute "aria-label" (thumbnail.title ++ "Animation")
+         , class "hover:scale-105 transition ease-out duration-50 drop-shadow-[0_10px_8px_rgb(0,0,0)]"
+         ]
+            ++ thumbnailStyle
+        )
+        [ img
+            [ src thumbnail.thumbnail
+            , style "border-radius" "5px"
+            , style "width" "-webkit-fill-available"
+            , alt "Prayer Time with Angels animations"
             ]
-            [ img
-                [ src animationLink.imgSrc
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt "Prayer Time with Angels animations"
-                ]
-                []
-            ]
+            []
+        ]
+
+
+episodeToThumbnailData : Production msg -> Int -> Episode msg -> ThumbnailData
+episodeToThumbnailData production season episode =
+    { title = episode.title
+    , thumbnail = episode.thumbnail
+    , link = "/animations/" ++ stringToURL production.title ++ "/" ++ String.fromInt season ++ "/" ++ stringToURL episode.title
+    , isDisabled = episode.isDisabled
+    }
+
+
+productionToThumbnailData : Production msg -> ThumbnailData
+productionToThumbnailData series =
+    { title = series.title
+    , thumbnail = series.thumbnail
+    , link = "/animations/" ++ stringToURL series.title -- series.link
+    , isDisabled = False -- Assuming series are never disabled. TODO: change to map over the episodes and check if all are disabled.
+    }
+
+
+removeSpaces : String -> String
+removeSpaces str =
+    String.filter (\c -> c /= ' ') str
+
+
+stringToURL : String -> String
+stringToURL s =
+    s |> String.toLower |> removeSpaces

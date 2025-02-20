@@ -33,17 +33,6 @@ pair_list=(
   src/Main.elm elm.js
   src/About/PrivacyPolicy/Main.elm about/privacy-policy/elm.js
   src/About/TermsAndConditions/Main.elm about/terms-and-conditions/elm.js
-  src/Animations/DaisyAndSheep/Main.elm animations/daisyandsheep/elm.js
-  src/Animations/DaisyAndSheep/LiturgicalKiss/Main.elm animations/daisyandsheep/liturgicalkiss/elm.js
-  src/Animations/DaisyAndSheep/AstronomyProgram/Main.elm animations/daisyandsheep/astronomyprogram/elm.js
-  src/Animations/DaisyAndSheep/PenitentialAct/Main.elm animations/daisyandsheep/penitentialact/elm.js
-  src/Animations/PrayerTimeWithAngels/Main.elm animations/prayertimewithangels/elm.js
-  src/Animations/ActOfContrition/Main.elm animations/actofcontrition/elm.js
-  src/Animations/GuardianAngel/Main.elm animations/guardianangel/elm.js
-  src/Animations/HailMary/Main.elm animations/hailmary/elm.js
-  src/Animations/SongsOfTheSaints/Main.elm animations/songsofthesaints/elm.js
-  src/Animations/Main.elm animations/elm.js
-  src/Animations/StMichael/Main.elm animations/stmichael/elm.js
   src/Contact/Main.elm contact/elm.js
   src/FeastDayActivities/Main.elm feastdayactivities/elm.js
   src/FeastDayActivities/Today/Main.elm feastdayactivities/today/elm.js

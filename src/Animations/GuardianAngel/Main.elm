@@ -62,25 +62,23 @@ view model =
         , style "background-color" "#FEF7F4"
         ]
         [ viewSubpageHeader "Guardian Angel" headerMargin
-        , viewBody model
+        , viewBody
         , viewFooter
         ]
 
 
-viewBody : Model -> Html Msg
-viewBody model =
+viewBody : Html msg
+viewBody =
     div
         []
         [ div [ class "max-w-3xl m-auto py-5 px-11" ]
             [ h1 [ class "my-10 leading-10" ] [ text "Guardian Angel Prayer" ]
             , aboutTheAnimation
             ]
-        , div [ class "mt-2 mb-20" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
         , div [ class "max-w-3xl m-auto py-5 px-11 mb-10" ]
-            [ viewVideoPlayers model
-            , div [ class "py-4" ] [ viewActivities ]
-            , viewPrayer
+            [ -- viewVideoPlayers model
+              -- , div [ class "py-4" ] [ viewActivities ]
+              viewPrayer
             , scripture
             , tradition
             , magisterialTeachings
@@ -93,12 +91,12 @@ viewBody model =
 
 englishVideoLink : String
 englishVideoLink =
-    "https://www.youtube-nocookie.com/embed/03hmpXjV_ck?playlist=03hmpXjV_ck&loop=1"
+    "https://www.youtube.com/embed/03hmpXjV_ck?playlist=03hmpXjV_ck&loop=1"
 
 
 urduVideoLink : String
 urduVideoLink =
-    "https://www.youtube-nocookie.com/embed/uG7xjTRSSaI?si=woQ6x00jpIiqEPMN"
+    "https://www.youtube.com/embed/uG7xjTRSSaI?si=woQ6x00jpIiqEPMN"
 
 
 viewVideoPlayers : Model -> Html Msg

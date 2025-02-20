@@ -11,9 +11,6 @@ var htmlHeadStart = `<!doctype html>
     gtag('js', new Date());
     gtag('config', 'G-TXRVE787GD');
   </script>
-  <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
-  <script type="text/javascript" defer src="https://donorbox.org/install-popup-button.js"></script>
-  <script> window.DonorBox = { widgetLinkClassName: 'custom-dbox-popup' } </script> 
 
   <!-- This code is from google ads. Event snippet for Newsletter Signup conversion
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
@@ -141,17 +138,6 @@ if (app.ports && app.ports.gtagReportConversion) {
 
   </script>
 
-  <!-- beehiiv UTM parameters attribution tracking -->
-  <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
-
-  <!-- Calendly inline widget begin -->
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  <!-- Calendly inline widget end -->
-
-  <!--
-  <link rel="stylesheet" type="text/css" href="https://donorbox.org/animate-popup-donate-button.css"><script type="text/javascript" id="donorbox-donate-button-installer" src="https://donorbox.org/install-donate-button.js" data-href="https://donorbox.org/catholic-stories-for-children?default_interval=o" data-style="background: rgb(254, 189, 17); color: rgb(0, 0, 0); text-decoration: none; font-family: Verdana, sans-serif; display: flex; font-size: 16px; padding: 8px 24px; border-radius: 5px; gap: 8px; width: fit-content; line-height: 24px; position: fixed; top: 50%; transform: translate(0px, 0px) rotate(-90deg); z-index: 9999; overflow: hidden; left: -45px;" data-img-src="https://donorbox.org/images/white_logo.svg"></script>
-  -->
-
   <!-- Cookie consent popup -->
   <script type="module" src="cookieconsent-config.js"></script>
 </body>
@@ -182,20 +168,51 @@ var fakeNodeWithJs = function (path, title, description, elmModule, thumbnail, e
   )
 }
 
+var fake404NodeWithJs = function (path, title, description, elmModule, thumbnail, elmPath) {
+  fs.writeFile(
+    '.' + path,
+    htmlHeadStart
+    + `<meta name="description" content="` + description + `">`
+    + `<title>` + title + `</title>`
+    + `<meta property="og:title" content="` + title + `">`
+    + `<meta property="og:description" content="` + description + `">`
+    + `<meta property="og:url" content="https://catholicstoriesforchildren.com` + path + `">`
+    + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
+    + `<meta property="twitter:card" content="summary_large_image">`
+    + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
+    + `<script>
+  var path = window.location.pathname;
+  var redirectUrl = "/index.html";
+
+  const params = new URLSearchParams(window.location.search);
+  const episode = params.get("e"); // null if it doesn't exist, or the value if it does
+
+  
+  // Preserve the path in URL by using JavaScript History API
+  if (path !== "/") {
+    if (episode) {
+     window.location.replace(redirectUrl + "?redirect=" + path.replace(/\\/+$/, "") + "/1/" + episode.toLowerCase());
+    } else {
+      window.location.replace(redirectUrl + "?redirect=" + path);
+  }
+  }
+</script>`
+    + `<script src="` + elmPath + `elm.js"></script>`
+    + `</head>`
+    + htmlBodyStart
+    + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
+    + htmlBodyEnd,
+    function (err) {
+      if (err) {
+        console.log(err)
+      }
+    }
+  )
+}
+
 
 fakeNodeWithJs('/about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/about/terms-and-conditions/index.html', 'Terms and Conditions - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/actofcontrition/index.html', 'Act of Contrition Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Act of Contrition prayer', '.Animations.ActOfContrition', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/prayertimewithangels/index.html', 'Prayer Time With Angels Animations - Catholic Stories for Children', 'Animations to guide kids in learning the prayers', '.Animations.PrayerTimeWithAngels', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/daisyandsheep/index.html', 'Daisy and Sheep Animations - Catholic Stories for Children', 'Animations to guide kids in learning the Mass and fun facts about the Catholic Church', '.Animations.DaisyAndSheep', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/daisyandsheep/liturgicalkiss/index.html', 'Daisy and Sheep Liturgical Kiss Animation - Catholic Stories for Children', 'Animations to guide kids in learning the Mass and fun facts about the Catholic Church', '.Animations.DaisyAndSheep.LiturgicalKiss', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/daisyandsheep/astronomyprogram/index.html', 'Daisy and Sheep Astronomy Program Animation - Catholic Stories for Children', 'Animations to guide kids in learning the Mass and fun facts about the Catholic Church', '.Animations.DaisyAndSheep.AstronomyProgram', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/daisyandsheep/penitentialact/index.html', 'Daisy and Sheep Penitential Act - Catholic Stories for Children', 'Animations to guide kids in learning the Mass and fun facts about the Catholic Church', '.Animations.DaisyAndSheep.PenitentialAct', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/guardianangel/index.html', 'Guardian Angel Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Guardian Angel prayer', '.Animations.GuardianAngel', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/hailmary/index.html', 'Hail Mary Animation - Catholic Stories for Children', 'An animation to guide kids in learning the Hail Mary prayer', '.Animations.HailMary', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/songsofthesaints/index.html', 'Songs of the Saints Animations - Catholic Stories for Children', 'Animations to guide kids in learning common saints and prayers', '.Animations.SongsOfTheSaints', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/index.html', 'Animations - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.Animations', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/animations/stmichael/index.html', 'St Michael Animation - Catholic Stories for Children', 'An animation to guide kids in learning the St Michael the Archangel prayer', '.Animations.StMichael', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/contact/index.html', 'Contact us - Catholic Stories for Children', '', '.Contact', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activities for kids on the feast days', '.FeastDayActivities', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
 fakeNodeWithJs('/feastdayactivities/today/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Catholic activities for kids today', '.FeastDayActivities.Today', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
@@ -203,7 +220,7 @@ fakeNodeWithJs('/give/index.html', 'Give - Catholic Stories for Children', 'Your
 fakeNodeWithJs('/index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/navigation/index.html', 'Navigation - Catholic Stories for Children', '', '.Navigation', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/newsroom/index.html', 'Newsroom - Catholic Stories for Children', 'See our latest animation news', '.Newsroom', '/assets/images/thumbnails/CSCThumbnail.png', './')
-fakeNodeWithJs('/404.html', 'Not Found - Catholic Stories for Children', 'This page is not found', '.NotFound', '/assets/images/thumbnails/CSCThumbnail.png', '/notfound/')
+fake404NodeWithJs('/404.html', 'Not Found - Catholic Stories for Children', 'This page is not found', '.NotFound', '/assets/images/thumbnails/CSCThumbnail.png', '/notfound/')
 fakeNodeWithJs('/opportunities/index.html', 'Opportunities - Catholic Stories for Children', 'Find opportunities to be involved', '.Opportunities', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/prayers/index.html', 'Prayers - Catholic Stories for Children', 'Catholic Prayers', '.Prayers', '/assets/images/thumbnails/CSCThumbnail.png', './')
 fakeNodeWithJs('/prayer/angelus/index.html', 'Angelus Prayer - Catholic Stories for Children', 'Angelus Prayers', '.Prayer.Angelus', '/assets/images/thumbnails/CSCThumbnail.png', './')

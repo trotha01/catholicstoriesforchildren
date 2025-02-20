@@ -1,6 +1,7 @@
 module Animations.PrayerTimeWithAngels.Main exposing (..)
 
-import Animations.Helpers exposing (AnimationLink, viewAnimationLinks)
+import Animations.Helpers exposing (episodeToThumbnailData, viewAnimationThumbnails)
+import Animations.PrayerTimeWithAngels.PTWAEpisodes exposing (episodes)
 import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
@@ -45,13 +46,13 @@ view model =
         [ class "bg-[#282c2e] text-white"
         ]
         [ viewSubpageHeader "Animations" headerMargin
-        , viewBody model
+        , viewBody
         , viewFooter
         ]
 
 
-viewBody : Model -> Html Msg
-viewBody model =
+viewBody : Html msg
+viewBody =
     div [ class "hcenter" ]
         [ div
             [ class "hcenter py-5 px-11 max-w-3xl" ]
@@ -74,37 +75,40 @@ viewBody model =
                     ]
                 ]
             ]
-        , div [ class "mt-2 mb-20" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
-        , viewAnimationLinks "Episodes" prayerTimeWithAngelsAnimationLinks
+
+        -- , div [ class "mt-2 mb-20" ]
+        --     [ Signup.view4 ]
+        -- , viewAnimationLinks "Episodes" prayerTimeWithAngelsAnimationLinks
+        -- , viewAnimationThumbnails "Episodes" <| List.map episodeToThumbnailData episodes
         ]
 
 
-prayerTimeWithAngelsAnimationLinks : List AnimationLink
-prayerTimeWithAngelsAnimationLinks =
-    [ { link = "/animations/guardianangel"
-      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/GuardianAngelPrayer.png"
-      , ariaLabel = "See the Guardian Angel Animation"
-      , isLive = True
-      }
-    , { link = "/animations/stmichael"
-      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.png"
-      , ariaLabel = "See the St Michael the Archangel Animation"
-      , isLive = True
-      }
-    , { link = "/animations/actofcontrition"
-      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/AOC.png"
-      , ariaLabel = "Act of Contrition Animation Coming Soon"
-      , isLive = True
-      }
-    , { link = "/animations/prayerbeforemeals"
-      , imgSrc = "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
-      , ariaLabel = "Prayer Before Meals Animation Coming Soon"
-      , isLive = False
-      }
-    , { link = "/animations/saintanthony"
-      , imgSrc = "/assets/images/AnimationImageLinks/SaintAnthony.png"
-      , ariaLabel = "St Anthony Animation Coming Soon"
-      , isLive = False
-      }
-    ]
+
+-- prayerTimeWithAngelsAnimationLinks : List AnimationLink
+-- prayerTimeWithAngelsAnimationLinks =
+--     [ { link = "/animations/guardianangel"
+--       , imgSrc = "/assets/images/AnimationImageLinks/PTWA/GuardianAngelPrayer.png"
+--       , ariaLabel = "See the Guardian Angel Animation"
+--       , isLive = True
+--       }
+--     , { link = "/animations/stmichael"
+--       , imgSrc = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.png"
+--       , ariaLabel = "See the St Michael the Archangel Animation"
+--       , isLive = True
+--       }
+--     , { link = "/animations/actofcontrition"
+--       , imgSrc = "/assets/images/AnimationImageLinks/PTWA/AOC.png"
+--       , ariaLabel = "Act of Contrition Animation Coming Soon"
+--       , isLive = True
+--       }
+--     , { link = "/animations/prayerbeforemeals"
+--       , imgSrc = "/assets/images/AnimationImageLinks/PrayerBeforeMeals.png"
+--       , ariaLabel = "Prayer Before Meals Animation Coming Soon"
+--       , isLive = False
+--       }
+--     , { link = "/animations/saintanthony"
+--       , imgSrc = "/assets/images/AnimationImageLinks/SaintAnthony.png"
+--       , ariaLabel = "St Anthony Animation Coming Soon"
+--       , isLive = False
+--       }
+--     ]
