@@ -7,6 +7,28 @@ import Html.Attributes exposing (..)
 import Time exposing (Month(..))
 
 
+viewDescription : Html msg
+viewDescription =
+    div
+        [ class "hcenter py-5 px-11 max-w-3xl"
+        ]
+        [ h1 [ class "leading-10 my-10", id "top" ] [ text "Daisy and Sheep" ]
+        , div [ class "my-10" ]
+            [ p [ class "my-5" ] [ text "Follow along with Daisy and Sheep and learn about the Catholic Mass and fun facts about the Catholic Church!" ]
+            , p [ class "my-5" ]
+                [ text
+                    ("Walk step by step through the Mass with these animations. Your kids will start to "
+                        ++ "learn each part and become more engaged as they understand what is happening every Sunday!"
+                    )
+                ]
+            , p [ class "my-5" ]
+                [ text
+                    "Many of the episodes have activities, reflection questions, guided imaginative prayer and more!"
+                ]
+            ]
+        ]
+
+
 seasons : List (Season msg)
 seasons =
     [ { number = 1

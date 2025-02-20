@@ -310,7 +310,7 @@ viewWeekdayActivities =
                 , span [] [ text ". " ]
                 , a [ href "https://www.usccb.org/prayers/morning-offering", class "underline", target "_blank" ] [ text "Morning Offering" ]
                 , span [] [ text ". " ]
-                , a [ href "/animations/guardianangel", class "underline", target "_blank" ] [ text "Guardian Angel Prayer" ]
+                , a [ href "/animations/prayertimewithangels/1/guardianangelprayer", class "underline", target "_blank" ] [ text "Guardian Angel Prayer" ]
                 , span [] [ text ". " ]
                 , a [ href "https://visitationproject.org/pages/the-three-hail-marys", class "underline", target "_blank" ] [ text "Three Hail Marys devotion" ]
                 , span [] [ text ". " ]

@@ -1,10 +1,8 @@
 module Animations.Productions exposing (..)
 
 import Animations.DaisyAndSheep.DASEpisodes as DAS
-import Animations.DaisyAndSheep.Main
 import Animations.HailMary.HMEpisodes as HM
 import Animations.Helpers exposing (Episode, Production, Season, stringToURL)
-import Animations.PrayerTimeWithAngels.Main
 import Animations.PrayerTimeWithAngels.PTWAEpisodes as PTWA
 import Animations.SongsOfTheSaints.SotSEpisodes as SOTS
 import Html exposing (..)
@@ -21,13 +19,13 @@ productions =
     , { title = "Prayer Time with Angels"
       , thumbnail = "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
       , link = "/animations/prayertimewithangels"
-      , about = Animations.PrayerTimeWithAngels.Main.viewBody
+      , about = PTWA.viewBody
       , seasons = PTWA.seasons
       }
     , { title = "Daisy and Sheep"
       , thumbnail = "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
       , link = "/animations/daisyandsheep"
-      , about = Animations.DaisyAndSheep.Main.viewDescription
+      , about = DAS.viewDescription
       , seasons = DAS.seasons
       }
     , { title = "Songs of the Saints"

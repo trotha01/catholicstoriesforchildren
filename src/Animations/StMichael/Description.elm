@@ -1,108 +1,8 @@
-module Animations.StMichael.Main exposing (..)
+module Animations.StMichael.Description exposing (..)
 
-import Animations.Helpers exposing (viewVideo)
-import Browser
-import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
-import Signup exposing (..)
-
-
-type LanguageOption
-    = EnglishPrayer
-    | Latin
-    | Spanish
-
-
-type VideoOption
-    = English
-    | Urdu
-
-
-type alias Model =
-    { prayerTab : LanguageOption
-    , videoTab : VideoOption
-    , signup : Signup.Model
-    }
-
-
-type Msg
-    = PrayerTabClick LanguageOption
-    | VideoTabClick VideoOption
-    | SignupMsg Signup.Msg
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = \_ -> ( { prayerTab = EnglishPrayer, videoTab = English, signup = Signup.init }, Cmd.none )
-        , view = view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
-        PrayerTabClick language ->
-            ( { model | prayerTab = language }, Cmd.none )
-
-        VideoTabClick language ->
-            ( { model | videoTab = language }, Cmd.none )
-
-
-view : Model -> Html Msg
-view model =
-    div
-        [ style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
-        ]
-        [ viewSubpageHeader "St Michael" headerMargin
-        , viewBody model
-        , viewFooter
-        ]
-
-
-viewBody : Model -> Html Msg
-viewBody model =
-    div []
-        [ div [ class "max-w-3xl m-auto py-5 px-11" ]
-            [ h1 [ class "my-10 leading-10" ] [ text "St Michael the Archangel Prayer" ]
-            , aboutTheAnimation
-            ]
-        , div [ class "mt-2 mb-20" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
-
-        -- , viewVideoComingSoon "https://ik.imagekit.io/catholicstories/stmichaelcomingsoon_plkRIX_Oq.png?updatedAt=1682601682466"
-        , div [ class "max-w-3xl m-auto py-5 px-11 mb-10" ]
-            [ viewVideoPlayers model
-            , div [ class "py-4" ] [ viewActivities ]
-            , viewPrayer
-            , aboutThePrayer
-            , viewPrayerHistory
-            , viewStoryHistory
-
-            -- , scripture
-            -- , tradition
-            -- , magisterialTeachings
-            , viewAnotherPage
-            ]
-        ]
 
 
 viewAbout : Html msg
@@ -114,78 +14,6 @@ viewAbout =
         , viewPrayerHistory
         , viewStoryHistory
         , viewAnotherPage
-        ]
-
-
-englishVideoLink : String
-englishVideoLink =
-    "https://www.youtube-nocookie.com/embed/y2-SqI_PLv4?playlist=y2-SqI_PLv4&loop=1"
-
-
-urduVideoLink : String
-urduVideoLink =
-    "https://www.youtube-nocookie.com/embed/5ROHimFlar8?si=nlttq8zg2KthJSE1"
-
-
-viewVideoPlayers : Model -> Html Msg
-viewVideoPlayers model =
-    div
-        []
-        [ viewVideoPlayerTabs model
-        , case model.videoTab of
-            English ->
-                viewVideo "St Michael | Prayer Time with Angels" englishVideoLink
-
-            Urdu ->
-                viewVideo "St Michael | Prayer Time with Angels" urduVideoLink
-        ]
-
-
-viewVideoPlayerTabs : Model -> Html Msg
-viewVideoPlayerTabs model =
-    let
-        selectedClass =
-            "active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500"
-
-        nonSelectedClass =
-            "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-
-        ( englishClass, aslClass ) =
-            case model.videoTab of
-                English ->
-                    ( selectedClass, nonSelectedClass )
-
-                Urdu ->
-                    ( nonSelectedClass, selectedClass )
-    in
-    div [ class "text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
-        [ ul
-            [ class "flex flex-wrap -mb-px" ]
-            [ li [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ englishClass)
-                    , onClick (VideoTabClick English)
-                    ]
-                    [ text "English" ]
-                ]
-            , li
-                [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ aslClass)
-                    , onClick (VideoTabClick Urdu)
-                    ]
-                    [ text "Urdu" ]
-                ]
-            ]
-        ]
-
-
-viewVideoPlayer : String -> Html msg
-viewVideoPlayer link =
-    div
-        [ class "w-1/2"
-        ]
-        [ viewVideo "St Michael | Prayer Time with Angels" link
         ]
 
 
@@ -207,56 +35,6 @@ aboutTheAnimation =
                 ("This animation is meant to be an aid for your children to slowly build a habit of prayer. "
                     ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
                 )
-            ]
-        ]
-
-
-prayerLanguageTabs : Model -> Html Msg
-prayerLanguageTabs model =
-    let
-        selectedClass =
-            "active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500"
-
-        nonSelectedClass =
-            "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-
-        ( englishClass, latinClass, spanishClass ) =
-            case model.prayerTab of
-                EnglishPrayer ->
-                    ( selectedClass, nonSelectedClass, nonSelectedClass )
-
-                Latin ->
-                    ( nonSelectedClass, selectedClass, nonSelectedClass )
-
-                Spanish ->
-                    ( nonSelectedClass, nonSelectedClass, selectedClass )
-    in
-    div [ class "text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
-        [ ul
-            [ class "flex flex-wrap -mb-px" ]
-            [ li [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ englishClass)
-                    , onClick (PrayerTabClick EnglishPrayer)
-                    ]
-                    [ text "English" ]
-                ]
-            , li
-                [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ latinClass)
-                    , onClick (PrayerTabClick Latin)
-                    ]
-                    [ text "Latin" ]
-                ]
-            , li
-                [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ spanishClass)
-                    , onClick (PrayerTabClick Spanish)
-                    ]
-                    [ text "Spanish" ]
-                ]
             ]
         ]
 
@@ -289,49 +67,6 @@ viewPrayer =
             , span [ class "block" ] [ text "who turn to you with confidence" ]
             , span [ class "block" ] [ text "and enable us by your gracious protection" ]
             , span [ class "block" ] [ text "to serve God more and more faithfully every day." ]
-            ]
-        ]
-
-
-viewActivities : Html msg
-viewActivities =
-    div []
-        [ h2 [ class "mb-3 mt-5" ] [ text "Saint Michael Activities" ]
-        , div [ class "grid grid-cols-2 gap-4" ]
-            [ div []
-                [ p [ class "h-14" ]
-                    [ text "Access coloring pages, copywork, discussion questions and more!"
-                    ]
-                , a
-                    [ attribute "aria-label" "Saint Michael Activities"
-                    , href "/printables/Saint-Michael-Activities.pdf"
-                    , target "_blank"
-                    ]
-                    [ img
-                        [ class "w-full max-w-[400px]"
-                        , class "transition ease-in-out hover:scale-110"
-                        , src "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Cover_J2Qt-zF3t.png?updatedAt=1688494130199"
-                        ]
-                        []
-                    ]
-                ]
-            , div []
-                [ p [ class "h-14" ]
-                    [ text "Answers to Saint Michael activity questions."
-                    ]
-                , a
-                    [ attribute "aria-label" "Saint Michael Activities"
-                    , href "/printables/Saint-Michael-Activity-Answers.pdf"
-                    , target "_blank"
-                    ]
-                    [ img
-                        [ class "w-full max-w-[400px]"
-                        , class "transition ease-in-out hover:scale-110"
-                        , src "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Answers_3__I3WnUgIL6.png?updatedAt=1688495548276"
-                        ]
-                        []
-                    ]
-                ]
             ]
         ]
 

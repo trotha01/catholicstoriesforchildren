@@ -1,164 +1,22 @@
-module Animations.DaisyAndSheep.AstronomyProgram.Main exposing (..)
+module Animations.GuardianAngel.Description exposing (..)
 
-import Animations.Helpers exposing (viewVideo)
-import Browser
-import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
-import Signup exposing (..)
 
 
-type VideoOption
-    = English
-    | Spanish
-
-
-type alias Model =
-    { videoTab : VideoOption
-    , signup : Signup.Model
-    }
-
-
-type Msg
-    = VideoTabClick VideoOption
-    | SignupMsg Signup.Msg
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = \_ -> ( { videoTab = English, signup = Signup.init }, Cmd.none )
-        , view = view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
-        VideoTabClick language ->
-            ( { model | videoTab = language }, Cmd.none )
-
-
-view : Model -> Html Msg
-view model =
-    div
-        [ style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
-        ]
-        [ viewSubpageHeader "Astronomy Program" headerMargin
-        , viewBody model
-        , viewFooter
-        ]
-
-
-viewBody : Model -> Html Msg
-viewBody model =
-    div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "py-5 px-11"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Astronomy Program" ]
-        , aboutTheAnimation
-        , div [ class "mb-20" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
-        , viewVideoPlayers model
-        , div [ class "py-4" ] [ viewActivities ]
-
-        -- , viewPrayer
-        -- , scripture
-        -- , tradition
-        -- , magisterialTeachings
-        -- , aboutThePrayer
-        ]
-
-
-englishVideoLink : String
-englishVideoLink =
-    "https://www.youtube-nocookie.com/embed/QIcgtKMKe40"
-
-
-spanishVideoLink : String
-spanishVideoLink =
-    "https://www.youtube-nocookie.com/embed/nP5e0y7DNNI"
-
-
-viewVideoPlayers : Model -> Html Msg
-viewVideoPlayers model =
+viewGuardianAngelDescription : Html msg
+viewGuardianAngelDescription =
     div
         []
-        [ viewVideoPlayerTabs model
-        , case model.videoTab of
-            English ->
-                viewVideo "Astronomy Program | Daisy and Sheep" englishVideoLink
-
-            Spanish ->
-                viewVideo "Astronomy Program | Daisy and Sheep" spanishVideoLink
-        ]
-
-
-viewVideoPlayerTabs : Model -> Html Msg
-viewVideoPlayerTabs model =
-    let
-        selectedClass =
-            "active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500"
-
-        nonSelectedClass =
-            "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-
-        ( englishClass, aslClass ) =
-            case model.videoTab of
-                English ->
-                    ( selectedClass, nonSelectedClass )
-
-                Spanish ->
-                    ( nonSelectedClass, selectedClass )
-    in
-    div [ class "text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
-        [ ul
-            [ class "flex flex-wrap -mb-px" ]
-            [ li [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ englishClass)
-                    , onClick (VideoTabClick English)
-                    ]
-                    [ text "English" ]
-                ]
-            , li
-                [ class "mr-2" ]
-                [ button
-                    [ class ("inline-block p-4 border-b-2 rounded-t-lg " ++ aslClass)
-                    , onClick (VideoTabClick Spanish)
-                    ]
-                    [ text "Spanish" ]
-                ]
+        [ div [ class "max-w-3xl m-auto py-5 px-11 mb-10" ]
+            [ aboutTheAnimation
+            , viewPrayer
+            , scripture
+            , tradition
+            , magisterialTeachings
+            , viewAnotherPage
             ]
-        ]
-
-
-viewVideoPlayer : String -> Html msg
-viewVideoPlayer link =
-    div
-        [ class "w-1/2"
-        ]
-        [ viewVideo "Astronomy Program | Daisy and Sheep" link
         ]
 
 
@@ -171,50 +29,15 @@ aboutTheAnimation =
         ]
         [ p [ class "my-3" ]
             [ text
-                "Use this animation to help your children learn the Vatican Astronomy Program."
+                ("Use this animation to help your children learn the Guardian Angel prayer though a story and song."
+                    ++ " It also will help your children understand the concept of a guardian angel."
+                )
             ]
-        ]
-
-
-viewActivities : Html msg
-viewActivities =
-    div []
-        [ h2 [ class "mb-3 mt-5" ] [ text "Astronomy Program Activities" ]
-        , div [ class "grid grid-cols-2 gap-4" ]
-            [ div []
-                [ p [ class "h-14" ]
-                    [ text "Access activities, reflection questions, guided imaginitive prayer and more!"
-                    ]
-                , a
-                    [ attribute "aria-label" "Vatican Astronomy Activities"
-                    , href "/printables/daisyandsheep/Astronomy Program.pdf"
-                    , target "_blank"
-                    ]
-                    [ img
-                        [ class "w-full max-w-[400px]"
-                        , class "transition ease-in-out hover:scale-110"
-                        , src "/assets/images/daisyandsheep/astronomyprogramworksheet.png"
-                        ]
-                        []
-                    ]
-                ]
-            , div []
-                [ p [ class "h-14" ]
-                    [ text "Answers to the Astronomy Program activity questions."
-                    ]
-                , a
-                    [ attribute "aria-label" "Astronomy Program Activity Answers"
-                    , href "/printables/daisyandsheep/Astronomy Program Answer Key.pdf"
-                    , target "_blank"
-                    ]
-                    [ img
-                        [ class "w-full max-w-[400px]"
-                        , class "transition ease-in-out hover:scale-110"
-                        , src "/assets/images/daisyandsheep/astronomyprogramworksheetanswers.png"
-                        ]
-                        []
-                    ]
-                ]
+        , p [ class "my-3" ]
+            [ text
+                ("This animation is meant to be an aid for your children to slowly build a habit of prayer. "
+                    ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
+                )
             ]
         ]
 
@@ -399,5 +222,31 @@ magisterialTeachings =
                 [ class "mt-2" ]
                 [ text "Pope Benedict XVI, Angelus, Oct. 2, 2011]"
                 ]
+            ]
+        ]
+
+
+viewAnotherPage : Html msg
+viewAnotherPage =
+    div
+        [ class "mx-auto my-4 col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "font-bold leading-9" ] [ text "Saint Michael Animation" ]
+        , p [ class "my-10" ] [ text "Make sure to also check our our Saint Michael Animation! Learn the St. Michael Prayer with Theo and Felicity!" ]
+        , a
+            [ href "/animations/prayertimewithangels/1/saintmichaelprayer"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Saint Michael animation"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Saint Michael Animations"
+                ]
+                []
             ]
         ]

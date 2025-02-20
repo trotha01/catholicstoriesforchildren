@@ -139,7 +139,7 @@ if (app.ports && app.ports.gtagReportConversion) {
   </script>
 
   <!-- Cookie consent popup -->
-  <script type="module" src="cookieconsent-config.js"></script>
+  <script type="module" src="/cookieconsent-config.js"></script>
 </body>
 </html>`
 

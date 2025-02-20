@@ -1,12 +1,39 @@
 module Animations.PrayerTimeWithAngels.PTWAEpisodes exposing (..)
 
-import Animations.GuardianAngel.Main
+import Animations.GuardianAngel.Description exposing (..)
 import Animations.Helpers exposing (..)
-import Animations.StMichael.Main
+import Animations.StMichael.Description
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Time exposing (Month(..))
+
+
+viewBody : Html msg
+viewBody =
+    div [ class "hcenter" ]
+        [ div
+            [ class "hcenter py-5 px-11 max-w-3xl" ]
+            [ h1 [ class "leading-10 my-10" ] [ text "Prayer Time with Angels" ]
+            , div [ class "my-10" ]
+                [ p [ class "my-5" ] [ text "Join Theo and Felicity as their guardian angels teach and help them understand different Catholic prayers." ]
+                , p [ class "my-5" ]
+                    [ text
+                        ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
+                            ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
+                        )
+                    ]
+                , p [ class "my-5" ]
+                    [ text
+                        ("Do you want your children to grow in gratitude? Start with the prayer before meals."
+                            ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
+                            ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
+                            ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
+                        )
+                    ]
+                ]
+            ]
+        ]
 
 
 seasons : List (Season msg)
@@ -25,7 +52,7 @@ episodes =
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , link = "/animations/guardianangel"
-      , about = Animations.GuardianAngel.Main.viewBody
+      , about = viewGuardianAngelDescription
       , activities =
             { thumbnailLink = "https://ik.imagekit.io/catholicstories/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png?updatedAt=1688494259496"
             , pdfLink = "printables/Guardian-Angel-Activities.pdf"
@@ -49,8 +76,8 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
-      , link = "/animations/stmichael"
-      , about = Animations.StMichael.Main.viewAbout
+      , link = "/animations/prayertimewithangels/1/saintmichaelprayer"
+      , about = Animations.StMichael.Description.viewAbout
       , activities =
             { thumbnailLink = "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Cover_J2Qt-zF3t.png?updatedAt=1688494130199"
             , pdfLink = "/printables/Saint-Michael-Activities.pdf"
@@ -155,7 +182,7 @@ prayerTimeWithAngelsAnimationLinks =
       , ariaLabel = "See the Guardian Angel Animation"
       , isLive = True
       }
-    , { link = "/animations/stmichael"
+    , { link = "animations/prayertimewithangels/1/saintmichaelprayer"
       , imgSrc = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.png"
       , ariaLabel = "See the St Michael the Archangel Animation"
       , isLive = True
