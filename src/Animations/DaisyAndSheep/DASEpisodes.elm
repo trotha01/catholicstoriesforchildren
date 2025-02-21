@@ -59,8 +59,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/i6zBgnZQq9U"
-            , spanish = "https://www.youtube-nocookie.com/embed/vgUZq1hhmXM"
+            { english = "https://www.youtube.com/embed/i6zBgnZQq9U"
+            , spanish = "https://www.youtube.com/embed/vgUZq1hhmXM"
             , urdu = ""
             , asl = ""
             }
@@ -84,8 +84,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/QIcgtKMKe40"
-            , spanish = "https://www.youtube-nocookie.com/embed/nP5e0y7DNNI"
+            { english = "https://www.youtube.com/embed/QIcgtKMKe40"
+            , spanish = "https://www.youtube.com/embed/nP5e0y7DNNI"
             , urdu = ""
             , asl = ""
             }
@@ -109,8 +109,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/ay8Kzqeyrrc"
-            , spanish = "https://www.youtube-nocookie.com/embed/cfZsgMZjCAw"
+            { english = "https://www.youtube.com/embed/ay8Kzqeyrrc"
+            , spanish = "https://www.youtube.com/embed/cfZsgMZjCAw"
             , urdu = ""
             , asl = ""
             }
@@ -134,8 +134,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/C-FmlvV9JWI"
-            , spanish = "https://www.youtube-nocookie.com/embed/HhoLRdTxTYc"
+            { english = "https://www.youtube.com/embed/C-FmlvV9JWI"
+            , spanish = "https://www.youtube.com/embed/HhoLRdTxTYc"
             , urdu = ""
             , asl = ""
             }
@@ -159,8 +159,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/G-Yz76BrIvo"
-            , spanish = "https://www.youtube-nocookie.com/embed/nEv2wpyFpwk"
+            { english = "https://www.youtube.com/embed/G-Yz76BrIvo"
+            , spanish = "https://www.youtube.com/embed/nEv2wpyFpwk"
             , urdu = ""
             , asl = ""
             }
@@ -184,8 +184,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/w_v9goHWsNs"
-            , spanish = "https://www.youtube-nocookie.com/embed/LLDGWewq1lM"
+            { english = "https://www.youtube.com/embed/w_v9goHWsNs"
+            , spanish = "https://www.youtube.com/embed/LLDGWewq1lM"
             , urdu = ""
             , asl = ""
             }
@@ -209,8 +209,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/Khn3A6UFCXg"
-            , spanish = "https://www.youtube-nocookie.com/embed/vURcMiGvR9s"
+            { english = "https://www.youtube.com/embed/Khn3A6UFCXg"
+            , spanish = "https://www.youtube.com/embed/vURcMiGvR9s"
             , urdu = ""
             , asl = ""
             }
@@ -234,8 +234,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/cbb2iRzz9pc"
-            , spanish = "https://www.youtube-nocookie.com/embed/3o5bCo0gQyM"
+            { english = "https://www.youtube.com/embed/cbb2iRzz9pc"
+            , spanish = "https://www.youtube.com/embed/3o5bCo0gQyM"
             , urdu = ""
             , asl = ""
             }
@@ -259,8 +259,8 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/u-hMEMTnfVY"
-            , spanish = "https://www.youtube-nocookie.com/embed/8RTTl5yKQEg"
+            { english = "https://www.youtube.com/embed/u-hMEMTnfVY"
+            , spanish = "https://www.youtube.com/embed/8RTTl5yKQEg"
             , urdu = ""
             , asl = ""
             }

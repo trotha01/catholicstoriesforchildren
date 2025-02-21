@@ -1,5 +1,6 @@
 module Animations.PrayerTimeWithAngels.PTWAEpisodes exposing (..)
 
+import Animations.ActOfContrition.Description
 import Animations.GuardianAngel.Description exposing (..)
 import Animations.Helpers exposing (..)
 import Animations.StMichael.Description
@@ -99,10 +100,10 @@ episodes =
       }
     , { title = "Act of Contrition Prayer"
       , thumbnail = "/assets/images/AnimationImageLinks/PTWA/AOC.png"
-      , releaseDate = Time.millisToPosix 0
-      , isDisabled = True
+      , releaseDate = Time.millisToPosix 1740150000000
+      , isDisabled = False
       , link = "/animations/actofcontrition"
-      , about = span [] []
+      , about = Animations.ActOfContrition.Description.viewAbout
       , activities =
             { thumbnailLink = ""
             , pdfLink = ""
@@ -116,7 +117,7 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = ""
+            { english = "https://www.youtube.com/embed/1i3Dx77eMDc"
             , spanish = ""
             , urdu = ""
             , asl = ""

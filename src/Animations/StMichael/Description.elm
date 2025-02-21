@@ -463,17 +463,19 @@ viewAnotherPage =
         , class "max-w-3xl"
         ]
         [ h2 [ class "font-bold leading-9" ] [ text "Daisy and Sheep Animations" ]
-        , p [ class "my-10" ] [ text "Make sure to also check our our Daisy and Sheep Animations! Learn the Mass and Catholic fun facts with Daisy and Sheep!" ]
+
+        -- , p [ class "my-10" ] [ text "Make sure to also check our our Daisy and Sheep Animations! Learn the Mass and Catholic fun facts with Daisy and Sheep!" ]
+        , p [ class "my-10" ] [ text "Make sure to also check our our Act of Contrition Animation! Learn the Act of Contrition Prayer with Theo and Felicity!" ]
         , a
-            [ href "/animations/daisyandsheep"
+            [ href "/animations/prayertimewithangels/1/actofcontritionprayer"
             , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" "See the Daisy and Sheep animations"
+            , attribute "aria-label" "See the Act of Contrition animation"
             ]
             [ img
-                [ src "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
+                [ src "/assets/images/AnimationImageLinks/PTWA/AOC.png"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
-                , alt "Daisy and Sheep Animations"
+                , alt "Act of Contrition Animation"
                 ]
                 []
             ]
