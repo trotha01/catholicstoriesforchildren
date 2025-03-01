@@ -441,14 +441,17 @@ viewAnimations =
 viewTestimonials : Html msg
 viewTestimonials =
     viewSection "testimonials"
-        [ class "py-20 bg-[#FEF7F4] w-screen"
+        [ class "py-20 bg-[#FEF7F4]"
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
-        , div [ class " md:flex md:overflow-x-auto" ]
-            [ div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson ainsleyRawlingsTestimonial ]
-            , div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson camSmithTestimonial ]
-            , div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson meganReisterTestimonial ]
-            , div [ class "flex-none md:w-1/3 min-w-[325px] my-10 md:mr-20" ] [ viewPerson kellyBriggsTestimonial ]
+        , div
+            [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]"
+            , class "my-10"
+            ]
+            [ viewPerson ainsleyRawlingsTestimonial
+            , viewPerson camSmithTestimonial
+            , viewPerson meganReisterTestimonial
+            , viewPerson kellyBriggsTestimonial
             ]
         ]
 
