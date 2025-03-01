@@ -245,7 +245,7 @@ viewBody model =
         , class "lg:text-2xl"
         ]
         [ viewIntro model
-        , viewAnimations
+        , viewAnimations model
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTestimonials ]
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTeam ]
         , viewContact
@@ -261,7 +261,7 @@ viewIntro model =
         [ class "my-10"
         ]
         [ div []
-            [ div [ class "mb-10 max-w-5xl m-auto  px-11 md:px-0" ]
+            [ div [ class "mb-10 max-w-5xl m-auto  px-11 lg:px-0" ]
                 [ h2
                     [ class "mb-7 leading-10"
                     ]
@@ -356,85 +356,12 @@ viewTeam =
         ]
 
 
-viewAnimations : Html msg
-viewAnimations =
+viewAnimations : Model -> Html Msg
+viewAnimations model =
     viewSection "animations"
-        [ class "pb-20 bg-white" ]
-        [ div
-            [ class "pt-32 lg:pt-48"
-            ]
-            [ div []
-                [ h2 subHeaderStyle
-                    [ text "Animations" ]
-                ]
-            , p [ class "text-center pb-3 px-10" ]
-                [ text "These animations are made to help kids learn the Hail Mary prayer, the prayer to their guardian angel, and more!"
-                ]
-            , div
-                [ class "w-full"
-                , class "grid grid-cols-1 lg:grid-cols-2"
-                , class "max-w-[120rem]"
-                , class "m-auto"
-                ]
-                [ a
-                    [ href "/animations/hailmary"
-                    , class "hover:scale-105 transition ease-in-out duration-50"
-                    , attribute "aria-label" "See the Hail Mary Animation"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/HailMary.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "Hail Mary Animation"
-                        ]
-                        []
-                    ]
-                , a
-                    [ href "/animations/prayertimewithangels"
-                    , class "hover:scale-105 transition ease-in-out duration-50"
-                    , attribute "aria-label" "See the Prayer Time with Angels animation"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "Prayer Time with Angels animations"
-                        ]
-                        []
-                    ]
-                , a
-                    [ href "/animations/daisyandsheep"
-                    , class "hover:scale-105 transition ease-in-out duration-50"
-                    , attribute "aria-label" "Daisy and Sheep animations"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "Daisy and Sheep Animations"
-                        ]
-                        []
-                    ]
-                , a
-                    [ href "/animations/songsofthesaints"
-                    , class "hover:scale-105 transition ease-out duration-50 drop-shadow-lg"
-                    , attribute "aria-label" "Songs of the Saints animations"
-                    ]
-                    [ img
-                        [ src "/assets/images/AnimationImageLinks/SongsOfTheSaints.png"
-                        , style "border-radius" "5px"
-                        , style "width" "-webkit-fill-available"
-                        , alt "Songs of the Saints Animations"
-                        ]
-                        []
-                    ]
-                , div
-                    [ style "clear" "both"
-                    , style "width" "1px"
-                    ]
-                    []
-                ]
-            ]
+        [ class "pb-20 bg-[#282c2e] text-white"
+        ]
+        [ Animations.View.viewProductions model.productionsModel |> Html.map ProductionsMsg
         ]
 
 
