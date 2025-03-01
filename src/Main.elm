@@ -372,7 +372,7 @@ viewTestimonials =
         ]
         [ h2 subHeaderStyle [ text "Testimonials" ]
         , div
-            [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]"
+            [ class "grid gap-5 max-w-[120rem]"
             , class "my-10"
             ]
             [ viewPerson ainsleyRawlingsTestimonial
