@@ -5,6 +5,7 @@ import Html.Attributes exposing (..)
 import Json.Encode
 import Svg.Attributes exposing (d)
 import Time
+import Url exposing (percentEncode)
 
 
 type alias Production msg =
@@ -160,7 +161,7 @@ viewAnimationThumbnail thumbnail =
             [ src thumbnail.thumbnail
             , style "border-radius" "5px"
             , style "width" "-webkit-fill-available"
-            , alt "Prayer Time with Angels animations"
+            , alt (thumbnail.title ++ " thumbnail")
             ]
             []
         ]
@@ -191,4 +192,6 @@ removeSpaces str =
 
 stringToURL : String -> String
 stringToURL s =
-    s |> String.toLower |> removeSpaces
+    -- The Elm docs say not to use "percentEncode" and to use "relative" instead, but "relative" does not encode.
+    -- s |> String.toLower |> removeSpaces |> (\s2 -> relative [ s2 ] [])
+    s |> String.toLower |> removeSpaces |> percentEncode

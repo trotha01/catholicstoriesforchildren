@@ -1,6 +1,7 @@
 module Animations.SongsOfTheSaints.SotSEpisodes exposing (..)
 
 import Animations.Helpers exposing (Episode, Season)
+import Give.Main exposing (donateWithZeffy)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -44,32 +45,67 @@ seasons =
 
 episodes : List (Episode msg)
 episodes =
-    [ { title = "Saint Thérèse of Lisieux"
-      , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.png"
-      , releaseDate = Time.millisToPosix 0
-      , isDisabled = False
-      , link = ""
-      , about = thereseVideoDescription
-      , activities =
-            { thumbnailLink = ""
-            , pdfLink = ""
-            , answerThumbnailLink = ""
-            , answerPdfLink = ""
-            }
-      , videoTitles =
-            { english = "Saint Therese | Songs of the Saints"
-            , spanish = ""
-            , urdu = ""
-            , asl = ""
-            }
-      , videoLinks =
-            { english = "https://www.youtube-nocookie.com/embed/_v_285ob5Rc"
-            , spanish = ""
-            , urdu = ""
-            , asl = ""
-            }
-      }
+    [ stThereseEpisode
+    , carloEpisode
     ]
+
+
+stThereseEpisode : Episode msg
+stThereseEpisode =
+    { title = "Saint Thérèse of Lisieux"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.png"
+    , releaseDate = Time.millisToPosix 0
+    , isDisabled = False
+    , link = ""
+    , about = thereseVideoDescription
+    , activities =
+        { thumbnailLink = ""
+        , pdfLink = ""
+        , answerThumbnailLink = ""
+        , answerPdfLink = ""
+        }
+    , videoTitles =
+        { english = "Saint Therese | Songs of the Saints"
+        , spanish = ""
+        , urdu = ""
+        , asl = ""
+        }
+    , videoLinks =
+        { english = "https://www.youtube.com/embed/_v_285ob5Rc"
+        , spanish = ""
+        , urdu = ""
+        , asl = ""
+        }
+    }
+
+
+carloEpisode : Episode msg
+carloEpisode =
+    { title = "Carlo Acutis"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsCarlo.png"
+    , releaseDate = Time.millisToPosix 1741359600000 -- Friday, March 7, 2025 7:00:00 AM GMT-08:00
+    , isDisabled = False
+    , link = ""
+    , about = carloVideoDescription
+    , activities =
+        { thumbnailLink = ""
+        , pdfLink = ""
+        , answerThumbnailLink = ""
+        , answerPdfLink = ""
+        }
+    , videoTitles =
+        { english = "Carlo Acutis | Songs of the Saints"
+        , spanish = ""
+        , urdu = ""
+        , asl = ""
+        }
+    , videoLinks =
+        { english = "https://www.youtube.com/embed/IW4xlLvfgM8"
+        , spanish = ""
+        , urdu = ""
+        , asl = ""
+        }
+    }
 
 
 thereseVideoDescription : Html msg
@@ -190,5 +226,134 @@ thereseVideoDescription =
                 ]
                 [ span [ class "italic" ] [ text "Guided by You Lord, grant that I may always allow myself to be guided by You, always follow Your plans, and perfectly accomplish Your Holy Will. Grant that in all things, great and small, today and all the days of my life, I may do whatever You require of me. Help me respond to the slightest prompting of Your Grace, so that I may be Your trustworthy instrument for Your honour. May Your Will be done in time and in eternity by me, in me, and through me. Amen." ]
                 ]
+            ]
+
+        -- , viewAnotherEpisode carloEpisode "/animations/songsofthesaints/1/carloacutis"
+        ]
+
+
+carloVideoDescription : Html msg
+carloVideoDescription =
+    div []
+        [ p []
+            [ text "Join Carlo Acutis, to be canonized April 27, in a moment of his life."
+            ]
+        , br [] []
+        , p []
+            [ text "In this video, we see Carlo turn to prayer when he hits a snag in his website. He turns to one of his favorite saints, Saint Francis. Follow along in song as Carlo prays the famous Prayer of Peace."
+            ]
+        , br [] []
+        , p []
+            [ text "In the book, "
+            , span [ class "italic" ] [ text "My Son Carlo" ]
+            , text " his mother writes, "
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-[#dfe6f7] dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ span [ class "italic" ] [ text "Websites were his passion. He had created various ones, and one in particular, about Eucharistic miracles, had gained worldwide acclaim. … Creating websites was his way of satisfying his great desire to proclaim the Good News to everyone. He was animated by an irrepressible desire to constantly bring the beauty of the contents of the Christian faith to light." ]
+                ]
+            ]
+        , br [] []
+        , p []
+            [ text "She continues,"
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-[#dfe6f7] dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ span [ class "italic" ] [ text "Carlo was always an optimist. And even when everything seemed to be falling apart, he never stopped hoping and never gave in to resignation." ]
+                ]
+            ]
+        , br [] []
+        , p []
+            [ text "Carlo's mom relates his spirit to the words of Saint Pope John Paul II, "
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-[#dfe6f7] dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ span [ class "italic" ] [ text "Do not abandon yourselves to despair. We are the Easter people and hallelujah is our song." ]
+                ]
+            ]
+        , br [] []
+        , p []
+            [ text "May this animation inspire you to learn more about this incredible soon-to-be-saint. Or maybe even visit his tomb where his body rests in Assisi, Italy. Use this video as inspiration for your next meditative prayer. Carlo’s canonization may not be until April, but you can ask for his intercession any time!"
+            ]
+        , br [] []
+        , p []
+            [ text "Also, make sure to check out our sponsor, "
+            , a [ href "https://notredamefcu.com/", class "underline decoration-sky-500" ] [ text "Notre Dame Federal Credit Union" ]
+            , text "! We switched from a major bank to this Catholic credit union and love it! We love working with folks who also focus on service to others. They have helped us get our little business up and running smoothly. They also have the "
+            , a [ href "https://notredamefcu.com/elevate-fundraising/", class "underline decoration-sky-500" ] [ text "ELEVATE suite" ]
+            , text " of fundraising tools to help nonprofits!."
+            ]
+        , a [ href "https://notredamefcu.com/" ]
+            [ img [ src "/assets/images/NDFCULogo.png", alt "Notre Dame FCU Logo", class "bg-white rounded px-8 py-6 mt-4 w-96 mx-auto" ] []
+            ]
+        , br [] []
+        , p []
+            [ text "In our animation, we take the creative license of having Carlo turn to the prayer of Saint Francis of Assisi. We don’t know of anything written that mentions what Carlo did when he hit a problem with his websites. We know Carlo loved building websites. And we know Carlo faced his struggles with courage, with joy, and through Christ."
+            ]
+        , br [] []
+        , p []
+            [ text "I want to thank everyone who helped contribute to this video, whether through the creation itself, through donations, or through prayers. We are so grateful for you!"
+            ]
+        , br [] []
+        , p []
+            [ text "I pray this animation and song honors the incredible person of Carlo Acutis."
+            ]
+        , br [] []
+        , p []
+            [ text "If you would like to see more songs and animation like this, we would like to ask for you to consider helping us by donating, sharing our videos, or praying for us. Thank you!"
+            ]
+        , br [] []
+        , donateWithZeffy
+
+        -- , viewAnotherEpisode stThereseEpisode "/animations/songsofthesaints/1/saintthérèseoflisieux"
+        ]
+
+
+viewAnotherEpisode : Episode msg -> String -> Html msg
+viewAnotherEpisode episode link =
+    div
+        [ class "mx-auto my-4 col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "font-bold leading-9" ] [ text episode.title ]
+        , p [ class "my-10" ] [ text ("Make sure to also check our our " ++ episode.title ++ " Animation!") ]
+        , a
+            [ href link
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" ("See the " ++ episode.title ++ " animation")
+            ]
+            [ img
+                [ src episode.thumbnail
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt (episode.title ++ " thumbnail")
+                ]
+                []
             ]
         ]
