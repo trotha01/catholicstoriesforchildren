@@ -100,7 +100,7 @@ carloEpisode =
         , asl = ""
         }
     , videoLinks =
-        { english = "https://www.youtube.com/embed/IW4xlLvfgM8"
+        { english = "https://www.youtube.com/embed/Q3X7LFbNzrw"
         , spanish = ""
         , urdu = ""
         , asl = ""
