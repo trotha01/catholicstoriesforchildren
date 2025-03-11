@@ -29,10 +29,9 @@ viewSubpageHeader currentPage leftMargin =
                 ( "60px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
     in
     header
-        [ style "background-color" "#3d5d75"
-        , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
+        [ style "background-color" "#43868D"
+        , class "text-white"
         , class ("h-[60px] md:h-[" ++ height ++ "]")
-        , class "colorDarkGray"
         , class "grid items-center justify-items-center"
         , class gridColsClass
         ]
@@ -51,10 +50,9 @@ viewPageHeaderNoLinks currentPage leftMargin =
             ( "60px", "grid-cols-[150px_1fr]" )
     in
     header
-        [ style "background-color" "#3d5d75"
-        , style "background-image" "linear-gradient(130deg, #9DE2EB , #EBD6F1)"
+        [ style "background-color" "#43868D"
         , class ("h-[60px] md:h-[" ++ height ++ "]")
-        , class "colorDarkGray"
+        , class "text-white"
         , class "grid items-center justify-items-center"
         , class gridColsClass
         ]
@@ -86,6 +84,7 @@ viewHeaderTitle includesLinks title =
         [ h1
             [ style "font-family" "hvdComicSerifPro"
             , style "margin" "0px"
+            , class "text-white"
             , class textClass
             ]
             [ text "Catholic Stories for Children" ]
@@ -107,9 +106,9 @@ hamburgerMenu =
         , class "space-y-2"
         , attribute "aria-label" "menu"
         ]
-        [ div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
-        , div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
-        , div [ class "w-8 h-0.5 m-auto bg-gray-600" ] []
+        [ div [ class "w-8 h-0.5 m-auto bg-white" ] []
+        , div [ class "w-8 h-0.5 m-auto bg-white" ] []
+        , div [ class "w-8 h-0.5 m-auto bg-white" ] []
         ]
 
 
@@ -117,7 +116,7 @@ desktopNavigation : String -> Html msg
 desktopNavigation height =
     nav
         [ class "h-full w-full flex justify-end content-center justify-items-center gap-4 mr-4"
-        , class "text-base"
+        , class "text-lg"
         ]
         [ viewNavButton height "/feastdayactivities" "_self" "Calendar"
         , viewNavButton height "/saints" "_self" "Saints"
