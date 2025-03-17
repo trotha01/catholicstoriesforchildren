@@ -14,6 +14,7 @@ type alias Production msg =
     , link : String
     , about : Html msg
     , seasons : List (Season msg)
+    , carouselThumbnail : String
     }
 
 

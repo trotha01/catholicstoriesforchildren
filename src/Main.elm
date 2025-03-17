@@ -1,5 +1,6 @@
 module Main exposing (Model, main, view, viewBanner)
 
+import Animations.Helpers.Carousel as Carousel
 import Animations.View
 import Browser
 import Browser.Dom as Dom
@@ -14,7 +15,7 @@ import Newsroom.Main exposing (viewSignUp)
 import NotFound.Main
 import Resources.Helpers exposing (ResourceGroup)
 import Signup exposing (..)
-import Svg.Attributes exposing (d)
+import Svg.Attributes exposing (d, mode)
 import Task
 import Team.Team exposing (carlos, kelly, lindsey, trevor, viewPerson)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
@@ -244,7 +245,9 @@ viewBody model =
         [ class "text-lg leading-loose"
         , class "lg:text-2xl"
         ]
-        [ viewIntro model
+        [ viewSlideshow model
+
+        -- , viewIntro model
         , viewAnimations model
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTestimonials ]
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTeam ]
@@ -252,6 +255,16 @@ viewBody model =
         , viewNewsletter
         , viewGive
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewResources ]
+        ]
+
+
+viewSlideshow : Model -> Html.Html Msg
+viewSlideshow model =
+    div
+        [ class "bg-[#282c2e]"
+        ]
+        [ Carousel.viewSlides model.productionsModel.slideshow Animations.View.NextSlide Animations.View.PrevSlide
+            |> Html.map ProductionsMsg
         ]
 
 
@@ -276,51 +289,52 @@ viewIntro model =
         , div
             [ class "max-w-5xl m-auto" ]
             -- INTRO VIDEO
-            [ --     div
-              --     [ style "position" "relative"
-              --     , style "padding-bottom" "56.25%"
-              --     , height 0
-              --     , style "overflow" "hidden"
-              --     , style "max-width" "100%"
-              --     , style "border-radius" "5px"
-              --     ]
-              --     [ iframe
-              --         [ style "position" "absolute"
-              --         , style "width" "100%"
-              --         , style "height" "100%"
-              --         , style "top" "0"
-              --         , style "left" "0"
-              --         , src "https://player.vimeo.com/video/702301712?h=d6ef012bb2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-              --         , title "About Catholic Stories for Children"
-              --         , property "frameborder" (Json.Encode.string "0")
-              --         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-              --         , property "allowfullscreen" (Json.Encode.string "true")
-              --         ]
-              --         []
-              --     ]
-              -- ,
-              div
-                [ style "position" "relative"
-                , style "padding-bottom" "56.25%"
-                , height 0
-                , style "overflow" "hidden"
-                , style "max-width" "100%"
-                , style "border-radius" "5px"
-                ]
-                [ iframe
-                    [ style "position" "absolute"
-                    , style "width" "100%"
-                    , style "height" "100%"
-                    , style "top" "0"
-                    , style "left" "0"
-                    , src "https://www.youtube-nocookie.com/embed/ppNG8UFgUdo"
-                    , title "About Catholic Stories for Children"
-                    , property "frameborder" (Json.Encode.string "0")
-                    , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
-                    , property "allowfullscreen" (Json.Encode.string "true")
-                    ]
-                    []
-                ]
+            [--     div
+             --     [ style "position" "relative"
+             --     , style "padding-bottom" "56.25%"
+             --     , height 0
+             --     , style "overflow" "hidden"
+             --     , style "max-width" "100%"
+             --     , style "border-radius" "5px"
+             --     ]
+             --     [ iframe
+             --         [ style "position" "absolute"
+             --         , style "width" "100%"
+             --         , style "height" "100%"
+             --         , style "top" "0"
+             --         , style "left" "0"
+             --         , src "https://player.vimeo.com/video/702301712?h=d6ef012bb2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+             --         , title "About Catholic Stories for Children"
+             --         , property "frameborder" (Json.Encode.string "0")
+             --         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+             --         , property "allowfullscreen" (Json.Encode.string "true")
+             --         ]
+             --         []
+             --     ]
+             -- ,
+             -- Coming Soon Video
+             --   div
+             --     [ style "position" "relative"
+             --     , style "padding-bottom" "56.25%"
+             --     , height 0
+             --     , style "overflow" "hidden"
+             --     , style "max-width" "100%"
+             --     , style "border-radius" "5px"
+             --     ]
+             --     [ iframe
+             --         [ style "position" "absolute"
+             --         , style "width" "100%"
+             --         , style "height" "100%"
+             --         , style "top" "0"
+             --         , style "left" "0"
+             --         , src "https://www.youtube-nocookie.com/embed/ppNG8UFgUdo"
+             --         , title "About Catholic Stories for Children"
+             --         , property "frameborder" (Json.Encode.string "0")
+             --         , property "allow" (Json.Encode.string "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+             --         , property "allowfullscreen" (Json.Encode.string "true")
+             --         ]
+             --         []
+             --     ]
             ]
         ]
 

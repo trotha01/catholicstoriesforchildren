@@ -12,29 +12,38 @@ productions : List (Production msg)
 productions =
     [ { title = "Hail Mary"
       , thumbnail = "/assets/images/AnimationImageLinks/HailMary.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/HailMary.png"
       , link = "/animations/hailmary"
       , about = span [] []
       , seasons = HM.seasons
       }
     , { title = "Prayer Time with Angels"
       , thumbnail = "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/PrayerTimeWithAngels.png"
       , link = "/animations/prayertimewithangels"
       , about = PTWA.viewBody
       , seasons = PTWA.seasons
       }
     , { title = "Daisy and Sheep"
       , thumbnail = "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/DaisyAndSheep.png"
       , link = "/animations/daisyandsheep"
       , about = DAS.viewDescription
       , seasons = DAS.seasons
       }
     , { title = "Songs of the Saints"
       , thumbnail = "/assets/images/AnimationImageLinks/SongsOfTheSaints.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/SongsOfTheSaints.png"
       , link = "/animations/songsofthesaints"
       , about = span [] []
       , seasons = SOTS.seasons
       }
     ]
+
+
+slideshowProductions : List ( String, String )
+slideshowProductions =
+    List.map (\p -> ( p.carouselThumbnail, p.link )) productions
 
 
 getEpisodeFromURLPath : String -> Int -> String -> ( Maybe (Production msg), Maybe (Season msg), Maybe (Episode msg) )

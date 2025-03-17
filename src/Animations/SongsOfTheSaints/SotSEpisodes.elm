@@ -246,7 +246,7 @@ carloVideoDescription =
         , p []
             [ text "In the book, "
             , span [ class "italic" ] [ text "My Son Carlo" ]
-            , text " his mother writes, "
+            , text ", his mother writes, "
             ]
         , blockquote
             [ Html.Attributes.cite ""
@@ -305,7 +305,7 @@ carloVideoDescription =
             , a [ href "https://notredamefcu.com/", class "underline decoration-sky-500" ] [ text "Notre Dame Federal Credit Union" ]
             , text "! We switched from a major bank to this Catholic credit union and love it! We love working with folks who also focus on service to others. They have helped us get our little business up and running smoothly. They also have the "
             , a [ href "https://notredamefcu.com/elevate-fundraising/", class "underline decoration-sky-500" ] [ text "ELEVATE suite" ]
-            , text " of fundraising tools to help nonprofits!."
+            , text " of fundraising tools to help nonprofits."
             ]
         , a [ href "https://notredamefcu.com/" ]
             [ img [ src "/assets/images/NDFCULogo.png", alt "Notre Dame FCU Logo", class "bg-white rounded px-8 py-6 mt-4 w-96 mx-auto" ] []

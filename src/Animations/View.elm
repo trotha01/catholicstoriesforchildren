@@ -1,7 +1,8 @@
 module Animations.View exposing (..)
 
 import Animations.Helpers exposing (..)
-import Animations.Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
+import Animations.Helpers.Carousel as Carousel exposing (Carousel)
+import Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
@@ -25,6 +26,7 @@ type alias Model =
     , time : Time.Posix
     , timezone : Time.Zone
     , videoTab : VideoOption
+    , slideshow : Carousel ( String, String )
     }
 
 
@@ -43,6 +45,8 @@ type Msg
     | NewTime Time.Posix
     | NewZone Time.Zone
     | VideoTabClick VideoOption
+    | NextSlide
+    | PrevSlide
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -53,6 +57,7 @@ init flags url key =
       , time = Time.millisToPosix 0
       , timezone = Time.utc
       , videoTab = English
+      , slideshow = Carousel.init Productions.slideshowProductions
       }
     , Cmd.batch
         [ Task.perform NewTime Time.now
@@ -100,6 +105,12 @@ update msg model =
                     Signup.update signupMsg model.signup
             in
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+
+        NextSlide ->
+            ( { model | slideshow = Carousel.next model.slideshow }, Cmd.none )
+
+        PrevSlide ->
+            ( { model | slideshow = Carousel.prev model.slideshow }, Cmd.none )
 
         NewTime t ->
             ( { model | time = t }, Cmd.none )
@@ -232,7 +243,9 @@ viewProductions model =
             [ class "hcenter py-5 px-11 max-w-3xl" ]
             [ h1 [ class "leading-10 my-10" ] [ text "Start teaching your children with Catholic animations" ]
             , div [ class "my-10" ]
-                [ p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
+                [ p [ class "leading-10" ]
+                    [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts." ]
+                , p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
                 , p [ class "my-5" ]
                     [ text
                         ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
