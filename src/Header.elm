@@ -28,16 +28,33 @@ viewSubpageHeader currentPage leftMargin =
             else
                 ( "60px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
     in
-    header
-        [ style "background-color" "#43868D"
-        , class "text-white"
-        , class ("h-[60px] md:h-[" ++ height ++ "]")
-        , class "grid items-center justify-items-center"
-        , class gridColsClass
+    div []
+        [ header
+            [ style "background-color" "#43868D"
+            , class "text-white"
+            , class ("h-[60px] md:h-[" ++ height ++ "]")
+            , class "grid items-center justify-items-center"
+            , class gridColsClass
+            ]
+            [ viewLogo
+            , viewHeaderTitle True currentPage
+            , navigation height
+            ]
+        , viewBanner
         ]
-        [ viewLogo
-        , viewHeaderTitle True currentPage
-        , navigation height
+
+
+viewBanner : Html msg
+viewBanner =
+    div
+        [ class "bg-[#9101b3] text-white text-center text-lg py-2" ]
+        [ a [ href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e" ]
+            [ div []
+                [ span [] [ text "Keep Catholic Stories going - " ]
+                , span [ class "underline" ] [ text "Donate now." ]
+                ]
+            , div [] [ text "Bring loving and faithful animations to families today." ]
+            ]
         ]
 
 
