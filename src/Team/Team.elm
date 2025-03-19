@@ -79,7 +79,7 @@ carlos =
     { name = "Carlos Gutierrez"
     , initials = ""
     , position = "Creative Consultant"
-    , description = "Carlos is a CAD designer who also has a passion for dogs, comedy and food."
+    , description = ""
     , image = imagePath ++ "CarlosG.jpg"
     , socials = []
     }
