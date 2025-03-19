@@ -14,6 +14,7 @@ import Json.Encode
 import Newsroom.Main exposing (viewSignUp)
 import NotFound.Main
 import Resources.Helpers exposing (ResourceGroup)
+import Shop.ShopHelpers exposing (viewPrintfulShopItems)
 import Signup exposing (..)
 import Svg.Attributes exposing (d, mode)
 import Task
@@ -250,6 +251,7 @@ viewBody model =
         -- , viewIntro model
         , viewAnimations model
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTestimonials ]
+        , viewShop
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTeam ]
         , viewContact
         , viewNewsletter
@@ -393,6 +395,18 @@ viewTestimonials =
             , viewPerson camSmithTestimonial
             , viewPerson meganReisterTestimonial
             , viewPerson kellyBriggsTestimonial
+            ]
+        ]
+
+
+viewShop : Html msg
+viewShop =
+    viewSection "shop"
+        [ class "py-20 bg-[#282c2e] text-white"
+        ]
+        [ div [ class "max-w-7xl px-20" ]
+            [ h2 [ class "mb-10" ] [ text "Shop" ]
+            , viewPrintfulShopItems
             ]
         ]
 

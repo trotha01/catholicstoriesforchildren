@@ -12,6 +12,7 @@ type alias ShopItem =
     , description : String
     , beehiivLink : String
     , etsyLink : String
+    , link : String
     }
 
 
@@ -25,6 +26,61 @@ viewDiscountShopItems : Html msg
 viewDiscountShopItems =
     div [ class "sm:grid sm:grid-cols-2" ]
         (List.map viewShopItem [ firstFriSatDevotion, prayerLetters ])
+
+
+viewPrintfulShopItems : Html msg
+viewPrintfulShopItems =
+    viewShopItems
+        [ confirmandiHoodie
+        , cscWaterBottle
+        , redlittleflowertote
+        , pinkLittleFlowerTote
+        , guardianAngelSpiralNotebook
+        , prayedtodayshirt
+        , stmichaelholographicsticker
+        , stmichaelyouthshirt
+        ]
+
+
+viewShopItems : List ShopItem -> Html msg
+viewShopItems shopItems =
+    div
+        [ class "flex flex-col items-center"
+        ]
+        [ -- Items
+          div [ class "grid grid-cols-4 gap-4 pb-4 mb-10" ]
+            (List.map viewShopItem3 shopItems)
+
+        -- View More Button
+        , a
+            [ href "https://catholicstoriesforchildren.printful.me/"
+            , target "_blank"
+            , class "flex flex-col items-center justify-center rounded p-7 text-center bg-[#E95A03] text-white"
+            , class "w-96"
+            ]
+            [ text "View More"
+            ]
+        ]
+
+
+viewShopItem3 : ShopItem -> Html msg
+viewShopItem3 item =
+    a
+        [ class "flex flex-col"
+        , href item.link
+        , target "_blank"
+        ]
+        [ img
+            [ class "mb-4 rounded"
+            , class "rounded bg-[#373c3f]"
+            , src item.image
+            , alt item.name
+            ]
+            []
+        , div [ class "text-base" ]
+            [ text item.name
+            ]
+        ]
 
 
 viewShopItem : ShopItem -> Html msg
@@ -105,6 +161,94 @@ viewShopItem2 resourceGroup =
         ]
 
 
+confirmandiHoodie : ShopItem
+confirmandiHoodie =
+    { name = "Confirmandi Youth Heavy Blend Hoodie"
+    , image = "/assets/images/shop/confirmandihoodie.png"
+    , description = "Get your Confirmandi Hoodie here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/confirmandi-youth-heavy-blend-hoodie-durable-comfortable-confirmation-apparel"
+    }
+
+
+cscWaterBottle : ShopItem
+cscWaterBottle =
+    { name = "Catholic Stories for Children Stainless Steel Water Bottle – 32 oz with Straw Lid"
+    , image = "/assets/images/shop/cscwaterbottle.png"
+    , description = "Get your CSC Water Bottle here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/catholic-stories-for-children-stainless-steel-water-bottle-32-oz-with-straw-lid"
+    }
+
+
+redlittleflowertote : ShopItem
+redlittleflowertote =
+    { name = "Red Little Flower Tote Bag"
+    , image = "/assets/images/shop/RedLittleFlowerTote.png"
+    , description = "Get your Red Little Flower Tote Bag here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/little-flower-tote-bag"
+    }
+
+
+pinkLittleFlowerTote : ShopItem
+pinkLittleFlowerTote =
+    { name = "Pink Little Flower Tote Bag"
+    , image = "/assets/images/shop/PinkLittleFlowerTote.png"
+    , description = "Get your Pink Little Flower Tote Bag here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/pink-little-flower-tote-bag"
+    }
+
+
+guardianAngelSpiralNotebook : ShopItem
+guardianAngelSpiralNotebook =
+    { name = "Guardian Angel Spiral Notebook"
+    , image = "/assets/images/shop/guardianangelsspiralnotebook.png"
+    , description = "Get your Guardian Angel Spiral Notebook here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/guardian-angels-spiral-notebook-featuring-the-angel-of-god-prayer-and-the-guardian-angels"
+    }
+
+
+prayedtodayshirt : ShopItem
+prayedtodayshirt =
+    { name = "Prayed Today? Women’s Short Sleeve T-Shirt"
+    , image = "/assets/images/shop/prayedtodayshirt.png"
+    , description = "Get your I Prayed Today Shirt here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/prayed-today-womens-short-sleeve-t-shirt-featuring-daisy-and-sheep"
+    }
+
+
+stmichaelholographicsticker : ShopItem
+stmichaelholographicsticker =
+    { name = "St. Michael Holographic Sticker"
+    , image = "/assets/images/shop/stmichaelholographicsticker.png"
+    , description = "Get your St. Michael Holographic Sticker here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/holographic-stickers-6750c6047592c"
+    }
+
+
+stmichaelyouthshirt : ShopItem
+stmichaelyouthshirt =
+    { name = "St. Michael Youth T-Shirt"
+    , image = "/assets/images/shop/stmichaelyouthshirt.png"
+    , description = "Get your St. Michael Youth T-Shirt here!"
+    , beehiivLink = ""
+    , etsyLink = ""
+    , link = "https://catholicstoriesforchildren.printful.me/product/st-michael-youth-short-sleeve-t-shirt-defend-us-in-battle"
+    }
+
+
 massGuide : ShopItem
 massGuide =
     { name = "The Ultimate Mass Guide"
@@ -112,6 +256,7 @@ massGuide =
     , description = "Get our Mass guide here!"
     , beehiivLink = "https://embeds.beehiiv.com/38ee240f-5dfb-4f17-a6ed-26e1c8f709e9?slim=true"
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -122,6 +267,7 @@ littleReconciliationBooklet =
     , description = "Get the free guide to help little Catholics through the Sacrament of Reconciliation."
     , beehiivLink = "https://embeds.beehiiv.com/dd054c75-c35e-4456-9bd5-8663c5ad9e52?slim=true"
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -132,6 +278,7 @@ firstFriSatDevotion =
     , description = "A devotion to the Sacred Heart of Jesus and the Immaculate Heart of Mary on the first Friday and first Saturday of each month."
     , beehiivLink = "https://embeds.beehiiv.com/ba5bdebd-3c83-4cfd-b44d-9a245d0bb8fd?slim=true"
     , etsyLink = "https://catholicstories.etsy.com/listing/1694029028?etsrc=sdt&coupon=FIRSTSAVE50"
+    , link = ""
     }
 
 
@@ -142,6 +289,7 @@ liturgicalCalendar2024 =
     , description = "A 2024 Liturgical Calendar, feast days, and coloring page!"
     , beehiivLink = "https://embeds.beehiiv.com/6a652340-c0fe-4f91-ac0b-b1511efa7b0d?slim=true"
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -152,6 +300,7 @@ liturgicalCalendar2025 =
     , description = "A 2025 Liturgical Calendar, feast days, and coloring page!"
     , beehiivLink = "https://blog.catholicstoriesforchildren.com/embed" -- "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -162,6 +311,7 @@ prayerLetters =
     , description = "Printable Prayer Cards your kids can give as gifts to loved ones!"
     , beehiivLink = "https://embeds.beehiiv.com/900aa0a5-aadb-4d19-ba08-649f1519a115?slim=true"
     , etsyLink = "https://catholicstories.etsy.com/listing/1733143755?etsrc=sdt&coupon=FIRSTSAVE50"
+    , link = ""
     }
 
 
@@ -172,6 +322,7 @@ scripturalRosary =
     , description = "Aids to help with praying a Scriptural Rosary for each Mystery. Print double-sided."
     , beehiivLink = "https://embeds.beehiiv.com/d7cae3a2-a831-47b1-be2d-2136884926e3?slim=true"
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -182,6 +333,7 @@ adventColoringBook =
     , description = "Prepare for Christmas with Mary and Joseph with our free little Scriptural coloring book."
     , beehiivLink = "https://embeds.beehiiv.com/938df27a-3a99-4f47-901a-b9ffb25d8bad?slim=true"
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -192,6 +344,7 @@ guardianAngelActivities =
     , description = ""
     , beehiivLink = ""
     , etsyLink = ""
+    , link = ""
     }
 
 
@@ -202,4 +355,5 @@ hailMaryActivities =
     , description = ""
     , beehiivLink = ""
     , etsyLink = ""
+    , link = ""
     }
