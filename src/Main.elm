@@ -18,6 +18,7 @@ import Shop.ShopHelpers exposing (viewPrintfulShopItems)
 import Signup exposing (..)
 import Svg.Attributes exposing (d, mode)
 import Task
+import Team.Main exposing (cfnLive, christianChannel, inHisImage, makeJoyNormal, ocCatholic, spiritFilledMedia)
 import Team.Team exposing (carlos, kelly, lindsey, trevor, viewPerson)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Time
@@ -257,7 +258,7 @@ viewBody model =
         -- , viewContact
         -- , viewNewsletter
         , viewGive
-        , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewResources ]
+        , viewResources
         ]
 
 
@@ -397,6 +398,18 @@ viewTestimonials =
                 , viewPerson meganReisterTestimonial
                 , viewPerson kellyBriggsTestimonial
                 ]
+            , h3 [ class "mt-20 mb-10 text-5xl" ] [ text "In the Media" ]
+            , div
+                [ class "grid gap-5 grid-cols-3 lg:grid-cols-6" ]
+                (List.map Resources.Helpers.viewResourceImages
+                    [ spiritFilledMedia
+                    , makeJoyNormal
+                    , christianChannel
+                    , ocCatholic
+                    , inHisImage
+                    , cfnLive
+                    ]
+                )
             ]
         ]
 

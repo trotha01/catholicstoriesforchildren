@@ -110,6 +110,7 @@ viewInTheMedia =
                 [ spiritFilledMedia
                 , makeJoyNormal
                 , christianChannel
+                , ocCatholic
                 , inHisImage
 
                 -- , churchMilitant
@@ -117,6 +118,14 @@ viewInTheMedia =
                 ]
             )
         ]
+
+
+ocCatholic : Resource
+ocCatholic =
+    { name = "Orange County Catholic"
+    , link = "https://www.occatholic.com/catholic-stories-for-children-helping-the-next-generation-understand-the-faith/"
+    , image = "/assets/images/ProfilePictures/OCCatholic.png"
+    }
 
 
 spiritFilledMedia : Resource

@@ -38,6 +38,20 @@ viewResource resource =
         ]
 
 
+viewResourceImages : Resource -> Html msg
+viewResourceImages resource =
+    a
+        [ class "rounded"
+        , target "_blank"
+        , attribute "aria-label" resource.name
+        , href resource.link
+        ]
+        [ div []
+            [ img [ src resource.image, class "w-40 h-40 object-cover" ] []
+            ]
+        ]
+
+
 viewWorkInProgressNotice : Html msg
 viewWorkInProgressNotice =
     div
