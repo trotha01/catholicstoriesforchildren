@@ -240,8 +240,8 @@ viewProductions model =
     div
         [ class "hcenter" ]
         [ div
-            [ class "hcenter py-5 px-11 max-w-3xl" ]
-            [ h1 [ class "leading-10 my-10" ] [ text "Start teaching your children with Catholic animations" ]
+            [ class "hcenter py-5 px-11 max-w-7xl" ]
+            [ h2 [ class "mb-10 text-7xl" ] [ text "Start teaching your children with Catholic animations" ]
             , div [ class "my-10" ]
                 [ p [ class "leading-10" ]
                     [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts." ]

@@ -250,11 +250,12 @@ viewBody model =
 
         -- , viewIntro model
         , viewAnimations model
-        , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTestimonials ]
+        , viewTestimonials
         , viewShop
-        , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewTeam ]
-        , viewContact
-        , viewNewsletter
+        , viewTeam
+
+        -- , viewContact
+        -- , viewNewsletter
         , viewGive
         , div [ class "px-11 sm:pl-[150px] sm:pr-[100px]" ] [ viewResources ]
         ]
@@ -344,38 +345,38 @@ viewIntro model =
 viewTeam : Html msg
 viewTeam =
     viewSection "team"
-        [ class "bg-[#FEF7F4]"
-        , class "py-20"
+        [ class "py-20 bg-[#FEF7F4]"
         ]
-        [ h2 subHeaderStyle
-            [ text "The Team" ]
-        , div
-            [ class "grid xl:grid-cols-3 gap-5 max-w-[120rem]"
-            , class "my-10"
+        [ div [ class "w-full max-w-7xl m-auto mb-20 px-20" ]
+            [ h2 [ class "mb-10 text-7xl" ] [ text "The Team" ]
+            , div
+                [ class "grid xl:grid-cols-3 gap-5"
+                , class "my-10"
+                ]
+                [ viewPerson trevor
+                , viewPerson lindsey
+                , viewPerson kelly
+                ]
+            , a
+                [ href "/team"
+                , rel "noopener"
+                , style "text-decoration" "none"
+                , style "padding" "10px 20px"
+                , style "display" "inline-block"
+                , style "color" "black"
+                , style "border" "2px solid #777"
+                , style "border-radius" "5px"
+                , style "box-shadow" "#777 1px 1px 5px"
+                ]
+                [ text "Meet the Team" ]
             ]
-            [ viewPerson trevor
-            , viewPerson lindsey
-            , viewPerson kelly
-            ]
-        , a
-            [ href "/team"
-            , rel "noopener"
-            , style "text-decoration" "none"
-            , style "padding" "10px 20px"
-            , style "display" "inline-block"
-            , style "color" "black"
-            , style "border" "2px solid #777"
-            , style "border-radius" "5px"
-            , style "box-shadow" "#777 1px 1px 5px"
-            ]
-            [ text "Meet the Team" ]
         ]
 
 
 viewAnimations : Model -> Html Msg
 viewAnimations model =
     viewSection "animations"
-        [ class "pb-20 bg-[#282c2e] text-white"
+        [ class "py-20 bg-[#282c2e] text-white"
         ]
         [ Animations.View.viewProductions model.productionsModel |> Html.map ProductionsMsg
         ]
@@ -386,15 +387,16 @@ viewTestimonials =
     viewSection "testimonials"
         [ class "py-20 bg-[#FEF7F4]"
         ]
-        [ h2 subHeaderStyle [ text "Testimonials" ]
-        , div
-            [ class "grid gap-5 max-w-[120rem]"
-            , class "my-10"
-            ]
-            [ viewPerson ainsleyRawlingsTestimonial
-            , viewPerson camSmithTestimonial
-            , viewPerson meganReisterTestimonial
-            , viewPerson kellyBriggsTestimonial
+        [ div [ class "w-full max-w-7xl m-auto mb-20 px-20" ]
+            [ h2 [ class "mb-10 text-7xl" ] [ text "Testimonials" ]
+            , div
+                [ class "grid gap-5"
+                ]
+                [ viewPerson ainsleyRawlingsTestimonial
+                , viewPerson camSmithTestimonial
+                , viewPerson meganReisterTestimonial
+                , viewPerson kellyBriggsTestimonial
+                ]
             ]
         ]
 
@@ -404,8 +406,8 @@ viewShop =
     viewSection "shop"
         [ class "py-20 bg-[#282c2e] text-white"
         ]
-        [ div [ class "max-w-7xl px-20" ]
-            [ h2 [ class "mb-10" ] [ text "Shop" ]
+        [ div [ class "w-full max-w-7xl m-auto mb-20 px-20" ]
+            [ h2 [ class "mb-10 text-7xl" ] [ text "Shop" ]
             , viewPrintfulShopItems
             ]
         ]
@@ -542,65 +544,18 @@ viewNewsletter =
 viewGive : Html msg
 viewGive =
     viewSection "give"
-        [ style "min-height" "100vh"
-        , style "position" "relative"
-        , style "background-position" "top"
-        , style "text-align" "center"
-        , style "text-align" "-webkit-center"
-        , style "font-weight" "400"
-        , style "line-height" "1.7"
-        , style "background" "#9DE2EA80"
-        , class "py-20 md:py-40"
-        ]
-        [ div
-            []
-            [ h2 subHeaderStyle
-                [ text "Give" ]
-            , p
-                [ style "text-align" "center"
-                ]
-                [ text "Help us create Catholic animations and resources" ]
-            , p
-                [ style "text-align" "center"
-                ]
-                [ text "for you." ]
-            , p [ style "text-align" "center" ]
-                [ div
-                    [ style "margin-bottom" "30px"
-                    , class "p-3"
-                    , class "flex justify-center"
+        [ class "bg-[#9101b3] text-white" ]
+        [ div [ class "w-full max-w-7xl m-auto p-20" ]
+            [ h2 [ class "my-10 text-7xl" ] [ text "Give" ]
+            , div [ class "flex flex-col" ]
+                [ p [] [ text "Want more Catholic animations? Find out ways you can help us!" ]
+                , a
+                    [ href "/give"
+                    , target "_blank"
+                    , class "flex flex-col items-center justify-center rounded p-7 text-center bg-white text-black"
+                    , class "w-96 my-10"
                     ]
-                    [ a
-                        [ href "https://www.patreon.com/catholicstoriesforchildren?fan_landing=true"
-                        , rel "noopener"
-                        , target "_blank"
-                        , style "text-decoration" "none"
-                        , style "padding" "10px 20px"
-                        , style "box-shadow" "#777 1px 1px 5px"
-                        , style "border-radius" "5px"
-                        , style "color" "white"
-                        , style "background-color" "#9200B3"
-                        ]
-                        [ text "Become a patron"
-                        ]
-                    ]
-                , div
-                    [ style "text-align" "center"
-                    , style "border-radius" "5px"
-                    , style "padding" "20px"
-                    , class "flex justify-center"
-                    ]
-                    [ a
-                        [ href "/give"
-                        , rel "noopener"
-                        , style "text-decoration" "none"
-                        , style "padding" "10px 20px"
-                        , style "color" "black"
-                        , style "border" "2px solid #777"
-                        , style "border-radius" "5px"
-                        , style "box-shadow" "#777 1px 1px 5px"
-                        ]
-                        [ text "More ways to donate" ]
+                    [ text "Learn More"
                     ]
                 ]
 
@@ -622,19 +577,13 @@ viewGive =
 viewResources : Html msg
 viewResources =
     viewSection "resources"
-        [ style "min-height" "100vh"
-        , style "position" "relative"
-        , style "background-position" "top"
-        , style "font-weight" "400"
-        , style "line-height" "1.7"
-        , style "background" "#FEF7F4"
-        , class "py-20 md:py-40"
+        [ class "bg-[#FEF7F4]"
         ]
-        [ div
-            []
-            [ h2 subHeaderStyle
-                [ text "Resources" ]
-            , viewResourceGroups
+        [ div [ class "w-full max-w-7xl m-auto my-20 px-20" ]
+            [ h2 [ class "mb-10 text-7xl" ] [ text "Resources" ]
+            , div [ class "flex flex-col" ]
+                [ viewResourceGroups
+                ]
             ]
         ]
 
@@ -692,10 +641,8 @@ more =
 viewSection : String -> List (Attribute msg) -> List (Html.Html msg) -> Html.Html msg
 viewSection sectionId background body =
     section
-        ([ id sectionId
-         , style "min-height" "80vh"
-         ]
-            ++ background
+        (id sectionId
+            :: background
         )
         body
 

@@ -668,6 +668,11 @@ video {
   margin-right: 5rem;
 }
 
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -1375,6 +1380,10 @@ video {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-20 {
+  padding: 5rem;
 }
 
 .py-3 {

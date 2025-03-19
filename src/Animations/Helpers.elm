@@ -124,9 +124,7 @@ viewAnimationThumbnails title thumbnails =
         , class "m-auto"
         , class "mb-20 px-20"
         ]
-        [ h2 [ class "mb-10" ]
-            [ text title
-            ]
+        [ h2 [ class "mb-10 text-7xl" ] [ text title ]
         , div
             [ class "grid grid-cols-1 lg:grid-cols-2 gap-10"
             ]
