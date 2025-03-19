@@ -82,13 +82,13 @@ view2 =
     div
         [ class "mb-5" ]
         [ p
-            [ class "pb-2 pl-1 text-left"
+            [ class "pb-2 pt-4 pl-1 m-auto text-center max-w-7xl bg-white text-black"
             ]
             [ text "Receive free animations, activities, resources, and more!" ]
         , Html.iframe
             [ src "https://blog.catholicstoriesforchildren.com/embed" -- "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
             , height 150
-            , attribute "width" "480"
+            , class "w-screen"
             , attribute "frameborder" "0"
             , attribute "scrolling" "no"
             , style "margin" "0"
