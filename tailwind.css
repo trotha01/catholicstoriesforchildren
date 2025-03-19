@@ -1356,6 +1356,11 @@ video {
   background-color: rgb(55 60 63 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#DDDAD3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 218 211 / var(--tw-bg-opacity));
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;

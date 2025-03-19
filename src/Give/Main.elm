@@ -27,13 +27,7 @@ main =
 view : Html Never
 view =
     div
-        [ -- For parallax
-          style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "rgb(230 245 242)"
+        [ class "bg-[#fef7f4]"
         ]
         [ -- viewSubpageHeader "Donate" headerMargin
           viewBody
@@ -43,39 +37,41 @@ view =
 
 viewBody : Html Never
 viewBody =
-    div
-        [ class "m-auto"
-        , class "max-w-3xl py-5 px-11"
-        ]
-        [ h1 [ class "my-10" ] [ text "Donate" ]
-        , donateAbout
+    div []
+        [ img [ src "/assets/images/CarouselThumbnails/HailMary.png", alt "Hail Mary animation" ] []
+        , div [ class "max-w-7xl mb-20 px-20 m-auto" ]
+            [ h1 [ class "my-10" ] [ text "Donate" ]
+            , donateAbout
 
-        -- , a
-        --     [ href "/animations/actofcontrition"
-        --     , class "hover:scale-105 transition ease-in-out duration-50"
-        --     , attribute "aria-label" "Act of Contrition Animation Coming Soon"
-        --     , class "block mt-20 mb-2"
-        --     ]
-        --     [ img
-        --         [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
-        --         , style "border-radius" "5px"
-        --         , style "width" "-webkit-fill-available"
-        --         , alt "Act of Contrition Animation"
-        --         ]
-        --         []
-        --     ]
-        -- , donateWithPatreon
-        , div [ class "mb-10" ] [ donateWithZeffy ]
-        , div [ class "mb-10" ] [ dASChristmasImage ]
-        , h2 [ class "text-center max-w-3xl" ] [ text "Other ways to give" ]
-        , div [ style "margin-bottom" "4em" ] []
-        , prayForUs
+            -- , a
+            --     [ href "/animations/actofcontrition"
+            --     , class "hover:scale-105 transition ease-in-out duration-50"
+            --     , attribute "aria-label" "Act of Contrition Animation Coming Soon"
+            --     , class "block mt-20 mb-2"
+            --     ]
+            --     [ img
+            --         [ src "/assets/images/AnimationImageLinks/ActOfContritionComingSoon.png"
+            --         , style "border-radius" "5px"
+            --         , style "width" "-webkit-fill-available"
+            --         , alt "Act of Contrition Animation"
+            --         ]
+            --         []
+            --     ]
+            -- , donateWithPatreon
+            , div [ class "mb-10" ] [ donateWithZeffy ]
 
-        -- , donateWithPaypal
-        , donateWithVehicle
-        , sponsor
-        , volunteer
-        , wordsOfEncouragement
+            -- , div [ class "mb-10" ] [ dASChristmasImage ]
+            , h2 [ class "text-center mt-20 mb-10" ] [ text "Other ways to give" ]
+            , div [ class "text-center grid justify-center" ]
+                [ prayForUs
+
+                -- , donateWithPaypal
+                , donateWithVehicle
+                , sponsor
+                , volunteer
+                , wordsOfEncouragement
+                ]
+            ]
         ]
 
 
@@ -95,13 +91,8 @@ donateAbout =
             ]
             -- [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
             [ text "Here at Catholic Stories for Children, we are passionate Catholic educators dedicated to helping children grow in their love for God and neighbor. Through creative, faith-based animations, we make Catholic teachings come alive in a fun and meaningful way for kids. Every child deserves the chance to learn and deepen their faith." ]
-        , p [ class "m-auto max-w-3xl", style "margin-bottom" "1em" ] [ text "With your support, we can keep these animations FREE for families everywhere. Every donation helps us nurture the faith of the next generation. Let's continue making a difference, together!" ]
-        , p
-            [ class "m-auto"
-            , class "max-w-3xl"
-            ]
-            [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883"
-            ]
+        , p [ style "margin-bottom" "1em" ] [ text "With your support, we can keep these animations FREE for families everywhere. Every donation helps us nurture the faith of the next generation. Let's continue making a difference, together!" ]
+        , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883" ]
         ]
 
 
