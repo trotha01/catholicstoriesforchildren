@@ -80,9 +80,9 @@ update msg model =
 view2 : Html msg
 view2 =
     div
-        [ class "mb-5" ]
+        [ class "mb-5 bg-white text-black" ]
         [ p
-            [ class "pb-2 pt-4 pl-1 m-auto text-center max-w-7xl bg-white text-black"
+            [ class "pb-2 pt-4 pl-1 m-auto text-center max-w-7xl"
             ]
             [ text "Receive free animations, activities, resources, and more!" ]
         , Html.iframe
