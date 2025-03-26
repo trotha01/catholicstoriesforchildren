@@ -102,7 +102,7 @@ view2 =
 view3 : Html msg
 view3 =
     div
-        [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
+        [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#cb6a72]"
         ]
         [ viewShopItem liturgicalCalendar2025 ]
 
@@ -110,7 +110,7 @@ view3 =
 view4 : Html msg
 view4 =
     div
-        [ class "flex justify-center py-3 bg-[#ffc7c7] text-black"
+        [ class "flex justify-center py-3 bg-[#cb6a72] text-black"
         ]
         [ div [ class "max-w-3xl" ] [ viewShopItem2 liturgicalCalendar2025 ]
         ]
@@ -119,7 +119,7 @@ view4 =
 view : Model -> Html Msg
 view model =
     div
-        [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#ffc7c7]"
+        [ class "p-3 rounded-md border-4 border-solid border-[#460156] bg-[#cb6a72]"
         ]
         [ viewShopItem liturgicalCalendar2025 ]
 
