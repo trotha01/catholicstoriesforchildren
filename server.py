@@ -2,6 +2,9 @@ import http.server
 import socketserver
 import os
 
+PORT = 8000
+
+# Immitating github going to 404 page, and the 404 page redirects to the main page
 class CustomRequestHandler(http.server.SimpleHTTPRequestHandler):
     def send_error(self, code, message=None, explain=None):
         if code == 404:
@@ -16,8 +19,21 @@ class CustomRequestHandler(http.server.SimpleHTTPRequestHandler):
         else:
             super().send_error(code, message, explain)
 
-PORT = 8000
-
-with socketserver.TCPServer(("", PORT), CustomRequestHandler) as httpd:
-    print(f"Serving on port {PORT}")
+with socketserver.TCPServer(("", 9000), CustomRequestHandler) as httpd:
+    print(f"Serving on port {9000}")
     httpd.serve_forever()
+
+# Immitating netlify redirecting 404s to the main page
+class SPARequestHandler(http.server.SimpleHTTPRequestHandler):
+    def send_error(self, code, message=None, explain=None):
+        # If file not found (404), serve index.html instead
+        if code == 404:
+            self.path = '/index.html'
+            return self.do_GET()
+        else:
+            return super().send_error(code, message, explain)
+
+with socketserver.TCPServer(("", PORT), SPARequestHandler) as httpd:
+    print(f"Serving at port {PORT}")
+    httpd.serve_forever()
+

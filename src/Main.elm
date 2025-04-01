@@ -69,13 +69,26 @@ init flags url key =
             Animations.View.init flags url key
 
         ( isRedirectedUrl, newPath, redirectedUrl ) =
+            -- we use redirectUrl for github
             redirectUrl url
+
+        urlString =
+            Url.toString url
+
+        isProductionsPage =
+            -- we update isProductionsPage initially right away for netlify
+            String.contains "animations" urlString
 
         initModel =
             { key = key
             , url = redirectedUrl
             , signup = Signup.init
-            , page = Home
+            , page =
+                if isProductionsPage then
+                    Productions
+
+                else
+                    Home
             , time = Time.millisToPosix 0
             , timezone = Time.utc
             , language = English
@@ -140,6 +153,7 @@ update msg model =
 
                         isProductionsPage =
                             String.contains "animations" urlString
+                                |> Debug.log "isProductionsPage"
                     in
                     if isProductionsPage then
                         ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
