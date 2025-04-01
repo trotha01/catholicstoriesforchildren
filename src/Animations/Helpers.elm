@@ -116,19 +116,26 @@ type alias ThumbnailData =
     }
 
 
-viewAnimationThumbnails : String -> List ThumbnailData -> Html msg
-viewAnimationThumbnails title thumbnails =
+viewAnimationThumbnailsSmall : Maybe (Episode msg) -> List ThumbnailData -> Html msg
+viewAnimationThumbnailsSmall activeEpisode thumbnails =
+    viewAnimationThumbnails "md:grid-cols-3" thumbnails activeEpisode
+
+
+viewAnimationThumbnailsLarge : List ThumbnailData -> Html msg
+viewAnimationThumbnailsLarge thumbnails =
+    viewAnimationThumbnails "lg:grid-cols-2" thumbnails Nothing
+
+
+viewAnimationThumbnails : String -> List ThumbnailData -> Maybe (Episode msg) -> Html msg
+viewAnimationThumbnails cols thumbnails activeEpisode =
     div
         [ class "w-full"
-        , class "max-w-7xl"
-        , class "m-auto"
-        , class "mb-20 px-20"
+        , class "my-20"
         ]
-        [ h2 [ class "mb-10 text-7xl" ] [ text title ]
-        , div
-            [ class "grid grid-cols-1 lg:grid-cols-2 gap-10"
+        [ div
+            [ class ("grid grid-cols " ++ cols ++ " gap-10")
             ]
-            (List.map viewAnimationThumbnail thumbnails
+            (List.map (viewAnimationThumbnail activeEpisode) thumbnails
                 ++ [ div
                         [ style "clear" "both"
                         , style "width" "1px"
@@ -139,15 +146,28 @@ viewAnimationThumbnails title thumbnails =
         ]
 
 
-viewAnimationThumbnail : ThumbnailData -> Html msg
-viewAnimationThumbnail thumbnail =
+thumbnailIsActive : ThumbnailData -> Maybe (Episode msg) -> Bool
+thumbnailIsActive thumbnail activeEpisode =
+    case activeEpisode of
+        Just episode ->
+            thumbnail.title == episode.title
+
+        Nothing ->
+            False
+
+
+viewAnimationThumbnail : Maybe (Episode msg) -> ThumbnailData -> Html msg
+viewAnimationThumbnail activeEpisode thumbnail =
     let
-        ( element, thumbnailStyle ) =
+        ( element, thumbnailStyle, imgStyle ) =
             if thumbnail.isDisabled then
-                ( div, [ class "grayscale hover:cursor-not-allowed" ] )
+                ( div, [ class "grayscale hover:cursor-not-allowed" ], [] )
+
+            else if thumbnailIsActive thumbnail activeEpisode then
+                ( a, [], [ class "border-4 border-white-500 p-2" ] )
 
             else
-                ( a, [] )
+                ( a, [], [] )
     in
     element
         ([ href thumbnail.link
@@ -157,11 +177,13 @@ viewAnimationThumbnail thumbnail =
             ++ thumbnailStyle
         )
         [ img
-            [ src thumbnail.thumbnail
-            , style "border-radius" "5px"
-            , style "width" "-webkit-fill-available"
-            , alt (thumbnail.title ++ " thumbnail")
-            ]
+            ([ src thumbnail.thumbnail
+             , style "border-radius" "5px"
+             , style "width" "-webkit-fill-available"
+             , alt (thumbnail.title ++ " thumbnail")
+             ]
+                ++ imgStyle
+            )
             []
         ]
 

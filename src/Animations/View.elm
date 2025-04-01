@@ -6,12 +6,13 @@ import Animations.Productions as Productions exposing (getEpisodeFromURLPath, ge
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
+import FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
+import Html.Events exposing (onClick, onInput)
 import Signup exposing (..)
 import Task
 import Time exposing (Month(..))
@@ -26,6 +27,7 @@ type alias Model =
     , time : Time.Posix
     , timezone : Time.Zone
     , videoTab : VideoOption
+    , videoDetailTab : VideoDetailOption
     , slideshow : Carousel ( String, String )
     }
 
@@ -37,6 +39,13 @@ type VideoOption
     | Asl
 
 
+type VideoDetailOption
+    = Episodes
+    | Activities
+    | Details
+    | Suggested
+
+
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
@@ -45,6 +54,7 @@ type Msg
     | NewTime Time.Posix
     | NewZone Time.Zone
     | VideoTabClick VideoOption
+    | VideoDetailsTabClick VideoDetailOption
     | NextSlide
     | PrevSlide
 
@@ -57,6 +67,7 @@ init flags url key =
       , time = Time.millisToPosix 0
       , timezone = Time.utc
       , videoTab = English
+      , videoDetailTab = Episodes
       , slideshow = Carousel.init Productions.slideshowProductions
       }
     , Cmd.batch
@@ -71,6 +82,7 @@ update msg model =
     case msg of
         LinkClicked urlRequest ->
             case urlRequest of
+                -- NOTE: LinkClicked and UrlChanged are only called at the top level, in Main
                 Browser.Internal url ->
                     let
                         urlString =
@@ -121,6 +133,9 @@ update msg model =
         VideoTabClick language ->
             ( { model | videoTab = language }, Cmd.none )
 
+        VideoDetailsTabClick tab ->
+            ( { model | videoDetailTab = tab }, Cmd.none )
+
         NoOp ->
             ( model, Cmd.none )
 
@@ -147,41 +162,7 @@ view url model =
             parseRoute url
 
         title =
-            case urlRoute of
-                Just (EpisodeRoute r) ->
-                    case
-                        ( r.production, r.season, r.episode )
-                    of
-                        ( Just productionURL, Just seasonURL, Just episodeUrl ) ->
-                            case getEpisodeFromURLPath productionURL seasonURL episodeUrl of
-                                ( Just production, Just season, Just pageEpisode ) ->
-                                    pageEpisode.title
-
-                                _ ->
-                                    ""
-
-                        ( Just productionURL, Just seasonURL, Nothing ) ->
-                            case getSeasonFromURLPath productionURL seasonURL of
-                                ( Just production, Just season ) ->
-                                    production.title
-
-                                _ ->
-                                    ""
-
-                        ( Just productionURL, Nothing, Nothing ) ->
-                            case getProductionFromURLPath productionURL of
-                                Just production ->
-                                    -- view season 1 by default
-                                    production.title
-
-                                _ ->
-                                    ""
-
-                        _ ->
-                            ""
-
-                _ ->
-                    ""
+            getTitleFromRoute urlRoute
     in
     { title = title ++ " - Catholic Stories for Children"
     , body =
@@ -196,40 +177,128 @@ view url model =
     }
 
 
+getTitleFromRoute : Maybe Route -> String
+getTitleFromRoute urlRoute =
+    case urlRoute of
+        Just (EpisodeRoute r) ->
+            getTitleFromEpisodeRoute r
+
+        _ ->
+            ""
+
+
+getTitleFromEpisodeRoute : AnimationEpisode -> String
+getTitleFromEpisodeRoute r =
+    case
+        ( r.production, r.season, r.episode )
+    of
+        ( Just productionURL, Just seasonURL, Just episodeUrl ) ->
+            case getEpisodeFromURLPath productionURL seasonURL episodeUrl of
+                ( Just _, Just _, Just pageEpisode ) ->
+                    pageEpisode.title
+
+                _ ->
+                    ""
+
+        ( Just productionURL, Just seasonURL, Nothing ) ->
+            case getSeasonFromURLPath productionURL seasonURL of
+                ( Just production, _ ) ->
+                    production.title
+
+                _ ->
+                    ""
+
+        ( Just productionURL, Nothing, Nothing ) ->
+            case getProductionFromURLPath productionURL of
+                Just production ->
+                    -- view season 1 by default
+                    production.title
+
+                _ ->
+                    ""
+
+        _ ->
+            ""
+
+
 viewBody : Model -> Maybe Route -> Html Msg
 viewBody model urlRoute =
     case urlRoute of
         Just (EpisodeRoute r) ->
-            case
-                ( r.production, r.season, r.episode )
-            of
-                ( Just productionURL, Just seasonURL, Just episodeUrl ) ->
-                    case getEpisodeFromURLPath productionURL seasonURL episodeUrl of
-                        ( Just production, Just season, Just pageEpisode ) ->
-                            viewEpisode model pageEpisode
+            viewEpisodeRoute model r
 
-                        _ ->
-                            viewProductions model
+        _ ->
+            viewProductions model
 
-                ( Just productionURL, Just seasonURL, Nothing ) ->
-                    case getSeasonFromURLPath productionURL seasonURL of
-                        ( Just production, Just season ) ->
-                            viewEpisodes model production season.number
 
-                        _ ->
-                            viewProductions model
+viewEpisodeRoute : Model -> AnimationEpisode -> Html Msg
+viewEpisodeRoute model r =
+    case ( r.production, r.season, r.episode ) of
+        ( Just productionURL, Just seasonURL, Just episodeUrl ) ->
+            viewSpecificEpisode model productionURL seasonURL episodeUrl
 
-                ( Just productionURL, Nothing, Nothing ) ->
-                    case getProductionFromURLPath productionURL of
-                        Just production ->
-                            -- view season 1 by default
-                            viewEpisodes model production 1
+        ( Just productionURL, Just seasonURL, Nothing ) ->
+            viewSeasonEpisodes model productionURL seasonURL
 
-                        _ ->
-                            viewProductions model
+        ( Just productionURL, Nothing, Nothing ) ->
+            viewProductionEpisodes model productionURL
 
-                _ ->
-                    viewProductions model
+        _ ->
+            viewProductions model
+
+
+viewSpecificEpisode : Model -> String -> Int -> String -> Html Msg
+viewSpecificEpisode model productionURL seasonURL episodeUrl =
+    case getEpisodeFromURLPath productionURL seasonURL episodeUrl of
+        ( Just production, Just season, Just pageEpisode ) ->
+            viewEpisode model production season.number pageEpisode
+
+        _ ->
+            viewProductions model
+
+
+viewSeasonEpisodes : Model -> String -> Int -> Html Msg
+viewSeasonEpisodes model productionURL seasonURL =
+    case getSeasonFromURLPath productionURL seasonURL of
+        ( Just production, Just season ) ->
+            let
+                pageEpisode =
+                    List.head season.episodes
+            in
+            case pageEpisode of
+                Just e ->
+                    viewEpisode model production season.number e
+
+                Nothing ->
+                    div []
+                        [ img [ src production.carouselThumbnail ] []
+                        , viewEpisodes model production season.number Nothing
+                        ]
+
+        _ ->
+            viewProductions model
+
+
+viewProductionEpisodes : Model -> String -> Html Msg
+viewProductionEpisodes model productionURL =
+    case getProductionFromURLPath productionURL of
+        Just production ->
+            let
+                pageEpisode =
+                    production.seasons
+                        |> List.head
+                        |> Maybe.map .episodes
+                        |> Maybe.andThen List.head
+            in
+            case pageEpisode of
+                Just e ->
+                    viewEpisode model production 1 e
+
+                Nothing ->
+                    div []
+                        [ img [ src production.carouselThumbnail ] []
+                        , viewEpisodes model production 1 Nothing
+                        ]
 
         _ ->
             viewProductions model
@@ -264,19 +333,20 @@ viewProductions model =
             ]
         , div [ class "mt-2 mb-20 text-black" ]
             [ Signup.view4 |> Html.map SignupMsg ]
-        , viewAnimationThumbnails "Animations" <| List.map productionToThumbnailData productions
+        , div
+            [ class "m-auto max-w-7xl"
+            ]
+            [ viewAnimationThumbnailsLarge <| List.map productionToThumbnailData productions
+            ]
         ]
 
 
-viewEpisodes : Model -> Production msg -> Int -> Html Msg
-viewEpisodes model production season =
+viewEpisodes : Model -> Production msg -> Int -> Maybe (Episode msg) -> Html Msg
+viewEpisodes model production season activeEpisode =
     div
         [ class "hcenter"
         ]
-        [ production.about |> Html.map (\_ -> NoOp)
-        , div [ class "mt-2 mb-20 text-black" ]
-            [ Signup.view4 |> Html.map (\_ -> NoOp) ]
-        , let
+        [ let
             episodes =
                 production
                     |> .seasons
@@ -292,23 +362,50 @@ viewEpisodes model production season =
           if List.length episodes == 1 then
             case firstEpisode of
                 Just e ->
-                    viewEpisode model e
+                    viewEpisode model production season e
 
                 Nothing ->
-                    viewAnimationThumbnails "Episodes" episodeThumbnails
+                    div [ class "m-auto max-w-7xl" ]
+                        [ viewAnimationThumbnailsSmall activeEpisode episodeThumbnails
+                        ]
+                        |> Html.map (\_ -> NoOp)
 
           else
-            viewAnimationThumbnails "Episodes" episodeThumbnails
+            div [ class "m-auto max-w-7xl" ]
+                [ viewAnimationThumbnailsSmall activeEpisode episodeThumbnails
+                ]
+                |> Html.map (\_ -> NoOp)
         ]
 
 
-viewEpisode : Model -> Episode msg -> Html Msg
-viewEpisode model episode =
+viewEpisode : Model -> Production msg -> Int -> Episode msg -> Html Msg
+viewEpisode model production season episode =
+    let
+        episodeCount =
+            production
+                |> .seasons
+                |> List.map .episodes
+                |> List.concat
+                |> List.length
+
+        newModel =
+            case ( episodeCount, model.videoDetailTab, String.isEmpty episode.activities.pdfLink ) of
+                ( 1, Episodes, False ) ->
+                    -- If there is only one episode and it has activities, show activities
+                    { model | videoDetailTab = Activities }
+
+                ( 1, Episodes, True ) ->
+                    -- If there is only one episode and no activities, show details
+                    { model | videoDetailTab = Details }
+
+                _ ->
+                    model
+    in
     div
-        [ class "max-w-3xl"
-        , class "m-auto"
+        [ class "m-auto"
         , class "py-5 px-11"
         , class "mb-10"
+        , class "max-w-7xl"
         ]
         [ -- a
           -- [ class "text-7xl text-left md:m-0"
@@ -318,16 +415,66 @@ viewEpisode model episode =
           -- ]
           -- [ div [ class "mt-10" ] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] [] ]
           -- ]
-          h1 [ class "my-10 leading-10", id "top" ] [ text episode.title ]
-        , viewVideoPlayers model episode
-        , viewActivities episode |> Html.map (\_ -> NoOp)
-        , viewAbout episode |> Html.map (\_ -> NoOp)
+          viewVideoPlayers newModel episode
+        , viewVideoDetailTabs episodeCount newModel episode
+        , case newModel.videoDetailTab of
+            Episodes ->
+                if episodeCount > 1 then
+                    viewEpisodes newModel production season (Just episode)
+
+                else if not (String.isEmpty episode.activities.pdfLink) then
+                    viewActivities episode |> Html.map (\_ -> NoOp)
+
+                else
+                    viewAbout episode |> Html.map (\_ -> NoOp)
+
+            Activities ->
+                viewActivities episode |> Html.map (\_ -> NoOp)
+
+            Details ->
+                viewAbout episode |> Html.map (\_ -> NoOp)
+
+            Suggested ->
+                viewSuggestedProductions production
+                    |> Html.map (\_ -> NoOp)
+        ]
+
+
+viewSuggestedProductions : Production msg -> Html Msg
+viewSuggestedProductions currentProduction =
+    let
+        -- Filter productions to exclude the current one
+        suggestedProductions =
+            productions
+                |> List.filter (\p -> p.link /= currentProduction.link)
+                |> List.take 5
+    in
+    viewAnimationThumbnailsSmall Nothing <| List.map productionToThumbnailData suggestedProductions
+
+
+viewSuggestedProductionThumbnail : Production msg -> Html Msg
+viewSuggestedProductionThumbnail production =
+    div [ class "p-4 border rounded-lg hover:shadow-lg transition" ]
+        [ a
+            [ href production.link
+            , attribute "aria-label" ("View " ++ production.title)
+            ]
+            [ img
+                [ src production.thumbnail
+                , class "w-full h-auto rounded-lg"
+                , attribute "alt" production.title
+                ]
+                []
+            , h3 [ class "mt-2 text-lg font-semibold" ] [ text production.title ]
+            ]
         ]
 
 
 viewAbout : Episode msg -> Html msg
 viewAbout episode =
-    episode.about
+    div [ class "mt-10 max-w-3xl" ]
+        [ episode.about
+        ]
 
 
 viewActivities : Episode msg -> Html msg
@@ -341,7 +488,7 @@ viewActivities episode =
             , p [ class "h-14" ]
                 [ text "Many of our animations come with activities, reflection questions, guided imaginitive prayer and more!"
                 ]
-            , div [ class "grid grid-cols-2 gap-4" ]
+            , div [ class "flex" ]
                 [ div []
                     [ a
                         [ attribute "aria-label" (episode.title ++ " Activities")
@@ -427,8 +574,7 @@ viewVideoPlayers : Model -> Episode msg -> Html Msg
 viewVideoPlayers model page =
     div
         []
-        [ viewVideoPlayerTabs model page
-        , case model.videoTab of
+        [ case model.videoTab of
             English ->
                 viewVideo page.videoTitles.english page.videoLinks.english
 
@@ -453,11 +599,20 @@ viewVideoPlayers model page =
 
                 else
                     viewVideo page.videoTitles.urdu page.videoLinks.urdu
+        , div [ class "flex justify-end items-center gap-4 mt-2" ]
+            [ viewVideoPlayerTabs model page
+            , a
+                [ class "bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+                , href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e"
+                , target "_blank"
+                ]
+                [ text "Donate" ]
+            ]
         ]
 
 
-viewVideoPlayerTabs : Model -> Episode msg -> Html Msg
-viewVideoPlayerTabs model page =
+viewVideoDetailTabs : Int -> Model -> Episode msg -> Html Msg
+viewVideoDetailTabs episodeCount model episode =
     let
         selectedClass =
             "active text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500"
@@ -465,83 +620,169 @@ viewVideoPlayerTabs model page =
         nonSelectedClass =
             "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
     in
-    div [ class "text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
+    div
+        [ class "text-xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
         [ ul
             [ class "flex flex-wrap -mb-px" ]
-            [ li [ class "mr-2" ]
+            [ if episodeCount == 1 then
+                span [] []
+
+              else
+                li [ class "mr-2" ]
+                    [ button
+                        [ class
+                            ("inline-block p-4 border-b-2 rounded-t-lg "
+                                ++ (if model.videoDetailTab == Episodes then
+                                        selectedClass
+
+                                    else
+                                        nonSelectedClass
+                                   )
+                            )
+                        , onClick (VideoDetailsTabClick Episodes)
+                        ]
+                        [ text "Episodes" ]
+                    ]
+            , if String.isEmpty episode.activities.thumbnailLink then
+                span [] []
+
+              else
+                li [ class "mr-2" ]
+                    [ button
+                        [ class
+                            ("inline-block p-4 border-b-2 rounded-t-lg "
+                                ++ (if model.videoDetailTab == Activities then
+                                        selectedClass
+
+                                    else
+                                        nonSelectedClass
+                                   )
+                            )
+                        , onClick (VideoDetailsTabClick Activities)
+                        ]
+                        [ text "Activities" ]
+                    ]
+            , li [ class "mr-2" ]
                 [ button
                     [ class
                         ("inline-block p-4 border-b-2 rounded-t-lg "
-                            ++ (if model.videoTab == English then
+                            ++ (if model.videoDetailTab == Details then
                                     selectedClass
 
                                 else
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoTabClick English)
+                    , onClick (VideoDetailsTabClick Details)
                     ]
-                    [ text "English" ]
+                    [ text "Details" ]
                 ]
-            , if not (String.isEmpty page.videoLinks.spanish) then
-                li
-                    [ class "mr-2" ]
-                    [ button
-                        [ class
-                            ("inline-block p-4 border-b-2 rounded-t-lg "
-                                ++ (if model.videoTab == Spanish then
-                                        selectedClass
+            , li [ class "mr-2" ]
+                [ button
+                    [ class
+                        ("inline-block p-4 border-b-2 rounded-t-lg "
+                            ++ (if model.videoDetailTab == Suggested then
+                                    selectedClass
 
-                                    else
-                                        nonSelectedClass
-                                   )
-                            )
-                        , onClick (VideoTabClick Spanish)
-                        ]
-                        [ text "Spanish" ]
+                                else
+                                    nonSelectedClass
+                               )
+                        )
+                    , onClick (VideoDetailsTabClick Suggested)
                     ]
-
-              else
-                span [] []
-            , if not (String.isEmpty page.videoLinks.urdu) then
-                li
-                    [ class "mr-2" ]
-                    [ button
-                        [ class
-                            ("inline-block p-4 border-b-2 rounded-t-lg "
-                                ++ (if model.videoTab == Urdu then
-                                        selectedClass
-
-                                    else
-                                        nonSelectedClass
-                                   )
-                            )
-                        , onClick (VideoTabClick Urdu)
-                        ]
-                        [ text "Urdu" ]
-                    ]
-
-              else
-                span [] []
-            , if not (String.isEmpty page.videoLinks.asl) then
-                li
-                    [ class "mr-2" ]
-                    [ button
-                        [ class
-                            ("inline-block p-4 border-b-2 rounded-t-lg "
-                                ++ (if model.videoTab == Asl then
-                                        selectedClass
-
-                                    else
-                                        nonSelectedClass
-                                   )
-                            )
-                        , onClick (VideoTabClick Asl)
-                        ]
-                        [ text "Asl" ]
-                    ]
-
-              else
-                span [] []
+                    [ text "Suggested" ]
+                ]
             ]
         ]
+
+
+hasExactlyOneLanguage : Episode msg -> Bool
+hasExactlyOneLanguage e =
+    List.filter (\s -> not (String.isEmpty s))
+        [ e.videoLinks.english, e.videoLinks.spanish, e.videoLinks.urdu, e.videoLinks.asl ]
+        |> List.length
+        |> (==) 1
+
+
+viewVideoPlayerTabs : Model -> Episode msg -> Html Msg
+viewVideoPlayerTabs model page =
+    let
+        availableLanguages =
+            [ ( English, page.videoLinks.english )
+            , ( Spanish, page.videoLinks.spanish )
+            , ( Urdu, page.videoLinks.urdu )
+            , ( Asl, page.videoLinks.asl )
+            ]
+                |> List.filter (\( _, link ) -> not (String.isEmpty link))
+    in
+    if List.length availableLanguages <= 1 then
+        span [] []
+
+    else
+        div [ class "text-lg text-end text-gray-500 dark:text-gray-400" ]
+            [ select
+                [ class "bg-transparent rounded-lg"
+                , onInput (String.toLower >> toVideoOption >> VideoTabClick)
+                ]
+                (List.map
+                    (\( language, _ ) ->
+                        option
+                            [ value (toString language)
+                            , selected (model.videoTab == language)
+                            ]
+                            [ text (toLanguageName language) ]
+                    )
+                    availableLanguages
+                )
+            ]
+
+
+toString : VideoOption -> String
+toString option =
+    case option of
+        English ->
+            "english"
+
+        Spanish ->
+            "spanish"
+
+        Urdu ->
+            "urdu"
+
+        Asl ->
+            "asl"
+
+
+toVideoOption : String -> VideoOption
+toVideoOption str =
+    case str of
+        "english" ->
+            English
+
+        "spanish" ->
+            Spanish
+
+        "urdu" ->
+            Urdu
+
+        "asl" ->
+            Asl
+
+        _ ->
+            English
+
+
+toLanguageName : VideoOption -> String
+toLanguageName option =
+    case option of
+        English ->
+            "English"
+
+        Spanish ->
+            "Spanish"
+
+        Urdu ->
+            "Urdu"
+
+        Asl ->
+            "ASL"
