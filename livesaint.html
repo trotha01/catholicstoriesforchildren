@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>AR.js Video Overlay</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.min.js"></script>
+    <!-- Marker Generater: https://ar-js-org.github.io/NFT-Marker-Creator -->
+    <!-- Generate Marker: https://carnaux.github.io/NFT-Marker-Creator/#/ -->
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+        <a-assets>
+            <video id="video" src="/assets/ThereseSingAlongIG.mp4" preload="auto" loop crossorigin="anonymous"
+                webkit-playsinline playsinline muted autoplay></video>
+        </a-assets>
+
+        <a-nft type="nft" url="/assets/AR/ARTest" smooth="true" smoothCount="10" smoothTolerance="0.01"
+            smoothThreshold="5" videohandler>
+            <a-video src="#video" width="1" height="0.6" position="0 0 0" rotation="-90 0 0"></a-video>
+        </a-nft>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+        AFRAME.registerComponent('videohandler', {
+            init: function () {
+                var marker = this.el;
+                var video = document.querySelector("#video");
+
+                marker.addEventListener("markerFound", function () {
+                    console.log("Marker Found");
+                    video.play();
+                });
+
+                marker.addEventListener("markerLost", function () {
+                    console.log("Marker Lost");
+                    video.pause();
+                    // video.currentTime = 0;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
