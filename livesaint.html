@@ -26,8 +26,31 @@
 
     <script>
         const marker = document.querySelector('a-nft');
-        marker.addEventListener('markerFound', () => console.log('✅ markerFound'));
-        marker.addEventListener('markerLost', () => console.log('❌ markerLost'));
+
+        async function sendLog(eventName) {
+            try {
+                await fetch('/.netlify/functions/log', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: eventName,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+            } catch (e) {
+                console.error('Log send failed:', e);
+            }
+        }
+
+        marker.addEventListener('markerFound', () => {
+            console.log('✅ markerFound');
+            sendLog('markerFound');
+        });
+
+        marker.addEventListener('markerLost', () => {
+            console.log('❌ markerLost');
+            sendLog('markerLost');
+        });
     </script>
 </body>
 
