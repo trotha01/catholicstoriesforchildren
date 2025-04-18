@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.min.js"></script>
     <!-- Marker Generater: https://ar-js-org.github.io/NFT-Marker-Creator -->
     <!-- Generate Marker: https://carnaux.github.io/NFT-Marker-Creator/#/ -->
+    <!-- Note: marker must be a square -->
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -25,7 +26,7 @@
         <a-entity camera></a-entity>
     </a-scene>
 
-    <script>
+    <!-- <script>
         AFRAME.registerComponent('videohandler', {
             init: function () {
                 var marker = this.el;
@@ -41,6 +42,25 @@
                     video.pause();
                     // video.currentTime = 0;
                 });
+            }
+        });
+    </script> -->
+    <script>
+        AFRAME.registerComponent('videohandler', {
+            init: function () {
+                var marker = this.el;
+                var video = document.querySelector('#video');
+
+                // 1) Unlock on first tap
+                function unlock() {
+                    video.play().then(() => video.pause());
+                    document.body.removeEventListener('click', unlock);
+                }
+                document.body.addEventListener('click', unlock, { once: true });
+
+                // 2) Then respond to marker
+                marker.addEventListener('markerFound', () => video.play());
+                marker.addEventListener('markerLost', () => video.pause());
             }
         });
     </script>
