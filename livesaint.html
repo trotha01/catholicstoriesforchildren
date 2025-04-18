@@ -14,8 +14,10 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         <a-assets>
-            <video id="video" src="/assets/ThereseSingAlongIG.mp4" preload="auto" loop crossorigin="anonymous"
-                webkit-playsinline playsinline muted autoplay></video>
+            <!-- <video id="video" src="/assets/ThereseSingAlongIG.mp4" preload="auto" loop crossorigin="anonymous"
+                    webkit-playsinline playsinline muted autoplay></video> -->
+            <video id="video" src="/assets/ThereseSingAlongIG.mp4" preload="auto" muted playsinline autoplay controls
+                loop crossorigin="anonymous" style="width: 100%; max-width: 600px;">
         </a-assets>
 
         <a-nft type="nft" url="/assets/AR/ARTest" smooth="true" smoothCount="10" smoothTolerance="0.01"
