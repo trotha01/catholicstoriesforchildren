@@ -13,58 +13,21 @@
 
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-        <a-assets>
-            <!-- <video id="video" src="/assets/ThereseSingAlongIG.mp4" preload="auto" loop crossorigin="anonymous"
-                    webkit-playsinline playsinline muted autoplay></video> -->
-            <video id="video" src="/assets/ThereseSingAlongIG.mp4" preload="auto" muted playsinline autoplay controls
-                loop crossorigin="anonymous" style="width: 100%; max-width: 600px;">
-        </a-assets>
-
         <a-nft type="nft" url="/assets/AR/ARTest" smooth="true" smoothCount="10" smoothTolerance="0.01"
-            smoothThreshold="5" videohandler>
-            <a-video src="#video" width="1" height="0.6" position="0 0 0" rotation="-90 0 0"></a-video>
+            smoothThreshold="5">
+            <a-box position="0 0.5 0" rotation="0 45 0" scale="0.5 0.5 0.5" material="color: red;">
+            </a-box>
         </a-nft>
 
+        <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+        <a-entity light="type: directional; intensity: 0.7" position="0 1 1"></a-entity>
         <a-entity camera></a-entity>
     </a-scene>
 
-    <!-- <script>
-        AFRAME.registerComponent('videohandler', {
-            init: function () {
-                var marker = this.el;
-                var video = document.querySelector("#video");
-
-                marker.addEventListener("markerFound", function () {
-                    console.log("Marker Found");
-                    video.play();
-                });
-
-                marker.addEventListener("markerLost", function () {
-                    console.log("Marker Lost");
-                    video.pause();
-                    // video.currentTime = 0;
-                });
-            }
-        });
-    </script> -->
     <script>
-        AFRAME.registerComponent('videohandler', {
-            init: function () {
-                var marker = this.el;
-                var video = document.querySelector('#video');
-
-                // 1) Unlock on first tap
-                function unlock() {
-                    video.play().then(() => video.pause());
-                    document.body.removeEventListener('click', unlock);
-                }
-                document.body.addEventListener('click', unlock, { once: true });
-
-                // 2) Then respond to marker
-                marker.addEventListener('markerFound', () => video.play());
-                marker.addEventListener('markerLost', () => video.pause());
-            }
-        });
+        const marker = document.querySelector('a-nft');
+        marker.addEventListener('markerFound', () => console.log('✅ markerFound'));
+        marker.addEventListener('markerLost', () => console.log('❌ markerLost'));
     </script>
 </body>
 
