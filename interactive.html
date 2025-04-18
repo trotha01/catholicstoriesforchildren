@@ -575,31 +575,32 @@
     <script>
         AFRAME.registerComponent('mytarget', {
             init: function () {
-                const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
                 const video1 = document.querySelector("#paintandquest-video-mp4");
                 const video2 = document.querySelector("#paintandquest-video-webm");
-                let video = video2;
-
-                const testVideo = document.createElement("video");
-                const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
-                if (canplayWebm == "") {
-                    document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
-                    video = video1;
-                } else {
-                    document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
-                    video = video2;
-                }
-
                 this.el.addEventListener('targetFound', event => {
                     console.log("target found");
-                    paintandquestPreviewButton.setAttribute("visible", false);
-                    video.play();
-                });
 
+                    const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
+                    paintandquestPreviewButton.addEventListener('click', () => {
+                        paintandquestPreviewButton.setAttribute("visible", false);
+                        const testVideo = document.createElement("video");
+                        const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
+                        if (canplayWebm == "") {
+                            document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
+                            // document.querySelector("#paintandquest-video-mp4").play();
+                            video1.play();
+                        } else {
+                            document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
+                            // document.querySelector("#paintandquest-video-webm").play();
+                            video2.play();
+                        }
+                    });
+                });
                 this.el.addEventListener('targetLost', event => {
                     console.log("target lost");
                     video1.pause();
                     video2.pause();
+
                 });
             }
         });
@@ -791,7 +792,7 @@
     <div class="example-container">
         <div id="example-scanning-overlay" class="">
             <div class="inner">
-                <!-- <img src="./assets/card-example/card.png"> -->
+                <img src="./assets/card-example/card.png">
                 <div class="scanline"></div>
             </div>
         </div>
@@ -805,6 +806,8 @@
                 <img id="paintandquest-preview" src="./paintandquest-preview.png">
                 <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="./paintandquest.mp4"
                     playsinline="" webkit-playsinline=""></video>
+                <!-- <video id="paintandquest-video-webm" autoplay="false" loop="true" src="./paintandquest.webm"
+                    playsinline="" webkit-playsinline=""></video> -->
                 <video id="paintandquest-video-webm" autoplay="false" loop="true"
                     src="./assets/ThereseSingAlong_short.webm" playsinline="" webkit-playsinline=""></video>
             </a-assets>
