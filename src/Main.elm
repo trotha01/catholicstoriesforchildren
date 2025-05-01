@@ -153,9 +153,14 @@ update msg model =
 
                         isProductionsPage =
                             String.contains "animations" urlString
-                                |> Debug.log "isProductionsPage"
+
+                        isJosephPage =
+                            String.contains "joseph" urlString
                     in
-                    if isProductionsPage then
+                    if isJosephPage then
+                        ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
+
+                    else if isProductionsPage then
                         ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
 
                     else

@@ -30,6 +30,7 @@ type alias Episode msg =
     , thumbnail : String
     , releaseDate : Time.Posix
     , isDisabled : Bool
+    , isFundraising : Bool
     , link : String
     , about : Html msg
     , activities :

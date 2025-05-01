@@ -24,6 +24,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/HailMary.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = ""
       , about =
             div []

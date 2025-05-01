@@ -59,7 +59,9 @@ viewBody =
             --     ]
             -- , donateWithPatreon
             , div [ class "mb-10" ] [ donateWithZeffy ]
+            , div [ class "mb-10" ] [ supportNextAnimation ]
 
+            -- , div [ class "mb-10" ] [ supportSpecificCause ]
             -- , div [ class "mb-10" ] [ dASChristmasImage ]
             , h2 [ class "text-center mt-20 mb-10" ] [ text "Other ways to give" ]
             , div [ class "text-center grid justify-center" ]
@@ -113,7 +115,11 @@ prayForUs =
 
 donateWithZeffy : Html msg
 donateWithZeffy =
-    div [ class "w-52 m-auto" ]
+    div
+        [ style "position" "relative"
+        , style "overflow" "hidden"
+        , style "width" "100%"
+        ]
         [ a
             [ class "dbox-donation-page-button m-auto"
             , href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e"
@@ -131,6 +137,182 @@ donateWithZeffy =
             , style "line-height" "24px"
             ]
             [ text "DONATE"
+            ]
+        ]
+
+
+h3Style : String
+h3Style =
+    "text-xl font-bold mt-10"
+
+
+supportSpecificCause : Html msg
+supportSpecificCause =
+    div []
+        [ h2 [ class "mb-10" ] [ text "Support a Specific Cause" ]
+
+        -- Domain and Hosting
+        , h3 [ class h3Style ] [ text "Domain and Hosting ($14 / year)" ]
+        , div [ class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center" ]
+            [ div
+                [ class "flex items-center text-lg"
+                , style "width" "100%"
+                ]
+                [ text "Cover our website hosting and domain costs for the year."
+                ]
+            , div [ class "justify-self-end" ]
+                [ div [] [ donationButton "Support Our Website" ]
+
+                -- , domainThermometer
+                ]
+            ]
+
+        -- Buy us a coffee
+        , h3 [ class h3Style ] [ text "Caffination" ]
+        , div [ class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center" ]
+            [ div
+                [ class "flex items-center text-lg"
+                , style "width" "100%"
+                ]
+                [ text "Give us the energy we need to keep creating these animations. ☕"
+                ]
+            , div [ class "justify-self-end" ]
+                [ div [] [ donationButton "Caffinate Us" ]
+
+                -- , domainThermometer
+                ]
+            ]
+
+        -- Mail
+        , h3 [ class h3Style ] [ text "Mailbox" ]
+        , div [ class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center" ]
+            [ div
+                [ class "flex items-center text-lg"
+                , style "width" "100%"
+                ]
+                [ text "Every nonprofit is required to have a mailbox. Cover our mailbox costs each month."
+                ]
+            , div [ class "justify-self-end" ]
+                [ div [] [ donationButton "Cover our mail costs" ]
+
+                -- , domainThermometer
+                ]
+            ]
+
+        -- Clickup
+        , h3 [ class h3Style ] [ text "Project Management" ]
+        , div [ class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center" ]
+            [ div
+                [ class "flex items-center text-lg"
+                , style "width" "100%"
+                ]
+                [ text "Cover the costs for our project management, team communication, and related software."
+                ]
+            , div [ class "justify-self-end" ]
+                [ div [] [ donationButton "Cover our software needs" ]
+
+                -- , domainThermometer
+                ]
+            ]
+
+        -- Shopify
+        -- Marketing
+        , h3 [ class h3Style ] [ text "Social Media" ]
+        , div [ class "grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center" ]
+            [ div
+                [ class "flex items-center text-lg"
+                , style "width" "100%"
+                ]
+                [ text "Cover our costs for creating our social media posts."
+                ]
+            , div [ class "justify-self-end" ]
+                [ div [] [ donationButton "Support Our Social Media Posts" ]
+
+                -- , domainThermometer
+                ]
+            ]
+        ]
+
+
+donationButton : String -> Html msg
+donationButton str =
+    a
+        [ class "dbox-donation-page-button m-auto mt-10 bg-pink-600 no-underline font-sans flex text-lg px-8 py-4 rounded gap-2 w-fit leading-6 text-white"
+        , class "shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
+        , class "p-[16px]" -- padding to match the thermometer width
+
+        -- , href "https://www.zeffy.com/en-US/fundraisingV2/support-the-st-joseph-animation"
+        , href "https://www.zeffy.com/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e"
+        , target "_blank"
+        ]
+        [ text str
+        ]
+
+
+
+-- filepath: /Users/trevor/src/catholicstoriesforchildren/src/Give/Main.elm
+
+
+domainThermometer : Html msg
+domainThermometer =
+    div
+        [ class "relative overflow-hidden w-full h-[50px]" ]
+        [ iframe
+            [ attribute "title" "Donation form powered by Zeffy"
+            , class "absolute border-0 top-0 left-0 bottom-0 right-0 w-full h-[50px]"
+            , attribute "src" "https://www.zeffy.com/embed/thermometer/pay-for-our-website"
+            , attribute "allowTransparency" "true"
+            ]
+            []
+        ]
+
+
+supportNextAnimation : Html msg
+supportNextAnimation =
+    div []
+        [ img [ src "/assets/images/AnimationImageLinks/SotsJoseph.png", alt "Saint Joseph Image" ] []
+        , div
+            [ style "position" "relative"
+            , style "overflow" "hidden"
+            , style "width" "100%"
+            , style "padding-top" "120px"
+            ]
+            [ a
+                [ class "dbox-donation-page-button m-auto"
+
+                -- , href "https://www.zeffy.com/en-US/fundraisingV2/support-the-st-joseph-animation"
+                , href "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation"
+                , target "_blank"
+                , style "background" "rgb(254, 189, 17)"
+                , style "color" "rgb(0, 0, 0)"
+                , style "text-decoration" "none"
+                , style "font-family" "Verdana, sans-serif"
+                , style "display" "flex"
+                , style "font-size" "18px"
+                , style "padding" "14px 34px"
+                , style "border-radius" "5px"
+                , style "gap" "8px"
+                , style "width" "fit-content"
+                , style "line-height" "24px"
+                ]
+                [ text "Support Our Next Animation"
+                ]
+
+            -- , iframe
+            --     [ attribute "title" "Donation form powered by Zeffy"
+            --     , style "position" "absolute"
+            --     , style "border" "0"
+            --     , style "top" "0"
+            --     , style "left" "0"
+            --     , style "bottom" "0"
+            --     , style "right" "0"
+            --     , style "width" "100%"
+            --     , style "height" "120px"
+            --     , attribute "src" "https://www.zeffy.com/embed/thermometer/support-the-st-joseph-animation"
+            --     , attribute "allowTransparency" "true"
+            --     ]
+            --     []
+            -- zeffy-form-link="https://www.zeffy.com/embed/donation-form/support-the-st-joseph-animation?modal=true"
             ]
         ]
 

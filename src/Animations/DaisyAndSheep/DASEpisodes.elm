@@ -44,6 +44,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalKiss.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=liturgicalkiss"
       , about = span [] []
       , activities =
@@ -69,6 +70,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/AstronomyProgram.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=astronomyprogram"
       , about = span [] []
       , activities =
@@ -94,6 +96,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/PenitentialAct.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=penitentialact"
       , about = span [] []
       , activities =
@@ -119,6 +122,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/GuardianAngel.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=guardianangel"
       , about = span [] []
       , activities =
@@ -144,6 +148,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/GospelAsLivingWord.png"
       , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=gospelaslivingword"
       , about = span [] []
       , activities =
@@ -169,6 +174,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.png"
       , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=thevirginmary,mother"
       , about = span [] []
       , activities =
@@ -194,6 +200,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.png"
       , releaseDate = Time.millisToPosix 1728741600000 -- Saturday, October 12, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=prayerofthefaithful"
       , about = span [] []
       , activities =
@@ -219,6 +226,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.png"
       , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=communionofsaints"
       , about = span [] []
       , activities =
@@ -244,6 +252,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.png"
       , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=eucharisticwine"
       , about = span [] []
       , activities =
@@ -269,6 +278,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.png"
       , releaseDate = Time.millisToPosix 1729605600000 -- Tuesday, October 21, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=popenames"
       , about = span [] []
       , activities =
@@ -294,6 +304,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.png"
       , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=preparingthealtar"
       , about = span [] []
       , activities =
@@ -319,6 +330,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.png"
       , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=beingasaint"
       , about = span [] []
       , activities =
@@ -344,6 +356,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=holyholyholy"
       , about = span [] []
       , activities =
@@ -369,6 +382,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=doctorsofthechurch"
       , about = span [] []
       , activities =
@@ -394,6 +408,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=dewfall"
       , about = span [] []
       , activities =
@@ -419,6 +434,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=thesacraments"
       , about = span [] []
       , activities =
@@ -444,6 +460,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=thelambofgod"
       , about = span [] []
       , activities =
@@ -469,6 +486,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=the7gifts"
       , about = span [] []
       , activities =
@@ -494,6 +512,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=transubstantiation"
       , about = span [] []
       , activities =
@@ -519,6 +538,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.png"
       , releaseDate = Time.millisToPosix 1732633200000
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=ashwednesday"
       , about = span [] []
       , activities =
@@ -544,6 +564,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=liturgicalcolors"
       , about = span [] []
       , activities =
@@ -569,6 +590,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/Easter.png"
       , releaseDate = Time.millisToPosix 1733238000000
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=easter"
       , about = span [] []
       , activities =
@@ -594,6 +616,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=vaticanbank"
       , about = span [] []
       , activities =
@@ -619,6 +642,7 @@ episodes =
       , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.png"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
+      , isFundraising = False
       , link = "/animations/daisyandsheep?e=churchmeaning"
       , about = span [] []
       , activities =

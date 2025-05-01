@@ -92,7 +92,7 @@ update msg model =
                             String.contains "animations" urlString
                     in
                     if isProductionsPage then
-                        ( { model | url = url }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+                        ( { model | url = url, videoDetailTab = Episodes }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
 
                     else
                         ( { model | url = url }, Cmd.batch [ Nav.load (Url.toString url), scrollToTopCmd ] )
@@ -101,7 +101,7 @@ update msg model =
                     ( model, Nav.load href )
 
         UrlChanged url ->
-            ( { model | url = url }
+            ( { model | url = url, videoDetailTab = Episodes }
             , if String.contains "e=" (Url.toString url) then
                 -- jumpToTop
                 scrollToTopCmd
@@ -169,7 +169,7 @@ view url model =
         [ div
             [ class "bg-[#282c2e] text-white"
             ]
-            [ viewSubpageHeader "Animations" headerMargin
+            [ viewSubpageHeader (String.join " " [ "Animations", title ]) headerMargin
             , viewBody model urlRoute
             , viewFooter
             ]
@@ -251,7 +251,11 @@ viewSpecificEpisode : Model -> String -> Int -> String -> Html Msg
 viewSpecificEpisode model productionURL seasonURL episodeUrl =
     case getEpisodeFromURLPath productionURL seasonURL episodeUrl of
         ( Just production, Just season, Just pageEpisode ) ->
-            viewEpisode model production season.number pageEpisode
+            if pageEpisode.isFundraising then
+                pageEpisode.about
+
+            else
+                viewEpisode model production season.number pageEpisode
 
         _ ->
             viewProductions model

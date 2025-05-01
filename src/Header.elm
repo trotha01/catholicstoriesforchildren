@@ -47,13 +47,16 @@ viewSubpageHeader currentPage leftMargin =
 viewBanner : Html msg
 viewBanner =
     div
-        [ class "bg-[#9101b3] text-white text-center text-lg py-2" ]
-        [ a [ href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e" ]
+        [ class "bg-[#9101b3] bg-[url(/assets/images/AnimationImageLinks/SotsJoseph.png)] text-white text-center text-lg py-2" ]
+        -- [ a [ href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e" ] -- general donation form
+        -- [ a [ href "https://www.zeffy.com/en-US/fundraisingV2/support-the-st-joseph-animation", target "_blank" ]
+        [ a [ href "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation", target "_blank" ]
             [ div []
-                [ span [] [ text "Keep Catholic Stories going - " ]
-                , span [ class "underline" ] [ text "Donate now." ]
+                [ span [] [ text "Support our new animation - " ]
+                , span [ class "underline" ] [ text "Learn more." ]
                 ]
-            , div [] [ text "Bring loving and faithful animations to families today." ]
+
+            -- , div [] [ text "Bring loving and faithful animations to families today." ]
             ]
         ]
 

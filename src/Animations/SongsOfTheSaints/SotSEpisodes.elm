@@ -47,6 +47,7 @@ episodes : List (Episode msg)
 episodes =
     [ stThereseEpisode
     , carloEpisode
+    , josephEpisode
     ]
 
 
@@ -56,6 +57,7 @@ stThereseEpisode =
     , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.png"
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
+    , isFundraising = False
     , link = ""
     , about = thereseVideoDescription
     , activities =
@@ -85,6 +87,7 @@ carloEpisode =
     , thumbnail = "/assets/images/AnimationImageLinks/SotsCarlo.png"
     , releaseDate = Time.millisToPosix 1741359600000 -- Friday, March 7, 2025 7:00:00 AM GMT-08:00
     , isDisabled = False
+    , isFundraising = False
     , link = ""
     , about = carloVideoDescription
     , activities =
@@ -101,6 +104,36 @@ carloEpisode =
         }
     , videoLinks =
         { english = "https://www.youtube.com/embed/Q3X7LFbNzrw"
+        , spanish = ""
+        , urdu = ""
+        , asl = ""
+        }
+    }
+
+
+josephEpisode : Episode msg
+josephEpisode =
+    { title = "Saint Joseph"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsJoseph.png"
+    , releaseDate = Time.millisToPosix 0
+    , isDisabled = False
+    , isFundraising = True
+    , link = ""
+    , about = josephVideoDescription
+    , activities =
+        { thumbnailLink = ""
+        , pdfLink = ""
+        , answerThumbnailLink = ""
+        , answerPdfLink = ""
+        }
+    , videoTitles =
+        { english = "Saint Joseph | Songs of the Saints"
+        , spanish = ""
+        , urdu = ""
+        , asl = ""
+        }
+    , videoLinks =
+        { english = ""
         , spanish = ""
         , urdu = ""
         , asl = ""
@@ -356,4 +389,121 @@ viewAnotherEpisode episode link =
                 ]
                 []
             ]
+        ]
+
+
+imgClass : String
+imgClass =
+    "w-3/4 my-10 mx-auto"
+
+
+josephVideoDescription : Html msg
+josephVideoDescription =
+    div [ class "max-w-3xl m-auto mt-20 px-5 2xl:px-0" ]
+        [ h1 [ class "m-10" ] [ text "Bring our Saint Joseph Animation to Life" ]
+        , img [ class "mb-10", src "/assets/images/AnimationImageLinks/SotsJoseph.png" ] []
+        , h2 [] [ text "What We're Making and Why It Matters" ]
+        , p []
+            [ text """Every day, children search for heroes they can emulate. Lacking from modern media, children need heroes who lead with love, humility, and faith. In our new animated musical short, we bring Saint Joseph to life. In this heartfelt episode, we follow Saint Joseph—husband, father, and courageous protector—as he stands under the vast Egyptian night sky, burdened by the heavy responsibility of keeping the Holy Family safe from harm."""
+            ]
+        , br [] []
+        , p []
+            [ text "As Joseph pauses to find peace in a moment of exhaustion, he lovingly shares Mary's Magnificat, the sacred prayer that Mary proclaimed during her visitation with Elizabeth. Through his heartfelt singing, Joseph transforms worry into faith, fear into hope, and doubt into strength."
+            ]
+        , br [] []
+        , p []
+            [ a [ class "underline" ]
+                [ text """Join us on Kickstarter"""
+                ]
+            , span [] [ text " to raise the funds needed to animate this moment in Saint Joseph's life." ]
+            ]
+        , br [] []
+        , p []
+            [ text "This animation seeks not only to entertain but also to spiritually nourish children, teaching them powerful lessons about prayer, trust in God, and courage during life's challenges. By supporting this project, you help bring to life meaningful Catholic storytelling that uplifts families, deepens faith, and offers beautiful role models of the saints."
+            ]
+        , br [] []
+        , p []
+            [ text """Your generosity ensures that more animations like "Songs of the Saints: Saint Joseph" reach families around the world, strengthening the faith of the next generation through beauty, truth, and goodness."""
+            ]
+        , donationButton "Support Our Next Animation"
+        , br [] []
+        , h2 [] [ text "Price Breakdown" ]
+        , p []
+            [ text """There are a number of costs with every animation, including the character design, background artwork, rigging, animation, sound effects and mix, directing, and marketing."""
+            ]
+        , br [] []
+        , p []
+            [ ul []
+                [ li [] [ text "$4,400 - Pre-production (Character Design, Rigging, Background Artwork, Storyboards)" ]
+                , li [] [ text "$9,550 - Production (Voice Acting and Singing, Animation, Sound Effects and Mix, Directing)" ]
+                , li [] [ text "$500 - Marketing" ]
+                ]
+            , br [] []
+            , p [] [ text "$14,450 - Total" ]
+            , donationButton "Help Us Cover The Costs"
+            ]
+        , div [ class "mb-10" ] []
+        , h2 [] [ text "Mary's Magnificat" ]
+        , p []
+            [ text """As evening fell over the vast desert, Joseph felt the weight of exhaustion bearing down upon him. The journey to Egypt had been arduous, the terrain unforgiving. Seeking solace, he quietly stepped away from their modest tent, mirroring the moments when Jesus Himself would later withdraw to solitary places to pray, as recorded in the Gospels (Luke 5:16, Mark 1:35). Joseph, like his divine foster son would one day model, turned his weary heart to God in quiet prayer beneath the star-filled sky."""
+            ]
+        , br [ class "mb-2" ] []
+        , p []
+            [ text """In this moment of solitude, Joseph's thoughts drifted to the words of Mary’s Magnificat (Luke 1:46-55), the powerful hymn she had proclaimed upon hearing the news of her divine motherhood. Each line echoed profoundly in his soul, reminding him of Mary's humility, trust, and joy in God's promises. He reflected deeply on Mary's chosen role, feeling the profound weight and honor of their collective calling. Joseph knew, with deepening clarity, that they too had been chosen by God for this sacred mission."""
+            ]
+        , br [] []
+        , p []
+            [ text """Through this contemplative prayer, inspired by Mary's song of praise, Joseph felt a renewed strength and consolation flooding his spirit. His doubts and fatigue eased, replaced by a serene certainty and purpose. Comforted by God's reassuring presence, Joseph rose from his knees, heartened and ready to continue their journey—secure in the knowledge that the same God who had chosen Mary had also chosen him to protect and care for the precious lives entrusted to his guardianship."""
+            ]
+        , donationButton "Bring the Magnificat Song to Life"
+        , br [] []
+        , h2 [] [ text "Pay it Forward" ]
+        , p []
+            [ text """Every donation allows a family to experience the beauty of the Catholic faith through animation. We are so grateful for your support!"""
+            ]
+        , donationButton "Pay it Forward"
+        , div [ class "mb-10" ] []
+        , h2 [] [ text "Calling all Star Wars Fans" ]
+        , p []
+            [ text """If you are a fan of Star Wars, and may notice some similarities in our designs. 
+But not only Star Wars, also Lord of the Rings as well! Inspired by the epic sweep of Star Wars and the heart of Lord of the Rings, we fuse blockbuster energy with timeless Catholic devotion. Combining our love for film, pop culture, and also the historical representations of Saint Joseph with the reality of the exhaustion that comes from being a new dad
+ (and taking a long journey through the desert), we get our inspired Saint Joseph design. This took many iterations, lots of research, and lots of prayer."""
+            ]
+        , br [] []
+        , p [] [ text """The result is a bearded man with medium‑brown, shoulder‑length hair and warm tan skin. Saint Joseph has subtle dark circles under his eyes and a sturdy build.
+Key character and costume details include: long hair like King Aragorn, green tunic which is traditional for Saint Joseph, worn over a light‑beige inner robe giving Jedi vibes flowing down to his sandaled feet, and a hammer holster at his waist like a saber or sword sheath which suggests his trade as a carpenter.
+ Overall, the Biblical and pop‑culture reference blend create a friendly, approachable depiction of Saint Joseph for our animation.""" ]
+        , br [] []
+        , img [ class imgClass, src "/assets/images/JosephDesign.png", alt "Joseph Design Descriptions" ] []
+        , h2 [] [ text "Saint Joseph" ]
+        , p []
+            [ text """As a righteous and just man, Joseph welcomed divine mystery into his life. His humility laid the foundation for extraordinary obedience. As protector and provider, he journeyed into the unknown to safeguard Mary and Jesus. His quiet strength teaches us that true courage often speaks in whispers, not shouts."""
+            ]
+        , br [] []
+        , p []
+            [ text """The flaming heart crowned with lilies is a traditional symbol for Saint Joseph and symbolizes his chaste heart and pure devotion. The carpenter’s hammer entwined with olive leaves honors both his trade and his trust in God’s plan. Our animation invites viewers to discover that heroism shines brightest in everyday acts of love, sacrifice, and faith."""
+            ]
+        , img [ class imgClass, src "/assets/images/JosephDescription.png", alt "Joseph Character Description" ] []
+        , h2 [] [ text "Supporting this Animation" ]
+        , p []
+            [ text """By supporting our fundraiser, you become a co‑creator in this beautiful project. Your gift will help us animate a moment in Joseph’s journey: a moment of hardship from his Nazareth workshop to Egypt. Together, we can craft this musical short that inspires the next generation to embrace humility, courage, and trust in God—just as Saint Joseph did."""
+            ]
+        , donationButton "Support the Saint Joseph Animation"
+
+        -- end
+        , div [ class "mb-20 lg:mb-40" ] []
+        ]
+
+
+donationButton : String -> Html msg
+donationButton str =
+    a
+        [ class "dbox-donation-page-button m-auto mt-10 bg-pink-600 no-underline font-sans flex text-lg px-8 py-4 rounded gap-2 w-fit leading-6"
+        , class "shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
+
+        -- , href "https://www.zeffy.com/en-US/fundraisingV2/support-the-st-joseph-animation"
+        , href "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation"
+        , target "_blank"
+        ]
+        [ text str
         ]
