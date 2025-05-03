@@ -498,7 +498,7 @@ viewDescription description =
         , style "-webkit-box-orient" "vertical"
         , style "overflow" "hidden"
         , style "text-overflow" "ellipsis"
-        , style "-webkit-line-clamp" "5" -- Change the number to the desired number of lines
+        , class "xl:line-clamp-5" -- TODO: Have it clickable to expand
         ]
         [ text description
         ]
