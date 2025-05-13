@@ -25,7 +25,7 @@ main =
         }
 
 
-view : Html Never
+view : Html msg
 view =
     div
         [ class "max-w-5xl"

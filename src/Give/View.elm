@@ -1,41 +1,25 @@
-module Give.Main exposing (..)
+module Give.View exposing (..)
 
-import Browser
 import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Signup exposing (..)
 
 
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
-
-
-view : Html Never
+view : Html msg
 view =
     div
         [ class "bg-[#fef7f4]"
         ]
-        [ -- viewSubpageHeader "Donate" headerMargin
+        [ -- It is recommended to not have the header on the give page
+          -- viewSubpageHeader "Donate" headerMargin
           viewBody
         , viewFooter
         ]
 
 
-viewBody : Html Never
+viewBody : Html msg
 viewBody =
     div []
         [ img [ src "/assets/images/CarouselThumbnails/HailMary.png", alt "Hail Mary animation" ] []

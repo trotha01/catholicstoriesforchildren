@@ -1,27 +1,11 @@
-module Navigation.Main exposing (..)
+module Navigation.View exposing (..)
 
-import Browser
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
 
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
-
-
-view : Html Never
+view : Html msg
 view =
     div
         [ class "min-h-screen"

@@ -1,6 +1,5 @@
-module Prayers.Main exposing (..)
+module Prayers.View exposing (..)
 
-import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
@@ -8,26 +7,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 
-
--- MAIN
-
-
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
-
-
-view : Html Never
+view : Html msg
 view =
     div
         []
@@ -37,7 +17,7 @@ view =
         ]
 
 
-viewBody : Html Never
+viewBody : Html msg
 viewBody =
     div
         [ class "bg-[#FEF7F4]"
@@ -52,7 +32,7 @@ viewBody =
         ]
 
 
-viewSaints : Html Never
+viewSaints : Html msg
 viewSaints =
     div []
         [ details []

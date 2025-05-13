@@ -1,7 +1,6 @@
-module Prayer.Angelus.Main exposing (..)
+module Prayer.Angelus.View exposing (..)
 
 import Animations.Helpers exposing (viewVideo)
-import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
@@ -9,26 +8,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 
 
-
--- MAIN
-
-
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
-
-
-view : Html Never
+view : Html msg
 view =
     div
         []
@@ -38,7 +18,7 @@ view =
         ]
 
 
-viewBody : Html Never
+viewBody : Html msg
 viewBody =
     div
         [ class "bg-[#FEF7F4]"
@@ -53,7 +33,7 @@ viewBody =
         ]
 
 
-viewAngelusPage : Html Never
+viewAngelusPage : Html msg
 viewAngelusPage =
     div [ class "max-w-3xl" ]
         [ div [ class "mb-16" ] [ viewAboutTheAngelus ]
@@ -62,7 +42,7 @@ viewAngelusPage =
         ]
 
 
-viewAboutTheAngelus : Html Never
+viewAboutTheAngelus : Html msg
 viewAboutTheAngelus =
     div []
         [ h2 [ class "mb-4" ] [ text "What is the Angelus" ]
@@ -71,12 +51,12 @@ viewAboutTheAngelus =
         ]
 
 
-viewAngelusPrayerVideo : Html Never
+viewAngelusPrayerVideo : Html msg
 viewAngelusPrayerVideo =
     viewVideo "" "https://www.youtube-nocookie.com/embed/-r6ChB56gr4"
 
 
-viewAngelusPrayer : Html Never
+viewAngelusPrayer : Html msg
 viewAngelusPrayer =
     div []
         [ h2 [ class "mb-4" ] [ text "The Angelus Prayer" ]

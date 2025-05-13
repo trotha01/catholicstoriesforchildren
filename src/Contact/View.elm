@@ -1,6 +1,5 @@
-module Contact.Main exposing (..)
+module Contact.View exposing (..)
 
-import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
@@ -13,22 +12,7 @@ import Json.Encode
 -- MAIN
 
 
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
-
-
-view : Html Never
+view : Html msg
 view =
     div
         []
@@ -38,7 +22,7 @@ view =
         ]
 
 
-viewBody : Html Never
+viewBody : Html msg
 viewBody =
     div
         [ class "h-screen"

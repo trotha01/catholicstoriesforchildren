@@ -1,10 +1,4 @@
 #!/bin/sh
-# Can run on osx with:
-# fswatch -o src/* build.js | xargs -n1 -I{} ./make.sh
-# ./tailwindcss -i input.css -o tailwind.css --watch
-# and serve with:
-# python3 -m http.server 8000
-# (OLD python -m SimpleHTTPServer 8000)
 
 set -ex
 
@@ -33,28 +27,9 @@ pair_list=(
   src/Main.elm elm.js
   src/About/PrivacyPolicy/Main.elm about/privacy-policy/elm.js
   src/About/TermsAndConditions/Main.elm about/terms-and-conditions/elm.js
-  src/Contact/Main.elm contact/elm.js
+  src/NotFound/Main.elm notfound/elm.js
   src/FeastDayActivities/Main.elm feastdayactivities/elm.js
   src/FeastDayActivities/Today/Main.elm feastdayactivities/today/elm.js
-  src/Give/Main.elm give/elm.js
-  src/Navigation/Main.elm navigation/elm.js
-  src/NotFound/Main.elm notfound/elm.js
-  src/Newsroom/Main.elm newsroom/elm.js
-  src/Opportunities/Main.elm opportunities/elm.js
-  src/Prayers/Main.elm prayers/elm.js
-  src/Prayer/Angelus/Main.elm prayer/angelus/elm.js
-  src/Resources/Books/Main.elm resources/books/elm.js
-  src/Resources/Games/Main.elm resources/games/elm.js
-  src/Resources/Main.elm resources/elm.js
-  src/Resources/Podcasts/Main.elm resources/podcasts/elm.js
-  src/Resources/Prayer/Main.elm resources/prayer/elm.js
-  src/Resources/Subscriptions/Main.elm resources/subscriptions/elm.js
-  src/Resources/Videos/Main.elm resources/videos/elm.js
-  src/Saints/Main.elm saints/elm.js
-  src/Shop/Main.elm shop/elm.js
-  src/Signup/Main.elm signup/elm.js
-  src/Team/Main.elm team/elm.js
-  src/Team/Join/Main.elm team/join/elm.js
   src/ThankYou/Main.elm thankyou/elm.js
 )
 

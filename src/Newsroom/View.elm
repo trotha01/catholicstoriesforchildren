@@ -1,4 +1,4 @@
-module Newsroom.Main exposing (..)
+module Newsroom.View exposing (..)
 
 import Browser
 import Footer exposing (viewFooter)
@@ -7,21 +7,6 @@ import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Newsroom.PR20220912
-
-
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
 
 
 view : Html Never

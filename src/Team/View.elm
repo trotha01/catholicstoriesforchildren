@@ -1,12 +1,11 @@
-module Team.Main exposing (..)
+module Team.View exposing (..)
 
-import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Newsroom.Main exposing (viewSignUp)
+import Newsroom.View exposing (viewSignUp)
 import Resources.Helpers exposing (Resource, viewResource)
 import Team.Team exposing (..)
 
@@ -15,22 +14,7 @@ import Team.Team exposing (..)
 -- MAIN
 
 
-type alias Model =
-    {}
-
-
-main : Program () Model Never
-main =
-    Browser.sandbox
-        { init = {}
-        , view =
-            \_ ->
-                view
-        , update = \_ -> \model -> model
-        }
-
-
-view : Html Never
+view : Html msg
 view =
     div
         [ style "height" "100vh"
@@ -57,7 +41,7 @@ h1Style =
         ++ [ class "my-10" ]
 
 
-viewBody : Html Never
+viewBody : Html msg
 viewBody =
     div
         [ -- center

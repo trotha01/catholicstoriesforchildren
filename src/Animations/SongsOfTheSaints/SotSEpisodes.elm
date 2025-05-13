@@ -1,7 +1,7 @@
 module Animations.SongsOfTheSaints.SotSEpisodes exposing (..)
 
 import Animations.Helpers exposing (Episode, Season)
-import Give.Main exposing (donateWithZeffy)
+import Give.View exposing (donateWithZeffy)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)

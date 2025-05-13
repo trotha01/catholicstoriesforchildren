@@ -1,26 +1,34 @@
-module Main exposing (Model, main, view, viewBanner)
+module Main exposing (Model, main, view)
 
 import Animations.Helpers.Carousel as Carousel
 import Animations.View
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
+import Contact.View as ContactPage
+import FeastDayActivities.Main as FeastsPage
 import Footer exposing (viewFooter)
+import Give.View as GivePage
 import Header exposing (viewHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
-import Newsroom.Main exposing (viewSignUp)
+import Navigation.View as NavigationPage
+import Newsroom.View exposing (viewSignUp)
 import NotFound.Main
+import Prayer.Angelus.View as AngelusPage
+import Prayers.View as PrayersPage
 import Resources.Helpers exposing (ResourceGroup)
+import Resources.View as ResourcesPage
+import Saints.Main as SaintsPage
 import Shop.ShopHelpers exposing (viewPrintfulShopItems)
+import Shop.View as ShopPage
 import Signup exposing (..)
-import Svg.Attributes exposing (d, mode)
 import Task
-import Team.Main exposing (cfnLive, christianChannel, inHisImage, makeJoyNormal, ocCatholic, spiritFilledMedia)
-import Team.Team exposing (carlos, kelly, lindsey, trevor, viewPerson)
+import Team.Team exposing (kelly, lindsey, trevor, viewPerson)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
+import Team.View as TeamPage exposing (cfnLive, christianChannel, inHisImage, makeJoyNormal, ocCatholic, spiritFilledMedia)
 import Time
 import Url
 
@@ -39,7 +47,17 @@ main =
 
 type Page
     = Home
+    | Navigation
     | Productions
+    | Give
+    | AboutUs
+    | Resources
+    | Contact
+    | Prayers
+    | Angelus
+    | Shop
+    | Feasts
+    | Saints
     | NotFound
 
 
@@ -51,48 +69,88 @@ type Language
 
 
 type alias Model =
-    { key : Nav.Key
+    { key : Nav.Key -- a navigation key is needed when manipulating the url.
     , url : Url.Url
     , signup : Signup.Model
     , page : Page
     , time : Time.Posix
     , timezone : Time.Zone
     , language : Language
-    , productionsModel : Animations.View.Model
+    , feastsPageModel : FeastsPage.Model
+    , saintsPageModel : SaintsPage.Model
+    , animationsPageModel : Animations.View.Model
     }
 
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     let
-        ( productionsModel, productionsCmd ) =
+        ( animationsPageModel, animationsPageCmd ) =
             Animations.View.init flags url key
 
+        ( saintsPageModel, saintsPageCmd ) =
+            SaintsPage.init flags url key
+
+        ( feastsPageModel, feastsPageCmd ) =
+            FeastsPage.init flags url key
+
         ( isRedirectedUrl, newPath, redirectedUrl ) =
-            -- we use redirectUrl for github
+            -- we use redirectUrl for github. We won't need this when we switch to netlify
             redirectUrl url
 
         urlString =
             Url.toString url
 
-        isProductionsPage =
-            -- we update isProductionsPage initially right away for netlify
-            String.contains "animations" urlString
+        initialPage =
+            if String.contains "animations" urlString then
+                Productions
+
+            else if String.contains "navigation" urlString then
+                Navigation
+
+            else if String.contains "give" urlString then
+                Give
+
+            else if String.contains "contact" urlString then
+                Contact
+
+            else if String.contains "team" urlString then
+                AboutUs
+
+            else if String.contains "resources" urlString then
+                Resources
+
+            else if String.contains "prayers" urlString then
+                Prayers
+
+            else if String.contains "angelus" urlString then
+                Angelus
+
+            else if String.contains "shop" urlString then
+                Shop
+                -- --
+                -- Need to wait until netlify to add feastdayactivities to the SPA. The github 404 redirect doesn't current work with url queries
+                -- else if String.contains "feastdayactivities" urlString then
+                --     ( { model | url = url, page = Feasts }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+            else if String.contains "saints" urlString then
+                Saints
+
+            else
+                Home
 
         initModel =
             { key = key
             , url = redirectedUrl
             , signup = Signup.init
             , page =
-                if isProductionsPage then
-                    Productions
-
-                else
-                    Home
+                initialPage
             , time = Time.millisToPosix 0
             , timezone = Time.utc
             , language = English
-            , productionsModel = productionsModel
+            , saintsPageModel = saintsPageModel
+            , feastsPageModel = feastsPageModel
+            , animationsPageModel = animationsPageModel
             }
 
         ( redirectedModel, redirectedMsg ) =
@@ -106,7 +164,9 @@ init flags url key =
     , Cmd.batch
         [ Task.perform NewTime Time.now
         , Task.perform NewZone Time.here
-        , Cmd.map ProductionsMsg productionsCmd
+        , Cmd.map ProductionsMsg animationsPageCmd
+        , Cmd.map SaintsMsg saintsPageCmd
+        , Cmd.map FeastsMsg feastsPageCmd
         , redirectedMsg
         ]
     )
@@ -134,11 +194,13 @@ type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
     | SignupMsg Signup.Msg
-    | NoOp
     | NewTime Time.Posix
     | NewZone Time.Zone
     | LanguageChange Language
+    | SaintsMsg SaintsPage.Msg
+    | FeastsMsg FeastsPage.Msg
     | ProductionsMsg Animations.View.Msg
+    | NoOp
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -150,18 +212,43 @@ update msg model =
                     let
                         urlString =
                             Url.toString url
-
-                        isProductionsPage =
-                            String.contains "animations" urlString
-
-                        isJosephPage =
-                            String.contains "joseph" urlString
                     in
-                    if isJosephPage then
+                    if String.contains "joseph" urlString then
                         ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
 
-                    else if isProductionsPage then
+                    else if String.contains "animations" urlString then
                         ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "navigation" urlString then
+                        ( { model | url = url, page = Navigation }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "give" urlString then
+                        ( { model | url = url, page = Give }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "contact" urlString then
+                        ( { model | url = url, page = Contact }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "team" urlString then
+                        ( { model | url = url, page = AboutUs }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "resources" urlString then
+                        ( { model | url = url, page = Resources }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "prayers" urlString then
+                        ( { model | url = url, page = Prayers }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "angelus" urlString then
+                        ( { model | url = url, page = Angelus }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "shop" urlString then
+                        ( { model | url = url, page = Shop }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+                        -- --
+                        -- Need to wait until netlify. The github 404 redirect doesn't current work with url queries
+                        -- else if String.contains "feastdayactivities" urlString then
+                        --     ( { model | url = url, page = Feasts }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "saints" urlString then
+                        ( { model | url = url, page = Saints }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
 
                     else
                         ( model, Nav.load (Url.toString url) )
@@ -190,12 +277,26 @@ update msg model =
         LanguageChange language ->
             ( { model | language = language }, Cmd.none )
 
+        SaintsMsg saintsMsg ->
+            let
+                ( updatedSaintsModel, cmd ) =
+                    SaintsPage.update saintsMsg model.saintsPageModel
+            in
+            ( { model | saintsPageModel = updatedSaintsModel }, Cmd.map SaintsMsg cmd )
+
+        FeastsMsg feastsMsg ->
+            let
+                ( updatedFeastsModel, cmd ) =
+                    FeastsPage.update feastsMsg model.feastsPageModel
+            in
+            ( { model | feastsPageModel = updatedFeastsModel }, Cmd.map FeastsMsg cmd )
+
         ProductionsMsg productionsMsg ->
             let
                 ( updatedProductionsModel, cmd ) =
-                    Animations.View.update productionsMsg model.productionsModel
+                    Animations.View.update productionsMsg model.animationsPageModel
             in
-            ( { model | productionsModel = updatedProductionsModel }, Cmd.map ProductionsMsg cmd )
+            ( { model | animationsPageModel = updatedProductionsModel }, Cmd.map ProductionsMsg cmd )
 
         NoOp ->
             ( model, Cmd.none )
@@ -209,6 +310,7 @@ scrollToTopCmd =
 
 
 -- SUBSCRIPTIONS
+-- We are not using Elm subscriptions yet. Subscriptions are used for things like websockets.
 
 
 subscriptions : Model -> Sub Msg
@@ -228,19 +330,57 @@ view model =
                 Home ->
                     viewHome model
 
+                Navigation ->
+                    { title = "Navigation", body = [ NavigationPage.view ] }
+
+                Give ->
+                    { title = "Donate", body = [ GivePage.view ] }
+
+                Contact ->
+                    { title = "Contact Us", body = [ ContactPage.view ] }
+
+                AboutUs ->
+                    { title = "About Us", body = [ TeamPage.view ] }
+
+                Shop ->
+                    { title = "Shop", body = [ ShopPage.view ] }
+
+                Resources ->
+                    { title = "Resources", body = [ ResourcesPage.view model.url ] }
+
+                Prayers ->
+                    { title = "Prayers", body = [ PrayersPage.view ] }
+
+                Angelus ->
+                    { title = "Angelus", body = [ AngelusPage.view ] }
+
+                Saints ->
+                    let
+                        document =
+                            SaintsPage.view model.saintsPageModel
+                    in
+                    { title = document.title, body = document.body |> List.map (Html.map SaintsMsg) }
+
+                Feasts ->
+                    let
+                        document =
+                            FeastsPage.view model.feastsPageModel
+                    in
+                    { title = document.title, body = document.body |> List.map (Html.map FeastsMsg) }
+
                 Productions ->
                     let
-                        b =
-                            Animations.View.view model.url model.productionsModel
+                        document =
+                            Animations.View.view model.url model.animationsPageModel
                     in
-                    { title = b.title, body = b.body |> List.map (Html.map ProductionsMsg) }
+                    { title = document.title, body = document.body |> List.map (Html.map ProductionsMsg) }
 
                 NotFound ->
                     let
-                        b =
+                        document =
                             NotFound.Main.view
                     in
-                    { title = "Tony Help, Page Not Found", body = [ Html.map (\_ -> NoOp) b ] }
+                    { title = "Tony Help, Page Not Found", body = [ Html.map (\_ -> NoOp) document ] }
     in
     { title = title, body = body }
 
@@ -286,7 +426,7 @@ viewSlideshow model =
     div
         [ class "bg-[#282c2e]"
         ]
-        [ Carousel.viewSlides model.productionsModel.slideshow Animations.View.NextSlide Animations.View.PrevSlide
+        [ Carousel.viewSlides model.animationsPageModel.slideshow Animations.View.NextSlide Animations.View.PrevSlide
             |> Html.map ProductionsMsg
         ]
 
@@ -398,7 +538,7 @@ viewAnimations model =
     viewSection "animations"
         [ class "py-20 bg-[#282c2e] text-white"
         ]
-        [ Animations.View.viewProductions model.productionsModel |> Html.map ProductionsMsg
+        [ Animations.View.viewProductions model.animationsPageModel |> Html.map ProductionsMsg
         ]
 
 
@@ -677,33 +817,6 @@ viewSection sectionId background body =
             :: background
         )
         body
-
-
-viewBanner : String -> String -> String -> Html.Html msg
-viewBanner url title pageUrl =
-    a
-        [ style "background" ("linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))," ++ "url('" ++ url ++ "')")
-        , style "width" "100vw"
-        , style "height" "100vh"
-        , style "background-position" "center"
-        , style "background-repeat" "no-repeat"
-        , style "background-size" "cover"
-        , style "text-align" "center"
-        , style "cursor" "pointer"
-        , style "display" "flex"
-        , style "align-items" "center"
-        , style "opacity" "0.6"
-        , href pageUrl
-        ]
-        [ h2
-            [ style "color" "white"
-            , style "font-size" "3.5rem"
-            , style "position" "absolute"
-            , style "width" "100%"
-            , style "text-align" "center"
-            ]
-            [ text title ]
-        ]
 
 
 cornerBorder : Attribute msg

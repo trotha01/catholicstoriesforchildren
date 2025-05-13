@@ -1,4 +1,4 @@
-module Resources.Main exposing (..)
+module Resources.View exposing (..)
 
 import Browser
 import Footer exposing (viewFooter)
@@ -6,65 +6,65 @@ import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Resources.Books.Main
+import Resources.Games.Main
 import Resources.Helpers exposing (..)
+import Resources.Podcasts.Main
+import Resources.Prayer.Main
+import Resources.Subscriptions.Main
+import Resources.Videos.Main
 import Signup exposing (..)
+import Url
 
 
-type alias Model =
-    { signup : Signup.Model
-    }
+view : Url.Url -> Html msg
+view url =
+    let
+        urlString =
+            Url.toString url
+    in
+    if String.contains "books" urlString then
+        Resources.Books.Main.view
+
+    else if String.contains "games" urlString then
+        Resources.Games.Main.view
+
+    else if String.contains "podcasts" urlString then
+        Resources.Podcasts.Main.view
+
+    else if String.contains "prayer" urlString then
+        Resources.Prayer.Main.view
+
+    else if String.contains "subscriptions" urlString then
+        Resources.Subscriptions.Main.view
+
+    else if String.contains "videos" urlString then
+        Resources.Videos.Main.view
+
+    else
+        div
+            [ style "height" "100vh"
+            , style "overflow-x" "hidden"
+            , style "overflow-y" "auto"
+            , style "perspective" "300px"
+            , style "scroll-behavior" "smooth"
+            , style "background-color" "#FEF7F4"
+            ]
+            [ viewSubpageHeader "Resources" headerMargin
+            , viewBody
+            , viewFooter
+            ]
 
 
-type Msg
-    = SignupMsg Signup.Msg
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
-        , view = view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
-
-view : Model -> Html Msg
-view model =
-    div
-        [ style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
-        ]
-        [ viewSubpageHeader "Resources" headerMargin
-        , viewBody model
-        , viewFooter
-        ]
-
-
-viewBody : Model -> Html Msg
-viewBody model =
+viewBody : Html msg
+viewBody =
     div []
         [ div [ class "max-w-3xl m-auto p-5" ]
             [ h1 [ class "my-10 leading-10" ] [ text "Resources" ]
             , viewAboutResources
             ]
         , div [ class "mt-2 mb-20" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
+            [ Signup.view4 ]
         , div
             [ class "max-w-3xl m-auto p-5" ]
             [ viewResourceGroups

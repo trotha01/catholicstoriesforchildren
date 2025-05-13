@@ -23,7 +23,7 @@ main : Program () Model Msg
 main =
     Browser.element
         { init = \_ -> ( { signup = Signup.init }, Cmd.none )
-        , view = view
+        , view = \_ -> view
         , update = update
         , subscriptions = \_ -> Sub.none
         }
@@ -40,8 +40,8 @@ update msg model =
             ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
 
 
-view : Model -> Html Msg
-view model =
+view : Html msg
+view =
     div
         [ style "height" "100vh"
         , style "overflow-x" "hidden"
@@ -51,13 +51,13 @@ view model =
         , style "background-color" "#FEF7F4"
         ]
         [ viewSubpageHeader "Subscriptions" headerMargin
-        , viewBody model
+        , viewBody
         , viewFooter
         ]
 
 
-viewBody : Model -> Html Msg
-viewBody model =
+viewBody : Html msg
+viewBody =
     div
         [ class "max-w-3xl"
         , class "m-auto"
@@ -66,7 +66,7 @@ viewBody model =
         ]
         [ h1 [ class "my-10 leading-10" ] [ text "Subscriptions" ]
         , div [ class "mb-20" ]
-            [ Signup.view model.signup |> Html.map SignupMsg ]
+            [ Signup.view4 ]
         , viewAboutSubscriptions
         , viewSubscriptions
         , viewWorkInProgressNotice

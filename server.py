@@ -23,9 +23,9 @@ with socketserver.TCPServer(("", 9000), CustomRequestHandler) as httpd:
     httpd.serve_forever()
 
 # Immitating netlify redirecting 404s to the main page
-#
+
 # PORT = 8000
-#
+
 # class SPARequestHandler(http.server.SimpleHTTPRequestHandler):
 #     def send_error(self, code, message=None, explain=None):
 #         # If file not found (404), serve index.html instead
@@ -34,7 +34,7 @@ with socketserver.TCPServer(("", 9000), CustomRequestHandler) as httpd:
 #             return self.do_GET()
 #         else:
 #             return super().send_error(code, message, explain)
-# 
+
 # with socketserver.TCPServer(("", PORT), SPARequestHandler) as httpd:
 #     print(f"Serving at port {PORT}")
 #     httpd.serve_forever()
