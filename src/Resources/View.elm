@@ -1,18 +1,17 @@
 module Resources.View exposing (..)
 
-import Browser
 import Footer exposing (viewFooter)
 import Header exposing (viewSubpageHeader)
 import Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Resources.Books.Main
-import Resources.Games.Main
+import Resources.Books
+import Resources.Games
 import Resources.Helpers exposing (..)
-import Resources.Podcasts.Main
+import Resources.Podcasts
 import Resources.Prayer.Main
-import Resources.Subscriptions.Main
-import Resources.Videos.Main
+import Resources.Subscriptions
+import Resources.Videos
 import Signup exposing (..)
 import Url
 
@@ -24,22 +23,22 @@ view url =
             Url.toString url
     in
     if String.contains "books" urlString then
-        Resources.Books.Main.view
+        viewResources books
 
     else if String.contains "games" urlString then
-        Resources.Games.Main.view
+        viewResources games
 
     else if String.contains "podcasts" urlString then
-        Resources.Podcasts.Main.view
+        viewResources podcasts
 
     else if String.contains "prayer" urlString then
         Resources.Prayer.Main.view
 
     else if String.contains "subscriptions" urlString then
-        Resources.Subscriptions.Main.view
+        viewResources subscriptions
 
     else if String.contains "videos" urlString then
-        Resources.Videos.Main.view
+        viewResources videos
 
     else
         div
@@ -68,7 +67,6 @@ viewBody =
         , div
             [ class "max-w-3xl m-auto p-5" ]
             [ viewResourceGroups
-            , viewWorkInProgressNotice
             ]
         ]
 
@@ -83,7 +81,7 @@ viewAboutResources =
 viewResourceGroups : Html msg
 viewResourceGroups =
     div []
-        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources, feastDayActivities, gameResources ])
+        (List.map viewResourceGroup [ books, podcasts, videos, subscriptions, prayerResources, feastDayActivities, games ])
 
 
 viewResourceGroup : ResourceGroup -> Html msg
@@ -103,12 +101,34 @@ viewResourceGroup resourceGroup =
         ]
 
 
+viewResources : ResourceGroup -> Html msg
+viewResources resourceGroup =
+    div
+        [ class "max-w-3xl"
+        , class "m-auto"
+        , class "p-5"
+        , class "mb-10"
+        ]
+        [ h1 [ class "my-10 leading-10" ] [ text resourceGroup.name ]
+        , div [ class "mb-20" ]
+            [ Signup.view4 ]
+        , div []
+            [ text resourceGroup.description
+            ]
+        , div []
+            (List.map viewResource
+                resourceGroup.resources
+            )
+        ]
+
+
 podcasts : ResourceGroup
 podcasts =
     { name = "Podcasts"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335"
     , description = "Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves."
     , link = "/resources/podcasts"
+    , resources = Resources.Podcasts.podcasts
     }
 
 
@@ -118,6 +138,7 @@ videos =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272"
     , description = "Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home."
     , link = "/resources/videos"
+    , resources = Resources.Videos.videos
     }
 
 
@@ -127,6 +148,7 @@ books =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106"
     , description = "Find books here. It's hard to go wrong with a good Catholic book."
     , link = "/resources/books"
+    , resources = Resources.Books.books
     }
 
 
@@ -136,6 +158,7 @@ subscriptions =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068"
     , description = "Want monthly content at your front door? Check out these wonderful Catholic subscriptions."
     , link = "/resources/subscriptions"
+    , resources = Resources.Subscriptions.subscriptions
     }
 
 
@@ -145,6 +168,7 @@ prayerResources =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/prayerresources_gN76-j6pz.png?updatedAt=1683227269863"
     , description = "Find more resources here to help build your prayer life"
     , link = "/resources/prayer"
+    , resources = []
     }
 
 
@@ -154,13 +178,15 @@ feastDayActivities =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png?updatedAt=1686096632436"
     , description = "Find activities for feast days throughout the year"
     , link = "/feastdayactivities"
+    , resources = []
     }
 
 
-gameResources : ResourceGroup
-gameResources =
+games : ResourceGroup
+games =
     { name = "Games"
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/Game%20Icon_rb2djF7Hf.png?updatedAt=1693438195519"
     , description = "Find game resources for a fun way to learn about the Catholic faith"
     , link = "/resources/games"
+    , resources = Resources.Games.games
     }

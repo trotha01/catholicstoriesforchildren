@@ -1,100 +1,20 @@
-module Resources.Podcasts.Main exposing (..)
+module Resources.Podcasts exposing (..)
 
-import Browser
-import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
-import Helpers exposing (..)
-import Html exposing (..)
-import Html.Attributes exposing (..)
 import Resources.Helpers exposing (..)
-import Signup exposing (..)
 
 
-type alias Model =
-    { signup : Signup.Model
-    }
-
-
-type Msg
-    = SignupMsg Signup.Msg
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
-        , view = \_ -> view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
-
-view : Html msg
-view =
-    div
-        [ style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
-        ]
-        [ viewSubpageHeader "Podcasts" headerMargin
-        , viewBody
-        , viewFooter
-        ]
-
-
-viewBody : Html msg
-viewBody =
-    div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "p-5"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Podcasts" ]
-        , div [ class "mb-20" ]
-            [ Signup.view4 ]
-        , viewAboutPodcasts
-        , viewPodcasts
-        , viewWorkInProgressNotice
-        ]
-
-
-viewAboutPodcasts : Html msg
-viewAboutPodcasts =
-    div []
-        [ text "Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves."
-        ]
-
-
-viewPodcasts : Html msg
-viewPodcasts =
-    div []
-        (List.map viewResource
-            [ saintStoriesForKids
-            , catholicSprouts
-            , saintsAlive
-            , theSaints
-            , bibleInAYearWithTeddy
-            , thatsTheWord
-            , onTheNightTrain
-            , catholicKidsPodcast
-            , catholicKidsTriviaPodcast
-            ]
-        )
+podcasts : List Resource
+podcasts =
+    [ saintStoriesForKids
+    , catholicSprouts
+    , saintsAlive
+    , theSaints
+    , bibleInAYearWithTeddy
+    , thatsTheWord
+    , onTheNightTrain
+    , catholicKidsPodcast
+    , catholicKidsTriviaPodcast
+    ]
 
 
 saintStoriesForKids : Resource

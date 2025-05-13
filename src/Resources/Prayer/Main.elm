@@ -70,7 +70,6 @@ viewBody =
         , viewAboutPrayerResources
         , viewPrayerResources
         , viewPrayerSteps
-        , viewWorkInProgressNotice
         ]
 
 

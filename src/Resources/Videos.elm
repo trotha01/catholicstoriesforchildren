@@ -1,104 +1,24 @@
-module Resources.Videos.Main exposing (..)
+module Resources.Videos exposing (..)
 
-import Browser
-import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
-import Helpers exposing (..)
-import Html exposing (..)
-import Html.Attributes exposing (..)
 import Resources.Helpers exposing (..)
-import Signup exposing (..)
 
 
-type alias Model =
-    { signup : Signup.Model
-    }
-
-
-type Msg
-    = SignupMsg Signup.Msg
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
-        , view = \_ -> view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
-
-view : Html msg
-view =
-    div
-        [ style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
-        ]
-        [ viewSubpageHeader "Youtube Channels" headerMargin
-        , viewBody
-        , viewFooter
-        ]
-
-
-viewBody : Html msg
-viewBody =
-    div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "p-5"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Youtube Channels" ]
-        , div [ class "mb-10" ]
-            [ Signup.view4 ]
-        , viewAboutVideos
-        , viewVideos
-        , viewWorkInProgressNotice
-        ]
-
-
-viewAboutVideos : Html msg
-viewAboutVideos =
-    div []
-        [ text "Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home."
-        ]
-
-
-viewVideos : Html msg
-viewVideos =
-    div []
-        (List.map viewResource
-            [ catholicStoriesForChildren
-            , christineInAction
-            , tomkin
-            , juiceBox
-            , catholicKidsMedia
-            , brotherFrancis
-            , amyheysart
-            , heidiWitte
-            , sacredHeartofJesusConvent
-            , catholicSongsForKids
-            , opusJoyous
-            , catholicIcing
-            , prostradaDesigns
-            ]
-        )
+videos : List Resource
+videos =
+    [ catholicStoriesForChildren
+    , christineInAction
+    , tomkin
+    , juiceBox
+    , catholicKidsMedia
+    , brotherFrancis
+    , amyheysart
+    , heidiWitte
+    , sacredHeartofJesusConvent
+    , catholicSongsForKids
+    , opusJoyous
+    , catholicIcing
+    , prostradaDesigns
+    ]
 
 
 catholicStoriesForChildren : Resource

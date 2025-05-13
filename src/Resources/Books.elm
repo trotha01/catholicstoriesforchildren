@@ -1,111 +1,31 @@
-module Resources.Books.Main exposing (..)
+module Resources.Books exposing (..)
 
-import Browser
-import Footer exposing (viewFooter)
-import Header exposing (viewSubpageHeader)
-import Helpers exposing (..)
-import Html exposing (..)
-import Html.Attributes exposing (..)
 import Resources.Helpers exposing (..)
-import Signup exposing (..)
 
 
-type alias Model =
-    { signup : Signup.Model
-    }
-
-
-type Msg
-    = SignupMsg Signup.Msg
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = \_ -> ( { signup = Signup.init }, Cmd.none )
-        , view = \_ -> view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
-
-view : Html msg
-view =
-    div
-        [ style "height" "100vh"
-        , style "overflow-x" "hidden"
-        , style "overflow-y" "auto"
-        , style "perspective" "300px"
-        , style "scroll-behavior" "smooth"
-        , style "background-color" "#FEF7F4"
-        ]
-        [ viewSubpageHeader "Books" headerMargin
-        , viewBody
-        , viewFooter
-        ]
-
-
-viewBody : Html msg
-viewBody =
-    div
-        [ class "max-w-3xl"
-        , class "m-auto"
-        , class "p-5"
-        , class "mb-10"
-        ]
-        [ h1 [ class "my-10 leading-10" ] [ text "Books" ]
-        , div [ class "mb-20" ]
-            [ Signup.view4 ]
-        , viewAboutBooks
-        , viewBooks
-        , viewWorkInProgressNotice
-        ]
-
-
-viewAboutBooks : Html msg
-viewAboutBooks =
-    div []
-        [ text "Find books here. It's hard to go wrong with a good Catholic book."
-        ]
-
-
-viewBooks : Html msg
-viewBooks =
-    div []
-        (List.map viewResource
-            [ littleSaintStories
-            , theotokosKids
-            , osvKidsBooks
-            , theLittleRoseShop
-            , brotherFrancisBooks
-            , thyOliveTree
-            , lightOfTheSaints
-            , firstFaithTreasury
-            , tanBooks
-            , ctsBooks
-            , ewtnKidsBooks
-            , diaryOfAGodMan
-            , catholicSprouts
-            , holyHeroesBooks
-            , jennaEpkey
-            , loyolaPressBooks
-            , stPaulCenter
-            , cBPSaints
-            , paulineBooksAndMediaForKids
-            , ctbBooks
-            ]
-        )
+books : List Resource
+books =
+    [ littleSaintStories
+    , theotokosKids
+    , osvKidsBooks
+    , theLittleRoseShop
+    , brotherFrancisBooks
+    , thyOliveTree
+    , lightOfTheSaints
+    , firstFaithTreasury
+    , tanBooks
+    , ctsBooks
+    , ewtnKidsBooks
+    , diaryOfAGodMan
+    , catholicSprouts
+    , holyHeroesBooks
+    , jennaEpkey
+    , loyolaPressBooks
+    , stPaulCenter
+    , cBPSaints
+    , paulineBooksAndMediaForKids
+    , ctbBooks
+    ]
 
 
 type alias Category =

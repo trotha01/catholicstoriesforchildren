@@ -789,6 +789,7 @@ saints =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/7_nqDiNpO9Q.png?updatedAt=1682454350040"
     , description = "Find a list of saints here."
     , link = "saints"
+    , resources = []
     }
 
 
@@ -798,6 +799,7 @@ prayers =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/6_qYAX4yqV6.png?updatedAt=1682454350004"
     , description = "Find prayers resources and information here."
     , link = "resources/prayer"
+    , resources = []
     }
 
 
@@ -807,6 +809,7 @@ more =
     , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/5_siQ_tckr-C.png?updatedAt=1682454350018"
     , description = "Find more resources here."
     , link = "resources"
+    , resources = []
     }
 
 
