@@ -28,7 +28,7 @@ watch_server:
 
 tailwind:
 	@echo "Starting TailwindCSS watcher..."
-	@./tailwindcss -i input.css -o tailwind.css --watch & echo $$! >> $(PID_FILE)
+	@./tailwindcss -i input.css -o docs/tailwind.css --watch & echo $$! >> $(PID_FILE)
 
 http_server:
 	@echo "Starting HTTP server on port 8000..."

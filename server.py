@@ -5,13 +5,18 @@ import os
 
 # Immitating github going to 404 page, and the 404 page redirects to the main page
 class CustomRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        # Serve files from the 'docs/' directory
+        base_path = os.path.join(os.getcwd(), "docs")
+        return os.path.join(base_path, *path.split("/"))
+
     def send_error(self, code, message=None, explain=None):
         if code == 404:
             self.send_response(404)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            if os.path.exists("404.html"):
-                with open("404.html", "rb") as f:
+            if os.path.exists("docs/404.html"):
+                with open("docs/404.html", "rb") as f:
                     self.wfile.write(f.read())
             else:
                 self.wfile.write(b"404 Not Found")
