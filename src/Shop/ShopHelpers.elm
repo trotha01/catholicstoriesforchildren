@@ -48,7 +48,7 @@ viewShopItems shopItems =
         [ class "flex flex-col items-center"
         ]
         [ -- Items
-          div [ class "grid grid-cols-4 gap-4 pb-4 mb-10" ]
+          div [ class "grid grid-cols-2 lg:grid-cols-4 gap-4 pb-4 mb-10" ]
             (List.map viewShopItem3 shopItems)
 
         -- View More Button
