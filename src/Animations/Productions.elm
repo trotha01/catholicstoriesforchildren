@@ -12,28 +12,28 @@ productions : List (Production msg)
 productions =
     [ { title = "Hail Mary"
       , thumbnail = "/assets/images/AnimationImageLinks/HailMary.png"
-      , carouselThumbnail = "/assets/images/CarouselThumbnails/HailMary.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/HailMary.webp"
       , link = "/animations/hailmary"
       , about = span [] []
       , seasons = HM.seasons
       }
     , { title = "Prayer Time with Angels"
       , thumbnail = "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
-      , carouselThumbnail = "/assets/images/CarouselThumbnails/PrayerTimeWithAngels.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/PrayerTimeWithAngels.webp"
       , link = "/animations/prayertimewithangels"
       , about = PTWA.viewBody
       , seasons = PTWA.seasons
       }
     , { title = "Daisy and Sheep"
       , thumbnail = "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
-      , carouselThumbnail = "/assets/images/CarouselThumbnails/DaisyAndSheep.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/DaisyAndSheep.webp"
       , link = "/animations/daisyandsheep"
       , about = DAS.viewDescription
       , seasons = DAS.seasons
       }
     , { title = "Songs of the Saints"
       , thumbnail = "/assets/images/AnimationImageLinks/SongsOfTheSaints.png"
-      , carouselThumbnail = "/assets/images/CarouselThumbnails/SongsOfTheSaints.png"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/SongsOfTheSaints.webp"
       , link = "/animations/songsofthesaints"
       , about = span [] []
       , seasons = SOTS.seasons
