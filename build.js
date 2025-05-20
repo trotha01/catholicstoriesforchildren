@@ -186,14 +186,17 @@ var write404JSFile = function (path, title, description, elmModule, thumbnail, e
 
   const params = new URLSearchParams(window.location.search);
   const episode = params.get("e"); // null if it doesn't exist, or the value if it does
+  const redirectParam = params.get("redirect"); // Get the 'redirect' query parameter
 
   
   // Preserve the path in URL by using JavaScript History API
+  if (redirectParam !== "/index.html") {
   if (path !== "/") {
     if (episode) {
      window.location.replace(redirectUrl + "?redirect=" + path.replace(/\\/+$/, "") + "/1/" + episode.toLowerCase());
     } else {
       window.location.replace(redirectUrl + "?redirect=" + path);
+  }
   }
   }
 </script>`
