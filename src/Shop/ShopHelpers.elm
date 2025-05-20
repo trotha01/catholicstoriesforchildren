@@ -164,7 +164,7 @@ viewShopItem2 resourceGroup =
 confirmandiHoodie : ShopItem
 confirmandiHoodie =
     { name = "Confirmandi Youth Heavy Blend Hoodie"
-    , image = "/assets/images/shop/confirmandihoodie.png"
+    , image = "/assets/images/shop/confirmandihoodie.webp"
     , description = "Get your Confirmandi Hoodie here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -175,7 +175,7 @@ confirmandiHoodie =
 cscWaterBottle : ShopItem
 cscWaterBottle =
     { name = "Catholic Stories for Children Stainless Steel Water Bottle – 32 oz with Straw Lid"
-    , image = "/assets/images/shop/cscwaterbottle.png"
+    , image = "/assets/images/shop/cscwaterbottle.webp"
     , description = "Get your CSC Water Bottle here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -186,7 +186,7 @@ cscWaterBottle =
 redlittleflowertote : ShopItem
 redlittleflowertote =
     { name = "Red Little Flower Tote Bag"
-    , image = "/assets/images/shop/RedLittleFlowerTote.png"
+    , image = "/assets/images/shop/RedLittleFlowerTote.webp"
     , description = "Get your Red Little Flower Tote Bag here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -197,7 +197,7 @@ redlittleflowertote =
 pinkLittleFlowerTote : ShopItem
 pinkLittleFlowerTote =
     { name = "Pink Little Flower Tote Bag"
-    , image = "/assets/images/shop/PinkLittleFlowerTote.png"
+    , image = "/assets/images/shop/PinkLittleFlowerTote.webp"
     , description = "Get your Pink Little Flower Tote Bag here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -208,7 +208,7 @@ pinkLittleFlowerTote =
 guardianAngelSpiralNotebook : ShopItem
 guardianAngelSpiralNotebook =
     { name = "Guardian Angel Spiral Notebook"
-    , image = "/assets/images/shop/guardianangelsspiralnotebook.png"
+    , image = "/assets/images/shop/guardianangelsspiralnotebook.webp"
     , description = "Get your Guardian Angel Spiral Notebook here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -219,7 +219,7 @@ guardianAngelSpiralNotebook =
 prayedtodayshirt : ShopItem
 prayedtodayshirt =
     { name = "Prayed Today? Women’s Short Sleeve T-Shirt"
-    , image = "/assets/images/shop/prayedtodayshirt.png"
+    , image = "/assets/images/shop/prayedtodayshirt.webp"
     , description = "Get your I Prayed Today Shirt here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -230,7 +230,7 @@ prayedtodayshirt =
 stmichaelholographicsticker : ShopItem
 stmichaelholographicsticker =
     { name = "St. Michael Holographic Sticker"
-    , image = "/assets/images/shop/stmichaelholographicsticker.png"
+    , image = "/assets/images/shop/stmichaelholographicsticker.webp"
     , description = "Get your St. Michael Holographic Sticker here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -241,7 +241,7 @@ stmichaelholographicsticker =
 stmichaelyouthshirt : ShopItem
 stmichaelyouthshirt =
     { name = "St. Michael Youth T-Shirt"
-    , image = "/assets/images/shop/stmichaelyouthshirt.png"
+    , image = "/assets/images/shop/stmichaelyouthshirt.webp"
     , description = "Get your St. Michael Youth T-Shirt here!"
     , beehiivLink = ""
     , etsyLink = ""
@@ -252,7 +252,7 @@ stmichaelyouthshirt =
 massGuide : ShopItem
 massGuide =
     { name = "The Ultimate Mass Guide"
-    , image = "/assets/images/shop/1.png"
+    , image = "/assets/images/shop/1.webp"
     , description = "Get our Mass guide here!"
     , beehiivLink = "https://embeds.beehiiv.com/38ee240f-5dfb-4f17-a6ed-26e1c8f709e9?slim=true"
     , etsyLink = ""
@@ -263,7 +263,7 @@ massGuide =
 littleReconciliationBooklet : ShopItem
 littleReconciliationBooklet =
     { name = "Little Reconciliation Booklet"
-    , image = "/assets/images/shop/2.png"
+    , image = "/assets/images/shop/2.webp"
     , description = "Get the free guide to help little Catholics through the Sacrament of Reconciliation."
     , beehiivLink = "https://embeds.beehiiv.com/dd054c75-c35e-4456-9bd5-8663c5ad9e52?slim=true"
     , etsyLink = ""
@@ -274,7 +274,7 @@ littleReconciliationBooklet =
 firstFriSatDevotion : ShopItem
 firstFriSatDevotion =
     { name = "First Friday and First Saturday Devotion"
-    , image = "/assets/images/shop/3.png"
+    , image = "/assets/images/shop/3.webp"
     , description = "A devotion to the Sacred Heart of Jesus and the Immaculate Heart of Mary on the first Friday and first Saturday of each month."
     , beehiivLink = "https://embeds.beehiiv.com/ba5bdebd-3c83-4cfd-b44d-9a245d0bb8fd?slim=true"
     , etsyLink = "https://catholicstories.etsy.com/listing/1694029028?etsrc=sdt&coupon=FIRSTSAVE50"
@@ -285,7 +285,7 @@ firstFriSatDevotion =
 liturgicalCalendar2024 : ShopItem
 liturgicalCalendar2024 =
     { name = "2024 Liturgical Calendar"
-    , image = "/assets/images/shop/4.png"
+    , image = "/assets/images/shop/4.webp"
     , description = "A 2024 Liturgical Calendar, feast days, and coloring page!"
     , beehiivLink = "https://embeds.beehiiv.com/6a652340-c0fe-4f91-ac0b-b1511efa7b0d?slim=true"
     , etsyLink = ""
@@ -296,7 +296,7 @@ liturgicalCalendar2024 =
 liturgicalCalendar2025 : ShopItem
 liturgicalCalendar2025 =
     { name = "2025 Liturgical Calendar"
-    , image = "/assets/images/shop/5.png"
+    , image = "/assets/images/shop/5.webp"
     , description = "A 2025 Liturgical Calendar, feast days, and coloring page!"
     , beehiivLink = "https://blog.catholicstoriesforchildren.com/embed" -- "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
     , etsyLink = ""
@@ -307,7 +307,7 @@ liturgicalCalendar2025 =
 prayerLetters : ShopItem
 prayerLetters =
     { name = "Prayer Cards"
-    , image = "/assets/images/shop/5.png"
+    , image = "/assets/images/shop/5.webp"
     , description = "Printable Prayer Cards your kids can give as gifts to loved ones!"
     , beehiivLink = "https://embeds.beehiiv.com/900aa0a5-aadb-4d19-ba08-649f1519a115?slim=true"
     , etsyLink = "https://catholicstories.etsy.com/listing/1733143755?etsrc=sdt&coupon=FIRSTSAVE50"
@@ -318,7 +318,7 @@ prayerLetters =
 scripturalRosary : ShopItem
 scripturalRosary =
     { name = "Scriptural Rosary"
-    , image = "/assets/images/shop/6.png"
+    , image = "/assets/images/shop/6.webp"
     , description = "Aids to help with praying a Scriptural Rosary for each Mystery. Print double-sided."
     , beehiivLink = "https://embeds.beehiiv.com/d7cae3a2-a831-47b1-be2d-2136884926e3?slim=true"
     , etsyLink = ""
@@ -329,7 +329,7 @@ scripturalRosary =
 adventColoringBook : ShopItem
 adventColoringBook =
     { name = "Advent Coloring Book"
-    , image = "/assets/images/shop/7.png"
+    , image = "/assets/images/shop/7.webp"
     , description = "Prepare for Christmas with Mary and Joseph with our free little Scriptural coloring book."
     , beehiivLink = "https://embeds.beehiiv.com/938df27a-3a99-4f47-901a-b9ffb25d8bad?slim=true"
     , etsyLink = ""
