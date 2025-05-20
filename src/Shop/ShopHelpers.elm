@@ -53,13 +53,11 @@ viewShopItems shopItems =
 
         -- View More Button
         , a
-            [ href "https://catholicstoriesforchildren.printful.me/"
-            , target "_blank"
-            , class "flex flex-col items-center justify-center rounded p-7 text-center bg-[#E95A03] text-white"
-            , class "w-96"
-            ]
-            [ text "View More"
-            ]
+           [ href "https://catholicstoriesforchildren.printful.me/"
+           , target "_blank"
+           , class "flex flex-col items-center justify-center rounded p-7 text-center bg-[#E95A03] text-white w-full sm:w-96"
+           ]
+           [ text "View More" ]
         ]
 
 

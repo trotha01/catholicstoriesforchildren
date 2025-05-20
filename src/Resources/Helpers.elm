@@ -48,6 +48,6 @@ viewResourceImages resource =
         , href resource.link
         ]
         [ div []
-            [ img [ src resource.image, class "w-40 h-40 object-cover" ] []
+            [ img [ src resource.image, class "w-24 h-24 sm:w-40 sm:h-40 object-cover" ] []
             ]
         ]

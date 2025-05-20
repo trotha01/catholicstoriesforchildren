@@ -507,8 +507,8 @@ viewTeam =
     viewSection "team"
         [ class "py-20 bg-[#FEF7F4]"
         ]
-        [ div [ class "w-full max-w-7xl m-auto mb-20 px-20" ]
-            [ h2 [ class "mb-10 text-7xl" ] [ text "The Team" ]
+        [ div [ class "w-full max-w-7xl mx-auto mb-20 px-4 sm:px-10 lg:px-20" ]
+            [ h2 [ class "mb-10 text-3xl sm:text-5xl lg:text-7xl" ] [ text "The Team" ]
             , div
                 [ class "grid xl:grid-cols-3 gap-5"
                 , class "my-10"
@@ -547,8 +547,8 @@ viewTestimonials =
     viewSection "testimonials"
         [ class "py-20 bg-[#FEF7F4]"
         ]
-        [ div [ class "w-full max-w-7xl m-auto mb-20 px-20" ]
-            [ h2 [ class "mb-10 text-7xl" ] [ text "Testimonials" ]
+        [div [ class "w-full max-w-7xl mx-auto mb-20 px-4 sm:px-10 lg:px-20" ]
+            [ h2 [ class "mb-10 text-3xl sm:text-5xl lg:text-7xl" ] [ text "Testimonials" ]
             , div
                 [ class "grid gap-5"
                 ]
@@ -724,8 +724,7 @@ viewGive =
                 , a
                     [ href "/give"
                     , target "_blank"
-                    , class "flex flex-col items-center justify-center rounded p-7 text-center bg-white text-black"
-                    , class "w-96 my-10"
+                    , class "flex flex-col items-center justify-center rounded p-7 text-center bg-white text-black w-full sm:w-96 my-10"
                     ]
                     [ text "Learn More"
                     ]
@@ -752,7 +751,7 @@ viewResources =
         [ class "bg-[#FEF7F4]"
         ]
         [ div [ class "w-full max-w-7xl m-auto my-20 px-20" ]
-            [ h2 [ class "mb-10 text-7xl" ] [ text "Resources" ]
+            [h2 [ class "mb-10 text-4xl sm:text-7xl" ] [ text "Resources" ]
             , div [ class "flex flex-col" ]
                 [ viewResourceGroups
                 ]
