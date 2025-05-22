@@ -10,8 +10,8 @@ import os
 #             self.send_response(404)
 #             self.send_header("Content-type", "text/html")
 #             self.end_headers()
-#             if os.path.exists("docs/404.html"):
-#                 with open("docs/404.html", "rb") as f:
+#             if os.path.exists("public/404.html"):
+#                 with open("public/404.html", "rb") as f:
 #                     self.wfile.write(f.read())
 #             else:
 #                 self.wfile.write(b"404 Not Found")

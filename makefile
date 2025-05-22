@@ -28,13 +28,12 @@ watch_server:
 
 tailwind:
 	@echo "Starting TailwindCSS watcher..."
-	@./tailwindcss -i input.css -o docs/tailwind.css --watch & echo $$! >> $(PID_FILE)
+	@./tailwindcss -i input.css -o public/tailwind.css --watch & echo $$! >> $(PID_FILE)
 
 http_server:
-	@cd docs
 	@echo "Starting HTTP server"
 	@command -v lsof >/dev/null && lsof -i:8000 && (echo "Port 8000 is in use, aborting!" && exit 1) || true
-	python3 ../server.py & echo $$! >> $(PID_FILE)
+	cd public && python3 ../server.py & echo $$! >> $(PID_FILE)
 
 stop:
 	@echo "Stopping all processes..."
