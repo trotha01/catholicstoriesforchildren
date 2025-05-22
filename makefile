@@ -34,7 +34,7 @@ http_server:
 	@cd docs
 	@echo "Starting HTTP server"
 	@command -v lsof >/dev/null && lsof -i:8000 && (echo "Port 8000 is in use, aborting!" && exit 1) || true
-	python3 server.py & echo $$! >> $(PID_FILE)
+	python3 ../server.py & echo $$! >> $(PID_FILE)
 
 stop:
 	@echo "Stopping all processes..."

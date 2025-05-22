@@ -356,8 +356,11 @@ view model =
 
                 Saints ->
                     let
+                        saintPageModel =
+                            model.saintsPageModel
+
                         document =
-                            SaintsPage.view model.saintsPageModel
+                            SaintsPage.view { saintPageModel | url = model.url }
                     in
                     { title = document.title, body = document.body |> List.map (Html.map SaintsMsg) }
 
@@ -547,7 +550,7 @@ viewTestimonials =
     viewSection "testimonials"
         [ class "py-20 bg-[#FEF7F4]"
         ]
-        [div [ class "w-full max-w-7xl mx-auto mb-20 px-4 sm:px-10 lg:px-20" ]
+        [ div [ class "w-full max-w-7xl mx-auto mb-20 px-4 sm:px-10 lg:px-20" ]
             [ h2 [ class "mb-10 text-3xl sm:text-5xl lg:text-7xl" ] [ text "Testimonials" ]
             , div
                 [ class "grid gap-5"
@@ -751,7 +754,7 @@ viewResources =
         [ class "bg-[#FEF7F4]"
         ]
         [ div [ class "w-full max-w-7xl m-auto my-20 px-20" ]
-            [h2 [ class "mb-10 text-4xl sm:text-7xl" ] [ text "Resources" ]
+            [ h2 [ class "mb-10 text-4xl sm:text-7xl" ] [ text "Resources" ]
             , div [ class "flex flex-col" ]
                 [ viewResourceGroups
                 ]
