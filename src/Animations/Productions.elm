@@ -11,28 +11,28 @@ import Html exposing (..)
 productions : List (Production msg)
 productions =
     [ { title = "Hail Mary"
-      , thumbnail = "/assets/images/AnimationImageLinks/HailMary.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/HailMary.webp"
       , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/HailMary.webp"
       , link = "/animations/hailmary"
       , about = span [] []
       , seasons = HM.seasons
       }
     , { title = "Prayer Time with Angels"
-      , thumbnail = "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.webp"
       , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/PrayerTimeWithAngels.webp"
       , link = "/animations/prayertimewithangels"
       , about = PTWA.viewBody
       , seasons = PTWA.seasons
       }
     , { title = "Daisy and Sheep"
-      , thumbnail = "/assets/images/AnimationImageLinks/DaisyAndSheep.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/DaisyAndSheep.webp"
       , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/DaisyAndSheep.webp"
       , link = "/animations/daisyandsheep"
       , about = DAS.viewDescription
       , seasons = DAS.seasons
       }
     , { title = "Songs of the Saints"
-      , thumbnail = "/assets/images/AnimationImageLinks/SongsOfTheSaints.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/SongsOfTheSaints.webp"
       , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/SongsOfTheSaints.webp"
       , link = "/animations/songsofthesaints"
       , about = span [] []
