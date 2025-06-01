@@ -74,7 +74,7 @@ update msg model =
             case urlRequest of
                 Browser.Internal url ->
                     if String.contains "saints" (Url.toString url) then
-                        ( model, Nav.pushUrl model.key (Url.toString url) )
+                        ( { model | url = url }, Nav.pushUrl model.key (Url.toString url) )
 
                     else
                         ( model, Nav.load (Url.toString url) )
