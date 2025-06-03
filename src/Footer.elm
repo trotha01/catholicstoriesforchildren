@@ -12,39 +12,27 @@ toPx x =
 
 viewFooter : Html msg
 viewFooter =
-    footer [ style "padding" (toPx 30) ]
-        [ div [ class "text-center mb-5" ]
-            [ div []
-                [ div [] [ h2 [ class "mb-7" ] [ text "Access Free Animations" ] ]
-                , div [ class "text-center grid justify-center mb-10" ] [ Signup.view2 ]
-                ]
-            , div [ class "md:grid md:grid-cols-3 md:justify-items-center" ]
-                [ div [ class "text-left" ]
-                    [ div [] [ h3 [ class "font-bold text-lg" ] [ text "About Us" ] ]
-                    , div [ class "mb-3" ] [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts." ]
-                    ]
-                , div [ class "md:mx-5" ]
-                    [ a [ href "/" ]
-                        [ img [ class "rounded max-w-[16rem]", src "/assets/FullTitle_900x900_NoBackground.png" ] []
-                        ]
-                    ]
-                , div [ class "text-left" ]
-                    [ div [] [ h3 [ class "font-bold text-lg mb-3" ] [ text "Follow Us" ] ]
-                    , div []
-                        [ instagram
-                        , facebook
-                        ]
-                    ]
-                ]
+    div [ class "text-white py-20 px-20 space-y-6", style "background" "black" ]
+        [ h2 [ class "text-4xl font-bold" ] [ text "Follow Us" ]
+
+        , div [ class "flex space-x-6 pt-2" ]
+            [ a [ href "https://www.instagram.com/catholicstoriesforchildren", target "_blank" ]
+                [ img [ src "/assets/instagram-logo.png", alt "Instagram", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+
+            , a [ href "https://www.facebook.com/catholicstoriesforchildren", target "_blank" ]
+                [ img [ src "/assets/facebook.png", alt "Facebook", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+
+            , a [ href "https://www.pinterest.com/catholicstoriesforchildren", target "_blank" ]
+                [ img [ src "/assets/pinterest.png", alt "Pinterest", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
             ]
-        , div [ class "text-xs" ]
-            [ p [] [ text "Copyright © 2024 Catholic Stories for Children. All rights reserved." ]
-            , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law.  Tax ID Number: 85-4194883" ]
-            , p []
-                [ a [ href "/about/privacy-policy", class "underline" ] [ text "Privacy Policy" ]
-                , span [] [ text " | " ]
-                , a [ href "/about/terms-and-conditions", class "underline" ] [ text "Terms & Conditions" ]
-                ]
+
+        , p [ class "text-lg pt-5" ]
+            [ text "Copyright © 2025 Claritas Studios. All rights reserved." ]
+
+        , div [ class "space-x-2 text-lg" ]
+            [ a [ href "/about/privacy-policy", class "underline hover:text-gray-300", style "margin-right" "6px" ] [ text "Privacy Policy" ]
+            , text "|"
+            , a [ href "/about/terms-and-conditions", class "underline hover:text-gray-300", style "margin-left" "6px" ] [ text "Terms & Conditions" ]
             ]
         ]
 

@@ -7,8 +7,8 @@ import Html.Attributes exposing (..)
 logo : Html msg
 logo =
     img
-        [ src "/assets/logo_solid.svg"
-        , style "height" "30px"
+        [ src "/assets/new_logo.png"
+        , style "height" "40px"
         , alt ""
         , style "vertical-align" "middle"
         ]

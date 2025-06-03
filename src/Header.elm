@@ -30,8 +30,7 @@ viewSubpageHeader currentPage leftMargin =
     in
     div []
         [ header
-            [ style "background-color" "#43868D"
-            , class "text-white"
+            [ class "text-white logo-section-bg"
             , class ("h-[60px] md:h-[" ++ height ++ "]")
             , class "grid items-center justify-items-center"
             , class gridColsClass
@@ -40,7 +39,6 @@ viewSubpageHeader currentPage leftMargin =
             , viewHeaderTitle True currentPage
             , navigation height
             ]
-        , viewBanner
         ]
 
 
@@ -107,7 +105,7 @@ viewHeaderTitle includesLinks title =
             , class "text-white"
             , class textClass
             ]
-            [ text "Catholic Stories for Children" ]
+            [ text "" ]
         ]
 
 

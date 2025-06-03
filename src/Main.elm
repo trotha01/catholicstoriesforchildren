@@ -31,6 +31,7 @@ import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimoni
 import Team.View as TeamPage exposing (cfnLive, christianChannel, inHisImage, makeJoyNormal, ocCatholic, spiritFilledMedia)
 import Time
 import Url
+import Home.Sections exposing (..)
 
 
 main : Program () Model Msg
@@ -412,22 +413,19 @@ viewBody model =
         [ viewSlideshow model
 
         -- , viewIntro model
-        , viewAnimations model
-        , viewTestimonials
-        , viewShop
-        , viewTeam
-
-        -- , viewContact
-        -- , viewNewsletter
-        , viewGive
-        , viewResources
+        , viewLaritasStudios
+        , viewMission
+        , viewSanctifyScreenTime
+        , viewTechnologyArtCollide
+        , viewWhatPeopleSaying
+        , viewSupportMission
         ]
 
 
 viewSlideshow : Model -> Html.Html Msg
 viewSlideshow model =
     div
-        [ class "bg-[#282c2e]"
+        [ class "logo-section-bg"
         ]
         [ Carousel.viewSlides model.animationsPageModel.slideshow Animations.View.NextSlide Animations.View.PrevSlide
             |> Html.map ProductionsMsg
