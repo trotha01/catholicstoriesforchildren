@@ -17,13 +17,13 @@ viewFooter =
 
         , div [ class "flex space-x-6 pt-2" ]
             [ a [ href "https://www.instagram.com/catholicstoriesforchildren", target "_blank" ]
-                [ img [ src "/assets/instagram-logo.png", alt "Instagram", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+                [ img [ src "/assets/instagram-logo.webp", alt "Instagram", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
 
             , a [ href "https://www.facebook.com/catholicstoriesforchildren", target "_blank" ]
-                [ img [ src "/assets/facebook.png", alt "Facebook", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+                [ img [ src "/assets/facebook.webp", alt "Facebook", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
 
             , a [ href "https://www.pinterest.com/catholicstoriesforchildren", target "_blank" ]
-                [ img [ src "/assets/pinterest.png", alt "Pinterest", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+                [ img [ src "/assets/pinterest.webp", alt "Pinterest", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
             ]
 
         , p [ class "text-lg pt-5" ]

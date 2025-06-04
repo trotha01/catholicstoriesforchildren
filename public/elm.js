@@ -16203,7 +16203,7 @@ var $author$project$Footer$viewFooter = A2(
 							$elm$html$Html$img,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$src('/assets/instagram-logo.png'),
+									$elm$html$Html$Attributes$src('/assets/instagram-logo.webp'),
 									$elm$html$Html$Attributes$alt('Instagram'),
 									$elm$html$Html$Attributes$class('rounded-full'),
 									A2($elm$html$Html$Attributes$style, 'width', '48px'),
@@ -16224,7 +16224,7 @@ var $author$project$Footer$viewFooter = A2(
 							$elm$html$Html$img,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$src('/assets/facebook.png'),
+									$elm$html$Html$Attributes$src('/assets/facebook.webp'),
 									$elm$html$Html$Attributes$alt('Facebook'),
 									$elm$html$Html$Attributes$class('rounded-full'),
 									A2($elm$html$Html$Attributes$style, 'width', '48px'),
@@ -16245,7 +16245,7 @@ var $author$project$Footer$viewFooter = A2(
 							$elm$html$Html$img,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$src('/assets/pinterest.png'),
+									$elm$html$Html$Attributes$src('/assets/pinterest.webp'),
 									$elm$html$Html$Attributes$alt('Pinterest'),
 									$elm$html$Html$Attributes$class('rounded-full'),
 									A2($elm$html$Html$Attributes$style, 'width', '48px'),
