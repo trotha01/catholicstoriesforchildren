@@ -30,8 +30,7 @@ viewSubpageHeader currentPage leftMargin =
     in
     div []
         [ header
-            [ style "background-color" "#43868D"
-            , class "text-white"
+            [ class "text-white logo-section-bg"
             , class ("h-[60px] md:h-[" ++ height ++ "]")
             , class "grid items-center justify-items-center"
             , class gridColsClass
@@ -40,7 +39,6 @@ viewSubpageHeader currentPage leftMargin =
             , viewHeaderTitle True currentPage
             , navigation height
             ]
-        , viewBanner
         ]
 
 
@@ -107,7 +105,7 @@ viewHeaderTitle includesLinks title =
             , class "text-white"
             , class textClass
             ]
-            [ text "Catholic Stories for Children" ]
+            [ text "" ]
         ]
 
 
@@ -142,9 +140,9 @@ desktopNavigation height =
         , viewNavButton height "/saints" "_self" "Saints"
         , viewNavButton height "/animations" "_self" "Animations"
         , viewNavButton height "/resources" "_self" "Resources"
+        , viewNavButton height "https://shop.claritasstudios.com/" "_blank" "Shop"
 
-        -- , viewNavButton height "https://www.etsy.com/shop/CatholicStories" "_blank" "Shop"
-        , viewNavButton height "/shop" "_self" "Shop"
+        -- , viewNavButton height "/shop" "_self" "Shop"
         , viewNavButton height "https://blog.catholicstoriesforchildren.com/" "_blank" "Blog"
         , viewNavButton height "/give" "_self" "Donate"
         , viewNavButton height "/team" "_self" "About"

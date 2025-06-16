@@ -11,11 +11,13 @@ import Footer exposing (viewFooter)
 import Give.View as GivePage
 import Header exposing (viewHeader)
 import Helpers exposing (..)
+import Home.Sections exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
 import Navigation.View as NavigationPage
 import Newsroom.View exposing (viewSignUp)
+import Newsroom.ViewPress as ViewPress exposing (..)
 import NotFound.Main
 import Prayer.Angelus.View as AngelusPage
 import Prayers.View as PrayersPage
@@ -58,6 +60,7 @@ type Page
     | Shop
     | Feasts
     | Saints
+    | Press
     | NotFound
 
 
@@ -136,6 +139,9 @@ init flags url key =
             else if String.contains "saints" urlString then
                 Saints
 
+            else if String.contains "press" urlString then
+                Press
+
             else
                 Home
 
@@ -209,57 +215,13 @@ update msg model =
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
-                    let
-                        urlString =
-                            Url.toString url
-                    in
-                    if String.contains "joseph" urlString then
-                        ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
-
-                    else if String.contains "animations" urlString then
-                        ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "navigation" urlString then
-                        ( { model | url = url, page = Navigation }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "give" urlString then
-                        ( { model | url = url, page = Give }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "contact" urlString then
-                        ( { model | url = url, page = Contact }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "team" urlString then
-                        ( { model | url = url, page = AboutUs }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "resources" urlString then
-                        ( { model | url = url, page = Resources }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "prayers" urlString then
-                        ( { model | url = url, page = Prayers }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "angelus" urlString then
-                        ( { model | url = url, page = Angelus }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "shop" urlString then
-                        ( { model | url = url, page = Shop }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-                        -- --
-                        -- Need to wait until netlify. The github 404 redirect doesn't current work with url queries
-                        -- else if String.contains "feastdayactivities" urlString then
-                        --     ( { model | url = url, page = Feasts }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else if String.contains "saints" urlString then
-                        ( { model | url = url, page = Saints }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else
-                        ( model, Nav.load (Url.toString url) )
+                    updatePage model url
 
                 Browser.External href ->
                     ( model, Nav.load href )
 
         UrlChanged url ->
-            ( { model | url = url }
-            , scrollToTopCmd
-            )
+            loadPage model url
 
         SignupMsg signupMsg ->
             let
@@ -306,6 +268,107 @@ scrollToTopCmd : Cmd Msg
 scrollToTopCmd =
     Dom.setViewport 0 0
         |> Task.perform (\_ -> NoOp)
+
+
+updatePage : Model -> Url.Url -> ( Model, Cmd Msg )
+updatePage model url =
+    let
+        urlString =
+            Url.toString url
+    in
+    if String.contains "joseph" urlString then
+        ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
+
+    else if String.contains "animations" urlString then
+        ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "navigation" urlString then
+        ( { model | url = url, page = Navigation }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "give" urlString then
+        ( { model | url = url, page = Give }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "contact" urlString then
+        ( { model | url = url, page = Contact }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "team" urlString then
+        ( { model | url = url, page = AboutUs }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "resources" urlString then
+        ( { model | url = url, page = Resources }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "prayers" urlString then
+        ( { model | url = url, page = Prayers }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "angelus" urlString then
+        ( { model | url = url, page = Angelus }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "shop" urlString then
+        ( { model | url = url, page = Shop }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+        -- --
+        -- Need to wait until netlify. The github 404 redirect doesn't current work with url queries
+        -- else if String.contains "feastdayactivities" urlString then
+        --     ( { model | url = url, page = Feasts }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "saints" urlString then
+        ( { model | url = url, page = Saints }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else if String.contains "press" urlString then
+        ( { model | url = url, page = Press }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+    else
+        ( model, Nav.load (Url.toString url) )
+
+
+loadPage : Model -> Url.Url -> ( Model, Cmd Msg )
+loadPage model url =
+    -- Used by URLChanged to ensure forward/back navigation works
+    let
+        urlString =
+            Url.toString url
+    in
+    if String.contains "joseph" urlString then
+        ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
+
+    else if String.contains "animations" urlString then
+        ( { model | url = url, page = Productions }, scrollToTopCmd )
+
+    else if String.contains "navigation" urlString then
+        ( { model | url = url, page = Navigation }, scrollToTopCmd )
+
+    else if String.contains "give" urlString then
+        ( { model | url = url, page = Give }, scrollToTopCmd )
+
+    else if String.contains "contact" urlString then
+        ( { model | url = url, page = Contact }, scrollToTopCmd )
+
+    else if String.contains "team" urlString then
+        ( { model | url = url, page = AboutUs }, scrollToTopCmd )
+
+    else if String.contains "resources" urlString then
+        ( { model | url = url, page = Resources }, scrollToTopCmd )
+
+    else if String.contains "prayers" urlString then
+        ( { model | url = url, page = Prayers }, scrollToTopCmd )
+
+    else if String.contains "angelus" urlString then
+        ( { model | url = url, page = Angelus }, scrollToTopCmd )
+
+    else if String.contains "shop" urlString then
+        ( { model | url = url, page = Shop }, scrollToTopCmd )
+        -- --
+        -- Need to wait until netlify. The github 404 redirect doesn't current work with url queries
+        -- else if String.contains "feastdayactivities" urlString then
+        --     ( { model | url = url, page = Feasts }, scrollToTopCmd )
+
+    else if String.contains "saints" urlString then
+        ( { model | url = url, page = Saints }, scrollToTopCmd )
+
+    else if String.contains "press" urlString then
+        ( { model | url = url, page = Press }, scrollToTopCmd )
+
+    else
+        ( model, Nav.load (Url.toString url) )
 
 
 
@@ -378,6 +441,9 @@ view model =
                     in
                     { title = document.title, body = document.body |> List.map (Html.map ProductionsMsg) }
 
+                Press ->
+                    { title = "Angelus", body = [ ViewPress.view ] }
+
                 NotFound ->
                     let
                         document =
@@ -412,22 +478,19 @@ viewBody model =
         [ viewSlideshow model
 
         -- , viewIntro model
-        , viewAnimations model
-        , viewTestimonials
-        , viewShop
-        , viewTeam
-
-        -- , viewContact
-        -- , viewNewsletter
-        , viewGive
-        , viewResources
+        , viewClaritasStudios
+        , viewMission
+        , viewSanctifyScreenTime
+        , viewTechnologyArtCollide
+        , viewWhatPeopleSaying
+        , viewSupportMission
         ]
 
 
 viewSlideshow : Model -> Html.Html Msg
 viewSlideshow model =
     div
-        [ class "bg-[#282c2e]"
+        [ class "logo-section-bg"
         ]
         [ Carousel.viewSlides model.animationsPageModel.slideshow Animations.View.NextSlide Animations.View.PrevSlide
             |> Html.map ProductionsMsg

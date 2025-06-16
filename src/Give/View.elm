@@ -22,7 +22,9 @@ view =
 viewBody : Html msg
 viewBody =
     div []
-        [ img [ src "/assets/images/CarouselThumbnails/HailMary.png", alt "Hail Mary animation" ] []
+        [ div [ class "h-80 bg-[url(/assets/images/home/support-mission-bg.webp)] bg-cover bg-bottom" ]
+            [-- img [ src "/assets/images/home/support-mission-bg.webp", alt "Joseph in the desert" ] []
+            ]
         , div [ class "max-w-7xl mb-20 px-20 m-auto" ]
             [ h1 [ class "my-10" ] [ text "Donate" ]
             , donateAbout

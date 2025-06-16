@@ -172,9 +172,9 @@ viewSaintPage model saintName =
         [ -- div [ class "max-w-3xl mx-auto pt-10 pb-2" ]
           -- [ p [] [ text "We have gathered a number of links to videos, images, and activities for the saints. Before clicking away, add your email below to stay informed on how to keep kids strong in the faith, gain access to valuable Catholic content for free, and be the first to receive high-quality animations as soon as they're released." ]
           -- ]
-          div [ class "mb-2" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
-        , div [ class "max-w-3xl mx-auto" ]
+          --   div [ class "mb-2" ]
+          --     [ Signup.view4 |> Html.map SignupMsg ]
+          div [ class "max-w-3xl mx-auto" ]
             [ div [ class "mt-10" ] [ viewBackButton ]
             , h1
                 [ class "text-center"
@@ -499,8 +499,9 @@ viewSaints model =
                     ]
                 ]
             ]
-        , div [ class "mt-2 mb-20" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
+
+        -- , div [ class "mt-2 mb-20" ]
+        --     [ Signup.view4 |> Html.map SignupMsg ]
         , div [ class "max-w-3xl mx-auto pb-10" ]
             [ p []
                 [ span [ class "opacity-70" ] [ text "Try searching by name, date (July 25), or patronage (nurse)." ]

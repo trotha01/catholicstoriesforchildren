@@ -490,8 +490,9 @@ viewMonth model feastMonth =
                 , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
                 ]
             ]
-        , div [ class "mt-2 mb-20" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
+
+        -- , div [ class "mt-2 mb-20" ]
+        --     [ Signup.view4 |> Html.map SignupMsg ]
         , div
             [ class "max-w-3xl mx-auto" ]
             [ div
