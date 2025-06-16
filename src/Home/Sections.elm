@@ -17,8 +17,8 @@ viewClaritasStudios =
         , p
             [ class "uppercase tracking-wide text-base md:text-lg font-semibold drop-shadow-md" ]
             [ text "Animations from the heart" ]
-        , p [ class "normal-case text-sm" ]
-            [ text "formerly Catholic Stories for Children" ]
+        , p [ class "normal-case text-sm pt-5" ]
+            [ text "*formerly Catholic Stories for Children" ]
         ]
 
 
