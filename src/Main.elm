@@ -11,11 +11,13 @@ import Footer exposing (viewFooter)
 import Give.View as GivePage
 import Header exposing (viewHeader)
 import Helpers exposing (..)
+import Home.Sections exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
 import Navigation.View as NavigationPage
 import Newsroom.View exposing (viewSignUp)
+import Newsroom.ViewPress as ViewPress exposing (..)
 import NotFound.Main
 import Prayer.Angelus.View as AngelusPage
 import Prayers.View as PrayersPage
@@ -31,7 +33,6 @@ import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimoni
 import Team.View as TeamPage exposing (cfnLive, christianChannel, inHisImage, makeJoyNormal, ocCatholic, spiritFilledMedia)
 import Time
 import Url
-import Home.Sections exposing (..)
 
 
 main : Program () Model Msg
@@ -59,6 +60,7 @@ type Page
     | Shop
     | Feasts
     | Saints
+    | Press
     | NotFound
 
 
@@ -136,6 +138,9 @@ init flags url key =
 
             else if String.contains "saints" urlString then
                 Saints
+
+            else if String.contains "press" urlString then
+                Press
 
             else
                 Home
@@ -250,6 +255,9 @@ update msg model =
 
                     else if String.contains "saints" urlString then
                         ( { model | url = url, page = Saints }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+
+                    else if String.contains "press" urlString then
+                        ( { model | url = url, page = Press }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
 
                     else
                         ( model, Nav.load (Url.toString url) )
@@ -379,6 +387,9 @@ view model =
                     in
                     { title = document.title, body = document.body |> List.map (Html.map ProductionsMsg) }
 
+                Press ->
+                    { title = "Angelus", body = [ ViewPress.view ] }
+
                 NotFound ->
                     let
                         document =
@@ -413,7 +424,7 @@ viewBody model =
         [ viewSlideshow model
 
         -- , viewIntro model
-        , viewLaritasStudios
+        , viewClaritasStudios
         , viewMission
         , viewSanctifyScreenTime
         , viewTechnologyArtCollide

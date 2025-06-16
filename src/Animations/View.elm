@@ -167,7 +167,7 @@ view url model =
     { title = title ++ " - Catholic Stories for Children"
     , body =
         [ div
-            [ class "bg-[#282c2e] text-white"
+            [ class "bg-black text-white"
             ]
             [ viewSubpageHeader (String.join " " [ "Animations", title ]) headerMargin
             , viewBody model urlRoute
@@ -311,33 +311,33 @@ viewProductionEpisodes model productionURL =
 viewProductions : Model -> Html Msg
 viewProductions model =
     div
-        [ class "hcenter" ]
-        [ div
-            [ class "hcenter py-5 px-11 max-w-7xl" ]
-            [ h2 [ class "mb-10 text-3xl md:text-7xl" ] [ text "Start teaching your children with Catholic animations" ]
-            , div [ class "my-10" ]
-                [ p [ class "leading-10" ]
-                    [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts." ]
-                , p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
-                , p [ class "my-5" ]
-                    [ text
-                        ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
-                            ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
-                        )
-                    ]
-                , p [ class "my-5" ]
-                    [ text
-                        ("Do you want your children to grow in gratitude? Start with the prayer before meals."
-                            ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
-                            ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
-                            ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
-                        )
-                    ]
-                ]
-            ]
-        , div [ class "mt-2 mb-20 text-black" ]
-            [ Signup.view4 |> Html.map SignupMsg ]
-        , div
+        [ class "hcenter px-11 max-w-7xl" ]
+        [ --     div
+          --     [ class "hcenter py-5 px-11 max-w-7xl" ]
+          --     [ h2 [ class "mb-10 text-3xl md:text-7xl" ] [ text "Start teaching your children with Catholic animations" ]
+          --     , div [ class "my-10" ]
+          --         [ p [ class "leading-10" ]
+          --             [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts." ]
+          --         , p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
+          --         , p [ class "my-5" ]
+          --             [ text
+          --                 ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
+          --                     ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
+          --                 )
+          --             ]
+          --         , p [ class "my-5" ]
+          --             [ text
+          --                 ("Do you want your children to grow in gratitude? Start with the prayer before meals."
+          --                     ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
+          --                     ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
+          --                     ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
+          --                 )
+          --             ]
+          --         ]
+          --     ]
+          -- , div [ class "mt-2 mb-20 text-black" ]
+          --     [ Signup.view4 |> Html.map SignupMsg ]
+          div
             [ class "m-auto max-w-7xl"
             ]
             [ viewAnimationThumbnailsLarge <| List.map productionToThumbnailData productions

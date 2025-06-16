@@ -36,6 +36,7 @@ var htmlHeadStart = `<!doctype html>
     <meta name="theme-color" content="#EBD7F2">
     <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
     <link href="/tailwind.css" rel="stylesheet">
+    <link href="/home.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preload" href="/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
