@@ -67,7 +67,7 @@ viewTechnologyArtCollide =
                     [ text "MEET OUR TEAM" ]
                 ]
             , p [ class "max-w-2xl text-lg md:text-xl leading-relaxed text-left mt-4" ]
-                [ text "Claritas Studios (formerly Catholic Stories for Children) was started when a software engineer noticed his Catechism students didn’t know much about their faith and were always on their phones. Hear the whole story." ]
+                [ text "Claritas Studios (formerly Catholic Stories for Children) was started when a software engineer noticed his Catechism students didn’t know much about their faith and were always on their phones." ]
             ]
         ]
 
