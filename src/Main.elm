@@ -368,7 +368,7 @@ loadPage model url =
         ( { model | url = url, page = Press }, scrollToTopCmd )
 
     else
-        ( model, Nav.load (Url.toString url) )
+        ( model, Cmd.none )
 
 
 
