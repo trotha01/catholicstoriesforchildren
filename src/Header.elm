@@ -19,7 +19,7 @@ viewSubpageHeader : String -> Int -> Html msg
 viewSubpageHeader currentPage leftMargin =
     let
         isHomePage =
-            currentPage == "Catholic Stories for Children"
+            currentPage == "Claritas Studioss"
 
         ( height, gridColsClass ) =
             if isHomePage then

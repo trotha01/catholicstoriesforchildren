@@ -128,7 +128,7 @@ view model =
         currentRoute =
             parseRoute model.url
     in
-    { title = "Feast Day Activities - Catholic Stories for Children"
+    { title = "Feast Day Activities - Claritas Studios"
     , body =
         [ div
             [ -- For parallax

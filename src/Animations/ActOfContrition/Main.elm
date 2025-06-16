@@ -72,7 +72,7 @@ viewBody model =
                 [ text "An Animation to Teach the Act of Contrition"
                 ]
             , p [ class "mb-2" ] [ text "Children are spending six or more hours per day on screens according to the CDC. Nearly none of that content is Catholic and most is detrimental to their well-being. But we can make a change." ]
-            , p [ class "mb-5" ] [ text "At Catholic Stories for Children, a 501c3 nonprofit, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow toward sainthood." ]
+            , p [ class "mb-5" ] [ text "At Claritas Studios, a 501c3 nonprofit, we believe that by producing Catholic animations, we can meet kids where they are at and help them grow toward sainthood." ]
 
             -- , div [ class "mb-5" ] [ progressBar ]
             -- , div [ class "mb-10" ] [ donationButton "BACK THIS PROJECT" ]

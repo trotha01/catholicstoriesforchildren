@@ -16,7 +16,7 @@ view =
             ]
             [ text "Hail Mary Prayer Animation Wins Multiple Awards in International Hollywood Film Festival" ]
         , p []
-            [ span [] [ text "Catholic Stories for Children's animation, " ]
+            [ span [] [ text "Claritas Studios' animation, " ]
             , a
                 [ href "https://youtu.be/HW0DzGEoa1Y"
                 , style "color" darkBlue

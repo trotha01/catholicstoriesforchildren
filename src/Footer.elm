@@ -14,21 +14,16 @@ viewFooter : Html msg
 viewFooter =
     div [ class "text-white py-20 px-20 space-y-6", style "background" "black" ]
         [ h2 [ class "text-4xl font-bold" ] [ text "Follow Us" ]
-
         , div [ class "flex space-x-6 pt-2" ]
-            [ a [ href "https://www.instagram.com/catholicstoriesforchildren", target "_blank" ]
+            [ a [ href "https://www.instagram.com/claritasstudios", target "_blank" ]
                 [ img [ src "/assets/instagram-logo.webp", alt "Instagram", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
-
-            , a [ href "https://www.facebook.com/catholicstoriesforchildren", target "_blank" ]
+            , a [ href "https://www.facebook.com/claritasstudios", target "_blank" ]
                 [ img [ src "/assets/facebook.webp", alt "Facebook", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
-
-            , a [ href "https://www.pinterest.com/catholicstoriesforchildren", target "_blank" ]
+            , a [ href "https://www.pinterest.com/claritasstudios", target "_blank" ]
                 [ img [ src "/assets/pinterest.webp", alt "Pinterest", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
             ]
-
         , p [ class "text-lg pt-5" ]
             [ text "Copyright © 2025 Claritas Studios. All rights reserved." ]
-
         , div [ class "space-x-2 text-lg" ]
             [ a [ href "/about/privacy-policy", class "underline hover:text-gray-300", style "margin-right" "6px" ] [ text "Privacy Policy" ]
             , text "|"

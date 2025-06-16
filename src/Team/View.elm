@@ -60,14 +60,14 @@ viewAbout : Html msg
 viewAbout =
     div []
         [ p [ class "mb-4" ]
-            [ text """Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
+            [ text """Claritas Studios is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
             ]
         , p []
             [ text """Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God."""
             ]
         , div [ class "mt-5" ] [ viewSignUp ]
         , h2 [ class "my-7" ] [ text "Vision" ]
-        , p [] [ text "Catholic Stories for Children is made with the vision that all Catholics have a strong love of God and neighbor." ]
+        , p [] [ text "Claritas Studios is made with the vision that all Catholics have a strong love of God and neighbor." ]
         , h2 [ class "my-7" ] [ text "Mission" ]
         , p [] [ text "Our hope is to help others along this journey with joyful stories." ]
         , h2 [ class "my-7", id "contact" ] [ text "Contact" ]

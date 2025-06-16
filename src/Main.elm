@@ -456,12 +456,12 @@ view model =
 
 viewHome : Model -> Browser.Document Msg
 viewHome model =
-    { title = "Catholic Stories for Children"
+    { title = "Claritas Studios"
     , body =
         [ div
             [ style "background-color" "#FEF7F4"
             ]
-            [ viewHeader "Catholic Stories for Children" headerMargin
+            [ viewHeader "Claritas Studios" headerMargin
             , viewBody model
             , viewFooter
             ]
@@ -509,7 +509,7 @@ viewIntro model =
                     ]
                     [ text "Start teaching your children with Catholic animations" ]
                 , p [ class "leading-10" ]
-                    [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
+                    [ text "Claritas Studios is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts."
                     ]
                 ]
             , div [ class "mt-2 mb-20" ]

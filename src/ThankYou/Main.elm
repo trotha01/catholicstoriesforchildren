@@ -101,7 +101,7 @@ viewBody =
                 [ class "text-center"
                 , class "my-10"
                 ]
-                [ text "Thank you for connecting with Catholic Stories for Children!" ]
+                [ text "Thank you for connecting with Claritas Studios!" ]
             , viewThankYou
             ]
         ]
@@ -118,7 +118,7 @@ viewThankYou =
             [ text "In the coming minutes, look out for an email containing your free printable. I will also be keeping you in the loop regarding our upcoming animations and activities. We have so many exciting projects coming up to teach the Catholic faith to kids!"
             ]
         , p [ class "my-4" ]
-            [ span [ class "font-bold" ] [ text "Here at Catholic Stories for Children, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you." ]
+            [ span [ class "font-bold" ] [ text "Here at Claritas Studios, we are dedicated to creating valuable resources for parents, grandparents, and Catholics like you." ]
             , span [] [ text " I deeply value your thoughts and opinions, as they play a crucial role in shaping the content we develop." ]
             ]
         , p [ class "my-4" ]
@@ -126,12 +126,12 @@ viewThankYou =
             , span [] [ text " You will find below my calendar. Please schedule a time that works best for you. During our talk, I would love to hear your feedback, suggestions, resources that you would like, and any specific topics or themes you would like us to explore further." ]
             ]
         , p [ class "my-4" ]
-            [ text "Your input will directly contribute to the creation of animations and resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Catholic Stories for Children."
+            [ text "Your input will directly contribute to the creation of animations and resources that resonate with Catholic families and provide an enjoyable and faithful experience for children. I look forward to connecting with you soon. Thank you for being an essential part of our community at Claritas Studios."
             ]
         , p [ class "my-4" ]
             [ span [ class "block" ] [ text "Thank you and may God bless you," ]
             , span [ class "block" ] [ text "Trevor Rothaus" ]
-            , span [ class "block" ] [ text "Founder - Catholic Stories for Children" ]
+            , span [ class "block" ] [ text "Founder - Claritas Studios" ]
             ]
         , div
             [ class "bg-white rounded"

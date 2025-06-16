@@ -60,7 +60,7 @@ viewBody model =
         [ div [ class "text-lg" ]
             [ h2 [ class "mb-10" ] [ text "Unlock a World of Faith and Fun!" ]
             , p [ class "mb-5" ]
-                [ text "At Catholic Stories for Children, we're dedicated to making Catholic teachings engaging and accessible for families. By signing up for our newsletter, you'll receive: " ]
+                [ text "At Claritas Studios, we're dedicated to making Catholic teachings engaging and accessible for families. By signing up for our newsletter, you'll receive: " ]
             , ul [ class "list-disc pl-5 mb-10" ]
                 [ li [ class "mb-3" ]
                     [ span [ class "font-bold" ] [ text "Free Animations: " ]

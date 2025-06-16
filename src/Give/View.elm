@@ -78,9 +78,9 @@ donateAbout =
             [ style "margin-bottom" "1em"
             ]
             -- [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
-            [ text "Here at Catholic Stories for Children, we are passionate Catholic educators dedicated to helping children grow in their love for God and neighbor. Through creative, faith-based animations, we make Catholic teachings come alive in a fun and meaningful way for kids. Every child deserves the chance to learn and deepen their faith." ]
+            [ text "Here at Claritas Studios, we are passionate Catholic educators dedicated to helping children grow in their love for God and neighbor. Through creative, faith-based animations, we make Catholic teachings come alive in a fun and meaningful way for kids. Every child deserves the chance to learn and deepen their faith." ]
         , p [ style "margin-bottom" "1em" ] [ text "With your support, we can keep these animations FREE for families everywhere. Every donation helps us nurture the faith of the next generation. Let's continue making a difference, together!" ]
-        , p [] [ text "Catholic Stories for Children is a 501(c)(3) non-profit recognized by the IRS. Contributions to Catholic Stories for Children are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883" ]
+        , p [] [ text "Claritas Studios is a 501(c)(3) non-profit recognized by the IRS. Contributions to Claritas Studios are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883" ]
         ]
 
 

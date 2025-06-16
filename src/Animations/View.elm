@@ -164,7 +164,7 @@ view url model =
         title =
             getTitleFromRoute urlRoute
     in
-    { title = title ++ " - Catholic Stories for Children"
+    { title = title ++ " - Claritas Studios"
     , body =
         [ div
             [ class "bg-black text-white"

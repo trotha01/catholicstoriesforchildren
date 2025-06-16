@@ -23,7 +23,7 @@ videos =
 
 catholicStoriesForChildren : Resource
 catholicStoriesForChildren =
-    { name = "Catholic Stories For Children"
+    { name = "Claritas Studios"
     , link = "https://www.youtube.com/@CatholicStoriesforChildren"
     , image = "https://ik.imagekit.io/catholicstories/CSCLogo_JiNT9WUPX.png?updatedAt=1679070448402"
     }

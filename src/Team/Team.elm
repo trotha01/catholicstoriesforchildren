@@ -56,7 +56,7 @@ trevor =
     , description =
         "Trevor is a former software engineer. He received his "
             ++ "MA in Theology at the Franciscan University of Steubenville. "
-            ++ "He founded Catholic Stories for Children to spread the light and love of God through animated stories that kids will love."
+            ++ "He founded Claritas Studios to spread the light and love of God through animated stories that kids will love."
     , image = imagePath ++ "TrevorRothaus.jpeg"
     , socials = []
     }

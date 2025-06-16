@@ -72,7 +72,7 @@ aboutTheAnimation =
             ]
         , p [ class "my-3" ] [ text "One way to teach children about Mother Mary is through animated stories. These stories convey her life and importance in a way that is engaging and memorable. By using animation, children can see the events of her life come to life before their eyes, making it easier for them to understand and remember." ]
         , p [ class "my-3" ]
-            [ span [] [ text "Here is just one example of how we do this at Catholic Stories for Children." ]
+            [ span [] [ text "Here is just one example of how we do this at Claritas Studios." ]
             , span [ class "font-bold" ] [ text " This animation helps kids learn the Hail Mary prayer through a story and repetition." ]
             , span [] [ text " The animation is designed to be an aid for children to build a habit of prayer. You can use it during prayer time while kids still learn the words and the solemn manner to pray." ]
             ]
@@ -90,7 +90,7 @@ moreAboutTheAnimation =
         , p [ class "my-3" ] [ text "When creating the animated story about Mother Mary, we stay true to her character. Her devotion to God and love for her son are at the forefront, and the animation reflects this. By doing so, children can learn about her life and teachings in a way that is both entertaining and informative." ]
         , p [ class "my-3" ] [ text "Would you agree?" ]
         , p [ class "my-3" ] [ text "Our animations are great for homeschooling, hybrid schooling, and traditional religious education." ]
-        , p [ class "my-3" ] [ text "Here at Catholic Stories for Children, our animated stories cover prayer, including the Hail Mary prayer (above), the St Michael prayer, and the prayer to your Guardian Angel. These animations also explore the virtues, such as humility, faith, and compassion. Each story is carefully crafted to ensure that it is both engaging and educational." ]
+        , p [ class "my-3" ] [ text "Here at Claritas Studios, our animated stories cover prayer, including the Hail Mary prayer (above), the St Michael prayer, and the prayer to your Guardian Angel. These animations also explore the virtues, such as humility, faith, and compassion. Each story is carefully crafted to ensure that it is both engaging and educational." ]
         , p [ class "my-3" ] [ text "Prayer is tremendously important in our Catholic faith, and building a habit of prayer has much to offer children. By creating animated stories that teach Catholic prayers and reflect Catholic virtues and teachings, we can help children learn about the faith in a way that is both entertaining and informative. These stories can inspire children to live a life of faith, love, and compassion, just like Mother Mary did." ]
         ]
 

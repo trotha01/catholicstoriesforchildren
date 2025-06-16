@@ -127,7 +127,7 @@ view model =
         currentRoute =
             parseRoute model.url
     in
-    { title = "Saints - Catholic Stories for Children"
+    { title = "Saints - Claritas Studios"
     , body =
         [ div
             []
