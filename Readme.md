@@ -15,3 +15,8 @@ If you want to run manually, you can run with:
 1. `make.sh` will transpile all the elm code into js code.
 2. Then make.sh will call `build.js` to create the html files. 
 3. The `tailwindcss` script will keep the tailwind.css file updated
+
+# AR
+- mind ar js is used: https://github.com/hiukim/mind-ar-js
+- image target compiler: https://hiukim.github.io/mind-ar-js-doc/tools/compile/
+- minimizing video size: `ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 192k output.mp4 `
