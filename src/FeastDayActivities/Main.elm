@@ -482,7 +482,7 @@ viewMonth model feastMonth =
             [ class "mt-10 max-w-3xl mx-auto" ]
             [ div [ class "px-11" ]
                 [ if feastMonth.month == "December" then
-                    h1 [] [ text "2024 Feast Day Activities" ]
+                    h1 [] [ text "2025 Feast Day Activities" ]
 
                   else
                     h1 [] [ text "2025 Feast Day Activities" ]
@@ -496,12 +496,13 @@ viewMonth model feastMonth =
         , div
             [ class "max-w-3xl mx-auto" ]
             [ div
-                [ class "grid grid-cols-6 lg:grid-cols-12 gap-y-2 justify-items-center"
-                , class "text-3xl md:text-3xl lg:text-3xl"
-                , class "mt-3"
-                , class "text-center"
-                , style "max-width" "800px"
-                , class "hcenter"
+                [ -- class "grid grid-cols-6 lg:grid-cols-12 gap-y-2 justify-items-center"
+                  -- , class "text-3xl md:text-3xl lg:text-3xl"
+                  -- , class "mt-3"
+                  -- , class "text-center"
+                  -- , style "max-width" "800px"
+                  -- , class "hcenter"
+                  class "flex gap-2 bg-white rounded-2xl p-2 shadow-lg border"
                 ]
                 (List.map (viewMonthPillBox feastMonth.month) months)
             , div
@@ -535,7 +536,8 @@ viewFeastMonthHeader color month =
         , class "uppercase text-5xl"
         , class "rounded"
         , style "font-family" "hvdComicSerifPro"
-        , style "background-color" "#9de3ec"
+
+        -- , style "background-color" "#9de3ec"
         , style "height" "2.5em"
         ]
         [ text month
@@ -595,19 +597,22 @@ viewMonthPillBox : String -> String -> Html msg
 viewMonthPillBox currentMonth month =
     -- TODO: use nav html elements?
     a
-        [ class "col-span-1"
-        , class
+        [ -- class "col-span-1"
+          class
             (if String.contains month (String.toLower currentMonth) then
-                "bg-csc-darkblue text-white"
+                --   "bg-csc-darkblue text-white"
+                "bg-primary hover:bg-primary/90  bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md"
 
              else
-                ""
+                "hover:bg-purple-50 text-gray-700"
             )
-        , class "hover:bg-csc-lightblue hover:text-black"
-        , class "rounded"
-        , class "p-2"
-        , class "cursor-pointer"
-        , class "capitalize"
+        , class "h-10 px-4 py-2 rounded-xl font-semibold transition-all inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
+
+        -- , class "hover:bg-csc-lightblue hover:text-black"
+        -- , class "rounded"
+        -- , class "p-2"
+        -- , class "cursor-pointer"
+        -- , class "capitalize"
         , class "transition hover:scale-105"
         , attribute "aria-label" month
         , href (urlPath ++ "?m=" ++ month)

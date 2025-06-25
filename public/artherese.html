@@ -15,25 +15,38 @@
             init: function () {
                 const video1 = document.querySelector("#video-mp4");
                 const video2 = document.querySelector("#video-webm");
-                this.el.addEventListener('targetFound', event => {
-                    console.log("target found");
+                const testVideo = document.createElement("video");
+                const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
 
-                    const previewButton = document.querySelector("#preview-button");
-                    previewButton.addEventListener('click', () => {
-                        previewButton.setAttribute("visible", false);
-                        const testVideo = document.createElement("video");
-                        const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
-                        if (canplayWebm == "") {
-                            document.querySelector("#video-link").setAttribute("src", "#video-mp4");
-                            video1.play();
+                let video, videoSrc;
+                if (canplayWebm == "") {
+                    video = video1;
+                    videoSrc = "#video-mp4";
+                } else {
+                    video = video2;
+                    videoSrc = "#video-webm";
+                }
+
+                this.el.addEventListener('targetFound', event => {
+                    const targetImage = document.querySelector("#target-image");
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+
+                    targetImage.addEventListener('click', () => {
+                        targetImage.setAttribute("visible", false);
+                        document.querySelector("#video-link").setAttribute("src", videoSrc);
+                        if (video.paused) {
+                            video.play();
                         } else {
-                            document.querySelector("#video-link").setAttribute("src", "#video-webm");
-                            video2.play();
+                            video.pause();
                         }
                     });
                 });
+
                 this.el.addEventListener('targetLost', event => {
-                    console.log("target lost");
                     video1.pause();
                     video2.pause();
 
@@ -47,7 +60,7 @@
     <div class="example-container">
 
         <a-scene
-            mindar-image="imageTargetSrc: ./assets/AR/therese.mind; showStats: false; uiScanning: #example-scanning-overlay; filterMinCF:0.1; filterBeta: 10; warmupTolerance: 1; missTolerance: 1;"
+            mindar-image="imageTargetSrc: ./assets/AR/targetsTest2.mind; showStats: false; uiScanning: #example-scanning-overlay; filterMinCF:0.001; filterBeta: 10; warmupTolerance: 1; missTolerance: 1;"
             embedded="" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
             vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" inspector=""
             keyboard-shortcuts="" screenshot="">
@@ -64,9 +77,11 @@
             </a-camera>
 
             <a-entity id="mytarget" mytarget="" mindar-image-target="targetIndex: 0">
+                <!-- <a-video id="video-link" webkit-playsinline="" playsinline="" width="1" height="1.77" position="0 0 0"
+                    material="" geometry=""></a-video> -->
                 <a-video id="video-link" webkit-playsinline="" playsinline="" width="1" height="1.77" position="0 0 0"
                     material="" geometry=""></a-video>
-                <a-image id="preview-button" class="clickable" src="#preview" alpha-test="0.5" position="0 0 0"
+                <a-image id="target-image" class="clickable" src="#preview" alpha-test="0.5" position="0 0 0"
                     height="1.77" width="1" material="" geometry="">
                 </a-image>
             </a-entity>
