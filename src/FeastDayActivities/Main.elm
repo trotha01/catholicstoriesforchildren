@@ -494,32 +494,23 @@ viewMonth model feastMonth =
         -- , div [ class "mt-2 mb-20" ]
         --     [ Signup.view4 |> Html.map SignupMsg ]
         , div
-            [ class "max-w-3xl mx-auto" ]
-            [ div
-                [ -- class "grid grid-cols-6 lg:grid-cols-12 gap-y-2 justify-items-center"
-                  -- , class "text-3xl md:text-3xl lg:text-3xl"
-                  -- , class "mt-3"
-                  -- , class "text-center"
-                  -- , style "max-width" "800px"
-                  -- , class "hcenter"
-                  class "flex gap-2 bg-white rounded-2xl p-2 shadow-lg border"
+            [ class "max-w-5xl mx-auto" ]
+            [ div [ class "flex items-center justify-center gap-3 mb-8" ]
+                [ div
+                    [ class "flex gap-2 bg-white rounded-2xl p-2 shadow-lg border mb-6 items-center"
+                    , class "overflow-x-scroll"
+                    ]
+                    (List.map (viewMonthPillBox feastMonth.month) months)
                 ]
-                (List.map (viewMonthPillBox feastMonth.month) months)
             , div
-                [ style "width" "100vw"
-                , style "max-width" "800px"
-                , class "hcenter"
+                [ class "hcenter"
                 , style "position" "relative"
                 , style "font-size" "20px"
                 , class "mt-3 mb-12"
-                , class "grid grid-cols-2"
                 ]
                 [ viewFeastMonthHeader feastMonth.color feastMonth.month
                 , div
-                    [ class "grid grid-cols-1 md:grid-cols-2"
-                    , class "col-span-2"
-                    , style "background-color" "white"
-                    , style "padding" "50px"
+                    [ class "grid gap-3 grid-cols-2 mx-auto px-8"
                     ]
                     [ viewFeastDays feastMonth.key firstHalf
                     , viewFeastDays feastMonth.key secondHalf
@@ -536,8 +527,6 @@ viewFeastMonthHeader color month =
         , class "uppercase text-5xl"
         , class "rounded"
         , style "font-family" "hvdComicSerifPro"
-
-        -- , style "background-color" "#9de3ec"
         , style "height" "2.5em"
         ]
         [ text month
@@ -547,10 +536,9 @@ viewFeastMonthHeader color month =
 viewFeastDays : String -> List FeastDay -> Html Msg
 viewFeastDays month list =
     div
-        [ class "col-span-1" ]
-        (List.map (viewFeastDay month) list
-            ++ [ dateHR ]
-        )
+        [ class "grid gap-3 grid-cols-1"
+        ]
+        (List.map (viewFeastDay month) list)
 
 
 createFeastDayLink : String -> String -> String
@@ -569,24 +557,22 @@ viewFeastDay month feastDay =
             createFeastDayLink month feastDay.date
     in
     div
-        []
-        [ dateHR
-        , a
+        [ class "rounded-lg bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-200 hover:border-purple-300 cursor-pointer bg-white"
+        ]
+        [ a
             [ style "color" "black"
+            , class "flex flex-col space-y-1.5 p-6 pb-2 pt-3 px-3"
             , href link
             , attribute "aria-label" (month ++ " " ++ feastDay.date)
-            , class "grid grid-cols-calendar gap-3 items-center justify-items-center"
-            , class "hover:bg-csc-lightpurple"
-            , class "transition hover:scale-105"
-            , class "rounded"
             ]
             [ div
-                [ class "my-3"
-                , class "text-3xl"
+                [ class "flex items-start gap-2"
                 ]
-                [ text feastDay.date ]
+                [ div [ class "inline-flex items-center rounded-full border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-sm font-bold px-2 py-0.5 bg-purple-50 text-purple-700 border-purple-200 shrink-0" ]
+                    [ text feastDay.date ]
+                ]
             , div
-                [ class "justify-self-start"
+                [ class "font-semibold tracking-tight text-sm leading-tight text-gray-800 hover:text-purple-700 transition-colors"
                 ]
                 (List.map viewFeast feastDay.feasts)
             ]
@@ -614,6 +600,7 @@ viewMonthPillBox currentMonth month =
         -- , class "cursor-pointer"
         -- , class "capitalize"
         , class "transition hover:scale-105"
+        , class "capitalize"
         , attribute "aria-label" month
         , href (urlPath ++ "?m=" ++ month)
         ]
