@@ -60,16 +60,16 @@ viewAbout : Html msg
 viewAbout =
     div []
         [ p [ class "mb-4" ]
-            [ text """Claritas Studios is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts."""
+            [ text """Claritas Studios is a 501(c)(3) nonprofit built with a passion for spreading God's love to hearts around the world through engaging and beautiful stories, animations, and music."""
             ]
         , p []
-            [ text """Many kids today are growing up without knowing the core concepts of our faith. Many are learning the prayers without understanding the words they are saying. We hope to help bridge this gap with enjoyable stories, animations and songs. We hope to help kids grow with a strong love of neighbor and God."""
+            [ text """We envision our work nurturing people of all ages around the world in their spiritual development by providing captivating and faith-filled stories that instill Catholic values and a deep connection to the Catholic faith."""
             ]
-        , div [ class "mt-5" ] [ viewSignUp ]
+        -- , div [ class "mt-5" ] [ viewSignUp ]
         , h2 [ class "my-7" ] [ text "Vision" ]
-        , p [] [ text "Claritas Studios is made with the vision that all Catholics have a strong love of God and neighbor." ]
+        , p [] [ text "Claritas Studios envisions our work nurturing people of all ages around the world in their spiritual development by providing captivating and faith-filled stories that instill Catholic values and a deep connection to the Catholic faith." ]
         , h2 [ class "my-7" ] [ text "Mission" ]
-        , p [] [ text "Our hope is to help others along this journey with joyful stories." ]
+        , p [] [ text "The mission of Claritas Studios is to engage future saints with the Catholic faith through stories that inspire, educate, and foster an understanding of the beauty and joy of God's love." ]
         , h2 [ class "my-7", id "contact" ] [ text "Contact" ]
         , p []
             [ text "Please reach out. I love to hear from you!!!"
