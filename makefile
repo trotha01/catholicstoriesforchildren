@@ -5,7 +5,7 @@ SHELL := /bin/bash
 
 # Reusable command blocks
 define RUN_WATCH
-( fswatch -or src build.js | xargs -n1 ./make.sh ) &
+( fswatch -or src build.js | xargs -n1 npm run build ) &
 endef
 
 define RUN_TAILWIND
@@ -18,9 +18,15 @@ if command -v lsof >/dev/null; then \
 	if [ -n "$$pids" ]; then \
 		echo "Port 8000 is in use by $$pids. Killing..."; \
 		kill $$pids 2>/dev/null || true; \
-		sleep 1; \
+		sleep 0.2; \
 		kill -KILL $$pids 2>/dev/null || true; \
 	fi; \
+	# wait up to ~5s for the port to be released \
+	i=0; \
+	while lsof -tiTCP:8000 -sTCP:LISTEN >/dev/null 2>&1; do \
+		if [ $$i -ge 50 ]; then break; fi; \
+		sleep 0.1; i=$$((i+1)); \
+	done; \
 fi
 endef
 
@@ -29,16 +35,19 @@ define RUN_HTTP
 endef
 
 all: check_running check_dependencies
-	@trap 'kill -INT 0 2>/dev/null; sleep 0.2; kill -TERM 0 2>/dev/null; kill -KILL 0 2>/dev/null; exit 0' INT TERM EXIT; \
-	echo "Starting file watcher..."; \
-	$(RUN_WATCH) \
-	echo "Starting TailwindCSS watcher..."; \
-	$(RUN_TAILWIND) \
-	echo "Starting HTTP server"; \
-	$(FREE_PORT_8000); \
-	$(RUN_HTTP) \
-	echo "http://localhost:8000/ is now serving the application"; \
-	echo "Processes started. Press Ctrl+C to stop."; \
+	@NEG_PIDS=""; trap 'kill $NEG_PIDS 2>/dev/null || true; sleep 0.3; kill -KILL $NEG_PIDS 2>/dev/null || true; exit 0' INT TERM EXIT
+	echo "Starting file watcher..."
+	$(RUN_WATCH)
+	NEG_PIDS="-$$! $$NEG_PIDS"
+	echo "Starting TailwindCSS watcher..."
+	$(RUN_TAILWIND)
+	NEG_PIDS="-$$! $$NEG_PIDS"
+	echo "Starting HTTP server"
+	$(FREE_PORT_8000)
+	$(RUN_HTTP)
+	NEG_PIDS="-$$! $$NEG_PIDS"
+	echo "http://localhost:8000/ is now serving the application"
+	echo "Processes started. Press Ctrl+C to stop."
 	wait
 
 check_running:

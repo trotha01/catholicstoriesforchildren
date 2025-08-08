@@ -1,9 +1,13 @@
 
 # Running the Code
 
-## Using Make
-You can run the code on osx using the Makefile.
-Simply type `make` in a terminal to start and `make stop` to stop.
+## Using npm
+Install Node dependencies and run the full build:
+
+```
+npm install
+npm start
+```
 
 ## Running Manually
 If you want to run manually, you can run with:
