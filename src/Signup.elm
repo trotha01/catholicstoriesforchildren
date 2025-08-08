@@ -86,7 +86,7 @@ view2 =
             ]
             [ text "Receive free animations, activities, resources, and more!" ]
         , Html.iframe
-            [ src "https://blog.catholicstoriesforchildren.com/embed" -- "https://embeds.beehiiv.com/d8e1c428-bdfc-437f-a685-0148bd0cf084?slim=true"
+            [ src "https://blog.catholicstoriesforchildren.com/embed"
             , height 150
             , class "w-screen"
             , attribute "frameborder" "0"
