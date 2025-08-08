@@ -44,7 +44,6 @@ staff : List Person
 staff =
     [ trevor
     , carlos
-    , lindsey
     ]
 
 
@@ -62,16 +61,7 @@ trevor =
     }
 
 
-lindsey : Person
-lindsey =
-    { name = "Lindsey Bruno"
-    , initials = ""
-    , position = "Creative Director"
-    , description =
-        "Lindsey is a Jill-of-all-trades with a background in entertainment production (theater, theme-park, opera, film), events, music, and education. A Catholic convert from an evangelical background, she is passionate about passing along the riches of the faith - especially to those who may not recognize the treasure trove of the Church! Having worked for Disney in the parks and at Imagineering for over a decade, Lindsey has developed a taste for artistic excellence and hopes to bring a high level of quality to the Catholic creative sphere. Like Tolkien, she is a big believer in the power of myth and fairy tales for developing minds, she aims to tell stories that prepare children for a life of adventure, meaning, virtue, and purpose."
-    , image = imagePath ++ "LindseyBruno.jpg"
-    , socials = []
-    }
+
 
 
 carlos : Person

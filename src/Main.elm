@@ -28,7 +28,7 @@ import Shop.ShopHelpers exposing (viewPrintfulShopItems)
 import Shop.View as ShopPage
 import Signup exposing (..)
 import Task
-import Team.Team exposing (kelly, lindsey, trevor, viewPerson)
+import Team.Team exposing (kelly, trevor, viewPerson)
 import Team.Testimonials exposing (ainsleyRawlingsTestimonial, camSmithTestimonial, kellyBriggsTestimonial, meganReisterTestimonial)
 import Team.View as TeamPage exposing (cfnLive, christianChannel, inHisImage, makeJoyNormal, ocCatholic, spiritFilledMedia)
 import Time
@@ -580,7 +580,6 @@ viewTeam =
                 , class "my-10"
                 ]
                 [ viewPerson trevor
-                , viewPerson lindsey
                 , viewPerson kelly
                 ]
             , a
