@@ -459,7 +459,7 @@ viewImage image initials =
             , style "object-fit" "cover"
             , src image
             , alt ""
-            , attribute "ariaHidden" "true"
+            , attribute "aria-hidden" "true"
             ]
             []
 

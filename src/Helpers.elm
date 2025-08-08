@@ -126,7 +126,7 @@ paypalLogo =
 favicon : String -> String -> Html msg
 favicon alternativeText link =
     img
-        [ style "aria-hidden" "true"
+        [ attribute "aria-hidden" "true"
         , src link
         , style "width" "16px"
         , style "height" "16px"
@@ -142,8 +142,8 @@ email =
             [ text "trevor"
             , span [] [ text "@" ]
             ]
-        , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
-        , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
+        , span [ attribute "aria-hidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
+        , span [ attribute "aria-hidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
         , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
         , span []
             [ text "catholicstoriesforchildren"

@@ -28,7 +28,7 @@ view =
             ]
         , img
             [ src "https://ik.imagekit.io/catholicstories/Mother_and_child_from_Hail_Mary_Animation_2_0AW0fCnOc.png?ik-sdk-version=javascript-1.4.3&updatedAt=1663026862327"
-            , attribute "ariaHidden" "true"
+            , attribute "aria-hidden" "true"
             , alt "Mother and child from the Hail Mary Animation"
             , style "width" "50%"
             , style "position" "relative"

@@ -54,13 +54,13 @@ viewContactInfo =
                 [ style "overflow-wrap" "anywhere"
                 , class "mt-3 lg:mt-5"
                 ]
-                [ -- span [ attribute "ariaHidden" "true" ] [ text "📫 " ]
+                [ -- span [ attribute "aria-hidden" "true" ] [ text "📫 " ]
                   span [ style "display" "inline-block" ]
                     [ text "trevor"
                     , span [] [ text "@" ]
                     ]
-                , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
-                , span [ attribute "ariaHidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
+                , span [ attribute "aria-hidden" "true", property "innerHTML" (Json.Encode.string "🍯") ] []
+                , span [ attribute "aria-hidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
                 , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
                 , span []
                     [ text "catholicstoriesforchildren"
@@ -79,7 +79,7 @@ viewContactInfo =
             --     ]
             -- , iframe [ name "my-iframe", height 0, width 0 ] []
             -- , p []
-            --     [ img [ height 16, width 16, src "https://www.facebook.com/favicon.ico", attribute "ariaHidden" "true" ] []
+            --     [ img [ height 16, width 16, src "https://www.facebook.com/favicon.ico", attribute "aria-hidden" "true" ] []
             --     , span [] [ text " " ]
             --     , a
             --         [ href "https://www.facebook.com/Catholic-Stories-for-Children-120657933116228"
@@ -91,7 +91,7 @@ viewContactInfo =
             --         [ text "Facebook" ]
             --     ]
             -- , p []
-            --     [ img [ height 16, width 16, src "https://www.instagram.com/favicon.ico", attribute "ariaHidden" "true" ] []
+            --     [ img [ height 16, width 16, src "https://www.instagram.com/favicon.ico", attribute "aria-hidden" "true" ] []
             --     , span [] [ text " " ]
             --     , a
             --         [ href "https://www.instagram.com/catholicstoriesforchildren"
@@ -103,7 +103,7 @@ viewContactInfo =
             --         [ text "Instagram" ]
             --     ]
             -- , p []
-            --     [ img [ height 16, width 16, src "https://www.twitter.com/favicon.ico", attribute "ariaHidden" "true" ] []
+            --     [ img [ height 16, width 16, src "https://www.twitter.com/favicon.ico", attribute "aria-hidden" "true" ] []
             --     , span [] [ text " " ]
             --     , a
             --         [ href "https://twitter.com/StoriesCatholic"
