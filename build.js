@@ -35,6 +35,9 @@ var htmlHeadStart = `<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#EBD7F2">
     <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://app-cdn.clickup.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/tailwind.css" rel="stylesheet">
     <link href="/home.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.webmanifest">
@@ -156,7 +159,7 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
     + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
-    + `<script src="` + elmPath + `elm.js"></script>`
+    + `<script defer src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
     + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
@@ -201,7 +204,7 @@ var write404JSFile = function (path, title, description, elmModule, thumbnail, e
   }
   }
 </script>`
-    + `<script src="` + elmPath + `elm.js"></script>`
+    + `<script defer src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
     + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
