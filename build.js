@@ -28,6 +28,7 @@ var htmlHeadStart = `<!doctype html>
     return false;
   }
   </script>
+  <link rel="preload" as="image" href="/assets/images/home/ClaritasStudios.webp" fetchpriority="high">
   <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
 
 

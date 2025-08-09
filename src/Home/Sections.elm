@@ -11,7 +11,10 @@ viewClaritasStudios =
             [ src "/assets/images/home/ClaritasStudios.webp"
             , alt "Claritas Studios Logo"
             , class "mb-2"
-            , style "width" "400px"
+            , width 400
+            , attribute "loading" "eager"
+            , attribute "decoding" "async"
+            , attribute "fetchpriority" "high"
             ]
             []
         , p
