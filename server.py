@@ -35,7 +35,9 @@ class SPARequestHandler(http.server.SimpleHTTPRequestHandler):
         else:
             return super().send_error(code, message, explain)
 
+socketserver.TCPServer.allow_reuse_address = True
+
 with socketserver.TCPServer(("", PORT), SPARequestHandler) as httpd:
-    print(f"Serving at port {PORT}")
+    print(f"Running at http://localhost:{PORT}")
     httpd.serve_forever()
 
