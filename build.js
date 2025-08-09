@@ -45,7 +45,8 @@ var htmlHeadStart = `<!doctype html>
     <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- style for the cookie consent popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="print" onload="this.media='all'">
 
     <style>
       * {
@@ -162,7 +163,7 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<script src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
-    + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
+    + `<script defer>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
     + htmlBodyEnd,
     function (err) {
       if (err) {
@@ -207,7 +208,7 @@ var write404JSFile = function (path, title, description, elmModule, thumbnail, e
     + `<script src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
-    + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
+    + `<script defer>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
     + htmlBodyEnd,
     function (err) {
       if (err) {

@@ -43,7 +43,8 @@
     <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- style for the cookie consent popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="print" onload="this.media='all'">
 
     <style>
       * {
@@ -139,7 +140,7 @@
   }
   }
 </script><script src="/notfound/elm.js"></script></head><body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
-  <div id="myapp"></div><script>var app = Elm.NotFound.Main.init({ node: document.getElementById('myapp') });
+  <div id="myapp"></div><script defer>var app = Elm.NotFound.Main.init({ node: document.getElementById('myapp') });
 if (app.ports && app.ports.gtagReportConversion) {
     app.ports.gtagReportConversion.subscribe(function(message) {
       gtag_report_conversion();

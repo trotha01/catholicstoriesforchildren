@@ -170,9 +170,9 @@ init flags url key =
     , Cmd.batch
         [ Task.perform NewTime Time.now
         , Task.perform NewZone Time.here
-        , Cmd.map ProductionsMsg animationsPageCmd
-        , Cmd.map SaintsMsg saintsPageCmd
-        , Cmd.map FeastsMsg feastsPageCmd
+        , (if initialPage == Productions then Cmd.map ProductionsMsg animationsPageCmd else Cmd.none)
+        , (if initialPage == Saints then Cmd.map SaintsMsg saintsPageCmd else Cmd.none)
+        , (if initialPage == Feasts then Cmd.map FeastsMsg feastsPageCmd else Cmd.none)
         , redirectedMsg
         ]
     )

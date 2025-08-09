@@ -43,7 +43,8 @@
     <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- style for the cookie consent popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" media="print" onload="this.media='all'">
 
     <style>
       * {
@@ -120,7 +121,7 @@
         }
       }
     </style><meta name="description" content="Animations to guide kids in learning Catholic prayers"><title>Terms and Conditions - Catholic Stories for Children</title><meta property="og:title" content="Terms and Conditions - Catholic Stories for Children"><meta property="og:description" content="Animations to guide kids in learning Catholic prayers"><meta property="og:url" content="https://catholicstoriesforchildren.com/public/about/terms-and-conditions/index.html"><meta property="og:image" content="https://catholicstoriesforchildren.com/assets/images/thumbnails/CSCThumbnail.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="https://catholicstoriesforchildren.com/assets/images/thumbnails/CSCThumbnail.png"><script src="./elm.js"></script></head><body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
-  <div id="myapp"></div><script>var app = Elm.About.TermsAndConditions.Main.init({ node: document.getElementById('myapp') });
+  <div id="myapp"></div><script defer>var app = Elm.About.TermsAndConditions.Main.init({ node: document.getElementById('myapp') });
 if (app.ports && app.ports.gtagReportConversion) {
     app.ports.gtagReportConversion.subscribe(function(message) {
       gtag_report_conversion();
