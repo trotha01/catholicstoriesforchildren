@@ -64,5 +64,31 @@ CookieConsent.run({
                 }
             }
         }
+    },
+    onConsent: ({ cookie }) => {
+      try {
+        // Only grant & load GA if user accepted analytics (EU/EEA will be opt-in by region default)
+        if (CookieConsent.acceptedCategory('analytics')) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('consent','update',{ analytics_storage:'granted', ad_storage:'granted' });
+          }
+          if (typeof window.enableAnalytics === 'function') {
+            window.enableAnalytics();
+          }
+        }
+      } catch (e) { /* no-op */ }
+    },
+    onChange: ({ cookie, changedCategories }) => {
+      try {
+        if (changedCategories && changedCategories.includes('analytics')) {
+          if (CookieConsent.acceptedCategory('analytics')) {
+            if (typeof window.enableAnalytics === 'function') window.enableAnalytics();
+          } else {
+            // revoke analytics consent
+            if (typeof window.gtag === 'function') window.gtag('consent','update',{ analytics_storage:'denied' });
+            window.__ga_block = true;
+          }
+        }
+      } catch (e) { /* no-op */ }
     }
 });

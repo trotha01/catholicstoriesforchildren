@@ -1,31 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TXRVE787GD');
-  </script>
-
-  <!-- This code is from google ads. Event snippet for Newsletter Signup conversion
-  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-  <script>
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-11094481734/naEuCKW6gJ4YEMa2oaop',
-        'event_callback': callback
-    });
-    return false;
-  }
-  </script>
   <link rel="preload" as="image" href="/assets/images/home/ClaritasStudios.webp" fetchpriority="high">
   <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
 
@@ -154,6 +129,49 @@ if (app.ports && app.ports.gtagReportConversion) {
     });
   }
 
+  </script>
+
+  <!-- Google Analytics (deferred + Consent Mode) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      ad_user_data:'granted',
+      ad_personalization:'granted',
+      ad_storage:'granted',
+      analytics_storage:'granted',
+      functionality_storage:'granted',
+      security_storage:'granted'
+    });
+    gtag('consent','default', {
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      ad_storage:'denied',
+      analytics_storage:'denied',
+      functionality_storage:'granted',
+      security_storage:'granted'
+    }, {
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','CH','GB']
+    });
+    function loadGA(){
+      if (window.__ga_block === true) return;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD';
+      s.async = true;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config','G-TXRVE787GD', { anonymize_ip: true });
+    }
+    // Do not auto-load GA; only load after consent
+    window.__ga_block = true;
+
+    // Hook for cookie-consent (and geo logic): call this to grant analytics and trigger GA load
+    window.enableAnalytics = function(){
+      if (navigator.globalPrivacyControl === true) { return; } // honor GPC/CPRA signals
+      window.__ga_block = false;
+      gtag('consent','update',{ analytics_storage:'granted', ad_storage:'granted' });
+      loadGA();
+    };
   </script>
 
   <!-- Cookie consent popup -->
