@@ -159,7 +159,7 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
     + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
-    + `<script defer src="` + elmPath + `elm.js"></script>`
+    + `<script src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
     + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
@@ -204,7 +204,7 @@ var write404JSFile = function (path, title, description, elmModule, thumbnail, e
   }
   }
 </script>`
-    + `<script defer src="` + elmPath + `elm.js"></script>`
+    + `<script src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
     + `<script>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
