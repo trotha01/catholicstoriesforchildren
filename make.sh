@@ -42,6 +42,4 @@ done
 
 wait
 
-npx --yes tailwindcss@3.4.1 -i input.css -o public/tailwind.css --minify
-cp public/tailwind.css tailwind.css
 node build.js
