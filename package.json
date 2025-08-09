@@ -19,9 +19,9 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "elm": "^0.19.1-6",
-    "uglify-js": "^3.19.3",
     "concurrently": "^9.0.0",
-    "kill-port": "^2.0.0"
+    "elm": "^0.19.1-6",
+    "kill-port": "^2.0.0",
+    "uglify-js": "^3.19.3"
   }
 }

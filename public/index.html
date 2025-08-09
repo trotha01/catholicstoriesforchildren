@@ -15,8 +15,6 @@
     <link href="/tailwind.css" rel="stylesheet">
     <link href="/home.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="preload" href="/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/assets/Nunito_Sans/NunitoSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- style for the cookie consent popup -->
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" as="style">
@@ -30,12 +28,14 @@
       }
       @font-face {
         font-family: hvdComicSerifPro;
-        src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf);
+        src: url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.woff2) format('woff2'),
+             url(/assets/HVD-Comic-Serif-Pro/OTF/HVD_Comic_Serif_Pro.otf) format('opentype');
         font-display: swap;
       }
       @font-face {
         font-family: nunitoSansRegular;
-        src: url(/assets/Nunito_Sans/NunitoSans-Regular.ttf);
+        src: url(/assets/Nunito_Sans/NunitoSans-Regular.woff2) format('woff2'),
+             url(/assets/Nunito_Sans/NunitoSans-Regular.ttf) format('truetype');
         font-display: swap;
       }
 
