@@ -8,10 +8,15 @@ viewClaritasStudios : Html msg
 viewClaritasStudios =
     div [ class "flex flex-col items-center justify-center text-center space-y-2 py-40 logo-section-bg", style "font-family" "Cinzel", style "color" "#ffbf00", style "text-shadow" "   0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFAA00;" ]
         [ img
-            [ src "/assets/images/home/ClaritasStudios.webp"
+            [ src "/assets/images/home/ClaritasStudios-800.webp"
             , alt "Claritas Studios Logo"
             , class "mb-2"
-            , style "width" "400px"
+            , width 400
+            , attribute "srcset" "/assets/images/home/ClaritasStudios-400.webp 400w, /assets/images/home/ClaritasStudios-800.webp 800w, /assets/images/home/ClaritasStudios-1200.webp 1200w"
+            , attribute "sizes" "(max-width: 720px) 80vw, 400px"
+            , attribute "loading" "eager"
+            , attribute "decoding" "async"
+            , attribute "fetchpriority" "high"
             ]
             []
         , p
