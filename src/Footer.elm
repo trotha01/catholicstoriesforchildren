@@ -16,11 +16,44 @@ viewFooter =
         [ h2 [ class "text-4xl font-bold" ] [ text "Follow Us" ]
         , div [ class "flex space-x-6 pt-2" ]
             [ a [ href "https://www.instagram.com/claritasstudios", target "_blank" ]
-                [ img [ src "/assets/instagram-logo.webp", alt "Instagram", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+                [ img
+                    [ src "/assets/instagram-logo.webp"
+                    , attribute "srcset" "/assets/instagram-logo.webp 1x, /assets/instagram-logo@2x.webp 2x"
+                    , alt "Instagram"
+                    , class "rounded-full object-cover"
+                    , width 48
+                    , height 48
+                    , attribute "loading" "lazy"
+                    , attribute "decoding" "async"
+                    ]
+                    []
+                ]
             , a [ href "https://www.facebook.com/claritasstudios", target "_blank" ]
-                [ img [ src "/assets/facebook.webp", alt "Facebook", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+                [ img
+                    [ src "/assets/facebook.webp"
+                    , attribute "srcset" "/assets/facebook.webp 1x, /assets/facebook@2x.webp 2x"
+                    , alt "Facebook"
+                    , class "rounded-full object-cover"
+                    , width 48
+                    , height 48
+                    , attribute "loading" "lazy"
+                    , attribute "decoding" "async"
+                    ]
+                    []
+                ]
             , a [ href "https://www.pinterest.com/claritasstudios", target "_blank" ]
-                [ img [ src "/assets/pinterest.webp", alt "Pinterest", class "rounded-full", style "width" "48px", style "height" "48px" ] [] ]
+                [ img
+                    [ src "/assets/pinterest.webp"
+                    , attribute "srcset" "/assets/pinterest.webp 1x, /assets/pinterest@2x.webp 2x"
+                    , alt "Pinterest"
+                    , class "rounded-full object-cover"
+                    , width 48
+                    , height 48
+                    , attribute "loading" "lazy"
+                    , attribute "decoding" "async"
+                    ]
+                    []
+                ]
             ]
         , p [ class "text-lg pt-5" ]
             [ text "Copyright © 2025 Claritas Studios. All rights reserved." ]
