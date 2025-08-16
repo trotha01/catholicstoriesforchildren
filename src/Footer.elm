@@ -54,6 +54,19 @@ viewFooter =
                     ]
                     []
                 ]
+            , a [ href "https://www.youtube.com/@claritasstudios", target "_blank" ]
+                [ img
+                    [ src "/assets/youtube.webp"
+                    , attribute "srcset" "/assets/youtube.webp 1x, /assets/youtube@2x.webp 2x"
+                    , alt "YouTube"
+                    , class "rounded-full object-cover"
+                    , width 48
+                    , height 48
+                    , attribute "loading" "lazy"
+                    , attribute "decoding" "async"
+                    ]
+                    []
+                ]
             ]
         , p [ class "text-lg pt-5" ]
             [ text "Copyright © 2025 Claritas Studios. All rights reserved." ]
