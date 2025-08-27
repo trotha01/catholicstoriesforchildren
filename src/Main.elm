@@ -276,10 +276,7 @@ updatePage model url =
         urlString =
             Url.toString url
     in
-    if String.contains "joseph" urlString then
-        ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
-
-    else if String.contains "animations" urlString then
+    if String.contains "animations" urlString then
         ( { model | url = url, page = Productions }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
 
     else if String.contains "navigation" urlString then
@@ -325,12 +322,10 @@ loadPage model url =
     -- Used by URLChanged to ensure forward/back navigation works
     let
         urlString =
-            Url.toString url
+            Url.toString url 
     in
-    if String.contains "joseph" urlString then
-        ( model, Nav.load "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation" )
 
-    else if String.contains "animations" urlString then
+    if String.contains "animations" urlString then
         ( { model | url = url, page = Productions }, scrollToTopCmd )
 
     else if String.contains "navigation" urlString then
