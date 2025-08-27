@@ -1,4 +1,4 @@
-module Header exposing (viewHeader, viewPageHeaderNoLinks, viewSubpageHeader)
+module Header exposing (viewBanner, viewHeader, viewPageHeaderNoLinks, viewSubpageHeader)
 
 import Helpers exposing (..)
 import Html exposing (..)
@@ -29,7 +29,8 @@ viewSubpageHeader currentPage leftMargin =
                 ( "60px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
     in
     div []
-        [ header
+        [ viewBanner
+        , header
             [ class "text-white logo-section-bg"
             , class ("h-[60px] md:h-[" ++ height ++ "]")
             , class "grid items-center justify-items-center"
@@ -44,19 +45,12 @@ viewSubpageHeader currentPage leftMargin =
 
 viewBanner : Html msg
 viewBanner =
-    div
-        [ class "bg-[#9101b3] bg-[url(/assets/images/AnimationImageLinks/SotsJoseph.png)] text-white text-center text-lg py-2" ]
-        -- [ a [ href "https://www.zeffy.com/en-US/donation-form/126e804d-c7a8-4029-b41b-7d0a594a220e" ] -- general donation form
-        -- [ a [ href "https://www.zeffy.com/en-US/fundraisingV2/support-the-st-joseph-animation", target "_blank" ]
-        [ a [ href "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation", target "_blank" ]
-            [ div []
-                [ span [] [ text "Support our new animation - " ]
-                , span [ class "underline" ] [ text "Learn more." ]
-                ]
-
-            -- , div [] [ text "Bring loving and faithful animations to families today." ]
-            ]
+    a
+        [ href "https://youtu.be/nb7r4V_4uFc"
+        , target "_blank"
+        , class "block bg-[#9101b3] text-white text-center text-lg py-2 underline"
         ]
+        [ text "Watch our latest animation!" ]
 
 
 viewPageHeaderNoLinks : String -> Int -> Html msg
@@ -67,17 +61,20 @@ viewPageHeaderNoLinks currentPage leftMargin =
         ( height, gridColsClass ) =
             ( "60px", "grid-cols-[150px_1fr]" )
     in
-    header
-        [ style "background-color" "#43868D"
-        , class ("h-[60px] md:h-[" ++ height ++ "]")
-        , class "text-white"
-        , class "grid items-center justify-items-center"
-        , class gridColsClass
-        ]
-        [ viewLogo
-        , viewHeaderTitle False currentPage
+    div []
+        [ viewBanner
+        , header
+            [ style "background-color" "#43868D"
+            , class ("h-[60px] md:h-[" ++ height ++ "]")
+            , class "text-white"
+            , class "grid items-center justify-items-center"
+            , class gridColsClass
+            ]
+            [ viewLogo
+            , viewHeaderTitle False currentPage
 
-        -- , rightHandSide height
+            -- , rightHandSide height
+            ]
         ]
 
 
