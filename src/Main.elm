@@ -219,10 +219,7 @@ update msg model =
                         ( model, Nav.load urlString )
                     _ ->
                         ( { model | url = url, page = newPage }
-                        , Cmd.batch
-                            [ Task.perform NewTime Time.now
-                            , Task.perform NewZone Time.here
-                            ]
+                        , scrollToTopCmd
                         )
 
         SignupMsg signupMsg ->
