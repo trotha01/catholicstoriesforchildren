@@ -297,6 +297,8 @@ updatePage model url =
         ( { model | url = url, page = Saints }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
     else if String.contains "press" urlString then
         ( { model | url = url, page = Press }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
+    else if url.path == "/" then
+        ( { model | url = url, page = Home }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
     else
         ( model, Cmd.none )
 
