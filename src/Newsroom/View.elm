@@ -57,7 +57,7 @@ viewSignUp =
 viewSignUpButton : Html msg
 viewSignUpButton =
     a
-        [ href "https://signup.catholicstoriesforchildren.com"
+        [ href "https://blog.claritasstudios.com"
         , rel "noopener"
         , target "_blank"
         , style "text-decoration" "none"

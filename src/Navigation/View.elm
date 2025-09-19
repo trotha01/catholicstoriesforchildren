@@ -23,7 +23,7 @@ view =
 
         -- , viewNavButton 6 "_blank" "https://catholicstories.etsy.com" "Shop"
         , viewNavButton 6 "_self" "/shop" "Shop"
-        , viewNavButton 7 "_blank" "https://blog.catholicstoriesforchildren.com/" "Blog"
+        , viewNavButton 7 "_blank" "https://blog.claritasstudios.com/" "Blog"
         , viewNavButton 8 "_self" "/give" "Donate"
         , viewNavButton 9 "_self" "/team" "About Us"
         ]

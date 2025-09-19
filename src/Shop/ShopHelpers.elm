@@ -296,7 +296,7 @@ liturgicalCalendar2025 =
     { name = "2025 Liturgical Calendar"
     , image = "/assets/images/shop/5.webp"
     , description = "A 2025 Liturgical Calendar, feast days, and coloring page!"
-    , beehiivLink = "https://blog.catholicstoriesforchildren.com/embed" -- "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
+    , beehiivLink = "https://blog.claritasstudios.com/embed" -- "https://embeds.beehiiv.com/cac1334c-48ed-4cd8-925e-abef2165f888?slim=true"
     , etsyLink = ""
     , link = ""
     }
