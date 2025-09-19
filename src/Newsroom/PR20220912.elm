@@ -70,12 +70,12 @@ view =
         , p []
             [ span [] [ text "Catholic Stories for Children is a non-profit organization that exists to help Catholic parents pass on the faith with prayer tips and fun animations for children. Catholic Stories for Children aims to help children grow a habit of prayer. As children build a habit of thanking God in the morning, before every meal, and throughout their day, they grow in gratitude. As children pray for each other, they grow in empathy and love. As children pray together, they grow in community. And when children pray at home with their families, their hearts open up and the family grows strong with God as their center. Many parents struggle with getting their young children to pray, so Catholic Stories for Children creates animations as an aid for families. These animations can be found on their website, " ]
             , a
-                [ href "https://catholicstoriesforchildren.com"
+                [ href "https://claritasstudios.com"
                 , style "color" darkBlue
                 , rel "noopener"
                 , target "_blank"
                 ]
-                [ text "www.catholicstoriesforchildren.com" ]
+                [ text "www.claritasstudios.com" ]
             , span [] [ text "." ]
             ]
         , br [] []
@@ -89,12 +89,12 @@ view =
             , span [] [ Helpers.email ]
             , br [] []
             , a
-                [ href "https://catholicstoriesforchildren.com"
+                [ href "https://claritasstudios.com"
                 , style "color" darkBlue
                 , rel "noopener"
                 , target "_blank"
                 ]
-                [ text "www.catholicstoriesforchildren.com" ]
+                [ text "www.claritasstudios.com" ]
             , br [] []
             , viewSocial ( Facebook, "https://www.facebook.com/catholicstoriesforchildren" )
             , viewSocial ( Instagram, "https://www.instagram.com/catholicstoriesforchildren" )

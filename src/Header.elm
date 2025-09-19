@@ -140,7 +140,7 @@ desktopNavigation height =
         , viewNavButton height "https://shop.claritasstudios.com/" "_blank" "Shop"
 
         -- , viewNavButton height "/shop" "_self" "Shop"
-        , viewNavButton height "https://blog.catholicstoriesforchildren.com/" "_blank" "Blog"
+        , viewNavButton height "https://blog.claritasstudios.com/" "_blank" "Blog"
         , viewNavButton height "/give" "_self" "Donate"
         , viewNavButton height "/team" "_self" "About"
         ]

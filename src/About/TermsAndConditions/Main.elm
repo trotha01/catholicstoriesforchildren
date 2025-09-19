@@ -42,7 +42,7 @@ viewBody =
     div []
         [ h1 [ class "m-10" ] [ text "Terms and Conditions of Use" ]
         , div [ class "" ]
-            [ p [ class "m-10" ] [ text """ These terms and conditions govern your use of the Catholic Stories for Children website, accessible from https://catholicstoriesforchildren.com/.  """ ]
+            [ p [ class "m-10" ] [ text """ These terms and conditions govern your use of the Catholic Stories for Children website, accessible from https://claritasstudios.com/.  """ ]
             , h2 [ class "m-10" ] [ text "1. Acceptance of Terms" ]
             , p [ class "m-10" ] [ text """By accessing this website, you agree to be bound by these terms and conditions, all applicable laws, and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.""" ]
             , h2 [ class "m-10" ] [ text """2. Use License""" ]

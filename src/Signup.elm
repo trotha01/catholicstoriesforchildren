@@ -86,7 +86,7 @@ view2 =
             ]
             [ text "Receive free animations, activities, resources, and more!" ]
         , Html.iframe
-            [ src "https://blog.catholicstoriesforchildren.com/embed"
+            [ src "https://blog.claritasstudios.com/embed"
             , height 150
             , class "w-screen"
             , attribute "frameborder" "0"
