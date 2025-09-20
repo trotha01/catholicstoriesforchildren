@@ -5,7 +5,7 @@ import Resources.Helpers exposing (..)
 
 videos : List Resource
 videos =
-    [ catholicStoriesForChildren
+    [ claritasStudios
     , christineInAction
     , tomkin
     , juiceBox
@@ -21,10 +21,10 @@ videos =
     ]
 
 
-catholicStoriesForChildren : Resource
-catholicStoriesForChildren =
+claritasStudios : Resource
+claritasStudios =
     { name = "Claritas Studios"
-    , link = "https://www.youtube.com/@CatholicStoriesforChildren"
+    , link = "https://www.youtube.com/@ClaritasStudios"
     , image = "https://ik.imagekit.io/catholicstories/CSCLogo_JiNT9WUPX.png?updatedAt=1679070448402"
     }
 

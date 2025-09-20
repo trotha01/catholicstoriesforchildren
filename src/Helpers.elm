@@ -146,7 +146,7 @@ email =
         , span [ attribute "aria-hidden" "true", property "innerHTML" (Json.Encode.string "spam@catholicstoriesforchildren.com") ] []
         , span [ height 0, width 0, style "display" "none", hidden True ] [ text "spam@catholicstoriesforchildren.com" ]
         , span []
-            [ text "catholicstoriesforchildren"
+            [ text "claritasstudios"
             , span []
                 [ text "."
                 , span [] [ text "com" ]
