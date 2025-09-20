@@ -19,7 +19,7 @@ viewSubpageHeader : String -> Int -> Html msg
 viewSubpageHeader currentPage leftMargin =
     let
         isHomePage =
-            currentPage == "Claritas Studioss"
+            currentPage == "Claritas Studios"
 
         ( height, gridColsClass ) =
             if isHomePage then
@@ -102,7 +102,7 @@ viewHeaderTitle includesLinks title =
             , class "text-white"
             , class textClass
             ]
-            [ text "" ]
+            [ text title ]
         ]
 
 

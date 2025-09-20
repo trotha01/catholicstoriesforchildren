@@ -175,10 +175,10 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<title>` + title + `</title>`
     + `<meta property="og:title" content="` + title + `">`
     + `<meta property="og:description" content="` + description + `">`
-    + `<meta property="og:url" content="https://catholicstoriesforchildren.com` + path + `">`
-    + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
+    + `<meta property="og:url" content="https://claritasstudios.com` + path + `">`
+    + `<meta property="og:image" content="https://claritasstudios.com` + thumbnail + `">`
     + `<meta property="twitter:card" content="summary_large_image">`
-    + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
+    + `<meta property="twitter:image" content="https://claritasstudios.com` + thumbnail + `">`
     + `<script src="` + elmPath + `elm.js"></script>`
     + `</head>`
     + htmlBodyStart
@@ -192,56 +192,9 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
   )
 }
 
-var write404JSFile = function (path, title, description, elmModule, thumbnail, elmPath) {
-  fs.writeFile(
-    '.' + path,
-    htmlHeadStart
-    + `<meta name="description" content="` + description + `">`
-    + `<title>` + title + `</title>`
-    + `<meta property="og:title" content="` + title + `">`
-    + `<meta property="og:description" content="` + description + `">`
-    + `<meta property="og:url" content="https://catholicstoriesforchildren.com` + path + `">`
-    + `<meta property="og:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
-    + `<meta property="twitter:card" content="summary_large_image">`
-    + `<meta property="twitter:image" content="https://catholicstoriesforchildren.com` + thumbnail + `">`
-    + `<script>
-  var path = window.location.pathname;
-  var redirectUrl = "/index.html";
-
-  const params = new URLSearchParams(window.location.search);
-  const episode = params.get("e"); // null if it doesn't exist, or the value if it does
-  const redirectParam = params.get("redirect"); // Get the 'redirect' query parameter
-
-  
-  // Preserve the path in URL by using JavaScript History API
-  if (redirectParam !== "/index.html") {
-  if (path !== "/") {
-    if (episode) {
-     window.location.replace(redirectUrl + "?redirect=" + path.replace(/\\/+$/, "") + "/1/" + episode.toLowerCase());
-    } else {
-      window.location.replace(redirectUrl + "?redirect=" + path);
-  }
-  }
-  }
-</script>`
-    + `<script src="` + elmPath + `elm.js"></script>`
-    + `</head>`
-    + htmlBodyStart
-    + `<script defer>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
-    + htmlBodyEnd,
-    function (err) {
-      if (err) {
-        console.log(err)
-      }
-    }
-  )
-}
-
-
-writeJSFile('/public/about/privacy-policy/index.html', 'Privacy Policy - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png', './')
-writeJSFile('/public/about/terms-and-conditions/index.html', 'Terms and Conditions - Catholic Stories for Children', 'Animations to guide kids in learning Catholic prayers', '.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png', './')
-writeJSFile('/public/feastdayactivities/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Activities for kids on the feast days', '.FeastDayActivities', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
-writeJSFile('/public/feastdayactivities/today/index.html', 'Feast Day Activities - Catholic Stories for Children', 'Catholic activities for kids today', '.FeastDayActivities.Today', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
-writeJSFile('/public/index.html', 'Catholic Stories for Children', 'Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help kids learn Catholic prayers, learn about Catholic saints, and to learn other Catholic concepts.', '', '/assets/images/thumbnails/CSCThumbnail.png', '/')
-// write404JSFile('/public/404.html', 'Not Found - Catholic Stories for Children', 'This page is not found', '.NotFound', '/assets/images/thumbnails/CSCThumbnail.png', '/notfound/')
-writeJSFile('/public/thankyou/index.html', 'Thank You - Catholic Stories for Children', 'Thank you for signing up for our mail list!', '.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png', './')
+writeJSFile('/public/about/privacy-policy/index.html', 'Privacy Policy - Claritas Studios', 'Animations to guide kids in learning Catholic prayers', '.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png', './')
+writeJSFile('/public/about/terms-and-conditions/index.html', 'Terms and Conditions - Claritas Studios', 'Animations to guide kids in learning Catholic prayers', '.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png', './')
+writeJSFile('/public/feastdayactivities/index.html', 'Feast Day Activities - Claritas Studios', 'Activities for kids on the feast days', '.FeastDayActivities', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
+writeJSFile('/public/feastdayactivities/today/index.html', 'Feast Day Activities - Claritas Studios', 'Catholic activities for kids today', '.FeastDayActivities.Today', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
+writeJSFile('/public/index.html', 'Claritas Studios', 'Claritas Studios', '', '/assets/images/thumbnails/CSCThumbnail.png', '/')
+writeJSFile('/public/thankyou/index.html', 'Thank You - Claritas Studios', 'Thank you for signing up for our mail list!', '.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png', './')
