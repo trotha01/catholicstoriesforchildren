@@ -25,12 +25,12 @@ elmmake() {
 
 pair_list=(
   src/Main.elm public/elm.js
-  src/About/PrivacyPolicy/Main.elm public/about/privacy-policy/elm.js
-  src/About/TermsAndConditions/Main.elm public/about/terms-and-conditions/elm.js
-  src/NotFound/Main.elm public/notfound/elm.js
-  src/FeastDayActivities/Main.elm public/feastdayactivities/elm.js
-  src/FeastDayActivities/Today/Main.elm public/feastdayactivities/today/elm.js
-  src/ThankYou/Main.elm public/thankyou/elm.js
+  src/Page/About/PrivacyPolicy/Main.elm public/about/privacy-policy/elm.js
+  src/Page/About/TermsAndConditions/Main.elm public/about/terms-and-conditions/elm.js
+  src/Page/NotFound/Main.elm public/notfound/elm.js
+  src/Page/FeastDayActivities/Main.elm public/feastdayactivities/elm.js
+  src/Page/FeastDayActivities/Today/Main.elm public/feastdayactivities/today/elm.js
+  src/Page/ThankYou/Main.elm public/thankyou/elm.js
 )
 
 # Iterate through the list and pass each pair to the function

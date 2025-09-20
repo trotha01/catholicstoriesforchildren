@@ -1,31 +1,31 @@
 module Main exposing (Model, main, view)
 
-import Animations.Helpers.Carousel as Carousel
-import Animations.View
+import Page.Animations.Helpers.Carousel as Carousel
+import Page.Animations.View as AnimationsView
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
-import Contact.View as ContactPage
-import FeastDayActivities.Main as FeastsPage
-import Footer exposing (viewFooter)
-import Give.View as GivePage
-import Header exposing (viewHeader)
-import Helpers exposing (..)
-import Home.Sections exposing (..)
+import Page.Contact.View as ContactPage
+import Page.FeastDayActivities.Main as FeastsPage
+import Component.Footer exposing (viewFooter)
+import Page.Give.View as GivePage
+import Component.Header exposing (viewHeader)
+import Theme.Layout exposing (headerMargin)
+import Page.Home.Sections exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Navigation.View as NavigationPage
-import Newsroom.ViewPress as ViewPress exposing (..)
-import NotFound.Main
-import Prayer.Angelus.View as AngelusPage
-import Prayers.View as PrayersPage
-import Resources.Helpers exposing (ResourceGroup)
-import Resources.View as ResourcesPage
-import Saints.Main as SaintsPage
-import Shop.View as ShopPage
-import Signup exposing (..)
+import Component.Navigation.View as NavigationPage
+import Page.Newsroom.ViewPress as ViewPress exposing (..)
+import Page.NotFound.Main as NotFoundPage
+import Page.Prayer.Angelus.View as AngelusPage
+import Page.Prayers.View as PrayersPage
+import Page.Resources.Helpers exposing (ResourceGroup)
+import Page.Resources.View as ResourcesPage
+import Page.Saints.Main as SaintsPage
+import Page.Shop.View as ShopPage
+import Page.Signup as Signup
 import Task
-import Team.View as TeamPage
+import Page.Team.View as TeamPage
 import Time
 import Url
 
@@ -77,7 +77,7 @@ type alias Model =
     , language : Language
     , feastsPageModel : FeastsPage.Model
     , saintsPageModel : SaintsPage.Model
-    , animationsPageModel : Animations.View.Model
+    , animationsPageModel : AnimationsView.Model
     }
 
 
@@ -85,7 +85,7 @@ init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     let
         ( animationsPageModel, animationsPageCmd ) =
-            Animations.View.init flags url key
+            AnimationsView.init flags url key
 
         ( saintsPageModel, saintsPageCmd ) =
             SaintsPage.init flags url key
@@ -173,7 +173,7 @@ type Msg
     | LanguageChange Language
     | SaintsMsg SaintsPage.Msg
     | FeastsMsg FeastsPage.Msg
-    | ProductionsMsg Animations.View.Msg
+    | ProductionsMsg AnimationsView.Msg
     | NoOp
 
 
@@ -229,7 +229,7 @@ update msg model =
 
         ProductionsMsg productionsMsg ->
             let
-                ( updatedProductionsModel, cmd ) = Animations.View.update productionsMsg model.animationsPageModel
+                ( updatedProductionsModel, cmd ) = AnimationsView.update productionsMsg model.animationsPageModel
             in
                 ( { model | animationsPageModel = updatedProductionsModel }, Cmd.map ProductionsMsg cmd )
 
@@ -328,7 +328,7 @@ view model =
                     { title = document.title, body = document.body |> List.map (Html.map FeastsMsg) }
                 Productions ->
                     let
-                        document = Animations.View.view model.url model.animationsPageModel
+                        document = AnimationsView.view model.url model.animationsPageModel
                     in
                     { title = document.title, body = document.body |> List.map (Html.map ProductionsMsg) }
                 Press ->
@@ -337,7 +337,7 @@ view model =
                     { title = "Download", body = [ div [ class "p-10 text-center" ] [ text "This is a downloadable file. If it does not open automatically, please check your browser's download bar or try the direct link again." ] ] }
                 NotFound ->
                     let
-                        document = NotFound.Main.view
+                        document = NotFoundPage.view
                     in
                     { title = "Tony Help, Page Not Found", body = [ Html.map (\_ -> NoOp) document ] }
     in
@@ -380,6 +380,6 @@ viewSlideshow model =
     div
         [ class "logo-section-bg"
         ]
-        [ Carousel.viewSlides model.animationsPageModel.slideshow Animations.View.NextSlide Animations.View.PrevSlide
+        [ Carousel.viewSlides model.animationsPageModel.slideshow AnimationsView.NextSlide AnimationsView.PrevSlide
             |> Html.map ProductionsMsg
         ]
