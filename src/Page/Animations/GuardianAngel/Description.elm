@@ -1,0 +1,251 @@
+module Page.Animations.GuardianAngel.Description exposing (..)
+
+import Html exposing (..)
+import Html.Attributes exposing (..)
+
+
+viewGuardianAngelDescription : Html msg
+viewGuardianAngelDescription =
+    div
+        []
+        [ div [ class "max-w-3xl m-auto py-5 px-11 mb-10" ]
+            [ aboutTheAnimation
+            , viewPrayer
+            , scripture
+            , tradition
+            , magisterialTeachings
+            , viewAnotherPage
+            ]
+        ]
+
+
+aboutTheAnimation : Html msg
+aboutTheAnimation =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "max-w-3xl"
+        ]
+        [ p [ class "my-3" ]
+            [ text
+                ("Use this animation to help your children learn the Guardian Angel prayer though a story and song."
+                    ++ " It also will help your children understand the concept of a guardian angel."
+                )
+            ]
+        , p [ class "my-3" ]
+            [ text
+                ("This animation is meant to be an aid for your children to slowly build a habit of prayer. "
+                    ++ "You can use it during prayer time while kids are still learning both the words and the solemn manner to pray."
+                )
+            ]
+        ]
+
+
+viewPrayer : Html msg
+viewPrayer =
+    div [ class "mt-10 text-lg" ]
+        [ h2 [ class "mb-3" ] [ text "The Prayer" ]
+        , p []
+            [ span [ class "block" ] [ text "Angel Of God, my guardian dear," ]
+            , span [ class "block" ] [ text "to whom God's love commits me here," ]
+            , span [ class "block" ] [ text "ever this day be at my side," ]
+            , span [ class "block" ] [ text "to light and guard, to rule and guide." ]
+            , span [ class "block" ] [ text "Amen." ]
+            ]
+        ]
+
+
+aboutThePrayer : Html msg
+aboutThePrayer =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [] [ text "About the Guardian Angel Prayer" ]
+        , p [ class "my-3" ] [ text "" ]
+        ]
+
+
+scripture : Html msg
+scripture =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "mb-10" ] [ text "Scripture" ]
+        , p [ class "" ]
+            [ text "We find a reference to guardian angels in Jesus' parable of the Lost Sheep. He talks about the guardian angels of the little ones and how their angels always look upon the face of God the Father in heaven." ]
+        , p [ class "my-3 font-semibold" ]
+            [ text """See that you do not despise one of these little ones, for I say to you that their angels in heaven always look upon the face of my heavenly Father.  - Matthew 18:10 """ ]
+        , p [ class "" ]
+            [ text
+                ("We also find a reference to guardian angels in Acts of the Apostles when Peter knocked on the gateway door at the house of Mary, the mother of Mark. Rhonda was excited to hear his voice so she ran to the others to announce his arrival."
+                    ++ " But they didn't believe her and thought it was Peter's angel."
+                )
+            ]
+        , p [ class "my-3 font-semibold" ]
+            [ span [ class "italic" ] [ text """ Angelus eius est! """ ]
+            , span [] [ text """- "It's his angel!" - Acts 12:15 """ ]
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ text
+                    " See on what intimate terms the early Christians were with their guardian angels. And what about you? "
+                ]
+            , p
+                [ class "mt-2" ]
+                [ text "St Josemaría Escrivá, The Way, 570"
+                ]
+            ]
+        ]
+
+
+tradition : Html msg
+tradition =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "mb-10" ] [ text "Tradition" ]
+        , p [ class "" ]
+            [ text "We can find some of our early church fathers talking about guardian angels." ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ text "For regiments of angels are distributed over nations and cities; and perhaps some even are assigned to particular individuals."
+                ]
+            , p
+                [ class "mt-2" ]
+                [ text "Clement of Alexandria, Miscellanies 6.17"
+                ]
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ text "High dignity of souls, that each from its birth has an Angel set in charge over it!"
+                ]
+            , p
+                [ class "mt-2" ]
+                [ text "St. Jerome"
+                ]
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ text "Beside each believer stands an angel as protector and shepherd leading him to life."
+                ]
+            , p
+                [ class "mt-2" ]
+                [ text "St. Basil, Adv. Eunomium III, 1: PG 29, 656B"
+                ]
+            ]
+        ]
+
+
+magisterialTeachings : Html msg
+magisterialTeachings =
+    div
+        [ class "mx-auto col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "mb-10" ] [ text "Popes and The Magisterium" ]
+        , p [ class "" ]
+            [ text "We can also find popes and magisterial teachings on the care of angels over us." ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ text "From its beginning until death, human life is surrounded by their watchful care and intercession."
+                ]
+            , p
+                [ class "mt-2" ]
+                [ text "CCC 336"
+                ]
+            ]
+        , blockquote
+            [ Html.Attributes.cite ""
+            , class "my-10"
+            , class "rounded p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800"
+            , class "italic"
+            ]
+            [ p
+                [ class "inline"
+                , class "text-gray-500 dark:text-gray-400"
+                ]
+                [ text "Dear friends, the Lord is ever close and active in humanity’s history and accompanies us with the unique presence of his Angels, whom today the Church venerates as “Guardian Angels”, that is, ministers of the divine care for every human being. From the beginning until the hour of death, human life is surrounded by their constant protection."
+                ]
+            , p
+                [ class "mt-2" ]
+                [ text "Pope Benedict XVI, Angelus, Oct. 2, 2011]"
+                ]
+            ]
+        ]
+
+
+viewAnotherPage : Html msg
+viewAnotherPage =
+    div
+        [ class "mx-auto my-4 col-span-2 w-full"
+        , class "text-lg"
+        , class "py-5"
+        , class "max-w-3xl"
+        ]
+        [ h2 [ class "font-bold leading-9" ] [ text "Saint Michael Animation" ]
+        , p [ class "my-10" ] [ text "Make sure to also check our our Saint Michael Animation! Learn the St. Michael Prayer with Theo and Felicity!" ]
+        , a
+            [ href "/animations/prayertimewithangels/1/saintmichaelprayer"
+            , class "hover:scale-105 transition ease-in-out duration-50"
+            , attribute "aria-label" "See the Saint Michael animation"
+            ]
+            [ img
+                [ src "/assets/images/AnimationImageLinks/SaintMichael.png"
+                , style "border-radius" "5px"
+                , style "width" "-webkit-fill-available"
+                , alt "Saint Michael Animations"
+                ]
+                []
+            ]
+        ]
