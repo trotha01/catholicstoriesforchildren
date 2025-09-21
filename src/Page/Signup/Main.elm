@@ -13,7 +13,7 @@ type alias Model =
     {}
 
 
-main : Program () Model Msg
+main : Program () Model msg
 main =
     Browser.element
         { init = \_ -> ( {}, Cmd.none )
@@ -23,12 +23,12 @@ main =
         }
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : msg -> Model -> ( Model, Cmd msg )
 update msg model =
     ( model, Cmd.none )
 
 
-view : Model -> Html Msg
+view : Model -> Html msg
 view model =
     div
         [ style "height" "100vh"
@@ -48,7 +48,7 @@ view model =
         ]
 
 
-viewBody : Model -> Html Msg
+viewBody : Model -> Html msg
 viewBody model =
     div
         [ class "max-w-lg"
