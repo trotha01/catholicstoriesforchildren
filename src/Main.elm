@@ -1,6 +1,5 @@
 module Main exposing (Model, main, view)
 
-import Page.Animations.Helpers.Carousel as Carousel
 import Page.Animations.View as AnimationsView
 import Browser
 import Browser.Dom as Dom
@@ -360,26 +359,13 @@ viewHome model =
 
 
 viewBody : Model -> Html.Html Msg
-viewBody model =
-    div
-        [ class "text-lg leading-loose"
-        , class "lg:text-2xl"
-        ]
-        [ viewSlideshow model
-        , viewClaritasStudios
-        , viewMission
-        , viewSanctifyScreenTime
-        , viewTechnologyArtCollide
-        , viewWhatPeopleSaying
-        , viewSupportMission
-        ]
-
-
-viewSlideshow : Model -> Html.Html Msg
-viewSlideshow model =
-    div
-        [ class "logo-section-bg"
-        ]
-        [ Carousel.viewSlides model.animationsPageModel.slideshow AnimationsView.NextSlide AnimationsView.PrevSlide
-            |> Html.map ProductionsMsg
+viewBody _ =
+    div []
+        [ viewHeroSection
+        , viewMissionPillars
+        , viewFeaturedStories
+        , viewStudioApproach
+        , viewTestimonialSpotlight
+        , viewSupportInvitation
+        , viewStayConnected
         ]

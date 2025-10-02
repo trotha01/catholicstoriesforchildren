@@ -1,106 +1,124 @@
-.mission-background,
-.sanctify-screen-time-background,
-.technology-art-collide-background,
-.what-people-saying-background,
-.support-mission-background {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left center;
-    height: 700px;
+:root {
+    --home-cream: #fef7f4;
+    --home-amber: #f5a524;
+    --home-rose: #f472b6;
+    --home-sky: #7dd3fc;
 }
 
-/* Specific gradients and image backgrounds */
+.home-hero {
+    background-color: var(--home-cream);
+}
 
-.logo-section-bg {
+.home-hero-backdrop {
+    background:
+        radial-gradient(120% 120% at 0% 0%, rgba(250, 194, 133, 0.35) 0%, rgba(250, 194, 133, 0) 55%),
+        radial-gradient(90% 90% at 100% 0%, rgba(125, 211, 252, 0.38) 0%, rgba(125, 211, 252, 0) 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.home-hero-card {
     position: relative;
+}
+
+.home-hero-card::before,
+.home-hero-card::after {
+    content: "";
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(50px);
+    opacity: 0.45;
+    z-index: -1;
+}
+
+.home-hero-card::before {
+    inset: auto auto -60px -80px;
+    width: 180px;
+    height: 180px;
+    background: rgba(245, 165, 36, 0.5);
+}
+
+.home-hero-card::after {
+    inset: -40px -60px auto auto;
+    width: 220px;
+    height: 220px;
+    background: rgba(125, 211, 252, 0.45);
+}
+
+.home-hero-illustration {
     background-image: url('/assets/images/home/hero-section-bg.webp');
     background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    z-index: 0;
-    overflow: hidden;
+    background-position: center;
+    opacity: 0.5;
 }
 
-/* Dark overlay using ::before */
-.logo-section-bg::before {
-    content: '';
+.mission-card::before {
+    content: "";
+    position: absolute;
+    inset: -40% 30% auto -20%;
+    height: 160px;
+    border-radius: 9999px;
+    background: rgba(245, 165, 36, 0.15);
+    filter: blur(80px);
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.mission-card:hover::before {
+    opacity: 0.45;
+    transform: translate3d(6px, -6px, 0);
+}
+
+.story-card {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 25px 45px -28px rgba(30, 41, 59, 0.35);
+}
+
+.story-card-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: screen;
     pointer-events: none;
-    filter: brightness(50%);
 }
 
-
-.logo-section-bg>* {
-    position: relative;
-    z-index: 2;
+.home-approach-panel::after {
+    content: "";
+    position: absolute;
+    inset: auto -120px -120px auto;
+    width: 260px;
+    height: 260px;
+    border-radius: 9999px;
+    background: rgba(244, 114, 182, 0.28);
+    filter: blur(100px);
+    pointer-events: none;
 }
 
-
-.mission-background {
-    background-image: linear-gradient(0deg,
-            rgba(219, 56, 138, 0.78),
-            rgba(219, 56, 138, 0.78)),
-        url('/assets/images/home/lets-become-saints-bg.webp');
+.home-testimonial-backdrop {
+    background:
+        radial-gradient(120% 120% at 50% 0%, rgba(125, 211, 252, 0.18) 0%, rgba(125, 211, 252, 0) 70%),
+        radial-gradient(100% 100% at 20% 100%, rgba(244, 114, 182, 0.18) 0%, rgba(244, 114, 182, 0) 70%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.6) 100%);
 }
 
-.sanctify-screen-time-background {
-    background-image: linear-gradient(0deg,
-            rgba(0, 64, 159, 0.78),
-            rgba(0, 64, 159, 0.78)),
-        url('/assets/images/home/sanctify-screen-time-bg.webp');
+.home-newsletter {
+    background: radial-gradient(140% 140% at 0% 100%, rgba(245, 165, 36, 0.68) 0%, rgba(245, 165, 36, 0.15) 55%),
+        radial-gradient(120% 120% at 100% 0%, rgba(125, 211, 252, 0.65) 0%, rgba(125, 211, 252, 0.2) 60%),
+        #f69e7b;
 }
 
-.technology-art-collide-background {
-    background-image: linear-gradient(0deg,
-            rgba(175, 0, 219, 0.78),
-            rgba(175, 0, 219, 0.78)),
-        url('/assets/images/home/technology-art-collide-bg.webp');
-    background-position: top;
+.home-newsletter-overlay {
+    background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18) 0, rgba(255, 255, 255, 0) 55%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.18) 0, rgba(255, 255, 255, 0) 55%),
+        radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.18) 0, rgba(255, 255, 255, 0) 55%);
+    opacity: 0.6;
 }
 
-.what-people-saying-background {
-    background-image: linear-gradient(0deg,
-            rgba(255, 88, 6, 0.78),
-            rgba(255, 88, 6, 0.78)),
-        url('/assets/images/home/what-people-saying-bg.webp');
-}
-
-.support-mission-background {
-    background-image: linear-gradient(0deg,
-            rgba(84, 0, 159, 0.78),
-            rgba(84, 0, 159, 0.78)),
-        url('/assets/images/home/support-mission-bg.webp');
-}
-
-
-
-@media (max-width: 640px) {
-    .mission-background {
-        height: 500px;
+@media (max-width: 768px) {
+    .home-hero-card::before,
+    .home-hero-card::after {
+        opacity: 0.3;
     }
 
-    .sanctify-screen-time-background {
-        background-position: top;
-        height: 500px;
-    }
-
-    .technology-art-collide-background {
-        background-position: top;
-        height: 500px;
-    }
-
-    .what-people-saying-background {
-        height: 500px;
-    }
-
-    .support-mission-background {
-        height: 500px;
-    }
-
-    .logo-section-bg {
-        background-size: cover;
+    .home-hero-illustration {
+        opacity: 0.4;
     }
 }
