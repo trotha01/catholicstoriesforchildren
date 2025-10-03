@@ -72,6 +72,8 @@ episodes =
             , urdu = "https://www.youtube.com/embed/uG7xjTRSSaI"
             , asl = ""
             }
+      , year = "2023"
+      , duration = "5 min"
       }
     , { title = "Saint Michael Prayer"
       , thumbnail = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.png"
@@ -98,6 +100,8 @@ episodes =
             , urdu = "https://www.youtube.com/embed/5ROHimFlar8?si=nlttq8zg2KthJSE1"
             , asl = ""
             }
+      , year = "2023"
+      , duration = "4 min"
       }
     , { title = "Act of Contrition Prayer"
       , thumbnail = "/assets/images/AnimationImageLinks/PTWA/AOC.png"
@@ -124,6 +128,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "6 min"
       }
     , { title = "Prayer Before Meals"
       , thumbnail = "/assets/images/AnimationImageLinks/PTWA/PrayerBeforeMeals.png"
@@ -150,6 +156,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = ""
+      , duration = ""
       }
     , { title = "St Anthony"
       , thumbnail = "/assets/images/AnimationImageLinks/PTWA/SaintAnthony.png"
@@ -176,6 +184,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = ""
+      , duration = ""
       }
     ]
 

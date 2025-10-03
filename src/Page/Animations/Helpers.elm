@@ -55,6 +55,8 @@ type alias Episode msg =
         , urdu : String
         , asl : String
         }
+    , year : String
+    , duration : String
     }
 
 

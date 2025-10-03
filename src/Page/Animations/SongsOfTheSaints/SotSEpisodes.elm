@@ -57,7 +57,7 @@ stThereseEpisode =
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
-    , link = ""
+    , link = "/animations/songsofthesaints/1/saintthérèseoflisieux"
     , about = thereseVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -77,6 +77,8 @@ stThereseEpisode =
         , urdu = ""
         , asl = ""
         }
+    , year = "2025"
+    , duration = "3 min"
     }
 
 
@@ -87,7 +89,7 @@ carloEpisode =
     , releaseDate = Time.millisToPosix 1741359600000 -- Friday, March 7, 2025 7:00:00 AM GMT-08:00
     , isDisabled = False
     , isFundraising = False
-    , link = ""
+    , link = "/animations/songsofthesaints/1/carloacutis"
     , about = carloVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -107,6 +109,8 @@ carloEpisode =
         , urdu = ""
         , asl = ""
         }
+    , year = "2025"
+    , duration = "4 min"
     }
 
 
@@ -117,7 +121,7 @@ josephEpisode =
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
-    , link = ""
+    , link = "/animations/songsofthesaints/1/saintjoseph"
     , about = josephVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -137,6 +141,8 @@ josephEpisode =
         , urdu = ""
         , asl = ""
         }
+    , year = "2025"
+    , duration = "5 min"
     }
 
 

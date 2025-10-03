@@ -169,9 +169,9 @@ viewCategories =
                                         , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
                                             [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
                                             , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
-                                            , text production.year
+                                            , text episode.year
                                             , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
-                                            , text production.duration
+                                            , text episode.duration
                                             ]
                                         ]
                                     ]

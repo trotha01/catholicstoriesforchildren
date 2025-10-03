@@ -53,6 +53,8 @@ episodes =
             , urdu = "https://www.youtube.com/embed/NN7gd5xqDw8?si=tUB20FMCCdN2Mafx"
             , asl = "https://www.youtube.com/embed/QNVNbLiqznI?playlist=QNVNbLiqznI&loop=1"
             }
+      , year = "2020"
+      , duration = "3 min"
       }
     ]
 

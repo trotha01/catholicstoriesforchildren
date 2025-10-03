@@ -1,8 +1,8 @@
 module Page.Animations.DaisyAndSheep.DASEpisodes exposing (..)
 
-import Page.Animations.Helpers exposing (Episode, Season)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Page.Animations.Helpers exposing (Episode, Season)
 import Time exposing (Month(..))
 
 
@@ -64,6 +64,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Astronomy Program"
       , thumbnail = "/assets/images/AnimationImageLinks/AstronomyProgram.png"
@@ -90,6 +92,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Penitential Act"
       , thumbnail = "/assets/images/AnimationImageLinks/PenitentialAct.png"
@@ -116,6 +120,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Guardian Angel"
       , thumbnail = "/assets/images/AnimationImageLinks/GuardianAngel.png"
@@ -142,6 +148,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Gospel as Living Word"
       , thumbnail = "/assets/images/AnimationImageLinks/GospelAsLivingWord.png"
@@ -168,6 +176,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The Virgin Mary, Mother"
       , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.png"
@@ -194,6 +204,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Prayer of the Faithful"
       , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.png"
@@ -220,6 +232,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Communion of Saints"
       , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.png"
@@ -246,6 +260,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Eucharistic Wine"
       , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.png"
@@ -272,6 +288,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Pope Names"
       , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.png"
@@ -298,6 +316,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Preparing the Altar"
       , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.png"
@@ -324,6 +344,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Being a Saint"
       , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.png"
@@ -350,6 +372,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Holy Holy Holy"
       , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.png"
@@ -376,6 +400,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Doctors of the Church"
       , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.png"
@@ -402,6 +428,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Dewfall"
       , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.png"
@@ -428,6 +456,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The Sacraments"
       , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.png"
@@ -454,6 +484,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The Lamb of God"
       , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.png"
@@ -480,6 +512,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The 7 Gifts"
       , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.png"
@@ -506,6 +540,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Transubstantiation"
       , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.png"
@@ -532,6 +568,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Ash Wednesday"
       , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.png"
@@ -558,6 +596,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Liturgical Colors"
       , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.png"
@@ -584,6 +624,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Easter"
       , thumbnail = "/assets/images/AnimationImageLinks/Easter.png"
@@ -610,6 +652,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Vatican Bank"
       , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.png"
@@ -636,6 +680,8 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Church Meaning"
       , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.png"
@@ -662,5 +708,7 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     ]
