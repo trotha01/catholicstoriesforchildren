@@ -135,7 +135,7 @@ viewCategories =
             in
             div [ class "mb-16" ]
                 [ h2 [ class "text-white text-2xl font-bold mb-4 px-4 md:px-12" ] [ text production.title ]
-                , div [ class "relative group" ]
+                , div [ class "relative" ]
                     [ div
                         [ class "flex overflow-x-auto space-x-4 px-4 md:px-12 pb-4 scrollbar-hide"
                         , class "flex-none cursor-pointer"
@@ -144,14 +144,14 @@ viewCategories =
                         (List.map
                             (\episode ->
                                 div
-                                    [ class "flex-none w-64 md:w-80 p-2"
+                                    [ class "flex-none w-64 md:w-80 p-2 group"
                                     ]
                                     [ a [ href episode.link ]
                                         [ div 
                                             [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0" 
-                                            , class "transition-all duration-300 hover:scale-[1.02]"
-                                            , class "hover:before:border-4 rounded-lg"
-                                            , class "before:absolute before:inset-[-7px] before:rounded-lg hover:before:border hover:before:border-white"
+                                            , class "transition-all duration-300 group-hover:scale-[1.02]"
+                                            , class "group-hover:before:border-[4px] rounded-lg"
+                                            , class  "before:absolute before:inset-[-7px] before:rounded-lg group-hover:before:border group-hover:before:border-white"
                                             ]
                                             [ div [ class "aspect-video rounded-lg overflow-hidden" ]
                                                 [ img
@@ -163,11 +163,11 @@ viewCategories =
                                                 ]
                                             ]
                                         ]
-                                    , div [ class "px-1" ]
-                                        [ h3 [ class "text-white font-semibold mb-1" ]
+                                    , div [ class "px-1 transition-colors duration-300 group-hover:text-white" ]
+                                        [ h3 [ class "text-gray-300 font-semibold mb-1 transition-colors duration-300 group-hover:text-white" ]
                                             [ text episode.title ]
-                                        , div [ class "flex items-center text-gray-400 text-sm" ]
-                                            [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded" ] [ text production.age ]
+                                        , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
+                                            [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
                                             , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
                                             , text production.year
                                             , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
