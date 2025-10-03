@@ -15,6 +15,8 @@ import Page.Home.Sections exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Component.Navigation.View as NavigationPage
+import Svg exposing (circle, path, polygon, svg)
+import Svg.Attributes
 import Page.Newsroom.ViewPress as ViewPress exposing (..)
 import Page.NotFound.Main as NotFoundPage
 import Page.Prayer.Angelus.View as AngelusPage
@@ -362,24 +364,11 @@ viewHome model =
 viewBody : Model -> Html.Html Msg
 viewBody model =
     div
-        [ class "text-lg leading-loose"
-        , class "lg:text-2xl"
-        ]
-        [ viewSlideshow model
-        , viewClaritasStudios
-        , viewMission
-        , viewSanctifyScreenTime
-        , viewTechnologyArtCollide
-        , viewWhatPeopleSaying
-        , viewSupportMission
-        ]
-
-
-viewSlideshow : Model -> Html.Html Msg
-viewSlideshow model =
-    div
-        [ class "logo-section-bg"
-        ]
+        [ class "min-h-screen" ]
         [ Carousel.viewSlides model.animationsPageModel.slideshow AnimationsView.NextSlide AnimationsView.PrevSlide
             |> Html.map ProductionsMsg
+        , viewMission
+        , viewWhatPeopleSaying
+        , viewStayConnected
+        , viewSupportMission
         ]

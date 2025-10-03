@@ -2,6 +2,7 @@ module Page.Home.Sections exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Page.Signup as Signup
 
 
 viewClaritasStudios : Html msg
@@ -29,17 +30,23 @@ viewClaritasStudios =
 
 viewMission : Html msg
 viewMission =
-    div
-        [ class "relative flex items-center mission-background" ]
-        [ div [ class "text-white w-full px-20 sm:px-6 lg:px-8 py-20" ]
-            [ h1 [ class "text-4xl md:text-5xl font-bold mb-2 tracking-tight text-left", style "font-family" "Lora" ]
-                [ text "Let’s Become Saints Together" ]
-
-            -- , h2 [ class "text-xl md:text-2xl font-light uppercase tracking-widest mb-4 text-left border-b border-white inline-block pb-1" ]
-            --     [ text "Our Mission" ]
-            , p [ class "max-w-2xl text-lg md:text-xl leading-relaxed text-left mt-4" ]
-                [ text "We are a Catholic non-profit animation studio with the mission of inspiring people of all ages to become the saints they were destined to be." ]
-            ]
+    let
+        missionFeature title description =
+            div [ class "flex items-start space-x-4 mb-4" ]
+                [ span [ class "text-2xl text-purple-500" ] [ text "•" ]
+                , div []
+                    [ h3 [ class "font-semibold text-lg" ] [ text title ]
+                    , p [ class "text-sm opacity-80" ] [ text description ]
+                    ]
+                ]
+    in
+    div [ class "bg-gray-900 py-16 px-6 text-white" ]
+        [ h2 [ class "text-3xl md:text-4xl font-bold mb-4" ] [ text "Our Mission" ]
+        , p [ class "max-w-2xl text-lg mb-8" ] [ text "Claritas Studios is a nonprofit dedicated to bringing the beauty of Catholic faith to life through engaging animation and storytelling. We create high-quality content that helps children learn prayers, discover inspiring saints, and explore the richness of Catholic tradition." ]
+        , missionFeature "Faith Formation" "Building strong spiritual foundations"
+        , missionFeature "Educational Excellence" "Combining entertainment with learning"
+        , missionFeature "Family-Centered" "Content that brings families together"
+        , missionFeature "Artistic Innovation" "High-quality animation and storytelling"
         ]
 
 
@@ -79,34 +86,124 @@ viewTechnologyArtCollide =
 
 viewWhatPeopleSaying : Html msg
 viewWhatPeopleSaying =
-    div
-        [ class "relative flex items-center what-people-saying-background" ]
-        [ div [ class "text-white w-full px-20 sm:px-6 lg:px-8 py-20" ]
-            [ h1 [ class "text-4xl md:text-5xl font-bold mb-2 tracking-tight text-left", style "font-family" "Lora" ]
-                [ text "What People are Saying" ]
-            , a [ href "/press" ]
-                [ h2 [ class "text-xl md:text-2xl font-light uppercase tracking-widest mb-4 text-left border-b border-white inline-block pb-1" ]
-                    [ text "PRESS & TESTIMONIALS" ]
+    let
+        stars : Html msg
+        stars =
+            div [ class "flex text-yellow-400 mb-2" ]
+                [ span [ class "text-2xl" ] [ text "★★★★★" ] ]
+
+        testimonial : String -> String -> Html msg
+        testimonial quote author =
+            div [ class "border-l-4 border-indigo-500 pl-4 mb-8" ]
+                [ stars
+                , p [ class "text-gray-300 italic mb-2" ] [ text quote ]
+                , p [ class "text-sm text-gray-500" ] [ text author ]
                 ]
-            , p [ class "max-w-2xl text-lg md:text-xl leading-relaxed text-left mt-4" ]
-                [ text "These animated stories have already impacted the lives of thousands of Catholic families. See what God is doing through media." ]
-            ]
+    in
+    div [ class "bg-gray-800 py-16 px-6 text-white" ]
+        [ h2 [ class "text-3xl md:text-4xl font-bold mb-6" ] [ text "What Parents Are Saying" ]
+        , testimonial "\"Our children absolutely love these stories! They're beautifully animated and teach important lessons about our faith.\"" "- Maria T., Mother of 3"
+        , testimonial "\"Finally, quality Catholic content we can trust! These stories have become part of our bedtime routine.\"" "- James R., Father of 2"
         ]
+
 
 
 viewSupportMission : Html msg
 viewSupportMission =
-    div
-        [ class "relative flex items-center support-mission-background" ]
-        [ div [ class "text-white w-full px-20 sm:px-6 lg:px-8 py-20" ]
-            [ h1 [ class "text-4xl md:text-5xl font-bold mb-2 tracking-tight text-left", style "font-family" "Lora" ]
-                [ text "How to Support our Mission" ]
-            , a
-                [ href "/give" ]
-                [ h2 [ class "text-xl md:text-2xl font-light uppercase tracking-widest mb-4 text-left border-b border-white inline-block pb-1" ]
-                    [ text "CONNECT & CONTRIBUTE" ]
+    div [ class "bg-black py-20 px-6 text-center text-white" ]
+        [ span [ class "text-4xl mb-4 block text-purple-500" ] [ text "❤" ]
+        , h2 [ class "text-3xl md:text-4xl font-bold mb-4" ] [ text "Support Our Mission" ]
+        , p [ class "max-w-3xl mx-auto text-lg mb-8" ] [ text "As a nonprofit, we rely on the generosity of families like yours to continue creating beautiful Catholic content. Your support helps us produce more stories and reach more children." ]
+        , div [ class "flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4" ]
+            [ a [ href "/give", class "bg-purple-700 text-white px-6 py-3 rounded-md font-semibold" ] [ text "Make a Donation" ]
+            , a [ href "/give", class "border border-purple-700 text-purple-700 px-6 py-3 rounded-md font-semibold" ] [ text "Become a Monthly Supporter" ]
+            ]
+        ]
+
+
+viewCategories : Html msg
+viewCategories =
+    let
+        categories : List ( String, List ( String, String, String ) )
+        categories =
+            [ ( "Praying with Angels"
+              , [ ( "Guardian Angel Prayer", "5m", "from-blue-600 to-blue-800" )
+                , ( "Angel of God", "3m", "from-indigo-600 to-indigo-800" )
+                , ( "St. Michael Prayer", "6m", "from-purple-600 to-purple-800" )
+                , ( "Morning Offering", "3m", "from-violet-600 to-violet-800" )
+                , ( "Angel Prayers", "5m", "from-fuchsia-600 to-fuchsia-800" )
                 ]
-            , p [ class "max-w-2xl text-lg md:text-xl leading-relaxed text-left mt-4" ]
-                [ text "Animation takes a lot of time and resources. By supporting our non-profit, we can connect millions of future saints all over the world and bring the light of faith." ]
+              )
+            , ( "Songs of the Saints"
+              , [ ( "St. Francis Song", "3m", "from-green-600 to-green-800" )
+                , ( "St. Patrick's Hymn", "4m", "from-teal-600 to-teal-800" )
+                , ( "St. Clare's Song", "3m", "from-cyan-600 to-cyan-800" )
+                , ( "St. Joseph's Song", "4m", "from-orange-600 to-orange-800" )
+                , ( "St. Thérèse Song", "3m", "from-pink-600 to-pink-800" )
+                ]
+              )
+            , ( "Daisy and Sheep"
+              , [ ( "Daisy Learns to Pray", "8m", "from-yellow-500 via-yellow-600 to-amber-600" )
+                , ( "Sheep’s Big Day", "7m", "from-green-600 to-green-800" )
+                , ( "Garden Adventures", "5m", "from-lime-600 to-green-700" )
+                , ( "Helping Friends", "8m", "from-emerald-600 to-teal-700" )
+                , ( "Sunday Morning", "7m", "from-sky-600 to-blue-700" )
+                ]
+              )
+            , ( "Praying with the Saints"
+              , [ ( "St. Francis Prayer", "6m", "from-emerald-700 to-teal-800" )
+                , ( "St. Thérèse's Way", "7m", "from-rose-600 to-pink-700" )
+                , ( "St. Patrick's Breastplate", "8m", "from-green-700 to-green-900" )
+                , ( "St. Ignatius Prayer", "6m", "from-blue-600 to-blue-800" )
+                , ( "St. Teresa of Avila", "7m", "from-purple-600 to-purple-800" )
+                ]
+              )
+            ]
+
+        viewCategoryRow ( title, items ) =
+            div [ class "mb-10" ]
+                [ h2 [ class "text-2xl md:text-3xl font-bold text-white mb-4" ] [ text title ]
+                , div [ class "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" ]
+                    (List.map
+                        (\( name, duration, colors ) ->
+                            div [ class ("p-4 rounded-lg text-white bg-gradient-to-r " ++ colors) ]
+                                [ h3 [ class "font-semibold text-lg" ] [ text name ]
+                                , p [ class "text-sm opacity-80" ] [ text duration ]
+                                ]
+                        )
+                        items
+                    )
+                ]
+    in
+    div [ class "bg-black py-16 px-6 text-white" ] (List.map viewCategoryRow categories)
+
+
+
+
+
+substackEmbedUrl : String
+substackEmbedUrl =
+    "https://blog.claritasstudios.com/embed"
+
+
+viewStayConnected : Html msg
+viewStayConnected =
+    div [ class "bg-gradient-to-r from-purple-600 to-indigo-600 py-16 px-6 text-center text-white" ]
+        [ h2 [ class "text-3xl md:text-4xl font-bold mb-2" ] [ text "Stay Connected" ]
+        , p [ class "mb-8 text-lg max-w-3xl mx-auto" ]
+            [ text "Get notified about new stories, activities, and special content for your family." ]
+        , div [ class "max-w-3xl mx-auto" ]
+            [ node "iframe"
+                [ attribute "src" substackEmbedUrl
+                , attribute "title" "Substack Signup"
+                , attribute "frameborder" "0"
+                , attribute "scrolling" "no"
+                , attribute "loading" "lazy"
+                , style "width" "100%"
+                , style "height" "220px"
+                , style "background" "transparent"
+                , class "rounded"
+                ]
+                []
             ]
         ]

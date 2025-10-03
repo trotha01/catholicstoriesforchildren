@@ -6,67 +6,47 @@ import Html.Attributes exposing (..)
 
 viewFooter : Html msg
 viewFooter =
-    div [ class "text-white py-20 px-20 space-y-6", style "background" "black" ]
-        [ h2 [ class "text-4xl font-bold" ] [ text "Follow Us" ]
-        , div [ class "flex space-x-6 pt-2" ]
-            [ a [ href "https://www.instagram.com/claritasstudios", target "_blank" ]
-                [ img
-                    [ src "/assets/instagram-logo.webp"
-                    , attribute "srcset" "/assets/instagram-logo.webp 1x, /assets/instagram-logo@2x.webp 2x"
-                    , alt "Instagram"
-                    , class "rounded-full object-cover"
-                    , width 48
-                    , height 48
-                    , attribute "loading" "lazy"
-                    , attribute "decoding" "async"
-                    ]
-                    []
+    footer [ class "bg-black text-white pt-16 pb-10 px-6 md:px-12 border-t border-white/10" ]
+        [ div [ class "max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10" ]
+            [ div []
+                [ h3 [ class "text-xl font-semibold mb-2" ] [ text "Claritas Studios" ]
+                , p [ class "text-sm opacity-80" ] [ text "A 501(c)(3) nonprofit bringing Catholic stories to life through animation." ]
                 ]
-            , a [ href "https://www.facebook.com/claritasstudios", target "_blank" ]
-                [ img
-                    [ src "/assets/facebook.webp"
-                    , attribute "srcset" "/assets/facebook.webp 1x, /assets/facebook@2x.webp 2x"
-                    , alt "Facebook"
-                    , class "rounded-full object-cover"
-                    , width 48
-                    , height 48
-                    , attribute "loading" "lazy"
-                    , attribute "decoding" "async"
+            , div []
+                [ h4 [ class "text-lg font-semibold mb-2" ] [ text "Browse" ]
+                , ul [ class "space-y-2" ]
+                    [ li [] [ a [ href "/saints", class "hover:underline" ] [ text "Saints" ] ]
+                    , li [] [ a [ href "/prayers", class "hover:underline" ] [ text "Prayers" ] ]
+                    , li [] [ a [ href "/animations", class "hover:underline" ] [ text "Animations" ] ]
+                    , li [] [ a [ href "/feastdayactivities", class "hover:underline" ] [ text "Feast Day Calendar" ] ]
+                    , li [] [ a [ href "https://shop.claritasstudios.com", class "hover:underline" ] [ text "Shop" ] ]
                     ]
-                    []
                 ]
-            , a [ href "https://www.pinterest.com/claritasstudios", target "_blank" ]
-                [ img
-                    [ src "/assets/pinterest.webp"
-                    , attribute "srcset" "/assets/pinterest.webp 1x, /assets/pinterest@2x.webp 2x"
-                    , alt "Pinterest"
-                    , class "rounded-full object-cover"
-                    , width 48
-                    , height 48
-                    , attribute "loading" "lazy"
-                    , attribute "decoding" "async"
+            , div []
+                [ h4 [ class "text-lg font-semibold mb-2" ] [ text "About" ]
+                , ul [ class "space-y-2" ]
+                    [ li [] [ a [ href "/#mission", class "hover:underline" ] [ text "Our Mission" ] ]
+                    , li [] [ a [ href "/give", class "hover:underline" ] [ text "Support Us" ] ]
+                    , li [] [ a [ href "/contact", class "hover:underline" ] [ text "Contact" ] ]
                     ]
-                    []
                 ]
-            , a [ href "https://www.youtube.com/@claritasstudios", target "_blank" ]
-                [ img
-                    [ src "/assets/youtube.webp"
-                    , attribute "srcset" "/assets/youtube.webp 1x, /assets/youtube@2x.webp 2x"
-                    , alt "YouTube"
-                    , class "rounded-full object-cover"
-                    , width 48
-                    , height 48
-                    , attribute "loading" "lazy"
-                    , attribute "decoding" "async"
+            , div []
+                [ h4 [ class "text-lg font-semibold mb-2" ] [ text "Connect" ]
+                , ul [ class "space-y-2" ]
+                    [ li [] [ a [ href "https://www.youtube.com/@claritasstudios", target "_blank", class "hover:underline" ] [ text "YouTube" ] ]
+                    , li [] [ a [ href "https://www.facebook.com/claritasstudios", target "_blank", class "hover:underline" ] [ text "Facebook" ] ]
+                    , li [] [ a [ href "https://www.instagram.com/claritasstudios", target "_blank", class "hover:underline" ] [ text "Instagram" ] ]
+                    , li [] [ a [ href "https://www.pinterest.com/claritasstudios", target "_blank", class "hover:underline" ] [ text "Pinterest" ] ]
+                    , li [] [ a [ href "https://blog.claritasstudios.com/", target "_blank", class "hover:underline" ] [ text "Blog" ] ]
                     ]
-                    []
                 ]
             ]
-        , p [ class "text-lg pt-5" ]
-            [ text "Copyright © 2025 Claritas Studios. All rights reserved." ]
-        , div [ class "space-x-2 text-lg" ]
-            [ a [ href "/about/privacy-policy", class "underline hover:text-gray-300", style "margin-right" "6px" ] [ text "Privacy Policy" ]
-            , text "|"
-            , a [ href "/about/terms-and-conditions", class "underline hover:text-gray-300", style "margin-left" "6px" ] [ text "Terms & Conditions" ]
+        , div [ class "max-w-7xl mx-auto mt-10 pt-6 border-t border-white/10 text-sm flex flex-col md:flex-row items-center md:justify-between gap-3" ]
+            [ div [] [ text "© 2025 Claritas Studios. All rights reserved." ]
+            , div [ class "space-x-3" ]
+                [ a [ href "/about/privacy-policy", class "hover:underline" ] [ text "Privacy Policy" ]
+                , text "•"
+                , a [ href "/about/terms-and-conditions", class "hover:underline" ] [ text "Terms & Conditions" ]
+                ]
             ]
         ]

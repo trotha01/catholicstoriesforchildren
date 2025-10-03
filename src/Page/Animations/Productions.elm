@@ -10,12 +10,16 @@ import Html exposing (..)
 
 productions : List (Production msg)
 productions =
-    [ { title = "Hail Mary"
+        [ { title = "Hail Mary"
       , thumbnail = "/assets/images/AnimationImageLinks/HailMary.webp"
       , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/HailMary.webp"
       , link = "/animations/hailmary"
       , about = span [] []
       , seasons = HM.seasons
+      , shortDescription = "Learn one of the most beautiful prayers in the Catholic tradition. A prayer of love and devotion to our Blessed Mother Mary."
+      , duration = "5 minutes"
+      , year = "2020"
+      , age = "Ages 2+"
       }
     , { title = "Prayer Time with Angels"
       , thumbnail = "/assets/images/AnimationImageLinks/PrayerTimeWithAngels.webp"
@@ -23,6 +27,10 @@ productions =
       , link = "/animations/prayertimewithangels"
       , about = PTWA.viewBody
       , seasons = PTWA.seasons
+      , shortDescription = "Join Theo and Felicity as they learn common Catholic prayers from their guardian angels."
+      , duration = "5 minutes"
+      , year = "2023"
+      , age = "Ages 6+"
       }
     , { title = "Daisy and Sheep"
       , thumbnail = "/assets/images/AnimationImageLinks/DaisyAndSheep.webp"
@@ -30,6 +38,10 @@ productions =
       , link = "/animations/daisyandsheep"
       , about = DAS.viewDescription
       , seasons = DAS.seasons
+      , shortDescription = "Join Daisy and Sheep as they learn about the Mass one part at a time and discover fun facts about the Catholic Church."
+      , duration = "5 minutes"
+      , year = "2024"
+      , age = "Ages 10+"
       }
     , { title = "Songs of the Saints"
       , thumbnail = "/assets/images/AnimationImageLinks/SongsOfTheSaints.webp"
@@ -37,13 +49,12 @@ productions =
       , link = "/animations/songsofthesaints"
       , about = span [] []
       , seasons = SOTS.seasons
+      , shortDescription = "Sing along with your favorite saints in this musical journey."
+      , duration = "5 minutes"
+      , year = "2025"
+      , age = "Ages 10+"
       }
     ]
-
-
-slideshowProductions : List ( String, String )
-slideshowProductions =
-    List.map (\p -> ( p.carouselThumbnail, p.link )) productions
 
 
 getEpisodeFromURLPath : String -> Int -> String -> ( Maybe (Production msg), Maybe (Season msg), Maybe (Episode msg) )

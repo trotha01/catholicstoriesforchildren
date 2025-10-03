@@ -28,7 +28,7 @@ type alias Model =
     , timezone : Time.Zone
     , videoTab : VideoOption
     , videoDetailTab : VideoDetailOption
-    , slideshow : Carousel ( String, String )
+    , slideshow : Carousel (Production Msg)
     }
 
 
@@ -68,7 +68,7 @@ init flags url key =
       , timezone = Time.utc
       , videoTab = English
       , videoDetailTab = Episodes
-      , slideshow = Carousel.init Productions.slideshowProductions
+      , slideshow = Carousel.init Productions.productions
       }
     , Cmd.batch
         [ Task.perform NewTime Time.now

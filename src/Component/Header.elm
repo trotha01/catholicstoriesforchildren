@@ -22,22 +22,22 @@ viewSubpageHeader currentPage leftMargin =
 
         ( height, gridColsClass ) =
             if isHomePage then
-                ( "111px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
+                ( "111px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
 
             else
-                ( "60px", "grid-cols-[150px_1fr_150px] lg:grid-cols-[60px_1fr_600px] xl:grid-cols-[150px_1fr_600px]" )
+                ( "60px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
     in
-    div []
-        [ viewBanner
-        , header
-            [ class "text-white logo-section-bg"
-            , class ("h-[60px] md:h-[" ++ height ++ "]")
-            , class "grid items-center justify-items-center"
-            , class gridColsClass
-            ]
-            [ viewLogo
-            , viewHeaderTitle True currentPage
-            , navigation height
+        nav
+        [ class "fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black via-black/80 to-transparent" ]
+        [ div [ class "flex items-center justify-between px-4 md:px-12 py-4" ]
+            [ div
+                [ class ("grid items-center justify-items-center w-full " ++ gridColsClass)
+                , class ("h-[60px] md:h-[" ++ height ++ "]")
+                ]
+                [ viewLogo
+                , viewHeaderTitle True currentPage
+                , navigation height
+                ]
             ]
         ]
 
@@ -61,18 +61,15 @@ viewPageHeaderNoLinks currentPage leftMargin =
             ( "60px", "grid-cols-[150px_1fr]" )
     in
     div []
-        [ viewBanner
-        , header
+        [ header
             [ style "background-color" "#43868D"
             , class ("h-[60px] md:h-[" ++ height ++ "]")
             , class "text-white"
-            , class "grid items-center justify-items-center"
+            , class "grid items-center justify-items-center px-3 md:px-6"
             , class gridColsClass
             ]
             [ viewLogo
             , viewHeaderTitle False currentPage
-
-            -- , rightHandSide height
             ]
         ]
 
@@ -108,8 +105,8 @@ viewHeaderTitle includesLinks title =
 navigation : String -> Html msg
 navigation height =
     div [ class "w-full pr-2" ]
-        [ div [ class "lg:hidden" ] [ hamburgerMenu ]
-        , div [ class "hidden lg:block w-full" ] [ desktopNavigation height ]
+        [ div [ class "xl:hidden" ] [ hamburgerMenu ]
+        , div [ class "hidden xl:block w-full" ] [ desktopNavigation height ]
         ]
 
 
@@ -128,21 +125,27 @@ hamburgerMenu =
 
 desktopNavigation : String -> Html msg
 desktopNavigation height =
-    nav
-        [ class "h-full w-full flex justify-end content-center justify-items-center gap-4 mr-4"
-        , class "text-lg"
+        nav
+        [ class "h-full w-full flex justify-end content-center justify-items-center gap-8 mr-4"
+        , class "text-lg text-white"
         ]
-        [ viewNavButton height "/feastdayactivities" "_self" "Calendar"
+        [ viewNavButton height "/animations" "_self" "Animations"
+        , viewNavButton height "/feastdayactivities" "_self" "Calendar"
         , viewNavButton height "/saints" "_self" "Saints"
-        , viewNavButton height "/animations" "_self" "Animations"
         , viewNavButton height "/resources" "_self" "Resources"
         , viewNavButton height "https://shop.claritasstudios.com/" "_blank" "Shop"
-
-        -- , viewNavButton height "/shop" "_self" "Shop"
         , viewNavButton height "https://blog.claritasstudios.com/" "_blank" "Blog"
-        , viewNavButton height "/give" "_self" "Donate"
         , viewNavButton height "/team" "_self" "About"
+        , supportUsBtn
         ]
+supportUsBtn : Html msg
+supportUsBtn =
+    a
+        [ href "/give"
+        , class "ml-2 inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold bg-[#6b4ee6] hover:bg-[#7a5fff] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6b4ee6]"
+        , class "whitespace-nowrap"
+        ]
+        [ text "Support Us" ]
 
 
 viewNavButton : String -> String -> String -> String -> Html msg

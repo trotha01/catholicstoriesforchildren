@@ -15,6 +15,10 @@ type alias Production msg =
     , about : Html msg
     , seasons : List (Season msg)
     , carouselThumbnail : String
+    , shortDescription : String
+    , duration : String
+    , year : String
+    , age : String
     }
 
 
