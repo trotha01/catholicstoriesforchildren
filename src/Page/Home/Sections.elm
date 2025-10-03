@@ -144,15 +144,16 @@ viewCategories =
                         (List.map
                             (\episode ->
                                 div
-                                    [ class "flex-none w-64 md:w-80"
+                                    [ class "flex-none w-64 md:w-80 p-2"
                                     ]
                                     [ a [ href episode.link ]
-                                        [ div [ class "relative mb-2 transition-transform duration-300 hover:scale-[1.02] hover:border hover:border-white hover:border-4 rounded-lg p-1" ]
-                                            [ div
-                                                [ class "absolute inset-0 rounded-lg"
-                                                ]
-                                                []
-                                            , div [ class "aspect-video rounded-lg overflow-hidden" ]
+                                        [ div 
+                                            [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0" 
+                                            , class "transition-all duration-300 hover:scale-[1.02]"
+                                            , class "hover:before:border-4 rounded-lg"
+                                            , class "before:absolute before:inset-[-7px] before:rounded-lg hover:before:border hover:before:border-white"
+                                            ]
+                                            [ div [ class "aspect-video rounded-lg overflow-hidden" ]
                                                 [ img
                                                     [ src episode.thumbnail
                                                     , alt episode.title
