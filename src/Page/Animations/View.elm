@@ -1,20 +1,20 @@
 module Page.Animations.View exposing (..)
 
-import Page.Animations.Helpers exposing (..)
-import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
-import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
-import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Component.Footer exposing (viewFooter)
 import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
+import Page.Animations.Helpers exposing (..)
+import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
+import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
+import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Page.Signup as Signup
 import Task
+import Theme.Layout exposing (headerMargin)
 import Time exposing (Month(..))
 import Url
 import Url.Parser exposing ((</>), (<?>), Parser, int, parse, s, string)
@@ -276,7 +276,7 @@ viewSeasonEpisodes model productionURL seasonURL =
                 Nothing ->
                     div []
                         [ img [ src production.carouselThumbnail ] []
-                        , viewEpisodes model production season.number Nothing
+                        , viewEpisodes production
                         ]
 
         _ ->
@@ -301,7 +301,7 @@ viewProductionEpisodes model productionURL =
                 Nothing ->
                     div []
                         [ img [ src production.carouselThumbnail ] []
-                        , viewEpisodes model production 1 Nothing
+                        , viewEpisodes production
                         ]
 
         _ ->
@@ -345,41 +345,52 @@ viewProductions model =
         ]
 
 
-viewEpisodes : Model -> Production msg -> Int -> Maybe (Episode msg) -> Html Msg
-viewEpisodes model production season activeEpisode =
-    div
-        [ class "hcenter"
-        ]
-        [ let
-            episodes =
-                production
+viewEpisodes : Production msg -> Html msg
+viewEpisodes production =
+            div
+                [ class "flex overflow-x-auto space-x-4 scrollbar-hide"
+                , class "flex-none cursor-pointer"
+                , style "scroll-behavior" "smooth"
+                ]
+                (production
                     |> .seasons
                     |> List.map .episodes
                     |> List.concat
-
-            episodeThumbnails =
-                List.map (episodeToThumbnailData production season) episodes
-
-            firstEpisode =
-                List.head episodes
-          in
-          if List.length episodes == 1 then
-            case firstEpisode of
-                Just e ->
-                    viewEpisode model production season e
-
-                Nothing ->
-                    div [ class "m-auto max-w-7xl" ]
-                        [ viewAnimationThumbnailsSmall activeEpisode episodeThumbnails
-                        ]
-                        |> Html.map (\_ -> NoOp)
-
-          else
-            div [ class "m-auto max-w-7xl" ]
-                [ viewAnimationThumbnailsSmall activeEpisode episodeThumbnails
-                ]
-                |> Html.map (\_ -> NoOp)
-        ]
+                    |> List.map
+                        (\episode ->
+                            div
+                                [ class "flex-none w-64 md:w-80 group pt-5 pl-5" ]
+                                [ a [ href episode.link ]
+                                    [ div
+                                        [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0"
+                                        , class "transition-all duration-300 group-hover:scale-[1.02]"
+                                        , class "group-hover:before:border-[4px] rounded-lg"
+                                        , class "before:absolute before:inset-[-7px] before:rounded-lg group-hover:before:border group-hover:before:border-white"
+                                        ]
+                                        [ div [ class "aspect-video rounded-lg overflow-hidden" ]
+                                            [ img
+                                                [ src episode.thumbnail
+                                                , alt episode.title
+                                                , class "w-full h-full object-cover"
+                                                ]
+                                                []
+                                            ]
+                                        ]
+                                    ]
+                                , div [ class "px-1 transition-colors duration-300 group-hover:text-white" ]
+                                    [ h3 [ class "text-gray-300 font-semibold mb-1 transition-colors duration-300 group-hover:text-white" ]
+                                        [ text episode.title ]
+                                    , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
+                                        [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
+                                        , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                        , text episode.year
+                                        , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                        , text episode.duration
+                                        ]
+                                    ]
+                                ]
+                        )
+                )
 
 
 viewEpisode : Model -> Production msg -> Int -> Episode msg -> Html Msg
@@ -424,7 +435,7 @@ viewEpisode model production season episode =
         , case newModel.videoDetailTab of
             Episodes ->
                 if episodeCount > 1 then
-                    viewEpisodes newModel production season (Just episode)
+                    viewEpisodes production |> Html.map (\_ -> NoOp)
 
                 else if not (String.isEmpty episode.activities.pdfLink) then
                     viewActivities episode |> Html.map (\_ -> NoOp)

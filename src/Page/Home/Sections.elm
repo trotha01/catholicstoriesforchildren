@@ -4,6 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Page.Animations.Helpers exposing (Production)
 import Page.Animations.Productions as Productions
+import Page.Animations.View exposing (viewEpisodes)
 
 
 viewClaritasStudios : Html msg
@@ -126,58 +127,13 @@ viewCategories =
     let
         viewCategoryRow : Production msg -> Html msg
         viewCategoryRow production =
-            let
-                firstSeasonEpisodes =
-                    production.seasons
-                        |> List.head
-                        |> Maybe.map .episodes
-                        |> Maybe.withDefault []
-            in
-            div [ class "mb-16" ]
-                [ h2 [ class "text-white text-2xl font-bold mb-4 px-4 md:px-12" ] [ text production.title ]
-                , div [ class "relative" ]
-                    [ div
-                        [ class "flex overflow-x-auto space-x-4 px-4 md:px-12 pb-4 scrollbar-hide"
-                        , class "flex-none cursor-pointer"
-                        , style "scroll-behavior" "smooth"
-                        ]
-                        (List.map
-                            (\episode ->
-                                div
-                                    [ class "flex-none w-64 md:w-80 p-2 group"
-                                    ]
-                                    [ a [ href episode.link ]
-                                        [ div 
-                                            [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0" 
-                                            , class "transition-all duration-300 group-hover:scale-[1.02]"
-                                            , class "group-hover:before:border-[4px] rounded-lg"
-                                            , class  "before:absolute before:inset-[-7px] before:rounded-lg group-hover:before:border group-hover:before:border-white"
-                                            ]
-                                            [ div [ class "aspect-video rounded-lg overflow-hidden" ]
-                                                [ img
-                                                    [ src episode.thumbnail
-                                                    , alt episode.title
-                                                    , class "w-full h-full object-cover"
-                                                    ]
-                                                    []
-                                                ]
-                                            ]
-                                        ]
-                                    , div [ class "px-1 transition-colors duration-300 group-hover:text-white" ]
-                                        [ h3 [ class "text-gray-300 font-semibold mb-1 transition-colors duration-300 group-hover:text-white" ]
-                                            [ text episode.title ]
-                                        , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
-                                            [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
-                                            , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
-                                            , text episode.year
-                                            , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
-                                            , text episode.duration
-                                            ]
-                                        ]
-                                    ]
-                            )
-                            firstSeasonEpisodes
-                        )
+            div
+                [ class "mb-16 ml-4"
+                , class "relative"
+                ]
+                [ h2 [ class "text-white text-2xl font-bold mb-4 pl-5" ] [ text production.title ]
+                , div [ class "mb-16 relative pb-4" ]
+                    [ viewEpisodes production
                     ]
                 ]
     in
