@@ -16,7 +16,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Component.Navigation.View as NavigationPage
 import Svg exposing (circle, path, polygon, svg)
-import Svg.Attributes
 import Page.Newsroom.ViewPress as ViewPress exposing (..)
 import Page.NotFound.Main as NotFoundPage
 import Page.Prayer.Angelus.View as AngelusPage
@@ -367,6 +366,7 @@ viewBody model =
         [ class "min-h-screen" ]
         [ Carousel.viewSlides model.animationsPageModel.slideshow AnimationsView.NextSlide AnimationsView.PrevSlide
             |> Html.map ProductionsMsg
+        , viewCategories
         , viewMission
         , viewWhatPeopleSaying
         , viewStayConnected

@@ -2,7 +2,8 @@ module Page.Home.Sections exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Page.Signup as Signup
+import Page.Animations.Helpers exposing (Production)
+import Page.Animations.Productions as Productions
 
 
 viewClaritasStudios : Html msg
@@ -107,7 +108,6 @@ viewWhatPeopleSaying =
         ]
 
 
-
 viewSupportMission : Html msg
 viewSupportMission =
     div [ class "bg-black py-20 px-6 text-center text-white" ]
@@ -124,61 +124,63 @@ viewSupportMission =
 viewCategories : Html msg
 viewCategories =
     let
-        categories : List ( String, List ( String, String, String ) )
-        categories =
-            [ ( "Praying with Angels"
-              , [ ( "Guardian Angel Prayer", "5m", "from-blue-600 to-blue-800" )
-                , ( "Angel of God", "3m", "from-indigo-600 to-indigo-800" )
-                , ( "St. Michael Prayer", "6m", "from-purple-600 to-purple-800" )
-                , ( "Morning Offering", "3m", "from-violet-600 to-violet-800" )
-                , ( "Angel Prayers", "5m", "from-fuchsia-600 to-fuchsia-800" )
-                ]
-              )
-            , ( "Songs of the Saints"
-              , [ ( "St. Francis Song", "3m", "from-green-600 to-green-800" )
-                , ( "St. Patrick's Hymn", "4m", "from-teal-600 to-teal-800" )
-                , ( "St. Clare's Song", "3m", "from-cyan-600 to-cyan-800" )
-                , ( "St. Joseph's Song", "4m", "from-orange-600 to-orange-800" )
-                , ( "St. Thérèse Song", "3m", "from-pink-600 to-pink-800" )
-                ]
-              )
-            , ( "Daisy and Sheep"
-              , [ ( "Daisy Learns to Pray", "8m", "from-yellow-500 via-yellow-600 to-amber-600" )
-                , ( "Sheep’s Big Day", "7m", "from-green-600 to-green-800" )
-                , ( "Garden Adventures", "5m", "from-lime-600 to-green-700" )
-                , ( "Helping Friends", "8m", "from-emerald-600 to-teal-700" )
-                , ( "Sunday Morning", "7m", "from-sky-600 to-blue-700" )
-                ]
-              )
-            , ( "Praying with the Saints"
-              , [ ( "St. Francis Prayer", "6m", "from-emerald-700 to-teal-800" )
-                , ( "St. Thérèse's Way", "7m", "from-rose-600 to-pink-700" )
-                , ( "St. Patrick's Breastplate", "8m", "from-green-700 to-green-900" )
-                , ( "St. Ignatius Prayer", "6m", "from-blue-600 to-blue-800" )
-                , ( "St. Teresa of Avila", "7m", "from-purple-600 to-purple-800" )
-                ]
-              )
-            ]
-
-        viewCategoryRow ( title, items ) =
-            div [ class "mb-10" ]
-                [ h2 [ class "text-2xl md:text-3xl font-bold text-white mb-4" ] [ text title ]
-                , div [ class "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" ]
-                    (List.map
-                        (\( name, duration, colors ) ->
-                            div [ class ("p-4 rounded-lg text-white bg-gradient-to-r " ++ colors) ]
-                                [ h3 [ class "font-semibold text-lg" ] [ text name ]
-                                , p [ class "text-sm opacity-80" ] [ text duration ]
-                                ]
+        viewCategoryRow : Production msg -> Html msg
+        viewCategoryRow production =
+            let
+                firstSeasonEpisodes =
+                    production.seasons
+                        |> List.head
+                        |> Maybe.map .episodes
+                        |> Maybe.withDefault []
+            in
+            div [ class "mb-16" ]
+                [ h2 [ class "text-white text-2xl font-bold mb-4 px-4 md:px-12" ] [ text production.title ]
+                , div [ class "relative group" ]
+                    [ div
+                        [ class "flex overflow-x-auto space-x-4 px-4 md:px-12 pb-4 scrollbar-hide"
+                        , class "flex-none cursor-pointer"
+                        , style "scroll-behavior" "smooth"
+                        ]
+                        (List.map
+                            (\episode ->
+                                div
+                                    [ class "flex-none w-64 md:w-80"
+                                    ]
+                                    [ a [ href episode.link ]
+                                        [ div [ class "relative mb-2 transition-transform duration-300 hover:scale-[1.02] hover:border hover:border-white hover:border-4 rounded-lg p-1" ]
+                                            [ div
+                                                [ class "absolute inset-0 rounded-lg"
+                                                ]
+                                                []
+                                            , div [ class "aspect-video rounded-lg overflow-hidden" ]
+                                                [ img
+                                                    [ src episode.thumbnail
+                                                    , alt episode.title
+                                                    , class "w-full h-full object-cover"
+                                                    ]
+                                                    []
+                                                ]
+                                            ]
+                                        ]
+                                    , div [ class "px-1" ]
+                                        [ h3 [ class "text-white font-semibold mb-1" ]
+                                            [ text episode.title ]
+                                        , div [ class "flex items-center text-gray-400 text-sm" ]
+                                            [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded" ] [ text production.age ]
+                                            , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                            , text production.year
+                                            , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                            , text production.duration
+                                            ]
+                                        ]
+                                    ]
+                            )
+                            firstSeasonEpisodes
                         )
-                        items
-                    )
+                    ]
                 ]
     in
-    div [ class "bg-black py-16 px-6 text-white" ] (List.map viewCategoryRow categories)
-
-
-
+    div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
 
 
 substackEmbedUrl : String

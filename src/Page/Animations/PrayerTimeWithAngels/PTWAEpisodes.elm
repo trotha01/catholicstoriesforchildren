@@ -52,7 +52,7 @@ episodes =
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/guardianangel"
+      , link = "/animations/prayertimewithangels/1/guardianangelprayer"
       , about = viewGuardianAngelDescription
       , activities =
             { thumbnailLink = "https://ik.imagekit.io/catholicstories/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png?updatedAt=1688494259496"
@@ -104,7 +104,7 @@ episodes =
       , releaseDate = Time.millisToPosix 1740150000000
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/actofcontrition"
+      , link = "/animations/prayertimewithangels/1/actofcontritionprayer"
       , about = ActOfContritionDescription.viewAbout
       , activities =
             { thumbnailLink = ""
