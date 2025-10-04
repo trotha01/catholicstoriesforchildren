@@ -145,7 +145,7 @@ viewSlide _ _ production =
                             [ Svg.polygon [ Svg.Attributes.points "6 3 20 12 6 21 6 3" ] [] ]
                         , span [] [ text "Play" ]
                         ]
-                    , a [ href (production.link ++ "/about"), class "bg-gray-600/80 hover:bg-gray-600 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition" ]
+                    , a [ href (production.link ++ "?tab=details"), class "bg-gray-600/80 hover:bg-gray-600 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition" ]
                         [ Svg.svg 
                             [ Svg.Attributes.width "24"
                             , Svg.Attributes.height "24"

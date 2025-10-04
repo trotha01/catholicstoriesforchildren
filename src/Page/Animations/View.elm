@@ -12,7 +12,6 @@ import Page.Animations.Helpers exposing (..)
 import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
 import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
 import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
-import Page.Signup as Signup
 import Task
 import Theme.Layout exposing (headerMargin)
 import Time exposing (Month(..))
@@ -23,7 +22,6 @@ import Url.Parser exposing ((</>), (<?>), Parser, int, parse, s, string)
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
-    , signup : Signup.Model
     , time : Time.Posix
     , timezone : Time.Zone
     , videoTab : VideoOption
@@ -49,12 +47,11 @@ type VideoDetailOption
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
-    | SignupMsg Signup.Msg
     | NoOp
     | NewTime Time.Posix
     | NewZone Time.Zone
     | VideoTabClick VideoOption
-    | VideoDetailsTabClick VideoDetailOption
+    | VideoDetailsTabClick VideoDetailOption String
     | NextSlide
     | PrevSlide
 
@@ -63,11 +60,10 @@ init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { key = key
       , url = url
-      , signup = Signup.init
       , time = Time.millisToPosix 0
       , timezone = Time.utc
       , videoTab = English
-      , videoDetailTab = Episodes
+      , videoDetailTab = getTabFromUrl url
       , slideshow = Carousel.init Productions.productions
       }
     , Cmd.batch
@@ -82,59 +78,48 @@ update msg model =
     case msg of
         LinkClicked urlRequest ->
             case urlRequest of
-                -- NOTE: LinkClicked and UrlChanged are only called at the top level, in Main
                 Browser.Internal url ->
-                    let
-                        urlString =
-                            Url.toString url
-
-                        isProductionsPage =
-                            String.contains "animations" urlString
-                    in
-                    if isProductionsPage then
-                        ( { model | url = url, videoDetailTab = Episodes }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else
-                        ( { model | url = url }, Cmd.batch [ Nav.load (Url.toString url), scrollToTopCmd ] )
+                    ( model, Nav.pushUrl model.key (Url.toString url) )
 
                 Browser.External href ->
                     ( model, Nav.load href )
 
         UrlChanged url ->
-            ( { model | url = url, videoDetailTab = Episodes }
-            , if String.contains "e=" (Url.toString url) then
-                -- jumpToTop
-                scrollToTopCmd
-
-              else
-                -- jumpToHeader
-                scrollToTopCmd
+            let
+                tabFromUrl = getTabFromUrl url
+            in
+            ( { model
+                | url = url
+                , videoDetailTab = tabFromUrl
+              }
+            , scrollToTopCmd
             )
 
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+        NewTime time ->
+            ( { model | time = time }, Cmd.none )
 
+        NewZone zone ->
+            ( { model | timezone = zone }, Cmd.none )
+
+        VideoTabClick videoTab ->
+            ( { model | videoTab = videoTab }, Cmd.none )
+
+        VideoDetailsTabClick tab path ->
+            let
+                newUrl =
+                    if String.contains "?" path then
+                        path ++ "&tab=" ++ String.toLower (tabToString tab)
+                    else
+                        path ++ "?tab=" ++ String.toLower (tabToString tab)
+            in
+            ( { model | videoDetailTab = tab }
+            , Nav.pushUrl model.key newUrl
+            )
         NextSlide ->
             ( { model | slideshow = Carousel.next model.slideshow }, Cmd.none )
 
         PrevSlide ->
             ( { model | slideshow = Carousel.prev model.slideshow }, Cmd.none )
-
-        NewTime t ->
-            ( { model | time = t }, Cmd.none )
-
-        NewZone z ->
-            ( { model | timezone = z }, Cmd.none )
-
-        VideoTabClick language ->
-            ( { model | videoTab = language }, Cmd.none )
-
-        VideoDetailsTabClick tab ->
-            ( { model | videoDetailTab = tab }, Cmd.none )
 
         NoOp ->
             ( model, Cmd.none )
@@ -487,7 +472,7 @@ viewSuggestedProductionThumbnail production =
 
 viewAbout : Episode msg -> Html msg
 viewAbout episode =
-    div [ class "mt-10 max-w-3xl" ]
+    div [ class "mt-10 max-w-3xl text-white" ]
         [ episode.about
         ]
 
@@ -654,7 +639,7 @@ viewVideoDetailTabs episodeCount model episode =
                                         nonSelectedClass
                                    )
                             )
-                        , onClick (VideoDetailsTabClick Episodes)
+                        , onClick (VideoDetailsTabClick Episodes episode.link)
                         ]
                         [ text "Episodes" ]
                     ]
@@ -673,7 +658,7 @@ viewVideoDetailTabs episodeCount model episode =
                                         nonSelectedClass
                                    )
                             )
-                        , onClick (VideoDetailsTabClick Activities)
+                        , onClick (VideoDetailsTabClick Activities episode.link)
                         ]
                         [ text "Activities" ]
                     ]
@@ -688,7 +673,7 @@ viewVideoDetailTabs episodeCount model episode =
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoDetailsTabClick Details)
+                    , onClick (VideoDetailsTabClick Details episode.link)
                     ]
                     [ text "Details" ]
                 ]
@@ -703,7 +688,7 @@ viewVideoDetailTabs episodeCount model episode =
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoDetailsTabClick Suggested)
+                    , onClick (VideoDetailsTabClick Suggested episode.link)
                     ]
                     [ text "Suggested" ]
                 ]
@@ -790,14 +775,44 @@ toVideoOption str =
 toLanguageName : VideoOption -> String
 toLanguageName option =
     case option of
-        English ->
-            "English"
+        English -> "English"
+        Spanish -> "Spanish"
+        Urdu -> "Urdu"
+        Asl -> "ASL"
 
-        Spanish ->
-            "Spanish"
+getTabFromUrl : Url.Url -> VideoDetailOption
+getTabFromUrl url =
+    case url.query of
+        Just query ->
+            if String.contains "tab=activities" query then
+                Activities
+            else if String.contains "tab=details" query then 
+                Details
+            else if String.contains "tab=suggested" query then
+                Suggested
+            else
+                Episodes
+        Nothing ->
+            Episodes
 
-        Urdu ->
-            "Urdu"
+tabToString : VideoDetailOption -> String
+tabToString tab =
+    case tab of
+        Episodes -> "episodes"
+        Activities -> "activities" 
+        Details -> "details"
+        Suggested -> "suggested"
 
-        Asl ->
-            "ASL"
+updateUrlWithTab : Model -> VideoDetailOption -> String
+updateUrlWithTab model tab =
+    let
+        baseUrl = 
+            { protocol = model.url.protocol
+            , host = model.url.host
+            , port_ = model.url.port_
+            , path = model.url.path
+            , fragment = model.url.fragment
+            , query = Just <| "tab=" ++ String.toLower (tabToString tab)
+            }
+    in
+    Url.toString baseUrl
