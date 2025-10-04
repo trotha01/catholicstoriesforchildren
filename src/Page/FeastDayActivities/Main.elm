@@ -261,32 +261,32 @@ viewDate model month date feasts =
                 [ a
                     [ href prevDateLink
                     , attribute "aria-label" "Previous"
-                    , class "rounded-lg bg-gray-800/60 hover:bg-gray-800 p-6 shadow-md flex items-center gap-4"
+                    , class "rounded-lg bg-gray-800/60 hover:bg-gray-800 p-4 md:p-6 shadow-md flex flex-col items-center justify-center gap-1 md:gap-4 text-center"
                     ]
-                    [ img [ class "h-10", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] []
+                    [ img [ class "hidden md:block h-10", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] []
                     , div []
-                        [ div [ class "text-base font-semibold text-white" ] [ text "Previous Day" ]
-                        , div [ class "text-sm text-gray-400" ] [ text (capitalizeFirst prevMonth ++ " " ++ prevDay) ]
+                        [ div [ class "text-sm md:text-base font-semibold text-white leading-tight" ] [ text "Previous Day" ]
+                        , div [ class "text-xs md:text-sm text-gray-400 mt-0" ] [ text (capitalizeFirst prevMonth ++ " " ++ prevDay) ]
                         ]
                     ]
                 , a
                     [ href (urlPath ++ "?m=" ++ month)
                     , attribute "aria-label" ("Back to " ++ capMonth)
-                    , class "rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 p-6 shadow-lg inline-flex items-center justify-center"
+                    , class "rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 p-4 md:p-6 shadow-lg inline-flex flex-col items-center justify-center text-center"
                     ]
-                    [ img [ class "h-8 mr-3", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] []
-                    , div [ class "text-white font-semibold text-lg" ] [ text ("Back to " ++ capMonth) ]
+                    [ img [ class "hidden md:inline-block h-8 mb-2", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] []
+                    , div [ class "text-white font-semibold text-sm md:text-lg leading-tight" ] [ text ("Back to " ++ capMonth) ]
                     ]
                 , a
                     [ href nextDateLink
                     , attribute "aria-label" "Next"
-                    , class "rounded-lg bg-gray-800/60 hover:bg-gray-800 p-6 shadow-md flex items-center gap-4 justify-end"
+                    , class "rounded-lg bg-gray-800/60 hover:bg-gray-800 p-4 md:p-6 shadow-md flex flex-col items-center justify-center gap-1 md:gap-4 text-center"
                     ]
-                    [ div [ class "text-right" ]
-                        [ div [ class "text-base font-semibold text-white" ] [ text "Next Day" ]
-                        , div [ class "text-sm text-gray-400" ] [ text (capitalizeFirst nextMonth ++ " " ++ nextDay) ]
+                    [ img [ class "hidden md:block h-10", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] []
+                    , div []
+                        [ div [ class "text-sm md:text-base font-semibold text-white leading-tight" ] [ text "Next Day" ]
+                        , div [ class "text-xs md:text-sm text-gray-400 mt-0" ] [ text (capitalizeFirst nextMonth ++ " " ++ nextDay) ]
                         ]
-                    , img [ class "h-10", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] []
                     ]
                 ]
             ]
