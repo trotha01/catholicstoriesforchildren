@@ -25,7 +25,7 @@ viewFooter =
             , div []
                 [ h4 [ class "text-lg font-semibold mb-2" ] [ text "About" ]
                 , ul [ class "space-y-2" ]
-                    [ li [] [ a [ href "/#mission", class "hover:underline" ] [ text "Our Mission" ] ]
+                    [ li [] [ a [ href "/team", class "hover:underline" ] [ text "Our Mission" ] ]
                     , li [] [ a [ href "/give", class "hover:underline" ] [ text "Support Us" ] ]
                     , li [] [ a [ href "/contact", class "hover:underline" ] [ text "Contact" ] ]
                     ]
