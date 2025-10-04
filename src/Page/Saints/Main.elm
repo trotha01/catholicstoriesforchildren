@@ -512,7 +512,7 @@ viewSaints model =
                 , value model.query
                 , onInput SetQuery
                 , style "box-shadow" "#777 1px 1px 5px"
-                , class "rounded p-4 mb-4 text-lg w-full text-xl"
+                , class "rounded p-4 mb-4 text-lg w-full text-xl text-black"
                 ]
                 []
             , div [ class ("text-center " ++ isLoadingClass) ]
