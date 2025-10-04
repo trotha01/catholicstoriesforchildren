@@ -1,30 +1,38 @@
 module Component.Navigation.View exposing (..)
 
+import Component.Header exposing (viewHeader)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Theme.Layout exposing (headerMargin)
 
 
 view : Html msg
 view =
-    div
-        [ class "min-h-screen"
-        , class "flex flex-col"
-        , class "bg-[#fef7f4]"
-        , class "pt-5"
-        , class "text-semibold"
-        , class "text-xl sm:text-2xl md:text-3xl"
-        ]
-        [ viewNavButton 1 "_self" "/" "Home"
-        , viewNavButton 2 "_self" "/feastdayactivities" "Calendar"
-        , viewNavButton 3 "_self" "/saints" "Saints"
-        , viewNavButton 4 "_self" "/animations" "Animations"
-        , viewNavButton 5 "_self" "/resources" "Resources"
-
-        -- , viewNavButton 6 "_blank" "https://catholicstories.etsy.com" "Shop"
-        , viewNavButton 6 "_self" "/shop" "Shop"
-        , viewNavButton 7 "_blank" "https://blog.claritasstudios.com/" "Blog"
-        , viewNavButton 8 "_self" "/give" "Donate"
-        , viewNavButton 9 "_self" "/team" "About Us"
+    div [ class "bg-black" ]
+        [ viewHeader "Menu" headerMargin
+        , div
+            [ class "min-h-screen"
+            , class "flex flex-col"
+            , class "bg-black text-white"
+            , class "pt-5 px-20"
+            , class "text-semibold"
+            , class "text-xl sm:text-2xl md:text-3xl"
+            ]
+            [ viewNavButton 1 "_self" "/animations" "Animations"
+            , viewNavButton 2 "_self" "/feastdayactivities" "Calendar"
+            , viewNavButton 3 "_self" "/saints" "Saints"
+            , viewNavButton 4 "_self" "/resources" "Resources"
+            , viewNavButton 5 "_blank" "https://shop.claritasstudios.com/" "Shop"
+            , viewNavButton 6 "_blank" "https://blog.claritasstudios.com/" "Blog"
+            , viewNavButton 7 "_self" "/give" "Donate"
+            , viewNavButton 8 "_self" "/team" "About Us"
+            , a
+                [ href "/give"
+                , class "block mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors"
+                ]
+                [ text "Support Us"
+                ]
+            ]
         ]
 
 
@@ -39,9 +47,9 @@ viewNavButton index linkTarget link page =
     a
         [ href link
         , class "hover:bg-csc-lightpurple"
-        , class "px-10 py-5"
+        , class "py-5"
         , class "rounded-t"
         , style "animation" ("fadeIn " ++ animationTime ++ "s")
         , target linkTarget
         ]
-        [ span [ class "px-10 m-auto" ] [ text page ] ]
+        [ span [ class "m-auto" ] [ text page ] ]
