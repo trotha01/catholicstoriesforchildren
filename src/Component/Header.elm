@@ -27,18 +27,28 @@ viewSubpageHeader currentPage leftMargin =
             else
                 ( "60px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
     in
-        nav
-        [ class "fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black via-black/80 to-transparent" ]
-        [ div [ class "flex items-center justify-between px-4 md:px-12 py-4" ]
-            [ div
-                [ class ("grid items-center justify-items-center w-full " ++ gridColsClass)
-                , class ("h-[60px] md:h-[" ++ height ++ "]")
-                ]
-                [ viewLogo
-                , viewHeaderTitle True currentPage
-                , navigation height
+    div []
+        [ nav
+            [ class "fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black via-black/80 to-transparent" ]
+            [ div [ class "flex items-center justify-between px-4 md:px-12 py-4" ]
+                [ div
+                    [ class ("grid items-center justify-items-center w-full " ++ gridColsClass)
+                    , class ("h-[60px] md:h-[" ++ height ++ "]")
+                    ]
+                    [ viewLogo
+                    , viewHeaderTitle True currentPage
+                    , navigation height
+                    ]
                 ]
             ]
+        , -- For the homepage render the fixed nav without a spacer so content remains where you intended
+          if isHomePage then
+            span [] []
+            -- For subpages render the fixed nav AND a spacer immediately after to push page content below the fixed header
+            -- spacer: matches header height so following content is not hidden under the fixed nav
+
+          else
+            div [ class ("h-[60px] md:h-[" ++ height ++ "]") ] []
         ]
 
 
@@ -98,7 +108,7 @@ viewHeaderTitle includesLinks title =
             , class "text-white"
             , class textClass
             ]
-            [ text title ]
+            [ text "Claritas Studios" ]
         ]
 
 
@@ -125,7 +135,7 @@ hamburgerMenu =
 
 desktopNavigation : String -> Html msg
 desktopNavigation height =
-        nav
+    nav
         [ class "h-full w-full flex justify-end content-center justify-items-center gap-8 mr-4"
         , class "text-lg text-white"
         ]
@@ -138,6 +148,8 @@ desktopNavigation height =
         , viewNavButton height "/team" "_self" "About"
         , supportUsBtn
         ]
+
+
 supportUsBtn : Html msg
 supportUsBtn =
     a
