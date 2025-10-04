@@ -104,10 +104,10 @@ viewWhatPeopleSaying =
     in
     div [ class "bg-gray-800 py-16 px-6 text-white" ]
         [ h2 [ class "text-3xl md:text-4xl font-bold mb-6" ] [ text "What Parents Are Saying" ]
-        , testimonial "My toddler was digging it. Especially because his little brother’s name is Gabriel. Great work!" ""
-        , testimonial "Wow, that was incredible. It is toddler approved. My two-year-old responded when they asked questions and folded her hands in prayer when they asked if she wanted to pray with them. What a great way to teach littles the Hail Mary and what beautiful animation we need more media of the caliber in the Catholic world!!" ""
-        , testimonial "Can´t wait to see more!" ""
-        , testimonial "THIS IS WHAT I WAS LOOKING FOR AS A CCC TEACHER!!! THANK YOU!!!" ""
+        , testimonial "I love how there is a story, animation, and even music to learning prayers. We know that children often, if not always, learn first through their experiences and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily." "Cam, Mother of 2 & Social Worker"
+        , testimonial "My children have been focusing on a consecration to their Guardian Angels this summer, and your Guardian Angel series has been a hit this week!" "Catherine, Mother of 2"
+        , testimonial "My children love these videos! They enjoy watching, rewatching, and seeing their favorite characters. Even though my kids know the prayers, the way the stories are put together give them new chances for when they can pray and how the faith is part of their little lives. Can’t wait for more!" "Anonymous Parent"
+        , testimonial "My five year old daughter came running as soon I started playing these videos. She loved every minute of it (she has a huge devotion to Mary) and she even turned the laptop so that it would completely face her as she watched. She then said, \"I loved that movie, Mama!\" so you have a seal of approval from a five year old." "Anonymous Mother & Educator"
         ]
 
 
