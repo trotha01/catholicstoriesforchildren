@@ -134,7 +134,7 @@ view model =
               style "height" "100vh"
             , style "overflow-x" "hidden"
             , style "overflow-y" "auto"
-            , style "background-color" "#FEF7F4"
+            , class "bg-black text-white"
             , id "body"
             ]
             [ viewSubpageHeader "Feast Day Activities" headerMargin

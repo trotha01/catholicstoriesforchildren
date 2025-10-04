@@ -1,21 +1,19 @@
 module Main exposing (Model, main, view)
 
-import Page.Animations.Helpers.Carousel as Carousel
-import Page.Animations.View as AnimationsView
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
-import Page.Contact.View as ContactPage
-import Page.FeastDayActivities.Main as FeastsPage
 import Component.Footer exposing (viewFooter)
-import Page.Give.View as GivePage
 import Component.Header exposing (viewHeader)
-import Theme.Layout exposing (headerMargin)
-import Page.Home.Sections exposing (..)
+import Component.Navigation.View as NavigationPage
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Component.Navigation.View as NavigationPage
-import Svg exposing (circle, path, polygon, svg)
+import Page.Animations.Helpers.Carousel as Carousel
+import Page.Animations.View as AnimationsView
+import Page.Contact.View as ContactPage
+import Page.FeastDayActivities.Main as FeastsPage
+import Page.Give.View as GivePage
+import Page.Home.Sections exposing (..)
 import Page.Newsroom.ViewPress as ViewPress exposing (..)
 import Page.NotFound.Main as NotFoundPage
 import Page.Prayer.Angelus.View as AngelusPage
@@ -25,8 +23,10 @@ import Page.Resources.View as ResourcesPage
 import Page.Saints.Main as SaintsPage
 import Page.Shop.View as ShopPage
 import Page.Signup as Signup
-import Task
 import Page.Team.View as TeamPage
+import Svg exposing (circle, path, polygon, svg)
+import Task
+import Theme.Layout exposing (headerMargin)
 import Time
 import Url
 
@@ -350,7 +350,7 @@ viewHome model =
     { title = "Claritas Studios"
     , body =
         [ div
-            [ style "background-color" "#FEF7F4"
+            [ class "bg-black text-white"
             ]
             [ viewHeader "Claritas Studios" headerMargin
             , viewBody model

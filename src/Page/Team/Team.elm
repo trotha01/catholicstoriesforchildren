@@ -384,7 +384,7 @@ viewPerson person =
         , style "min-height" "115px"
 
         -- STYLE
-        , style "background" "white"
+        , class "bg-white text-black"
         , style "border-radius" "4px"
         , style "padding" "20px"
         ]

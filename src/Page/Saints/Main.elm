@@ -147,7 +147,7 @@ view model =
 viewBody : Model -> Maybe String -> Html Msg
 viewBody model saintName =
     div
-        [ class "bg-[#FEF7F4]"
+        [ class "bg-black text-white"
         ]
         [ div []
             [ case saintName of
