@@ -241,7 +241,7 @@ update msg model =
 
                 _ ->
                     ( { model | url = url, page = newPage, menuOpen = False }
-                    , scrollToTopCmd
+                    , Cmd.none
                     )
 
         SignupMsg signupMsg ->
@@ -306,7 +306,7 @@ updatePage model url =
 
     else if String.contains "animations" urlString then
         ( { model | url = url, page = Productions, menuOpen = False }
-        , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
+        , Cmd.batch [ Nav.pushUrl model.key urlString ]
         )
 
     else if String.contains "give" urlString then

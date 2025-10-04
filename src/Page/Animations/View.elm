@@ -90,7 +90,7 @@ update msg model =
                 | url = url
                 , videoDetailTab = tabFromUrl
               }
-            , scrollToTopCmd
+              , Cmd.none
             )
 
         NewTime time ->
