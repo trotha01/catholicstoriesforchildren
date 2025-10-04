@@ -104,8 +104,10 @@ viewWhatPeopleSaying =
     in
     div [ class "bg-gray-800 py-16 px-6 text-white" ]
         [ h2 [ class "text-3xl md:text-4xl font-bold mb-6" ] [ text "What Parents Are Saying" ]
-        , testimonial "\"Our children absolutely love these stories! They're beautifully animated and teach important lessons about our faith.\"" "- Maria T., Mother of 3"
-        , testimonial "\"Finally, quality Catholic content we can trust! These stories have become part of our bedtime routine.\"" "- James R., Father of 2"
+        , testimonial "My toddler was digging it. Especially because his little brother’s name is Gabriel. Great work!" ""
+        , testimonial "Wow, that was incredible. It is toddler approved. My two-year-old responded when they asked questions and folded her hands in prayer when they asked if she wanted to pray with them. What a great way to teach littles the Hail Mary and what beautiful animation we need more media of the caliber in the Catholic world!!" ""
+        , testimonial "Can´t wait to see more!" ""
+        , testimonial "THIS IS WHAT I WAS LOOKING FOR AS A CCC TEACHER!!! THANK YOU!!!" ""
         ]
 
 
