@@ -4,7 +4,6 @@ import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Page.FeastDayActivities.FeastDayHelpers exposing (..)
@@ -27,21 +26,9 @@ import Page.Saints.SaintList as SaintList
 import Page.Signup as Signup
 import Regex
 import Task
-import Theme.Layout exposing (headerMargin)
 import Time exposing (Month(..))
 import Url
 
-
-main : Program () Model Msg
-main =
-    Browser.application
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        , onUrlChange = UrlChanged
-        , onUrlRequest = LinkClicked
-        }
 
 
 type alias Model =
@@ -172,15 +159,10 @@ view model =
     { title = "Feast Day Activities - Claritas Studios"
     , body =
         [ div
-            [ -- For parallax
-              style "height" "100vh"
-            , style "overflow-x" "hidden"
-            , style "overflow-y" "auto"
-            , class "bg-black text-white"
+            [ class "bg-black text-white"
             , id "body"
             ]
-            [ viewSubpageHeader "Feast Day Activities" headerMargin
-            , viewBody model currentRoute
+            [ viewBody model currentRoute
             , viewFooter
             ]
         ]

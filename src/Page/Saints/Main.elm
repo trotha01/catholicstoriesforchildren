@@ -131,8 +131,7 @@ view model =
     , body =
         [ div
             []
-            [ viewSubpageHeader "Saints" headerMargin
-            , case currentRoute of
+            [ case currentRoute of
                 Just (SaintRoute s) ->
                     viewBody model s
 

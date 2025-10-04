@@ -4,7 +4,6 @@ import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
@@ -13,7 +12,6 @@ import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
 import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
 import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Task
-import Theme.Layout exposing (headerMargin)
 import Time exposing (Month(..))
 import Url
 import Url.Parser exposing ((</>), (<?>), Parser, int, parse, s, string)
@@ -154,8 +152,7 @@ view url model =
         [ div
             [ class "bg-black text-white"
             ]
-            [ viewSubpageHeader (String.join " " [ "Animations", title ]) headerMargin
-            , viewBody model urlRoute
+            [ viewBody model urlRoute
             , viewFooter
             ]
         ]

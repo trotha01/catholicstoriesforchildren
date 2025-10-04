@@ -22,8 +22,7 @@ view =
         , style "overflow-x" "hidden"
         , class "bg-black text-white"
         ]
-        [ viewSubpageHeader "Team" headerMargin
-        , viewBody
+        [ viewBody
         , viewFooter
         ]
 

@@ -16,8 +16,7 @@ view : Html msg
 view =
     div
         []
-        [ viewSubpageHeader "Contact" headerMargin
-        , viewBody
+        [ viewBody
         , viewFooter
         ]
 

@@ -1,16 +1,13 @@
 module Component.Navigation.View exposing (..)
 
-import Component.Header exposing (viewHeader)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Theme.Layout exposing (headerMargin)
 
 
-view : Html msg
-view =
+view : Bool -> Html msg
+view showHeader =
     div [ class "bg-black" ]
-        [ viewHeader "Menu" headerMargin
-        , div
+        [ div
             [ class "min-h-screen"
             , class "flex flex-col"
             , class "bg-black text-white"
@@ -30,8 +27,7 @@ view =
                 [ href "/give"
                 , class "block mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-semibold text-center transition-colors"
                 ]
-                [ text "Support Us"
-                ]
+                [ text "Support Us" ]
             ]
         ]
 

@@ -49,8 +49,7 @@ view url =
             , style "scroll-behavior" "smooth"
             , style "background-color" "#FEF7F4"
             ]
-            [ viewSubpageHeader "Resources" headerMargin
-            , viewBody
+            [ viewBody
             , viewFooter
             ]
 

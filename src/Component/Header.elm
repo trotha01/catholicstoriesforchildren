@@ -1,9 +1,10 @@
-module Component.Header exposing (viewBanner, viewHeader, viewPageHeaderNoLinks, viewSubpageHeader)
+module Component.Header exposing (..)
 
 import Component.Logo exposing (logo)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-
+import Html.Events exposing (onClick)
+import Component.Navigation.View as NavigationPage
 
 
 -- MAIN
@@ -12,6 +13,91 @@ import Html.Attributes exposing (..)
 viewHeader : String -> Int -> Html msg
 viewHeader currentPage leftMargin =
     viewSubpageHeader currentPage leftMargin
+
+
+viewHeaderWithMenu : String -> Int -> Bool -> msg -> Html msg
+viewHeaderWithMenu currentPage leftMargin menuOpen toggleMsg =
+    viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen toggleMsg
+
+
+viewHeaderWithMenuMsg : String -> Int -> msg -> Html msg
+viewHeaderWithMenuMsg currentPage leftMargin openMsg =
+    viewSubpageHeaderWithMenuMsg currentPage leftMargin False openMsg
+
+
+viewSubpageHeaderWithMenuMsg : String -> Int -> Bool -> msg -> Html msg
+viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen openMsg =
+    let
+        isHomePage =
+            currentPage == "Claritas Studios"
+
+        ( height, gridColsClass ) =
+            if isHomePage then
+                ( "111px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
+
+            else
+                ( "60px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
+    in
+    div []
+        (([ nav
+                [ class ("fixed top-0 left-0 right-0 z-50 "
+                      ++ (if menuOpen then
+                              "bg-black"
+                          else
+                              "bg-gradient-to-b from-black via-black/80 to-transparent"
+                         )
+                      )
+                ]
+                [ div [ class "flex items-center justify-between px-4 md:px-12 py-4" ]
+                    [ div
+                        [ class ("grid items-center justify-items-center w-full " ++ gridColsClass)
+                        , class ("h-[60px] md:h-[" ++ height ++ "]")
+                        ]
+                        [ viewLogo
+                        , viewHeaderTitle True currentPage
+                        , navigationWithMsg height openMsg
+                        ]
+                    ]
+                ]
+            , if isHomePage then
+                span [] []
+              else
+                div [ class ("h-[60px] md:h-[" ++ height ++ "]") ] []
+            ])
+            ++ (if menuOpen then [ viewMenuOverlay height ] else [])
+        )
+
+
+viewMenuOverlay : String -> Html msg
+viewMenuOverlay height =
+    div
+        [ class "fixed left-0 right-0 bottom-0 z-40 bg-black bg-opacity-90 text-white overflow-y-auto"
+        , class ("top-[60px] md:top-[" ++ height ++ "]")
+        ]
+        [ div [ class "p-6" ]
+            [ NavigationPage.view False ]
+        ]
+
+
+navigationWithMsg : String -> msg -> Html msg
+navigationWithMsg height openMsg =
+    div [ class "w-full pr-2" ]
+        [ div [ class "xl:hidden" ] [ hamburgerMenuWithMsg openMsg ]
+        , div [ class "hidden xl:block w-full" ] [ desktopNavigation height ]
+        ]
+
+
+hamburgerMenuWithMsg : msg -> Html msg
+hamburgerMenuWithMsg openMsg =
+    button
+        [ class "space-y-2"
+        , attribute "aria-label" "menu"
+        , onClick openMsg
+        ]
+        [ div [ class "w-8 h-0.5 m-auto bg-white" ] []
+        , div [ class "w-8 h-0.5 m-auto bg-white" ] []
+        , div [ class "w-8 h-0.5 m-auto bg-white" ] []
+        ]
 
 
 viewSubpageHeader : String -> Int -> Html msg
