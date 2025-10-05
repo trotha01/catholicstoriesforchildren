@@ -69,7 +69,7 @@ viewSlides carousel nextSlide prevSlide =
             (List.indexedMap (viewSlide carousel.currentIndex) carousel.items)
 
         -- Left arrow
-        , button
+         , button
             [ class "absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 text-white rounded-full hover:bg-white/50 transition group"
             , onClick prevSlide
             ]
@@ -155,7 +155,7 @@ viewSlide _ _ production =
                             , Svg.Attributes.strokeWidth "2"
                             , Svg.Attributes.strokeLinecap "round"
                             , Svg.Attributes.strokeLinejoin "round"
-                            , class "lucide lucide-info w-6 h-6"
+                            -- , class "lucide lucide-info w-6 h-6"
                             ]
                             [ Svg.circle
                                 [ Svg.Attributes.cx "12"

@@ -23,7 +23,6 @@ import Page.Saints.Main as SaintsPage
 import Page.Shop.View as ShopPage
 import Page.Signup as Signup
 import Page.Team.View as TeamPage
-import Svg exposing (circle, path, polygon, svg)
 import Task
 import Theme.Layout exposing (headerMargin)
 import Time
@@ -238,6 +237,20 @@ update msg model =
             case newPage of
                 Download ->
                     ( model, Nav.load urlString )
+
+                Productions ->
+                    let
+                        ( updatedAnimationsModel, animCmd ) =
+                            AnimationsView.update (AnimationsView.UrlChanged url) model.animationsPageModel
+                    in
+                    ( { model
+                        | url = url
+                        , page = newPage
+                        , menuOpen = False
+                        , animationsPageModel = updatedAnimationsModel
+                      }
+                    , Cmd.map ProductionsMsg animCmd
+                    )
 
                 _ ->
                     ( { model | url = url, page = newPage, menuOpen = False }

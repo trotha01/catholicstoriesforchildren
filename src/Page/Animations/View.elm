@@ -84,13 +84,14 @@ update msg model =
 
         UrlChanged url ->
             let
-                tabFromUrl = getTabFromUrl url
+                tabFromUrl =
+                    getTabFromUrl url
             in
             ( { model
                 | url = url
                 , videoDetailTab = tabFromUrl
               }
-              , Cmd.none
+            , Cmd.none
             )
 
         NewTime time ->
@@ -107,12 +108,14 @@ update msg model =
                 newUrl =
                     if String.contains "?" path then
                         path ++ "&tab=" ++ String.toLower (tabToString tab)
+
                     else
                         path ++ "?tab=" ++ String.toLower (tabToString tab)
             in
             ( { model | videoDetailTab = tab }
             , Nav.pushUrl model.key newUrl
             )
+
         NextSlide ->
             ( { model | slideshow = Carousel.next model.slideshow }, Cmd.none )
 
@@ -329,50 +332,50 @@ viewProductions model =
 
 viewEpisodes : Production msg -> Html msg
 viewEpisodes production =
-            div
-                [ class "flex overflow-x-auto space-x-4 scrollbar-hide"
-                , class "flex-none cursor-pointer"
-                , style "scroll-behavior" "smooth"
-                ]
-                (production
-                    |> .seasons
-                    |> List.map .episodes
-                    |> List.concat
-                    |> List.map
-                        (\episode ->
-                            div
-                                [ class "flex-none w-64 md:w-80 group pt-5 pl-5" ]
-                                [ a [ href episode.link ]
-                                    [ div
-                                        [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0"
-                                        , class "transition-all duration-300 group-hover:scale-[1.02]"
-                                        , class "group-hover:before:border-[4px] rounded-lg"
-                                        , class "before:absolute before:inset-[-7px] before:rounded-lg group-hover:before:border group-hover:before:border-white"
+    div
+        [ class "flex overflow-x-auto space-x-4 scrollbar-hide"
+        , class "flex-none cursor-pointer"
+        , style "scroll-behavior" "smooth"
+        ]
+        (production
+            |> .seasons
+            |> List.map .episodes
+            |> List.concat
+            |> List.map
+                (\episode ->
+                    div
+                        [ class "flex-none w-64 md:w-80 group pt-5 pl-5" ]
+                        [ a [ href episode.link ]
+                            [ div
+                                [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0"
+                                , class "transition-all duration-300 group-hover:scale-[1.02]"
+                                , class "group-hover:before:border-[4px] rounded-lg"
+                                , class "before:absolute before:inset-[-7px] before:rounded-lg group-hover:before:border group-hover:before:border-white"
+                                ]
+                                [ div [ class "aspect-video rounded-lg overflow-hidden" ]
+                                    [ img
+                                        [ src episode.thumbnail
+                                        , alt episode.title
+                                        , class "w-full h-full object-cover"
                                         ]
-                                        [ div [ class "aspect-video rounded-lg overflow-hidden" ]
-                                            [ img
-                                                [ src episode.thumbnail
-                                                , alt episode.title
-                                                , class "w-full h-full object-cover"
-                                                ]
-                                                []
-                                            ]
-                                        ]
-                                    ]
-                                , div [ class "px-1 transition-colors duration-300 group-hover:text-white" ]
-                                    [ h3 [ class "text-gray-300 font-semibold mb-1 transition-colors duration-300 group-hover:text-white" ]
-                                        [ text episode.title ]
-                                    , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
-                                        [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
-                                        , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
-                                        , text episode.year
-                                        , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
-                                        , text episode.duration
-                                        ]
+                                        []
                                     ]
                                 ]
-                        )
+                            ]
+                        , div [ class "px-1 transition-colors duration-300 group-hover:text-white" ]
+                            [ h3 [ class "text-gray-300 font-semibold mb-1 transition-colors duration-300 group-hover:text-white" ]
+                                [ text episode.title ]
+                            , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
+                                [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
+                                , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                , text episode.year
+                                , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                , text episode.duration
+                                ]
+                            ]
+                        ]
                 )
+        )
 
 
 viewEpisode : Model -> Production msg -> Int -> Episode msg -> Html Msg
@@ -772,10 +775,18 @@ toVideoOption str =
 toLanguageName : VideoOption -> String
 toLanguageName option =
     case option of
-        English -> "English"
-        Spanish -> "Spanish"
-        Urdu -> "Urdu"
-        Asl -> "ASL"
+        English ->
+            "English"
+
+        Spanish ->
+            "Spanish"
+
+        Urdu ->
+            "Urdu"
+
+        Asl ->
+            "ASL"
+
 
 getTabFromUrl : Url.Url -> VideoDetailOption
 getTabFromUrl url =
@@ -783,27 +794,40 @@ getTabFromUrl url =
         Just query ->
             if String.contains "tab=activities" query then
                 Activities
-            else if String.contains "tab=details" query then 
+
+            else if String.contains "tab=details" query then
                 Details
+
             else if String.contains "tab=suggested" query then
                 Suggested
+
             else
                 Episodes
+
         Nothing ->
             Episodes
+
 
 tabToString : VideoDetailOption -> String
 tabToString tab =
     case tab of
-        Episodes -> "episodes"
-        Activities -> "activities" 
-        Details -> "details"
-        Suggested -> "suggested"
+        Episodes ->
+            "episodes"
+
+        Activities ->
+            "activities"
+
+        Details ->
+            "details"
+
+        Suggested ->
+            "suggested"
+
 
 updateUrlWithTab : Model -> VideoDetailOption -> String
 updateUrlWithTab model tab =
     let
-        baseUrl = 
+        baseUrl =
             { protocol = model.url.protocol
             , host = model.url.host
             , port_ = model.url.port_
