@@ -33,22 +33,26 @@ viewClaritasStudios =
 viewMission : Html msg
 viewMission =
     let
-        missionFeature title description =
-            div [ class "flex items-start space-x-4 mb-4" ]
-                [ span [ class "text-2xl text-purple-500" ] [ text "•" ]
-                , div []
-                    [ h3 [ class "font-semibold text-lg" ] [ text title ]
-                    , p [ class "text-sm opacity-80" ] [ text description ]
+        missionCard : String -> String -> String -> Html msg
+        missionCard title description iconChar =
+            div [ class "rounded-2xl bg-gray-800/40 border border-gray-700/60 shadow-sm p-6 md:p-8" ]
+                [ div [ class "flex flex-col items-start text-left" ]
+                    [ span [ class "w-12 h-12 rounded-xl bg-purple-500/15 text-purple-400 grid place-content-center text-2xl" ] [ text iconChar ]
+                    , h3 [ class "mt-4 font-semibold text-lg md:text-xl text-white" ] [ text title ]
+                    , p [ class "text-sm md:text-base text-gray-300 mt-2" ] [ text description ]
                     ]
                 ]
     in
-    div [ class "bg-gray-900 py-16 px-6 text-white" ]
-        [ h2 [ class "text-3xl md:text-4xl font-bold mb-4" ] [ text "Our Mission" ]
-        , p [ class "max-w-2xl text-lg mb-8" ] [ text "Claritas Studios is a nonprofit dedicated to bringing the beauty of Catholic faith to life through engaging animation and storytelling. We create high-quality content that helps children learn prayers, discover inspiring saints, and explore the richness of Catholic tradition." ]
-        , missionFeature "Faith Formation" "Building strong spiritual foundations"
-        , missionFeature "Educational Excellence" "Combining entertainment with learning"
-        , missionFeature "Family-Centered" "Content that brings families together"
-        , missionFeature "Artistic Innovation" "High-quality animation and storytelling"
+    div [ class "bg-gray-900 py-16 px-6 text-white text-center flex flex-col items-center" ]
+        [ h2 [ class "text-3xl md:text-4xl font-bold mb-2" ] [ text "Our Mission" ]
+        , p [ class "max-w-2xl text-lg mx-auto text-center opacity-90" ]
+            [ text "Claritas Studios is a 501(c)(3) nonprofit with the mission to engage future saints with the Catholic faith through stories that inspire, educate, and foster an understanding of the beauty and joy of God's love." ]
+        , div [ class "max-w-5xl w-full mx-auto mt-8 space-y-6" ]
+            [ missionCard "Faith Formation" "Building strong spiritual foundations through engaging content that brings the Catholic faith to life for young hearts." "❤"
+            , missionCard "Educational Excellence" "Combining entertainment with learning to create memorable experiences that teach and inspire." "📘"
+            , missionCard "Family-Centered" "Content that brings families together, creating shared moments of faith and joy." "👨‍👩‍👧"
+            , missionCard "Artistic Innovation" "High-quality animation and storytelling that captures imagination and hearts." "✨"
+            ]
         ]
 
 
