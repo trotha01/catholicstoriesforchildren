@@ -24,7 +24,7 @@ episodes =
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = ""
+      , link = "/animations/hailmary"
       , about =
             div []
                 [ aboutTheAnimation
