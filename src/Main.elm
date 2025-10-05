@@ -7,6 +7,8 @@ import Component.Footer exposing (viewFooter)
 import Component.Header exposing (viewHeaderWithMenu)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Page.About.PrivacyPolicy.Main as PrivacyPolicyPage
+import Page.About.TermsAndConditions.Main as TermsPage
 import Page.Animations.Helpers.Carousel as Carousel
 import Page.Animations.View as AnimationsView
 import Page.Contact.View as ContactPage
@@ -54,6 +56,8 @@ type Page
     | Feasts
     | Saints
     | Press
+    | PrivacyPolicy
+    | TermsAndConditions
     | Download
     | NotFound
 
@@ -187,6 +191,12 @@ parseUrl url =
 
     else if String.contains "press" urlString then
         Press
+
+    else if String.contains "about/privacy-policy" urlString then
+        PrivacyPolicy
+
+    else if String.contains "about/terms-and-conditions" urlString then
+        TermsAndConditions
 
     else if String.contains "feastdayactivities" urlString then
         Feasts
@@ -367,6 +377,16 @@ updatePage model url =
         , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
         )
 
+    else if String.contains "about/privacy-policy" urlString then
+        ( { model | url = url, page = PrivacyPolicy, menuOpen = False }
+        , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
+        )
+
+    else if String.contains "about/terms-and-conditions" urlString then
+        ( { model | url = url, page = TermsAndConditions, menuOpen = False }
+        , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
+        )
+
     else if String.contains "feastdayactivities" urlString then
         ( { model | url = url, page = Feasts, menuOpen = False }
         , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
@@ -451,6 +471,16 @@ view model =
                     in
                     { title = document.title, body = document.body |> List.map (Html.map ProductionsMsg) }
 
+                PrivacyPolicy ->
+                    { title = "Privacy Policy"
+                    , body = [ Html.map (\_ -> NoOp) PrivacyPolicyPage.view ]
+                    }
+
+                TermsAndConditions ->
+                    { title = "Terms & Conditions"
+                    , body = [ Html.map (\_ -> NoOp) TermsPage.view ]
+                    }
+
                 Press ->
                     { title = "Angelus", body = [ ViewPress.view ] }
 
@@ -470,7 +500,7 @@ view model =
     in
     { title = title
     , body =
-        [ div [ class "bg-black" ]
+        [ div [ class "bg-black text-white" ]
             -- We don't show the header on the Donate page
             (if title == "Donate" then
                 body

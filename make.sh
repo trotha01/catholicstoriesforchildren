@@ -25,8 +25,6 @@ elmmake() {
 
 pair_list=(
   src/Main.elm public/elm.js
-  src/Page/About/PrivacyPolicy/Main.elm public/about/privacy-policy/elm.js
-  src/Page/About/TermsAndConditions/Main.elm public/about/terms-and-conditions/elm.js
   src/Page/NotFound/Main.elm public/notfound/elm.js
   src/Page/ThankYou/Main.elm public/thankyou/elm.js
 )

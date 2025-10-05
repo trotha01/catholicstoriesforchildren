@@ -31,8 +31,7 @@ view : Html Never
 view =
     div
         []
-        [ viewSubpageHeader "Contact" headerMargin
-        , viewBody
+        [ viewBody
         , viewFooter
         ]
 

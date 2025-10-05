@@ -192,7 +192,5 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
   )
 }
 
-writeJSFile('/public/about/privacy-policy/index.html', 'Privacy Policy - Claritas Studios', 'Animations to guide kids in learning Catholic prayers', '.Page.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png', './')
-writeJSFile('/public/about/terms-and-conditions/index.html', 'Terms and Conditions - Claritas Studios', 'Animations to guide kids in learning Catholic prayers', '.Page.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png', './')
 writeJSFile('/public/index.html', 'Claritas Studios', 'Claritas Studios', '', '/assets/images/thumbnails/CSCThumbnail.png', '/')
 writeJSFile('/public/thankyou/index.html', 'Thank You - Claritas Studios', 'Thank you for signing up for our mail list!', '.Page.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png', './')
