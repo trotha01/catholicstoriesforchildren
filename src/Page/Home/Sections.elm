@@ -275,6 +275,9 @@ viewWhatPeopleSaying sectionsModel =
             in
             button
                 [ class ("w-3 h-3 rounded-full " ++ active)
+                , attribute "aria-label" ("Go to testimonial " ++ String.fromInt (i + 1))
+                , attribute "aria-current" (if isActive then "true" else "false")
+                , type_ "button"
                 , onClick (GoTesti i)
                 ]
                 []
@@ -286,11 +289,15 @@ viewWhatPeopleSaying sectionsModel =
             [ -- arrows (fixed vertical center, independent of card height)
               button
                   [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 left-0"
+                  , attribute "aria-label" "Previous testimonial"
+                  , type_ "button"
                   , onClick PrevArrow
                   ]
                   [ span [ class "text-2xl" ] [ text "‹" ] ]
             , button
                   [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 right-0"
+                  , attribute "aria-label" "Next testimonial"
+                  , type_ "button"
                   , onClick NextArrow
                   ]
                   [ span [ class "text-2xl" ] [ text "›" ] ]
