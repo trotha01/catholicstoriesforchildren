@@ -69,7 +69,7 @@ viewSlides carousel nextSlide prevSlide =
             (List.indexedMap (viewSlide carousel.currentIndex) carousel.items)
 
         -- Left arrow
-         , button
+        , button
             [ class "absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 text-white rounded-full hover:bg-white/50 transition group"
             , onClick prevSlide
             ]
@@ -145,8 +145,12 @@ viewSlide _ _ production =
                             [ Svg.polygon [ Svg.Attributes.points "6 3 20 12 6 21 6 3" ] [] ]
                         , span [] [ text "Play" ]
                         ]
-                    , a [ href (production.link ++ "?tab=details"), class "bg-gray-600/80 hover:bg-gray-600 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition" ]
-                        [ Svg.svg 
+                    , a
+                        [ href (production.link ++ "?tab=details")
+                        , class "bg-gray-600/80 hover:bg-gray-600 text-white px-8 py-4 rounded font-bold text-lg flex items-center space-x-2 transition"
+                        , Html.Attributes.attribute "aria-label" ("Learn more about " ++ production.title)
+                        ]
+                        [ Svg.svg
                             [ Svg.Attributes.width "24"
                             , Svg.Attributes.height "24"
                             , Svg.Attributes.viewBox "0 0 24 24"
@@ -155,6 +159,7 @@ viewSlide _ _ production =
                             , Svg.Attributes.strokeWidth "2"
                             , Svg.Attributes.strokeLinecap "round"
                             , Svg.Attributes.strokeLinejoin "round"
+
                             -- , class "lucide lucide-info w-6 h-6"
                             ]
                             [ Svg.circle
