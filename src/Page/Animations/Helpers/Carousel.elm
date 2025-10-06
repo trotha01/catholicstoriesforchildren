@@ -71,6 +71,9 @@ viewSlides carousel nextSlide prevSlide =
         -- Left arrow
         , button
             [ class "absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 text-white rounded-full hover:bg-white/50 transition group"
+            , type_ "button"
+            , attribute "aria-label" "Previous slide"
+            , attribute "title" "Previous slide"
             , onClick prevSlide
             ]
             [ Svg.svg
@@ -78,6 +81,8 @@ viewSlides carousel nextSlide prevSlide =
                 , Svg.Attributes.height "40"
                 , Svg.Attributes.viewBox "0 0 24 24"
                 , Svg.Attributes.class "group-hover:scale-110 transition"
+                , Html.Attributes.attribute "aria-hidden" "true"
+                , Html.Attributes.attribute "focusable" "false"
                 ]
                 [ Svg.path
                     [ Svg.Attributes.d "M15 18l-6-6 6-6"
@@ -94,6 +99,9 @@ viewSlides carousel nextSlide prevSlide =
         -- Right arrow
         , button
             [ class "absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 text-white rounded-full hover:bg-white/50 transition group"
+            , type_ "button"
+            , attribute "aria-label" "Next slide"
+            , attribute "title" "Next slide"
             , onClick nextSlide
             ]
             [ Svg.svg
@@ -101,6 +109,8 @@ viewSlides carousel nextSlide prevSlide =
                 , Svg.Attributes.height "40"
                 , Svg.Attributes.viewBox "0 0 24 24"
                 , Svg.Attributes.class "group-hover:scale-110 transition"
+                , Html.Attributes.attribute "aria-hidden" "true"
+                , Html.Attributes.attribute "focusable" "false"
                 ]
                 [ Svg.path
                     [ Svg.Attributes.d "M9 18l6-6-6-6"
