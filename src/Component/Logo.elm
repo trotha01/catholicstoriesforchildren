@@ -11,6 +11,7 @@ logo =
         , attribute "srcset" "/assets/new_logo.webp 1x, /assets/new_logo@2x.webp 2x"
         , alt "Claritas Studios"
         , height 40
+        , width 40
         , attribute "decoding" "async"
         , style "vertical-align" "middle"
         ]
