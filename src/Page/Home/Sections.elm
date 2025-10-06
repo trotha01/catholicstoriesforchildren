@@ -3,11 +3,11 @@ module Page.Home.Sections exposing
     , Msg(..)
     , init
     , update
-    , viewMission
-    , viewWhatPeopleSaying
     , viewCategories
+    , viewMission
     , viewStayConnected
     , viewSupportMission
+    , viewWhatPeopleSaying
     )
 
 import Html exposing (..)
@@ -20,7 +20,10 @@ import Process
 import Task
 
 
+
 -- Local model for Home sections (testimonials carousel with animation state)
+
+
 type alias Model =
     { testiIndex : Int
     , nextIndex : Maybe Int
@@ -28,6 +31,7 @@ type alias Model =
     , animating : Bool
     , paused : Bool
     }
+
 
 init : Model
 init =
@@ -37,6 +41,7 @@ init =
     , animating = False
     , paused = False
     }
+
 
 type Msg
     = NextAuto
@@ -73,13 +78,13 @@ viewMission =
         ]
 
 
-
 type alias Testimonial =
     { quote : String
     , author : String
     , subtitle : String
     , avatar : String
     }
+
 
 testimonials : List Testimonial
 testimonials =
@@ -115,16 +120,18 @@ update msg model =
         wrap n =
             if n < 0 then
                 maxIdx
+
             else if n > maxIdx then
                 0
+
             else
                 n
 
         startAnim toIdx dir =
             ( { model
-                    | nextIndex = Just (wrap toIdx)
-                    , animDir = dir
-                    , animating = True
+                | nextIndex = Just (wrap toIdx)
+                , animDir = dir
+                , animating = True
               }
             , Task.perform (\_ -> AnimationEnd) (Process.sleep 450)
             )
@@ -137,45 +144,55 @@ update msg model =
         NextAuto ->
             if model.animating || model.paused then
                 ( model, Cmd.none )
+
             else
                 startAnim (model.testiIndex + 1) 1
 
         NextArrow ->
             if model.animating then
                 ( model, Cmd.none )
+
             else
                 let
-                    ( m1, c1 ) = startAnim (model.testiIndex + 1) 1
+                    ( m1, c1 ) =
+                        startAnim (model.testiIndex + 1) 1
                 in
                 ( { m1 | paused = True }, Cmd.batch [ c1, resumeAfterPause ] )
 
         PrevArrow ->
             if model.animating then
                 ( model, Cmd.none )
+
             else
                 let
-                    ( m1, c1 ) = startAnim (model.testiIndex - 1) -1
+                    ( m1, c1 ) =
+                        startAnim (model.testiIndex - 1) -1
                 in
                 ( { m1 | paused = True }, Cmd.batch [ c1, resumeAfterPause ] )
 
         GoTesti i ->
             if model.animating then
                 ( model, Cmd.none )
+
             else
                 let
                     dir =
                         if i == model.testiIndex then
                             0
+
                         else if i > model.testiIndex then
                             1
+
                         else
                             -1
                 in
                 if dir == 0 then
                     ( model, Cmd.none )
+
                 else
                     let
-                        ( m1, c1 ) = startAnim i dir
+                        ( m1, c1 ) =
+                            startAnim i dir
                     in
                     ( { m1 | paused = True }, Cmd.batch [ c1, resumeAfterPause ] )
 
@@ -190,6 +207,7 @@ update msg model =
                       }
                     , Cmd.none
                     )
+
                 Nothing ->
                     ( { model | animating = False, animDir = 0 }, Cmd.none )
 
@@ -242,10 +260,12 @@ viewWhatPeopleSaying sectionsModel =
                     [ div [ class "w-full shrink-0" ] [ card current ]
                     , div [ class "w-full shrink-0" ] [ card next ]
                     ]
+
                 else
                     [ div [ class "w-full shrink-0" ] [ card next ]
                     , div [ class "w-full shrink-0" ] [ card current ]
                     ]
+
             else
                 [ div [ class "w-full shrink-0" ] [ card current ] ]
 
@@ -254,8 +274,10 @@ viewWhatPeopleSaying sectionsModel =
             if sectionsModel.animating then
                 if sectionsModel.animDir == 1 then
                     "translateX(-100%)"
+
                 else
                     "translateX(100%)"
+
             else
                 "translateX(0)"
 
@@ -270,12 +292,23 @@ viewWhatPeopleSaying sectionsModel =
                         Nothing ->
                             i == idx
 
-                active = if isActive then "bg-purple-500" else "bg-purple-500/40"
+                active =
+                    if isActive then
+                        "bg-purple-500"
+
+                    else
+                        "bg-purple-500/40"
             in
             button
-                [ class "w-12 h-12 flex items-center justify-center"  -- 48x48 tap target
+                [ class "w-12 h-12 flex items-center justify-center" -- 48x48 tap target
                 , attribute "aria-label" ("Go to testimonial " ++ String.fromInt (i + 1))
-                , attribute "aria-current" (if isActive then "true" else "false")
+                , attribute "aria-current"
+                    (if isActive then
+                        "true"
+
+                     else
+                        "false"
+                    )
                 , type_ "button"
                 , onClick (GoTesti i)
                 ]
@@ -287,31 +320,43 @@ viewWhatPeopleSaying sectionsModel =
         , div [ class "relative max-w-5xl mx-auto mt-10" ]
             [ -- arrows (fixed vertical center, independent of card height)
               button
-                  [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 left-0"
-                  , attribute "aria-label" "Previous testimonial"
-                  , type_ "button"
-                  , onClick PrevArrow
-                  ]
-                  [ span [ class "text-2xl" ] [ text "‹" ] ]
+                [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 left-0"
+                , attribute "aria-label" "Previous testimonial"
+                , type_ "button"
+                , onClick PrevArrow
+                ]
+                [ span [ class "text-2xl" ] [ text "‹" ] ]
             , button
-                  [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 right-0"
-                  , attribute "aria-label" "Next testimonial"
-                  , type_ "button"
-                  , onClick NextArrow
-                  ]
-                  [ span [ class "text-2xl" ] [ text "›" ] ]
+                [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 right-0"
+                , attribute "aria-label" "Next testimonial"
+                , type_ "button"
+                , onClick NextArrow
+                ]
+                [ span [ class "text-2xl" ] [ text "›" ] ]
             , div [ class "mx-24" ]
-                  [ -- fixed-height viewport so arrows don't move with varying content height
-                    div [ class "relative overflow-hidden h-80 md:h-96" ]
-                        [ div
-                            [ class "flex w-full h-full"
-                            , style "transition" (if sectionsModel.animating then "transform 450ms ease" else "none")
-                            , style "will-change" (if sectionsModel.animating then "transform" else "auto")
-                            , style "transform" translateX
-                            ]
-                            trackChildren
+                [ -- fixed-height viewport so arrows don't move with varying content height
+                  div [ class "relative overflow-hidden h-80 md:h-96" ]
+                    [ div
+                        [ class "flex w-full h-full"
+                        , style "transition"
+                            (if sectionsModel.animating then
+                                "transform 450ms ease"
+
+                             else
+                                "none"
+                            )
+                        , style "will-change"
+                            (if sectionsModel.animating then
+                                "transform"
+
+                             else
+                                "auto"
+                            )
+                        , style "transform" translateX
                         ]
-                  ]
+                        trackChildren
+                    ]
+                ]
             , div [ class "flex items-center justify-center gap-1 mt-6" ] (List.map dot (List.range 0 (total - 1)))
             ]
         ]
@@ -348,10 +393,14 @@ viewCategories =
     div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
 
 
+
 -- Page.Home.Sections.elm
+
+
 substackEmbedUrl : String
 substackEmbedUrl =
     "https://blog.claritasstudios.com/embed"
+
 
 viewStayConnected : Html msg
 viewStayConnected =
@@ -369,8 +418,14 @@ viewStayConnected =
                 , style "height" "220px"
                 ]
                 []
-            , node "noscript" []
-                [ a [ href substackEmbedUrl, target "_blank", rel "noopener", class "underline" ]
+            , p [ id "substack-fallback-link", class "mt-3" ]
+                [ a
+                    [ href substackEmbedUrl
+                    , target "_blank"
+                    , rel "noopener noreferrer"
+                    , class "underline"
+                    , attribute "aria-label" "Subscribe on Substack"
+                    ]
                     [ text "Subscribe on Substack" ]
                 ]
             ]

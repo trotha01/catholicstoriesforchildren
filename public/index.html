@@ -179,6 +179,8 @@ if (app.ports && app.ports.gtagReportConversion) {
       iframe.className = 'rounded';
 
       el.replaceWith(iframe);
+      var fb = document.getElementById('substack-fallback-link');
+      if (fb) { try { fb.remove(); } catch(_) { fb.parentNode && fb.parentNode.removeChild(fb); } }
     }
 
   var io = ('IntersectionObserver' in window)
