@@ -20,7 +20,7 @@ seasons =
 episodes : List (Episode msg)
 episodes =
     [ { title = "Hail Mary"
-      , thumbnail = "/assets/images/AnimationImageLinks/HailMary.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/HailMary.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
