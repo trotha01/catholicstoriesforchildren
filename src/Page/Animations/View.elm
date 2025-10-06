@@ -356,6 +356,8 @@ viewEpisodes production =
                                     [ img
                                         [ src episode.thumbnail
                                         , alt episode.title
+                                        , attribute "loading" "lazy"
+                                        , attribute "decoding" "async"
                                         , class "w-full h-full object-cover"
                                         ]
                                         []
@@ -463,6 +465,8 @@ viewSuggestedProductionThumbnail production =
                 [ src production.thumbnail
                 , class "w-full h-auto rounded-lg"
                 , attribute "alt" production.title
+                , attribute "loading" "lazy"
+                , attribute "decoding" "async"
                 ]
                 []
             , h3 [ class "mt-2 text-lg font-semibold" ] [ text production.title ]
@@ -499,6 +503,8 @@ viewActivities episode =
                             [ class "w-full max-w-[400px]"
                             , class "transition ease-in-out hover:scale-110"
                             , src episode.activities.thumbnailLink
+                            , attribute "loading" "lazy"
+                            , attribute "decoding" "async"
                             ]
                             []
                         ]
@@ -517,6 +523,8 @@ viewActivities episode =
                                 [ class "w-full max-w-[400px]"
                                 , class "transition ease-in-out hover:scale-110"
                                 , src episode.activities.answerThumbnailLink
+                                , attribute "loading" "lazy"
+                                , attribute "decoding" "async"
                                 ]
                                 []
                             ]
