@@ -40,7 +40,7 @@ seasons =
 episodes : List (Episode msg)
 episodes =
     [ { title = "Liturgical Kiss"
-      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalKiss.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalKiss.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -68,7 +68,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Astronomy Program"
-      , thumbnail = "/assets/images/AnimationImageLinks/AstronomyProgram.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/AstronomyProgram.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -96,7 +96,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Penitential Act"
-      , thumbnail = "/assets/images/AnimationImageLinks/PenitentialAct.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PenitentialAct.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -124,7 +124,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Guardian Angel"
-      , thumbnail = "/assets/images/AnimationImageLinks/GuardianAngel.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/GuardianAngel.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -152,7 +152,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Gospel as Living Word"
-      , thumbnail = "/assets/images/AnimationImageLinks/GospelAsLivingWord.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/GospelAsLivingWord.webp"
       , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
