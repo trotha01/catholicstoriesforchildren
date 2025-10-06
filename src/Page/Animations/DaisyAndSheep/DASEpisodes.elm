@@ -180,7 +180,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Mary My Mother"
-      , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.webp"
       , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -208,7 +208,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Prayer of the Faithful"
-      , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.webp"
       , releaseDate = Time.millisToPosix 1728741600000 -- Saturday, October 12, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -236,7 +236,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Communion of Saints"
-      , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.webp"
       , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -264,7 +264,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Eucharistic Wine"
-      , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.webp"
       , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -292,7 +292,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Pope Names"
-      , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.webp"
       , releaseDate = Time.millisToPosix 1729605600000 -- Tuesday, October 21, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -320,7 +320,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Preparing the Altar"
-      , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.webp"
       , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -348,7 +348,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Being a Saint"
-      , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.webp"
       , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
@@ -376,7 +376,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Holy Holy Holy"
-      , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -404,7 +404,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Doctors of the Church"
-      , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -432,7 +432,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Dewfall"
-      , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -460,7 +460,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "The Sacraments"
-      , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -488,7 +488,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "The Lamb of God"
-      , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -516,7 +516,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "The 7 Gifts"
-      , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -544,7 +544,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Transubstantiation"
-      , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -572,7 +572,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Ash Wednesday"
-      , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.webp"
       , releaseDate = Time.millisToPosix 1732633200000
       , isDisabled = False
       , isFundraising = False
@@ -600,7 +600,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Liturgical Colors"
-      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -628,7 +628,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Easter"
-      , thumbnail = "/assets/images/AnimationImageLinks/Easter.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Easter.webp"
       , releaseDate = Time.millisToPosix 1733238000000
       , isDisabled = False
       , isFundraising = False
@@ -656,7 +656,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Vatican Bank"
-      , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
@@ -684,7 +684,7 @@ episodes =
       , duration = "1 min"
       }
     , { title = "Church Meaning"
-      , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False

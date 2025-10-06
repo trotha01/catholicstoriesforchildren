@@ -81,6 +81,7 @@ type alias Model =
     , saintsPageModel : SaintsPage.Model
     , animationsPageModel : AnimationsView.Model
     , menuOpen : Bool
+    , sections : Page.Home.Sections.Model
     }
 
 
@@ -110,6 +111,7 @@ init flags url key =
       , feastsPageModel = feastsPageModel
       , animationsPageModel = animationsPageModel
       , menuOpen = False
+      , sections = Page.Home.Sections.init
       }
     , Cmd.batch
         [ Task.perform NewTime Time.now
@@ -221,6 +223,7 @@ type Msg
     | SaintsMsg SaintsPage.Msg
     | FeastsMsg FeastsPage.Msg
     | ProductionsMsg AnimationsView.Msg
+    | SectionsMsg Page.Home.Sections.Msg
     | ToggleMenu
     | NoOp
 
@@ -228,6 +231,12 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        SectionsMsg sectionsMsg ->
+            let
+                ( updated, sectionsCmd ) =
+                    Page.Home.Sections.update sectionsMsg model.sections
+            in
+            ( { model | sections = updated }, Cmd.map SectionsMsg sectionsCmd )
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
@@ -403,12 +412,16 @@ updatePage model url =
 
 
 -- SUBSCRIPTIONS
--- We are not using Elm subscriptions yet. Subscriptions are used for things like websockets.
 
 
 subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
+subscriptions model =
+    case model.page of
+        Home ->
+            Time.every 6000 (\_ -> SectionsMsg NextTesti)
+
+        _ ->
+            Sub.none
 
 
 
@@ -536,7 +549,7 @@ viewBody model =
             |> Html.map ProductionsMsg
         , viewCategories
         , viewMission
-        , viewWhatPeopleSaying
+        , viewWhatPeopleSaying model.sections |> Html.map SectionsMsg
         , viewStayConnected
         , viewSupportMission
         ]

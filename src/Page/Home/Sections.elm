@@ -1,33 +1,47 @@
-module Page.Home.Sections exposing (..)
+module Page.Home.Sections exposing
+    ( Model
+    , Msg(..)
+    , init
+    , update
+    , viewMission
+    , viewWhatPeopleSaying
+    , viewCategories
+    , viewStayConnected
+    , viewSupportMission
+    )
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 import Page.Animations.Helpers exposing (Production)
 import Page.Animations.Productions as Productions
 import Page.Animations.View exposing (viewEpisodes)
+import Time
+import Process
+import Task
 
 
-viewClaritasStudios : Html msg
-viewClaritasStudios =
-    div [ class "flex flex-col items-center justify-center text-center space-y-2 py-40 logo-section-bg", style "font-family" "Cinzel", style "color" "#ffbf00", style "text-shadow" "   0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFAA00;" ]
-        [ img
-            [ src "/assets/images/home/ClaritasStudios-800.webp"
-            , alt "Claritas Studios Logo"
-            , class "mb-2"
-            , width 400
-            , attribute "srcset" "/assets/images/home/ClaritasStudios-400.webp 400w, /assets/images/home/ClaritasStudios-800.webp 800w, /assets/images/home/ClaritasStudios-1200.webp 1200w"
-            , attribute "sizes" "(max-width: 720px) 80vw, 400px"
-            , attribute "loading" "eager"
-            , attribute "decoding" "async"
-            , attribute "fetchpriority" "high"
-            ]
-            []
-        , p
-            [ class "uppercase tracking-wide text-base md:text-lg font-semibold drop-shadow-md" ]
-            [ text "Animations from the heart" ]
-        , p [ class "normal-case text-sm pt-5" ]
-            [ text "*formerly Catholic Stories for Children" ]
-        ]
+-- Local model for Home sections (testimonials carousel with animation state)
+type alias Model =
+    { testiIndex : Int
+    , nextIndex : Maybe Int
+    , animDir : Int -- 1 = next (left), -1 = prev (right)
+    , animating : Bool
+    }
+
+init : Model
+init =
+    { testiIndex = 0
+    , nextIndex = Nothing
+    , animDir = 0
+    , animating = False
+    }
+
+type Msg
+    = NextTesti
+    | PrevTesti
+    | GoTesti Int
+    | AnimationEnd
 
 
 viewMission : Html msg
@@ -50,68 +64,214 @@ viewMission =
         , div [ class "max-w-5xl w-full mx-auto mt-8 space-y-6" ]
             [ missionCard "Faith Formation" "Building strong spiritual foundations through engaging content that brings the Catholic faith to life for young hearts." "❤"
             , missionCard "Educational Excellence" "Combining entertainment with learning to create memorable experiences that teach and inspire." "📘"
-            , missionCard "Family-Centered" "Content that brings families together, creating shared moments of faith and joy." "👨‍👩‍👧"
+            , missionCard "Family-Centered" "Content that brings families together, creating shared moments of faith and joy." "👨\u{200D}👩\u{200D}👧"
             , missionCard "Artistic Innovation" "High-quality animation and storytelling that captures imagination and hearts." "✨"
             ]
         ]
 
 
-viewSanctifyScreenTime : Html msg
-viewSanctifyScreenTime =
-    div
-        [ class "relative flex items-center sanctify-screen-time-background" ]
-        [ div [ class "text-white w-full px-20 sm:px-6 lg:px-8 py-20" ]
-            [ h1 [ class "text-4xl md:text-5xl font-bold mb-2 tracking-tight text-left", style "font-family" "Lora" ]
-                [ text "Sanctify Your Screen Time" ]
-            , a [ href "/animations" ]
-                [ h2 [ class "text-xl md:text-2xl font-light uppercase tracking-widest mb-4 text-left border-b border-white inline-block pb-1" ]
-                    [ text "OUR ANIMATED SHOWS" ]
-                ]
-            , p [ class "max-w-2xl text-lg md:text-xl leading-relaxed text-left mt-4" ]
-                [ text "Because of your generous support we offer a number of shows and shorts on our website or on YouTube. Sing along with the saints and angels, learn about the Church, and pray with your Catholic heroes." ]
-            ]
-        ]
+
+type alias Testimonial =
+    { quote : String
+    , author : String
+    , subtitle : String
+    , avatar : String
+    }
+
+testimonials : List Testimonial
+testimonials =
+    [ { quote = "I love how there is a story, animation, and even music to learning prayers. We know that children often, if not always, learn first through their experiences and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily."
+      , author = "Cam"
+      , subtitle = "Mother of 2 & Social Worker"
+      , avatar = "C"
+      }
+    , { quote = "My children have been focusing on a consecration to their Guardian Angels this summer, and your Guardian Angel series has been a hit this week!"
+      , author = "Catherine"
+      , subtitle = "Homeschool Mom"
+      , avatar = "C"
+      }
+    , { quote = "My children love these videos! They enjoy watching, rewatching, and seeing their favorite characters. Even though my kids know the prayers, the way the stories are put together give them new chances for when they can pray and how the faith is part of their little lives. Can’t wait for more!"
+      , author = "Anonymous Parent"
+      , subtitle = "Parent"
+      , avatar = "A"
+      }
+    , { quote = "My five year old daughter came running as soon I started playing these videos. She loved every minute of it (she has a huge devotion to Mary) and she even turned the laptop so that it would completely face her as she watched."
+      , author = "Anonymous Mother & Educator"
+      , subtitle = "Educator"
+      , avatar = "A"
+      }
+    ]
 
 
-viewTechnologyArtCollide : Html msg
-viewTechnologyArtCollide =
-    div
-        [ class "relative flex items-center technology-art-collide-background" ]
-        [ div [ class "text-white w-full px-20 sm:px-6 lg:px-8 py-20" ]
-            [ h1 [ class "text-4xl md:text-5xl font-bold mb-2 tracking-tight text-left", style "font-family" "Lora" ]
-                [ text "When Technology and Art Collide" ]
-            , a [ href "/team" ]
-                [ h2 [ class "text-xl md:text-2xl font-light uppercase tracking-widest mb-4 text-left border-b border-white inline-block pb-1" ]
-                    [ text "MEET OUR TEAM" ]
-                ]
-            , p [ class "max-w-2xl text-lg md:text-xl leading-relaxed text-left mt-4" ]
-                [ text "Claritas Studios (formerly Catholic Stories for Children) was started when a software engineer noticed his Catechism students didn’t know much about their faith and were always on their phones." ]
-            ]
-        ]
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    let
+        maxIdx =
+            List.length testimonials - 1
+
+        wrap n =
+            if n < 0 then
+                maxIdx
+            else if n > maxIdx then
+                0
+            else
+                n
+
+        startAnim toIdx dir =
+            ( { model
+                    | nextIndex = Just (wrap toIdx)
+                    , animDir = dir
+                    , animating = True
+              }
+            , Task.perform (\_ -> AnimationEnd) (Process.sleep 450)
+            )
+    in
+    case msg of
+        NextTesti ->
+            if model.animating then
+                ( model, Cmd.none )
+            else
+                startAnim (model.testiIndex + 1) 1
+
+        PrevTesti ->
+            if model.animating then
+                ( model, Cmd.none )
+            else
+                startAnim (model.testiIndex - 1) -1
+
+        GoTesti i ->
+            if model.animating then
+                ( model, Cmd.none )
+            else
+                let
+                    dir =
+                        if i == model.testiIndex then
+                            0
+                        else if i > model.testiIndex then
+                            1
+                        else
+                            -1
+                in
+                if dir == 0 then
+                    ( model, Cmd.none )
+                else
+                    startAnim i dir
+
+        AnimationEnd ->
+            case model.nextIndex of
+                Just toIdx ->
+                    ( { model
+                        | testiIndex = toIdx
+                        , nextIndex = Nothing
+                        , animDir = 0
+                        , animating = False
+                      }
+                    , Cmd.none
+                    )
+                Nothing ->
+                    ( { model | animating = False, animDir = 0 }, Cmd.none )
 
 
-viewWhatPeopleSaying : Html msg
-viewWhatPeopleSaying =
+viewWhatPeopleSaying : Model -> Html Msg
+viewWhatPeopleSaying sectionsModel =
     let
         stars : Html msg
         stars =
-            div [ class "flex text-yellow-400 mb-2" ]
-                [ span [ class "text-2xl" ] [ text "★★★★★" ] ]
+            div [ class "text-yellow-400 text-2xl mt-2 text-center" ] [ text "★★★★★" ]
 
-        testimonial : String -> String -> Html msg
-        testimonial quote author =
-            div [ class "border-l-4 border-indigo-500 pl-4 mb-8" ]
-                [ stars
-                , p [ class "text-gray-300 italic mb-2" ] [ text quote ]
-                , p [ class "text-sm text-gray-500" ] [ text author ]
+        card : Testimonial -> Html msg
+        card t =
+            div [ class "rounded-2xl bg-gray-800/40 border border-gray-700/60 shadow-sm p-8 md:p-10" ]
+                [ p [ class "text-gray-100 italic text-xl md:text-2xl leading-relaxed" ] [ text t.quote ]
+                , div [ class "flex items-center gap-3 mt-8" ]
+                    [ span [ class "w-12 h-12 rounded-full bg-purple-600 text-white grid place-content-center font-bold" ] [ text t.avatar ]
+                    , div []
+                        [ p [ class "text-white font-semibold" ] [ text t.author ]
+                        , p [ class "text-gray-400 text-sm" ] [ text t.subtitle ]
+                        ]
+                    ]
                 ]
+
+        total =
+            List.length testimonials
+
+        idx =
+            sectionsModel.testiIndex
+
+        current =
+            List.drop idx testimonials |> List.head |> Maybe.withDefault (List.head testimonials |> Maybe.withDefault { quote = "", author = "", subtitle = "", avatar = "?" })
+
+        next =
+            case sectionsModel.nextIndex of
+                Just n ->
+                    List.drop n testimonials |> List.head |> Maybe.withDefault current
+
+                Nothing ->
+                    current
+
+        -- Build the sliding track children depending on direction
+        trackChildren : List (Html Msg)
+        trackChildren =
+            if sectionsModel.animating then
+                if sectionsModel.animDir == 1 then
+                    [ div [ class "w-full shrink-0" ] [ card current ]
+                    , div [ class "w-full shrink-0" ] [ card next ]
+                    ]
+                else
+                    [ div [ class "w-full shrink-0" ] [ card next ]
+                    , div [ class "w-full shrink-0" ] [ card current ]
+                    ]
+            else
+                [ div [ class "w-full shrink-0" ] [ card current ] ]
+
+        translateX : String
+        translateX =
+            if sectionsModel.animating then
+                if sectionsModel.animDir == 1 then
+                    "translateX(-100%)"
+                else
+                    "translateX(100%)"
+            else
+                "translateX(0)"
+
+        dot : Int -> Html Msg
+        dot i =
+            let
+                isActive =
+                    case sectionsModel.nextIndex of
+                        Just n ->
+                            i == n
+
+                        Nothing ->
+                            i == idx
+
+                active = if isActive then "bg-purple-500" else "bg-purple-500/40"
+            in
+            button
+                [ class ("w-3 h-3 rounded-full " ++ active)
+                , onClick (GoTesti i)
+                ]
+                []
     in
-    div [ class "bg-gray-800 py-16 px-6 text-white" ]
-        [ h2 [ class "text-3xl md:text-4xl font-bold mb-6" ] [ text "What Parents Are Saying" ]
-        , testimonial "I love how there is a story, animation, and even music to learning prayers. We know that children often, if not always, learn first through their experiences and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily." "Cam, Mother of 2 & Social Worker"
-        , testimonial "My children have been focusing on a consecration to their Guardian Angels this summer, and your Guardian Angel series has been a hit this week!" "Catherine, Mother of 2"
-        , testimonial "My children love these videos! They enjoy watching, rewatching, and seeing their favorite characters. Even though my kids know the prayers, the way the stories are put together give them new chances for when they can pray and how the faith is part of their little lives. Can’t wait for more!" "Anonymous Parent"
-        , testimonial "My five year old daughter came running as soon I started playing these videos. She loved every minute of it (she has a huge devotion to Mary) and she even turned the laptop so that it would completely face her as she watched. She then said, \"I loved that movie, Mama!\" so you have a seal of approval from a five year old." "Anonymous Mother & Educator"
+    div [ class "bg-gray-900 py-20 px-6 text-white relative overflow-hidden" ]
+        [ h2 [ class "text-4xl md:text-5xl font-extrabold text-center" ] [ text "What Parents Are Saying" ]
+        , stars
+        , div [ class "max-w-5xl mx-auto mt-10" ]
+            [ div [ class "flex items-center gap-4" ]
+                [ button [ class "grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow", onClick PrevTesti ] [ span [ class "text-2xl" ] [ text "‹" ] ]
+                , div [ class "relative flex-1 overflow-hidden" ]
+                    [ div
+                        [ class "flex w-full"
+                        , style "transition" (if sectionsModel.animating then "transform 450ms ease" else "none")
+                        , style "will-change" (if sectionsModel.animating then "transform" else "auto")
+                        , style "transform" translateX
+                        ]
+                        trackChildren
+                    ]
+                , button [ class "grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow", onClick NextTesti ] [ span [ class "text-2xl" ] [ text "›" ] ]
+                ]
+            , div [ class "flex items-center justify-center gap-2 mt-6" ] (List.map dot (List.range 0 (total - 1)))
+            ]
         ]
 
 

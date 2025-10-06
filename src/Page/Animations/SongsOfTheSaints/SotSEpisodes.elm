@@ -53,7 +53,7 @@ episodes =
 stThereseEpisode : Episode msg
 stThereseEpisode =
     { title = "Saint Thérèse of Lisieux"
-    , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.png"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.webp"
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
@@ -85,7 +85,7 @@ stThereseEpisode =
 carloEpisode : Episode msg
 carloEpisode =
     { title = "Carlo Acutis"
-    , thumbnail = "/assets/images/AnimationImageLinks/SotsCarlo.png"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsCarlo.webp"
     , releaseDate = Time.millisToPosix 1741359600000 -- Friday, March 7, 2025 7:00:00 AM GMT-08:00
     , isDisabled = False
     , isFundraising = False
@@ -117,7 +117,7 @@ carloEpisode =
 josephEpisode : Episode msg
 josephEpisode =
     { title = "Saint Joseph"
-    , thumbnail = "/assets/images/AnimationImageLinks/SotsJoseph.png"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsJoseph.webp"
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
