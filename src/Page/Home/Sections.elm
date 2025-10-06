@@ -27,6 +27,7 @@ type alias Model =
     , nextIndex : Maybe Int
     , animDir : Int -- 1 = next (left), -1 = prev (right)
     , animating : Bool
+    , paused : Bool
     }
 
 init : Model
@@ -35,13 +36,16 @@ init =
     , nextIndex = Nothing
     , animDir = 0
     , animating = False
+    , paused = False
     }
 
 type Msg
-    = NextTesti
-    | PrevTesti
+    = NextAuto
+    | NextArrow
+    | PrevArrow
     | GoTesti Int
     | AnimationEnd
+    | ResumeAutoplay
 
 
 viewMission : Html msg
@@ -125,19 +129,35 @@ update msg model =
               }
             , Task.perform (\_ -> AnimationEnd) (Process.sleep 450)
             )
+
+        resumeAfterPause : Cmd Msg
+        resumeAfterPause =
+            Task.perform (\_ -> ResumeAutoplay) (Process.sleep 60000)
     in
     case msg of
-        NextTesti ->
-            if model.animating then
+        NextAuto ->
+            if model.animating || model.paused then
                 ( model, Cmd.none )
             else
                 startAnim (model.testiIndex + 1) 1
 
-        PrevTesti ->
+        NextArrow ->
             if model.animating then
                 ( model, Cmd.none )
             else
-                startAnim (model.testiIndex - 1) -1
+                let
+                    ( m1, c1 ) = startAnim (model.testiIndex + 1) 1
+                in
+                ( { m1 | paused = True }, Cmd.batch [ c1, resumeAfterPause ] )
+
+        PrevArrow ->
+            if model.animating then
+                ( model, Cmd.none )
+            else
+                let
+                    ( m1, c1 ) = startAnim (model.testiIndex - 1) -1
+                in
+                ( { m1 | paused = True }, Cmd.batch [ c1, resumeAfterPause ] )
 
         GoTesti i ->
             if model.animating then
@@ -155,7 +175,10 @@ update msg model =
                 if dir == 0 then
                     ( model, Cmd.none )
                 else
-                    startAnim i dir
+                    let
+                        ( m1, c1 ) = startAnim i dir
+                    in
+                    ( { m1 | paused = True }, Cmd.batch [ c1, resumeAfterPause ] )
 
         AnimationEnd ->
             case model.nextIndex of
@@ -170,6 +193,9 @@ update msg model =
                     )
                 Nothing ->
                     ( { model | animating = False, animDir = 0 }, Cmd.none )
+
+        ResumeAutoplay ->
+            ( { model | paused = False }, Cmd.none )
 
 
 viewWhatPeopleSaying : Model -> Html Msg
@@ -256,20 +282,30 @@ viewWhatPeopleSaying sectionsModel =
     div [ class "bg-gray-900 py-20 px-6 text-white relative overflow-hidden" ]
         [ h2 [ class "text-4xl md:text-5xl font-extrabold text-center" ] [ text "What Parents Are Saying" ]
         , stars
-        , div [ class "max-w-5xl mx-auto mt-10" ]
-            [ div [ class "flex items-center gap-4" ]
-                [ button [ class "grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow", onClick PrevTesti ] [ span [ class "text-2xl" ] [ text "‹" ] ]
-                , div [ class "relative flex-1 overflow-hidden" ]
-                    [ div
-                        [ class "flex w-full"
-                        , style "transition" (if sectionsModel.animating then "transform 450ms ease" else "none")
-                        , style "will-change" (if sectionsModel.animating then "transform" else "auto")
-                        , style "transform" translateX
+        , div [ class "relative max-w-5xl mx-auto mt-10" ]
+            [ -- arrows (fixed vertical center, independent of card height)
+              button
+                  [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 left-0"
+                  , onClick PrevArrow
+                  ]
+                  [ span [ class "text-2xl" ] [ text "‹" ] ]
+            , button
+                  [ class "absolute z-10 grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow top-1/2 -translate-y-1/2 right-0"
+                  , onClick NextArrow
+                  ]
+                  [ span [ class "text-2xl" ] [ text "›" ] ]
+            , div [ class "mx-24" ]
+                  [ -- fixed-height viewport so arrows don't move with varying content height
+                    div [ class "relative overflow-hidden h-80 md:h-96" ]
+                        [ div
+                            [ class "flex w-full h-full"
+                            , style "transition" (if sectionsModel.animating then "transform 450ms ease" else "none")
+                            , style "will-change" (if sectionsModel.animating then "transform" else "auto")
+                            , style "transform" translateX
+                            ]
+                            trackChildren
                         ]
-                        trackChildren
-                    ]
-                , button [ class "grid place-content-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-purple-600 shadow", onClick NextTesti ] [ span [ class "text-2xl" ] [ text "›" ] ]
-                ]
+                  ]
             , div [ class "flex items-center justify-center gap-2 mt-6" ] (List.map dot (List.range 0 (total - 1)))
             ]
         ]

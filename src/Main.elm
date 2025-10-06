@@ -418,7 +418,7 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     case model.page of
         Home ->
-            Time.every 6000 (\_ -> SectionsMsg NextTesti)
+            Time.every 6000 (\_ -> SectionsMsg NextAuto)
 
         _ ->
             Sub.none
