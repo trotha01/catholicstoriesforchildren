@@ -274,13 +274,13 @@ viewWhatPeopleSaying sectionsModel =
                 active = if isActive then "bg-purple-500" else "bg-purple-500/40"
             in
             button
-                [ class ("w-3 h-3 rounded-full " ++ active)
+                [ class "w-12 h-12 flex items-center justify-center"  -- 48x48 tap target
                 , attribute "aria-label" ("Go to testimonial " ++ String.fromInt (i + 1))
                 , attribute "aria-current" (if isActive then "true" else "false")
                 , type_ "button"
                 , onClick (GoTesti i)
                 ]
-                []
+                [ span [ class ("w-3 h-3 rounded-full " ++ active) ] [] ]
     in
     div [ class "bg-gray-900 py-20 px-6 text-white relative overflow-hidden" ]
         [ h2 [ class "text-4xl md:text-5xl font-extrabold text-center" ] [ text "What Parents Are Saying" ]
@@ -313,7 +313,7 @@ viewWhatPeopleSaying sectionsModel =
                             trackChildren
                         ]
                   ]
-            , div [ class "flex items-center justify-center gap-2 mt-6" ] (List.map dot (List.range 0 (total - 1)))
+            , div [ class "flex items-center justify-center gap-1 mt-6" ] (List.map dot (List.range 0 (total - 1)))
             ]
         ]
 
