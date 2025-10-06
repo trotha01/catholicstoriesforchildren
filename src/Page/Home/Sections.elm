@@ -319,7 +319,7 @@ viewSupportMission =
         , p [ class "max-w-3xl mx-auto text-lg mb-8" ] [ text "As a nonprofit, we rely on the generosity of families like yours to continue creating beautiful Catholic content. Your support helps us produce more stories and reach more children." ]
         , div [ class "flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4" ]
             [ a [ href "/give", class "bg-purple-700 text-white px-6 py-3 rounded-md font-semibold" ] [ text "Make a Donation" ]
-            , a [ href "/give", class "border border-purple-700 text-purple-700 px-6 py-3 rounded-md font-semibold" ] [ text "Become a Monthly Supporter" ]
+            , a [ href "/give", class "border border-purple-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400/70" ] [ text "Become a Monthly Supporter" ]
             ]
         ]
 
