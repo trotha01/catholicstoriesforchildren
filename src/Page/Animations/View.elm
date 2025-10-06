@@ -343,9 +343,9 @@ viewEpisodes production =
             |> List.concat
             |> List.map
                 (\episode ->
-                    div
-                        [ class "flex-none w-64 md:w-80 group pt-5 pl-5" ]
-                        [ a [ href episode.link ]
+                    a
+                        [ href episode.link, class "flex-none w-64 md:w-80 group pt-5 pl-5" ]
+                        [ div []
                             [ div
                                 [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0"
                                 , class "transition-all duration-300 group-hover:scale-[1.02]"
