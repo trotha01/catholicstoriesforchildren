@@ -348,29 +348,30 @@ viewCategories =
     div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
 
 
+-- Page.Home.Sections.elm
 substackEmbedUrl : String
 substackEmbedUrl =
     "https://blog.claritasstudios.com/embed"
-
 
 viewStayConnected : Html msg
 viewStayConnected =
     div [ class "bg-gradient-to-r from-purple-600 to-indigo-600 py-16 px-6 text-center text-white" ]
         [ h2 [ class "text-3xl md:text-4xl font-bold mb-2" ] [ text "Stay Connected" ]
-        , p [ class "mb-8 text-lg max-w-3xl mx-auto" ]
+        , p [ class "mb-6 text-lg max-w-3xl mx-auto" ]
             [ text "Get notified about new stories, activities, and special content for your family." ]
         , div [ class "max-w-3xl mx-auto" ]
-            [ node "iframe"
-                [ attribute "src" substackEmbedUrl
-                , attribute "title" "Substack Signup"
-                , attribute "frameborder" "0"
-                , attribute "scrolling" "no"
-                , attribute "loading" "lazy"
+            [ -- Placeholder reserves space to avoid CLS and holds the data-src
+              div
+                [ attribute "data-substack-src" substackEmbedUrl
+                , attribute "data-height" "220"
+                , class "rounded bg-transparent"
                 , style "width" "100%"
                 , style "height" "220px"
-                , style "background" "transparent"
-                , class "rounded"
                 ]
                 []
+            , node "noscript" []
+                [ a [ href substackEmbedUrl, target "_blank", rel "noopener", class "underline" ]
+                    [ text "Subscribe on Substack" ]
+                ]
             ]
         ]

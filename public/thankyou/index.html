@@ -155,6 +155,62 @@ if (app.ports && app.ports.gtagReportConversion) {
     };
   </script>
 
+  <!-- Lazy load Substack iframes when they are near viewport or after a delay -->
+  <script>
+  (function(){
+    const SEL = '[data-substack-src]';
+
+    function inject(el){
+      if (!el || el.__loaded) return;
+      el.__loaded = true;
+
+      var src = el.getAttribute('data-substack-src');
+      var h   = el.getAttribute('data-height') || '220';
+
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = 'Substack Signup';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.sandbox = 'allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin';
+      iframe.style.width = '100%';
+      iframe.style.height = h + 'px';
+      iframe.style.background = 'transparent';
+      iframe.className = 'rounded';
+
+      el.replaceWith(iframe);
+    }
+
+  var io = ('IntersectionObserver' in window)
+    ? new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            inject(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '200px 0px', threshold: 0.01 })
+    : null;
+
+  function setup(){
+    document.querySelectorAll(SEL).forEach(function(el){
+      if (io) io.observe(el);
+    });
+
+    // Safety net: if user never scrolls, load on idle/dwell.
+    function idleLoad(){ document.querySelectorAll(SEL).forEach(inject); }
+    if ('requestIdleCallback' in window){
+      setTimeout(function(){ requestIdleCallback(idleLoad, { timeout: 5000 }); }, 10000);
+    } else {
+      setTimeout(idleLoad, 15000);
+    }
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') setup();
+  else document.addEventListener('DOMContentLoaded', setup);
+  })();
+  </script>
+
   <!-- Cookie consent popup -->
   <script type="module" src="/cookieconsent-config.js"></script>
 </body>
