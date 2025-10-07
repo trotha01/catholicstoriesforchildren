@@ -212,9 +212,11 @@ var htmlBodyEnd = `
       // Safety net: if user never scrolls, load on idle/dwell.
       function idleLoad(){ document.querySelectorAll(SEL).forEach(inject); }
       if ('requestIdleCallback' in window){
-        setTimeout(function(){ requestIdleCallback(idleLoad, { timeout: 5000 }); }, 10000);
+        // After ~5s, ask the browser to run idleLoad when it's idle, but no later than 3s after.
+        setTimeout(function(){ requestIdleCallback(idleLoad, { timeout: 3000 }); }, 5000);
       } else {
-        setTimeout(idleLoad, 15000);
+        // Fallback: load after ~8s if user never scrolls
+        setTimeout(idleLoad, 8000);
       }
     }
 
