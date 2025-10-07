@@ -238,48 +238,96 @@ viewWhatPeopleSaying sectionsModel =
         total =
             List.length testimonials
 
+        last =
+            total - 1
+
         idx =
             sectionsModel.testiIndex
 
+        prev : Testimonial
+        prev =
+            let
+                i =
+                    if idx - 1 < 0 then
+                        total - 1
+
+                    else
+                        idx - 1
+            in
+            List.drop i testimonials |> List.head |> Maybe.withDefault current
+
+        current : Testimonial
         current =
             List.drop idx testimonials |> List.head |> Maybe.withDefault (List.head testimonials |> Maybe.withDefault { quote = "", author = "", subtitle = "", avatar = "?" })
 
+        next : Testimonial
         next =
+            let
+                i =
+                    if idx + 1 > total - 1 then
+                        0
+
+                    else
+                        idx + 1
+            in
+            List.drop i testimonials |> List.head |> Maybe.withDefault current
+
+        nextForAnim : Testimonial
+        nextForAnim =
             case sectionsModel.nextIndex of
                 Just n ->
-                    List.drop n testimonials |> List.head |> Maybe.withDefault current
+                    List.drop n testimonials |> List.head |> Maybe.withDefault next
 
                 Nothing ->
-                    current
+                    next
 
-        -- Build the sliding track children depending on direction
+        -- Add isWrapForward and isWrapBackward
+        isWrapForward : Bool
+        isWrapForward =
+            sectionsModel.animating
+                && sectionsModel.animDir
+                == 1
+                && idx
+                == last
+                && sectionsModel.nextIndex
+                == Just 0
+
+        isWrapBackward : Bool
+        isWrapBackward =
+            sectionsModel.animating
+                && sectionsModel.animDir
+                == -1
+                && idx
+                == 0
+                && sectionsModel.nextIndex
+                == Just last
+
         trackChildren : List (Html Msg)
         trackChildren =
-            if sectionsModel.animating then
-                if sectionsModel.animDir == 1 then
-                    [ div [ class "w-full shrink-0" ] [ card current ]
-                    , div [ class "w-full shrink-0" ] [ card next ]
-                    ]
+            [ div [ class "w-full shrink-0" ] [ card prev ]
+            , div [ class "w-full shrink-0" ] [ card current ]
+            , div [ class "w-full shrink-0" ]
+                [ card
+                    (if sectionsModel.animating && sectionsModel.animDir == 1 then
+                        nextForAnim
 
-                else
-                    [ div [ class "w-full shrink-0" ] [ card next ]
-                    , div [ class "w-full shrink-0" ] [ card current ]
-                    ]
-
-            else
-                [ div [ class "w-full shrink-0" ] [ card current ] ]
+                     else
+                        next
+                    )
+                ]
+            ]
 
         translateX : String
         translateX =
             if sectionsModel.animating then
                 if sectionsModel.animDir == 1 then
-                    "translateX(-100%)"
+                    "translateX(-200%)"
 
                 else
-                    "translateX(100%)"
+                    "translateX(0)"
 
             else
-                "translateX(0)"
+                "translateX(-100%)"
 
         dot : Int -> Html Msg
         dot i =
@@ -292,12 +340,27 @@ viewWhatPeopleSaying sectionsModel =
                         Nothing ->
                             i == idx
 
-                active =
+                pulseThisDot =
+                    case sectionsModel.nextIndex of
+                        Just n ->
+                            (isWrapForward || isWrapBackward) && (i == n)
+
+                        Nothing ->
+                            False
+
+                base =
                     if isActive then
                         "bg-purple-500"
 
                     else
                         "bg-purple-500/40"
+
+                pulse =
+                    if pulseThisDot then
+                        " ring-2 ring-purple-300 animate-pulse"
+
+                    else
+                        ""
             in
             button
                 [ class "w-12 h-12 flex items-center justify-center" -- 48x48 tap target
@@ -312,7 +375,7 @@ viewWhatPeopleSaying sectionsModel =
                 , type_ "button"
                 , onClick (GoTesti i)
                 ]
-                [ span [ class ("w-3 h-3 rounded-full " ++ active) ] [] ]
+                [ span [ class ("w-3 h-3 rounded-full " ++ base ++ pulse) ] [] ]
     in
     div [ class "bg-gray-900 py-20 px-6 text-white relative overflow-hidden" ]
         [ h2 [ class "text-4xl md:text-5xl font-extrabold text-center" ] [ text "What Parents Are Saying" ]
@@ -340,7 +403,11 @@ viewWhatPeopleSaying sectionsModel =
                         [ class "flex w-full h-full"
                         , style "transition"
                             (if sectionsModel.animating then
-                                "transform 450ms ease"
+                                if isWrapForward || isWrapBackward then
+                                    "transform 350ms ease"
+
+                                else
+                                    "transform 450ms ease"
 
                              else
                                 "none"
