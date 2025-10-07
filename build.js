@@ -103,19 +103,6 @@ var htmlBodyStart =
   <div id="myapp"></div>`
 
 var htmlBodyEnd = `
-if (app.ports && app.ports.gtagReportConversion) {
-    app.ports.gtagReportConversion.subscribe(function(message) {
-      gtag_report_conversion();
-    });
-  }
-
-  if (app.ports && app.ports.goBack) {
-    app.ports.goBack.subscribe(function(message) {
-      window.history.back();
-    });
-  }
-
-  </script>
 
   <!-- Google Analytics (deferred + Consent Mode) -->
   <script>
@@ -238,7 +225,21 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<script src="` + elmPath + `elm.js" defer></script>`
     + `</head>`
     + htmlBodyStart
-    + `<script>window.addEventListener('DOMContentLoaded',function(){ window.app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });});`
+    + `<script>window.addEventListener('DOMContentLoaded',function(){
+  window.app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });
+  (function(){
+    var app = window.app;
+    if (!app || !app.ports) return;
+    if (app.ports.gtagReportConversion && !app.__gtagHooked){
+      app.ports.gtagReportConversion.subscribe(function(){ if (typeof gtag_report_conversion === 'function') gtag_report_conversion(); });
+      app.__gtagHooked = true;
+    }
+    if (app.ports.goBack && !app.__goBackHooked){
+      app.ports.goBack.subscribe(function(){ window.history.back(); });
+      app.__goBackHooked = true;
+    }
+  })();
+});</script>`
     + htmlBodyEnd,
     function (err) {
       if (err) {

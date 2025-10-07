@@ -95,20 +95,21 @@
         }
       }
     </style><meta name="description" content="Claritas Studios"><title>Claritas Studios</title><meta property="og:title" content="Claritas Studios"><meta property="og:description" content="Claritas Studios"><meta property="og:url" content="https://claritasstudios.com/public/index.html"><meta property="og:image" content="https://claritasstudios.com/assets/images/thumbnails/CSCThumbnail.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="https://claritasstudios.com/assets/images/thumbnails/CSCThumbnail.png"><script src="/elm.js" defer></script></head><body dir="ltr" lang="en" class="fontSize" style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333" >
-  <div id="myapp"></div><script>window.addEventListener('DOMContentLoaded',function(){ window.app = Elm.Main.init({ node: document.getElementById('myapp') });});
-if (app.ports && app.ports.gtagReportConversion) {
-    app.ports.gtagReportConversion.subscribe(function(message) {
-      gtag_report_conversion();
-    });
-  }
-
-  if (app.ports && app.ports.goBack) {
-    app.ports.goBack.subscribe(function(message) {
-      window.history.back();
-    });
-  }
-
-  </script>
+  <div id="myapp"></div><script>window.addEventListener('DOMContentLoaded',function(){
+  window.app = Elm.Main.init({ node: document.getElementById('myapp') });
+  (function(){
+    var app = window.app;
+    if (!app || !app.ports) return;
+    if (app.ports.gtagReportConversion && !app.__gtagHooked){
+      app.ports.gtagReportConversion.subscribe(function(){ if (typeof gtag_report_conversion === 'function') gtag_report_conversion(); });
+      app.__gtagHooked = true;
+    }
+    if (app.ports.goBack && !app.__goBackHooked){
+      app.ports.goBack.subscribe(function(){ window.history.back(); });
+      app.__goBackHooked = true;
+    }
+  })();
+});</script>
 
   <!-- Google Analytics (deferred + Consent Mode) -->
   <script>
