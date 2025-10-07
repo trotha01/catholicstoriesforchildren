@@ -39,7 +39,7 @@ viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen openMsg =
                 ( "60px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
     in
     div []
-        (([ nav
+        ([ nav
                 [ class ("fixed top-0 left-0 right-0 z-50 "
                       ++ (if menuOpen then
                               "bg-black"
@@ -55,7 +55,7 @@ viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen openMsg =
                         ]
                         [ viewLogo
                         , viewHeaderTitle True currentPage
-                        , navigationWithMsg height openMsg
+                        , navigationWithMsg height menuOpen openMsg
                         ]
                     ]
                 ]
@@ -63,41 +63,65 @@ viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen openMsg =
                 span [] []
               else
                 div [ class ("h-[60px] md:h-[" ++ height ++ "]") ] []
+            , viewMenuOverlay height menuOpen
             ])
-            ++ (if menuOpen then [ viewMenuOverlay height ] else [])
-        )
 
 
-viewMenuOverlay : String -> Html msg
-viewMenuOverlay height =
+viewMenuOverlay : String -> Bool -> Html msg
+viewMenuOverlay height menuOpen =
+    let
+        visibilityClasses =
+            if menuOpen then
+                "opacity-100 pointer-events-auto translate-y-0"
+            else
+                "opacity-0 pointer-events-none -translate-y-2"
+    in
     div
-        [ class "fixed left-0 right-0 bottom-0 z-40 bg-black bg-opacity-90 text-white overflow-y-auto"
+        [ class "fixed left-0 right-0 bottom-0 z-40 text-white overflow-y-auto transition-opacity duration-150 ease-out"
         , class ("top-[60px] md:top-[" ++ height ++ "]")
+        , class ("bg-black bg-opacity-90 " ++ visibilityClasses)
         ]
-        [ div [ class "p-6" ]
+        [ div [ class "p-6 transition-transform duration-150 ease-out" ]
             [ NavigationPage.view False ]
         ]
 
 
-navigationWithMsg : String -> msg -> Html msg
-navigationWithMsg height openMsg =
-    div [ class "w-full pr-2" ]
-        [ div [ class "xl:hidden" ] [ hamburgerMenuWithMsg openMsg ]
+navigationWithMsg : String -> Bool -> msg -> Html msg
+navigationWithMsg height menuOpen openMsg =
+    div [ class "w-full pr-2 justify-self-end" ]
+        [ div [ class "xl:hidden flex justify-end" ] [ hamburgerMenuWithMsg menuOpen openMsg ]
         , div [ class "hidden xl:block w-full" ] [ desktopNavigation height ]
         ]
 
 
-hamburgerMenuWithMsg : msg -> Html msg
-hamburgerMenuWithMsg openMsg =
-    button
-        [ class "space-y-2"
-        , attribute "aria-label" "menu"
-        , onClick openMsg
-        ]
-        [ div [ class "w-8 h-0.5 m-auto bg-white" ] []
-        , div [ class "w-8 h-0.5 m-auto bg-white" ] []
-        , div [ class "w-8 h-0.5 m-auto bg-white" ] []
-        ]
+hamburgerMenuWithMsg : Bool -> msg -> Html msg
+hamburgerMenuWithMsg menuOpen openMsg =
+    let
+        baseBtnAttrs =
+            [ onClick openMsg
+            , attribute "type" "button"
+            , attribute "aria-expanded" (if menuOpen then "true" else "false")
+            , attribute "aria-label" (if menuOpen then "Close menu" else "Open menu")
+            , class "relative w-10 h-10 grid place-content-center rounded focus:outline-none focus:ring-2 focus:ring-white/60"
+            ]
+    in
+    if menuOpen then
+        -- Render an “X” using two crossed bars
+        button baseBtnAttrs
+            [ div [ class "relative w-8 h-8" ]
+                [ div [ class "absolute left-0 top-1/2 -translate-y-1/2 w-8 h-0.5 bg-white rotate-45 transition" ] []
+                , div [ class "absolute left-0 top-1/2 -translate-y-1/2 w-8 h-0.5 bg-white -rotate-45 transition" ] []
+                ]
+            ]
+    else
+        -- Render the classic hamburger (three bars)
+        button baseBtnAttrs
+            [ div [ class "flex flex-col items-center justify-center gap-1.5 w-8 h-8" ]
+                [ div [ class "w-8 h-0.5 bg-white transition" ] []
+                , div [ class "w-8 h-0.5 bg-white transition" ] []
+                , div [ class "w-8 h-0.5 bg-white transition" ] []
+                ]
+            ]
 
 
 viewSubpageHeader : String -> Int -> Html msg
@@ -200,8 +224,8 @@ viewHeaderTitle includesLinks title =
 
 navigation : String -> Html msg
 navigation height =
-    div [ class "w-full pr-2" ]
-        [ div [ class "xl:hidden" ] [ hamburgerMenu ]
+    div [ class "w-full pr-2 justify-self-end" ]
+        [ div [ class "xl:hidden flex justify-end" ] [ hamburgerMenu ]
         , div [ class "hidden xl:block w-full" ] [ desktopNavigation height ]
         ]
 
@@ -267,6 +291,7 @@ viewLogo =
     a
         [ style "text-decoration" "none"
         , class "colorDarkGray"
+        , class "justify-self-start"
         , href "/"
         , attribute "aria-label" "home"
         ]
