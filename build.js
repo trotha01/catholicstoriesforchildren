@@ -4,7 +4,6 @@ var htmlHeadStart = `<!doctype html>
 <html lang="en">
   <head>
   <link rel="preload" as="image" href="/assets/images/home/ClaritasStudios-800.webp" imagesrcset="/assets/images/home/ClaritasStudios-400.webp 400w, /assets/images/home/ClaritasStudios-800.webp 800w, /assets/images/home/ClaritasStudios-1200.webp 1200w" imagesizes="(max-width: 720px) 80vw, 400px" fetchpriority="high">
-  <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
 
 
     <meta charset='utf-8'/>
@@ -12,7 +11,6 @@ var htmlHeadStart = `<!doctype html>
     <meta name="theme-color" content="#EBD7F2">
     <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://app-cdn.clickup.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/tailwind.css" rel="stylesheet">
     <link href="/home.css" rel="stylesheet">
