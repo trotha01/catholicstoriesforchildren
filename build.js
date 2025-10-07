@@ -237,10 +237,10 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<meta property="og:image" content="https://claritasstudios.com` + thumbnail + `">`
     + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://claritasstudios.com` + thumbnail + `">`
-    + `<script src="` + elmPath + `elm.js"></script>`
+    + `<script src="` + elmPath + `elm.js" defer></script>`
     + `</head>`
     + htmlBodyStart
-    + `<script defer>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
+    + `<script>window.addEventListener('DOMContentLoaded',function(){ window.app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });});`
     + htmlBodyEnd,
     function (err) {
       if (err) {
