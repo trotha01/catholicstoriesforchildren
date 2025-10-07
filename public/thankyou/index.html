@@ -177,38 +177,56 @@
       iframe.style.background = 'transparent';
       iframe.className = 'rounded';
 
-      el.replaceWith(iframe);
+      // IMPORTANT: never replace Elm-owned nodes; mutate children or existing iframe only.
+      var tag = (el.tagName || '').toLowerCase();
+      if (tag === 'iframe') {
+        // Placeholder is already an iframe rendered by Elm; just set its src.
+        el.src = src;
+        el.title = 'Substack Signup';
+        el.loading = 'lazy';
+        el.referrerPolicy = 'no-referrer-when-downgrade';
+        el.sandbox = 'allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin';
+        el.style.width = '100%';
+        el.style.height = h + 'px';
+        el.style.background = 'transparent';
+        el.className = (el.className ? el.className + ' ' : '') + 'rounded';
+      } else {
+        // Use the element as a stable container owned by Elm and only add children.
+        try { el.innerHTML = ''; } catch(_) {}
+        el.appendChild(iframe);
+      }
+
       var fb = document.getElementById('substack-fallback-link');
       if (fb) { try { fb.remove(); } catch(_) { fb.parentNode && fb.parentNode.removeChild(fb); } }
     }
 
-  var io = ('IntersectionObserver' in window)
-    ? new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting){
-            inject(e.target);
-            io.unobserve(e.target);
-          }
-        });
-      }, { rootMargin: '200px 0px', threshold: 0.01 })
-    : null;
+    var io = ('IntersectionObserver' in window)
+      ? new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting){
+              inject(e.target);
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '200px 0px', threshold: 0.01 })
+      : null;
 
-  function setup(){
-    document.querySelectorAll(SEL).forEach(function(el){
-      if (io) io.observe(el);
-    });
+    function setup(){
+      document.querySelectorAll(SEL).forEach(function(el){
+        if (io) io.observe(el);
+      });
 
-    // Safety net: if user never scrolls, load on idle/dwell.
-    function idleLoad(){ document.querySelectorAll(SEL).forEach(inject); }
-    if ('requestIdleCallback' in window){
-      setTimeout(function(){ requestIdleCallback(idleLoad, { timeout: 5000 }); }, 10000);
-    } else {
-      setTimeout(idleLoad, 15000);
+      // Safety net: if user never scrolls, load on idle/dwell.
+      function idleLoad(){ document.querySelectorAll(SEL).forEach(inject); }
+      if ('requestIdleCallback' in window){
+        setTimeout(function(){ requestIdleCallback(idleLoad, { timeout: 5000 }); }, 10000);
+      } else {
+        setTimeout(idleLoad, 15000);
+      }
     }
-  }
 
-  if (document.readyState === 'complete' || document.readyState === 'interactive') setup();
-  else document.addEventListener('DOMContentLoaded', setup);
+    if (document.readyState === 'complete' || document.readyState === 'interactive') setup();
+    else document.addEventListener('DOMContentLoaded', setup);
   })();
   </script>
 

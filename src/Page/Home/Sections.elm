@@ -477,14 +477,20 @@ viewStayConnected =
             [ text "Get notified about new stories, activities, and special content for your family." ]
         , div [ class "max-w-3xl mx-auto" ]
             [ -- Placeholder reserves space to avoid CLS and holds the data-src
-              div
+              (Html.node "iframe"
                 [ attribute "data-substack-src" substackEmbedUrl
                 , attribute "data-height" "220"
+                , attribute "src" ""
+                , attribute "title" "Substack Signup"
+                , attribute "loading" "lazy"
+                , attribute "referrerpolicy" "no-referrer-when-downgrade"
+                , attribute "sandbox" "allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin"
                 , class "rounded bg-transparent"
                 , style "width" "100%"
                 , style "height" "220px"
                 ]
                 []
+              )
             , p [ id "substack-fallback-link", class "mt-3" ]
                 [ a
                     [ href substackEmbedUrl
