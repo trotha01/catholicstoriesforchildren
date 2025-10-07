@@ -196,8 +196,16 @@
         el.appendChild(iframe);
       }
 
+      // Do NOT remove Elm-owned nodes; hide the fallback link instead
       var fb = document.getElementById('substack-fallback-link');
-      if (fb) { try { fb.remove(); } catch(_) { fb.parentNode && fb.parentNode.removeChild(fb); } }
+      if (fb) {
+        try {
+          fb.setAttribute('hidden', '');
+          fb.setAttribute('aria-hidden', 'true');
+          fb.style.display = 'none';
+          fb.style.visibility = 'hidden';
+        } catch(_) { /* noop */ }
+      }
     }
 
     var io = ('IntersectionObserver' in window)
