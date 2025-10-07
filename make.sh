@@ -15,8 +15,8 @@ elmmake() {
 
   npx elm make --optimize \
   $src --output "/tmp/$output" \
-  && npx uglify-js "/tmp/$output" --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
-  | npx uglify-js --mangle --output $output \
+  && npx uglify-js "/tmp/$output" --compress 'passes=2,pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
+  | npx uglify-js --mangle toplevel --output $output \
   && rm "/tmp/$output"
 
   # DEBUG
@@ -25,11 +25,7 @@ elmmake() {
 
 pair_list=(
   src/Main.elm public/elm.js
-  src/Page/About/PrivacyPolicy/Main.elm public/about/privacy-policy/elm.js
-  src/Page/About/TermsAndConditions/Main.elm public/about/terms-and-conditions/elm.js
   src/Page/NotFound/Main.elm public/notfound/elm.js
-  src/Page/FeastDayActivities/Main.elm public/feastdayactivities/elm.js
-  src/Page/FeastDayActivities/Today/Main.elm public/feastdayactivities/today/elm.js
   src/Page/ThankYou/Main.elm public/thankyou/elm.js
 )
 

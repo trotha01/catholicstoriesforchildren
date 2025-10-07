@@ -47,10 +47,9 @@ view url =
             , style "overflow-y" "auto"
             , style "perspective" "300px"
             , style "scroll-behavior" "smooth"
-            , style "background-color" "#FEF7F4"
+            , class "text-white"
             ]
-            [ viewSubpageHeader "Resources" headerMargin
-            , viewBody
+            [ viewBody
             , viewFooter
             ]
 
@@ -108,6 +107,7 @@ viewResources resourceGroup =
         , class "m-auto"
         , class "p-5"
         , class "mb-10"
+        , class "text-white"
         ]
         [ h1 [ class "my-10 leading-10" ] [ text resourceGroup.name ]
         , div [ class "mb-20" ]

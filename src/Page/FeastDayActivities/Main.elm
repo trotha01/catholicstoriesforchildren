@@ -3,6 +3,9 @@ module Page.FeastDayActivities.Main exposing (..)
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
+import Component.Footer exposing (viewFooter)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Page.FeastDayActivities.FeastDayHelpers exposing (..)
 import Page.FeastDayActivities.FeastDays exposing (..)
 import Page.FeastDayActivities.FeastDays.M01Jan exposing (january)
@@ -17,30 +20,15 @@ import Page.FeastDayActivities.FeastDays.M09Sep exposing (september)
 import Page.FeastDayActivities.FeastDays.M10Oct exposing (october)
 import Page.FeastDayActivities.FeastDays.M11Nov exposing (november)
 import Page.FeastDayActivities.FeastDays.M12Dec exposing (december)
-import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Regex
+import Page.Home.Sections exposing (viewStayConnected)
 import Page.Saints.SaintHelpers exposing (activitiesFromSaint)
 import Page.Saints.SaintList as SaintList
 import Page.Signup as Signup
+import Regex
 import Task
 import Time exposing (Month(..))
 import Url
 
-
-main : Program () Model Msg
-main =
-    Browser.application
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        , onUrlChange = UrlChanged
-        , onUrlRequest = LinkClicked
-        }
 
 
 type alias Model =
@@ -171,15 +159,10 @@ view model =
     { title = "Feast Day Activities - Claritas Studios"
     , body =
         [ div
-            [ -- For parallax
-              style "height" "100vh"
-            , style "overflow-x" "hidden"
-            , style "overflow-y" "auto"
-            , style "background-color" "#FEF7F4"
+            [ class "bg-black text-white"
             , id "body"
             ]
-            [ viewSubpageHeader "Feast Day Activities" headerMargin
-            , viewBody model currentRoute
+            [ viewBody model currentRoute
             , viewFooter
             ]
         ]
@@ -229,70 +212,98 @@ viewBody model route =
 viewDate : Model -> String -> String -> List FeastActivities -> Html Msg
 viewDate model month date feasts =
     let
+        capMonth =
+            capitalizeFirst month
+
         ( nextMonth, nextDay ) =
-            nextDate "2024" month date
+            nextDate "2025" month date
 
         ( prevMonth, prevDay ) =
-            previousDate "2024" month date
+            previousDate "2025" month date
 
         nextDateLink =
             createFeastDayLink nextMonth nextDay
 
         prevDateLink =
             createFeastDayLink prevMonth prevDay
+
+        concatFeasts =
+            String.join " and " (List.map .feast feasts)
+
+        breadcrumb =
+            "Home / " ++ month ++ " 2025 / " ++ month ++ " " ++ date ++ ", 2025"
+
+        dayLabel =
+            month ++ " " ++ date ++ ", 2025"
     in
     div []
-        [ div
-            [ class "text-center"
-            , class "mt-10 max-w-3xl mx-auto px-11"
-            , id "calendar-content"
-            ]
-            [ div [ class "py-5" ]
-                [ div [ class "grid grid-cols-3 mb-16" ]
-                    [ a
-                        [ class "text-7xl text-left md:m-0"
-                        , href prevDateLink
-                        , attribute "aria-label" "Previous"
-                        ]
-                        [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] [] ]
-                        , div [ class "text-sm capitalize" ] [ text "Previous" ]
-                        ]
-                    , a
-                        [ class "text-7xl text-left m-5 md:m-0 justify-self-center"
-                        , href (urlPath ++ "?m=" ++ month)
-                        , attribute "aria-label" ("Back to " ++ month)
-                        ]
-                        [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] [] ]
-                        , div [ class "text-sm capitalize" ] [ text ("Back to " ++ month) ]
-                        ]
-                    , a
-                        [ class "text-7xl text-left md:m-0 justify-self-end"
-                        , href nextDateLink
-                        , attribute "aria-label" "Next"
-                        ]
-                        [ div [] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] [] ]
-                        , div [ class "text-sm capitalize" ] [ text "Next" ]
+        [ -- Top navigation row (prev / back to month / next)
+          div [ class "max-w-5xl mx-auto px-4 mt-6" ]
+            [ div [ class "grid grid-cols-3 gap-6 items-center" ]
+                [ a
+                    [ href prevDateLink
+                    , attribute "aria-label" "Previous"
+                    , class "rounded-lg bg-gray-800/60 hover:bg-gray-800 p-4 md:p-6 shadow-md flex flex-col items-center justify-center gap-1 md:gap-4 text-center"
+                    ]
+                    [ img [ class "hidden md:block h-10", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] []
+                    , div []
+                        [ div [ class "text-sm md:text-base font-semibold text-white leading-tight" ] [ text "Previous Day" ]
+                        , div [ class "text-xs md:text-sm text-gray-400 mt-0" ] [ text (capitalizeFirst prevMonth ++ " " ++ prevDay) ]
                         ]
                     ]
-                , div
-                    []
-                    [ h1 [ class "capitalize text-left" ]
-                        [ span [ class "block" ] [ text "Catholic Activities for Children" ]
-                        , span [ class "block" ] [ text ("for " ++ month ++ " " ++ date ++ ", 2024") ]
+                , a
+                    [ href (urlPath ++ "?m=" ++ month)
+                    , attribute "aria-label" ("Back to " ++ capMonth)
+                    , class "rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 p-4 md:p-6 shadow-lg inline-flex flex-col items-center justify-center text-center"
+                    ]
+                    [ img [ class "hidden md:inline-block h-8 mb-2", src "https://ik.imagekit.io/catholicstories/Resources_Icons/calendar1_-zIHisgP2.png?updatedAt=1685581675420" ] []
+                    , div [ class "text-white font-semibold text-sm md:text-lg leading-tight" ] [ text ("Back to " ++ capMonth) ]
+                    ]
+                , a
+                    [ href nextDateLink
+                    , attribute "aria-label" "Next"
+                    , class "rounded-lg bg-gray-800/60 hover:bg-gray-800 p-4 md:p-6 shadow-md flex flex-col items-center justify-center gap-1 md:gap-4 text-center"
+                    ]
+                    [ img [ class "hidden md:block h-10", src "https://ik.imagekit.io/catholicstories/Resources_Icons/rightarrow_rccpkUlIk.png?updatedAt=1693003148251" ] []
+                    , div []
+                        [ div [ class "text-sm md:text-base font-semibold text-white leading-tight" ] [ text "Next Day" ]
+                        , div [ class "text-xs md:text-sm text-gray-400 mt-0" ] [ text (capitalizeFirst nextMonth ++ " " ++ nextDay) ]
                         ]
-                    , viewFeastDayHeader feasts
                     ]
                 ]
             ]
-        , div
-            [ class "mt-10 mb-40"
-            , class "min-h-screen"
+        , -- Main dark rounded header card
+          div
+            [ id "calendar-content"
+            , class "mt-8 max-w-5xl mx-auto rounded-2xl bg-gray-900 text-white p-10 shadow-lg"
             ]
-            [ div [ class "mt-2 mb-20" ]
-                [ Signup.view4 |> Html.map SignupMsg ]
-            , div [ class "max-w-3xl mx-auto" ]
-                [ viewFeastActivities model feasts
-                , div [ class "mt-10" ] [ viewWeekdayActivities ]
+            [ -- p [ class "text-sm text-gray-400 mb-4" ] [ text breadcrumb ]
+              h1 [ class "text-5xl md:text-6xl font-extrabold mb-4" ] [ text "Feast Day Activities" ]
+            , h3 [ class "text-2xl text-gray-300 mb-4" ]
+                [ text
+                    ("Feast of "
+                        ++ (if concatFeasts == "" then
+                                ""
+
+                            else
+                                concatFeasts
+                           )
+                    )
+                ]
+            , span [ class "inline-block bg-purple-900/70 text-white rounded-full px-4 py-2 text-sm mb-6" ] [ text (capMonth ++ " " ++ date ++ ", 2025") ]
+            ]
+        , -- Content below header (signup + activities)
+          div [ class "mt-10 mb-40" ]
+            [ -- Signup card (rounded dark card like the header)
+              div [ class "max-w-5xl mx-auto rounded-2xl text-white shadow-lg mb-10 overflow-hidden" ]
+                [ viewStayConnected ]
+            , -- Feast activities card (rounded dark card like the header)
+              div [ class "max-w-5xl mx-auto rounded-2xl bg-gray-900 text-white p-10 shadow-lg" ]
+                [ h2 [ class "text-3xl font-extrabold mb-4" ] [ text "Suggested Activities" ]
+                , div [ class "max-w-3xl mx-auto" ]
+                    [ viewFeastActivities model feasts
+                    , div [ class "mt-10" ] [ viewWeekdayActivities ]
+                    ]
                 ]
             ]
         ]
@@ -610,6 +621,16 @@ viewMonthPillBox currentMonth month =
 urlPath : String
 urlPath =
     "/feastdayactivities"
+
+
+capitalizeFirst : String -> String
+capitalizeFirst s =
+    case String.uncons s of
+        Nothing ->
+            ""
+
+        Just ( firstChar, rest ) ->
+            String.toUpper (String.fromChar firstChar) ++ rest
 
 
 dateWidth : String

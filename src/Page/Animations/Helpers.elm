@@ -15,6 +15,10 @@ type alias Production msg =
     , about : Html msg
     , seasons : List (Season msg)
     , carouselThumbnail : String
+    , shortDescription : String
+    , duration : String
+    , year : String
+    , age : String
     }
 
 
@@ -51,6 +55,8 @@ type alias Episode msg =
         , urdu : String
         , asl : String
         }
+    , year : String
+    , duration : String
     }
 
 
@@ -202,7 +208,7 @@ productionToThumbnailData : Production msg -> ThumbnailData
 productionToThumbnailData series =
     { title = series.title
     , thumbnail = series.thumbnail
-    , link = "/animations/" ++ stringToURL series.title -- series.link
+    , link = "/animations/" ++ stringToURL series.title ++ "?tab=episodes" -- series.link
     , isDisabled = False -- Assuming series are never disabled. TODO: change to map over the episodes and check if all are disabled.
     }
 

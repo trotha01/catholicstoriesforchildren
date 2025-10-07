@@ -471,7 +471,7 @@ viewAnotherPage =
             , attribute "aria-label" "See the Act of Contrition animation"
             ]
             [ img
-                [ src "/assets/images/AnimationImageLinks/PTWA/AOC.png"
+                [ src "/assets/images/AnimationImageLinks/PTWA/AOC.webp"
                 , style "border-radius" "5px"
                 , style "width" "-webkit-fill-available"
                 , alt "Act of Contrition Animation"

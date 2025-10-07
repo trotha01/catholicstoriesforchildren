@@ -1,8 +1,8 @@
 module Page.Animations.DaisyAndSheep.DASEpisodes exposing (..)
 
-import Page.Animations.Helpers exposing (Episode, Season)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Page.Animations.Helpers exposing (Episode, Season)
 import Time exposing (Month(..))
 
 
@@ -40,11 +40,11 @@ seasons =
 episodes : List (Episode msg)
 episodes =
     [ { title = "Liturgical Kiss"
-      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalKiss.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalKiss.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=liturgicalkiss"
+      , link = "/animations/daisyandsheep/1/liturgicalkiss"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/liturgicalkissworksheet.png"
@@ -64,13 +64,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Astronomy Program"
-      , thumbnail = "/assets/images/AnimationImageLinks/AstronomyProgram.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/AstronomyProgram.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=astronomyprogram"
+      , link = "/animations/daisyandsheep/1/astronomyprogram"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/astronomyprogramworksheet.png"
@@ -90,13 +92,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Penitential Act"
-      , thumbnail = "/assets/images/AnimationImageLinks/PenitentialAct.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PenitentialAct.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=penitentialact"
+      , link = "/animations/daisyandsheep/1/penitentialact"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/penitentialact.png"
@@ -116,13 +120,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Guardian Angel"
-      , thumbnail = "/assets/images/AnimationImageLinks/GuardianAngel.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/GuardianAngel.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=guardianangel"
+      , link = "/animations/daisyandsheep/1/guardianangel"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/guardianangel.png"
@@ -142,13 +148,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Gospel as Living Word"
-      , thumbnail = "/assets/images/AnimationImageLinks/GospelAsLivingWord.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/GospelAsLivingWord.webp"
       , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=gospelaslivingword"
+      , link = "/animations/daisyandsheep/1/gospelaslivingword"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/gospelaslivingword.png"
@@ -168,13 +176,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
-    , { title = "The Virgin Mary, Mother"
-      , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.png"
+    , { title = "Mary My Mother"
+      , thumbnail = "/assets/images/AnimationImageLinks/MaryApparitions.webp"
       , releaseDate = Time.millisToPosix 1728136800000 -- Saturday, October 5, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=thevirginmary,mother"
+      , link = "/animations/daisyandsheep/1/marymymother"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/maryapparitions.png"
@@ -194,13 +204,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Prayer of the Faithful"
-      , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PrayerOfTheFaithful.webp"
       , releaseDate = Time.millisToPosix 1728741600000 -- Saturday, October 12, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=prayerofthefaithful"
+      , link = "/animations/daisyandsheep/1/prayerofthefaithful"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/prayerofthefaithful.png"
@@ -220,13 +232,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Communion of Saints"
-      , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/CommunionOfSaints.webp"
       , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=communionofsaints"
+      , link = "/animations/daisyandsheep/1/communionofsaints"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/communionofsaints.png"
@@ -246,13 +260,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Eucharistic Wine"
-      , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/EucharisticWine.webp"
       , releaseDate = Time.millisToPosix 1729000800000 -- Tuesday, October 15, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=eucharisticwine"
+      , link = "/animations/daisyandsheep/1/eucharisticwine"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/eucharisticwine.png"
@@ -272,13 +288,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Pope Names"
-      , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PopeNames.webp"
       , releaseDate = Time.millisToPosix 1729605600000 -- Tuesday, October 21, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=popenames"
+      , link = "/animations/daisyandsheep/1/popenames"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/popenames.png"
@@ -298,13 +316,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Preparing the Altar"
-      , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/PreparingTheAltar.webp"
       , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=preparingthealtar"
+      , link = "/animations/daisyandsheep/1/preparingthealtar"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/preparingthealtar.png"
@@ -324,13 +344,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Being a Saint"
-      , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/BeingASaint.webp"
       , releaseDate = Time.millisToPosix 1729951200000 -- Saturday, October 26, 2024 7:00:00 AM GMT-07:00
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=beingasaint"
+      , link = "/animations/daisyandsheep/1/beingasaint"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/beingasaint.png"
@@ -350,13 +372,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Holy Holy Holy"
-      , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/HolyHolyHoly.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=holyholyholy"
+      , link = "/animations/daisyandsheep/1/holyholyholy"
       , about = span [] []
       , activities =
             { thumbnailLink = ""
@@ -376,13 +400,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Doctors of the Church"
-      , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/DoctorOfTheChurch.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=doctorsofthechurch"
+      , link = "/animations/daisyandsheep/1/doctorsofthechurch"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/doctorofthechurch.png"
@@ -402,13 +428,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Dewfall"
-      , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Dewfall.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=dewfall"
+      , link = "/animations/daisyandsheep/1/dewfall"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/thedewfall.png"
@@ -428,13 +456,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The Sacraments"
-      , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Sacraments.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=thesacraments"
+      , link = "/animations/daisyandsheep/1/thesacraments"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/sacraments.png"
@@ -454,13 +484,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The Lamb of God"
-      , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/LambOfGod.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=thelambofgod"
+      , link = "/animations/daisyandsheep/1/thelambofgod"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/lambofgod.png"
@@ -480,13 +512,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "The 7 Gifts"
-      , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/The7Gifts.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=the7gifts"
+      , link = "/animations/daisyandsheep/1/the7gifts"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/the7gifts.png"
@@ -506,13 +540,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Transubstantiation"
-      , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Transubstantiation.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=transubstantiation"
+      , link = "/animations/daisyandsheep/1/transubstantiation"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/transubstantiation.png"
@@ -532,13 +568,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Ash Wednesday"
-      , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/AshWednesday.webp"
       , releaseDate = Time.millisToPosix 1732633200000
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=ashwednesday"
+      , link = "/animations/daisyandsheep/1/ashwednesday"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/ashwednesday.png"
@@ -558,13 +596,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Liturgical Colors"
-      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/LiturgicalColors.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=liturgicalcolors"
+      , link = "/animations/daisyandsheep/1/liturgicalcolors"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/liturgicalcolors.png"
@@ -584,13 +624,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Easter"
-      , thumbnail = "/assets/images/AnimationImageLinks/Easter.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/Easter.webp"
       , releaseDate = Time.millisToPosix 1733238000000
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=easter"
+      , link = "/animations/daisyandsheep/1/easter"
       , about = span [] []
       , activities =
             { thumbnailLink = "/assets/images/daisyandsheep/easter.png"
@@ -610,13 +652,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Vatican Bank"
-      , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/VaticanBank.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=vaticanbank"
+      , link = "/animations/daisyandsheep/1/vaticanbank"
       , about = span [] []
       , activities =
             { thumbnailLink = ""
@@ -636,13 +680,15 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     , { title = "Church Meaning"
-      , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/ChurchMeaning.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = "/animations/daisyandsheep?e=churchmeaning"
+      , link = "/animations/daisyandsheep/1/churchmeaning"
       , about = span [] []
       , activities =
             { thumbnailLink = ""
@@ -662,5 +708,7 @@ episodes =
             , urdu = ""
             , asl = ""
             }
+      , year = "2024"
+      , duration = "1 min"
       }
     ]

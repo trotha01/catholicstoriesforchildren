@@ -20,11 +20,11 @@ seasons =
 episodes : List (Episode msg)
 episodes =
     [ { title = "Hail Mary"
-      , thumbnail = "/assets/images/AnimationImageLinks/HailMary.png"
+      , thumbnail = "/assets/images/AnimationImageLinks/HailMary.webp"
       , releaseDate = Time.millisToPosix 0
       , isDisabled = False
       , isFundraising = False
-      , link = ""
+      , link = "/animations/hailmary"
       , about =
             div []
                 [ aboutTheAnimation
@@ -53,6 +53,8 @@ episodes =
             , urdu = "https://www.youtube.com/embed/NN7gd5xqDw8?si=tUB20FMCCdN2Mafx"
             , asl = "https://www.youtube.com/embed/QNVNbLiqznI?playlist=QNVNbLiqznI&loop=1"
             }
+      , year = "2020"
+      , duration = "3 min"
       }
     ]
 

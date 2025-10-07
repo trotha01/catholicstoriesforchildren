@@ -19,8 +19,7 @@ view =
         , style "scroll-behavior" "smooth"
         , style "background-color" "#FEF7F4"
         ]
-        [ viewSubpageHeader "Shop" headerMargin
-        , viewBody
+        [ viewBody
         , viewFooter
         ]
 

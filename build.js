@@ -4,7 +4,6 @@ var htmlHeadStart = `<!doctype html>
 <html lang="en">
   <head>
   <link rel="preload" as="image" href="/assets/images/home/ClaritasStudios-800.webp" imagesrcset="/assets/images/home/ClaritasStudios-400.webp 400w, /assets/images/home/ClaritasStudios-800.webp 800w, /assets/images/home/ClaritasStudios-1200.webp 1200w" imagesizes="(max-width: 720px) 80vw, 400px" fetchpriority="high">
-  <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
 
 
     <meta charset='utf-8'/>
@@ -12,7 +11,6 @@ var htmlHeadStart = `<!doctype html>
     <meta name="theme-color" content="#EBD7F2">
     <link rel="apple-touch-icon" href="/assets/Favicons/PNG/128x128-favicon.png">
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://app-cdn.clickup.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/tailwind.css" rel="stylesheet">
     <link href="/home.css" rel="stylesheet">
@@ -105,19 +103,6 @@ var htmlBodyStart =
   <div id="myapp"></div>`
 
 var htmlBodyEnd = `
-if (app.ports && app.ports.gtagReportConversion) {
-    app.ports.gtagReportConversion.subscribe(function(message) {
-      gtag_report_conversion();
-    });
-  }
-
-  if (app.ports && app.ports.goBack) {
-    app.ports.goBack.subscribe(function(message) {
-      window.history.back();
-    });
-  }
-
-  </script>
 
   <!-- Google Analytics (deferred + Consent Mode) -->
   <script>
@@ -162,6 +147,64 @@ if (app.ports && app.ports.gtagReportConversion) {
     };
   </script>
 
+  <!-- Lazy load Substack iframes when they are near viewport or after a delay -->
+  <script>
+  (function(){
+    const SEL = '[data-substack-src]';
+
+    function inject(el){
+      if (!el || el.__loaded) return;
+      el.__loaded = true;
+
+      var src = el.getAttribute('data-substack-src');
+      var h   = el.getAttribute('data-height') || '220';
+
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = 'Substack Signup';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.sandbox = 'allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin';
+      iframe.style.width = '100%';
+      iframe.style.height = h + 'px';
+      iframe.style.background = 'transparent';
+      iframe.className = 'rounded';
+
+      el.replaceWith(iframe);
+      var fb = document.getElementById('substack-fallback-link');
+      if (fb) { try { fb.remove(); } catch(_) { fb.parentNode && fb.parentNode.removeChild(fb); } }
+    }
+
+  var io = ('IntersectionObserver' in window)
+    ? new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){
+            inject(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '200px 0px', threshold: 0.01 })
+    : null;
+
+  function setup(){
+    document.querySelectorAll(SEL).forEach(function(el){
+      if (io) io.observe(el);
+    });
+
+    // Safety net: if user never scrolls, load on idle/dwell.
+    function idleLoad(){ document.querySelectorAll(SEL).forEach(inject); }
+    if ('requestIdleCallback' in window){
+      setTimeout(function(){ requestIdleCallback(idleLoad, { timeout: 5000 }); }, 10000);
+    } else {
+      setTimeout(idleLoad, 15000);
+    }
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') setup();
+  else document.addEventListener('DOMContentLoaded', setup);
+  })();
+  </script>
+
   <!-- Cookie consent popup -->
   <script type="module" src="/cookieconsent-config.js"></script>
 </body>
@@ -179,10 +222,24 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<meta property="og:image" content="https://claritasstudios.com` + thumbnail + `">`
     + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://claritasstudios.com` + thumbnail + `">`
-    + `<script src="` + elmPath + `elm.js"></script>`
+    + `<script src="` + elmPath + `elm.js" defer></script>`
     + `</head>`
     + htmlBodyStart
-    + `<script defer>var app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });`
+    + `<script>window.addEventListener('DOMContentLoaded',function(){
+  window.app = Elm` + elmModule + `.Main.init({ node: document.getElementById('myapp') });
+  (function(){
+    var app = window.app;
+    if (!app || !app.ports) return;
+    if (app.ports.gtagReportConversion && !app.__gtagHooked){
+      app.ports.gtagReportConversion.subscribe(function(){ if (typeof gtag_report_conversion === 'function') gtag_report_conversion(); });
+      app.__gtagHooked = true;
+    }
+    if (app.ports.goBack && !app.__goBackHooked){
+      app.ports.goBack.subscribe(function(){ window.history.back(); });
+      app.__goBackHooked = true;
+    }
+  })();
+});</script>`
     + htmlBodyEnd,
     function (err) {
       if (err) {
@@ -192,9 +249,5 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
   )
 }
 
-writeJSFile('/public/about/privacy-policy/index.html', 'Privacy Policy - Claritas Studios', 'Animations to guide kids in learning Catholic prayers', '.Page.About.PrivacyPolicy', '/assets/images/thumbnails/CSCThumbnail.png', './')
-writeJSFile('/public/about/terms-and-conditions/index.html', 'Terms and Conditions - Claritas Studios', 'Animations to guide kids in learning Catholic prayers', '.Page.About.TermsAndConditions', '/assets/images/thumbnails/CSCThumbnail.png', './')
-writeJSFile('/public/feastdayactivities/index.html', 'Feast Day Activities - Claritas Studios', 'Activities for kids on the feast days', '.Page.FeastDayActivities', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
-writeJSFile('/public/feastdayactivities/today/index.html', 'Feast Day Activities - Claritas Studios', 'Catholic activities for kids today', '.Page.FeastDayActivities.Today', '/assets/images/thumbnails/FeastDayActivityThumbnail.png', './')
 writeJSFile('/public/index.html', 'Claritas Studios', 'Claritas Studios', '', '/assets/images/thumbnails/CSCThumbnail.png', '/')
 writeJSFile('/public/thankyou/index.html', 'Thank You - Claritas Studios', 'Thank you for signing up for our mail list!', '.Page.ThankYou', '/assets/images/thumbnails/CSCThumbnail.png', './')

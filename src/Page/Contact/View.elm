@@ -16,8 +16,7 @@ view : Html msg
 view =
     div
         []
-        [ viewSubpageHeader "Contact" headerMargin
-        , viewBody
+        [ viewBody
         , viewFooter
         ]
 
@@ -26,14 +25,14 @@ viewBody : Html msg
 viewBody =
     div
         [ class "h-screen"
-        , class "bg-[#FEF7F4]"
+        , class "bg-black text-white"
         , class "p-10"
         ]
         [ h1
             [ class "text-center"
             , class "my-10"
             ]
-            [ text "Contact Us" ]
+            [ text "Contact Me" ]
         , viewContactInfo
         ]
 

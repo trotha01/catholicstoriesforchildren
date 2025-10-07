@@ -53,11 +53,11 @@ episodes =
 stThereseEpisode : Episode msg
 stThereseEpisode =
     { title = "Saint Thérèse of Lisieux"
-    , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.png"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsTherese.webp"
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
-    , link = ""
+    , link = "/animations/songsofthesaints/1/saintthérèseoflisieux"
     , about = thereseVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -77,17 +77,19 @@ stThereseEpisode =
         , urdu = ""
         , asl = ""
         }
+    , year = "2025"
+    , duration = "3 min"
     }
 
 
 carloEpisode : Episode msg
 carloEpisode =
     { title = "Carlo Acutis"
-    , thumbnail = "/assets/images/AnimationImageLinks/SotsCarlo.png"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsCarlo.webp"
     , releaseDate = Time.millisToPosix 1741359600000 -- Friday, March 7, 2025 7:00:00 AM GMT-08:00
     , isDisabled = False
     , isFundraising = False
-    , link = ""
+    , link = "/animations/songsofthesaints/1/carloacutis"
     , about = carloVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -107,17 +109,19 @@ carloEpisode =
         , urdu = ""
         , asl = ""
         }
+    , year = "2025"
+    , duration = "4 min"
     }
 
 
 josephEpisode : Episode msg
 josephEpisode =
     { title = "Saint Joseph"
-    , thumbnail = "/assets/images/AnimationImageLinks/SotsJoseph.png"
+    , thumbnail = "/assets/images/AnimationImageLinks/SotsJoseph.webp"
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
-    , link = ""
+    , link = "/animations/songsofthesaints/1/saintjoseph"
     , about = josephVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -137,6 +141,8 @@ josephEpisode =
         , urdu = ""
         , asl = ""
         }
+    , year = "2025"
+    , duration = "5 min"
     }
 
 

@@ -1,19 +1,16 @@
 module Page.Animations.View exposing (..)
 
-import Page.Animations.Helpers exposing (..)
-import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
-import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
 import Browser
 import Browser.Dom as Dom
 import Browser.Navigation as Nav
-import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
-import Page.Signup as Signup
+import Page.Animations.Helpers exposing (..)
+import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
+import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
+import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Task
 import Time exposing (Month(..))
 import Url
@@ -23,12 +20,11 @@ import Url.Parser exposing ((</>), (<?>), Parser, int, parse, s, string)
 type alias Model =
     { key : Nav.Key
     , url : Url.Url
-    , signup : Signup.Model
     , time : Time.Posix
     , timezone : Time.Zone
     , videoTab : VideoOption
     , videoDetailTab : VideoDetailOption
-    , slideshow : Carousel ( String, String )
+    , slideshow : Carousel (Production Msg)
     }
 
 
@@ -49,12 +45,11 @@ type VideoDetailOption
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
-    | SignupMsg Signup.Msg
     | NoOp
     | NewTime Time.Posix
     | NewZone Time.Zone
     | VideoTabClick VideoOption
-    | VideoDetailsTabClick VideoDetailOption
+    | VideoDetailsTabClick VideoDetailOption String
     | NextSlide
     | PrevSlide
 
@@ -63,12 +58,11 @@ init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { key = key
       , url = url
-      , signup = Signup.init
       , time = Time.millisToPosix 0
       , timezone = Time.utc
       , videoTab = English
-      , videoDetailTab = Episodes
-      , slideshow = Carousel.init Productions.slideshowProductions
+      , videoDetailTab = getTabFromUrl url
+      , slideshow = Carousel.init Productions.productions
       }
     , Cmd.batch
         [ Task.perform NewTime Time.now
@@ -82,59 +76,51 @@ update msg model =
     case msg of
         LinkClicked urlRequest ->
             case urlRequest of
-                -- NOTE: LinkClicked and UrlChanged are only called at the top level, in Main
                 Browser.Internal url ->
-                    let
-                        urlString =
-                            Url.toString url
-
-                        isProductionsPage =
-                            String.contains "animations" urlString
-                    in
-                    if isProductionsPage then
-                        ( { model | url = url, videoDetailTab = Episodes }, Cmd.batch [ Nav.pushUrl model.key (Url.toString url), scrollToTopCmd ] )
-
-                    else
-                        ( { model | url = url }, Cmd.batch [ Nav.load (Url.toString url), scrollToTopCmd ] )
+                    ( model, Nav.pushUrl model.key (Url.toString url) )
 
                 Browser.External href ->
                     ( model, Nav.load href )
 
         UrlChanged url ->
-            ( { model | url = url, videoDetailTab = Episodes }
-            , if String.contains "e=" (Url.toString url) then
-                -- jumpToTop
-                scrollToTopCmd
-
-              else
-                -- jumpToHeader
-                scrollToTopCmd
+            let
+                tabFromUrl =
+                    getTabFromUrl url
+            in
+            ( { model
+                | url = url
+                , videoDetailTab = tabFromUrl
+              }
+            , Cmd.none
             )
 
-        SignupMsg signupMsg ->
+        NewTime time ->
+            ( { model | time = time }, Cmd.none )
+
+        NewZone zone ->
+            ( { model | timezone = zone }, Cmd.none )
+
+        VideoTabClick videoTab ->
+            ( { model | videoTab = videoTab }, Cmd.none )
+
+        VideoDetailsTabClick tab path ->
             let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
+                newUrl =
+                    if String.contains "?" path then
+                        path ++ "&tab=" ++ String.toLower (tabToString tab)
+
+                    else
+                        path ++ "?tab=" ++ String.toLower (tabToString tab)
             in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
+            ( { model | videoDetailTab = tab }
+            , Nav.pushUrl model.key newUrl
+            )
 
         NextSlide ->
             ( { model | slideshow = Carousel.next model.slideshow }, Cmd.none )
 
         PrevSlide ->
             ( { model | slideshow = Carousel.prev model.slideshow }, Cmd.none )
-
-        NewTime t ->
-            ( { model | time = t }, Cmd.none )
-
-        NewZone z ->
-            ( { model | timezone = z }, Cmd.none )
-
-        VideoTabClick language ->
-            ( { model | videoTab = language }, Cmd.none )
-
-        VideoDetailsTabClick tab ->
-            ( { model | videoDetailTab = tab }, Cmd.none )
 
         NoOp ->
             ( model, Cmd.none )
@@ -169,8 +155,7 @@ view url model =
         [ div
             [ class "bg-black text-white"
             ]
-            [ viewSubpageHeader (String.join " " [ "Animations", title ]) headerMargin
-            , viewBody model urlRoute
+            [ viewBody model urlRoute
             , viewFooter
             ]
         ]
@@ -276,7 +261,7 @@ viewSeasonEpisodes model productionURL seasonURL =
                 Nothing ->
                     div []
                         [ img [ src production.carouselThumbnail ] []
-                        , viewEpisodes model production season.number Nothing
+                        , viewEpisodes production
                         ]
 
         _ ->
@@ -301,7 +286,7 @@ viewProductionEpisodes model productionURL =
                 Nothing ->
                     div []
                         [ img [ src production.carouselThumbnail ] []
-                        , viewEpisodes model production 1 Nothing
+                        , viewEpisodes production
                         ]
 
         _ ->
@@ -345,41 +330,54 @@ viewProductions model =
         ]
 
 
-viewEpisodes : Model -> Production msg -> Int -> Maybe (Episode msg) -> Html Msg
-viewEpisodes model production season activeEpisode =
+viewEpisodes : Production msg -> Html msg
+viewEpisodes production =
     div
-        [ class "hcenter"
+        [ class "flex overflow-x-auto space-x-4 scrollbar-hide"
+        , class "flex-none cursor-pointer"
+        , style "scroll-behavior" "smooth"
         ]
-        [ let
-            episodes =
-                production
-                    |> .seasons
-                    |> List.map .episodes
-                    |> List.concat
-
-            episodeThumbnails =
-                List.map (episodeToThumbnailData production season) episodes
-
-            firstEpisode =
-                List.head episodes
-          in
-          if List.length episodes == 1 then
-            case firstEpisode of
-                Just e ->
-                    viewEpisode model production season e
-
-                Nothing ->
-                    div [ class "m-auto max-w-7xl" ]
-                        [ viewAnimationThumbnailsSmall activeEpisode episodeThumbnails
+        (production
+            |> .seasons
+            |> List.map .episodes
+            |> List.concat
+            |> List.map
+                (\episode ->
+                    a
+                        [ href episode.link, class "flex-none w-64 md:w-80 group pt-5 pl-5" ]
+                        [ div []
+                            [ div
+                                [ class "relative mb-2 rounded-lg transform scale-100 translate-z-0"
+                                , class "transition-all duration-300 group-hover:scale-[1.02]"
+                                , class "group-hover:before:border-[4px] rounded-lg"
+                                , class "before:absolute before:inset-[-7px] before:rounded-lg group-hover:before:border group-hover:before:border-white"
+                                ]
+                                [ div [ class "aspect-video rounded-lg overflow-hidden" ]
+                                    [ img
+                                        [ src episode.thumbnail
+                                        , alt episode.title
+                                        , attribute "loading" "lazy"
+                                        , attribute "decoding" "async"
+                                        , class "w-full h-full object-cover"
+                                        ]
+                                        []
+                                    ]
+                                ]
+                            ]
+                        , div [ class "px-1 transition-colors duration-300 group-hover:text-white" ]
+                            [ h3 [ class "text-gray-300 font-semibold mb-1 transition-colors duration-300 group-hover:text-white" ]
+                                [ text episode.title ]
+                            , div [ class "flex items-center text-gray-400 text-sm group-hover:text-white" ]
+                                [ span [ class "text-sm font-medium px-2 py-1 border border-gray-400 rounded group-hover:border-white" ] [ text production.age ]
+                                , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                , text episode.year
+                                , span [ class "mx-2 text-xs opacity-50" ] [ text "•" ]
+                                , text episode.duration
+                                ]
+                            ]
                         ]
-                        |> Html.map (\_ -> NoOp)
-
-          else
-            div [ class "m-auto max-w-7xl" ]
-                [ viewAnimationThumbnailsSmall activeEpisode episodeThumbnails
-                ]
-                |> Html.map (\_ -> NoOp)
-        ]
+                )
+        )
 
 
 viewEpisode : Model -> Production msg -> Int -> Episode msg -> Html Msg
@@ -424,7 +422,7 @@ viewEpisode model production season episode =
         , case newModel.videoDetailTab of
             Episodes ->
                 if episodeCount > 1 then
-                    viewEpisodes newModel production season (Just episode)
+                    viewEpisodes production |> Html.map (\_ -> NoOp)
 
                 else if not (String.isEmpty episode.activities.pdfLink) then
                     viewActivities episode |> Html.map (\_ -> NoOp)
@@ -467,6 +465,8 @@ viewSuggestedProductionThumbnail production =
                 [ src production.thumbnail
                 , class "w-full h-auto rounded-lg"
                 , attribute "alt" production.title
+                , attribute "loading" "lazy"
+                , attribute "decoding" "async"
                 ]
                 []
             , h3 [ class "mt-2 text-lg font-semibold" ] [ text production.title ]
@@ -476,7 +476,7 @@ viewSuggestedProductionThumbnail production =
 
 viewAbout : Episode msg -> Html msg
 viewAbout episode =
-    div [ class "mt-10 max-w-3xl" ]
+    div [ class "mt-10 max-w-3xl text-white" ]
         [ episode.about
         ]
 
@@ -503,6 +503,8 @@ viewActivities episode =
                             [ class "w-full max-w-[400px]"
                             , class "transition ease-in-out hover:scale-110"
                             , src episode.activities.thumbnailLink
+                            , attribute "loading" "lazy"
+                            , attribute "decoding" "async"
                             ]
                             []
                         ]
@@ -521,6 +523,8 @@ viewActivities episode =
                                 [ class "w-full max-w-[400px]"
                                 , class "transition ease-in-out hover:scale-110"
                                 , src episode.activities.answerThumbnailLink
+                                , attribute "loading" "lazy"
+                                , attribute "decoding" "async"
                                 ]
                                 []
                             ]
@@ -643,7 +647,7 @@ viewVideoDetailTabs episodeCount model episode =
                                         nonSelectedClass
                                    )
                             )
-                        , onClick (VideoDetailsTabClick Episodes)
+                        , onClick (VideoDetailsTabClick Episodes episode.link)
                         ]
                         [ text "Episodes" ]
                     ]
@@ -662,7 +666,7 @@ viewVideoDetailTabs episodeCount model episode =
                                         nonSelectedClass
                                    )
                             )
-                        , onClick (VideoDetailsTabClick Activities)
+                        , onClick (VideoDetailsTabClick Activities episode.link)
                         ]
                         [ text "Activities" ]
                     ]
@@ -677,7 +681,7 @@ viewVideoDetailTabs episodeCount model episode =
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoDetailsTabClick Details)
+                    , onClick (VideoDetailsTabClick Details episode.link)
                     ]
                     [ text "Details" ]
                 ]
@@ -692,7 +696,7 @@ viewVideoDetailTabs episodeCount model episode =
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoDetailsTabClick Suggested)
+                    , onClick (VideoDetailsTabClick Suggested episode.link)
                     ]
                     [ text "Suggested" ]
                 ]
@@ -790,3 +794,54 @@ toLanguageName option =
 
         Asl ->
             "ASL"
+
+
+getTabFromUrl : Url.Url -> VideoDetailOption
+getTabFromUrl url =
+    case url.query of
+        Just query ->
+            if String.contains "tab=activities" query then
+                Activities
+
+            else if String.contains "tab=details" query then
+                Details
+
+            else if String.contains "tab=suggested" query then
+                Suggested
+
+            else
+                Episodes
+
+        Nothing ->
+            Episodes
+
+
+tabToString : VideoDetailOption -> String
+tabToString tab =
+    case tab of
+        Episodes ->
+            "episodes"
+
+        Activities ->
+            "activities"
+
+        Details ->
+            "details"
+
+        Suggested ->
+            "suggested"
+
+
+updateUrlWithTab : Model -> VideoDetailOption -> String
+updateUrlWithTab model tab =
+    let
+        baseUrl =
+            { protocol = model.url.protocol
+            , host = model.url.host
+            , port_ = model.url.port_
+            , path = model.url.path
+            , fragment = model.url.fragment
+            , query = Just <| "tab=" ++ String.toLower (tabToString tab)
+            }
+    in
+    Url.toString baseUrl

@@ -9,7 +9,7 @@ import Html.Attributes exposing (..)
 view : Html msg
 view =
     div
-        [ class "bg-[#fef7f4]"
+        [ class "bg-black text-white"
         ]
         [ -- It is recommended to not have the header on the give page
           -- viewSubpageHeader "Donate" headerMargin
