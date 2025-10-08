@@ -69,21 +69,20 @@ viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen openMsg =
 
 viewMenuOverlay : String -> Bool -> Html msg
 viewMenuOverlay height menuOpen =
-    let
-        visibilityClasses =
-            if menuOpen then
-                "opacity-100 pointer-events-auto translate-y-0"
-            else
-                "opacity-0 pointer-events-none -translate-y-2"
-    in
-    div
-        [ class "fixed left-0 right-0 bottom-0 z-40 text-white overflow-y-auto transition-opacity duration-150 ease-out"
-        , class ("top-[60px] md:top-[" ++ height ++ "]")
-        , class ("bg-black bg-opacity-90 " ++ visibilityClasses)
-        ]
-        [ div [ class "p-6 transition-transform duration-150 ease-out" ]
-            [ NavigationPage.view False ]
-        ]
+    if not menuOpen then
+        text ""
+
+    else
+        div
+            [ class "fixed left-0 right-0 bottom-0 z-40 text-white overflow-y-auto bg-black bg-opacity-90 pointer-events-auto"
+            , class "transition-opacity duration-150 ease-out opacity-100 translate-y-0"
+            , class ("top-[60px] md:top-[" ++ height ++ "]")
+            , attribute "role" "dialog"
+            , attribute "aria-modal" "true"
+            ]
+            [ div [ class "p-6 transition-transform duration-150 ease-out" ]
+                [ NavigationPage.view False ]
+            ]
 
 
 navigationWithMsg : String -> Bool -> msg -> Html msg
