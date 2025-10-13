@@ -13,14 +13,17 @@ elmmake() {
   src=$1
   output=$2
 
-  npx elm make --optimize \
-  $src --output "/tmp/$output" \
-  && npx uglify-js "/tmp/$output" --compress 'passes=2,pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
-  | npx uglify-js --mangle toplevel --output $output \
-  && rm "/tmp/$output"
-
-  # DEBUG
-  # elm make $src --output "$output"
+  if [ -n "$DEV" ]; then
+    # DEBUG
+    elm make $src --output "$output" --debug
+  else
+    # PRODUCTION
+    npx elm make --optimize \
+    $src --output "/tmp/$output" \
+    && npx uglify-js "/tmp/$output" --compress 'passes=2,pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe' \
+    | npx uglify-js --mangle toplevel --output $output \
+    && rm "/tmp/$output"
+  fi
 }
 
 pair_list=(

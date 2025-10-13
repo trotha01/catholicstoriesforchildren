@@ -251,6 +251,7 @@ var writeJSFile = function (path, title, description, elmModule, thumbnail, elmP
     + `<meta property="twitter:card" content="summary_large_image">`
     + `<meta property="twitter:image" content="https://claritasstudios.com` + thumbnail + `">`
     + `<script src="` + elmPath + `elm.js" defer></script>`
+    + `<script src="https://js-de.sentry-cdn.com/ca268edbd0ee3e144d5048a72cbd2c8f.min.js" crossorigin="anonymous"></script>`
     + `</head>`
     + htmlBodyStart
     + `<script>window.addEventListener('DOMContentLoaded',function(){
