@@ -28,7 +28,7 @@ viewBody : Html msg
 viewBody =
     div
         [ -- center
-          class "hcenter"
+          class "relative left-1/2 -translate-x-1/2"
         , style "width" "80%"
         , style "max-width" "800px"
         ]
