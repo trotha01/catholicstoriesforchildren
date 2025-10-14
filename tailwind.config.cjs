@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./feastdayactivities/index.html",
-    "./feastdayactivities/**/*.{html,js}",
-    "./src/**/*.elm"
+    './index.html',
+    './thankyou.html',
+    './src/**/*.{js,ts,jsx,tsx,elm,html}'
   ],
   theme: {
     extend: {
