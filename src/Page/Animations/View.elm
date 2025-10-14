@@ -270,7 +270,7 @@ viewProductionEpisodes model productionURL =
 viewProductions : Model -> Html Msg
 viewProductions model =
     div
-        [ class "hcenter px-11 max-w-7xl" ]
+        [ class "relative left-1/2 -translate-x-1/2 px-11 max-w-7xl" ]
         [ --     div
           --     [ class "hcenter py-5 px-11 max-w-7xl" ]
           --     [ h2 [ class "mb-10 text-3xl md:text-7xl" ] [ text "Start teaching your children with Catholic animations" ]
