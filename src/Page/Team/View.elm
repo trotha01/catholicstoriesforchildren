@@ -28,9 +28,7 @@ viewBody : Html msg
 viewBody =
     div
         [ -- center
-          class "relative left-1/2 -translate-x-1/2"
-        , style "width" "80%"
-        , style "max-width" "800px"
+          class "relative left-1/2 -translate-x-1/2 w-[80%] max-w-[800px]"
         ]
         [ h1 [ class "my-10" ] [ text "About Us" ]
         , viewAbout
@@ -142,7 +140,7 @@ viewTeam =
         [ h2 [ class "my-10" ]
             [ text "The Team"
             ]
-        , div [ style "margin-bottom" "100px" ] [ viewPeople "Staff" "" staff ]
-        , div [ style "margin-bottom" "100px" ] [ viewPeople "Board of Advisors" "" boardOfAdvisors ]
-        , div [ style "margin-bottom" "100px" ] [ viewPeople "Talent" "A number of talented artists, contractors, teams and people help bring these animations to life." contractors ]
+        , div [ class "mb-[100px]" ] [ viewPeople "Staff" "" staff ]
+        , div [ class "mb-[100px]" ] [ viewPeople "Board of Advisors" "" boardOfAdvisors ]
+        , div [ class "mb-[100px]" ] [ viewPeople "Talent" "A number of talented artists, contractors, teams and people help bring these animations to life." contractors ]
         ]

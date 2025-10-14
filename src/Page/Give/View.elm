@@ -67,11 +67,11 @@ donateAbout =
     div
         [ class "text-xl mb-10" ]
         [ p
-            [ style "margin-bottom" "1em"
+            [ class "mb-[1em]"
             ]
             -- [ text "Your support helps make these animations and our work possible. Whether you support financially, via prayers, sending words of encouragement, or voluntary services, we are eternally grateful. 🙏" ]
             [ text "Here at Claritas Studios, we are passionate Catholic educators dedicated to helping children grow in their love for God and neighbor. Through creative, faith-based animations, we make Catholic teachings come alive in a fun and meaningful way for kids. Every child deserves the chance to learn and deepen their faith." ]
-        , p [ style "margin-bottom" "1em" ] [ text "With your support, we can keep these animations FREE for families everywhere. Every donation helps us nurture the faith of the next generation. Let's continue making a difference, together!" ]
+        , p [ class "mb-[1em]" ] [ text "With your support, we can keep these animations FREE for families everywhere. Every donation helps us nurture the faith of the next generation. Let's continue making a difference, together!" ]
         , p [] [ text "Claritas Studios is a 501(c)(3) non-profit recognized by the IRS. Contributions to Claritas Studios are tax-deductible to the extent permitted by law. Tax ID Number: 85-4194883" ]
         ]
 
@@ -244,11 +244,7 @@ wordsOfEncouragement =
 donateSection : String -> String -> Html msg -> Html msg
 donateSection title imageSrc body =
     div
-        [ style "margin-bottom" "100px"
-        , style "background-color" "white"
-        , style "color" "black"
-        , style "border-radius" "5px"
-        , class "p-5 max-w-2xl shadow"
+        [ class "mb-[100px] bg-white text-black rounded p-5 max-w-2xl shadow"
         ]
         [ div [ class "flex justify-center" ]
             [ if imageSrc == "" then

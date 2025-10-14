@@ -48,8 +48,7 @@ viewContactInfo =
                 , text "I love to hear from you!"
                 ]
             , p
-                [ style "overflow-wrap" "anywhere"
-                , class "mt-3 lg:mt-5"
+                [ class "break-anywhere mt-3 lg:mt-5"
                 ]
                 [ -- span [ attribute "aria-hidden" "true" ] [ text "📫 " ]
                   span [ style "display" "inline-block" ]

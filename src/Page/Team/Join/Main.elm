@@ -44,9 +44,7 @@ viewBody : Html Never
 viewBody =
     div
         [ -- center
-          class "relative left-1/2 -translate-x-1/2"
-        , style "width" "80%"
-        , style "max-width" "800px"
+          class "relative left-1/2 -translate-x-1/2 w-[80%] max-w-[800px]"
         ]
         [ h1 [ class "my-10" ] [ text "Join the Team" ]
         , viewAbout
