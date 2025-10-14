@@ -19,7 +19,6 @@ function mount() {
   }
 
   const Elm = resolveElm(ElmModule);
-  console.log('Resolved Elm export shape ->', Elm ? Object.keys(Elm) : Elm, 'original import keys:', Object.keys(ElmModule || {}));
 
   if (!Elm || !Elm.Main || typeof Elm.Main.init !== 'function') {
     console.error('Elm module not found or has unexpected shape. Exported value (ElmModule):', ElmModule);
