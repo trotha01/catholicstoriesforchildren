@@ -1,4 +1,4 @@
-module Main exposing (Model, main, view)
+module Main exposing (Model, main)
 
 import Browser
 import Browser.Dom as Dom
@@ -15,11 +15,9 @@ import Page.Contact.View as ContactPage
 import Page.FeastDayActivities.Main as FeastsPage
 import Page.Give.View as GivePage
 import Page.Home.Sections exposing (..)
-import Page.Newsroom.ViewPress as ViewPress exposing (..)
-import Page.NotFound.Main as NotFoundPage
+import Page.Newsroom.ViewPress as ViewPress
 import Page.Prayer.Angelus.View as AngelusPage
 import Page.Prayers.View as PrayersPage
-import Page.Resources.Helpers exposing (ResourceGroup)
 import Page.Resources.View as ResourcesPage
 import Page.Saints.Main as SaintsPage
 import Page.Shop.View as ShopPage
@@ -59,14 +57,10 @@ type Page
     | PrivacyPolicy
     | TermsAndConditions
     | Download
-    | NotFound
 
 
 type Language
     = English
-    | Spanish
-    | Urdu
-    | Asl
 
 
 type alias Model =
@@ -216,10 +210,8 @@ scrollToTopCmd =
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
-    | SignupMsg Signup.Msg
     | NewTime Time.Posix
     | NewZone Time.Zone
-    | LanguageChange Language
     | SaintsMsg SaintsPage.Msg
     | FeastsMsg FeastsPage.Msg
     | ProductionsMsg AnimationsView.Msg
@@ -237,6 +229,7 @@ update msg model =
                     Page.Home.Sections.update sectionsMsg model.sections
             in
             ( { model | sections = updated }, Cmd.map SectionsMsg sectionsCmd )
+
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
@@ -276,21 +269,11 @@ update msg model =
                     , Cmd.none
                     )
 
-        SignupMsg signupMsg ->
-            let
-                ( updatedSignup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = updatedSignup }, Cmd.map SignupMsg cmd )
-
         NewTime t ->
             ( { model | time = t }, Cmd.none )
 
         NewZone z ->
             ( { model | timezone = z }, Cmd.none )
-
-        LanguageChange language ->
-            ( { model | language = language }, Cmd.none )
 
         SaintsMsg saintsMsg ->
             let
@@ -499,17 +482,6 @@ view model =
 
                 Download ->
                     { title = "Download", body = [ div [ class "p-10 text-center" ] [ text "This is a downloadable file. If it does not open automatically, please check your browser's download bar or try the direct link again." ] ] }
-
-                NotFound ->
-                    let
-                        document =
-                            NotFoundPage.view
-                    in
-                    { title = "Tony Help, Page Not Found"
-                    , body =
-                        [ Html.map (\_ -> NoOp) document
-                        ]
-                    }
     in
     { title = title
     , body =

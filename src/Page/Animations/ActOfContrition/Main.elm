@@ -1,14 +1,14 @@
 module Page.Animations.ActOfContrition.Main exposing (..)
 
-import Page.Animations.Helpers exposing (viewVideo)
 import Browser
 import Component.Footer exposing (viewFooter)
 import Component.Header exposing (viewPageHeaderNoLinks)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Page.Animations.Helpers exposing (viewVideo)
 import Page.Signup as Signup
 import Page.Team.Team exposing (..)
+import Theme.Layout exposing (headerMargin)
 
 
 type alias Model =
@@ -116,15 +116,6 @@ viewVideoPlayers =
     viewVideo
         "Act of Contrition Promo"
         "https://www.youtube-nocookie.com/embed/ppNG8UFgUdo"
-
-
-viewVideoPlayer : String -> Html msg
-viewVideoPlayer link =
-    div
-        [ class "w-1/2"
-        ]
-        [ viewVideo "Act of Contrition Promo" link
-        ]
 
 
 aboutTheAnimation : Html msg
@@ -505,50 +496,6 @@ customBlockquote quote attribute =
             [ class "mt-2" ]
             [ text attribute
             ]
-        ]
-
-
-donationButton : String -> Html msg
-donationButton buttonText =
-    a
-        [ style "padding" "10px 10px"
-        , style "border-radius" "5px"
-        , style "border-radius" "5px"
-        , style "box-shadow" "#777 1px 1px 5px"
-        , class "text-lg"
-
-        -- , class "bg-[#9200B3]"
-        -- , class "bg-[#b99eda]"
-        , class "bg-csc-yellow"
-        , class "font-bold"
-        , href "https://donorbox.org/act-of-contrition-animation"
-        , class "custom-dbox-popup"
-
-        -- , href "https://www.paypal.com/donate/?hosted_button_id=TB5BTND8DXU86"
-        , target "_blank"
-        , attribute "aria-label" buttonText
-        , class "inline md:hidden"
-        ]
-        [ text buttonText ]
-
-
-progressBar : Html msg
-progressBar =
-    div [ class "md:hidden" ]
-        [ iframe
-            [ src "https://donorbox.org/embed/act-of-contrition-animation?donation_meter_color=%23395d73&only_donation_meter=true"
-            , name "donorbox"
-            , attribute "frameborder" "0"
-            , attribute "scrolling" "no"
-            , attribute "seamless" "seamless"
-            , height 93
-            , style "width" "100%"
-            , style "max-width" "332px"
-            , style "min-width" "250px"
-            , style "min-height" "90px"
-            , style "max-height" "none!important"
-            ]
-            []
         ]
 
 

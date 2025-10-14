@@ -4,11 +4,9 @@ import Browser
 import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
 import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
-import Page.Team.Team exposing (trevor, viewPersonImage)
+import Theme.Layout exposing (headerMargin)
 import Url
 
 
@@ -30,7 +28,6 @@ init flags url key =
 type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
-    | GoBack
 
 
 main : Program () Model Msg
@@ -61,9 +58,6 @@ update msg model =
             ( { model | url = url }
             , Nav.load (Url.toString url)
             )
-
-        GoBack ->
-            ( model, goBack "" )
 
 
 view : Model -> Browser.Document Msg
@@ -151,6 +145,3 @@ viewThankYou =
 subscriptions : Model -> Sub Msg
 subscriptions _ =
     Sub.none
-
-
-port goBack : String -> Cmd msg

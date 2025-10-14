@@ -56,14 +56,6 @@ catholicFamilyCrate =
     }
 
 
-lettersFromTheSaints : Resource
-lettersFromTheSaints =
-    { name = "Letters from the Saints"
-    , link = "https://www.lettersfromthesaints.com/"
-    , image = ""
-    }
-
-
 magnifiKid : Resource
 magnifiKid =
     { name = "MagnifiKid"

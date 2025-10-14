@@ -1,8 +1,6 @@
 module Page.Prayers.View exposing (..)
 
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
@@ -138,8 +136,3 @@ viewSaints =
                 ]
             ]
         ]
-
-
-headerClass : String
-headerClass =
-    "mb-5 mt-10"

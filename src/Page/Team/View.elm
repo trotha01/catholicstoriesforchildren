@@ -1,14 +1,11 @@
 module Page.Team.View exposing (..)
 
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
 import Component.Social exposing (email)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Page.Newsroom.View exposing (viewSignUp)
 import Page.Resources.Helpers exposing (Resource, viewResource)
 import Page.Team.Team exposing (..)
-import Theme.Layout exposing (headerMargin)
 
 
 
@@ -25,20 +22,6 @@ view =
         [ viewBody
         , viewFooter
         ]
-
-
-titleStyle : List (Attribute msg)
-titleStyle =
-    [ style "font-family" "hvdComicSerifPro"
-    , style "width" "80%"
-    , style "max-width" "800px"
-    ]
-
-
-h1Style : List (Attribute msg)
-h1Style =
-    titleStyle
-        ++ [ class "my-10" ]
 
 
 viewBody : Html msg
@@ -65,6 +48,7 @@ viewAbout =
         , p []
             [ text """We envision our work nurturing people of all ages around the world in their spiritual development by providing captivating and faith-filled stories that instill Catholic values and a deep connection to the Catholic faith."""
             ]
+
         -- , div [ class "mt-5" ] [ viewSignUp ]
         , h2 [ class "my-7" ] [ text "Vision" ]
         , p [] [ text "Claritas Studios envisions our work nurturing people of all ages around the world in their spiritual development by providing captivating and faith-filled stories that instill Catholic values and a deep connection to the Catholic faith." ]
@@ -149,14 +133,6 @@ cfnLive =
     { name = "CFN Live"
     , link = "https://vimeo.com/963295296/89fc748d09?share=copy"
     , image = "/assets/images/ProfilePictures/CFN.png"
-    }
-
-
-churchMilitant : Resource
-churchMilitant =
-    { name = "Church Militant"
-    , link = "https://www.churchmilitant.com/news/article/new-animation-teaches-st-michael-prayer"
-    , image = "/assets/images/ProfilePictures/ChurchMilitant.png"
     }
 
 

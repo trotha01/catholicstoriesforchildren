@@ -3,7 +3,6 @@ module Page.Animations.Helpers exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
-import Svg.Attributes exposing (d)
 import Time
 import Url exposing (percentEncode)
 
@@ -60,14 +59,6 @@ type alias Episode msg =
     }
 
 
-type alias AnimationLink =
-    { link : String
-    , imgSrc : String
-    , ariaLabel : String
-    , isLive : Bool
-    }
-
-
 viewVideo : String -> String -> Html msg
 viewVideo videoTitle link =
     div
@@ -91,27 +82,6 @@ viewVideo videoTitle link =
             , property "allowfullscreen" (Json.Encode.string "true")
             ]
             []
-        ]
-
-
-viewVideoDescription : Html msg -> Html msg
-viewVideoDescription videoDescription =
-    div
-        []
-        [ videoDescription
-        ]
-
-
-viewVideoComingSoon : String -> Html msg
-viewVideoComingSoon image =
-    div
-        [ style "position" "relative"
-        , height 0
-        , style "overflow" "hidden"
-        , style "max-width" "100%"
-        , style "border-radius" "5px"
-        ]
-        [ img [ src image ] []
         ]
 
 
@@ -193,15 +163,6 @@ viewAnimationThumbnail activeEpisode thumbnail =
             )
             []
         ]
-
-
-episodeToThumbnailData : Production msg -> Int -> Episode msg -> ThumbnailData
-episodeToThumbnailData production season episode =
-    { title = episode.title
-    , thumbnail = episode.thumbnail
-    , link = "/animations/" ++ stringToURL production.title ++ "/" ++ String.fromInt season ++ "/" ++ stringToURL episode.title
-    , isDisabled = episode.isDisabled
-    }
 
 
 productionToThumbnailData : Production msg -> ThumbnailData

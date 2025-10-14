@@ -1,4 +1,4 @@
-module Component.Social exposing (Social(..), email, externalLink, viewSocial)
+module Component.Social exposing (Social(..), email, viewSocial)
 
 import Html exposing (Html, a, img, span, text)
 import Html.Attributes exposing (..)
@@ -78,17 +78,6 @@ email =
                 ]
             ]
         ]
-
-
-externalLink : String -> String -> List (Html msg) -> Html msg
-externalLink label link children =
-    a
-        [ href link
-        , style "text-decoration" "none"
-        , target "_blank"
-        , attribute "aria-label" label
-        ]
-        children
 
 
 viewSocialLink : Html msg -> String -> String -> Html msg

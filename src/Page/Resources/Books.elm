@@ -28,19 +28,6 @@ books =
     ]
 
 
-type alias Category =
-    { title : String
-    , list : List Resource
-    }
-
-
-categories : List Category
-categories =
-    [ { title = "Children's Bibles", list = [] }
-    , { title = "Saints", list = [] }
-    ]
-
-
 thyOliveTree : Resource
 thyOliveTree =
     { name = "Thy Olive Tree"
@@ -174,38 +161,6 @@ loyolaPressBooks =
     { name = "Loyola Press Books"
     , link = "https://www.loyolapress.com/"
     , image = "https://ik.imagekit.io/catholicstories/ProfileImages/23_UvXPxYgqml.png?updatedAt=1682716507758"
-    }
-
-
-thePursuitOfThePilferedCheese : Resource
-thePursuitOfThePilferedCheese =
-    { name = "The Pursuit of the Pilfered Cheese by Haley Stewart"
-    , link = "https://www.amazon.com/Pursuit-Pilfered-Cheese-Haley-Stewart/dp/0819860514"
-    , image = "https://ik.imagekit.io/catholicstories/Books/1_EoJL0GWQs.png?updatedAt=1679069222311"
-    }
-
-
-saintsAroundTheWorld : Resource
-saintsAroundTheWorld =
-    { name = "Saints Around the World by Meg Hunter-Kilmer"
-    , link = "https://saintsaroundtheworld.com"
-    , image = "https://ik.imagekit.io/catholicstories/Books/2_YPCg6X-7F.png?updatedAt=1679069222320"
-    }
-
-
-catechismOfTheSevenSacraments : Resource
-catechismOfTheSevenSacraments =
-    { name = "Catechism of the Seven Sacraments by Mary O'Neill Kevin O'Neill"
-    , link = "https://www.amazon.com/Catechism-Seven-Sacraments-ONeill-Kevin/dp/0999508709/ref=sr_1_1?crid=2P68AEP6RA0O8&keywords=catechism+of+the+seven+sacraments&qid=1669329926&sprefix=catechism+of+the+seven+sacraments%2Caps%2C99&sr=8-1"
-    , image = "https://ik.imagekit.io/catholicstories/Books/3_ibumLcYAy.png?updatedAt=1679069222330"
-    }
-
-
-childrensBibles : Resource
-childrensBibles =
-    { name = "Catechism of the Seven Sacraments by Mary O'Neill Kevin O'Neill"
-    , link = "https://www.amazon.com/Catechism-Seven-Sacraments-ONeill-Kevin/dp/0999508709/ref=sr_1_1?crid=2P68AEP6RA0O8&keywords=catechism+of+the+seven+sacraments&qid=1669329926&sprefix=catechism+of+the+seven+sacraments%2Caps%2C99&sr=8-1"
-    , image = "https://ik.imagekit.io/catholicstories/Books/3_ibumLcYAy.png?updatedAt=1679069222330"
     }
 
 

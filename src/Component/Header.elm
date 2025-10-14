@@ -1,28 +1,19 @@
 module Component.Header exposing (..)
 
 import Component.Logo exposing (logo)
+import Component.Navigation.View as NavigationPage
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Component.Navigation.View as NavigationPage
+
 
 
 -- MAIN
 
 
-viewHeader : String -> Int -> Html msg
-viewHeader currentPage leftMargin =
-    viewSubpageHeader currentPage leftMargin
-
-
 viewHeaderWithMenu : String -> Int -> Bool -> msg -> Html msg
 viewHeaderWithMenu currentPage leftMargin menuOpen toggleMsg =
     viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen toggleMsg
-
-
-viewHeaderWithMenuMsg : String -> Int -> msg -> Html msg
-viewHeaderWithMenuMsg currentPage leftMargin openMsg =
-    viewSubpageHeaderWithMenuMsg currentPage leftMargin False openMsg
 
 
 viewSubpageHeaderWithMenuMsg : String -> Int -> Bool -> msg -> Html msg
@@ -39,32 +30,35 @@ viewSubpageHeaderWithMenuMsg currentPage leftMargin menuOpen openMsg =
                 ( "60px", "grid-cols-[150px_1fr_150px] xl:grid-cols-[150px_1fr_600px]" )
     in
     div []
-        ([ nav
-                [ class ("fixed top-0 left-0 right-0 z-50 "
-                      ++ (if menuOpen then
-                              "bg-black"
-                          else
-                              "bg-gradient-to-b from-black via-black/80 to-transparent"
-                         )
-                      )
-                ]
-                [ div [ class "flex items-center justify-between px-4 md:px-12 py-4" ]
-                    [ div
-                        [ class ("grid items-center justify-items-center w-full " ++ gridColsClass)
-                        , class ("h-[60px] md:h-[" ++ height ++ "]")
-                        ]
-                        [ viewLogo
-                        , viewHeaderTitle True currentPage
-                        , navigationWithMsg height menuOpen openMsg
-                        ]
+        [ nav
+            [ class
+                ("fixed top-0 left-0 right-0 z-50 "
+                    ++ (if menuOpen then
+                            "bg-black"
+
+                        else
+                            "bg-gradient-to-b from-black via-black/80 to-transparent"
+                       )
+                )
+            ]
+            [ div [ class "flex items-center justify-between px-4 md:px-12 py-4" ]
+                [ div
+                    [ class ("grid items-center justify-items-center w-full " ++ gridColsClass)
+                    , class ("h-[60px] md:h-[" ++ height ++ "]")
+                    ]
+                    [ viewLogo
+                    , viewHeaderTitle True currentPage
+                    , navigationWithMsg height menuOpen openMsg
                     ]
                 ]
-            , if isHomePage then
-                span [] []
-              else
-                div [ class ("h-[60px] md:h-[" ++ height ++ "]") ] []
-            , viewMenuOverlay height menuOpen
-            ])
+            ]
+        , if isHomePage then
+            span [] []
+
+          else
+            div [ class ("h-[60px] md:h-[" ++ height ++ "]") ] []
+        , viewMenuOverlay height menuOpen
+        ]
 
 
 viewMenuOverlay : String -> Bool -> Html msg
@@ -99,8 +93,20 @@ hamburgerMenuWithMsg menuOpen openMsg =
         baseBtnAttrs =
             [ onClick openMsg
             , attribute "type" "button"
-            , attribute "aria-expanded" (if menuOpen then "true" else "false")
-            , attribute "aria-label" (if menuOpen then "Close menu" else "Open menu")
+            , attribute "aria-expanded"
+                (if menuOpen then
+                    "true"
+
+                 else
+                    "false"
+                )
+            , attribute "aria-label"
+                (if menuOpen then
+                    "Close menu"
+
+                 else
+                    "Open menu"
+                )
             , class "relative w-10 h-10 grid place-content-center rounded focus:outline-none focus:ring-2 focus:ring-white/60"
             ]
     in
@@ -112,6 +118,7 @@ hamburgerMenuWithMsg menuOpen openMsg =
                 , div [ class "absolute left-0 top-1/2 -translate-y-1/2 w-8 h-0.5 bg-white -rotate-45 transition" ] []
                 ]
             ]
+
     else
         -- Render the classic hamburger (three bars)
         button baseBtnAttrs
@@ -159,16 +166,6 @@ viewSubpageHeader currentPage leftMargin =
           else
             div [ class ("h-[60px] md:h-[" ++ height ++ "]") ] []
         ]
-
-
-viewBanner : Html msg
-viewBanner =
-    a
-        [ href "https://youtu.be/nb7r4V_4uFc"
-        , target "_blank"
-        , class "block bg-[#9101b3] text-white text-center text-lg py-2 underline"
-        ]
-        [ text "Watch our latest animation!" ]
 
 
 viewPageHeaderNoLinks : String -> Int -> Html msg

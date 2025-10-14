@@ -1,8 +1,6 @@
 module Page.Contact.View exposing (..)
 
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode

@@ -1,11 +1,11 @@
 module Page.Animations.HailMary.HMEpisodes exposing (..)
 
-import Page.Animations.Helpers exposing (Episode, Season)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Page.Animations.Helpers exposing (Episode, Season)
 import Page.Signup as Signup
 import Page.Team.Team exposing (trevor, viewPersonImage)
-import Time exposing (Month(..))
+import Time
 
 
 seasons : List (Season msg)

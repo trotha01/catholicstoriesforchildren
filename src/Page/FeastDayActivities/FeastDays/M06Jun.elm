@@ -1,7 +1,6 @@
 module Page.FeastDayActivities.FeastDays.M06Jun exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (FeastMonth)
-import Svg.Attributes exposing (k)
 
 
 june : FeastMonth

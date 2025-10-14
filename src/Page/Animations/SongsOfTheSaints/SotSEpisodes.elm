@@ -1,36 +1,10 @@
 module Page.Animations.SongsOfTheSaints.SotSEpisodes exposing (..)
 
-import Page.Animations.Helpers exposing (Episode, Season)
-import Page.Give.View exposing (donateWithZeffy)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Time exposing (Month(..), Posix)
-
-
-type alias SotSEpisode msg =
-    { title : String
-    , thumbnail : String
-    , releaseDate : Time.Posix
-    , about : Html msg
-    , videoTitles :
-        { english : String
-        , spanish : String
-        , urdu : String
-        , asl : String
-        }
-    , videoLinks :
-        { english : String
-        , spanish : String
-        , urdu : String
-        , asl : String
-        }
-    , videoDescriptions :
-        { english : Html msg
-        , spanish : Html msg
-        , urdu : Html msg
-        , asl : Html msg
-        }
-    }
+import Page.Animations.Helpers exposing (Episode, Season)
+import Page.Give.View exposing (donateWithZeffy)
+import Time
 
 
 seasons : List (Season msg)
@@ -371,32 +345,6 @@ carloVideoDescription =
         ]
 
 
-viewAnotherEpisode : Episode msg -> String -> Html msg
-viewAnotherEpisode episode link =
-    div
-        [ class "mx-auto my-4 col-span-2 w-full"
-        , class "text-lg"
-        , class "py-5"
-        , class "max-w-3xl"
-        ]
-        [ h2 [ class "font-bold leading-9" ] [ text episode.title ]
-        , p [ class "my-10" ] [ text ("Make sure to also check our our " ++ episode.title ++ " Animation!") ]
-        , a
-            [ href link
-            , class "hover:scale-105 transition ease-in-out duration-50"
-            , attribute "aria-label" ("See the " ++ episode.title ++ " animation")
-            ]
-            [ img
-                [ src episode.thumbnail
-                , style "border-radius" "5px"
-                , style "width" "-webkit-fill-available"
-                , alt (episode.title ++ " thumbnail")
-                ]
-                []
-            ]
-        ]
-
-
 imgClass : String
 imgClass =
     "w-3/4 my-10 mx-auto"
@@ -459,18 +407,4 @@ Key character and costume details include: long hair like King Aragorn, green tu
 
         -- end
         , div [ class "mb-20 lg:mb-40" ] []
-        ]
-
-
-donationButton : String -> Html msg
-donationButton str =
-    a
-        [ class "dbox-donation-page-button m-auto mt-10 bg-pink-600 no-underline font-sans flex text-lg px-8 py-4 rounded gap-2 w-fit leading-6"
-        , class "shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
-
-        -- , href "https://www.zeffy.com/en-US/fundraisingV2/support-the-st-joseph-animation"
-        , href "https://www.kickstarter.com/projects/catholicstories/saint-joseph-animation"
-        , target "_blank"
-        ]
-        [ text str
         ]

@@ -1,12 +1,12 @@
 module Page.Animations.PrayerTimeWithAngels.PTWAEpisodes exposing (..)
 
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Page.Animations.ActOfContrition.Description as ActOfContritionDescription
 import Page.Animations.GuardianAngel.Description exposing (..)
 import Page.Animations.Helpers exposing (..)
 import Page.Animations.StMichael.Description as StMichaelDescription
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Time exposing (Month(..))
+import Time
 
 
 viewBody : Html msg
@@ -131,90 +131,61 @@ episodes =
       , year = "2025"
       , duration = "6 min"
       }
---     , { title = "Prayer Before Meals"
---       , thumbnail = "/assets/images/AnimationImageLinks/DefaultThumbnail.webp"
---       , releaseDate = Time.millisToPosix 0
---       , isDisabled = True
---       , isFundraising = False
---       , link = "/animations/prayerbeforemeals"
---       , about = span [] []
---       , activities =
---             { thumbnailLink = ""
---             , pdfLink = ""
---             , answerThumbnailLink = ""
---             , answerPdfLink = ""
---             }
---       , videoTitles =
---             { english = "St Michael"
---             , spanish = ""
---             , urdu = ""
---             , asl = ""
---             }
---       , videoLinks =
---             { english = ""
---             , spanish = ""
---             , urdu = ""
---             , asl = ""
---             }
---       , year = ""
---       , duration = ""
---       }
---     , { title = "St Anthony"
---       , thumbnail = "/assets/images/AnimationImageLinks/DefaultThumbnail.webp"
---       , releaseDate = Time.millisToPosix 0
---       , isDisabled = True
---       , isFundraising = False
---       , link = "/animations/stanthony"
---       , about = span [] []
---       , activities =
---             { thumbnailLink = ""
---             , pdfLink = ""
---             , answerThumbnailLink = ""
---             , answerPdfLink = ""
---             }
---       , videoTitles =
---             { english = "St Anthony"
---             , spanish = ""
---             , urdu = ""
---             , asl = ""
---             }
---       , videoLinks =
---             { english = ""
---             , spanish = ""
---             , urdu = ""
---             , asl = ""
---             }
---       , year = ""
---       , duration = ""
---       }
-    ]
 
-
-prayerTimeWithAngelsAnimationLinks : List AnimationLink
-prayerTimeWithAngelsAnimationLinks =
-    [ { link = "/animations/guardianangel"
-      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/GuardianAngelPrayer.webp"
-      , ariaLabel = "See the Guardian Angel Animation"
-      , isLive = True
-      }
-    , { link = "animations/prayertimewithangels/1/saintmichaelprayer"
-      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.webp"
-      , ariaLabel = "See the St Michael the Archangel Animation"
-      , isLive = True
-      }
-    , { link = "/animations/actofcontrition"
-      , imgSrc = "/assets/images/AnimationImageLinks/PTWA/AOC.webp"
-      , ariaLabel = "Act of Contrition Animation Coming Soon"
-      , isLive = True
-      }
-    , { link = "/animations/prayerbeforemeals"
-      , imgSrc = "/assets/images/AnimationImageLinks/DefaultThumbnail.webp"
-      , ariaLabel = "Prayer Before Meals Animation Coming Soon"
-      , isLive = False
-      }
-    , { link = "/animations/saintanthony"
-      , imgSrc = "/assets/images/AnimationImageLinks/DefaultThumbnail.webp"
-      , ariaLabel = "St Anthony Animation Coming Soon"
-      , isLive = False
-      }
+    --     , { title = "Prayer Before Meals"
+    --       , thumbnail = "/assets/images/AnimationImageLinks/DefaultThumbnail.webp"
+    --       , releaseDate = Time.millisToPosix 0
+    --       , isDisabled = True
+    --       , isFundraising = False
+    --       , link = "/animations/prayerbeforemeals"
+    --       , about = span [] []
+    --       , activities =
+    --             { thumbnailLink = ""
+    --             , pdfLink = ""
+    --             , answerThumbnailLink = ""
+    --             , answerPdfLink = ""
+    --             }
+    --       , videoTitles =
+    --             { english = "St Michael"
+    --             , spanish = ""
+    --             , urdu = ""
+    --             , asl = ""
+    --             }
+    --       , videoLinks =
+    --             { english = ""
+    --             , spanish = ""
+    --             , urdu = ""
+    --             , asl = ""
+    --             }
+    --       , year = ""
+    --       , duration = ""
+    --       }
+    --     , { title = "St Anthony"
+    --       , thumbnail = "/assets/images/AnimationImageLinks/DefaultThumbnail.webp"
+    --       , releaseDate = Time.millisToPosix 0
+    --       , isDisabled = True
+    --       , isFundraising = False
+    --       , link = "/animations/stanthony"
+    --       , about = span [] []
+    --       , activities =
+    --             { thumbnailLink = ""
+    --             , pdfLink = ""
+    --             , answerThumbnailLink = ""
+    --             , answerPdfLink = ""
+    --             }
+    --       , videoTitles =
+    --             { english = "St Anthony"
+    --             , spanish = ""
+    --             , urdu = ""
+    --             , asl = ""
+    --             }
+    --       , videoLinks =
+    --             { english = ""
+    --             , spanish = ""
+    --             , urdu = ""
+    --             , asl = ""
+    --             }
+    --       , year = ""
+    --       , duration = ""
+    --       }
     ]

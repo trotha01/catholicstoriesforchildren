@@ -2,11 +2,10 @@ module Page.Signup.Main exposing (..)
 
 import Browser
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewPageHeaderNoLinks, viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
+import Component.Header exposing (viewPageHeaderNoLinks)
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Page.Resources.Helpers exposing (..)
+import Theme.Layout exposing (headerMargin)
 
 
 type alias Model =

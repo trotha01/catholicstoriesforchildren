@@ -2,8 +2,6 @@ module Page.About.TermsAndConditions.Main exposing (..)
 
 import Browser
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 

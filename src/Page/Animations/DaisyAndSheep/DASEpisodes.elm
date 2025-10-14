@@ -3,7 +3,7 @@ module Page.Animations.DaisyAndSheep.DASEpisodes exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Page.Animations.Helpers exposing (Episode, Season)
-import Time exposing (Month(..))
+import Time
 
 
 viewDescription : Html msg

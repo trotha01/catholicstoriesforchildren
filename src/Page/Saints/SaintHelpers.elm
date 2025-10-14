@@ -1,10 +1,10 @@
 module Page.Saints.SaintHelpers exposing (..)
 
-import Page.FeastDayActivities.FeastDayHelpers exposing (Activity, ActivityType(..), activityFromLink)
-import Regex
+import Page.FeastDayActivities.FeastDayHelpers exposing (Activity, activityFromLink)
 import Page.Saints.SaintList exposing (Saint)
+import Regex
 import Url
-import Url.Parser exposing ((</>), (<?>), parse)
+import Url.Parser exposing ((<?>), parse)
 import Url.Parser.Query as Query
 
 

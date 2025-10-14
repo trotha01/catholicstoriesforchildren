@@ -1,7 +1,6 @@
 module Page.FeastDayActivities.Main exposing (..)
 
 import Browser
-import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
 import Html exposing (..)
@@ -28,7 +27,6 @@ import Regex
 import Task
 import Time exposing (Month(..))
 import Url
-
 
 
 type alias Model =
@@ -59,11 +57,7 @@ init flags url key =
 
 
 type Msg
-    = LinkClicked Browser.UrlRequest
-    | UrlChanged Url.Url
-    | SignupMsg Signup.Msg
-    | NoOp
-    | NewTime Time.Posix
+    = NewTime Time.Posix
     | NewZone Time.Zone
     | SaintListMsg SaintList.Msg
 
@@ -71,41 +65,6 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        LinkClicked urlRequest ->
-            case urlRequest of
-                Browser.Internal url ->
-                    let
-                        urlString =
-                            Url.toString url
-
-                        hasMonth =
-                            List.any (\month -> String.contains month urlString) months
-                    in
-                    if hasMonth then
-                        ( { model | url = url }, Nav.pushUrl model.key (Url.toString url) )
-
-                    else
-                        ( { model | url = url }, Nav.load (Url.toString url) )
-
-                Browser.External href ->
-                    ( model, Nav.load href )
-
-        UrlChanged url ->
-            ( { model | url = url }
-            , if String.contains "d=" (Url.toString url) then
-                jumpToTop
-
-              else
-                jumpToHeader
-            )
-
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
-
         NewTime t ->
             ( { model | time = t }, Cmd.none )
 
@@ -118,32 +77,6 @@ update msg model =
                     SaintList.update saintListMsg model.saintList
             in
             ( { model | saintList = newSaintList }, Cmd.none )
-
-        NoOp ->
-            ( model, Cmd.none )
-
-
-jumpToHeader : Cmd Msg
-jumpToHeader =
-    Dom.getElement "calendar-content"
-        |> Task.andThen (\i -> Dom.setViewportOf "body" 0 i.element.y)
-        |> Task.attempt (\_ -> NoOp)
-
-
-jumpToTop : Cmd Msg
-jumpToTop =
-    Dom.getElement "calendar-content"
-        |> Task.andThen (\i -> Dom.setViewportOf "body" 0 0)
-        |> Task.attempt (\_ -> NoOp)
-
-
-
--- SUBSCRIPTIONS
-
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
 
 
 
@@ -229,12 +162,6 @@ viewDate model month date feasts =
 
         concatFeasts =
             String.join " and " (List.map .feast feasts)
-
-        breadcrumb =
-            "Home / " ++ month ++ " 2025 / " ++ month ++ " " ++ date ++ ", 2025"
-
-        dayLabel =
-            month ++ " " ++ date ++ ", 2025"
     in
     div []
         [ -- Top navigation row (prev / back to month / next)
@@ -353,21 +280,6 @@ viewWeekdayActivities =
                 ]
             ]
         ]
-
-
-viewFeastDayHeader : List FeastActivities -> Html Msg
-viewFeastDayHeader feasts =
-    let
-        concatFeasts =
-            String.join " and " (List.map .feast feasts)
-    in
-    if concatFeasts == "" then
-        span [] []
-
-    else
-        div
-            [ class "grid m-auto" ]
-            [ h2 [ class "text-2xl text-left" ] [ text ("Feast of " ++ concatFeasts) ] ]
 
 
 viewFeast : FeastActivities -> Html Msg
@@ -633,21 +545,6 @@ capitalizeFirst s =
             String.toUpper (String.fromChar firstChar) ++ rest
 
 
-dateWidth : String
-dateWidth =
-    "50px"
-
-
-dateHR : Html Msg
-dateHR =
-    hr
-        [ style "width" dateWidth
-        , style "margin-left" "0px"
-        , style "border-top" "4px solid #415c71"
-        ]
-        []
-
-
 monthFromTime : Time.Posix -> FeastMonth
 monthFromTime t =
     t |> Time.toMonth Time.utc |> feastMonthFromMonth
@@ -691,11 +588,6 @@ feastMonthFromMonth month =
 
         Dec ->
             december
-
-
-simpleSignup : Html msg
-simpleSignup =
-    Signup.view3
 
 
 

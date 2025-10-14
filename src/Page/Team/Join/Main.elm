@@ -3,9 +3,9 @@ module Page.Team.Join.Main exposing (..)
 import Browser
 import Component.Footer exposing (viewFooter)
 import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Theme.Layout exposing (headerMargin)
 
 
 
@@ -38,20 +38,6 @@ view =
         , viewBody
         , viewFooter
         ]
-
-
-titleStyle : List (Attribute msg)
-titleStyle =
-    [ style "font-family" "hvdComicSerifPro"
-    , style "width" "80%"
-    , style "max-width" "800px"
-    ]
-
-
-h1Style : List (Attribute msg)
-h1Style =
-    titleStyle
-        ++ [ class "my-10" ]
 
 
 viewBody : Html Never

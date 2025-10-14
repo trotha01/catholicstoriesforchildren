@@ -2,18 +2,16 @@ module Page.Saints.Main exposing (..)
 
 import Browser
 import Browser.Navigation as Nav
-import Page.FeastDayActivities.FeastDayHelpers exposing (activityDescriptionFromLink, activityFromLink, activityImageFromLink, activityTitleFromLink, viewAllActivities, viewVideos)
 import Component.Footer exposing (viewFooter)
-import Component.Header exposing (viewSubpageHeader)
-import Theme.Layout exposing (headerMargin)
+import Component.Spinner as Spinner
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
-import Regex
+import Page.FeastDayActivities.FeastDayHelpers exposing (viewAllActivities)
 import Page.Saints.SaintHelpers exposing (..)
 import Page.Saints.SaintList as SaintList exposing (Saint)
 import Page.Signup as Signup
-import Component.Spinner as Spinner
+import Regex
 import Url
 import Url.Builder exposing (..)
 
@@ -62,7 +60,6 @@ type Msg
     = LinkClicked Browser.UrlRequest
     | UrlChanged Url.Url
     | SetQuery String
-    | SignupMsg Signup.Msg
     | SaintListMsg SaintList.Msg
     | ChangePatronageView LongTextView
 
@@ -89,13 +86,6 @@ update msg model =
 
         SetQuery newQuery ->
             ( { model | query = newQuery }, Cmd.none )
-
-        SignupMsg signupMsg ->
-            let
-                ( signup, cmd ) =
-                    Signup.update signupMsg model.signup
-            in
-            ( { model | signup = signup }, cmd |> Cmd.map SignupMsg )
 
         SaintListMsg saintListMsg ->
             let
@@ -311,59 +301,6 @@ viewFeastDay saint =
         div []
             [ span [ class "font-bold" ] [ text "Feast day: " ]
             , span [] [ text saint.feastDay ]
-            ]
-
-
-viewPodcastActivity : String -> String -> Html msg
-viewPodcastActivity saintName link =
-    if String.isEmpty link then
-        span [] []
-
-    else
-        div [ class "p-7" ]
-            [ iframe
-                [ src link
-                , attribute "allow" "autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-                , attribute "frameborder" "0"
-                , height 180
-                , style "width" "100%;max-width:660px;overflow:hidden;border-radius:10px;"
-                , attribute "sandbox" "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-                ]
-                []
-            ]
-
-
-viewActivity : String -> String -> Html msg
-viewActivity saintName link =
-    let
-        activityTitle =
-            activityTitleFromLink saintName link
-
-        activityDescription =
-            activityDescriptionFromLink saintName link
-
-        activityImage =
-            activityImageFromLink link
-    in
-    if String.isEmpty link then
-        span [] []
-
-    else
-        a
-            [ class "grid grid-cols-[100px_1fr] rounded p-7"
-            , class "transition duration-500"
-            , class "hover:bg-csc-lightpurple hover:scale-105"
-            , target "_blank"
-            , attribute "aria-label" activityTitle
-            , href link
-            ]
-            [ div []
-                [ img [ src activityImage, class "w-20 h-20 object-cover" ] []
-                ]
-            , div []
-                [ h2 [ class "text-lg" ] [ text activityTitle ]
-                , p [] [ text activityDescription ]
-                ]
             ]
 
 
@@ -601,7 +538,7 @@ highlightString clip substring string =
 
     else
         case parts of
-            before :: after ->
+            before :: _ ->
                 let
                     beforeText =
                         String.left (String.length before) string
@@ -659,7 +596,7 @@ highlightString clip substring string =
 takeUntil : String -> String -> String
 takeUntil delimiter string =
     case String.split delimiter string of
-        before :: after ->
+        before :: _ ->
             before
 
         _ ->
@@ -673,7 +610,7 @@ dropBefore delimiter string =
 
     else
         case String.split delimiter string of
-            before :: after ->
+            _ :: after ->
                 String.join ";" after
 
             _ ->

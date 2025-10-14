@@ -1,13 +1,13 @@
 module Page.FeastDayActivities.FeastDayHelpers exposing (..)
 
+import Component.Spinner as Spinner
 import Dict exposing (Dict)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Encode
-import Component.Spinner as Spinner
 import Time
 import Url
-import Url.Parser exposing ((</>), (<?>), parse)
+import Url.Parser exposing ((<?>), parse)
 import Url.Parser.Query as Query
 
 
@@ -161,44 +161,6 @@ images =
         , ( "LoyolaPress", "https://lpress-craft.loyolapress.com/images/ocf-articles/Microsites/SaintsStories_100x100.jpeg" )
         , ( "SaintsFeastFamily", "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg" )
         , ( "CatholicIcing", "https://ik.imagekit.io/catholicstories/ProfileImages/41_XrkKmwtXL.png?updatedAt=1682876930378" )
-        ]
-
-
-viewFeastMonthCSV : FeastMonth -> Html msg
-viewFeastMonthCSV feastMonth =
-    span [] (List.map (viewFeastDayCSV feastMonth.month) feastMonth.feasts)
-
-
-viewFeastDayCSV : String -> FeastDay -> Html msg
-viewFeastDayCSV month feastDay =
-    span [] (List.map (viewFeastActivitiesCSV (month ++ " " ++ feastDay.date ++ ", 2024")) feastDay.feasts)
-
-
-viewFeastActivitiesCSV : String -> FeastActivities -> Html msg
-viewFeastActivitiesCSV date feastActivities =
-    span [] (List.map (viewActivityCSV date feastActivities.feast) feastActivities.activities)
-
-
-viewActivityCSV : String -> String -> Activity -> Html msg
-viewActivityCSV date feast activity =
-    p []
-        [ text
-            ("\""
-                ++ date
-                ++ "\",\""
-                ++ feast
-                ++ "\",\""
-                ++ activityTypeToString activity.activityType
-                ++ "\",\""
-                ++ activity.title
-                ++ "\",\""
-                ++ activity.image
-                ++ "\",\""
-                ++ activity.link
-                ++ "\",\""
-                ++ activity.snippet
-                ++ "\","
-            )
         ]
 
 
@@ -368,40 +330,6 @@ viewEmbeddedAudio activity =
                 ]
                 []
             ]
-
-
-activityTypeToString : ActivityType -> String
-activityTypeToString activityType =
-    case activityType of
-        Video ->
-            "Video"
-
-        Audio ->
-            "Audio"
-
-        Images ->
-            "Images"
-
-        Printout ->
-            "Printout"
-
-        OnlineReading ->
-            "OnlineReading"
-
-        Food ->
-            "Food"
-
-        Game ->
-            "Game"
-
-        Book ->
-            "Book"
-
-        Crafts ->
-            "Crafts"
-
-        More ->
-            "More"
 
 
 viewActivity : Activity -> Html msg

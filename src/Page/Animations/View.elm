@@ -1,7 +1,6 @@
 module Page.Animations.View exposing (..)
 
 import Browser
-import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
 import Html exposing (..)
@@ -10,11 +9,10 @@ import Html.Events exposing (onClick, onInput)
 import Page.Animations.Helpers exposing (..)
 import Page.Animations.Helpers.Carousel as Carousel exposing (Carousel)
 import Page.Animations.Productions as Productions exposing (getEpisodeFromURLPath, getProductionFromURLPath, getSeasonFromURLPath, productions)
-import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..))
 import Task
-import Time exposing (Month(..))
+import Time
 import Url
-import Url.Parser exposing ((</>), (<?>), Parser, int, parse, s, string)
+import Url.Parser exposing ((</>), Parser, int, parse, string)
 
 
 type alias Model =
@@ -43,8 +41,7 @@ type VideoDetailOption
 
 
 type Msg
-    = LinkClicked Browser.UrlRequest
-    | UrlChanged Url.Url
+    = UrlChanged Url.Url
     | NoOp
     | NewTime Time.Posix
     | NewZone Time.Zone
@@ -74,14 +71,6 @@ init flags url key =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        LinkClicked urlRequest ->
-            case urlRequest of
-                Browser.Internal url ->
-                    ( model, Nav.pushUrl model.key (Url.toString url) )
-
-                Browser.External href ->
-                    ( model, Nav.load href )
-
         UrlChanged url ->
             let
                 tabFromUrl =
@@ -124,21 +113,6 @@ update msg model =
 
         NoOp ->
             ( model, Cmd.none )
-
-
-scrollToTopCmd : Cmd Msg
-scrollToTopCmd =
-    Dom.setViewport 0 0
-        |> Task.perform (\_ -> NoOp)
-
-
-
--- SUBSCRIPTIONS
-
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
 
 
 view : Url.Url -> Model -> Browser.Document Msg
@@ -454,26 +428,6 @@ viewSuggestedProductions currentProduction =
     viewAnimationThumbnailsSmall Nothing <| List.map productionToThumbnailData suggestedProductions
 
 
-viewSuggestedProductionThumbnail : Production msg -> Html Msg
-viewSuggestedProductionThumbnail production =
-    div [ class "p-4 border rounded-lg hover:shadow-lg transition" ]
-        [ a
-            [ href production.link
-            , attribute "aria-label" ("View " ++ production.title)
-            ]
-            [ img
-                [ src production.thumbnail
-                , class "w-full h-auto rounded-lg"
-                , attribute "alt" production.title
-                , attribute "loading" "lazy"
-                , attribute "decoding" "async"
-                ]
-                []
-            , h3 [ class "mt-2 text-lg font-semibold" ] [ text production.title ]
-            ]
-        ]
-
-
 viewAbout : Episode msg -> Html msg
 viewAbout episode =
     div [ class "mt-10 max-w-3xl text-white" ]
@@ -566,16 +520,6 @@ routeParser =
 route : Url.Parser.Parser (Route -> a) a
 route =
     Url.Parser.map (\e -> EpisodeRoute e) routeParser
-
-
-removeSpaces : String -> String
-removeSpaces str =
-    String.filter (\c -> c /= ' ') str
-
-
-episodeUrlParam : Episode msg -> String
-episodeUrlParam episode =
-    episode.title |> removeSpaces |> String.toLower
 
 
 viewVideoPlayers : Model -> Episode msg -> Html Msg
@@ -704,14 +648,6 @@ viewVideoDetailTabs episodeCount model episode =
         ]
 
 
-hasExactlyOneLanguage : Episode msg -> Bool
-hasExactlyOneLanguage e =
-    List.filter (\s -> not (String.isEmpty s))
-        [ e.videoLinks.english, e.videoLinks.spanish, e.videoLinks.urdu, e.videoLinks.asl ]
-        |> List.length
-        |> (==) 1
-
-
 viewVideoPlayerTabs : Model -> Episode msg -> Html Msg
 viewVideoPlayerTabs model page =
     let
@@ -830,18 +766,3 @@ tabToString tab =
 
         Suggested ->
             "suggested"
-
-
-updateUrlWithTab : Model -> VideoDetailOption -> String
-updateUrlWithTab model tab =
-    let
-        baseUrl =
-            { protocol = model.url.protocol
-            , host = model.url.host
-            , port_ = model.url.port_
-            , path = model.url.path
-            , fragment = model.url.fragment
-            , query = Just <| "tab=" ++ String.toLower (tabToString tab)
-            }
-    in
-    Url.toString baseUrl

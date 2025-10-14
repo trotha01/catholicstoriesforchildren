@@ -55,19 +55,6 @@ viewPrayer =
         ]
 
 
-aboutThePrayer : Html msg
-aboutThePrayer =
-    div
-        [ class "mx-auto col-span-2 w-full"
-        , class "text-lg"
-        , class "py-5"
-        , class "max-w-3xl"
-        ]
-        [ h2 [] [ text "About the Guardian Angel Prayer" ]
-        , p [ class "my-3" ] [ text "" ]
-        ]
-
-
 scripture : Html msg
 scripture =
     div

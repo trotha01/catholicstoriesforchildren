@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Page.Animations.Helpers exposing (Production)
-import Svg exposing (circle, path, polygon, svg)
+import Svg
 import Svg.Attributes
 
 
@@ -35,25 +35,6 @@ prev carousel =
             (carousel.currentIndex - 1 + List.length carousel.items) |> modBy (List.length carousel.items)
     in
     { carousel | currentIndex = newIndex }
-
-
-getCurrent : Carousel a -> Maybe a
-getCurrent carousel =
-    List.head (List.drop carousel.currentIndex carousel.items)
-
-
-getNext : Carousel a -> Maybe a
-getNext carousel =
-    carousel
-        |> next
-        |> getCurrent
-
-
-getPrevious : Carousel a -> Maybe a
-getPrevious carousel =
-    carousel
-        |> prev
-        |> getCurrent
 
 
 viewSlides : Carousel (Production msg) -> msg -> msg -> Html msg
