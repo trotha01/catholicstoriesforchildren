@@ -426,7 +426,7 @@ viewMonth model feastMonth =
                     (List.map (viewMonthPillBox feastMonth.month) months)
                 ]
             , div
-                [ class "hcenter"
+                [ class "relative left-1/2 -translate-x-1/2"
                 , style "position" "relative"
                 , style "font-size" "20px"
                 , class "mt-3 mb-12"

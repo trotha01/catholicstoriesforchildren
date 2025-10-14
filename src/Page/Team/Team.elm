@@ -358,7 +358,7 @@ viewPeople title description people =
     div []
         ([ h3 [ class "text-2xl my-5" ] [ text title ]
          , div
-            [ class "hcenter"
+            [ class "relative left-1/2 -translate-x-1/2"
             ]
             [ text description ]
          ]

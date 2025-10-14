@@ -11,9 +11,9 @@ import Time
 
 viewBody : Html msg
 viewBody =
-    div [ class "hcenter" ]
+    div [ class "relative left-1/2 -translate-x-1/2" ]
         [ div
-            [ class "hcenter py-5 px-11 max-w-3xl" ]
+            [ class "relative left-1/2 -translate-x-1/2 py-5 px-11 max-w-3xl" ]
             [ h1 [ class "leading-10 my-10" ] [ text "Prayer Time with Angels" ]
             , div [ class "my-10" ]
                 [ p [ class "my-5" ] [ text "Join Theo and Felicity as their guardian angels teach and help them understand different Catholic prayers." ]
