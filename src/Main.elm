@@ -83,13 +83,13 @@ init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     let
         ( animationsPageModel, animationsPageCmd ) =
-            AnimationsView.init flags url key
+            AnimationsView.init flags url
 
         ( saintsPageModel, saintsPageCmd ) =
-            SaintsPage.init flags url key
+            SaintsPage.init flags url
 
         ( feastsPageModel, feastsPageCmd ) =
-            FeastsPage.init flags url key
+            FeastsPage.init flags url
 
         initialPage =
             parseUrl url
@@ -253,7 +253,7 @@ update msg model =
                 Productions ->
                     let
                         ( updatedAnimationsModel, animCmd ) =
-                            AnimationsView.update (AnimationsView.UrlChanged url) model.animationsPageModel
+                            AnimationsView.update model.key (AnimationsView.UrlChanged url) model.animationsPageModel
                     in
                     ( { model
                         | url = url
@@ -278,7 +278,7 @@ update msg model =
         SaintsMsg saintsMsg ->
             let
                 ( updatedSaintsModel, cmd ) =
-                    SaintsPage.update saintsMsg model.saintsPageModel
+                    SaintsPage.update model.key saintsMsg model.saintsPageModel
             in
             ( { model | saintsPageModel = updatedSaintsModel }, Cmd.map SaintsMsg cmd )
 
@@ -292,7 +292,7 @@ update msg model =
         ProductionsMsg productionsMsg ->
             let
                 ( updatedProductionsModel, cmd ) =
-                    AnimationsView.update productionsMsg model.animationsPageModel
+                    AnimationsView.update model.key productionsMsg model.animationsPageModel
             in
             ( { model | animationsPageModel = updatedProductionsModel }, Cmd.map ProductionsMsg cmd )
 

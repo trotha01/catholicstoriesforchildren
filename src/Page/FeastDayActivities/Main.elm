@@ -1,7 +1,6 @@
 module Page.FeastDayActivities.Main exposing (..)
 
 import Browser
-import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -30,8 +29,7 @@ import Url
 
 
 type alias Model =
-    { key : Nav.Key
-    , url : Url.Url
+    { url : Url.Url
     , signup : Signup.Model
     , time : Time.Posix
     , timezone : Time.Zone
@@ -39,10 +37,9 @@ type alias Model =
     }
 
 
-init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
-init flags url key =
-    ( { key = key
-      , url = url
+init : () -> Url.Url -> ( Model, Cmd Msg )
+init flags url =
+    ( { url = url
       , signup = Signup.init
       , time = Time.millisToPosix 0
       , timezone = Time.utc
