@@ -17,8 +17,7 @@ import Url.Builder exposing (..)
 
 
 type alias Model =
-    { key : Nav.Key
-    , url : Url.Url
+    { url : Url.Url
     , query : String
     , signup : Signup.Model
     , saintList : SaintList.Model
@@ -31,22 +30,9 @@ type LongTextView
     | Partial
 
 
-main : Program () Model Msg
-main =
-    Browser.application
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        , onUrlChange = UrlChanged
-        , onUrlRequest = LinkClicked
-        }
-
-
-init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
-init flags url key =
-    ( { key = key
-      , url = url
+init : () -> Url.Url -> ( Model, Cmd Msg )
+init flags url =
+    ( { url = url
       , query = ""
       , signup = Signup.init
       , saintList = SaintList.init
@@ -64,14 +50,14 @@ type Msg
     | ChangePatronageView LongTextView
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
+update : Nav.Key -> Msg -> Model -> ( Model, Cmd Msg )
+update key msg model =
     case msg of
         LinkClicked urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
                     if String.contains "saints" (Url.toString url) then
-                        ( { model | url = url }, Nav.pushUrl model.key (Url.toString url) )
+                        ( { model | url = url }, Nav.pushUrl key (Url.toString url) )
 
                     else
                         ( model, Nav.load (Url.toString url) )

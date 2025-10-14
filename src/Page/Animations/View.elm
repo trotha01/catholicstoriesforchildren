@@ -16,8 +16,7 @@ import Url.Parser exposing ((</>), Parser, int, parse, string)
 
 
 type alias Model =
-    { key : Nav.Key
-    , url : Url.Url
+    { url : Url.Url
     , time : Time.Posix
     , timezone : Time.Zone
     , videoTab : VideoOption
@@ -51,10 +50,9 @@ type Msg
     | PrevSlide
 
 
-init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
-init flags url key =
-    ( { key = key
-      , url = url
+init : () -> Url.Url -> ( Model, Cmd Msg )
+init flags url =
+    ( { url = url
       , time = Time.millisToPosix 0
       , timezone = Time.utc
       , videoTab = English
@@ -68,8 +66,8 @@ init flags url key =
     )
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
+update : Nav.Key -> Msg -> Model -> ( Model, Cmd Msg )
+update key msg model =
     case msg of
         UrlChanged url ->
             let
@@ -102,7 +100,7 @@ update msg model =
                         path ++ "?tab=" ++ String.toLower (tabToString tab)
             in
             ( { model | videoDetailTab = tab }
-            , Nav.pushUrl model.key newUrl
+            , Nav.pushUrl key newUrl
             )
 
         NextSlide ->
@@ -270,7 +268,7 @@ viewProductionEpisodes model productionURL =
 viewProductions : Model -> Html Msg
 viewProductions model =
     div
-        [ class "hcenter px-11 max-w-7xl" ]
+        [ class "relative left-1/2 -translate-x-1/2 px-11 max-w-7xl" ]
         [ --     div
           --     [ class "hcenter py-5 px-11 max-w-7xl" ]
           --     [ h2 [ class "mb-10 text-3xl md:text-7xl" ] [ text "Start teaching your children with Catholic animations" ]

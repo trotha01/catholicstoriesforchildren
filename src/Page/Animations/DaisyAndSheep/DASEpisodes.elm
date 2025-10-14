@@ -9,7 +9,7 @@ import Time
 viewDescription : Html msg
 viewDescription =
     div
-        [ class "hcenter py-5 px-11 max-w-3xl"
+        [ class "relative left-1/2 -translate-x-1/2 py-5 px-11 max-w-3xl"
         ]
         [ h1 [ class "leading-10 my-10", id "top" ] [ text "Daisy and Sheep" ]
         , div [ class "my-10" ]

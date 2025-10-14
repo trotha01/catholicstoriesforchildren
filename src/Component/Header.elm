@@ -203,7 +203,6 @@ viewHeaderTitle includesLinks title =
     in
     a
         [ style "text-decoration" "none"
-        , class "colorDarkGray"
         , class visibleClass
         , class "justify-self-start"
         , href "/"
@@ -286,7 +285,6 @@ viewLogo : Html msg
 viewLogo =
     a
         [ style "text-decoration" "none"
-        , class "colorDarkGray"
         , class "justify-self-start"
         , href "/"
         , attribute "aria-label" "home"
