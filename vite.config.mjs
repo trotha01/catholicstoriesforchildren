@@ -12,8 +12,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html',
-        thankyou: 'thankyou.html'
+        main: 'index.html'
       }
     },
     outDir: 'dist',

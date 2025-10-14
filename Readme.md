@@ -9,16 +9,19 @@ npm install
 npm start
 ```
 
-## Running Manually
-If you want to run manually, you can run with:
-1. `fswatch -o src/* build.js | xargs -n1 -I{} ./make.sh`. This will watch and re-compile if any code changes.
-2. `./tailwindcss -i input.css -o public/tailwind.css --watch`. This will recompile the css file.
-3. And serve with: `server.py`
+## Building
+```
+npm run build
+npm run preview
+```
 
 # How the code is transpiled
-1. `make.sh` will transpile all the elm code into js code.
-2. Then make.sh will call `build.js` to create the html files. 
-3. The `tailwindcss` script will keep the tailwind.css file updated
+1. `npm` will use `vite` (which is configured in vite.config.mjs and uses the Elm plugin)
+2. `vite` looks at `/index.html`, which runs `/src/main.js`
+3. `/src/main.js` pulls in `./Main.elm`
+
+In addition:
+1. `vite` also runs tailwind, looking at `postcss.config.cjs` and `tailwind.config.cjs`
 
 # AR
 - mind ar js is used: https://github.com/hiukim/mind-ar-js

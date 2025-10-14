@@ -2,7 +2,6 @@
 module.exports = {
   content: [
     './index.html',
-    './thankyou.html',
     './src/**/*.{js,ts,jsx,tsx,elm,html}'
   ],
   theme: {
