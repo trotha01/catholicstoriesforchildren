@@ -606,6 +606,21 @@ viewVideoDetailTabs episodeCount model episode =
                         ]
                         [ text "Episodes" ]
                     ]
+            , li [ class "mr-2" ]
+                [ button
+                    [ class
+                        ("inline-block p-4 border-b-2 rounded-t-lg "
+                            ++ (if model.videoDetailTab == Details then
+                                    selectedClass
+
+                                else
+                                    nonSelectedClass
+                               )
+                        )
+                    , onClick (VideoDetailsTabClick Details episode.link)
+                    ]
+                    [ text "Details" ]
+                ]
             , if String.isEmpty episode.activities.thumbnailLink then
                 span [] []
 
@@ -625,21 +640,6 @@ viewVideoDetailTabs episodeCount model episode =
                         ]
                         [ text "Activities" ]
                     ]
-            , li [ class "mr-2" ]
-                [ button
-                    [ class
-                        ("inline-block p-4 border-b-2 rounded-t-lg "
-                            ++ (if model.videoDetailTab == Details then
-                                    selectedClass
-
-                                else
-                                    nonSelectedClass
-                               )
-                        )
-                    , onClick (VideoDetailsTabClick Details episode.link)
-                    ]
-                    [ text "Details" ]
-                ]
             , li [ class "mr-2" ]
                 [ button
                     [ class
