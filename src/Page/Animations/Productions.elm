@@ -5,6 +5,7 @@ import Page.Animations.GigglesAndGrace.GAGEpisodes as GAG
 import Page.Animations.HailMary.HMEpisodes as HM
 import Page.Animations.Helpers exposing (Episode, Production, Season, stringToURL)
 import Page.Animations.PrayerTimeWithAngels.PTWAEpisodes as PTWA
+import Page.Animations.PrayingWithTheSaints.PWSEpisodes as PWS
 import Page.Animations.SongsOfTheSaints.SotSEpisodes as SOTS
 import Html exposing (..)
 
@@ -66,6 +67,17 @@ productions =
       , year = "2025"
       , age = "Ages 2+"
       }
+    , { title = "Praying with the Saints"
+      , thumbnail = "/assets/images/AnimationImageLinks/PrayingWithTheSaints.webp"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/PrayingWithTheSaints.webp"
+      , link = "/animations/prayingwiththesaints"
+      , about = span [] []
+      , seasons = PWS.seasons
+      , shortDescription = "Pray common prayers with the saints in this collection of 12 videos featuring St. Thérèse of Lisieux and Carlo Acutis."
+      , duration = "Various"
+      , year = "2025"
+      , age = "Ages 6+"
+      }
     ]
 
 
@@ -80,9 +92,19 @@ getEpisodeFromURLPath production season episode =
     , ms
         -- get the matching episode
         |> Maybe.map (\p -> p.episodes)
-        |> Maybe.map (List.filter (\e -> episode == stringToURL e.title))
+        |> Maybe.map (List.filter (\e -> episode == getEpisodeIdFromLink e.link))
         |> Maybe.andThen List.head
     )
+
+
+getEpisodeIdFromLink : String -> String
+getEpisodeIdFromLink link =
+    -- Extract the episode ID from a link like "/animations/production/season/episodeId"
+    link
+        |> String.split "/"
+        |> List.reverse
+        |> List.head
+        |> Maybe.withDefault ""
 
 
 getSeasonFromURLPath : String -> Int -> ( Maybe (Production msg), Maybe (Season msg) )

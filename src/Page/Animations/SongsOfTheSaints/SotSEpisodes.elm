@@ -31,7 +31,7 @@ stThereseEpisode =
     , releaseDate = Time.millisToPosix 0
     , isDisabled = False
     , isFundraising = False
-    , link = "/animations/songsofthesaints/1/saintthérèseoflisieux"
+    , link = "/animations/songsofthesaints/1/saintth%C3%A9r%C3%A8seoflisieux"
     , about = thereseVideoDescription
     , activities =
         { thumbnailLink = ""
@@ -239,8 +239,6 @@ thereseVideoDescription =
                 [ span [ class "italic" ] [ text "Guided by You Lord, grant that I may always allow myself to be guided by You, always follow Your plans, and perfectly accomplish Your Holy Will. Grant that in all things, great and small, today and all the days of my life, I may do whatever You require of me. Help me respond to the slightest prompting of Your Grace, so that I may be Your trustworthy instrument for Your honour. May Your Will be done in time and in eternity by me, in me, and through me. Amen." ]
                 ]
             ]
-
-        -- , viewAnotherEpisode carloEpisode "/animations/songsofthesaints/1/carloacutis"
         ]
 
 
@@ -340,8 +338,6 @@ carloVideoDescription =
             ]
         , br [] []
         , donateWithZeffy
-
-        -- , viewAnotherEpisode stThereseEpisode "/animations/songsofthesaints/1/saintthérèseoflisieux"
         ]
 
 

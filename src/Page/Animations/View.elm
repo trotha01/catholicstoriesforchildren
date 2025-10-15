@@ -46,7 +46,7 @@ type Msg
     | NewTime Time.Posix
     | NewZone Time.Zone
     | VideoTabClick VideoOption
-    | VideoDetailsTabClick VideoDetailOption String
+    | VideoDetailsTabClick VideoDetailOption
     | NextSlide
     | PrevSlide
 
@@ -108,14 +108,35 @@ update key msg model =
         VideoTabClick videoTab ->
             ( { model | videoTab = videoTab }, Cmd.none )
 
-        VideoDetailsTabClick tab path ->
+        VideoDetailsTabClick tab ->
             let
-                newUrl =
-                    if String.contains "?" path then
-                        path ++ "&tab=" ++ String.toLower (tabToString tab)
+                currentPath =
+                    model.url.path
+
+                currentQuery =
+                    model.url.query |> Maybe.withDefault ""
+
+                newQuery =
+                    if String.isEmpty currentQuery then
+                        "?tab=" ++ String.toLower (tabToString tab)
+
+                    else if String.contains "tab=" currentQuery then
+                        -- Replace existing tab parameter
+                        currentQuery
+                            |> String.split "&"
+                            |> List.map (\param ->
+                                if String.startsWith "tab=" param then
+                                    "?tab=" ++ String.toLower (tabToString tab)
+                                else
+                                    param
+                            )
+                            |> String.join "&"
 
                     else
-                        path ++ "?tab=" ++ String.toLower (tabToString tab)
+                        currentQuery ++ "&tab=" ++ String.toLower (tabToString tab)
+
+                newUrl =
+                    currentPath ++ newQuery
             in
             ( { model | videoDetailTab = tab }
             , Nav.pushUrl key newUrl
@@ -602,7 +623,7 @@ viewVideoDetailTabs episodeCount model episode =
                                         nonSelectedClass
                                    )
                             )
-                        , onClick (VideoDetailsTabClick Episodes episode.link)
+                        , onClick (VideoDetailsTabClick Episodes)
                         ]
                         [ text "Episodes" ]
                     ]
@@ -617,7 +638,7 @@ viewVideoDetailTabs episodeCount model episode =
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoDetailsTabClick Details episode.link)
+                    , onClick (VideoDetailsTabClick Details)
                     ]
                     [ text "Details" ]
                 ]
@@ -636,7 +657,7 @@ viewVideoDetailTabs episodeCount model episode =
                                         nonSelectedClass
                                    )
                             )
-                        , onClick (VideoDetailsTabClick Activities episode.link)
+                        , onClick (VideoDetailsTabClick Activities)
                         ]
                         [ text "Activities" ]
                     ]
@@ -651,7 +672,7 @@ viewVideoDetailTabs episodeCount model episode =
                                     nonSelectedClass
                                )
                         )
-                    , onClick (VideoDetailsTabClick Suggested episode.link)
+                    , onClick (VideoDetailsTabClick Suggested)
                     ]
                     [ text "Suggested" ]
                 ]

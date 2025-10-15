@@ -5934,6 +5934,7 @@ var $author$project$Page$Animations$DaisyAndSheep$DASEpisodes$seasons = _List_fr
 		number: 1
 	}
 	]);
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5944,9 +5945,493 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
-var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading = F2(
+	function (lvl, title) {
+		switch (lvl) {
+			case 1:
+				return A2(
+					$elm$html$Html$h1,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mb-6')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(title)
+						]));
+			case 2:
+				return A2(
+					$elm$html$Html$h2,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mb-4 mt-12 leading-relaxed')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(title)
+						]));
+			case 3:
+				return A2(
+					$elm$html$Html$h3,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mb-4 mt-8 font-bold')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(title)
+						]));
+			default:
+				return A2(
+					$elm$html$Html$h3,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('mb-4 mt-8')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(title)
+						]));
+		}
+	});
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$html$Html$li = _VirtualDom_node('li');
+var $elm$html$Html$ol = _VirtualDom_node('ol');
+var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para = function (s) {
+	return A2(
+		$elm$html$Html$p,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('mb-6')
+			]),
+		_List_fromArray(
+			[
+				$elm$html$Html$text(s)
+			]));
+};
+var $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('my-8 border-t border-gray-200')
+		]),
+	_List_Nil);
+var $elm$html$Html$strong = _VirtualDom_node('strong');
+var $elm$html$Html$ul = _VirtualDom_node('ul');
+var $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$aboutTheAnimation = A2(
+	$elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Introduction: A Melody of Faith and Gratitude'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The animated short film Giggles and Grace: Thank You Lord invites viewers into a world filled with light, laughter, and song. It’s not just a musical—it’s a prayer in motion. This special episode teaches the beauty of morning thanks and gratitude to God, even when the comb gets stuck, shoes go missing, or a broken down car slows you down. Through catchy melodies and tender storytelling, the film reminds us that grace often hides in life’s small, imperfect moments.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('At its heart, Thank You Lord captures the simple joy of saying “thank you, God” for everything—the sunshine and the storms alike.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'The Heart of Thank You Lord: A Musical Message of Hope'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Every Giggles and Grace episode carries a moral woven with music, but Thank You Lord strikes a special chord. The story unfolds as the family prepares for Sunday Mass—a day meant for reflection and renewal. Yet, chaos brews: slipping on skateboards, breakfast food fights, and missing shoes. Amid the small frustrations, we sing a tune of gratitude. An innocent song transforms the morning from hurried to holy.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The episode reveals a profound truth: worship begins long before stepping into church—it starts with morning gratitude.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Plot Overview: Giving Thanks in Every Season'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Morning Thanks: Waking Up with Gratitude'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The film opens with the family waking up to a bright, slightly messy morning. Instead of grumbling, they begin their day with a thank you prayer—a cheerful chant of thanks for the sun rising in the morning, the birds singing at the window, and the new day. It’s a moment that shows how a simple habit of morning thanks can shift the mood of an entire day.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Getting Ready for Mass: A Family’s Sunday Morning Journey'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('While dressing up and searching for shoes, this family reminds each other to stay calm and thankful. The parents lead the kids in grateful prayer to God, showing that faith isn’t just about rituals—it’s about grace under pressure and laughter in chaos.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'When Things Go Wrong: Finding Joy in Imperfection'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The climax arrives when everything seems to fall apart—they make it out of the house, yet the car breaks down. Instead of giving up, the family sings the “Thank You Lord” song, choosing joy over frustration. The lesson is luminous: gratitude is most powerful when life is least perfect.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'The Music of Gratitude: Songs that Lift the Soul'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'The “Thank You Lord” Song: A Gratitude Anthem'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('At the film’s emotional peak, the family joins voices in a lively gratitude song that celebrates faith and family. Its refrain—“Thank You, Lord!”—echoes the psalms of thanksgiving and invites viewers to sing along. The melody lingers long after the credits roll, inspiring real-life moments of worship.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Gratitude Songwriting: Turning Prayers into Music'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Behind the scenes, the songwriters drew inspiration from real morning routines, turning small frustrations into lyrical blessings. Their goal: to make children and adults alike hum their thank you Lord prayer on their way to school, work, or Church.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Gratitude in Scripture: Lessons that Inspire the Story'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Biblical Foundations of Thanksgiving'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The story of Thank You Lord echoes scriptural truths found in 1 Thessalonians 5:18—“Give thanks in all circumstances.” This verse anchors the episode’s theme: gratitude isn’t optional or situational—it’s transformational.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Gratitude Prayer to God: From the Psalms to Modern Life'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Psalms like 100 and 118 remind us to “Enter His gates with thanksgiving.” The film translates these timeless verses into animation and melody, bridging ancient scripture and modern storytelling. Each frame, each lyric, becomes a living thank you prayer.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Animation with Purpose: Bringing Faith to Life for Children'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'The Visual Style of Giggles and Grace'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The animation bursts with color and movement, designed to reflect the warmth of divine joy. Every sunbeam and giggle is a brushstroke of God’s light, inviting children into the world of faith through laughter.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'How the Characters Teach Morning Gratitude'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The family\'s boundless optimism and nurturing wisdom make for a perfect model. Their actions embody morning gratitude, showing that even small acts—like helping a sibling—can be prayers of thanks.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Behind the Scenes: The Creative Journey of Thank You Lord'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Inspiration and Concept Development'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The creators wanted a story that felt both relatable and sacred. The everyday chaos of getting ready for Mass became the perfect canvas for a faith-filled comedy.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Blending Faith, Humor, and Heart'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Unlike traditional religious shows, Giggles and Grace uses humor as a vessel for theology. The laughter isn’t separate from faith—it’s part of it.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'The Power of a Thank You Lord Prayer in Daily Life'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'A Simple Morning Thanks Ritual'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('The film encourages viewers to begin each day with a few simple words: “Thank you, Lord.” Whether over breakfast or during a commute, this daily gratitude turns ordinary routines into sacred rhythms.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Gratitude in Family Life and Worship'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('By sharing morning thanks together, families strengthen both their faith and their bond. Gratitude becomes a shared song, a tradition that extends beyond Sunday.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Impact: How Giggles and Grace Inspires Viewers of All Ages'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Building Faith Through Fun'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Children learn theology best through story and song. Thank You Lord turns faith lessons into joyful, memorable experiences that stick.'),
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 3, 'Encouraging Thankfulness Beyond the Screen'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Parents report that their kids start singing the thank you God tune at breakfast or bedtime. The story lives on—not just as entertainment, but as devotion.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'FAQs about Giggles and Grace: Thank You Lord'),
+			A2(
+			$elm$html$Html$ol,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('list-decimal list-inside space-y-6')
+				]),
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$strong,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('What is the main message of the episode?')
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mt-2')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('It teaches children (and adults) to thank God in every situation, even when life feels messy or hard.')
+								]))
+						])),
+					A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$strong,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Is the \"Thank You Lord\" song available for download or streaming?')
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mt-2')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Not at the moment, it is currently only available on YouTube.')
+								]))
+						])),
+					A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$strong,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('How does the show incorporate Scripture?')
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mt-2')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Each episode draws from biblical themes like gratitude, kindness, and forgiveness—woven naturally into songs and stories.')
+								]))
+						])),
+					A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$strong,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Who is the target audience?')
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mt-2')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('Families with children ages 2+, though its message resonates with all ages.')
+								]))
+						])),
+					A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$strong,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('What inspired the creators to focus on gratitude?')
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mt-2')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('They wanted to remind viewers that gratitude is the heartbeat of faith, especially during life\'s small challenges.')
+								]))
+						])),
+					A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$strong,
+							_List_Nil,
+							_List_fromArray(
+								[
+									$elm$html$Html$text('How can parents use this episode for family devotion?')
+								])),
+							A2(
+							$elm$html$Html$p,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mt-2')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('By watching together and discussing what they\'re thankful for each morning or after Mass.')
+								]))
+						]))
+				])),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2($author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$heading, 2, 'Conclusion: Singing Thank You Lord in Every Moment'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Giggles and Grace: Thank You Lord transforms everyday chaos into holy celebration. Its message is timeless: gratitude isn’t just something you feel—it’s something you live and sing. In every burned breakfast, missed bus, or rainy morning, there’s still room to say, “Thank you, Lord.”'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$para('Faith, after all, begins with a song of thanks.'),
+			$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$sep,
+			A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					$elm$html$Html$strong,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text('Blog posts:')
+						])),
+					A2(
+					$elm$html$Html$ul,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('space-y-2')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$li,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('https://blog.claritasstudios.com/p/its-here-giggles-and-grace-is-now'),
+											$elm$html$Html$Attributes$class('underline')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('🎉 It’s Here! Giggles & Grace is Now Out! 🎉')
+										]))
+								])),
+							A2(
+							$elm$html$Html$li,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('https://blog.claritasstudios.com/p/what-happens-when-mass-meets-music'),
+											$elm$html$Html$Attributes$class('underline')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('What Happens When Mass Meets Music and Giggles?')
+										]))
+								])),
+							A2(
+							$elm$html$Html$li,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('https://blog.claritasstudios.com/p/giggles-and-grace-catholic-musical'),
+											$elm$html$Html$Attributes$class('underline')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Giggles & Grace Catholic Musical Short for Kids Inspired by Family Life')
+										]))
+								])),
+							A2(
+							$elm$html$Html$li,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$a,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$href('https://blog.claritasstudios.com/p/behind-the-scenes-how-our-sing-along'),
+											$elm$html$Html$Attributes$class('underline')
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Behind the Scenes: How Our Sing-Along Animation Came to Life')
+										]))
+								]))
+						]))
+				]))
+		]));
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
+var $elm$html$Html$Attributes$height = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
+};
+var $elm$html$Html$iframe = _VirtualDom_node('iframe');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
+var $author$project$Page$Signup$view2 = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('mb-5 bg-white text-black')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$p,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('pb-2 pt-4 pl-1 m-auto text-center max-w-7xl')
+				]),
+			_List_fromArray(
+				[
+					$elm$html$Html$text('Receive free animations, activities, resources, and more!')
+				])),
+			A2(
+			$elm$html$Html$iframe,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$src('https://blog.claritasstudios.com/embed'),
+					$elm$html$Html$Attributes$height(150),
+					$elm$html$Html$Attributes$class('w-screen'),
+					A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
+					A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
+					A2($elm$html$Html$Attributes$style, 'margin', '0'),
+					A2($elm$html$Html$Attributes$style, 'border-radius', '5px !important'),
+					A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
+				]),
+			_List_Nil)
+		]));
+var $author$project$Page$Signup$view4 = A2(
+	$elm$html$Html$div,
+	_List_fromArray(
+		[
+			$elm$html$Html$Attributes$class('flex justify-center py-3 text-black')
+		]),
+	_List_fromArray(
+		[
+			A2(
+			$elm$html$Html$div,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$class('text-center grid justify-center mb-10')
+				]),
+			_List_fromArray(
+				[$author$project$Page$Signup$view2]))
+		]));
+var $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$episodes = _List_fromArray(
+	[
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$aboutTheAnimation, $author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: '3 min',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/gigglesandgraceshow',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: '/assets/images/AnimationImageLinks/GigglesAndGrace.webp',
+		title: 'Giggles and Grace: Thank You Lord – A Joyful Musical About Morning Thanks and Gratitude to God',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/videoseries?si=XYQhWXRqpZt3xVRu&amp;list=PL0_XgmxOXie_fE6aRjAfgxF7ngGP66fcZ&loop=1&autoplay=1', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Thank You Lord', spanish: '', urdu: ''},
+		year: '2025'
+	}
+	]);
+var $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$seasons = _List_fromArray(
+	[
+		{
+		description: A2($elm$html$Html$span, _List_Nil, _List_Nil),
+		episodes: $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$episodes,
+		number: 1
+	}
+	]);
 var $author$project$Page$Animations$HailMary$HMEpisodes$aboutTheAnimation = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -6039,7 +6524,6 @@ var $author$project$Page$Animations$HailMary$HMEpisodes$aboutTheAnimation = A2(
 		]));
 var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
 var $elm$html$Html$Attributes$cite = $elm$html$Html$Attributes$stringProperty('cite');
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $author$project$Page$Animations$HailMary$HMEpisodes$aboutThePrayer = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -6270,87 +6754,7 @@ var $author$project$Page$Animations$HailMary$HMEpisodes$moreAboutTheAnimation = 
 					$elm$html$Html$text('Prayer is tremendously important in our Catholic faith, and building a habit of prayer has much to offer children. By creating animated stories that teach Catholic prayers and reflect Catholic virtues and teachings, we can help children learn about the faith in a way that is both entertaining and informative. These stories can inspire children to live a life of faith, love, and compassion, just like Mother Mary did.')
 				]))
 		]));
-var $elm$virtual_dom$VirtualDom$attribute = F2(
-	function (key, value) {
-		return A2(
-			_VirtualDom_attribute,
-			_VirtualDom_noOnOrFormAction(key),
-			_VirtualDom_noJavaScriptOrHtmlUri(value));
-	});
-var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
-var $elm$html$Html$Attributes$height = function (n) {
-	return A2(
-		_VirtualDom_attribute,
-		'height',
-		$elm$core$String$fromInt(n));
-};
-var $elm$html$Html$iframe = _VirtualDom_node('iframe');
-var $elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
-var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
-var $author$project$Page$Signup$view2 = A2(
-	$elm$html$Html$div,
-	_List_fromArray(
-		[
-			$elm$html$Html$Attributes$class('mb-5 bg-white text-black')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$p,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('pb-2 pt-4 pl-1 m-auto text-center max-w-7xl')
-				]),
-			_List_fromArray(
-				[
-					$elm$html$Html$text('Receive free animations, activities, resources, and more!')
-				])),
-			A2(
-			$elm$html$Html$iframe,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$src('https://blog.claritasstudios.com/embed'),
-					$elm$html$Html$Attributes$height(150),
-					$elm$html$Html$Attributes$class('w-screen'),
-					A2($elm$html$Html$Attributes$attribute, 'frameborder', '0'),
-					A2($elm$html$Html$Attributes$attribute, 'scrolling', 'no'),
-					A2($elm$html$Html$Attributes$style, 'margin', '0'),
-					A2($elm$html$Html$Attributes$style, 'border-radius', '5px !important'),
-					A2($elm$html$Html$Attributes$style, 'background-color', 'transparent')
-				]),
-			_List_Nil)
-		]));
-var $author$project$Page$Signup$view4 = A2(
-	$elm$html$Html$div,
-	_List_fromArray(
-		[
-			$elm$html$Html$Attributes$class('flex justify-center py-3 text-black')
-		]),
-	_List_fromArray(
-		[
-			A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					$elm$html$Html$Attributes$class('text-center grid justify-center mb-10')
-				]),
-			_List_fromArray(
-				[$author$project$Page$Signup$view2]))
-		]));
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $author$project$Page$Animations$HailMary$HMEpisodes$viewAnotherPage = A2(
 	$elm$html$Html$div,
@@ -6673,7 +7077,6 @@ var $author$project$Page$Animations$ActOfContrition$Description$aboutTheAnimatio
 					$elm$html$Html$text('This animation is meant to be an aid for your children to slowly build a habit of prayer. ' + 'You can use it during prayer time while kids are still learning both the words and the solemn manner to pray.')
 				]))
 		]));
-var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $author$project$Page$Animations$ActOfContrition$Description$aboutThePrayer = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -8769,6 +9172,233 @@ var $author$project$Page$Animations$PrayerTimeWithAngels$PTWAEpisodes$seasons = 
 		number: 1
 	}
 	]);
+var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = _List_fromArray(
+	[
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praytheluminousmysterieswithstthereseoflisieux',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/V9tfs8CU1nw/maxresdefault.jpg',
+		title: 'Pray the Luminous Mysteries with St Thérèse of Lisieux',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/V9tfs8CU1nw', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Luminous Mysteries with St Thérèse of Lisieux', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythesorrowfulmysterieswithstthereseoflisieux',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/RXFcoxLtEgI/maxresdefault.jpg',
+		title: 'Pray the Sorrowful Mysteries with St Thérèse of Lisieux',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/RXFcoxLtEgI', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Sorrowful Mysteries with St Thérèse of Lisieux', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythejoyfulmysterieswithstthereseoflisieux',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/FpFsFC6tMwo/maxresdefault.jpg',
+		title: 'Pray the Joyful Mysteries with St Thérèse of Lisieux',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/FpFsFC6tMwo', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Joyful Mysteries with St Thérèse of Lisieux', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praytheangeluswithsainttherese',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/KikBDbT9Z3Q/maxresdefault.jpg',
+		title: 'Pray the Angelus with Saint Thérèse',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/KikBDbT9Z3Q', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Angelus with Saint Thérèse', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythememorarewithsainttherese',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/9aOachJpF9g/maxresdefault.jpg',
+		title: 'Pray the Memorare with Saint Thérèse',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/9aOachJpF9g', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Memorare with Saint Thérèse', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythegloriousmysterieswithstthereseoflisieux',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/s1anknpeFzw/maxresdefault.jpg',
+		title: 'Pray the Glorious Mysteries with St Thérèse of Lisieux',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/s1anknpeFzw', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Glorious Mysteries with St Thérèse of Lisieux', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythememorarewithcarloacutis',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/UINgLALfSCs/maxresdefault.jpg',
+		title: 'Pray the Memorare with Carlo Acutis',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/UINgLALfSCs', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Memorare with Carlo Acutis', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praytheangeluswithcarloacutis',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/7uRRtYDrd8/maxresdefault.jpg',
+		title: 'Pray the Angelus with Carlo Acutis',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/7uRRtYDrd8', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Angelus with Carlo Acutis', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythesorrowfulmysterieswithcarlo',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/cFeBmfU14c4/maxresdefault.jpg',
+		title: 'Pray the Sorrowful Mysteries with Carlo',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/cFeBmfU14c4', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Sorrowful Mysteries with Carlo', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praytheluminousmysterieswithcarlo',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/Dt2K1uSWyJo/maxresdefault.jpg',
+		title: 'Pray the Luminous Mysteries with Carlo',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/Dt2K1uSWyJo', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Luminous Mysteries with Carlo', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythegloriousmysterieswithcarloacutis',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/kf5p74ROguc/maxresdefault.jpg',
+		title: 'Pray the Glorious Mysteries with Carlo Acutis',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/kf5p74ROguc', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Glorious Mysteries with Carlo Acutis', spanish: '', urdu: ''},
+		year: '2025'
+	},
+		{
+		about: A2(
+			$elm$html$Html$div,
+			_List_Nil,
+			_List_fromArray(
+				[$author$project$Page$Signup$view4])),
+		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
+		duration: 'Various',
+		isDisabled: false,
+		isFundraising: false,
+		link: '/animations/prayingwiththesaints/1/praythejoyfulmysterieswithcarlo',
+		releaseDate: $elm$time$Time$millisToPosix(0),
+		thumbnail: 'https://img.youtube.com/vi/uvLfv0jkqI/maxresdefault.jpg',
+		title: 'Pray the Joyful Mysteries with Carlo',
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/uvLfv0jkqI', spanish: '', urdu: ''},
+		videoTitles: {asl: '', english: 'Pray the Joyful Mysteries with Carlo', spanish: '', urdu: ''},
+		year: '2025'
+	}
+	]);
+var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$seasons = _List_fromArray(
+	[
+		{
+		description: A2($elm$html$Html$span, _List_Nil, _List_Nil),
+		episodes: $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes,
+		number: 1
+	}
+	]);
 var $elm$html$Html$br = _VirtualDom_node('br');
 var $elm$html$Html$Attributes$target = $elm$html$Html$Attributes$stringProperty('target');
 var $author$project$Page$Give$View$donateWithZeffy = A2(
@@ -9063,7 +9693,6 @@ var $author$project$Page$Animations$SongsOfTheSaints$SotSEpisodes$carloEpisode =
 	videoTitles: {asl: '', english: 'Carlo Acutis | Songs of the Saints', spanish: '', urdu: ''},
 	year: '2025'
 };
-var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $author$project$Page$Animations$SongsOfTheSaints$SotSEpisodes$imgClass = 'w-3/4 my-10 mx-auto';
 var $author$project$Page$Animations$SongsOfTheSaints$SotSEpisodes$josephVideoDescription = A2(
 	$elm$html$Html$div,
@@ -9538,7 +10167,7 @@ var $author$project$Page$Animations$SongsOfTheSaints$SotSEpisodes$stThereseEpiso
 	duration: '3 min',
 	isDisabled: false,
 	isFundraising: false,
-	link: '/animations/songsofthesaints/1/saintthérèseoflisieux',
+	link: '/animations/songsofthesaints/1/saintth%C3%A9r%C3%A8seoflisieux',
 	releaseDate: $elm$time$Time$millisToPosix(0),
 	thumbnail: '/assets/images/AnimationImageLinks/SotsTherese.webp',
 	title: 'Saint Thérèse of Lisieux',
@@ -9709,6 +10338,30 @@ var $author$project$Page$Animations$Productions$productions = _List_fromArray(
 		shortDescription: 'Sing along with your favorite saints in this musical journey.',
 		thumbnail: '/assets/images/AnimationImageLinks/SongsOfTheSaints.webp',
 		title: 'Songs of the Saints',
+		year: '2025'
+	},
+		{
+		about: A2($elm$html$Html$span, _List_Nil, _List_Nil),
+		age: 'Ages 2+',
+		carouselThumbnail: '/assets/images/CarouselThumbnails/GigglesAndGrace.webp',
+		duration: '3 min',
+		link: '/animations/gigglesandgraceshow',
+		seasons: $author$project$Page$Animations$GigglesAndGrace$GAGEpisodes$seasons,
+		shortDescription: 'Discover Giggles and Grace: Thank You Lord, a musical animated short film that celebrates the joy of thanking God even when things go wrong.',
+		thumbnail: '/assets/images/AnimationImageLinks/GigglesAndGrace.webp',
+		title: 'Giggles and Grace Show',
+		year: '2025'
+	},
+		{
+		about: A2($elm$html$Html$span, _List_Nil, _List_Nil),
+		age: 'Ages 6+',
+		carouselThumbnail: '/assets/images/CarouselThumbnails/PrayingWithTheSaints.webp',
+		duration: 'Various',
+		link: '/animations/prayingwiththesaints',
+		seasons: $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$seasons,
+		shortDescription: 'Pray common prayers with the saints in this collection of 12 videos featuring St. Thérèse of Lisieux and Carlo Acutis.',
+		thumbnail: '/assets/images/AnimationImageLinks/PrayingWithTheSaints.webp',
+		title: 'Praying with the Saints',
 		year: '2025'
 	}
 	]);
@@ -10994,70 +11647,17 @@ var $elm$core$Basics$not = _Basics_not;
 var $author$project$Main$NoOp = {$: 'NoOp'};
 var $elm$browser$Browser$Dom$setViewport = _Browser_setViewport;
 var $elm$core$Process$sleep = _Process_sleep;
-var $author$project$Main$scrollToTopAggressiveCmd = $elm$core$Platform$Cmd$batch(
-	_List_fromArray(
-		[
-			A2(
-			$elm$core$Task$perform,
-			function (_v0) {
-				return $author$project$Main$NoOp;
-			},
-			A2($elm$browser$Browser$Dom$setViewport, 0, 0)),
-			A2(
-			$elm$core$Task$perform,
-			function (_v2) {
-				return $author$project$Main$NoOp;
-			},
-			A2(
-				$elm$core$Task$andThen,
-				function (_v1) {
-					return A2($elm$browser$Browser$Dom$setViewport, 0, 0);
-				},
-				$elm$core$Process$sleep(50))),
-			A2(
-			$elm$core$Task$perform,
-			function (_v4) {
-				return $author$project$Main$NoOp;
-			},
-			A2(
-				$elm$core$Task$andThen,
-				function (_v3) {
-					return A2($elm$browser$Browser$Dom$setViewport, 0, 0);
-				},
-				$elm$core$Process$sleep(150))),
-			A2(
-			$elm$core$Task$perform,
-			function (_v6) {
-				return $author$project$Main$NoOp;
-			},
-			A2(
-				$elm$core$Task$andThen,
-				function (_v5) {
-					return A2($elm$browser$Browser$Dom$setViewport, 0, 0);
-				},
-				$elm$core$Process$sleep(300)))
-		]));
-var $author$project$Main$scrollToTopCmd = $elm$core$Platform$Cmd$batch(
-	_List_fromArray(
-		[
-			A2(
-			$elm$core$Task$perform,
-			function (_v0) {
-				return $author$project$Main$NoOp;
-			},
-			A2($elm$browser$Browser$Dom$setViewport, 0, 0)),
-			A2(
-			$elm$core$Task$perform,
-			function (_v2) {
-				return $author$project$Main$NoOp;
-			},
-			A2(
-				$elm$core$Task$andThen,
-				function (_v1) {
-					return A2($elm$browser$Browser$Dom$setViewport, 0, 0);
-				},
-				$elm$core$Process$sleep(100)))
-		]));
+var $author$project$Main$scrollToTopCmd = A2(
+	$elm$core$Task$perform,
+	function (_v1) {
+		return $author$project$Main$NoOp;
+	},
+	A2(
+		$elm$core$Task$andThen,
+		function (_v0) {
+			return A2($elm$browser$Browser$Dom$setViewport, 0, 0);
+		},
+		$elm$core$Process$sleep(0)));
 var $author$project$Page$Animations$View$NoOp = {$: 'NoOp'};
 var $elm$core$Basics$modBy = _Basics_modBy;
 var $author$project$Page$Animations$Helpers$Carousel$next = function (carousel) {
@@ -11409,6 +12009,15 @@ var $author$project$Page$Animations$View$tabToString = function (tab) {
 	}
 };
 var $elm$core$String$toLower = _String_toLower;
+var $elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
 var $author$project$Page$Animations$View$update = F3(
 	function (key, msg, model) {
 		switch (msg.$) {
@@ -11452,10 +12061,21 @@ var $author$project$Page$Animations$View$update = F3(
 					$elm$core$Platform$Cmd$none);
 			case 'VideoDetailsTabClick':
 				var tab = msg.a;
-				var path = msg.b;
-				var newUrl = A2($elm$core$String$contains, '?', path) ? (path + ('&tab=' + $elm$core$String$toLower(
-					$author$project$Page$Animations$View$tabToString(tab)))) : (path + ('?tab=' + $elm$core$String$toLower(
-					$author$project$Page$Animations$View$tabToString(tab))));
+				var currentQuery = A2($elm$core$Maybe$withDefault, '', model.url.query);
+				var newQuery = $elm$core$String$isEmpty(currentQuery) ? ('?tab=' + $elm$core$String$toLower(
+					$author$project$Page$Animations$View$tabToString(tab))) : (A2($elm$core$String$contains, 'tab=', currentQuery) ? A2(
+					$elm$core$String$join,
+					'&',
+					A2(
+						$elm$core$List$map,
+						function (param) {
+							return A2($elm$core$String$startsWith, 'tab=', param) ? ('?tab=' + $elm$core$String$toLower(
+								$author$project$Page$Animations$View$tabToString(tab))) : param;
+						},
+						A2($elm$core$String$split, '&', currentQuery))) : (currentQuery + ('&tab=' + $elm$core$String$toLower(
+					$author$project$Page$Animations$View$tabToString(tab)))));
+				var currentPath = model.url.path;
+				var newUrl = _Utils_ap(currentPath, newQuery);
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
@@ -11522,15 +12142,6 @@ var $elm$core$Array$get = F2(
 			$elm$core$Array$tailIndex(len)) > -1) ? $elm$core$Maybe$Just(
 			A2($elm$core$Elm$JsArray$unsafeGet, $elm$core$Array$bitMask & index, tail)) : $elm$core$Maybe$Just(
 			A3($elm$core$Array$getHelp, startShift, index, tree)));
-	});
-var $elm$core$Maybe$withDefault = F2(
-	function (_default, maybe) {
-		if (maybe.$ === 'Just') {
-			var value = maybe.a;
-			return value;
-		} else {
-			return _default;
-		}
 	});
 var $author$project$Page$Saints$SaintList$convertToSaint = function (saintData) {
 	return {
@@ -12093,7 +12704,7 @@ var $author$project$Main$update = F2(
 								_List_fromArray(
 									[
 										A2($elm$core$Platform$Cmd$map, $author$project$Main$ProductionsMsg, animCmd),
-										$author$project$Main$scrollToTopAggressiveCmd
+										$author$project$Main$scrollToTopCmd
 									])) : A2($elm$core$Platform$Cmd$map, $author$project$Main$ProductionsMsg, animCmd));
 					default:
 						return _Utils_Tuple2(
@@ -12237,8 +12848,6 @@ var $author$project$Page$About$PrivacyPolicy$Main$viewBody = A2(
 		]));
 var $elm$html$Html$footer = _VirtualDom_node('footer');
 var $elm$html$Html$h4 = _VirtualDom_node('h4');
-var $elm$html$Html$li = _VirtualDom_node('li');
-var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $author$project$Component$Footer$viewFooter = A2(
 	$elm$html$Html$footer,
 	_List_fromArray(
@@ -13032,6 +13641,14 @@ var $elm$core$List$head = function (list) {
 		return $elm$core$Maybe$Nothing;
 	}
 };
+var $author$project$Page$Animations$Productions$getEpisodeIdFromLink = function (link) {
+	return A2(
+		$elm$core$Maybe$withDefault,
+		'',
+		$elm$core$List$head(
+			$elm$core$List$reverse(
+				A2($elm$core$String$split, '/', link))));
+};
 var $elm$url$Url$percentEncode = _Url_percentEncode;
 var $elm$core$String$filter = _String_filter;
 var $author$project$Page$Animations$Helpers$removeSpaces = function (str) {
@@ -13108,7 +13725,7 @@ var $author$project$Page$Animations$Productions$getEpisodeFromURLPath = F3(
 						function (e) {
 							return _Utils_eq(
 								episode,
-								$author$project$Page$Animations$Helpers$stringToURL(e.title));
+								$author$project$Page$Animations$Productions$getEpisodeIdFromLink(e.link));
 						}),
 					A2(
 						$elm$core$Maybe$map,
@@ -13181,7 +13798,7 @@ var $author$project$Page$Animations$View$viewAbout = function (episode) {
 		$elm$html$Html$div,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$class('mt-10 max-w-3xl text-white')
+				$elm$html$Html$Attributes$class('mt-10 px-5 md:px-0 max-w-3xl text-white mx-auto text-lg')
 			]),
 		_List_fromArray(
 			[episode.about]));
@@ -13189,7 +13806,10 @@ var $author$project$Page$Animations$View$viewAbout = function (episode) {
 var $author$project$Page$Animations$View$viewActivities = function (episode) {
 	return $elm$core$String$isEmpty(episode.activities.pdfLink) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('px-5 md:px-0')
+			]),
 		_List_fromArray(
 			[
 				A2(
@@ -13206,7 +13826,7 @@ var $author$project$Page$Animations$View$viewActivities = function (episode) {
 				$elm$html$Html$p,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('h-14')
+						$elm$html$Html$Attributes$class('mb-5')
 					]),
 				_List_fromArray(
 					[
@@ -13588,8 +14208,8 @@ var $author$project$Page$Animations$Helpers$viewAnimationThumbnail = F2(
 							[
 								$elm$html$Html$Attributes$src(thumbnail.thumbnail),
 								A2($elm$html$Html$Attributes$style, 'border-radius', '5px'),
-								A2($elm$html$Html$Attributes$style, 'width', '-webkit-fill-available'),
-								$elm$html$Html$Attributes$alt(thumbnail.title + ' thumbnail')
+								$elm$html$Html$Attributes$alt(thumbnail.title + ' thumbnail'),
+								$elm$html$Html$Attributes$class('w-full h-auto')
 							]),
 						imgStyle),
 					_List_Nil)
@@ -13602,7 +14222,7 @@ var $author$project$Page$Animations$Helpers$viewAnimationThumbnails = F3(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('w-full'),
-					$elm$html$Html$Attributes$class('my-20')
+					$elm$html$Html$Attributes$class('my-5 md:my-20')
 				]),
 			_List_fromArray(
 				[
@@ -13645,14 +14265,22 @@ var $author$project$Page$Animations$View$viewSuggestedProductions = function (cu
 			},
 			$author$project$Page$Animations$Productions$productions));
 	return A2(
-		$author$project$Page$Animations$Helpers$viewAnimationThumbnailsSmall,
-		$elm$core$Maybe$Nothing,
-		A2($elm$core$List$map, $author$project$Page$Animations$Helpers$productionToThumbnailData, suggestedProductions));
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('px-5 md:px-0')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$author$project$Page$Animations$Helpers$viewAnimationThumbnailsSmall,
+				$elm$core$Maybe$Nothing,
+				A2($elm$core$List$map, $author$project$Page$Animations$Helpers$productionToThumbnailData, suggestedProductions))
+			]));
 };
-var $author$project$Page$Animations$View$VideoDetailsTabClick = F2(
-	function (a, b) {
-		return {$: 'VideoDetailsTabClick', a: a, b: b};
-	});
+var $author$project$Page$Animations$View$VideoDetailsTabClick = function (a) {
+	return {$: 'VideoDetailsTabClick', a: a};
+};
 var $elm$html$Html$button = _VirtualDom_node('button');
 var $elm$virtual_dom$VirtualDom$Normal = function (a) {
 	return {$: 'Normal', a: a};
@@ -13679,7 +14307,7 @@ var $author$project$Page$Animations$View$viewVideoDetailTabs = F3(
 			$elm$html$Html$div,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('text-xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700')
+					$elm$html$Html$Attributes$class('text-lg md:text-xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700')
 				]),
 			_List_fromArray(
 				[
@@ -13706,11 +14334,33 @@ var $author$project$Page$Animations$View$viewVideoDetailTabs = F3(
 											$elm$html$Html$Attributes$class(
 											'inline-block p-4 border-b-2 rounded-t-lg ' + (_Utils_eq(model.videoDetailTab, $author$project$Page$Animations$View$Episodes) ? selectedClass : nonSelectedClass)),
 											$elm$html$Html$Events$onClick(
-											A2($author$project$Page$Animations$View$VideoDetailsTabClick, $author$project$Page$Animations$View$Episodes, episode.link))
+											$author$project$Page$Animations$View$VideoDetailsTabClick($author$project$Page$Animations$View$Episodes))
 										]),
 									_List_fromArray(
 										[
 											$elm$html$Html$text('Episodes')
+										]))
+								])),
+							A2(
+							$elm$html$Html$li,
+							_List_fromArray(
+								[
+									$elm$html$Html$Attributes$class('mr-2')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$button,
+									_List_fromArray(
+										[
+											$elm$html$Html$Attributes$class(
+											'inline-block p-4 border-b-2 rounded-t-lg ' + (_Utils_eq(model.videoDetailTab, $author$project$Page$Animations$View$Details) ? selectedClass : nonSelectedClass)),
+											$elm$html$Html$Events$onClick(
+											$author$project$Page$Animations$View$VideoDetailsTabClick($author$project$Page$Animations$View$Details))
+										]),
+									_List_fromArray(
+										[
+											$elm$html$Html$text('Details')
 										]))
 								])),
 							$elm$core$String$isEmpty(episode.activities.thumbnailLink) ? A2($elm$html$Html$span, _List_Nil, _List_Nil) : A2(
@@ -13728,7 +14378,7 @@ var $author$project$Page$Animations$View$viewVideoDetailTabs = F3(
 											$elm$html$Html$Attributes$class(
 											'inline-block p-4 border-b-2 rounded-t-lg ' + (_Utils_eq(model.videoDetailTab, $author$project$Page$Animations$View$Activities) ? selectedClass : nonSelectedClass)),
 											$elm$html$Html$Events$onClick(
-											A2($author$project$Page$Animations$View$VideoDetailsTabClick, $author$project$Page$Animations$View$Activities, episode.link))
+											$author$project$Page$Animations$View$VideoDetailsTabClick($author$project$Page$Animations$View$Activities))
 										]),
 									_List_fromArray(
 										[
@@ -13748,31 +14398,9 @@ var $author$project$Page$Animations$View$viewVideoDetailTabs = F3(
 									_List_fromArray(
 										[
 											$elm$html$Html$Attributes$class(
-											'inline-block p-4 border-b-2 rounded-t-lg ' + (_Utils_eq(model.videoDetailTab, $author$project$Page$Animations$View$Details) ? selectedClass : nonSelectedClass)),
-											$elm$html$Html$Events$onClick(
-											A2($author$project$Page$Animations$View$VideoDetailsTabClick, $author$project$Page$Animations$View$Details, episode.link))
-										]),
-									_List_fromArray(
-										[
-											$elm$html$Html$text('Details')
-										]))
-								])),
-							A2(
-							$elm$html$Html$li,
-							_List_fromArray(
-								[
-									$elm$html$Html$Attributes$class('mr-2')
-								]),
-							_List_fromArray(
-								[
-									A2(
-									$elm$html$Html$button,
-									_List_fromArray(
-										[
-											$elm$html$Html$Attributes$class(
 											'inline-block p-4 border-b-2 rounded-t-lg ' + (_Utils_eq(model.videoDetailTab, $author$project$Page$Animations$View$Suggested) ? selectedClass : nonSelectedClass)),
 											$elm$html$Html$Events$onClick(
-											A2($author$project$Page$Animations$View$VideoDetailsTabClick, $author$project$Page$Animations$View$Suggested, episode.link))
+											$author$project$Page$Animations$View$VideoDetailsTabClick($author$project$Page$Animations$View$Suggested))
 										]),
 									_List_fromArray(
 										[
@@ -14056,12 +14684,22 @@ var $author$project$Page$Animations$View$viewEpisode = F4(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('m-auto'),
-					$elm$html$Html$Attributes$class('py-5 px-11'),
+					$elm$html$Html$Attributes$class('py-5 px-0 md:px-11'),
 					$elm$html$Html$Attributes$class('mb-10'),
 					$elm$html$Html$Attributes$class('max-w-7xl')
 				]),
 			_List_fromArray(
 				[
+					A2(
+					$elm$html$Html$h1,
+					_List_fromArray(
+						[
+							$elm$html$Html$Attributes$class('text-2xl md:text-4xl font-bold mb-5 text-white')
+						]),
+					_List_fromArray(
+						[
+							$elm$html$Html$text(episode.title)
+						])),
 					A2($author$project$Page$Animations$View$viewVideoPlayers, newModel, episode),
 					A3($author$project$Page$Animations$View$viewVideoDetailTabs, episodeCount, newModel, episode),
 					function () {
@@ -20386,6 +21024,8 @@ var $author$project$Component$Header$navigation = function (height) {
 };
 var $author$project$Component$Header$viewHeaderTitle = F2(
 	function (includesLinks, title) {
+		var isAnimationPage = A2($elm$core$String$contains, ' - Claritas Studios', title);
+		var headerTag = isAnimationPage ? $elm$html$Html$h2 : $elm$html$Html$h1;
 		var _v0 = includesLinks ? _Utils_Tuple2('text-[0px] md:text-xl', 'invisible md:visible') : _Utils_Tuple2('text-lg md:text-xl', '');
 		var textClass = _v0.a;
 		var visibleClass = _v0.b;
@@ -20401,7 +21041,7 @@ var $author$project$Component$Header$viewHeaderTitle = F2(
 			_List_fromArray(
 				[
 					A2(
-					$elm$html$Html$h1,
+					headerTag,
 					_List_fromArray(
 						[
 							A2($elm$html$Html$Attributes$style, 'font-family', 'hvdComicSerifPro'),
