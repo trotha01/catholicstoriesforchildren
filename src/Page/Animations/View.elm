@@ -441,7 +441,7 @@ viewSuggestedProductions currentProduction =
 
 viewAbout : Episode msg -> Html msg
 viewAbout episode =
-    div [ class "mt-10 px-5 md:px-0 max-w-3xl text-white" ]
+    div [ class "mt-10 px-5 md:px-0 max-w-3xl text-white mx-auto text-lg" ]
         [ episode.about
         ]
 

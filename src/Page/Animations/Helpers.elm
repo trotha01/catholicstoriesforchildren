@@ -156,8 +156,8 @@ viewAnimationThumbnail activeEpisode thumbnail =
         [ img
             ([ src thumbnail.thumbnail
              , style "border-radius" "5px"
-             , style "width" "-webkit-fill-available"
              , alt (thumbnail.title ++ " thumbnail")
+             , class "w-full h-auto"
              ]
                 ++ imgStyle
             )

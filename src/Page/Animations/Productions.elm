@@ -1,6 +1,7 @@
 module Page.Animations.Productions exposing (..)
 
 import Page.Animations.DaisyAndSheep.DASEpisodes as DAS
+import Page.Animations.GigglesAndGrace.GAGEpisodes as GAG
 import Page.Animations.HailMary.HMEpisodes as HM
 import Page.Animations.Helpers exposing (Episode, Production, Season, stringToURL)
 import Page.Animations.PrayerTimeWithAngels.PTWAEpisodes as PTWA
@@ -53,6 +54,17 @@ productions =
       , duration = "5 minutes"
       , year = "2025"
       , age = "Ages 10+"
+      }
+    , { title = "Giggles and Grace Show"
+      , thumbnail = "/assets/images/AnimationImageLinks/GigglesAndGrace.webp"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/GigglesAndGrace.webp"
+      , link = "/animations/gigglesandgraceshow"
+      , about = span [] []
+      , seasons = GAG.seasons
+      , shortDescription = "Discover Giggles and Grace: Thank You Lord, a musical animated short film that celebrates the joy of thanking God even when things go wrong."
+      , duration = "3 min"
+      , year = "2025"
+      , age = "Ages 2+"
       }
     ]
 
