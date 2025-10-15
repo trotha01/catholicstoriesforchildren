@@ -107,7 +107,7 @@ viewAnimationThumbnails : String -> List ThumbnailData -> Maybe (Episode msg) ->
 viewAnimationThumbnails cols thumbnails activeEpisode =
     div
         [ class "w-full"
-        , class "my-20"
+        , class "my-5 md:my-20"
         ]
         [ div
             [ class ("grid grid-cols " ++ cols ++ " gap-10")

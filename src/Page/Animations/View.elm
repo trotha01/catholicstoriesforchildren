@@ -74,12 +74,16 @@ update key msg model =
             let
                 tabFromUrl =
                     getTabFromUrl url
+
                 oldRoute =
                     parseRoute model.url
+
                 newRoute =
                     parseRoute url
+
                 routeChanged =
                     oldRoute /= newRoute
+
                 scrollToTopCmd =
                     Dom.setViewport 0 0
                         |> Task.perform (\_ -> NoOp)
@@ -88,7 +92,11 @@ update key msg model =
                 | url = url
                 , videoDetailTab = tabFromUrl
               }
-            , if routeChanged then scrollToTopCmd else Cmd.none
+            , if routeChanged then
+                scrollToTopCmd
+
+              else
+                Cmd.none
             )
 
         NewTime time ->
@@ -387,7 +395,7 @@ viewEpisode model production season episode =
     in
     div
         [ class "m-auto"
-        , class "py-5 px-11"
+        , class "py-5 px-0 md:px-11"
         , class "mb-10"
         , class "max-w-7xl"
         ]
@@ -433,12 +441,14 @@ viewSuggestedProductions currentProduction =
                 |> List.filter (\p -> p.link /= currentProduction.link)
                 |> List.take 5
     in
-    viewAnimationThumbnailsSmall Nothing <| List.map productionToThumbnailData suggestedProductions
+    div [ class "px-5 md:px-0" ]
+        [ viewAnimationThumbnailsSmall Nothing <| List.map productionToThumbnailData suggestedProductions
+        ]
 
 
 viewAbout : Episode msg -> Html msg
 viewAbout episode =
-    div [ class "mt-10 max-w-3xl text-white" ]
+    div [ class "mt-10 px-5 md:px-0 max-w-3xl text-white" ]
         [ episode.about
         ]
 
@@ -449,9 +459,9 @@ viewActivities episode =
         span [] []
 
     else
-        div []
+        div [ class "px-5 md:px-0" ]
             [ h2 [ class "mb-3 mt-5" ] [ text (episode.title ++ " Activities") ]
-            , p [ class "h-14" ]
+            , p [ class "mb-5" ]
                 [ text "Many of our animations come with activities, reflection questions, guided imaginitive prayer and more!"
                 ]
             , div [ class "flex" ]
@@ -581,7 +591,7 @@ viewVideoDetailTabs episodeCount model episode =
             "border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
     in
     div
-        [ class "text-xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
+        [ class "text-lg md:text-xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
         [ ul
             [ class "flex flex-wrap -mb-px" ]
             [ if episodeCount == 1 then
