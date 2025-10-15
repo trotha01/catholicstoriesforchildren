@@ -200,6 +200,15 @@ viewHeaderTitle includesLinks title =
 
             else
                 ( "text-lg md:text-xl", "" )
+
+        isAnimationPage =
+            String.contains " - Claritas Studios" title
+
+        headerTag =
+            if isAnimationPage then
+                h2
+            else
+                h1
     in
     a
         [ style "text-decoration" "none"
@@ -207,7 +216,7 @@ viewHeaderTitle includesLinks title =
         , class "justify-self-start"
         , href "/"
         ]
-        [ h1
+        [ headerTag
             [ style "font-family" "hvdComicSerifPro"
             , style "margin" "0px"
             , class "text-white"

@@ -399,15 +399,8 @@ viewEpisode model production season episode =
         , class "mb-10"
         , class "max-w-7xl"
         ]
-        [ -- a
-          -- [ class "text-7xl text-left md:m-0"
-          -- -- TODO: go to previous page
-          -- , href "/animations"
-          -- , attribute "aria-label" "Back"
-          -- ]
-          -- [ div [ class "mt-10" ] [ img [ class "h-20", src "https://ik.imagekit.io/catholicstories/Resources_Icons/leftarrow_emvaRz9A6.png?updatedAt=1693003148637" ] [] ]
-          -- ]
-          viewVideoPlayers newModel episode
+        [ h1 [ class "text-2xl md:text-4xl font-bold mb-5 text-white" ] [ text episode.title ]
+        , viewVideoPlayers newModel episode
         , viewVideoDetailTabs episodeCount newModel episode
         , case newModel.videoDetailTab of
             Episodes ->
