@@ -23,6 +23,7 @@ import Page.Saints.Main as SaintsPage
 import Page.Shop.View as ShopPage
 import Page.Signup as Signup
 import Page.Team.View as TeamPage
+import Process
 import Task
 import Theme.Layout exposing (headerMargin)
 import Time
@@ -203,8 +204,7 @@ parseUrl url =
 
 scrollToTopCmd : Cmd Msg
 scrollToTopCmd =
-    Dom.setViewport 0 0
-        |> Task.perform (\_ -> NoOp)
+    Process.sleep 0 |> Task.andThen (\_ -> Dom.setViewport 0 0) |> Task.perform (\_ -> NoOp)
 
 
 type Msg
@@ -245,6 +245,9 @@ update msg model =
 
                 urlString =
                     Url.toString url
+
+                pathChanged =
+                    model.url.path /= url.path
             in
             case newPage of
                 Download ->
@@ -261,12 +264,20 @@ update msg model =
                         , menuOpen = False
                         , animationsPageModel = updatedAnimationsModel
                       }
-                    , Cmd.map ProductionsMsg animCmd
+                    , if pathChanged then
+                        Cmd.batch [ Cmd.map ProductionsMsg animCmd, scrollToTopCmd ]
+
+                      else
+                        Cmd.map ProductionsMsg animCmd
                     )
 
                 _ ->
                     ( { model | url = url, page = newPage, menuOpen = False }
-                    , Cmd.none
+                    , if pathChanged then
+                        scrollToTopCmd
+
+                      else
+                        Cmd.none
                     )
 
         NewTime t ->
