@@ -1,6 +1,7 @@
 module Page.Animations.View exposing (..)
 
 import Browser
+import Browser.Dom as Dom
 import Browser.Navigation as Nav
 import Component.Footer exposing (viewFooter)
 import Html exposing (..)
@@ -73,12 +74,21 @@ update key msg model =
             let
                 tabFromUrl =
                     getTabFromUrl url
+                oldRoute =
+                    parseRoute model.url
+                newRoute =
+                    parseRoute url
+                routeChanged =
+                    oldRoute /= newRoute
+                scrollToTopCmd =
+                    Dom.setViewport 0 0
+                        |> Task.perform (\_ -> NoOp)
             in
             ( { model
                 | url = url
                 , videoDetailTab = tabFromUrl
               }
-            , Cmd.none
+            , if routeChanged then scrollToTopCmd else Cmd.none
             )
 
         NewTime time ->
