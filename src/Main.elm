@@ -95,39 +95,57 @@ init flags url key =
         initialPage =
             parseUrl url
     in
-    ( { key = key
-      , url = url
-      , signup = Signup.init
-      , page = initialPage
-      , time = Time.millisToPosix 0
-      , timezone = Time.utc
-      , language = English
-      , saintsPageModel = saintsPageModel
-      , feastsPageModel = feastsPageModel
-      , animationsPageModel = animationsPageModel
-      , menuOpen = False
-      , sections = Page.Home.Sections.init
-      }
-    , Cmd.batch
-        [ Task.perform NewTime Time.now
-        , Task.perform NewZone Time.here
-        , if initialPage == Productions then
-            Cmd.map ProductionsMsg animationsPageCmd
+    if url.path == "/animations/actofcontrition" then
+        ( { key = key
+          , url = url
+          , signup = Signup.init
+          , page = Productions -- temporary
+          , time = Time.millisToPosix 0
+          , timezone = Time.utc
+          , language = English
+          , saintsPageModel = saintsPageModel
+          , feastsPageModel = feastsPageModel
+          , animationsPageModel = animationsPageModel
+          , menuOpen = False
+          , sections = Page.Home.Sections.init
+          }
+        , Nav.pushUrl key "/animations/prayertimewithangels/1/actofcontritionprayer"
+        )
 
-          else
-            Cmd.none
-        , if initialPage == Saints then
-            Cmd.map SaintsMsg saintsPageCmd
+    else
+        ( { key = key
+          , url = url
+          , signup = Signup.init
+          , page = initialPage
+          , time = Time.millisToPosix 0
+          , timezone = Time.utc
+          , language = English
+          , saintsPageModel = saintsPageModel
+          , feastsPageModel = feastsPageModel
+          , animationsPageModel = animationsPageModel
+          , menuOpen = False
+          , sections = Page.Home.Sections.init
+          }
+        , Cmd.batch
+            [ Task.perform NewTime Time.now
+            , Task.perform NewZone Time.here
+            , if initialPage == Productions then
+                Cmd.map ProductionsMsg animationsPageCmd
 
-          else
-            Cmd.none
-        , if initialPage == Feasts then
-            Cmd.map FeastsMsg feastsPageCmd
+              else
+                Cmd.none
+            , if initialPage == Saints then
+                Cmd.map SaintsMsg saintsPageCmd
 
-          else
-            Cmd.none
-        ]
-    )
+              else
+                Cmd.none
+            , if initialPage == Feasts then
+                Cmd.map FeastsMsg feastsPageCmd
+
+              else
+                Cmd.none
+            ]
+        )
 
 
 
