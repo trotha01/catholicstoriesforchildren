@@ -95,7 +95,7 @@ init flags url key =
         initialPage =
             parseUrl url
     in
-    if url.path == "/animations/actofcontrition" then
+    if String.startsWith "/animations/actofcontrition" url.path then
         ( { key = key
           , url = url
           , signup = Signup.init
@@ -258,16 +258,20 @@ update msg model =
 
         UrlChanged url ->
             let
-                newPage =
-                    parseUrl url
-
                 urlString =
                     Url.toString url
 
                 pathChanged =
                     model.url.path /= url.path
             in
-            case newPage of
+            if String.startsWith "/animations/actofcontrition" url.path then
+                ( model, Nav.pushUrl model.key "/animations/prayertimewithangels/1/actofcontritionprayer" )
+            else
+                let
+                    newPage =
+                        parseUrl url
+                in
+                case newPage of
                 Download ->
                     ( model, Nav.load urlString )
 
