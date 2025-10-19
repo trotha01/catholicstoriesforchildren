@@ -67,7 +67,7 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube.com/embed/03hmpXjV_ck?si=VVADLnsDcTPL0Tm2&loop=1"
+            { english = "https://www.youtube.com/embed/videoseries?list=PL0_XgmxOXie8KX7A9KSkb3Akx8H3JT6hg&loop=1&autoplay=1"
             , spanish = ""
             , urdu = "https://www.youtube.com/embed/uG7xjTRSSaI"
             , asl = ""
@@ -95,7 +95,7 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube.com/embed/y2-SqI_PLv4?playlist=y2-SqI_PLv4&loop=1"
+            { english = "https://www.youtube.com/embed/videoseries?list=PL0_XgmxOXie8KX7A9KSkb3Akx8H3JT6hg&loop=1&autoplay=1"
             , spanish = ""
             , urdu = "https://www.youtube.com/embed/5ROHimFlar8?si=nlttq8zg2KthJSE1"
             , asl = ""
@@ -123,7 +123,7 @@ episodes =
             , asl = ""
             }
       , videoLinks =
-            { english = "https://www.youtube.com/embed/1i3Dx77eMDc"
+            { english = "https://www.youtube.com/embed/videoseries?list=PL0_XgmxOXie8KX7A9KSkb3Akx8H3JT6hg&loop=1&autoplay=1"
             , spanish = ""
             , urdu = ""
             , asl = ""
