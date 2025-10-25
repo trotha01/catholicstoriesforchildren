@@ -434,7 +434,10 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     case model.page of
         Home ->
-            Time.every 6000 (\_ -> SectionsMsg NextAuto)
+            Sub.batch
+                [ Time.every 6000 (\_ -> SectionsMsg NextAuto)
+                , Sub.map SectionsMsg (Page.Home.Sections.subscriptions model.sections)
+                ]
 
         _ ->
             Sub.none
@@ -555,6 +558,6 @@ viewBody model =
         , viewCategories
         , viewMission
         , viewWhatPeopleSaying model.sections |> Html.map SectionsMsg
-        , viewStayConnected
+        , viewStayConnected model.sections |> Html.map SectionsMsg
         , viewSupportMission
         ]
