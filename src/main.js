@@ -43,6 +43,51 @@ function mount() {
     app.ports.goBack.subscribe(function(){ window.history.back(); });
     app.__goBackHooked = true;
   }
+  // Google Analytics ports
+  function loadGA() {
+    if (window.__ga_block === true) return;
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD';
+    s.async = true;
+    document.head.appendChild(s);
+    if (typeof window.gtag === 'function') {
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-TXRVE787GD', { anonymize_ip: true });
+    }
+  }
+  if (app.ports.enableAnalytics && !app.__enableAnalyticsHooked) {
+    app.ports.enableAnalytics.subscribe(function() {
+      if (navigator.globalPrivacyControl === true) { return; }
+      window.__ga_block = false;
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+      }
+      loadGA();
+    });
+    app.__enableAnalyticsHooked = true;
+  }
+  if (app.ports.setConsent && !app.__setConsentHooked) {
+    app.ports.setConsent.subscribe(function(data) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          analytics_storage: data.analytics ? 'granted' : 'denied',
+          ad_storage: data.ads ? 'granted' : 'denied'
+        });
+      }
+    });
+    app.__setConsentHooked = true;
+  }
+  if (app.ports.loadGA && !app.__loadGAHooked) {
+    app.ports.loadGA.subscribe(function() {
+      loadGA();
+    });
+    app.__loadGAHooked = true;
+  }
+  if (app.ports.onConsentChange && !app.__onConsentChangeHooked) {
+    // This would be called from cookie consent JS
+    // For now, placeholder
+    app.__onConsentChangeHooked = true;
+  }
 }
 
 mount();

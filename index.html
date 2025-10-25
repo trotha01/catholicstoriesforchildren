@@ -93,25 +93,8 @@
     }, {
       region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'CH', 'GB']
     });
-    function loadGA() {
-      if (window.__ga_block === true) return;
-      var s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD';
-      s.async = true;
-      document.head.appendChild(s);
-      gtag('js', new Date());
-      gtag('config', 'G-TXRVE787GD', { anonymize_ip: true });
-    }
     // Do not auto-load GA; only load after consent
     window.__ga_block = true;
-
-    // Hook for cookie-consent (and geo logic): call this to grant analytics and trigger GA load
-    window.enableAnalytics = function () {
-      if (navigator.globalPrivacyControl === true) { return; } // honor GPC/CPRA signals
-      window.__ga_block = false;
-      gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
-      loadGA();
-    };
   </script>
 
 </head>

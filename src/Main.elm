@@ -23,6 +23,7 @@ import Page.Saints.Main as SaintsPage
 import Page.Shop.View as ShopPage
 import Page.Signup as Signup
 import Page.Team.View as TeamPage
+import Ports.GoogleAnalytics as GA
 import Process
 import Task
 import Theme.Layout exposing (headerMargin)
@@ -235,6 +236,7 @@ type Msg
     | ProductionsMsg AnimationsView.Msg
     | SectionsMsg Page.Home.Sections.Msg
     | ToggleMenu
+    | ConsentChanged { analytics : Bool }
     | NoOp
 
 
@@ -331,6 +333,12 @@ update msg model =
 
         ToggleMenu ->
             ( { model | menuOpen = not model.menuOpen }, Cmd.none )
+
+        ConsentChanged data ->
+            if data.analytics then
+                ( model, GA.enableAnalytics () )
+            else
+                ( model, GA.setConsent { analytics = False, ads = False } )
 
         NoOp ->
             ( model, Cmd.none )
@@ -437,10 +445,13 @@ subscriptions model =
             Sub.batch
                 [ Time.every 6000 (\_ -> SectionsMsg NextAuto)
                 , Sub.map SectionsMsg (Page.Home.Sections.subscriptions model.sections)
+                , GA.onConsentChange ConsentChanged
                 ]
 
         _ ->
-            Sub.none
+            Sub.batch
+                [ GA.onConsentChange ConsentChanged
+                ]
 
 
 
