@@ -9131,7 +9131,7 @@ var $author$project$Page$Animations$PrayerTimeWithAngels$PTWAEpisodes$episodes =
 		releaseDate: $elm$time$Time$millisToPosix(0),
 		thumbnail: '/assets/images/AnimationImageLinks/PTWA/GuardianAngelPrayer.webp',
 		title: 'Guardian Angel Prayer',
-		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/03hmpXjV_ck?si=VVADLnsDcTPL0Tm2&loop=1', spanish: '', urdu: 'https://www.youtube.com/embed/uG7xjTRSSaI'},
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/videoseries?list=PL0_XgmxOXie8KX7A9KSkb3Akx8H3JT6hg&loop=1&autoplay=1', spanish: '', urdu: 'https://www.youtube.com/embed/uG7xjTRSSaI'},
 		videoTitles: {asl: '', english: 'Guardian Angel', spanish: '', urdu: ''},
 		year: '2023'
 	},
@@ -9145,7 +9145,7 @@ var $author$project$Page$Animations$PrayerTimeWithAngels$PTWAEpisodes$episodes =
 		releaseDate: $elm$time$Time$millisToPosix(0),
 		thumbnail: '/assets/images/AnimationImageLinks/PTWA/StMichaelPrayer.webp',
 		title: 'Saint Michael Prayer',
-		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/y2-SqI_PLv4?playlist=y2-SqI_PLv4&loop=1', spanish: '', urdu: 'https://www.youtube.com/embed/5ROHimFlar8?si=nlttq8zg2KthJSE1'},
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/y2-SqI_PLv4?si=fAbS7jHGyG8saK1v&loop=1&autoplay=1', spanish: '', urdu: 'https://www.youtube.com/embed/5ROHimFlar8?si=nlttq8zg2KthJSE1'},
 		videoTitles: {asl: '', english: 'St Michael', spanish: '', urdu: 'St Michael'},
 		year: '2023'
 	},
@@ -9159,7 +9159,7 @@ var $author$project$Page$Animations$PrayerTimeWithAngels$PTWAEpisodes$episodes =
 		releaseDate: $elm$time$Time$millisToPosix(1740150000000),
 		thumbnail: '/assets/images/AnimationImageLinks/PTWA/AOC.webp',
 		title: 'Act of Contrition Prayer',
-		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/1i3Dx77eMDc', spanish: '', urdu: ''},
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/1i3Dx77eMDc?si=SV_xtbUf2iP-8Lxd&loop=1&autoplay=1', spanish: '', urdu: ''},
 		videoTitles: {asl: '', english: 'Act of Contrition', spanish: '', urdu: ''},
 		year: '2025'
 	}
@@ -9181,7 +9181,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praytheluminousmysterieswithstthereseoflisieux',
@@ -9199,7 +9199,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythesorrowfulmysterieswithstthereseoflisieux',
@@ -9217,7 +9217,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythejoyfulmysterieswithstthereseoflisieux',
@@ -9235,7 +9235,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '3 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praytheangeluswithsainttherese',
@@ -9253,7 +9253,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '1 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythememorarewithsainttherese',
@@ -9271,7 +9271,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythegloriousmysterieswithstthereseoflisieux',
@@ -9289,7 +9289,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '1 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythememorarewithcarloacutis',
@@ -9307,14 +9307,14 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '2 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praytheangeluswithcarloacutis',
 		releaseDate: $elm$time$Time$millisToPosix(0),
-		thumbnail: 'https://img.youtube.com/vi/7uRRtYDrd8/maxresdefault.jpg',
+		thumbnail: 'https://img.youtube.com/vi/7uRR-tYDrd8/maxresdefault.jpg',
 		title: 'Pray the Angelus with Carlo Acutis',
-		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/7uRRtYDrd8', spanish: '', urdu: ''},
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/7uRR-tYDrd8', spanish: '', urdu: ''},
 		videoTitles: {asl: '', english: 'Pray the Angelus with Carlo Acutis', spanish: '', urdu: ''},
 		year: '2025'
 	},
@@ -9325,7 +9325,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythesorrowfulmysterieswithcarlo',
@@ -9343,7 +9343,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praytheluminousmysterieswithcarlo',
@@ -9361,7 +9361,7 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythegloriousmysterieswithcarloacutis',
@@ -9379,14 +9379,14 @@ var $author$project$Page$Animations$PrayingWithTheSaints$PWSEpisodes$episodes = 
 			_List_fromArray(
 				[$author$project$Page$Signup$view4])),
 		activities: {answerPdfLink: '', answerThumbnailLink: '', pdfLink: '', thumbnailLink: ''},
-		duration: 'Various',
+		duration: '21 min',
 		isDisabled: false,
 		isFundraising: false,
 		link: '/animations/prayingwiththesaints/1/praythejoyfulmysterieswithcarlo',
 		releaseDate: $elm$time$Time$millisToPosix(0),
-		thumbnail: 'https://img.youtube.com/vi/uvLfv0jkqI/maxresdefault.jpg',
+		thumbnail: 'https://img.youtube.com/vi/uvLfv0jkq-I/maxresdefault.jpg',
 		title: 'Pray the Joyful Mysteries with Carlo',
-		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/uvLfv0jkqI', spanish: '', urdu: ''},
+		videoLinks: {asl: '', english: 'https://www.youtube.com/embed/uvLfv0jkq-I', spanish: '', urdu: ''},
 		videoTitles: {asl: '', english: 'Pray the Joyful Mysteries with Carlo', spanish: '', urdu: ''},
 		year: '2025'
 	}
@@ -11223,7 +11223,7 @@ var $author$project$Page$FeastDayActivities$Main$init = F2(
 						A2($elm$core$Platform$Cmd$map, $author$project$Page$FeastDayActivities$Main$SaintListMsg, $author$project$Page$Saints$SaintList$fetchSaints)
 					])));
 	});
-var $author$project$Page$Home$Sections$init = {animDir: 0, animating: false, nextIndex: $elm$core$Maybe$Nothing, paused: false, testiIndex: 0};
+var $author$project$Page$Home$Sections$init = {animDir: 0, animating: false, nextIndex: $elm$core$Maybe$Nothing, paused: false, substackLoaded: false, testiIndex: 0};
 var $author$project$Page$Saints$Main$Partial = {$: 'Partial'};
 var $author$project$Page$Saints$Main$SaintListMsg = function (a) {
 	return {$: 'SaintListMsg', a: a};
@@ -11328,6 +11328,7 @@ var $author$project$Main$parseUrl = function (url) {
 	var path = url.path;
 	return $author$project$Main$isDownloadable(path) ? $author$project$Main$Download : (A2($elm$core$String$contains, 'animations', urlString) ? $author$project$Main$Productions : (A2($elm$core$String$contains, 'give', urlString) ? $author$project$Main$Give : (A2($elm$core$String$contains, 'contact', urlString) ? $author$project$Main$Contact : (A2($elm$core$String$contains, 'team', urlString) ? $author$project$Main$AboutUs : (A2($elm$core$String$contains, 'resources', urlString) ? $author$project$Main$Resources : (A2($elm$core$String$contains, 'prayers', urlString) ? $author$project$Main$Prayers : (A2($elm$core$String$contains, 'angelus', urlString) ? $author$project$Main$Angelus : (A2($elm$core$String$contains, 'shop', urlString) ? $author$project$Main$Shop : (A2($elm$core$String$contains, 'saints', urlString) ? $author$project$Main$Saints : (A2($elm$core$String$contains, 'press', urlString) ? $author$project$Main$Press : (A2($elm$core$String$contains, 'about/privacy-policy', urlString) ? $author$project$Main$PrivacyPolicy : (A2($elm$core$String$contains, 'about/terms-and-conditions', urlString) ? $author$project$Main$TermsAndConditions : (A2($elm$core$String$contains, 'feastdayactivities', urlString) ? $author$project$Main$Feasts : $author$project$Main$Home)))))))))))));
 };
+var $elm$browser$Browser$Navigation$pushUrl = _Browser_pushUrl;
 var $author$project$Main$init = F3(
 	function (flags, url, key) {
 		var initialPage = $author$project$Main$parseUrl(url);
@@ -11340,7 +11341,22 @@ var $author$project$Main$init = F3(
 		var _v2 = A2($author$project$Page$Animations$View$init, flags, url);
 		var animationsPageModel = _v2.a;
 		var animationsPageCmd = _v2.b;
-		return _Utils_Tuple2(
+		return A2($elm$core$String$startsWith, '/animations/actofcontrition', url.path) ? _Utils_Tuple2(
+			{
+				animationsPageModel: animationsPageModel,
+				feastsPageModel: feastsPageModel,
+				key: key,
+				language: $author$project$Main$English,
+				menuOpen: false,
+				page: $author$project$Main$Productions,
+				saintsPageModel: saintsPageModel,
+				sections: $author$project$Page$Home$Sections$init,
+				signup: $author$project$Page$Signup$init,
+				time: $elm$time$Time$millisToPosix(0),
+				timezone: $elm$time$Time$utc,
+				url: url
+			},
+			A2($elm$browser$Browser$Navigation$pushUrl, key, '/animations/prayertimewithangels/1/actofcontritionprayer')) : _Utils_Tuple2(
 			{
 				animationsPageModel: animationsPageModel,
 				feastsPageModel: feastsPageModel,
@@ -11369,6 +11385,7 @@ var $author$project$Page$Home$Sections$NextAuto = {$: 'NextAuto'};
 var $author$project$Main$SectionsMsg = function (a) {
 	return {$: 'SectionsMsg', a: a};
 };
+var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$time$Time$Every = F2(
 	function (a, b) {
 		return {$: 'Every', a: a, b: b};
@@ -11623,17 +11640,154 @@ var $elm$time$Time$every = F2(
 		return $elm$time$Time$subscription(
 			A2($elm$time$Time$Every, interval, tagger));
 	});
-var $elm$core$Platform$Sub$batch = _Platform_batch;
+var $elm$core$Platform$Sub$map = _Platform_map;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
+var $author$project$Page$Home$Sections$LoadSubstackIframe = {$: 'LoadSubstackIframe'};
+var $elm$browser$Browser$AnimationManager$Time = function (a) {
+	return {$: 'Time', a: a};
+};
+var $elm$browser$Browser$AnimationManager$State = F3(
+	function (subs, request, oldTime) {
+		return {oldTime: oldTime, request: request, subs: subs};
+	});
+var $elm$browser$Browser$AnimationManager$init = $elm$core$Task$succeed(
+	A3($elm$browser$Browser$AnimationManager$State, _List_Nil, $elm$core$Maybe$Nothing, 0));
+var $elm$browser$Browser$AnimationManager$now = _Browser_now(_Utils_Tuple0);
+var $elm$browser$Browser$AnimationManager$rAF = _Browser_rAF(_Utils_Tuple0);
+var $elm$browser$Browser$AnimationManager$onEffects = F3(
+	function (router, subs, _v0) {
+		var request = _v0.request;
+		var oldTime = _v0.oldTime;
+		var _v1 = _Utils_Tuple2(request, subs);
+		if (_v1.a.$ === 'Nothing') {
+			if (!_v1.b.b) {
+				var _v2 = _v1.a;
+				return $elm$browser$Browser$AnimationManager$init;
+			} else {
+				var _v4 = _v1.a;
+				return A2(
+					$elm$core$Task$andThen,
+					function (pid) {
+						return A2(
+							$elm$core$Task$andThen,
+							function (time) {
+								return $elm$core$Task$succeed(
+									A3(
+										$elm$browser$Browser$AnimationManager$State,
+										subs,
+										$elm$core$Maybe$Just(pid),
+										time));
+							},
+							$elm$browser$Browser$AnimationManager$now);
+					},
+					$elm$core$Process$spawn(
+						A2(
+							$elm$core$Task$andThen,
+							$elm$core$Platform$sendToSelf(router),
+							$elm$browser$Browser$AnimationManager$rAF)));
+			}
+		} else {
+			if (!_v1.b.b) {
+				var pid = _v1.a.a;
+				return A2(
+					$elm$core$Task$andThen,
+					function (_v3) {
+						return $elm$browser$Browser$AnimationManager$init;
+					},
+					$elm$core$Process$kill(pid));
+			} else {
+				return $elm$core$Task$succeed(
+					A3($elm$browser$Browser$AnimationManager$State, subs, request, oldTime));
+			}
+		}
+	});
+var $elm$browser$Browser$AnimationManager$onSelfMsg = F3(
+	function (router, newTime, _v0) {
+		var subs = _v0.subs;
+		var oldTime = _v0.oldTime;
+		var send = function (sub) {
+			if (sub.$ === 'Time') {
+				var tagger = sub.a;
+				return A2(
+					$elm$core$Platform$sendToApp,
+					router,
+					tagger(
+						$elm$time$Time$millisToPosix(newTime)));
+			} else {
+				var tagger = sub.a;
+				return A2(
+					$elm$core$Platform$sendToApp,
+					router,
+					tagger(newTime - oldTime));
+			}
+		};
+		return A2(
+			$elm$core$Task$andThen,
+			function (pid) {
+				return A2(
+					$elm$core$Task$andThen,
+					function (_v1) {
+						return $elm$core$Task$succeed(
+							A3(
+								$elm$browser$Browser$AnimationManager$State,
+								subs,
+								$elm$core$Maybe$Just(pid),
+								newTime));
+					},
+					$elm$core$Task$sequence(
+						A2($elm$core$List$map, send, subs)));
+			},
+			$elm$core$Process$spawn(
+				A2(
+					$elm$core$Task$andThen,
+					$elm$core$Platform$sendToSelf(router),
+					$elm$browser$Browser$AnimationManager$rAF)));
+	});
+var $elm$browser$Browser$AnimationManager$Delta = function (a) {
+	return {$: 'Delta', a: a};
+};
+var $elm$browser$Browser$AnimationManager$subMap = F2(
+	function (func, sub) {
+		if (sub.$ === 'Time') {
+			var tagger = sub.a;
+			return $elm$browser$Browser$AnimationManager$Time(
+				A2($elm$core$Basics$composeL, func, tagger));
+		} else {
+			var tagger = sub.a;
+			return $elm$browser$Browser$AnimationManager$Delta(
+				A2($elm$core$Basics$composeL, func, tagger));
+		}
+	});
+_Platform_effectManagers['Browser.AnimationManager'] = _Platform_createManager($elm$browser$Browser$AnimationManager$init, $elm$browser$Browser$AnimationManager$onEffects, $elm$browser$Browser$AnimationManager$onSelfMsg, 0, $elm$browser$Browser$AnimationManager$subMap);
+var $elm$browser$Browser$AnimationManager$subscription = _Platform_leaf('Browser.AnimationManager');
+var $elm$browser$Browser$AnimationManager$onAnimationFrame = function (tagger) {
+	return $elm$browser$Browser$AnimationManager$subscription(
+		$elm$browser$Browser$AnimationManager$Time(tagger));
+};
+var $elm$browser$Browser$Events$onAnimationFrame = $elm$browser$Browser$AnimationManager$onAnimationFrame;
+var $author$project$Page$Home$Sections$subscriptions = function (model) {
+	return model.substackLoaded ? $elm$core$Platform$Sub$none : $elm$browser$Browser$Events$onAnimationFrame(
+		function (_v0) {
+			return $author$project$Page$Home$Sections$LoadSubstackIframe;
+		});
+};
 var $author$project$Main$subscriptions = function (model) {
 	var _v0 = model.page;
 	if (_v0.$ === 'Home') {
-		return A2(
-			$elm$time$Time$every,
-			6000,
-			function (_v1) {
-				return $author$project$Main$SectionsMsg($author$project$Page$Home$Sections$NextAuto);
-			});
+		return $elm$core$Platform$Sub$batch(
+			_List_fromArray(
+				[
+					A2(
+					$elm$time$Time$every,
+					6000,
+					function (_v1) {
+						return $author$project$Main$SectionsMsg($author$project$Page$Home$Sections$NextAuto);
+					}),
+					A2(
+					$elm$core$Platform$Sub$map,
+					$author$project$Main$SectionsMsg,
+					$author$project$Page$Home$Sections$subscriptions(model.sections))
+				]));
 	} else {
 		return $elm$core$Platform$Sub$none;
 	}
@@ -11995,7 +12149,6 @@ var $author$project$Page$Animations$Helpers$Carousel$prev = function (carousel) 
 		carousel,
 		{currentIndex: newIndex});
 };
-var $elm$browser$Browser$Navigation$pushUrl = _Browser_pushUrl;
 var $author$project$Page$Animations$View$tabToString = function (tab) {
 	switch (tab.$) {
 		case 'Episodes':
@@ -12439,11 +12592,17 @@ var $author$project$Page$Home$Sections$update = F2(
 							{animDir: 0, animating: false}),
 						$elm$core$Platform$Cmd$none);
 				}
-			default:
+			case 'ResumeAutoplay':
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
 						{paused: false}),
+					$elm$core$Platform$Cmd$none);
+			default:
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{substackLoaded: true}),
 					$elm$core$Platform$Cmd$none);
 		}
 	});
@@ -12682,36 +12841,42 @@ var $author$project$Main$update = F2(
 				var url = msg.a;
 				var urlString = $elm$url$Url$toString(url);
 				var pathChanged = !_Utils_eq(model.url.path, url.path);
-				var newPage = $author$project$Main$parseUrl(url);
-				switch (newPage.$) {
-					case 'Download':
-						return _Utils_Tuple2(
-							model,
-							$elm$browser$Browser$Navigation$load(urlString));
-					case 'Productions':
-						var _v4 = A3(
-							$author$project$Page$Animations$View$update,
-							model.key,
-							$author$project$Page$Animations$View$UrlChanged(url),
-							model.animationsPageModel);
-						var updatedAnimationsModel = _v4.a;
-						var animCmd = _v4.b;
-						return _Utils_Tuple2(
-							_Utils_update(
+				if (A2($elm$core$String$startsWith, '/animations/actofcontrition', url.path)) {
+					return _Utils_Tuple2(
+						model,
+						A2($elm$browser$Browser$Navigation$pushUrl, model.key, '/animations/prayertimewithangels/1/actofcontritionprayer'));
+				} else {
+					var newPage = $author$project$Main$parseUrl(url);
+					switch (newPage.$) {
+						case 'Download':
+							return _Utils_Tuple2(
 								model,
-								{animationsPageModel: updatedAnimationsModel, menuOpen: false, page: newPage, url: url}),
-							pathChanged ? $elm$core$Platform$Cmd$batch(
-								_List_fromArray(
-									[
-										A2($elm$core$Platform$Cmd$map, $author$project$Main$ProductionsMsg, animCmd),
-										$author$project$Main$scrollToTopCmd
-									])) : A2($elm$core$Platform$Cmd$map, $author$project$Main$ProductionsMsg, animCmd));
-					default:
-						return _Utils_Tuple2(
-							_Utils_update(
-								model,
-								{menuOpen: false, page: newPage, url: url}),
-							pathChanged ? $author$project$Main$scrollToTopCmd : $elm$core$Platform$Cmd$none);
+								$elm$browser$Browser$Navigation$load(urlString));
+						case 'Productions':
+							var _v4 = A3(
+								$author$project$Page$Animations$View$update,
+								model.key,
+								$author$project$Page$Animations$View$UrlChanged(url),
+								model.animationsPageModel);
+							var updatedAnimationsModel = _v4.a;
+							var animCmd = _v4.b;
+							return _Utils_Tuple2(
+								_Utils_update(
+									model,
+									{animationsPageModel: updatedAnimationsModel, menuOpen: false, page: newPage, url: url}),
+								pathChanged ? $elm$core$Platform$Cmd$batch(
+									_List_fromArray(
+										[
+											A2($elm$core$Platform$Cmd$map, $author$project$Main$ProductionsMsg, animCmd),
+											$author$project$Main$scrollToTopCmd
+										])) : A2($elm$core$Platform$Cmd$map, $author$project$Main$ProductionsMsg, animCmd));
+						default:
+							return _Utils_Tuple2(
+								_Utils_update(
+									model,
+									{menuOpen: false, page: newPage, url: url}),
+								pathChanged ? $author$project$Main$scrollToTopCmd : $elm$core$Platform$Cmd$none);
+					}
 				}
 			case 'NewTime':
 				var t = msg.a;
@@ -19110,14 +19275,8 @@ var $author$project$Page$FeastDayActivities$Main$viewFeastActivities = F2(
 					A2($author$project$Page$FeastDayActivities$FeastDayHelpers$viewAllActivities, model.saintList.isLoading, activities)
 				]));
 	});
-var $elm$virtual_dom$VirtualDom$node = function (tag) {
-	return _VirtualDom_node(
-		_VirtualDom_noScript(tag));
-};
-var $elm$html$Html$node = $elm$virtual_dom$VirtualDom$node;
 var $elm$html$Html$Attributes$rel = _VirtualDom_attribute('rel');
-var $author$project$Page$Home$Sections$substackEmbedUrl = 'https://blog.claritasstudios.com/embed';
-var $author$project$Page$Home$Sections$viewStayConnected = A2(
+var $author$project$Page$FeastDayActivities$Main$viewStayConnected = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
 		[
@@ -19153,15 +19312,12 @@ var $author$project$Page$Home$Sections$viewStayConnected = A2(
 				]),
 			_List_fromArray(
 				[
-					A3(
-					$elm$html$Html$node,
-					'iframe',
+					A2(
+					$elm$html$Html$iframe,
 					_List_fromArray(
 						[
-							A2($elm$html$Html$Attributes$attribute, 'data-substack-src', $author$project$Page$Home$Sections$substackEmbedUrl),
-							A2($elm$html$Html$Attributes$attribute, 'data-height', '220'),
-							A2($elm$html$Html$Attributes$attribute, 'src', ''),
-							A2($elm$html$Html$Attributes$attribute, 'title', 'Substack Signup'),
+							$elm$html$Html$Attributes$src('https://blog.claritasstudios.com/embed'),
+							$elm$html$Html$Attributes$title('Substack Signup'),
 							A2($elm$html$Html$Attributes$attribute, 'loading', 'lazy'),
 							A2($elm$html$Html$Attributes$attribute, 'referrerpolicy', 'no-referrer-when-downgrade'),
 							A2($elm$html$Html$Attributes$attribute, 'sandbox', 'allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin'),
@@ -19174,7 +19330,6 @@ var $author$project$Page$Home$Sections$viewStayConnected = A2(
 					$elm$html$Html$p,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$id('substack-fallback-link'),
 							$elm$html$Html$Attributes$class('mt-3')
 						]),
 					_List_fromArray(
@@ -19183,7 +19338,7 @@ var $author$project$Page$Home$Sections$viewStayConnected = A2(
 							$elm$html$Html$a,
 							_List_fromArray(
 								[
-									$elm$html$Html$Attributes$href($author$project$Page$Home$Sections$substackEmbedUrl),
+									$elm$html$Html$Attributes$href('https://blog.claritasstudios.com/embed'),
 									$elm$html$Html$Attributes$target('_blank'),
 									$elm$html$Html$Attributes$rel('noopener noreferrer'),
 									$elm$html$Html$Attributes$class('underline'),
@@ -19709,7 +19864,7 @@ var $author$project$Page$FeastDayActivities$Main$viewDate = F4(
 									$elm$html$Html$Attributes$class('max-w-5xl mx-auto rounded-2xl text-white shadow-lg mb-10 overflow-hidden')
 								]),
 							_List_fromArray(
-								[$author$project$Page$Home$Sections$viewStayConnected])),
+								[$author$project$Page$FeastDayActivities$Main$viewStayConnected])),
 							A2(
 							$elm$html$Html$div,
 							_List_fromArray(
@@ -26276,6 +26431,106 @@ var $author$project$Page$Animations$Helpers$Carousel$viewSlides = F3(
 						]))
 				]));
 	});
+var $author$project$Page$Home$Sections$substackEmbedUrl = 'https://blog.claritasstudios.com/embed';
+var $author$project$Page$Home$Sections$viewStayConnected = function (model) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('bg-gradient-to-r from-purple-600 to-indigo-600 py-16 px-6 text-center text-white')
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$h2,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('text-3xl md:text-4xl font-bold mb-2')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Stay Connected')
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('mb-6 text-lg max-w-3xl mx-auto')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Get notified about new stories, activities, and special content for your family.')
+					])),
+				A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('max-w-3xl mx-auto')
+					]),
+				_List_fromArray(
+					[
+						model.substackLoaded ? A2(
+						$elm$html$Html$iframe,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$src($author$project$Page$Home$Sections$substackEmbedUrl),
+								$elm$html$Html$Attributes$title('Substack Signup'),
+								A2($elm$html$Html$Attributes$attribute, 'loading', 'lazy'),
+								A2($elm$html$Html$Attributes$attribute, 'referrerpolicy', 'no-referrer-when-downgrade'),
+								A2($elm$html$Html$Attributes$attribute, 'sandbox', 'allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin'),
+								$elm$html$Html$Attributes$class('rounded bg-transparent'),
+								A2($elm$html$Html$Attributes$style, 'width', '100%'),
+								A2($elm$html$Html$Attributes$style, 'height', '220px')
+							]),
+						_List_Nil) : A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('rounded bg-transparent'),
+								A2($elm$html$Html$Attributes$style, 'width', '100%'),
+								A2($elm$html$Html$Attributes$style, 'height', '220px'),
+								A2($elm$html$Html$Attributes$style, 'background-color', 'rgba(255,255,255,0.1)')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$class('flex items-center justify-center h-full')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Loading newsletter signup...')
+									]))
+							])),
+						A2(
+						$elm$html$Html$p,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$id('substack-fallback-link'),
+								$elm$html$Html$Attributes$class('mt-3')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$a,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$href($author$project$Page$Home$Sections$substackEmbedUrl),
+										$elm$html$Html$Attributes$target('_blank'),
+										$elm$html$Html$Attributes$rel('noopener noreferrer'),
+										$elm$html$Html$Attributes$class('underline'),
+										A2($elm$html$Html$Attributes$attribute, 'aria-label', 'Subscribe on Substack')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Subscribe on Substack')
+									]))
+							]))
+					]))
+			]));
+};
 var $author$project$Page$Home$Sections$viewSupportMission = A2(
 	$elm$html$Html$div,
 	_List_fromArray(
@@ -26695,7 +26950,10 @@ var $author$project$Main$viewBody = function (model) {
 				$elm$html$Html$map,
 				$author$project$Main$SectionsMsg,
 				$author$project$Page$Home$Sections$viewWhatPeopleSaying(model.sections)),
-				$author$project$Page$Home$Sections$viewStayConnected,
+				A2(
+				$elm$html$Html$map,
+				$author$project$Main$SectionsMsg,
+				$author$project$Page$Home$Sections$viewStayConnected(model.sections)),
 				$author$project$Page$Home$Sections$viewSupportMission
 			]));
 };

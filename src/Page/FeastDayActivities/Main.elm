@@ -18,7 +18,6 @@ import Page.FeastDayActivities.FeastDays.M09Sep exposing (september)
 import Page.FeastDayActivities.FeastDays.M10Oct exposing (october)
 import Page.FeastDayActivities.FeastDays.M11Nov exposing (november)
 import Page.FeastDayActivities.FeastDays.M12Dec exposing (december)
-import Page.Home.Sections exposing (viewStayConnected)
 import Page.Saints.SaintHelpers exposing (activitiesFromSaint)
 import Page.Saints.SaintList as SaintList
 import Page.Signup as Signup
@@ -78,6 +77,38 @@ update msg model =
 
 
 -- VIEW
+
+
+viewStayConnected : Html msg
+viewStayConnected =
+    div [ class "bg-gradient-to-r from-purple-600 to-indigo-600 py-16 px-6 text-center text-white" ]
+        [ h2 [ class "text-3xl md:text-4xl font-bold mb-2" ] [ text "Stay Connected" ]
+        , p [ class "mb-6 text-lg max-w-3xl mx-auto" ]
+            [ text "Get notified about new stories, activities, and special content for your family." ]
+        , div [ class "max-w-3xl mx-auto" ]
+            [ iframe
+                [ src "https://blog.claritasstudios.com/embed"
+                , title "Substack Signup"
+                , attribute "loading" "lazy"
+                , attribute "referrerpolicy" "no-referrer-when-downgrade"
+                , attribute "sandbox" "allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin"
+                , class "rounded bg-transparent"
+                , style "width" "100%"
+                , style "height" "220px"
+                ]
+                []
+            , p [ class "mt-3" ]
+                [ a
+                    [ href "https://blog.claritasstudios.com/embed"
+                    , target "_blank"
+                    , rel "noopener noreferrer"
+                    , class "underline"
+                    , attribute "aria-label" "Subscribe on Substack"
+                    ]
+                    [ text "Subscribe on Substack" ]
+                ]
+            ]
+        ]
 
 
 view : Model -> Browser.Document Msg
