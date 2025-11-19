@@ -73,8 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
               if (typeof window.gtag === 'function') {
                 window.gtag('consent','update',{ analytics_storage:'granted', ad_storage:'granted' });
               }
+
+              // Notify Elm app if available (preferred path)
+              try {
+                if (window.app && window.app.ports && window.app.ports.onConsentChange && typeof window.app.ports.onConsentChange.send === 'function') {
+                  window.app.ports.onConsentChange.send({ analytics: true });
+                  return;
+                }
+              } catch (e) { /* no-op */ }
+
+              // Fallback: call legacy global if present
               if (typeof window.enableAnalytics === 'function') {
-                window.enableAnalytics();
+                try { window.enableAnalytics(); } catch (e) { /* no-op */ }
               }
             }
           } catch (e) { /* no-op */ }
@@ -83,11 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
           try {
             if (changedCategories && changedCategories.includes('analytics')) {
               if (CookieConsent.acceptedCategory('analytics')) {
-                if (typeof window.enableAnalytics === 'function') window.enableAnalytics();
+                // User enabled analytics
+                // Notify Elm app if available
+                try {
+                  if (window.app && window.app.ports && window.app.ports.onConsentChange && typeof window.app.ports.onConsentChange.send === 'function') {
+                    window.app.ports.onConsentChange.send({ analytics: true });
+                  } else if (typeof window.enableAnalytics === 'function') {
+                    // fallback for legacy code
+                    try { window.enableAnalytics(); } catch (e) { /* no-op */ }
+                  }
+                } catch (e) { /* no-op */ }
+
               } else {
                 // revoke analytics consent
                 if (typeof window.gtag === 'function') window.gtag('consent','update',{ analytics_storage:'denied' });
                 window.__ga_block = true;
+
+                // Notify Elm app of revoked consent if available
+                try {
+                  if (window.app && window.app.ports && window.app.ports.onConsentChange && typeof window.app.ports.onConsentChange.send === 'function') {
+                    window.app.ports.onConsentChange.send({ analytics: false });
+                  }
+                } catch (e) { /* no-op */ }
               }
             }
           } catch (e) { /* no-op */ }
