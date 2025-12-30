@@ -25,7 +25,7 @@ claritasStudios : Resource
 claritasStudios =
     { name = "Claritas Studios"
     , link = "https://www.youtube.com/@ClaritasStudios"
-    , image = "https://ik.imagekit.io/catholicstories/CSCLogo_JiNT9WUPX.png?updatedAt=1679070448402"
+    , image = "/assets/images/imagekit/CSCLogo_JiNT9WUPX.png"
     }
 
 
@@ -33,7 +33,7 @@ catholicKidsMedia : Resource
 catholicKidsMedia =
     { name = "Catholic Kids Media"
     , link = "https://www.youtube.com/@CatholicKidsMedia"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/17_z9ZERCAuK.png?updatedAt=1679070333348"
+    , image = "/assets/images/imagekit/17_z9ZERCAuK.png"
     }
 
 
@@ -41,7 +41,7 @@ brotherFrancis : Resource
 brotherFrancis =
     { name = "Brother Francis"
     , link = "https://www.youtube.com/@BrotherFrancis"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/16_V1sLznRg0.png?updatedAt=1679070333303"
+    , image = "/assets/images/imagekit/16_V1sLznRg0.png"
     }
 
 
@@ -49,7 +49,7 @@ tomkin : Resource
 tomkin =
     { name = "Tomkin"
     , link = "https://www.youtube.com/playlist?list=PL9CQlldupc5_L0shwBi1w-n5liWhD0ArO"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/15_Wrw3_kbKK.png?updatedAt=1679070333309"
+    , image = "/assets/images/imagekit/15_Wrw3_kbKK.png"
     }
 
 
@@ -57,7 +57,7 @@ christineInAction : Resource
 christineInAction =
     { name = "Christine In Action"
     , link = "https://www.youtube.com/@ChristineInAction"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/christineinaction_Le5_7yr2K.jpeg?updatedAt=1682821244341"
+    , image = "/assets/images/imagekit/christineinaction_Le5_7yr2K.jpeg"
     }
 
 
@@ -65,7 +65,7 @@ catholicSongsForKids : Resource
 catholicSongsForKids =
     { name = "Catholic Songs for Kids"
     , link = "https://www.youtube.com/@catholicsongsforkids"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/40_vS6tZTdD3.png?updatedAt=1682876930344"
+    , image = "/assets/images/imagekit/40_vS6tZTdD3.png"
     }
 
 
@@ -73,7 +73,7 @@ juiceBox : Resource
 juiceBox =
     { name = "Spirit Juice Kids"
     , link = "https://www.youtube.com/@SpiritJuiceKids"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/juicebox_flQW7t8YD.png?updatedAt=1692736674561"
+    , image = "/assets/images/imagekit/juicebox_flQW7t8YD.png"
     }
 
 
@@ -81,7 +81,7 @@ catholicIcing : Resource
 catholicIcing =
     { name = "Catholic Icing"
     , link = "https://www.youtube.com/@CatholicIcing"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/41_XrkKmwtXL.png?updatedAt=1682876930378"
+    , image = "/assets/images/imagekit/41_XrkKmwtXL.png"
     }
 
 
@@ -89,7 +89,7 @@ amyheysart : Resource
 amyheysart =
     { name = "Amy Heyse Art"
     , link = "https://www.youtube.com/@amyheyseart"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/AmyH_ld3G4EoVX.png?updatedAt=1692735921831"
+    , image = "/assets/images/imagekit/AmyH_ld3G4EoVX.png"
     }
 
 
@@ -97,7 +97,7 @@ prostradaDesigns : Resource
 prostradaDesigns =
     { name = "Prostrada Designs"
     , link = "https://www.youtube.com/@prostradadesignsllc"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/42_GMJuNZEVs.png?updatedAt=1683226627331"
+    , image = "/assets/images/imagekit/42_GMJuNZEVs.png"
     }
 
 
@@ -105,7 +105,7 @@ opusJoyous : Resource
 opusJoyous =
     { name = "Opus Joyous"
     , link = "https://www.youtube.com/@OpusJoyous"
-    , image = "https://ik.imagekit.io/catholicstories/ProfileImages/opusjoyouslogo__bVhpC3Fj.jpeg?updatedAt=1687549207653"
+    , image = "/assets/images/imagekit/opusjoyouslogo__bVhpC3Fj.jpeg"
     }
 
 
