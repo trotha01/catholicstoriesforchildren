@@ -55,9 +55,9 @@ episodes =
       , link = "/animations/prayertimewithangels/1/guardianangelprayer"
       , about = viewGuardianAngelDescription
       , activities =
-            { thumbnailLink = "https://ik.imagekit.io/catholicstories/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png?updatedAt=1688494259496"
+            { thumbnailLink = "/assets/images/imagekit/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png"
             , pdfLink = "printables/Guardian-Angel-Activities.pdf"
-            , answerThumbnailLink = "https://ik.imagekit.io/catholicstories/Guardian_Angel_Activities_Answers_3__-3FACN8K8.png?updatedAt=1688495546612"
+            , answerThumbnailLink = "/assets/images/imagekit/Guardian_Angel_Activities_Answers_3__-3FACN8K8.png"
             , answerPdfLink = "printables/Guardian-Angel-Activity-Answers.pdf"
             }
       , videoTitles =
@@ -83,9 +83,9 @@ episodes =
       , link = "/animations/prayertimewithangels/1/saintmichaelprayer"
       , about = StMichaelDescription.viewAbout
       , activities =
-            { thumbnailLink = "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Cover_J2Qt-zF3t.png?updatedAt=1688494130199"
+            { thumbnailLink = "/assets/images/imagekit/Saint_Michael_Activity_Cover_J2Qt-zF3t.png"
             , pdfLink = "/printables/Saint-Michael-Activities.pdf"
-            , answerThumbnailLink = "https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Answers_3__I3WnUgIL6.png?updatedAt=1688495548276"
+            , answerThumbnailLink = "/assets/images/imagekit/Saint_Michael_Activity_Answers_3__I3WnUgIL6.png"
             , answerPdfLink = "/printables/Saint-Michael-Activity-Answers.pdf"
             }
       , videoTitles =

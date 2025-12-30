@@ -123,7 +123,7 @@ viewResources resourceGroup =
 podcasts : ResourceGroup
 podcasts =
     { name = "Podcasts"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335"
+    , image = "/assets/images/imagekit/Resources_Icons/1_EAfo23y5R.png"
     , description = "Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves."
     , link = "/resources/podcasts"
     , resources = Page.Resources.Podcasts.podcasts
@@ -133,7 +133,7 @@ podcasts =
 videos : ResourceGroup
 videos =
     { name = "Youtube Channels"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272"
+    , image = "/assets/images/imagekit/Resources_Icons/3_mTKsUZQuM.png"
     , description = "Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home."
     , link = "/resources/videos"
     , resources = Page.Resources.Videos.videos
@@ -143,7 +143,7 @@ videos =
 books : ResourceGroup
 books =
     { name = "Books"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106"
+    , image = "/assets/images/imagekit/Resources_Icons/2_4YvKGvP_Y.png"
     , description = "Find books here. It's hard to go wrong with a good Catholic book."
     , link = "/resources/books"
     , resources = Page.Resources.Books.books
@@ -153,7 +153,7 @@ books =
 subscriptions : ResourceGroup
 subscriptions =
     { name = "Subscriptions"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068"
+    , image = "/assets/images/imagekit/Resources_Icons/4_U5qO_iICx.png"
     , description = "Want monthly content at your front door? Check out these wonderful Catholic subscriptions."
     , link = "/resources/subscriptions"
     , resources = Page.Resources.Subscriptions.subscriptions
@@ -163,7 +163,7 @@ subscriptions =
 prayerResources : ResourceGroup
 prayerResources =
     { name = "Prayer Resources"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/prayerresources_gN76-j6pz.png?updatedAt=1683227269863"
+    , image = "/assets/images/imagekit/Resources_Icons/prayerresources_gN76-j6pz.png"
     , description = "Find more resources here to help build your prayer life"
     , link = "/resources/prayer"
     , resources = []
@@ -173,7 +173,7 @@ prayerResources =
 feastDayActivities : ResourceGroup
 feastDayActivities =
     { name = "Feast Day Activities"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png?updatedAt=1686096632436"
+    , image = "/assets/images/imagekit/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png"
     , description = "Find activities for feast days throughout the year"
     , link = "/feastdayactivities"
     , resources = []
@@ -183,7 +183,7 @@ feastDayActivities =
 games : ResourceGroup
 games =
     { name = "Games"
-    , image = "https://ik.imagekit.io/catholicstories/Resources_Icons/Game%20Icon_rb2djF7Hf.png?updatedAt=1693438195519"
+    , image = "/assets/images/imagekit/Resources_Icons/Game%20Icon_rb2djF7Hf.png"
     , description = "Find game resources for a fun way to learn about the Catholic faith"
     , link = "/resources/games"
     , resources = Page.Resources.Games.games

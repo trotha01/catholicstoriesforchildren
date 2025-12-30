@@ -35,12 +35,12 @@ episodes =
                 , aboutThePrayer
                 , viewAnotherPage
                 ]
-      , activities =
-            { thumbnailLink = "https://ik.imagekit.io/catholicstories/9_1__-d-EPYcuW.png?updatedAt=1689288132704"
-            , pdfLink = "/printables/Hail-Mary-Activities.pdf"
-            , answerThumbnailLink = "https://ik.imagekit.io/catholicstories/10_1__s3i8dhFiH.png?updatedAt=1689288132684"
-            , answerPdfLink = "/printables/Hail-Mary-Activity-Answers.pdf"
-            }
+    , activities =
+        { thumbnailLink = "/assets/images/imagekit/9_1__-d-EPYcuW.png"
+        , pdfLink = "/printables/Hail-Mary-Activities.pdf"
+        , answerThumbnailLink = "/assets/images/imagekit/10_1__s3i8dhFiH.png"
+        , answerPdfLink = "/printables/Hail-Mary-Activity-Answers.pdf"
+        }
       , videoTitles =
             { english = "Hail Mary Animation"
             , spanish = ""
