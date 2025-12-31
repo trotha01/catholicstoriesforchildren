@@ -7025,7 +7025,7 @@ var $author$project$Page$Animations$HailMary$HMEpisodes$episodes = _List_fromArr
 			_List_Nil,
 			_List_fromArray(
 				[$author$project$Page$Animations$HailMary$HMEpisodes$aboutTheAnimation, $author$project$Page$Animations$HailMary$HMEpisodes$viewPrayer, $author$project$Page$Animations$HailMary$HMEpisodes$moreAboutTheAnimation, $author$project$Page$Signup$view4, $author$project$Page$Animations$HailMary$HMEpisodes$viewResources, $author$project$Page$Animations$HailMary$HMEpisodes$aboutThePrayer, $author$project$Page$Animations$HailMary$HMEpisodes$viewAnotherPage])),
-		activities: {answerPdfLink: '/printables/Hail-Mary-Activity-Answers.pdf', answerThumbnailLink: 'https://ik.imagekit.io/catholicstories/10_1__s3i8dhFiH.png?updatedAt=1689288132684', pdfLink: '/printables/Hail-Mary-Activities.pdf', thumbnailLink: 'https://ik.imagekit.io/catholicstories/9_1__-d-EPYcuW.png?updatedAt=1689288132704'},
+		activities: {answerPdfLink: '/printables/Hail-Mary-Activity-Answers.pdf', answerThumbnailLink: '/assets/images/imagekit/10_1__s3i8dhFiH.png', pdfLink: '/printables/Hail-Mary-Activities.pdf', thumbnailLink: '/assets/images/imagekit/9_1__-d-EPYcuW.png'},
 		duration: '3 min',
 		isDisabled: false,
 		isFundraising: false,
@@ -9123,7 +9123,7 @@ var $author$project$Page$Animations$PrayerTimeWithAngels$PTWAEpisodes$episodes =
 	[
 		{
 		about: $author$project$Page$Animations$GuardianAngel$Description$viewGuardianAngelDescription,
-		activities: {answerPdfLink: 'printables/Guardian-Angel-Activity-Answers.pdf', answerThumbnailLink: 'https://ik.imagekit.io/catholicstories/Guardian_Angel_Activities_Answers_3__-3FACN8K8.png?updatedAt=1688495546612', pdfLink: 'printables/Guardian-Angel-Activities.pdf', thumbnailLink: 'https://ik.imagekit.io/catholicstories/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png?updatedAt=1688494259496'},
+		activities: {answerPdfLink: 'printables/Guardian-Angel-Activity-Answers.pdf', answerThumbnailLink: '/assets/images/imagekit/Guardian_Angel_Activities_Answers_3__-3FACN8K8.png', pdfLink: 'printables/Guardian-Angel-Activities.pdf', thumbnailLink: '/assets/images/imagekit/Guardian_Angel_Activity_Cover_1__vNBJQA8Y8.png'},
 		duration: '5 min',
 		isDisabled: false,
 		isFundraising: false,
@@ -9137,7 +9137,7 @@ var $author$project$Page$Animations$PrayerTimeWithAngels$PTWAEpisodes$episodes =
 	},
 		{
 		about: $author$project$Page$Animations$StMichael$Description$viewAbout,
-		activities: {answerPdfLink: '/printables/Saint-Michael-Activity-Answers.pdf', answerThumbnailLink: 'https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Answers_3__I3WnUgIL6.png?updatedAt=1688495548276', pdfLink: '/printables/Saint-Michael-Activities.pdf', thumbnailLink: 'https://ik.imagekit.io/catholicstories/Saint_Michael_Activity_Cover_J2Qt-zF3t.png?updatedAt=1688494130199'},
+		activities: {answerPdfLink: '/printables/Saint-Michael-Activity-Answers.pdf', answerThumbnailLink: '/assets/images/imagekit/Saint_Michael_Activity_Answers_3__I3WnUgIL6.png', pdfLink: '/printables/Saint-Michael-Activities.pdf', thumbnailLink: '/assets/images/imagekit/Saint_Michael_Activity_Cover_J2Qt-zF3t.png'},
 		duration: '4 min',
 		isDisabled: false,
 		isFundraising: false,
@@ -11381,6 +11381,11 @@ var $author$project$Main$init = F3(
 						_Utils_eq(initialPage, $author$project$Main$Feasts) ? A2($elm$core$Platform$Cmd$map, $author$project$Main$FeastsMsg, feastsPageCmd) : $elm$core$Platform$Cmd$none
 					])));
 	});
+var $author$project$Main$ConsentChanged = function (a) {
+	return {$: 'ConsentChanged', a: a};
+};
+var $author$project$Main$GALoaded = {$: 'GALoaded'};
+var $author$project$Main$LoadGA = {$: 'LoadGA'};
 var $author$project$Page$Home$Sections$NextAuto = {$: 'NextAuto'};
 var $author$project$Main$SectionsMsg = function (a) {
 	return {$: 'SectionsMsg', a: a};
@@ -11640,9 +11645,27 @@ var $elm$time$Time$every = F2(
 		return $elm$time$Time$subscription(
 			A2($elm$time$Time$Every, interval, tagger));
 	});
+var $elm$json$Json$Decode$null = _Json_decodeNull;
+var $author$project$Ports$GoogleAnalytics$gaLoaded = _Platform_incomingPort(
+	'gaLoaded',
+	$elm$json$Json$Decode$null(_Utils_Tuple0));
+var $author$project$Ports$GoogleAnalytics$loadGA = _Platform_incomingPort(
+	'loadGA',
+	$elm$json$Json$Decode$null(_Utils_Tuple0));
 var $elm$core$Platform$Sub$map = _Platform_map;
-var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
+var $elm$json$Json$Decode$andThen = _Json_andThen;
+var $elm$json$Json$Decode$bool = _Json_decodeBool;
+var $author$project$Ports$GoogleAnalytics$onConsentChange = _Platform_incomingPort(
+	'onConsentChange',
+	A2(
+		$elm$json$Json$Decode$andThen,
+		function (analytics) {
+			return $elm$json$Json$Decode$succeed(
+				{analytics: analytics});
+		},
+		A2($elm$json$Json$Decode$field, 'analytics', $elm$json$Json$Decode$bool)));
 var $author$project$Page$Home$Sections$LoadSubstackIframe = {$: 'LoadSubstackIframe'};
+var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $elm$browser$Browser$AnimationManager$Time = function (a) {
 	return {$: 'Time', a: a};
 };
@@ -11786,16 +11809,54 @@ var $author$project$Main$subscriptions = function (model) {
 					A2(
 					$elm$core$Platform$Sub$map,
 					$author$project$Main$SectionsMsg,
-					$author$project$Page$Home$Sections$subscriptions(model.sections))
+					$author$project$Page$Home$Sections$subscriptions(model.sections)),
+					$author$project$Ports$GoogleAnalytics$onConsentChange($author$project$Main$ConsentChanged),
+					$author$project$Ports$GoogleAnalytics$loadGA(
+					function (_v2) {
+						return $author$project$Main$LoadGA;
+					}),
+					$author$project$Ports$GoogleAnalytics$gaLoaded(
+					function (_v3) {
+						return $author$project$Main$GALoaded;
+					})
 				]));
 	} else {
-		return $elm$core$Platform$Sub$none;
+		return $elm$core$Platform$Sub$batch(
+			_List_fromArray(
+				[
+					$author$project$Ports$GoogleAnalytics$onConsentChange($author$project$Main$ConsentChanged),
+					$author$project$Ports$GoogleAnalytics$loadGA(
+					function (_v4) {
+						return $author$project$Main$LoadGA;
+					}),
+					$author$project$Ports$GoogleAnalytics$gaLoaded(
+					function (_v5) {
+						return $author$project$Main$GALoaded;
+					})
+				]));
 	}
 };
 var $author$project$Page$Animations$View$UrlChanged = function (a) {
 	return {$: 'UrlChanged', a: a};
 };
+var $elm$json$Json$Encode$null = _Json_encodeNull;
+var $author$project$Ports$GoogleAnalytics$addGAScript = _Platform_outgoingPort(
+	'addGAScript',
+	function ($) {
+		return $elm$json$Json$Encode$null;
+	});
+var $author$project$Ports$GoogleAnalytics$enableAnalytics = _Platform_outgoingPort(
+	'enableAnalytics',
+	function ($) {
+		return $elm$json$Json$Encode$null;
+	});
+var $author$project$Ports$GoogleAnalytics$initGA = _Platform_outgoingPort(
+	'initGA',
+	function ($) {
+		return $elm$json$Json$Encode$null;
+	});
 var $elm$browser$Browser$Navigation$load = _Browser_load;
+var $elm$core$Debug$log = _Debug_log;
 var $elm$core$Basics$neq = _Utils_notEqual;
 var $elm$core$Basics$not = _Basics_not;
 var $author$project$Main$NoOp = {$: 'NoOp'};
@@ -11812,6 +11873,34 @@ var $author$project$Main$scrollToTopCmd = A2(
 			return A2($elm$browser$Browser$Dom$setViewport, 0, 0);
 		},
 		$elm$core$Process$sleep(0)));
+var $elm$json$Json$Encode$bool = _Json_wrap;
+var $elm$json$Json$Encode$object = function (pairs) {
+	return _Json_wrap(
+		A3(
+			$elm$core$List$foldl,
+			F2(
+				function (_v0, obj) {
+					var k = _v0.a;
+					var v = _v0.b;
+					return A3(_Json_addField, k, v, obj);
+				}),
+			_Json_emptyObject(_Utils_Tuple0),
+			pairs));
+};
+var $author$project$Ports$GoogleAnalytics$setConsent = _Platform_outgoingPort(
+	'setConsent',
+	function ($) {
+		return $elm$json$Json$Encode$object(
+			_List_fromArray(
+				[
+					_Utils_Tuple2(
+					'ads',
+					$elm$json$Json$Encode$bool($.ads)),
+					_Utils_Tuple2(
+					'analytics',
+					$elm$json$Json$Encode$bool($.analytics))
+				]));
+	});
 var $author$project$Page$Animations$View$NoOp = {$: 'NoOp'};
 var $elm$core$Basics$modBy = _Basics_modBy;
 var $author$project$Page$Animations$Helpers$Carousel$next = function (carousel) {
@@ -12928,6 +13017,22 @@ var $author$project$Main$update = F2(
 						model,
 						{menuOpen: !model.menuOpen}),
 					$elm$core$Platform$Cmd$none);
+			case 'ConsentChanged':
+				var data = msg.a;
+				return A2($elm$core$Debug$log, 'data.analytics', data.analytics) ? _Utils_Tuple2(
+					model,
+					$author$project$Ports$GoogleAnalytics$enableAnalytics(_Utils_Tuple0)) : _Utils_Tuple2(
+					model,
+					$author$project$Ports$GoogleAnalytics$setConsent(
+						{ads: false, analytics: false}));
+			case 'LoadGA':
+				return _Utils_Tuple2(
+					model,
+					$author$project$Ports$GoogleAnalytics$addGAScript(_Utils_Tuple0));
+			case 'GALoaded':
+				return _Utils_Tuple2(
+					model,
+					$author$project$Ports$GoogleAnalytics$initGA(_Utils_Tuple0));
 			default:
 				return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 		}
@@ -14665,7 +14770,6 @@ var $elm$html$Html$Events$onInput = function (tagger) {
 };
 var $elm$html$Html$option = _VirtualDom_node('option');
 var $elm$html$Html$select = _VirtualDom_node('select');
-var $elm$json$Json$Encode$bool = _Json_wrap;
 var $elm$html$Html$Attributes$boolProperty = F2(
 	function (key, bool) {
 		return A2(
@@ -20702,8 +20806,8 @@ var $author$project$Page$Give$View$view = A2(
 		]),
 	_List_fromArray(
 		[$author$project$Page$Give$View$viewBody, $author$project$Component$Footer$viewFooter]));
-var $author$project$Page$Team$Testimonials$ainsleyRawlingsTestimonial = {description: 'My kids love the guardian angel song and video! The song is beautiful and easy for my littles to remember and sing along with. ❤️ Thank you!', image: 'https://ik.imagekit.io/catholicstories/ProfileImages/ainsleyrawlings_hyB-0rd23.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325098991', initials: 'AR', name: 'Ainsley Rawlings', position: 'Mother and Teacher', socials: _List_Nil};
-var $author$project$Page$Team$Testimonials$camSmithTestimonial = {description: 'I love how there is a story, animation, and even music to learning the prayers. We know that children often, if not always, learn first through their experience and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily! I will be showing these prayers to my infant child when he is older. 🙂', image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CamNguyen_ze-IRFU1d.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676325311225', initials: 'CS', name: 'Cam Smith', position: 'Mother and Social Worker', socials: _List_Nil};
+var $author$project$Page$Team$Testimonials$ainsleyRawlingsTestimonial = {description: 'My kids love the guardian angel song and video! The song is beautiful and easy for my littles to remember and sing along with. ❤️ Thank you!', image: '/assets/images/imagekit/ainsleyrawlings_hyB-0rd23.jpeg', initials: 'AR', name: 'Ainsley Rawlings', position: 'Mother and Teacher', socials: _List_Nil};
+var $author$project$Page$Team$Testimonials$camSmithTestimonial = {description: 'I love how there is a story, animation, and even music to learning the prayers. We know that children often, if not always, learn first through their experience and senses. The incorporation of such animation then will definitely help our children learn these prayers more easily! I will be showing these prayers to my infant child when he is older. 🙂', image: '/assets/images/imagekit/CamNguyen_ze-IRFU1d.jpeg', initials: 'CS', name: 'Cam Smith', position: 'Mother and Social Worker', socials: _List_Nil};
 var $author$project$Page$Team$View$cfnLive = {image: '/assets/images/ProfilePictures/CFN.png', link: 'https://vimeo.com/963295296/89fc748d09?share=copy', name: 'CFN Live'};
 var $author$project$Page$Team$View$christianChannel = {image: '/assets/images/ProfilePictures/ChristianChannel.png', link: 'https://youtu.be/p4yi5EFbPAI?si=L0jtHxwFyyS4jMjC', name: 'Christian Channel'};
 var $author$project$Page$Team$View$inHisImage = {image: '/assets/images/ProfilePictures/InHisDesign.png', link: 'https://youtu.be/eqOmqdlNIDw?si=E9xTDcqQV_nFFQs-', name: 'In His Image Podcast'};
@@ -22310,78 +22414,78 @@ var $author$project$Page$Prayers$View$view = A2(
 	_List_Nil,
 	_List_fromArray(
 		[$author$project$Page$Prayers$View$viewBody, $author$project$Component$Footer$viewFooter]));
-var $author$project$Page$Resources$Books$brotherFrancisBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/16_V1sLznRg0.png?updatedAt=1679070333303', link: 'https://brotherfrancisstore.com/collections/books', name: 'Brother Francis Books'};
-var $author$project$Page$Resources$Books$cBPSaints = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/38_oB0pzZnMW8.png?updatedAt=1682716506417', link: 'https://catholicbookpublishing.com/browse/childrens-books-on-saints', name: 'Catholic Book Publishing\'s Children\'s Books on Saints'};
-var $author$project$Page$Resources$Books$catholicSprouts = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/26_2TkstMXTY.png?updatedAt=1682716507634', link: 'https://shop.catholicsprouts.com/collections/all', name: 'Catholic Sprouts Books and Materials'};
+var $author$project$Page$Resources$Books$brotherFrancisBooks = {image: '/assets/images/imagekit/16_V1sLznRg0.png', link: 'https://brotherfrancisstore.com/collections/books', name: 'Brother Francis Books'};
+var $author$project$Page$Resources$Books$cBPSaints = {image: '/assets/images/imagekit/38_oB0pzZnMW8.png', link: 'https://catholicbookpublishing.com/browse/childrens-books-on-saints', name: 'Catholic Book Publishing\'s Children\'s Books on Saints'};
+var $author$project$Page$Resources$Books$catholicSprouts = {image: '/assets/images/imagekit/26_2TkstMXTY.png', link: 'https://shop.catholicsprouts.com/collections/all', name: 'Catholic Sprouts Books and Materials'};
 var $author$project$Page$Resources$Books$ctbBooks = {image: '/assets/images/ProfilePictures/CatholicTeenBooks.png', link: 'https://www.catholicteenbooks.com/', name: 'Catholic Teen Books'};
-var $author$project$Page$Resources$Books$ctsBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CTS_Logo_vwbekKAI-.png?updatedAt=1687667974185', link: 'https://www.ctsbooks.org/product-category/children-young-adults/', name: 'Catholic Truth Society'};
-var $author$project$Page$Resources$Books$diaryOfAGodMan = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/27_LJ8rjMXH6.png?updatedAt=1682716507484', link: 'https://www.diaryofagodman.com/books', name: 'Diary of a God-Man. A fully illustrated children\'s missal'};
-var $author$project$Page$Resources$Books$ewtnKidsBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/30_SPGrEpxn4o.png?updatedAt=1682716506374', link: 'https://www.ewtnreligiouscatalogue.com/Catholic-Childrens-Books', name: 'EWTN Childrens Books'};
-var $author$project$Page$Resources$Books$firstFaithTreasury = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/33_v8d9TN1XkY.png?updatedAt=1682716506330', link: 'https://firstfaithtreasury.com/', name: 'First Faith Treasury'};
-var $author$project$Page$Resources$Books$holyHeroesBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/25_OSP8-2xFJ.png?updatedAt=1682716507604', link: 'https://holyheroes.com/collections/catholic-childrens-books', name: 'Holy Heroes Books'};
+var $author$project$Page$Resources$Books$ctsBooks = {image: '/assets/images/imagekit/CTS_Logo_vwbekKAI-.png', link: 'https://www.ctsbooks.org/product-category/children-young-adults/', name: 'Catholic Truth Society'};
+var $author$project$Page$Resources$Books$diaryOfAGodMan = {image: '/assets/images/imagekit/27_LJ8rjMXH6.png', link: 'https://www.diaryofagodman.com/books', name: 'Diary of a God-Man. A fully illustrated children\'s missal'};
+var $author$project$Page$Resources$Books$ewtnKidsBooks = {image: '/assets/images/imagekit/30_SPGrEpxn4o.png', link: 'https://www.ewtnreligiouscatalogue.com/Catholic-Childrens-Books', name: 'EWTN Childrens Books'};
+var $author$project$Page$Resources$Books$firstFaithTreasury = {image: '/assets/images/imagekit/33_v8d9TN1XkY.png', link: 'https://firstfaithtreasury.com/', name: 'First Faith Treasury'};
+var $author$project$Page$Resources$Books$holyHeroesBooks = {image: '/assets/images/imagekit/25_OSP8-2xFJ.png', link: 'https://holyheroes.com/collections/catholic-childrens-books', name: 'Holy Heroes Books'};
 var $author$project$Page$Resources$Books$jennaEpkey = {image: '/assets/images/ProfilePictures/JennaEpkey.png', link: 'https://www.amazon.com/stores/Jenna-Epkey/author/B0CWPDDMRM', name: 'Jenna Epkey Catholic Kids Books'};
-var $author$project$Page$Resources$Books$lightOfTheSaints = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/36_eINHZkemx9.png?updatedAt=1682716506020', link: 'https://bookstore.wordonfire.org/products/light-of-the-saints', name: 'Light of the Saints'};
-var $author$project$Page$Resources$Books$littleSaintStories = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/34_GtSZ5NI8_8.png?updatedAt=1682716506395', link: 'https://www.littlesaintstories.com/s/shop', name: 'Little Saint Stories'};
-var $author$project$Page$Resources$Books$loyolaPressBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/23_UvXPxYgqml.png?updatedAt=1682716507758', link: 'https://www.loyolapress.com/', name: 'Loyola Press Books'};
-var $author$project$Page$Resources$Books$osvKidsBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_DxY5MCRoK.png?updatedAt=1682716853025', link: 'https://osvkids.com/books/', name: 'OSV Kids Books'};
-var $author$project$Page$Resources$Books$paulineBooksAndMediaForKids = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/37_gMX8cczFD.png?updatedAt=1682716506298', link: 'https://paulinestore.com/kids-teens.html', name: 'Pauline Books and Media'};
-var $author$project$Page$Resources$Books$stPaulCenter = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/35_evg05JJAFh.png?updatedAt=1682716506043', link: 'https://stpaulcenter.com/product-category/children/', name: 'St Paul Center Children\'s Books'};
-var $author$project$Page$Resources$Books$tanBooks = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/32_22z_5JUPjM.png?updatedAt=1682716506412', link: 'https://tanbooks.com/catholic-kids-books/', name: 'Tan Books for Kids'};
-var $author$project$Page$Resources$Books$theLittleRoseShop = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/29_9r_mR-lb6.png?updatedAt=1682716506911', link: 'https://thelittleroseshop.com/collections/baby-kids', name: 'The Little Rose Shop Fabric Books'};
-var $author$project$Page$Resources$Books$theotokosKids = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/28_INemNiAcr.png?updatedAt=1682716507584', link: 'https://theotokoskids.com/collections/books', name: 'Theotokos Kids Books'};
-var $author$project$Page$Resources$Books$thyOliveTree = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/24_ok9wTkcFo.png?updatedAt=1682716507750', link: 'https://www.thyolivetree.com/collections/childrens', name: 'Thy Olive Tree'};
+var $author$project$Page$Resources$Books$lightOfTheSaints = {image: '/assets/images/imagekit/36_eINHZkemx9.png', link: 'https://bookstore.wordonfire.org/products/light-of-the-saints', name: 'Light of the Saints'};
+var $author$project$Page$Resources$Books$littleSaintStories = {image: '/assets/images/imagekit/34_GtSZ5NI8_8.png', link: 'https://www.littlesaintstories.com/s/shop', name: 'Little Saint Stories'};
+var $author$project$Page$Resources$Books$loyolaPressBooks = {image: '/assets/images/imagekit/23_UvXPxYgqml.png', link: 'https://www.loyolapress.com/', name: 'Loyola Press Books'};
+var $author$project$Page$Resources$Books$osvKidsBooks = {image: '/assets/images/imagekit/3rd_Party_Logos_DxY5MCRoK.png', link: 'https://osvkids.com/books/', name: 'OSV Kids Books'};
+var $author$project$Page$Resources$Books$paulineBooksAndMediaForKids = {image: '/assets/images/imagekit/37_gMX8cczFD.png', link: 'https://paulinestore.com/kids-teens.html', name: 'Pauline Books and Media'};
+var $author$project$Page$Resources$Books$stPaulCenter = {image: '/assets/images/imagekit/35_evg05JJAFh.png', link: 'https://stpaulcenter.com/product-category/children/', name: 'St Paul Center Children\'s Books'};
+var $author$project$Page$Resources$Books$tanBooks = {image: '/assets/images/imagekit/32_22z_5JUPjM.png', link: 'https://tanbooks.com/catholic-kids-books/', name: 'Tan Books for Kids'};
+var $author$project$Page$Resources$Books$theLittleRoseShop = {image: '/assets/images/imagekit/29_9r_mR-lb6.png', link: 'https://thelittleroseshop.com/collections/baby-kids', name: 'The Little Rose Shop Fabric Books'};
+var $author$project$Page$Resources$Books$theotokosKids = {image: '/assets/images/imagekit/28_INemNiAcr.png', link: 'https://theotokoskids.com/collections/books', name: 'Theotokos Kids Books'};
+var $author$project$Page$Resources$Books$thyOliveTree = {image: '/assets/images/imagekit/24_ok9wTkcFo.png', link: 'https://www.thyolivetree.com/collections/childrens', name: 'Thy Olive Tree'};
 var $author$project$Page$Resources$Books$books = _List_fromArray(
 	[$author$project$Page$Resources$Books$littleSaintStories, $author$project$Page$Resources$Books$theotokosKids, $author$project$Page$Resources$Books$osvKidsBooks, $author$project$Page$Resources$Books$theLittleRoseShop, $author$project$Page$Resources$Books$brotherFrancisBooks, $author$project$Page$Resources$Books$thyOliveTree, $author$project$Page$Resources$Books$lightOfTheSaints, $author$project$Page$Resources$Books$firstFaithTreasury, $author$project$Page$Resources$Books$tanBooks, $author$project$Page$Resources$Books$ctsBooks, $author$project$Page$Resources$Books$ewtnKidsBooks, $author$project$Page$Resources$Books$diaryOfAGodMan, $author$project$Page$Resources$Books$catholicSprouts, $author$project$Page$Resources$Books$holyHeroesBooks, $author$project$Page$Resources$Books$jennaEpkey, $author$project$Page$Resources$Books$loyolaPressBooks, $author$project$Page$Resources$Books$stPaulCenter, $author$project$Page$Resources$Books$cBPSaints, $author$project$Page$Resources$Books$paulineBooksAndMediaForKids, $author$project$Page$Resources$Books$ctbBooks]);
-var $author$project$Page$Resources$View$books = {description: 'Find books here. It\'s hard to go wrong with a good Catholic book.', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/2_4YvKGvP_Y.png?updatedAt=1679066449106', link: '/resources/books', name: 'Books', resources: $author$project$Page$Resources$Books$books};
-var $author$project$Page$Resources$Games$brotherFrancisGames = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/16_V1sLznRg0.png?updatedAt=1679070333303', link: 'https://brotherfrancisstore.com/collections/games', name: 'Brother Francis Games'};
-var $author$project$Page$Resources$Games$catholicArcade = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/64_P-dJU3ooLI.png?updatedAt=1693439790261', link: 'https://opusjoyous.com/', name: 'Catholic Arcade'};
-var $author$project$Page$Resources$Games$councilAtDaybreak = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CouncilAtDaybreak_zY9pkcPisJ.png?updatedAt=1693440036474', link: 'https://catholiccardgame.com/collections/base-games/products/council-at-daybreak', name: 'Council At Daybreak'};
-var $author$project$Page$Resources$Games$holyHeroes = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/25_OSP8-2xFJ.png?updatedAt=1682716507604', link: 'https://holyheroes.com/collections/games', name: 'Holy Heroes Games'};
-var $author$project$Page$Resources$Games$superSaintCards = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/63_d1sooSovJJ.png?updatedAt=1693439790316', link: 'https://armadei.com/product/super-saints/', name: 'Super Saint Cards'};
-var $author$project$Page$Resources$Games$theCatholicCardGame = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/61_gGyNBdFEh.png?updatedAt=1693439790210', link: 'https://catholiccardgame.com/', name: 'The Catholic Card Game'};
-var $author$project$Page$Resources$Games$wanderlight = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/60_2jdg0x5pz.png?updatedAt=1693439790279', link: 'https://www.wanderlightgame.com/', name: 'Wanderlight'};
+var $author$project$Page$Resources$View$books = {description: 'Find books here. It\'s hard to go wrong with a good Catholic book.', image: '/assets/images/imagekit/Resources_Icons/2_4YvKGvP_Y.png', link: '/resources/books', name: 'Books', resources: $author$project$Page$Resources$Books$books};
+var $author$project$Page$Resources$Games$brotherFrancisGames = {image: '/assets/images/imagekit/16_V1sLznRg0.png', link: 'https://brotherfrancisstore.com/collections/games', name: 'Brother Francis Games'};
+var $author$project$Page$Resources$Games$catholicArcade = {image: '/assets/images/imagekit/64_P-dJU3ooLI.png', link: 'https://opusjoyous.com/', name: 'Catholic Arcade'};
+var $author$project$Page$Resources$Games$councilAtDaybreak = {image: '/assets/images/imagekit/CouncilAtDaybreak_zY9pkcPisJ.png', link: 'https://catholiccardgame.com/collections/base-games/products/council-at-daybreak', name: 'Council At Daybreak'};
+var $author$project$Page$Resources$Games$holyHeroes = {image: '/assets/images/imagekit/25_OSP8-2xFJ.png', link: 'https://holyheroes.com/collections/games', name: 'Holy Heroes Games'};
+var $author$project$Page$Resources$Games$superSaintCards = {image: '/assets/images/imagekit/63_d1sooSovJJ.png', link: 'https://armadei.com/product/super-saints/', name: 'Super Saint Cards'};
+var $author$project$Page$Resources$Games$theCatholicCardGame = {image: '/assets/images/imagekit/61_gGyNBdFEh.png', link: 'https://catholiccardgame.com/', name: 'The Catholic Card Game'};
+var $author$project$Page$Resources$Games$wanderlight = {image: '/assets/images/imagekit/60_2jdg0x5pz.png', link: 'https://www.wanderlightgame.com/', name: 'Wanderlight'};
 var $author$project$Page$Resources$Games$games = _List_fromArray(
 	[$author$project$Page$Resources$Games$wanderlight, $author$project$Page$Resources$Games$theCatholicCardGame, $author$project$Page$Resources$Games$councilAtDaybreak, $author$project$Page$Resources$Games$holyHeroes, $author$project$Page$Resources$Games$brotherFrancisGames, $author$project$Page$Resources$Games$superSaintCards, $author$project$Page$Resources$Games$catholicArcade]);
-var $author$project$Page$Resources$View$games = {description: 'Find game resources for a fun way to learn about the Catholic faith', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/Game%20Icon_rb2djF7Hf.png?updatedAt=1693438195519', link: '/resources/games', name: 'Games', resources: $author$project$Page$Resources$Games$games};
-var $author$project$Page$Resources$Podcasts$bibleInAYearWithTeddy = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/kidsbibleinayearwithteddy_dLisfpvYA.png?updatedAt=1689211660566', link: 'https://podcasts.apple.com/us/podcast/kids-bible-in-a-year-with-teddy/id1676869671', name: 'Kids Bible in a Year with Teddy'};
-var $author$project$Page$Resources$Podcasts$catholicKidsPodcast = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/3rd_Party_Logos_Mz1VR_PBx.png?updatedAt=1679071655063', link: 'https://podcasts.apple.com/us/podcast/catholic-kids-podcast/id1557527100', name: 'Catholic Kids Podcast'};
-var $author$project$Page$Resources$Podcasts$catholicKidsTriviaPodcast = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/CatholicKidsTriviaPodcast_rFHEiGK88.png?updatedAt=1679071809107', link: 'https://podcasts.apple.com/us/podcast/catholic-kids-trivia-podcast/id1662532400', name: 'Catholic Kids Trivia Podcast'};
-var $author$project$Page$Resources$Podcasts$catholicSprouts = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/11_HUKazDTNih.png?updatedAt=1679069711765', link: 'https://podcasts.apple.com/ca/podcast/catholic-sprouts-daily-podcast-for-catholic-kids/id1406174660', name: 'Catholic Sprouts'};
-var $author$project$Page$Resources$Podcasts$onTheNightTrain = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/On_The_Night_Train_Uy2SqRG8B.png?updatedAt=1679069840295', link: 'https://podcasts.apple.com/us/podcast/on-the-night-train/id1638922447', name: 'On The Night Train'};
-var $author$project$Page$Resources$Podcasts$saintStoriesForKids = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/10_W0OwjM8Yu.png?updatedAt=1679069711783', link: 'https://podcasts.apple.com/ca/podcast/saint-stories-for-kids/id1448514363', name: 'Saint Stories for Kids'};
-var $author$project$Page$Resources$Podcasts$saintsAlive = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/14_Aps0ku8wH.png?updatedAt=1679069710842', link: 'https://podcasts.apple.com/us/podcast/saints-alive-podcast/id1598392451', name: 'Saints Alive'};
-var $author$project$Page$Resources$Podcasts$thatsTheWord = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/12_NwOXTTpkTi.png?updatedAt=1679069710890', link: 'https://podcasts.apple.com/us/podcast/thats-the-word-with-fr-james-yamauchi/id1540449749', name: 'That\'s the word'};
+var $author$project$Page$Resources$View$games = {description: 'Find game resources for a fun way to learn about the Catholic faith', image: '/assets/images/imagekit/Resources_Icons/Game%20Icon_rb2djF7Hf.png', link: '/resources/games', name: 'Games', resources: $author$project$Page$Resources$Games$games};
+var $author$project$Page$Resources$Podcasts$bibleInAYearWithTeddy = {image: '/assets/images/imagekit/kidsbibleinayearwithteddy_dLisfpvYA.png', link: 'https://podcasts.apple.com/us/podcast/kids-bible-in-a-year-with-teddy/id1676869671', name: 'Kids Bible in a Year with Teddy'};
+var $author$project$Page$Resources$Podcasts$catholicKidsPodcast = {image: '/assets/images/imagekit/3rd_Party_Logos_Mz1VR_PBx.png', link: 'https://podcasts.apple.com/us/podcast/catholic-kids-podcast/id1557527100', name: 'Catholic Kids Podcast'};
+var $author$project$Page$Resources$Podcasts$catholicKidsTriviaPodcast = {image: '/assets/images/imagekit/CatholicKidsTriviaPodcast_rFHEiGK88.png', link: 'https://podcasts.apple.com/us/podcast/catholic-kids-trivia-podcast/id1662532400', name: 'Catholic Kids Trivia Podcast'};
+var $author$project$Page$Resources$Podcasts$catholicSprouts = {image: '/assets/images/imagekit/11_HUKazDTNih.png', link: 'https://podcasts.apple.com/ca/podcast/catholic-sprouts-daily-podcast-for-catholic-kids/id1406174660', name: 'Catholic Sprouts'};
+var $author$project$Page$Resources$Podcasts$onTheNightTrain = {image: '/assets/images/imagekit/On_The_Night_Train_Uy2SqRG8B.png', link: 'https://podcasts.apple.com/us/podcast/on-the-night-train/id1638922447', name: 'On The Night Train'};
+var $author$project$Page$Resources$Podcasts$saintStoriesForKids = {image: '/assets/images/imagekit/10_W0OwjM8Yu.png', link: 'https://podcasts.apple.com/ca/podcast/saint-stories-for-kids/id1448514363', name: 'Saint Stories for Kids'};
+var $author$project$Page$Resources$Podcasts$saintsAlive = {image: '/assets/images/imagekit/14_Aps0ku8wH.png', link: 'https://podcasts.apple.com/us/podcast/saints-alive-podcast/id1598392451', name: 'Saints Alive'};
+var $author$project$Page$Resources$Podcasts$thatsTheWord = {image: '/assets/images/imagekit/12_NwOXTTpkTi.png', link: 'https://podcasts.apple.com/us/podcast/thats-the-word-with-fr-james-yamauchi/id1540449749', name: 'That\'s the word'};
 var $author$project$Page$Resources$Podcasts$theSaints = {image: '/assets/images/TheSaints.png', link: 'https://themerrybeggars.com/shows/the-saints', name: 'The Saints'};
 var $author$project$Page$Resources$Podcasts$podcasts = _List_fromArray(
 	[$author$project$Page$Resources$Podcasts$saintStoriesForKids, $author$project$Page$Resources$Podcasts$catholicSprouts, $author$project$Page$Resources$Podcasts$saintsAlive, $author$project$Page$Resources$Podcasts$theSaints, $author$project$Page$Resources$Podcasts$bibleInAYearWithTeddy, $author$project$Page$Resources$Podcasts$thatsTheWord, $author$project$Page$Resources$Podcasts$onTheNightTrain, $author$project$Page$Resources$Podcasts$catholicKidsPodcast, $author$project$Page$Resources$Podcasts$catholicKidsTriviaPodcast]);
-var $author$project$Page$Resources$View$podcasts = {description: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/1_EAfo23y5R.png?updatedAt=1679066451335', link: '/resources/podcasts', name: 'Podcasts', resources: $author$project$Page$Resources$Podcasts$podcasts};
-var $author$project$Page$Resources$Subscriptions$catholicFamilyCrate = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/7_i5fOMR9CEB.png?updatedAt=1685581542221', link: 'https://catholicfamilycrate.com', name: 'Catholic Family Crate'};
-var $author$project$Page$Resources$Subscriptions$diaryOfAGodman = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/27_LJ8rjMXH6.png?updatedAt=1682716507484', link: 'https://www.diaryofagodman.com/subscriptions', name: 'Diary of a God-Man'};
-var $author$project$Page$Resources$Subscriptions$faithAndFamilyCollective = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/6_tZqBkQ3sW.png?updatedAt=1685581578667', link: 'https://faithandfamilycollective.com', name: 'Faith + Family Collective'};
-var $author$project$Page$Resources$Subscriptions$formed = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/9_6wjdaJHdc.png?updatedAt=1685581568223', link: 'https://formed.org', name: 'Formed'};
-var $author$project$Page$Resources$Subscriptions$magnifiKid = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/8_qucgsetg84.png?updatedAt=1685581652225', link: 'https://us.magnificat.net/home/magnifikid', name: 'MagnifiKid'};
-var $author$project$Page$Resources$Subscriptions$massBox = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/5_GX7izsR5Jp.png?updatedAt=1685581558288', link: 'https://themassbox.com', name: 'Mass Box'};
-var $author$project$Page$Resources$Subscriptions$osvKids = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/3_1__qbNDjJEy1.png?updatedAt=1685581657645', link: 'https://osvkids.com/magazine/', name: 'OSV Kids Magazine'};
-var $author$project$Page$Resources$Subscriptions$saintOfTheMonth = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/4_1__LjeiFaCGM1.png?updatedAt=1685581640310', link: 'https://www.saintofthemonth.com', name: 'Saint of the Month Box'};
+var $author$project$Page$Resources$View$podcasts = {description: 'Find audio podcasts here. Your kids can listen to them while on the road, traveling, while doing coloring activities, or they can be simply enjoyed by themselves.', image: '/assets/images/imagekit/Resources_Icons/1_EAfo23y5R.png', link: '/resources/podcasts', name: 'Podcasts', resources: $author$project$Page$Resources$Podcasts$podcasts};
+var $author$project$Page$Resources$Subscriptions$catholicFamilyCrate = {image: '/assets/images/imagekit/7_i5fOMR9CEB.png', link: 'https://catholicfamilycrate.com', name: 'Catholic Family Crate'};
+var $author$project$Page$Resources$Subscriptions$diaryOfAGodman = {image: '/assets/images/imagekit/27_LJ8rjMXH6.png', link: 'https://www.diaryofagodman.com/subscriptions', name: 'Diary of a God-Man'};
+var $author$project$Page$Resources$Subscriptions$faithAndFamilyCollective = {image: '/assets/images/imagekit/6_tZqBkQ3sW.png', link: 'https://faithandfamilycollective.com', name: 'Faith + Family Collective'};
+var $author$project$Page$Resources$Subscriptions$formed = {image: '/assets/images/imagekit/9_6wjdaJHdc.png', link: 'https://formed.org', name: 'Formed'};
+var $author$project$Page$Resources$Subscriptions$magnifiKid = {image: '/assets/images/imagekit/8_qucgsetg84.png', link: 'https://us.magnificat.net/home/magnifikid', name: 'MagnifiKid'};
+var $author$project$Page$Resources$Subscriptions$massBox = {image: '/assets/images/imagekit/5_GX7izsR5Jp.png', link: 'https://themassbox.com', name: 'Mass Box'};
+var $author$project$Page$Resources$Subscriptions$osvKids = {image: '/assets/images/imagekit/3_1__qbNDjJEy1.png', link: 'https://osvkids.com/magazine/', name: 'OSV Kids Magazine'};
+var $author$project$Page$Resources$Subscriptions$saintOfTheMonth = {image: '/assets/images/imagekit/4_1__LjeiFaCGM1.png', link: 'https://www.saintofthemonth.com', name: 'Saint of the Month Box'};
 var $author$project$Page$Resources$Subscriptions$subscriptions = _List_fromArray(
 	[$author$project$Page$Resources$Subscriptions$osvKids, $author$project$Page$Resources$Subscriptions$saintOfTheMonth, $author$project$Page$Resources$Subscriptions$massBox, $author$project$Page$Resources$Subscriptions$faithAndFamilyCollective, $author$project$Page$Resources$Subscriptions$catholicFamilyCrate, $author$project$Page$Resources$Subscriptions$magnifiKid, $author$project$Page$Resources$Subscriptions$formed, $author$project$Page$Resources$Subscriptions$diaryOfAGodman]);
-var $author$project$Page$Resources$View$subscriptions = {description: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/4_U5qO_iICx.png?updatedAt=1679066449068', link: '/resources/subscriptions', name: 'Subscriptions', resources: $author$project$Page$Resources$Subscriptions$subscriptions};
-var $author$project$Page$Resources$Videos$amyheysart = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/AmyH_ld3G4EoVX.png?updatedAt=1692735921831', link: 'https://www.youtube.com/@amyheyseart', name: 'Amy Heyse Art'};
-var $author$project$Page$Resources$Videos$brotherFrancis = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/16_V1sLznRg0.png?updatedAt=1679070333303', link: 'https://www.youtube.com/@BrotherFrancis', name: 'Brother Francis'};
-var $author$project$Page$Resources$Videos$catholicIcing = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/41_XrkKmwtXL.png?updatedAt=1682876930378', link: 'https://www.youtube.com/@CatholicIcing', name: 'Catholic Icing'};
-var $author$project$Page$Resources$Videos$catholicKidsMedia = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/17_z9ZERCAuK.png?updatedAt=1679070333348', link: 'https://www.youtube.com/@CatholicKidsMedia', name: 'Catholic Kids Media'};
-var $author$project$Page$Resources$Videos$catholicSongsForKids = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/40_vS6tZTdD3.png?updatedAt=1682876930344', link: 'https://www.youtube.com/@catholicsongsforkids', name: 'Catholic Songs for Kids'};
-var $author$project$Page$Resources$Videos$christineInAction = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/christineinaction_Le5_7yr2K.jpeg?updatedAt=1682821244341', link: 'https://www.youtube.com/@ChristineInAction', name: 'Christine In Action'};
-var $author$project$Page$Resources$Videos$claritasStudios = {image: 'https://ik.imagekit.io/catholicstories/CSCLogo_JiNT9WUPX.png?updatedAt=1679070448402', link: 'https://www.youtube.com/@ClaritasStudios', name: 'Claritas Studios'};
+var $author$project$Page$Resources$View$subscriptions = {description: 'Want monthly content at your front door? Check out these wonderful Catholic subscriptions.', image: '/assets/images/imagekit/Resources_Icons/4_U5qO_iICx.png', link: '/resources/subscriptions', name: 'Subscriptions', resources: $author$project$Page$Resources$Subscriptions$subscriptions};
+var $author$project$Page$Resources$Videos$amyheysart = {image: '/assets/images/imagekit/AmyH_ld3G4EoVX.png', link: 'https://www.youtube.com/@amyheyseart', name: 'Amy Heyse Art'};
+var $author$project$Page$Resources$Videos$brotherFrancis = {image: '/assets/images/imagekit/16_V1sLznRg0.png', link: 'https://www.youtube.com/@BrotherFrancis', name: 'Brother Francis'};
+var $author$project$Page$Resources$Videos$catholicIcing = {image: '/assets/images/imagekit/41_XrkKmwtXL.png', link: 'https://www.youtube.com/@CatholicIcing', name: 'Catholic Icing'};
+var $author$project$Page$Resources$Videos$catholicKidsMedia = {image: '/assets/images/imagekit/17_z9ZERCAuK.png', link: 'https://www.youtube.com/@CatholicKidsMedia', name: 'Catholic Kids Media'};
+var $author$project$Page$Resources$Videos$catholicSongsForKids = {image: '/assets/images/imagekit/40_vS6tZTdD3.png', link: 'https://www.youtube.com/@catholicsongsforkids', name: 'Catholic Songs for Kids'};
+var $author$project$Page$Resources$Videos$christineInAction = {image: '/assets/images/imagekit/christineinaction_Le5_7yr2K.jpeg', link: 'https://www.youtube.com/@ChristineInAction', name: 'Christine In Action'};
+var $author$project$Page$Resources$Videos$claritasStudios = {image: '/assets/images/imagekit/CSCLogo_JiNT9WUPX.png', link: 'https://www.youtube.com/@ClaritasStudios', name: 'Claritas Studios'};
 var $author$project$Page$Resources$Videos$heidiWitte = {image: '/assets/images/HeidiWitte.png', link: 'https://www.youtube.com/@kidsliturgy', name: 'Heidi Witte'};
-var $author$project$Page$Resources$Videos$juiceBox = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/juicebox_flQW7t8YD.png?updatedAt=1692736674561', link: 'https://www.youtube.com/@SpiritJuiceKids', name: 'Spirit Juice Kids'};
-var $author$project$Page$Resources$Videos$opusJoyous = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/opusjoyouslogo__bVhpC3Fj.jpeg?updatedAt=1687549207653', link: 'https://www.youtube.com/@OpusJoyous', name: 'Opus Joyous'};
-var $author$project$Page$Resources$Videos$prostradaDesigns = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/42_GMJuNZEVs.png?updatedAt=1683226627331', link: 'https://www.youtube.com/@prostradadesignsllc', name: 'Prostrada Designs'};
+var $author$project$Page$Resources$Videos$juiceBox = {image: '/assets/images/imagekit/juicebox_flQW7t8YD.png', link: 'https://www.youtube.com/@SpiritJuiceKids', name: 'Spirit Juice Kids'};
+var $author$project$Page$Resources$Videos$opusJoyous = {image: '/assets/images/imagekit/opusjoyouslogo__bVhpC3Fj.jpeg', link: 'https://www.youtube.com/@OpusJoyous', name: 'Opus Joyous'};
+var $author$project$Page$Resources$Videos$prostradaDesigns = {image: '/assets/images/imagekit/42_GMJuNZEVs.png', link: 'https://www.youtube.com/@prostradadesignsllc', name: 'Prostrada Designs'};
 var $author$project$Page$Resources$Videos$sacredHeartofJesusConvent = {image: '/assets/images/SacredHeartofJesusConvent.png', link: 'https://www.youtube.com/@SacredHeartofJesusConvent/about', name: 'Sacred Heart of Jesus Convent'};
-var $author$project$Page$Resources$Videos$tomkin = {image: 'https://ik.imagekit.io/catholicstories/ProfileImages/15_Wrw3_kbKK.png?updatedAt=1679070333309', link: 'https://www.youtube.com/playlist?list=PL9CQlldupc5_L0shwBi1w-n5liWhD0ArO', name: 'Tomkin'};
+var $author$project$Page$Resources$Videos$tomkin = {image: '/assets/images/imagekit/15_Wrw3_kbKK.png', link: 'https://www.youtube.com/playlist?list=PL9CQlldupc5_L0shwBi1w-n5liWhD0ArO', name: 'Tomkin'};
 var $author$project$Page$Resources$Videos$videos = _List_fromArray(
 	[$author$project$Page$Resources$Videos$claritasStudios, $author$project$Page$Resources$Videos$christineInAction, $author$project$Page$Resources$Videos$tomkin, $author$project$Page$Resources$Videos$juiceBox, $author$project$Page$Resources$Videos$catholicKidsMedia, $author$project$Page$Resources$Videos$brotherFrancis, $author$project$Page$Resources$Videos$amyheysart, $author$project$Page$Resources$Videos$heidiWitte, $author$project$Page$Resources$Videos$sacredHeartofJesusConvent, $author$project$Page$Resources$Videos$catholicSongsForKids, $author$project$Page$Resources$Videos$opusJoyous, $author$project$Page$Resources$Videos$catholicIcing, $author$project$Page$Resources$Videos$prostradaDesigns]);
-var $author$project$Page$Resources$View$videos = {description: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/3_mTKsUZQuM.png?updatedAt=1679066450272', link: '/resources/videos', name: 'Youtube Channels', resources: $author$project$Page$Resources$Videos$videos};
+var $author$project$Page$Resources$View$videos = {description: 'Find video content here. Videos are a wonderful engaging way to bring a visual representation of the faith into your home.', image: '/assets/images/imagekit/Resources_Icons/3_mTKsUZQuM.png', link: '/resources/videos', name: 'Youtube Channels', resources: $author$project$Page$Resources$Videos$videos};
 var $author$project$Page$Resources$Prayer$Main$viewAboutPrayerResources = A2(
 	$elm$html$Html$div,
 	_List_Nil,
@@ -24081,8 +24185,8 @@ var $author$project$Page$Resources$View$viewAboutResources = A2(
 					$elm$html$Html$text('Find links to podcasts, videos, books and more. There are a lot of resources out there for Catholic parents and we are here to help you find them.')
 				]))
 		]));
-var $author$project$Page$Resources$View$feastDayActivities = {description: 'Find activities for feast days throughout the year', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png?updatedAt=1686096632436', link: '/feastdayactivities', name: 'Feast Day Activities', resources: _List_Nil};
-var $author$project$Page$Resources$View$prayerResources = {description: 'Find more resources here to help build your prayer life', image: 'https://ik.imagekit.io/catholicstories/Resources_Icons/prayerresources_gN76-j6pz.png?updatedAt=1683227269863', link: '/resources/prayer', name: 'Prayer Resources', resources: _List_Nil};
+var $author$project$Page$Resources$View$feastDayActivities = {description: 'Find activities for feast days throughout the year', image: '/assets/images/imagekit/Resources_Icons/feastdaycalendar_1__YTmPRisXH.png', link: '/feastdayactivities', name: 'Feast Day Activities', resources: _List_Nil};
+var $author$project$Page$Resources$View$prayerResources = {description: 'Find more resources here to help build your prayer life', image: '/assets/images/imagekit/Resources_Icons/prayerresources_gN76-j6pz.png', link: '/resources/prayer', name: 'Prayer Resources', resources: _List_Nil};
 var $author$project$Page$Resources$View$viewResourceGroup = function (resourceGroup) {
 	return A2(
 		$elm$html$Html$a,

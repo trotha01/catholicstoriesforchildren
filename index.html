@@ -20,9 +20,11 @@
   <title>Claritas Studios</title>
   <link rel="manifest" href="/manifest.webmanifest">
 
-  <meta name="description" content="Claritas Studios creates Catholic animations for children to help them grow in their love of God and neighbor.">
+  <meta name="description"
+    content="Claritas Studios creates Catholic animations for children to help them grow in their love of God and neighbor.">
   <meta property="og:title" content="Claritas Studios">
-  <meta property="og:description" content="Claritas Studios creates Catholic animations for children to help them grow in their love of God and neighbor.">
+  <meta property="og:description"
+    content="Claritas Studios creates Catholic animations for children to help them grow in their love of God and neighbor.">
   <meta property="og:url" content="https://claritasstudios.com">
   <meta property="og:image" content="https://claritasstudios.com/assets/images/thumbnails/CSCThumbnail.png">
   <meta property="twitter:card" content="summary_large_image">
@@ -68,6 +70,9 @@
     }
   </style>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD"></script>
+
   <!-- Cookie consent popup -->
   <script type="module" src="/cookieconsent-config.js"></script>
 
@@ -95,6 +100,8 @@
     });
     // Do not auto-load GA; only load after consent
     window.__ga_block = true;
+    gtag('js', new Date());
+    gtag('config', 'G-TXRVE787GD');
   </script>
 
 </head>
