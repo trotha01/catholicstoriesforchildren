@@ -42,12 +42,21 @@ may =
                 [ { feast = "Our Lady of Fatima", activities = [] }
                 ]
           }
+        
         , { date = "14"
           , feasts =
-                [ { feast = "Saint Matthew the Apostle", activities = [] }
+                [
+                { feast = "Saint Matthew the Apostle", activities = [] }
+                , { feast = "The Ascension of the Lord (or June 1)" -- moves
+                  , activities = []
+                  }
+                        , { date = "31"
+          , feasts =
+                [ { feast = "The Most Holy Trinity" -- moves
+                  , activities = []
+                  }
                 ]
-          }
-        , { date = "15"
+          }, { date = "15"
           , feasts =
                 [ { feast = "Saint Isidore the Farmer", activities = [] }
                 , { feast = "Saint Dymphna", activities = [] }
@@ -64,7 +73,21 @@ may =
                 [ { feast = "Saint Rita of Cascia", activities = [] }
                 ]
           }
-        , { date = "25"
+                , { date = "24"
+          , feasts =
+                [ { feast = "Pentecost Sunday" -- moves
+                  , activities = []
+                  }
+                        , { date = "25"
+          , feasts =
+                [ { feast = "Blessed Virgin Mary, Mother of the Church" -- moves. Monday after Pentecost
+                  , activities = []
+                  }
+                ]
+          }
+]
+          }
+, { date = "25"
           , feasts =
                 [ { feast = "Saint Bede the Venerable", activities = [] }
                 , { feast = "Pope Saint Gregory VII", activities = [] }
@@ -89,12 +112,7 @@ may =
                 [ { feast = "Saint Augustine of Canterbury", activities = [] }
                 ]
           }
-        , { date = "29"
-          , feasts =
-                [ { feast = "The Ascension of the Lord (or June 1)" -- moves
-                  , activities = []
-                  }
-                ]
+]
           }
         , { date = "31"
           , feasts =

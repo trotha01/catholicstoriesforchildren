@@ -29,7 +29,7 @@ december =
                 [ { feast = "Saint Ambrose of Milan", activities = [] }
                 ]
           }
-        , { date = "09"
+        , { date = "08"
           , feasts =
                 [ { feast = "Immaculate Conception of the Blessed Virgin Mary" -- moves. Moved to Monday when it falls on a Sunday.
                   , activities = []

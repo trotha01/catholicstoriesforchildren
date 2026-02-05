@@ -181,75 +181,11 @@ janFeasts =
                       , link = "https://www.youtube-nocookie.com/embed/muyR_oFp8oE"
                       , snippet = ""
                       }
-                    , { activityType = OnlineReading
-                      , title = "Why We Celebrate the Holy Name of Jesus"
-                      , image = "https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg"
-                      , link = "https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/"
-                      , snippet = "This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space..."
-                      }
-                    , { activityType = OnlineReading
-                      , title = "Saint Gregory of Nazianzus"
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1"
-                      , snippet = "The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel..."
-                      }
-                    , { activityType = Printout
-                      , title = "How To Draw The Most Holy Name Of Jesus"
-                      , image = "https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg"
-                      , link = "https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/"
-                      , snippet = "This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space..."
-                      }
-                    , { activityType = Book
-                      , title = "The Wonders of the Holy Name"
-                      , image = "https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg"
-                      , link = "https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909"
-                      , snippet = "This booklet, The Wonders of the Holy Name"
-                      }
-                    , { activityType = Food
-                      , title = "Prosphora Orthodox Bread"
-                      , image = "https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1"
-                      , snippet = "The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel..."
-                      }
-                    , { activityType = More
-                      , title = "The Most Holy Name of Jesus"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel appeared to St. Joseph and instructed him that the Child’s name should be called J..."
-                      }
-                    ]
-              }
-            , { feast = "Most Holy Name of Jesus"
-              , activities =
-                    [ { activityType = Audio
-                      , title = "Story of Most Holy Name of Jesus"
-                      , image = "FranciscanMedia"
-                      , link = "https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/"
-                      , snippet = "Saint Paul tells us in his Letter to the Philippians that Jesus’ name is above every other name. It is the name in which we are all saved. Devotion to the Most Holy Name of Jesus is deeply rooted in Christian history."
-                      }
-                    ]
-              }
-            , { feast = "Saint Genevieve"
-              , activities =
-                    [ { activityType = OnlineReading
-                      , title = "Saint Genevieve"
-                      , image = "LoyolaPress"
-                      , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-genevieve"
-                      , snippet = "On his way to combat heresy in Britain, St. Germanus of Auxerre made an overnight stop at Nanterre, France. In the crowd that gathered to hear him speak, Germanus spotted Genevieve (or Genovefa), a beautiful 7-year-old girl, and he foresaw her future holiness. When he asked little St. Genevieve if s..."
-                      }
-                    , { activityType = More
-                      , title = "Genevieve"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Genevieve's Story \u{200B} St. Geneviève, French\u{00A0}Sainte Geneviève,\u{00A0}German\u{00A0}Sankt Genovefa, (born\u{00A0}c.\u{00A0}422,\u{00A0}Nanterre, France?—died\u{00A0}c.\u{00A0}500, Paris; feast day January 3),\u{00A0} patron saint\u{00A0}of Paris, who allegedly saved that city from the\u{00A0}Huns. When she was seven, Geneviève was induced by Bishop\u{00A0}St. Germain of Aux..."
-                      }
-                    ]
-              }
-            ]
-      }
+                    
     , { date = "04"
       , feasts =
-            [ { feast = "Saint Elizabeth Ann Seton"
+            [
+            { feast = "Saint Elizabeth Ann Seton"
               , activities =
                     [ { activityType = Video
                       , title = "The First American Saint"
@@ -317,13 +253,7 @@ janFeasts =
                       , link = "https://www.saintsfeastfamily.com/copy-of-st-elizabeth-ann-seton-jan--1"
                       , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Elizabeth Ann Seton's Story \u{200B} Saint Elizabeth Ann Seton was the first native-born citizen of the United States to be canonized by the Roman Catholic Church. Mother Seton is one of the keystones of the American Catholic Church. She founded the first American religious community for women, the S..."
                       }
-                    ]
-              }
-            ]
-      }
-    , { date = "05"
-      , feasts =
-            [ { feast = "The Epiphany of the Lord" -- moves
+            , { feast = "The Epiphany of the Lord" -- moves
               , activities =
                     [ { activityType = Video
                       , title = "Feast of the Epiphany"
@@ -386,7 +316,74 @@ janFeasts =
                       , snippet = ""
                       }
                     ]
+              }, { activityType = OnlineReading
+                      , title = "Why We Celebrate the Holy Name of Jesus"
+                      , image = "https://www.simplycatholic.com/wp-content/uploads/2018/12/Jesus1.jpg"
+                      , link = "https://www.simplycatholic.com/why-we-celebrate-the-holy-name-of-jesus/"
+                      , snippet = "This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space..."
+                      }
+                    , { activityType = OnlineReading
+                      , title = "Saint Gregory of Nazianzus"
+                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1"
+                      , snippet = "The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel..."
+                      }
+                    , { activityType = Printout
+                      , title = "How To Draw The Most Holy Name Of Jesus"
+                      , image = "https://www.catholicicing.com/wp-content/uploads/2020/01/negative-space-lesson-how-to-draw-jesus.jpg"
+                      , link = "https://www.catholicicing.com/how-to-draw-holy-name-of-jesus/"
+                      , snippet = "This is a great activity for Catholic kids when learning about Jesus and the bible. This lesson is so fun because you actually learn how to draw Jesus’s name in negative space..."
+                      }
+                    , { activityType = Book
+                      , title = "The Wonders of the Holy Name"
+                      , image = "https://m.media-amazon.com/images/I/51KgwkrXsQL._SX311_BO1,204,203,200_.jpg"
+                      , link = "https://www.amazon.com/Wonders-Holy-Name-Paul-OSullivan/dp/0895554909"
+                      , snippet = "This booklet, The Wonders of the Holy Name"
+                      }
+                    , { activityType = Food
+                      , title = "Prosphora Orthodox Bread"
+                      , image = "https://static.wixstatic.com/media/9c2964_509e915a37e847fb8dc2a1a229ebd879~mv2.jpg/v1/crop/x_0,y_0,w_640,h_657/fill/w_562,h_576,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/791bbe7f2e139eb2d01a3f2c92050acc.jpg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1"
+                      , snippet = "The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel..."
+                      }
+                    , { activityType = More
+                      , title = "The Most Holy Name of Jesus"
+                      , image = "SaintsFeastFamily"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus-1"
+                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The month of January is traditionally dedicated to the Holy Name of Jesus, with January 3rd being the feast of the Holy Name. After the Blessed Virgin Mary had conceived her Child by the Holy Spirit, the angel Gabriel appeared to St. Joseph and instructed him that the Child’s name should be called J..."
+                      }
+                    ]
               }
+            , { feast = "Most Holy Name of Jesus"
+              , activities =
+                    [ { activityType = Audio
+                      , title = "Story of Most Holy Name of Jesus"
+                      , image = "FranciscanMedia"
+                      , link = "https://www.franciscanmedia.org/saint-of-the-day/most-holy-name-of-jesus/"
+                      , snippet = "Saint Paul tells us in his Letter to the Philippians that Jesus’ name is above every other name. It is the name in which we are all saved. Devotion to the Most Holy Name of Jesus is deeply rooted in Christian history."
+                      }
+                    ]
+              }
+            , { feast = "Saint Genevieve"
+              , activities =
+                    [ { activityType = OnlineReading
+                      , title = "Saint Genevieve"
+                      , image = "LoyolaPress"
+                      , link = "http://www.loyolapress.com/catholic-resources/saints/saints-stories-for-all-ages/saint-genevieve"
+                      , snippet = "On his way to combat heresy in Britain, St. Germanus of Auxerre made an overnight stop at Nanterre, France. In the crowd that gathered to hear him speak, Germanus spotted Genevieve (or Genovefa), a beautiful 7-year-old girl, and he foresaw her future holiness. When he asked little St. Genevieve if s..."
+                      }
+                    , { activityType = More
+                      , title = "Genevieve"
+                      , image = "SaintsFeastFamily"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-most-holy-name-of-jesus"
+                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! St. Genevieve's Story \u{200B} St. Geneviève, French\u{00A0}Sainte Geneviève,\u{00A0}German\u{00A0}Sankt Genovefa, (born\u{00A0}c.\u{00A0}422,\u{00A0}Nanterre, France?—died\u{00A0}c.\u{00A0}500, Paris; feast day January 3),\u{00A0} patron saint\u{00A0}of Paris, who allegedly saved that city from the\u{00A0}Huns. When she was seven, Geneviève was induced by Bishop\u{00A0}St. Germain of Aux..."
+                      }
+                    ]
+              }
+            ]
+      }
+            ]
+      }
             , { feast = "Saint John Neumann"
               , activities =
                     [ { activityType = Video
@@ -612,7 +609,88 @@ janFeasts =
                       , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-gregory-of-nyssa/"
                       , snippet = "Saint Gregory of Nyssa, the brother of Saint Basil and the son of Saints Basil and Emmilia, was a married man when he began studying for the priesthood. He became Bishop of Nyssa and fought Arianism and was a prominent figure at the Council of Constantinople."
                       }
+                    
+    , { date = "11"
+      , feasts =
+            [
+            { feast = "Blessed William Carter"
+              , activities =
+                    [ { activityType = Audio
+                      , title = "Story of Blessed William Carter"
+                      , image = "FranciscanMedia"
+                      , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-william-carter/"
+                      , snippet = "Born in London, Blessed William Carter was a printer who got in trouble for printing Catholic material during the reign of Queen Elizabeth I. Eventually brought to trial, he was convicted and hanged, drawn, and quartered on January 11, 1584."
+                      }
+            , { feast = "The Baptism of the Lord" -- moves
+              , activities =
+                    [ { activityType = Video
+                      , title = "Washed Away"
+                      , image = ""
+                      , link = "https://www.youtube-nocookie.com/embed/75F5qJw5YEY"
+                      , snippet = ""
+                      }
+                    , { activityType = OnlineReading
+                      , title = "The Story of the Feast of the Baptism of the Lord"
+                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = "The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany..."
+                      }
+                    , { activityType = Audio
+                      , title = "Feast of the Baptism of the Lord"
+                      , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
+                      , link = "https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/"
+                      , snippet = "Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here."
+                      }
+                    , { activityType = Food
+                      , title = "Jumping Jolly Juice"
+                      , image = "https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = ""
+                      }
+                    , { activityType = Crafts
+                      , title = "Holy Water Bottle Craft"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/"
+                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
+                      }
+                    , { activityType = Crafts
+                      , title = "Dove with Olive Branch"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/"
+                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
+                      }
+                    , { activityType = Crafts
+                      , title = "Dove with Gifts of the Holy Spirit"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/"
+                      , snippet = "You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra."
+                      }
+                    , { activityType = Crafts
+                      , title = "Simple Handprint Dove"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/holy-spirit-craft-handprint-dove/"
+                      , snippet = "For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint..."
+                      }
+                    , { activityType = Food
+                      , title = "Greek Dipples"
+                      , image = "https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = ""
+                      }
                     , { activityType = More
+                      , title = "Ideas for Teaching Catholic Kids About Baptism"
+                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
+                      , link = "https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/"
+                      , snippet = "Baptism is so important, and it’s a great thing to make sure that your kids truly understand..."
+                      }
+                    , { activityType = More
+                      , title = "Baptism of the Lord"
+                      , image = "SaintsFeastFamily"
+                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
+                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man."
+                      }
+                    ]
+              }, { activityType = More
                       , title = "Gregory of Nyssa"
                       , image = "SaintsFeastFamily"
                       , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan"
@@ -622,18 +700,6 @@ janFeasts =
               }
             ]
       }
-    , { date = "11"
-      , feasts =
-            [ { feast = "Blessed William Carter"
-              , activities =
-                    [ { activityType = Audio
-                      , title = "Story of Blessed William Carter"
-                      , image = "FranciscanMedia"
-                      , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-william-carter/"
-                      , snippet = "Born in London, Blessed William Carter was a printer who got in trouble for printing Catholic material during the reign of Queen Elizabeth I. Eventually brought to trial, he was convicted and hanged, drawn, and quartered on January 11, 1584."
-                      }
-                    ]
-              }
             , { feast = "Saint Theodosius the Cenobiarch"
               , activities =
                     [ { activityType = More
@@ -758,78 +824,6 @@ janFeasts =
               }
             ]
       }
-    , { date = "15"
-      , feasts =
-            [ { feast = "The Baptism of the Lord" -- moves
-              , activities =
-                    [ { activityType = Video
-                      , title = "Washed Away"
-                      , image = ""
-                      , link = "https://www.youtube-nocookie.com/embed/75F5qJw5YEY"
-                      , snippet = ""
-                      }
-                    , { activityType = OnlineReading
-                      , title = "The Story of the Feast of the Baptism of the Lord"
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = "The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany..."
-                      }
-                    , { activityType = Audio
-                      , title = "Feast of the Baptism of the Lord"
-                      , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                      , link = "https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/"
-                      , snippet = "Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here."
-                      }
-                    , { activityType = Food
-                      , title = "Jumping Jolly Juice"
-                      , image = "https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = ""
-                      }
-                    , { activityType = Crafts
-                      , title = "Holy Water Bottle Craft"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/"
-                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Dove with Olive Branch"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/"
-                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Dove with Gifts of the Holy Spirit"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/"
-                      , snippet = "You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra."
-                      }
-                    , { activityType = Crafts
-                      , title = "Simple Handprint Dove"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/holy-spirit-craft-handprint-dove/"
-                      , snippet = "For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint..."
-                      }
-                    , { activityType = Food
-                      , title = "Greek Dipples"
-                      , image = "https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = ""
-                      }
-                    , { activityType = More
-                      , title = "Ideas for Teaching Catholic Kids About Baptism"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/"
-                      , snippet = "Baptism is so important, and it’s a great thing to make sure that your kids truly understand..."
-                      }
-                    , { activityType = More
-                      , title = "Baptism of the Lord"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man."
-                      }
-                    ]
-              }
             , { feast = "Saint Devasahayam Pillai"
               , activities =
                     [ { activityType = Audio

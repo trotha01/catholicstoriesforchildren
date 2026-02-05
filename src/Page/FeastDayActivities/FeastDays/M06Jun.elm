@@ -37,36 +37,15 @@ june =
                 [ { feast = "Saint Norbert of Xanten", activities = [] }
                 ]
           }
-        , { date = "08"
-          , feasts =
-                [ { feast = "Pentecost Sunday" -- moves
-                  , activities = []
-                  }
-                ]
-          }
         , { date = "09"
           , feasts =
-                [ { feast = "Blessed Virgin Mary, Mother of the Church" -- moves. Monday after Pentecost
-                  , activities = []
-                  }
-                , { feast = "Saint Ephrem of Syria", activities = [] }
+                [
+                { feast = "Saint Ephrem of Syria", activities = [] }
                 ]
           }
         , { date = "11"
           , feasts =
                 [ { feast = "Saint Barnabas the Apostle", activities = [] }
-                ]
-          }
-        , { date = "13"
-          , feasts =
-                [ { feast = "Saint Anthony of Padua", activities = [] }
-                ]
-          }
-        , { date = "15"
-          , feasts =
-                [ { feast = "The Most Holy Trinity" -- moves
-                  , activities = []
-                  }
                 ]
           }
         , { date = "19"
@@ -79,7 +58,7 @@ june =
                 [ { feast = "Saint Aloysius Gonzaga", activities = [] }
                 ]
           }
-        , { date = "22"
+        , { date = "04"
           , feasts =
                 [ { feast = "Corpus Christi" -- moves. Thursday after Trinity Sunday.
                   , activities = []
@@ -99,20 +78,22 @@ june =
                 [ { feast = "Saint Josemaría Escrivá", activities = [] }
                 ]
           }
-        , { date = "27"
+        , { date = "12"
           , feasts =
                 [ { feast = "Sacred Heart of Jesus" -- moves. Friday after the Second Sunday of Pentecost.
                   , activities = []
                   }
-                , { feast = "Saint Cyril of Alexandria", activities = [] }
-                ]
-          }
-        , { date = "28"
+                
+        , { date = "13"
           , feasts =
-                [ { feast = "Immaculate Heart of Mary" -- moves
+                [
+                { feast = "Saint Anthony of Padua", activities = [] }
+                , { feast = "Immaculate Heart of Mary" -- moves
                   , activities = []
                   }
                 , { feast = "Saint Irenaeus of Lyons", activities = [] }
+                ]
+          }, { feast = "Saint Cyril of Alexandria", activities = [] }
                 ]
           }
         , { date = "29"

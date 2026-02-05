@@ -81,22 +81,19 @@ november =
                 [ { feast = "Presentation of the Blessed Virgin Mary", activities = [] }
                 ]
           }
+        
         , { date = "22"
           , feasts =
-                [ { feast = "Saint Cecilia", activities = [] }
-                ]
-          }
-        , { date = "23"
-          , feasts =
-                [ { feast = "Our Lord Jesus Christ, King of the Universe - Solemnity" -- moves
+                [
+                { feast = "Saint Cecilia", activities = [] }
+                , { feast = "Our Lord Jesus Christ, King of the Universe - Solemnity" -- moves
                   , activities = []
                   }
                 , { feast = "Pope Saint Clement I", activities = [] }
                 , { feast = "Blessed Miguel Agustin Pro", activities = [] }
                 , { feast = "Saint Columbanus", activities = [] }
                 ]
-          }
-        , { date = "24"
+          }, { date = "24"
           , feasts =
                 [ { feast = "Saint Anrê Tran An Dung", activities = [] }
                 , { feast = "Martyrs of Vietnam", activities = [] }

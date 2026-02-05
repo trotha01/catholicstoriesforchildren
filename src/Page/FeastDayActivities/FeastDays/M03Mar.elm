@@ -230,7 +230,19 @@ march =
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/annunciation-of-the-lord/"
                           , snippet = "The feast of the Annunciation, now recognized as a solemnity, was first celebrated in the fourth or fifth century. Its central focus is the Incarnation: God has become one of us. From all eternity God had decided that the Second Person of the Blessed Trinity should become human..."
                           }
-                        , { activityType = OnlineReading
+                                , { date = "29"
+          , feasts =
+                [ { feast = "Palm Sunday of the Lord's Passion" -- moves
+                  , activities =
+                        [ { activityType = Video
+                          , title = "Hosanna"
+                          , link = "https://www.youtube-nocookie.com/embed/ZrJ-7ZVzvKE"
+                          , image = ""
+                          , snippet = ""
+                          }
+                ]
+          }
+, { activityType = OnlineReading
                           , title = "Annunciation of the Lord"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/"
