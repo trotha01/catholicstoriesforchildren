@@ -177,10 +177,10 @@ viewDate model month date feasts =
             capitalizeFirst month
 
         ( nextMonth, nextDay ) =
-            nextDate "2025" month date
+            nextDate "2026" month date
 
         ( prevMonth, prevDay ) =
-            previousDate "2025" month date
+            previousDate "2026" month date
 
         nextDateLink =
             createFeastDayLink nextMonth nextDay
@@ -245,7 +245,7 @@ viewDate model month date feasts =
                            )
                     )
                 ]
-            , span [ class "inline-block bg-purple-900/70 text-white rounded-full px-4 py-2 text-sm mb-6" ] [ text (capMonth ++ " " ++ date ++ ", 2025") ]
+            , span [ class "inline-block bg-purple-900/70 text-white rounded-full px-4 py-2 text-sm mb-6" ] [ text (capMonth ++ " " ++ date ++ ", 2026") ]
             ]
         , -- Content below header (signup + activities)
           div [ class "mt-10 mb-40" ]
@@ -433,10 +433,10 @@ viewMonth model feastMonth =
             [ class "mt-10 max-w-3xl mx-auto" ]
             [ div [ class "px-11" ]
                 [ if feastMonth.month == "December" then
-                    h1 [] [ text "2025 Feast Day Activities" ]
+                    h1 [] [ text "2026 Feast Day Activities" ]
 
                   else
-                    h1 [] [ text "2025 Feast Day Activities" ]
+                    h1 [] [ text "2026 Feast Day Activities" ]
                 , p [ class "mt-5 mb-10" ] [ text "Click on each day to see suggested feast day activitity ideas that you can use with your children to celebrate." ]
                 , p [ class "mt-5 mb-10" ] [ text "You can find videos, crafts, printables, games, reading, recipes and more! There are many ways you can find here to help your kids with liturgical living." ]
                 ]

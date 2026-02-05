@@ -1,6 +1,7 @@
 module Page.FeastDayActivities.FeastDays.M01Jan exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (..)
+import Page.FeastDayActivities.FeastDays.MovingFeasts exposing (..)
 
 
 janFeasts : List FeastDay
@@ -249,7 +250,8 @@ janFeasts =
       }
     , { date = "04"
       , feasts =
-            [ { feast = "Saint Elizabeth Ann Seton"
+            [ epiphanyFeast
+            , { feast = "Saint Elizabeth Ann Seton"
               , activities =
                     [ { activityType = Video
                       , title = "The First American Saint"
@@ -323,71 +325,7 @@ janFeasts =
       }
     , { date = "05"
       , feasts =
-            [ { feast = "The Epiphany of the Lord" -- moves
-              , activities =
-                    [ { activityType = Video
-                      , title = "Feast of the Epiphany"
-                      , image = ""
-                      , link = "https://www.youtube-nocookie.com/embed/nMeuF62R6hw"
-                      , snippet = ""
-                      }
-                    , { activityType = Video
-                      , title = "My Time with Jesus - Epiphany"
-                      , image = ""
-                      , link = "https://www.youtube-nocookie.com/embed/8vzYYJK1_pg"
-                      , snippet = ""
-                      }
-                    , { activityType = Audio
-                      , title = "Epiphany of the Lord"
-                      , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                      , link = "https://www.franciscanmedia.org/sunday-soundbites/sunday-soundbite-for-january-8-2023/"
-                      , snippet = "Today’s feast of the Epiphany of the Lord is a feast that celebrates communication. The Gospel we read today portrays Jesus, the Word Made Flesh revealed to the nations, as the wise men arrive to pay him homage..."
-                      }
-                    , { activityType = OnlineReading
-                      , title = "Gifts to our King"
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1"
-                      , snippet = "The gift of gold was significant because it showed the Magis paying tribute to Jesus Christ as their King because he is royal..."
-                      }
-                    , { activityType = More
-                      , title = "Epiphany House Blessing with Chalk"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/epiphany-house-blessing-with-chalk/"
-                      , snippet = "The Epiphany house blessing of the door is a really great Catholic tradition for families..."
-                      }
-                    , { activityType = Crafts
-                      , title = "K is for King"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/k-is-for-king-bible-alphabet-crafts-for-kids/"
-                      , snippet = "I love to make wearable crafts with preschoolers, because they love wearing them..."
-                      }
-                    , { activityType = Crafts
-                      , title = "3 Kings Epiphany Crafts For Kids"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/3-kings-epiphany-crafts/"
-                      , snippet = "Ornament Craft, peg doll wraps, and printable nativity set!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Star Crafts"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/star-of-wonder-star-of-night/"
-                      , snippet = ""
-                      }
-                    , { activityType = Food
-                      , title = "Epiphany Crown Food Ideas"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/epiphany-crown-food-ideas/"
-                      , snippet = "I found all kinds of crown cakes, king cakes, king breads, and everything else under the sun for celebrating the epiphany..."
-                      }
-                    , { activityType = Food
-                      , title = "La Galette des Rois: The French King Cake"
-                      , image = "https://static.wixstatic.com/media/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg/v1/fill/w_772,h_960,al_c,q_85,enc_auto/9c2964_c59aa4a5eb5d467f91acf84877a51c5b~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-epiphany-jan-6-1"
-                      , snippet = ""
-                      }
-                    ]
-              }
-            , { feast = "Saint John Neumann"
+            [ { feast = "Saint John Neumann"
               , activities =
                     [ { activityType = Video
                       , title = "St. John Neumann"
@@ -624,7 +562,8 @@ janFeasts =
       }
     , { date = "11"
       , feasts =
-            [ { feast = "Blessed William Carter"
+            [ baptismOfTheLordFeast
+            , { feast = "Blessed William Carter"
               , activities =
                     [ { activityType = Audio
                       , title = "Story of Blessed William Carter"
@@ -760,77 +699,7 @@ janFeasts =
       }
     , { date = "15"
       , feasts =
-            [ { feast = "The Baptism of the Lord" -- moves
-              , activities =
-                    [ { activityType = Video
-                      , title = "Washed Away"
-                      , image = ""
-                      , link = "https://www.youtube-nocookie.com/embed/75F5qJw5YEY"
-                      , snippet = ""
-                      }
-                    , { activityType = OnlineReading
-                      , title = "The Story of the Feast of the Baptism of the Lord"
-                      , image = "https://static.wixstatic.com/media/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg/v1/fill/w_353,h_252,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/9c2964_5d2ddb6daf2a4cd68c4b7a2b77eb28e5~mv2.jpg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = "The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany..."
-                      }
-                    , { activityType = Audio
-                      , title = "Feast of the Baptism of the Lord"
-                      , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                      , link = "https://www.franciscanmedia.org/sharing-the-word/sharing-the-word-for-january-9-2023/"
-                      , snippet = "Today we have Matthew’s account of the baptism of Jesus. We know of course that Jesus was sinless, and so the idea of “washing from sin” does not apply here."
-                      }
-                    , { activityType = Food
-                      , title = "Jumping Jolly Juice"
-                      , image = "https://static.wixstatic.com/media/9c2964_84b36bb57bbd46aba6939360c752267c~mv2.jpeg/v1/crop/x_37,y_0,w_427,h_500/fill/w_512,h_600,al_c,lg_1,q_80,enc_auto/cranberryspicedcider-6-500x500.jpeg"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = ""
-                      }
-                    , { activityType = Crafts
-                      , title = "Holy Water Bottle Craft"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/make-a-holy-water-bottle-craft-with-catholic-kids/"
-                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Dove with Olive Branch"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/bible-craft-for-the-letter-d-dove-with-olive-branch/"
-                      , snippet = "It got the kids involved, gave them something to look forward to, kept them occupied, and I got to teach the kids about Holy Water. Score!"
-                      }
-                    , { activityType = Crafts
-                      , title = "Dove with Gifts of the Holy Spirit"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/holy-spirit-craft-make-a-dove-from-a-paper-plate/"
-                      , snippet = "You can stop at just a dove, or you can attach the gifts of the Holy Spirit to learn a little something extra."
-                      }
-                    , { activityType = Crafts
-                      , title = "Simple Handprint Dove"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/holy-spirit-craft-handprint-dove/"
-                      , snippet = "For this one, start with a red piece of paper (the symbolic color for the Holy Spirit) and make a white handprint..."
-                      }
-                    , { activityType = Food
-                      , title = "Greek Dipples"
-                      , image = "https://static.wixstatic.com/media/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png/v1/crop/x_3,y_14,w_489,h_410/fill/w_587,h_492,al_c,lg_1,q_85,enc_auto/9c2964_476e11a5553346fd8d5baa2055f87e1a~mv2.png"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = ""
-                      }
-                    , { activityType = More
-                      , title = "Ideas for Teaching Catholic Kids About Baptism"
-                      , image = "https://ik.imagekit.io/catholicstories/ProfileImages/CatholicIcing_z2ZWGMIVq.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1676401159590"
-                      , link = "https://www.catholicicing.com/ideas-for-teaching-catholic-kids-about-baptism/"
-                      , snippet = "Baptism is so important, and it’s a great thing to make sure that your kids truly understand..."
-                      }
-                    , { activityType = More
-                      , title = "Baptism of the Lord"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man."
-                      }
-                    ]
-              }
-            , { feast = "Saint Devasahayam Pillai"
+            [ { feast = "Saint Devasahayam Pillai"
               , activities =
                     [ { activityType = Audio
                       , title = "Story of Saint Devasahayam Pillai"

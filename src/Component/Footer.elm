@@ -42,7 +42,7 @@ viewFooter =
                 ]
             ]
         , div [ class "max-w-7xl mx-auto mt-10 pt-6 border-t border-white/10 text-sm flex flex-col md:flex-row items-center md:justify-between gap-3" ]
-            [ div [] [ text "© 2025 Claritas Studios. All rights reserved." ]
+            [ div [] [ text "© 2026 Claritas Studios. All rights reserved." ]
             , div [ class "flex items-center gap-3" ]
                 [ a [ href "/about/privacy-policy", class "hover:underline" ] [ text "Privacy Policy" ]
                 , span [ class "opacity-60 select-none", attribute "aria-hidden" "true" ] [ text "•" ]
