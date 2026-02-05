@@ -234,34 +234,11 @@ march =
                           , title = "Annunciation of the Lord"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
                           , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/"
-                          , snippet = "In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the \"hypostatic union.\" Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine..."
-                          }
-                        ]
-                  }
-                ]
-          }
-        , { date = "29"
-          , feasts =
-                [ { feast = "Palm Sunday of the Lord's Passion" -- moves
-                  , activities =
-                        [ { activityType = Video
-                          , title = "Hosanna"
-                          , link = "https://www.youtube-nocookie.com/embed/ZrJ-7ZVzvKE"
-                          , image = ""
-                          , snippet = ""
+                          , snippet = "In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the “hypostatic union.” Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine..."
                           }
                         ]
                   }
                 ]
           }
         ]
-    }
-
-
-march : FeastMonth
-march =
-    { key = "mar"
-    , month = "March"
-    , color = "#9de3ec"
-    , feasts = marFeasts
     }

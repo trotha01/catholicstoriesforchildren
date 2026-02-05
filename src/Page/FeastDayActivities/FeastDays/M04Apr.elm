@@ -9,7 +9,61 @@ april =
     , month = "April"
     , color = "#ebdf72"
     , feasts =
-        [ { date = "07"
+        [ { date = "02"
+          , feasts =
+                [ { feast = "Saint Francis of Paola"
+                  , activities =
+                        [ { activityType = Video
+                          , title = "St. Francis of Paola"
+                          , link = "https://www.youtube-nocookie.com/embed/8SL_wCW_Srs"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = OnlineReading
+                          , title = "Saint Francis of Paola, Hermit"
+                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
+                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-2-saint-francis-of-paola-hermit/"
+                          , snippet = "James Martotille and his bride wedded and lived in the town of Paola, in the southernmost region of Italy. During the first years of their marriage, they were unable to conceive a child. Being devout Catholics, they turned to prayer and beseeched the intercession of Saint Francis of Assisi..."
+                          }
+                        ]
+                  }
+                ]
+          }
+        , { date = "04"
+          , feasts =
+                [ { feast = "Saint Isidore"
+                  , activities =
+                        [ { activityType = Audio
+                          , title = "Saint Isidore of Seville’s Story"
+                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
+                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-isidore-of-seville/"
+                          , snippet = "The 76 years of Isidore’s life were a time of conflict and growth for the Church in Spain. The Visigoths had invaded the land a century and a half earlier, and shortly before Isidore’s birth they set up their own capital. They were Arians..."
+                          }
+                        , { activityType = OnlineReading
+                          , title = "Saint Isidore, Bishop and Doctor of the Church"
+                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
+                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-4-saint-isidore-bishop-and-doctor-of-the-church/"
+                          , snippet = "Isidore, a man of great distinction, bishop of the church of Seville, successor and brother of bishop Leander, flourished from the time of Emperor Maurice and King Reccared. In him antiquity reasserted itself..."
+                          }
+                        ]
+                  }
+                ]
+          }
+        , { date = "05"
+          , feasts =
+                [ { feast = "Saint Vincent Ferrer"
+                  , activities =
+                        [ { activityType = OnlineReading
+                          , title = "Saint Vincent Ferrer, Priest"
+                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
+                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-5-saint-vincent-ferrer-priest/"
+                          , snippet = "It can be said that today’s saint lived two sequential lives. The first forty-nine years of his life were, in many ways, a preparation for the final twenty years of his life..."
+                          }
+                        ]
+                  }
+                ]
+          }
+        , { date = "07"
           , feasts =
                 [ { feast = "Saint John Baptist de la Salle"
                   , activities =
@@ -30,8 +84,15 @@ april =
           }
         , { date = "13"
           , feasts =
-                [
-                { activityType = Video
+                [ { feast = "Palm Sunday of the Lord's Passion" -- moves
+                  , activities =
+                        [ { activityType = Video
+                          , title = "Hosanna"
+                          , link = "https://www.youtube-nocookie.com/embed/ZrJ-7ZVzvKE"
+                          , image = ""
+                          , snippet = ""
+                          }
+                        , { activityType = Video
                           , title = "What is Holy Week? Palm Sunday, Holy Thursday, Good Friday, and Easter!"
                           , link = "https://www.youtube-nocookie.com/embed/O___M05czhg"
                           , image = ""
@@ -54,38 +115,44 @@ april =
                 , { feast = "Saint Martin I", activities = [] }
                 ]
           }
+        , { date = "17"
+          , feasts =
+                [ { feast = "Holy Thursday" -- moves
+                  , activities =
+                        [ { activityType = OnlineReading
+                          , title = "Holy Thursday"
+                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
+                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/holy-thursday/"
+                          , snippet = "Holy Thursday is also called Maundy Thursday. “Maundy” comes from the Latin word mandatum, which is translated “mandate.” It is on this night that..."
+                          }
+                        ]
+                  }
                 ]
           }
-        , { date = "03"
+        , { date = "18"
           , feasts =
                 [ { feast = "Good Friday" -- moves
                   , activities = []
                   }
-                
-        , { date = "04"
+                ]
+          }
+        , { date = "19"
           , feasts =
-                [
-                { feast = "Saint Isidore"
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "Saint Isidore of Seville’s Story"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-isidore-of-seville/"
-                          , snippet = "The 76 years of Isidore’s life were a time of conflict and growth for the Church in Spain. The Visigoths had invaded the land a century and a half earlier, and shortly before Isidore’s birth they set up their own capital. They were Arians..."
-                          }
-                        
-        , { date = "05"
-          , feasts =
-                [
-                { feast = "Saint Vincent Ferrer"
+                [ { feast = "Holy Saturday" -- moves
                   , activities =
                         [ { activityType = OnlineReading
-                          , title = "Saint Vincent Ferrer, Priest"
+                          , title = "Prayer Meditation for Holy Saturday"
                           , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-5-saint-vincent-ferrer-priest/"
-                          , snippet = "It can be said that today’s saint lived two sequential lives. The first forty-nine years of his life were, in many ways, a preparation for the final twenty years of his life..."
+                          , link = "https://mycatholic.life/catholic-prayers/triduum-and-easter-prayers/prayer-meditation-for-holy-saturday/"
+                          , snippet = "My Lord, today all is silent. You have given Your precious life for the salvation of the world.  You died a horrific death, poured out all Mercy from Your wounded Heart, and now You rest in peace in the tomb as the soldiers keep vigil..."
                           }
-                , { feast = "Easter Sunday" -- moves
+                        ]
+                  }
+                ]
+          }
+        , { date = "20"
+          , feasts =
+                [ { feast = "Easter Sunday" -- moves
                   , activities =
                         [ { activityType = Video
                           , title = "Easter Octave"
@@ -130,25 +197,7 @@ april =
                           , snippet = "As we move into Holy Week, it is important to help the youngest Catholics understand and engage with several days of long liturgies."
                           }
                         ]
-                  }, { activityType = OnlineReading
-                          , title = "Saint Isidore, Bishop and Doctor of the Church"
-                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-4-saint-isidore-bishop-and-doctor-of-the-church/"
-                          , snippet = "Isidore, a man of great distinction, bishop of the church of Seville, successor and brother of bishop Leander, flourished from the time of Emperor Maurice and King Reccared. In him antiquity reasserted itself..."
-                          }
-                , { feast = "Holy Saturday" -- moves
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Prayer Meditation for Holy Saturday"
-                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/catholic-prayers/triduum-and-easter-prayers/prayer-meditation-for-holy-saturday/"
-                          , snippet = "My Lord, today all is silent. You have given Your precious life for the salvation of the world.  You died a horrific death, poured out all Mercy from Your wounded Heart, and now You rest in peace in the tomb as the soldiers keep vigil..."
-                          }
-                        ]
-                  }]
-          }
-                ]
-          }
+                  }
                 ]
           }
         , { date = "21"
@@ -197,30 +246,3 @@ april =
           }
         ]
     }
- { date = "02"
-          , feasts =
-                [
-                { feast = "Saint Francis of Paola"
-                  , activities =
-                        [ { activityType = Video
-                          , title = "St. Francis of Paola"
-                          , link = "https://www.youtube-nocookie.com/embed/8SL_wCW_Srs"
-                          , image = ""
-                          , snippet = ""
-                          }
-                        , { activityType = OnlineReading
-                          , title = "Saint Francis of Paola, Hermit"
-                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/april-2-saint-francis-of-paola-hermit/"
-                          , snippet = "James Martotille and his bride wedded and lived in the town of Paola, in the southernmost region of Italy. During the first years of their marriage, they were unable to conceive a child. Being devout Catholics, they turned to prayer and beseeched the intercession of Saint Francis of Assisi..."
-                          }
-                , { feast = "Holy Thursday" -- moves
-                  , activities =
-                        [ { activityType = OnlineReading
-                          , title = "Holy Thursday"
-                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/holy-thursday/"
-                          , snippet = "Holy Thursday is also called Maundy Thursday. “Maundy” comes from the Latin word mandatum, which is translated “mandate.” It is on this night that..."
-                          }
-                        ]
-                  }
