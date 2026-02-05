@@ -1,6 +1,7 @@
 module Page.FeastDayActivities.FeastDays.M12Dec exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (FeastMonth)
+import Page.FeastDayActivities.FeastDays.MovingFeasts exposing (..)
 
 
 december : FeastMonth
@@ -29,12 +30,14 @@ december =
                 [ { feast = "Saint Ambrose of Milan", activities = [] }
                 ]
           }
+        , { date = "08"
+          , feasts =
+                [ immaculateConceptionFeast
+                ]
+          }
         , { date = "09"
           , feasts =
-                [ { feast = "Immaculate Conception of the Blessed Virgin Mary" -- moves. Moved to Monday when it falls on a Sunday.
-                  , activities = []
-                  }
-                , { feast = "Saint Juan Diego", activities = [] }
+                [ { feast = "Saint Juan Diego", activities = [] }
                 ]
           }
         , { date = "10"

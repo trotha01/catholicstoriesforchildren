@@ -33,7 +33,7 @@ function mount() {
   }
 
   // Wire up ports similar to what build.js used to do
-  var app = window.app;
+  const app = window.app;
   if (!app || !app.ports) return;
   if (app.ports.gtagReportConversion && !app.__gtagHooked){
     app.ports.gtagReportConversion.subscribe(function(){ if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); });

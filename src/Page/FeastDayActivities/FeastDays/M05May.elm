@@ -1,6 +1,7 @@
 module Page.FeastDayActivities.FeastDays.M05May exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (..)
+import Page.FeastDayActivities.FeastDays.MovingFeasts exposing (..)
 
 
 may : FeastMonth
@@ -44,13 +45,20 @@ may =
           }
         , { date = "14"
           , feasts =
-                [ { feast = "Saint Matthew the Apostle", activities = [] }
+                [ ascensionFeast
+                , { feast = "Saint Matthew the Apostle", activities = [] }
                 ]
           }
         , { date = "15"
           , feasts =
                 [ { feast = "Saint Isidore the Farmer", activities = [] }
                 , { feast = "Saint Dymphna", activities = [] }
+                ]
+          }
+        , { date = "17"
+          , feasts =
+                [ ascensionFeast
+                , { feast = "Saint Matthew the Apostle", activities = [] }
                 ]
           }
         , { date = "20"
@@ -64,9 +72,15 @@ may =
                 [ { feast = "Saint Rita of Cascia", activities = [] }
                 ]
           }
+        , { date = "24"
+          , feasts =
+                [ pentecostSundayFeast
+                ]
+          }
         , { date = "25"
           , feasts =
-                [ { feast = "Saint Bede the Venerable", activities = [] }
+                [ motherOfTheChurchFeast
+                , { feast = "Saint Bede the Venerable", activities = [] }
                 , { feast = "Pope Saint Gregory VII", activities = [] }
                 ]
           }
@@ -89,16 +103,10 @@ may =
                 [ { feast = "Saint Augustine of Canterbury", activities = [] }
                 ]
           }
-        , { date = "29"
-          , feasts =
-                [ { feast = "The Ascension of the Lord (or June 1)" -- moves
-                  , activities = []
-                  }
-                ]
-          }
         , { date = "31"
           , feasts =
-                [ { feast = "Visitation of the Blessed Virgin Mary", activities = [] }
+                [ holyTrinityFeast
+                , { feast = "Visitation of the Blessed Virgin Mary", activities = [] }
                 ]
           }
         ]

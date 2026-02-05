@@ -1,6 +1,7 @@
 module Page.FeastDayActivities.FeastDays.M11Nov exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (FeastMonth)
+import Page.FeastDayActivities.FeastDays.MovingFeasts exposing (..)
 
 
 november : FeastMonth
@@ -83,15 +84,13 @@ november =
           }
         , { date = "22"
           , feasts =
-                [ { feast = "Saint Cecilia", activities = [] }
+                [ christTheKingFeast
+                , { feast = "Saint Cecilia", activities = [] }
                 ]
           }
         , { date = "23"
           , feasts =
-                [ { feast = "Our Lord Jesus Christ, King of the Universe - Solemnity" -- moves
-                  , activities = []
-                  }
-                , { feast = "Pope Saint Clement I", activities = [] }
+                [ { feast = "Pope Saint Clement I", activities = [] }
                 , { feast = "Blessed Miguel Agustin Pro", activities = [] }
                 , { feast = "Saint Columbanus", activities = [] }
                 ]

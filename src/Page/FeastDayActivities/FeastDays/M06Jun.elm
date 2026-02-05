@@ -1,6 +1,7 @@
 module Page.FeastDayActivities.FeastDays.M06Jun exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (FeastMonth)
+import Page.FeastDayActivities.FeastDays.MovingFeasts exposing (..)
 
 
 june : FeastMonth
@@ -11,10 +12,7 @@ june =
     , feasts =
         [ { date = "01"
           , feasts =
-                [ { feast = "The Ascension of the Lord (or May 29)" -- moves
-                  , activities = []
-                  }
-                , { feast = "Saint Justin Martyr", activities = [] }
+                [ { feast = "Saint Justin Martyr", activities = [] }
                 ]
           }
         , { date = "02"
@@ -27,6 +25,11 @@ june =
                 [ { feast = "Saint Charles Lwanga and Companions", activities = [] }
                 ]
           }
+        , { date = "04"
+          , feasts =
+                [ corpusChristiFeast
+                ]
+          }
         , { date = "05"
           , feasts =
                 [ { feast = "Saint Boniface of Crediton", activities = [] }
@@ -37,19 +40,9 @@ june =
                 [ { feast = "Saint Norbert of Xanten", activities = [] }
                 ]
           }
-        , { date = "08"
-          , feasts =
-                [ { feast = "Pentecost Sunday" -- moves
-                  , activities = []
-                  }
-                ]
-          }
         , { date = "09"
           , feasts =
-                [ { feast = "Blessed Virgin Mary, Mother of the Church" -- moves. Monday after Pentecost
-                  , activities = []
-                  }
-                , { feast = "Saint Ephrem of Syria", activities = [] }
+                [ { feast = "Saint Ephrem of Syria", activities = [] }
                 ]
           }
         , { date = "11"
@@ -57,16 +50,15 @@ june =
                 [ { feast = "Saint Barnabas the Apostle", activities = [] }
                 ]
           }
-        , { date = "13"
+        , { date = "12"
           , feasts =
-                [ { feast = "Saint Anthony of Padua", activities = [] }
+                [ sacredHeartFeast
                 ]
           }
-        , { date = "15"
+        , { date = "13"
           , feasts =
-                [ { feast = "The Most Holy Trinity" -- moves
-                  , activities = []
-                  }
+                [ immaculateHeartFeast
+                , { feast = "Saint Anthony of Padua", activities = [] }
                 ]
           }
         , { date = "19"
@@ -81,10 +73,7 @@ june =
           }
         , { date = "22"
           , feasts =
-                [ { feast = "Corpus Christi" -- moves. Thursday after Trinity Sunday.
-                  , activities = []
-                  }
-                , { feast = "Saint Paulinus of Nola", activities = [] }
+                [ { feast = "Saint Paulinus of Nola", activities = [] }
                 , { feast = "Saint John Fisher", activities = [] }
                 , { feast = "Saint Thomas More", activities = [] }
                 ]
@@ -101,18 +90,12 @@ june =
           }
         , { date = "27"
           , feasts =
-                [ { feast = "Sacred Heart of Jesus" -- moves. Friday after the Second Sunday of Pentecost.
-                  , activities = []
-                  }
-                , { feast = "Saint Cyril of Alexandria", activities = [] }
+                [ { feast = "Saint Cyril of Alexandria", activities = [] }
                 ]
           }
         , { date = "28"
           , feasts =
-                [ { feast = "Immaculate Heart of Mary" -- moves
-                  , activities = []
-                  }
-                , { feast = "Saint Irenaeus of Lyons", activities = [] }
+                [ { feast = "Saint Irenaeus of Lyons", activities = [] }
                 ]
           }
         , { date = "29"

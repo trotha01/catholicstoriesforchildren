@@ -1,6 +1,7 @@
 module Page.FeastDayActivities.FeastDays.M03Mar exposing (..)
 
 import Page.FeastDayActivities.FeastDayHelpers exposing (ActivityType(..), FeastMonth)
+import Page.FeastDayActivities.FeastDays.MovingFeasts exposing (..)
 
 
 march : FeastMonth
@@ -241,22 +242,12 @@ march =
           }
         , { date = "25"
           , feasts =
-                [ { feast = "Annunciation of the Lord" -- moves
-                  , activities =
-                        [ { activityType = Audio
-                          , title = "The Story of the Annunciation of the Lord"
-                          , image = "https://ik.imagekit.io/catholicstories/FeastDayActivities/FranciscanMediaLogo_H3hNRUlza.png?ik-sdk-version=javascript-1.4.3&updatedAt=1676251074960"
-                          , link = "https://www.franciscanmedia.org/saint-of-the-day/annunciation-of-the-lord/"
-                          , snippet = "The feast of the Annunciation, now recognized as a solemnity, was first celebrated in the fourth or fifth century. Its central focus is the Incarnation: God has become one of us. From all eternity God had decided that the Second Person of the Blessed Trinity should become human..."
-                          }
-                        , { activityType = OnlineReading
-                          , title = "Annunciation of the Lord"
-                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/"
-                          , snippet = "In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the “hypostatic union.” Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine..."
-                          }
-                        ]
-                  }
+                [ annunciationFeast
+                ]
+          }
+        , { date = "29"
+          , feasts =
+                [ palmSundayFeast
                 ]
           }
         ]
