@@ -9,14 +9,7 @@ april =
     , month = "April"
     , color = "#ebdf72"
     , feasts =
-        [
-                ]
-          }
-                ]
-          }
-                ]
-          }
-        , { date = "07"
+        [ { date = "07"
           , feasts =
                 [ { feast = "Saint John Baptist de la Salle"
                   , activities =

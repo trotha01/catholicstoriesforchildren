@@ -84,6 +84,8 @@ june =
                   , activities = []
                   }
                 
+                ]
+          }
         , { date = "13"
           , feasts =
                 [
@@ -94,7 +96,7 @@ june =
                 , { feast = "Saint Irenaeus of Lyons", activities = [] }
                 ]
           }, { feast = "Saint Cyril of Alexandria", activities = [] }
-                ]
+                , { feast = "Saint Cyril of Alexandria", activities = [] }
           }
         , { date = "29"
           , feasts =

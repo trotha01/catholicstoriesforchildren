@@ -50,13 +50,8 @@ may =
                 , { feast = "The Ascension of the Lord (or June 1)" -- moves
                   , activities = []
                   }
-                        , { date = "31"
-          , feasts =
-                [ { feast = "The Most Holy Trinity" -- moves
-                  , activities = []
-                  }
                 ]
-          }, { date = "15"
+          }
           , feasts =
                 [ { feast = "Saint Isidore the Farmer", activities = [] }
                 , { feast = "Saint Dymphna", activities = [] }
@@ -78,16 +73,13 @@ may =
                 [ { feast = "Pentecost Sunday" -- moves
                   , activities = []
                   }
-                        , { date = "25"
-          , feasts =
-                [ { feast = "Blessed Virgin Mary, Mother of the Church" -- moves. Monday after Pentecost
+                , { feast = "Blessed Virgin Mary, Mother of the Church" -- moves. Monday after Pentecost
                   , activities = []
                   }
                 ]
           }
-]
           }
-, { date = "25"
+        , { date = "25"
           , feasts =
                 [ { feast = "Saint Bede the Venerable", activities = [] }
                 , { feast = "Pope Saint Gregory VII", activities = [] }

@@ -230,7 +230,17 @@ march =
                           , link = "https://www.franciscanmedia.org/saint-of-the-day/annunciation-of-the-lord/"
                           , snippet = "The feast of the Annunciation, now recognized as a solemnity, was first celebrated in the fourth or fifth century. Its central focus is the Incarnation: God has become one of us. From all eternity God had decided that the Second Person of the Blessed Trinity should become human..."
                           }
-                                , { date = "29"
+                        , { activityType = OnlineReading
+                          , title = "Annunciation of the Lord"
+                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
+                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/"
+                          , snippet = "In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the \"hypostatic union.\" Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine..."
+                          }
+                        ]
+                  }
+                ]
+          }
+        , { date = "29"
           , feasts =
                 [ { feast = "Palm Sunday of the Lord's Passion" -- moves
                   , activities =
@@ -240,17 +250,18 @@ march =
                           , image = ""
                           , snippet = ""
                           }
-                ]
-          }
-, { activityType = OnlineReading
-                          , title = "Annunciation of the Lord"
-                          , image = "https://mycatholic.life/wp-content/uploads/2021/08/My-Catholic-Life-MCL-Header.jpg"
-                          , link = "https://mycatholic.life/saints/saints-of-the-liturgical-year/march-25-annunciation-of-the-lord/"
-                          , snippet = "In the fifth century, bishops engaged in a fierce theological debate over the unity of the divine and human natures of Christ, referred to as the “hypostatic union.” Nestorius, the Archbishop of Constantinople, argued that there were two underlying hypostases, or substances, in Christ, one human and one divine..."
-                          }
                         ]
                   }
                 ]
           }
         ]
+    }
+
+
+march : FeastMonth
+march =
+    { key = "mar"
+    , month = "March"
+    , color = "#9de3ec"
+    , feasts = marFeasts
     }

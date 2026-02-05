@@ -609,7 +609,10 @@ janFeasts =
                       , link = "https://www.franciscanmedia.org/saint-of-the-day/saint-gregory-of-nyssa/"
                       , snippet = "Saint Gregory of Nyssa, the brother of Saint Basil and the son of Saints Basil and Emmilia, was a married man when he began studying for the priesthood. He became Bishop of Nyssa and fought Arianism and was a prominent figure at the Council of Constantinople."
                       }
-                    
+                    ]
+              }
+            ]
+      }
     , { date = "11"
       , feasts =
             [
@@ -621,6 +624,8 @@ janFeasts =
                       , link = "https://www.franciscanmedia.org/saint-of-the-day/blessed-william-carter/"
                       , snippet = "Born in London, Blessed William Carter was a printer who got in trouble for printing Catholic material during the reign of Queen Elizabeth I. Eventually brought to trial, he was convicted and hanged, drawn, and quartered on January 11, 1584."
                       }
+                    ]
+              }
             , { feast = "The Baptism of the Lord" -- moves
               , activities =
                     [ { activityType = Video
@@ -688,13 +693,6 @@ janFeasts =
                       , image = "SaintsFeastFamily"
                       , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan-2"
                       , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! The Baptism of the Lord has historically been associated with the celebration of Epiphany. Even today, the Eastern Christian feast of Theophany, celebrated on January 6 as a counterpart to the Western feast of Epiphany, focuses primarily on the Baptism of the Lord as the revelation of God to man."
-                      }
-                    ]
-              }, { activityType = More
-                      , title = "Gregory of Nyssa"
-                      , image = "SaintsFeastFamily"
-                      , link = "https://www.saintsfeastfamily.com/copy-of-the-baptism-of-the-lord-jan"
-                      , snippet = "SaintsFeastFamily has recipes, images, prayers, crafts, and more! Saint Gregory of Nyssa's Story \u{200B} Gregory of\u{00A0}Nyssa\u{00A0}St. Gregory of\u{00A0}Nyssa\u{00A0}(c. 330-c. 395) was a younger sibling in a\u{00A0}family\u{00A0}that gave the church many years of service and at least five saints. Before entering the monastery of his brother, Basil the Great, Gregory was a rhetorician. He may have been m..."
                       }
                     ]
               }
