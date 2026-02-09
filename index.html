@@ -70,12 +70,7 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD"></script>
-
-  <!-- Cookie consent popup -->
-  <script type="module" src="/cookieconsent-config.js"></script>
-
+  <!-- Must load BEFORE Elm loads. Elm doesn't like any changes to the DOM before it initializes -->
   <!-- Google Analytics (deferred + Consent Mode) -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -104,10 +99,16 @@
     gtag('config', 'G-TXRVE787GD');
   </script>
 
+  <!-- Google tag (gtag.js) -->
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD"></script>
+
+  <!-- Cookie consent popup -->
+  <script type="module" src="/cookieconsent-config.js"></script>
 </head>
 
 <body dir="ltr" lang="en" class="fontSize"
   style="margin:0;font-family:Nunito Sans;font-weight:lighter;line-height:1.7em;color:#333">
+  <div id="elm-root"></div>
   <script type="module" src="/src/main.js"></script>
 </body>
 
