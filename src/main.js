@@ -12,7 +12,8 @@ function resolveElm(elmImport) {
 }
 
 function mount() {
-  const mountNode = document.body;
+  // const mountNode = document.body;
+  const mountNode = document.getElementById("elm-root");
   if (!mountNode) {
     document.addEventListener('DOMContentLoaded', mount);
     return;

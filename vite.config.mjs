@@ -10,6 +10,7 @@ export default defineConfig({
   // makes `dist/` safe to remove on every build.
   publicDir: 'public/static',
   build: {
+    // sourcemap: true,
     rollupOptions: {
       input: {
         main: 'index.html'
