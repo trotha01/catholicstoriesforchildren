@@ -70,6 +70,44 @@
     }
   </style>
 
+  <!-- Manage robots meta tag for saint detail pages -->
+  <script>
+    function updateRobotsMetaTag() {
+      const url = new URL(window.location);
+      const isSaintDetailPage = url.pathname === '/saints' && url.searchParams.has('s');
+      const existingMetaTag = document.querySelector('meta[name="robots"]');
+      
+      if (isSaintDetailPage) {
+        // Saint detail page - ensure noindex tag exists
+        if (!existingMetaTag) {
+          const metaTag = document.createElement('meta');
+          metaTag.name = 'robots';
+          metaTag.content = 'noindex, follow';
+          document.head.appendChild(metaTag);
+        }
+      } else {
+        // Not a saint detail page - remove noindex tag if it exists
+        if (existingMetaTag) {
+          existingMetaTag.remove();
+        }
+      }
+    }
+    
+    // Update on initial page load
+    document.addEventListener('DOMContentLoaded', updateRobotsMetaTag);
+    
+    // Update on SPA navigation (popstate for back/forward)
+    window.addEventListener('popstate', updateRobotsMetaTag);
+    
+    // Also intercept history.pushState for Elm routing
+    const originalPushState = window.history.pushState;
+    window.history.pushState = function(...args) {
+      originalPushState.apply(this, args);
+      // Defer to next tick to allow Elm to finish routing
+      Promise.resolve().then(updateRobotsMetaTag);
+    };
+  </script>
+
   <!-- Must load BEFORE Elm loads. Elm doesn't like any changes to the DOM before it initializes -->
   <!-- Google Analytics (deferred + Consent Mode) -->
   <script>
@@ -104,6 +142,7 @@
 
   <!-- Cookie consent popup -->
   <script type="module" src="/cookieconsent-config.js"></script>
+
 </head>
 
 <body dir="ltr" lang="en" class="fontSize"
