@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /saints?s=
 
 Sitemap: http://www.claritasstudios.com/sitemap.xml
