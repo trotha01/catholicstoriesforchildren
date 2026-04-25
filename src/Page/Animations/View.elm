@@ -34,9 +34,9 @@ type VideoOption
 
 
 type VideoDetailOption
-    = Episodes
+    = Details
+    | Episodes
     | Activities
-    | Details
     | Suggested
 
 
@@ -608,7 +608,22 @@ viewVideoDetailTabs episodeCount model episode =
         [ class "text-lg md:text-xl font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" ]
         [ ul
             [ class "flex flex-wrap -mb-px" ]
-            [ if episodeCount == 1 then
+            [ li [ class "mr-2" ]
+                [ button
+                    [ class
+                        ("inline-block p-4 border-b-2 rounded-t-lg "
+                            ++ (if model.videoDetailTab == Details then
+                                    selectedClass
+
+                                else
+                                    nonSelectedClass
+                               )
+                        )
+                    , onClick (VideoDetailsTabClick Details)
+                    ]
+                    [ text "Details" ]
+                ]
+            , if episodeCount == 1 then
                 span [] []
 
               else
@@ -627,21 +642,6 @@ viewVideoDetailTabs episodeCount model episode =
                         ]
                         [ text "Episodes" ]
                     ]
-            , li [ class "mr-2" ]
-                [ button
-                    [ class
-                        ("inline-block p-4 border-b-2 rounded-t-lg "
-                            ++ (if model.videoDetailTab == Details then
-                                    selectedClass
-
-                                else
-                                    nonSelectedClass
-                               )
-                        )
-                    , onClick (VideoDetailsTabClick Details)
-                    ]
-                    [ text "Details" ]
-                ]
             , if String.isEmpty episode.activities.thumbnailLink then
                 span [] []
 
@@ -768,33 +768,33 @@ getTabFromUrl : Url.Url -> VideoDetailOption
 getTabFromUrl url =
     case url.query of
         Just query ->
-            if String.contains "tab=activities" query then
-                Activities
-
-            else if String.contains "tab=details" query then
+            if String.contains "tab=details" query then
                 Details
+
+            else if String.contains "tab=activities" query then
+                Activities
 
             else if String.contains "tab=suggested" query then
                 Suggested
 
             else
-                Episodes
+                Details
 
         Nothing ->
-            Episodes
+            Details
 
 
 tabToString : VideoDetailOption -> String
 tabToString tab =
     case tab of
-        Episodes ->
-            "episodes"
+        Details ->
+            "details"
 
         Activities ->
             "activities"
 
-        Details ->
-            "details"
+        Episodes ->
+            "episodes"
 
         Suggested ->
             "suggested"
