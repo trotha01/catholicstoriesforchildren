@@ -116,9 +116,12 @@ update key msg model =
                 currentQuery =
                     model.url.query |> Maybe.withDefault ""
 
+                tabQueryParam =
+                    "tab=" ++ String.toLower (tabToString tab)
+
                 newQuery =
                     if String.isEmpty currentQuery then
-                        "?tab=" ++ String.toLower (tabToString tab)
+                        tabQueryParam
 
                     else if String.contains "tab=" currentQuery then
                         -- Replace existing tab parameter
@@ -126,17 +129,17 @@ update key msg model =
                             |> String.split "&"
                             |> List.map (\param ->
                                 if String.startsWith "tab=" param then
-                                    "?tab=" ++ String.toLower (tabToString tab)
+                                    tabQueryParam
                                 else
                                     param
                             )
                             |> String.join "&"
 
                     else
-                        currentQuery ++ "&tab=" ++ String.toLower (tabToString tab)
+                        currentQuery ++ "&" ++ tabQueryParam
 
                 newUrl =
-                    currentPath ++ newQuery
+                    currentPath ++ "?" ++ newQuery
             in
             ( { model | videoDetailTab = tab }
             , Nav.pushUrl key newUrl
@@ -773,6 +776,9 @@ getTabFromUrl url =
 
             else if String.contains "tab=activities" query then
                 Activities
+
+            else if String.contains "tab=episodes" query then
+                Episodes
 
             else if String.contains "tab=suggested" query then
                 Suggested
