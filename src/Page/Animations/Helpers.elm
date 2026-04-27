@@ -169,7 +169,7 @@ productionToThumbnailData : Production msg -> ThumbnailData
 productionToThumbnailData series =
     { title = series.title
     , thumbnail = series.thumbnail
-    , link = "/animations/" ++ stringToURL series.title ++ "?tab=episodes" -- series.link
+    , link = "/animations/" ++ stringToURL series.title ++ "?tab=details" -- series.link
     , isDisabled = False -- Assuming series are never disabled. TODO: change to map over the episodes and check if all are disabled.
     }
 
