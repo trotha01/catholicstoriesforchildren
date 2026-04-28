@@ -3,7 +3,7 @@ import elmPlugin from 'vite-plugin-elm';
 
 export default defineConfig({
   plugins: [
-    elmPlugin({ cwd: process.cwd() })
+    elmPlugin({ cwd: process.cwd(), optimize: true })
   ],
   // Serve static-only assets from `public/static/` (these files are copied
   // verbatim into the dist/ output). Build output will go to `dist/` which

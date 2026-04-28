@@ -108,15 +108,38 @@ viewSlides carousel nextSlide prevSlide =
 
 
 viewSlide : Int -> Int -> Production msg -> Html msg
-viewSlide _ _ production =
+viewSlide currentIndex slideIndex production =
+    let
+        isCurrent =
+            currentIndex == slideIndex
+    in
     div
         [ class "w-full h-screen flex-shrink-0 transition-transform duration-500 ease-in-out relative"
-        , style "background-image" ("linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('" ++ production.carouselThumbnail ++ "')")
-        , style "background-size" "cover"
-        , style "background-position" "center"
-        , style "background-repeat" "no-repeat"
         ]
-        [ div [ class "relative h-full flex items-center px-4 md:px-12" ]
+        [ img
+            [ src production.carouselThumbnail
+            , alt ""
+            , class "absolute inset-0 h-full w-full object-cover"
+            , attribute "aria-hidden" "true"
+            , attribute "decoding" "async"
+            , attribute "loading"
+                (if isCurrent then
+                    "eager"
+
+                 else
+                    "lazy"
+                )
+            , attribute "fetchpriority"
+                (if isCurrent then
+                    "high"
+
+                 else
+                    "low"
+                )
+            ]
+            []
+        , div [ class "absolute inset-0 bg-black/55" ] []
+        , div [ class "relative h-full flex items-center px-4 md:px-12" ]
             [ div [ class "max-w-2xl space-y-6 pl-8" ]
                 [ h1 [ class "text-5xl md:text-7xl font-bold text-white leading-tight" ]
                     [ text production.title ]

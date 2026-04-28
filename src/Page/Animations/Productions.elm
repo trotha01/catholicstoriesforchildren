@@ -69,7 +69,7 @@ productions =
       }
     , { title = "Praying with the Saints"
       , thumbnail = "/assets/images/AnimationImageLinks/PrayingWithTheSaints.webp"
-      , carouselThumbnail = "/assets/images/CarouselThumbnails/PrayingWithTheSaints.webp"
+      , carouselThumbnail = "/assets/images/CarouselThumbnails/resized/PrayingWithTheSaints.webp"
       , link = "/animations/prayingwiththesaints"
       , about = span [] []
       , seasons = PWS.seasons

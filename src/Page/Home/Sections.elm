@@ -4,23 +4,18 @@ module Page.Home.Sections exposing
     , init
     , subscriptions
     , update
-    , viewCategories
     , viewMission
     , viewStayConnected
     , viewSupportMission
     , viewWhatPeopleSaying
     )
 
-import Browser.Events
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Json.Decode as Decode
-import Page.Animations.Helpers exposing (Production)
-import Page.Animations.Productions as Productions
-import Page.Animations.View exposing (viewEpisodes)
 import Process
 import Task
+import Page.Signup as Signup
 
 
 
@@ -55,7 +50,6 @@ type Msg
     | GoTesti Int
     | AnimationEnd
     | ResumeAutoplay
-    | LoadSubstackIframe
 
 
 viewMission : Html msg
@@ -220,17 +214,10 @@ update msg model =
         ResumeAutoplay ->
             ( { model | paused = False }, Cmd.none )
 
-        LoadSubstackIframe ->
-            ( { model | substackLoaded = True }, Cmd.none )
-
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    if model.substackLoaded then
-        Sub.none
-    else
-        -- Load immediately when the page is visible (simulating intersection observer)
-        Browser.Events.onAnimationFrame (\_ -> LoadSubstackIframe)
+    Sub.none
 
 
 viewWhatPeopleSaying : Model -> Html Msg
@@ -460,31 +447,9 @@ viewSupportMission =
         ]
 
 
-viewCategories : Html msg
-viewCategories =
-    let
-        viewCategoryRow : Production msg -> Html msg
-        viewCategoryRow production =
-            div
-                [ class "mb-16 ml-4"
-                , class "relative"
-                ]
-                [ h2 [ class "text-white text-2xl font-bold mb-4 pl-5" ] [ text production.title ]
-                , div [ class "mb-16 relative pb-4" ]
-                    [ viewEpisodes production
-                    ]
-                ]
-    in
-    div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
-
-
 
 -- Page.Home.Sections.elm
 
-
-substackEmbedUrl : String
-substackEmbedUrl =
-    "https://blog.claritasstudios.com/embed"
 
 
 viewStayConnected : Model -> Html Msg
@@ -493,38 +458,7 @@ viewStayConnected model =
         [ h2 [ class "text-3xl md:text-4xl font-bold mb-2" ] [ text "Stay Connected" ]
         , p [ class "mb-6 text-lg max-w-3xl mx-auto" ]
             [ text "Get notified about new stories, activities, and special content for your family." ]
-        , div [ class "max-w-3xl mx-auto" ]
-            [ if model.substackLoaded then
-                iframe
-                    [ src substackEmbedUrl
-                    , title "Substack Signup"
-                    , attribute "loading" "lazy"
-                    , attribute "referrerpolicy" "no-referrer-when-downgrade"
-                    , attribute "sandbox" "allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin"
-                    , class "rounded bg-transparent"
-                    , style "width" "100%"
-                    , style "height" "220px"
-                    ]
-                    []
-              else
-                div
-                    [ class "rounded bg-transparent"
-                    , style "width" "100%"
-                    , style "height" "220px"
-                    , style "background-color" "rgba(255,255,255,0.1)"
-                    ]
-                    [ div [ class "flex items-center justify-center h-full" ]
-                        [ text "Loading newsletter signup..." ]
-                    ]
-            , p [ id "substack-fallback-link", class "mt-3" ]
-                [ a
-                    [ href substackEmbedUrl
-                    , target "_blank"
-                    , rel "noopener noreferrer"
-                    , class "underline"
-                    , attribute "aria-label" "Subscribe on Substack"
-                    ]
-                    [ text "Subscribe on Substack" ]
-                ]
-            ]
+        , section [ class "px-4 pt-2 pb-16 sm:px-6 lg:px-8" ]
+            [ Signup.viewSubstackSignup ]
         ]
+

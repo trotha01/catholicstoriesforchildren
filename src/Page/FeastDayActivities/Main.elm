@@ -85,31 +85,9 @@ viewStayConnected =
         [ h2 [ class "text-3xl md:text-4xl font-bold mb-2" ] [ text "Stay Connected" ]
         , p [ class "mb-6 text-lg max-w-3xl mx-auto" ]
             [ text "Get notified about new stories, activities, and special content for your family." ]
-        , div [ class "max-w-3xl mx-auto" ]
-            [ iframe
-                [ src "https://blog.claritasstudios.com/embed"
-                , title "Substack Signup"
-                , attribute "loading" "lazy"
-                , attribute "referrerpolicy" "no-referrer-when-downgrade"
-                , attribute "sandbox" "allow-forms allow-scripts allow-popups allow-top-navigation-by-user-activation allow-same-origin"
-                , class "rounded bg-transparent"
-                , style "width" "100%"
-                , style "height" "220px"
-                ]
-                []
-            , p [ class "mt-3" ]
-                [ a
-                    [ href "https://blog.claritasstudios.com/embed"
-                    , target "_blank"
-                    , rel "noopener noreferrer"
-                    , class "underline"
-                    , attribute "aria-label" "Subscribe on Substack"
-                    ]
-                    [ text "Subscribe on Substack" ]
-                ]
-            ]
+        , section [ class "px-4 pt-2 pb-16 sm:px-6 lg:px-8" ]
+            [ Signup.viewSubstackSignup ]
         ]
-
 
 view : Model -> Browser.Document Msg
 view model =
