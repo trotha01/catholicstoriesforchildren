@@ -108,40 +108,42 @@
     };
   </script>
 
-  <!-- Must load BEFORE Elm loads. Elm doesn't like any changes to the DOM before it initializes -->
   <!-- Google Analytics (deferred + Consent Mode) -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('consent', 'default', {
-      ad_user_data: 'granted',
-      ad_personalization: 'granted',
-      ad_storage: 'granted',
-      analytics_storage: 'granted',
-      functionality_storage: 'granted',
-      security_storage: 'granted'
+    // Defer GA consent setup to after DOMContentLoaded to reduce render-blocking JS
+    document.addEventListener('DOMContentLoaded', function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        ad_storage: 'granted',
+        analytics_storage: 'granted',
+        functionality_storage: 'granted',
+        security_storage: 'granted'
+      });
+      gtag('consent', 'default', {
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted'
+      }, {
+        region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'CH', 'GB']
+      });
+      // Do not auto-load GA; only load after consent
+      window.__ga_block = true;
+      gtag('js', new Date());
+      gtag('config', 'G-TXRVE787GD');
     });
-    gtag('consent', 'default', {
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'granted',
-      security_storage: 'granted'
-    }, {
-      region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'CH', 'GB']
-    });
-    // Do not auto-load GA; only load after consent
-    window.__ga_block = true;
-    gtag('js', new Date());
-    gtag('config', 'G-TXRVE787GD');
   </script>
 
   <!-- Google tag (gtag.js) -->
   <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TXRVE787GD"></script>
 
-  <!-- Cookie consent popup -->
-  <script type="module" src="/cookieconsent-config.js"></script>
+  <!-- Cookie consent popup (deferred to reduce render-blocking) -->
+  <script type="module" defer src="/cookieconsent-config.js"></script>
 
 </head>
 
