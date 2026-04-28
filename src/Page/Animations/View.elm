@@ -227,7 +227,7 @@ viewBody model urlRoute =
             viewEpisodeRoute model r
 
         _ ->
-            viewProductions model
+            viewCategories
 
 
 viewEpisodeRoute : Model -> AnimationEpisode -> Html Msg
@@ -243,7 +243,7 @@ viewEpisodeRoute model r =
             viewProductionEpisodes model productionURL
 
         _ ->
-            viewProductions model
+            viewCategories
 
 
 viewSpecificEpisode : Model -> String -> Int -> String -> Html Msg
@@ -257,7 +257,7 @@ viewSpecificEpisode model productionURL seasonURL episodeUrl =
                 viewEpisode model production season.number pageEpisode
 
         _ ->
-            viewProductions model
+            viewCategories
 
 
 viewSeasonEpisodes : Model -> String -> Int -> Html Msg
@@ -279,7 +279,7 @@ viewSeasonEpisodes model productionURL seasonURL =
                         ]
 
         _ ->
-            viewProductions model
+            viewCategories
 
 
 viewProductionEpisodes : Model -> String -> Html Msg
@@ -304,44 +304,27 @@ viewProductionEpisodes model productionURL =
                         ]
 
         _ ->
-            viewProductions model
+            viewCategories
 
 
-viewProductions : Model -> Html Msg
-viewProductions model =
-    div
-        [ class "relative left-1/2 -translate-x-1/2 px-11 max-w-7xl" ]
-        [ --     div
-          --     [ class "hcenter py-5 px-11 max-w-7xl" ]
-          --     [ h2 [ class "mb-10 text-3xl md:text-7xl" ] [ text "Start teaching your children with Catholic animations" ]
-          --     , div [ class "my-10" ]
-          --         [ p [ class "leading-10" ]
-          --             [ text "Catholic Stories for Children is a nonprofit aimed at telling short stories, primarily through animation, to help parents teach Catholic prayers, about Catholic saints, and other Catholic concepts." ]
-          --         , p [ class "my-5" ] [ text "Use these animations to help your kids build a habit of prayer." ]
-          --         , p [ class "my-5" ]
-          --             [ text
-          --                 ("From the prayer before meals to the prayer to their guardian angel to the Hail Mary, "
-          --                     ++ "prayer helps kids grow in their relationship with God and grow in the virtues."
-          --                 )
-          --             ]
-          --         , p [ class "my-5" ]
-          --             [ text
-          --                 ("Do you want your children to grow in gratitude? Start with the prayer before meals."
-          --                     ++ " Do you want your children to grow in humility? Start with the Act of Contrition."
-          --                     ++ " Do you want your children to grow in love and charity? Start incorporating intentions for other people into your prayers."
-          --                     ++ " A habit of prayer will help your kid grow into the virtuous person that you will delight to see."
-          --                 )
-          --             ]
-          --         ]
-          --     ]
-          -- , div [ class "mt-2 mb-20 text-black" ]
-          --     [ Signup.view4 |> Html.map SignupMsg ]
-          div
-            [ class "m-auto max-w-7xl"
-            ]
-            [ viewAnimationThumbnailsLarge <| List.map productionToThumbnailData productions
-            ]
-        ]
+viewCategories : Html msg
+viewCategories =
+    let
+        viewCategoryRow : Production msg -> Html msg
+        viewCategoryRow production =
+            div
+                [ class "mb-16 ml-4"
+                , class "relative"
+                ]
+                [ h2 [ class "text-white text-2xl font-bold mb-4 pl-5" ] [ text production.title ]
+                , div [ class "mb-16 relative pb-4" ]
+                    [ viewEpisodes production
+                    ]
+                ]
+    in
+    div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
+
+
 
 
 viewEpisodes : Production msg -> Html msg

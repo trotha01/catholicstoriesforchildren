@@ -4,7 +4,6 @@ module Page.Home.Sections exposing
     , init
     , subscriptions
     , update
-    , viewCategories
     , viewMission
     , viewStayConnected
     , viewSupportMission
@@ -15,10 +14,6 @@ import Browser.Events
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Json.Decode as Decode
-import Page.Animations.Helpers exposing (Production)
-import Page.Animations.Productions as Productions
-import Page.Animations.View exposing (viewEpisodes)
 import Process
 import Task
 
@@ -458,24 +453,6 @@ viewSupportMission =
             , a [ href "/give", class "border border-purple-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400/70" ] [ text "Become a Monthly Supporter" ]
             ]
         ]
-
-
-viewCategories : Html msg
-viewCategories =
-    let
-        viewCategoryRow : Production msg -> Html msg
-        viewCategoryRow production =
-            div
-                [ class "mb-16 ml-4"
-                , class "relative"
-                ]
-                [ h2 [ class "text-white text-2xl font-bold mb-4 pl-5" ] [ text production.title ]
-                , div [ class "mb-16 relative pb-4" ]
-                    [ viewEpisodes production
-                    ]
-                ]
-    in
-    div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
 
 
 

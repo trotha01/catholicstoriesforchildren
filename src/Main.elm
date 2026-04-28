@@ -555,9 +555,17 @@ viewBody model =
         [ class "min-h-screen" ]
         [ Carousel.viewSlides model.animationsPageModel.slideshow AnimationsView.NextSlide AnimationsView.PrevSlide
             |> Html.map ProductionsMsg
-        , viewCategories
+        , section
+            [ class "flex justify-center items-center py-48 px-10 bg-black" ]
+            [ a
+                [ href "/animations"
+                , class "inline-block bg-white text-black text-lg font-medium tracking-wide px-11 py-4 rounded-full hover:opacity-85 transition-opacity duration-200"
+                ]
+                [ text "Watch Animations" ]
+            ]
         , viewMission
         , viewWhatPeopleSaying model.sections |> Html.map SectionsMsg
         , viewStayConnected model.sections |> Html.map SectionsMsg
         , viewSupportMission
         ]
+
