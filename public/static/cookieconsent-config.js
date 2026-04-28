@@ -14,6 +14,8 @@ const SERVICE_FUNCTIONALITY_STORAGE = 'functionality_storage'
 const SERVICE_PERSONALIZATION_STORAGE = 'personalization_storage'
 const SERVICE_SECURITY_STORAGE = 'security_storage'
 
+const gtag = window.gtag || function () {};
+
 // Set default consent to 'denied' (this should happen before changing any other dataLayer)
 gtag('consent', 'default', {
   [SERVICE_AD_STORAGE]: 'denied',
@@ -46,10 +48,13 @@ function updateGtagConsent() {
     window.__ga_block = true;
   } else {
     window.__ga_block = false;
+    if (typeof window.loadGoogleTag === 'function') {
+      window.loadGoogleTag();
+    }
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initCookieConsent() {
   CookieConsent.run({
     guiOptions: {
       consentModal: {
@@ -212,4 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCookieConsent);
+} else {
+  initCookieConsent();
+}
