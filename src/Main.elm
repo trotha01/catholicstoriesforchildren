@@ -559,7 +559,7 @@ viewBody model =
             [ class "flex justify-center items-center py-48 px-10 bg-black" ]
             [ a
                 [ href "/animations"
-                , class "inline-block bg-white text-black text-lg font-medium tracking-wide px-11 py-4 rounded-full hover:opacity-85 transition-opacity duration-200"
+                , class "inline-block bg-white text-black text-lg font-medium tracking-wide px-11 py-4 rounded-full hover:opacity-85 transition-opacity duration-200 cursor-pointer"
                 ]
                 [ text "Watch Animations" ]
             ]
