@@ -105,9 +105,34 @@ viewSubstackSignup =
                 ]
                 [ text "Subscribe" ]
             ]
-        , p [ class "mt-3 text-xs leading-5 text-zinc-500 dark:text-zinc-500" ]
-            -- TODO: insert this as Elm: <div translated="true" class="pencraft pc-reset color-pub-secondary-text-hGQ02T align-center-y7ZD4w line-height-16-mdHjij font-text-qe4AeH size-12-mmZ61m weight-regular-mUq6Gb reset-IxiVJZ">By subscribing you agree to <a target="_blank" rel="noopener" href="https://blog.claritasstudios.com/tos?utm_source=embed_publication" class="tos-text">Substack's Terms of Use</a>, <a target="_blank" rel="noopener" href="https://blog.claritasstudios.com/privacy?utm_source=embed_publication" class="tos-text">our Privacy Policy</a> and <a target="_blank" rel="noopener" href="https://substack.com/ccpa?utm_source=embed_publication#personal-data-collected" class="tos-text">our Information collection notice</a></div>
-            [ text "By subscribing, you’ll be sent to Substack to confirm your subscription. Unsubscribe anytime." ]
+        , div
+            [ attribute "translated" "true"
+            , class "mt-4 text-sm font-medium text-zinc-400 dark:decoration-zinc-400"
+            ]
+            [ text "By subscribing you agree to "
+            , a
+                [ target "_blank"
+                , rel "noopener"
+                , href "https://blog.claritasstudios.com/tos?utm_source=embed_publication"
+                ]
+                [ text "Substack's Terms of Use" ]
+            , text ", "
+            , a
+                [ target "_blank"
+                , class "underline cursor-pointer"
+                , rel "noopener"
+                , href "https://blog.claritasstudios.com/privacy?utm_source=embed_publication"
+                ]
+                [ text "our Privacy Policy" ]
+            , text " and "
+            , a
+                [ target "_blank"
+                , class "underline cursor-pointer"
+                , rel "noopener"
+                , href "https://substack.com/ccpa?utm_source=embed_publication#personal-data-collected"
+                ]
+                [ text "our Information collection notice" ]
+            ]
         , a
             [ href "https://blog.claritasstudios.com/subscribe"
             , target "_blank"
