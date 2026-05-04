@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { ROUTES, SITE_ORIGIN, NAV_LINKS } from './seo-routes.mjs';
+import { ROUTES, NAV_LINKS } from './seo-routes.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = resolve(__dirname, '..', 'dist');
@@ -85,56 +85,51 @@ function renderBodyContent(route) {
 }
 
 function renderRouteHtml(route) {
-  const canonical = `${SITE_ORIGIN}${route.path}`;
-  const title = route.title;
-  const description = route.description;
-  const ogImage = route.ogImage || `${SITE_ORIGIN}/assets/images/thumbnails/CSCThumbnail.png`;
-
   let html = baseHtml;
 
   // Replace <title>
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escape(title)}</title>`);
+  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escape(route.title)}</title>`);
 
   // Replace meta description
   html = html.replace(
     /<meta\s+name="description"[\s\S]*?>/i,
-    `<meta name="description" content="${escape(description)}">`,
+    `<meta name="description" content="${escape(route.description)}">`,
   );
 
   // Replace og:title
   html = html.replace(
     /<meta\s+property="og:title"[\s\S]*?>/i,
-    `<meta property="og:title" content="${escape(title)}">`,
+    `<meta property="og:title" content="${escape(route.ogTitle)}">`,
   );
 
   // Replace og:description
   html = html.replace(
     /<meta\s+property="og:description"[\s\S]*?>/i,
-    `<meta property="og:description" content="${escape(description)}">`,
+    `<meta property="og:description" content="${escape(route.ogDescription)}">`,
   );
 
-  // Replace og:url
+  // Replace og:url with the route's own URL (not the homepage)
   html = html.replace(
     /<meta\s+property="og:url"[\s\S]*?>/i,
-    `<meta property="og:url" content="${escape(canonical)}">`,
+    `<meta property="og:url" content="${escape(route.ogUrl)}">`,
   );
 
-  // Replace og:image / twitter:image when route overrides it
+  // Replace og:image and twitter:image
   html = html.replace(
     /<meta\s+property="og:image"[\s\S]*?>/i,
-    `<meta property="og:image" content="${escape(ogImage)}">`,
+    `<meta property="og:image" content="${escape(route.ogImage)}">`,
   );
   html = html.replace(
     /<meta\s+property="twitter:image"[\s\S]*?>/i,
-    `<meta property="twitter:image" content="${escape(ogImage)}">`,
+    `<meta property="twitter:image" content="${escape(route.twitterImage)}">`,
   );
 
-  // Add canonical link, twitter:title and twitter:description into <head>
+  // Add self-referential canonical link, twitter:title, and twitter:description.
   // (insert just before </head>)
   const headExtras = [
-    `  <link rel="canonical" href="${escape(canonical)}">`,
-    `  <meta property="twitter:title" content="${escape(title)}">`,
-    `  <meta property="twitter:description" content="${escape(description)}">`,
+    `  <link rel="canonical" href="${escape(route.canonical)}">`,
+    `  <meta property="twitter:title" content="${escape(route.twitterTitle)}">`,
+    `  <meta property="twitter:description" content="${escape(route.twitterDescription)}">`,
   ].join('\n');
   html = html.replace(/<\/head>/i, `${headExtras}\n</head>`);
 
