@@ -3,12 +3,21 @@
  *
  * Each entry produces one static `<path>/index.html` file at build time
  * with route-specific <title>, meta description, canonical link, OG tags,
- * H1, navigation, and crawlable text content.
+ * Twitter card tags, H1, navigation, and crawlable text content.
+ *
+ * Required per-route fields (issue #35):
+ *   path, title, description, canonical, ogTitle, ogDescription, ogUrl,
+ *   ogImage, twitterTitle, twitterDescription, twitterImage, h1
+ *
+ * Most of these are derived from `path`, `title`, and `description`. Use
+ * `buildRoute` to ensure the derived fields are filled in consistently.
  *
  * Edit this file when you add a new public route.
  */
 
 export const SITE_ORIGIN = 'https://claritasstudios.com';
+
+const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/assets/images/thumbnails/CSCThumbnail.png`;
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -29,6 +38,7 @@ const ANIMATION_SERIES = [
     description: 'Learn one of the most beautiful prayers in the Catholic tradition. A prayer of love and devotion to our Blessed Mother Mary.',
     age: 'Ages 2+',
     year: '2020',
+    image: '/assets/images/CarouselThumbnails/HailMary.png',
   },
   {
     slug: 'prayertimewithangels',
@@ -36,6 +46,7 @@ const ANIMATION_SERIES = [
     description: 'Join Theo and Felicity as they learn common Catholic prayers from their guardian angels.',
     age: 'Ages 6+',
     year: '2023',
+    image: '/assets/images/CarouselThumbnails/PrayerTimeWithAngels.png',
   },
   {
     slug: 'daisyandsheep',
@@ -43,6 +54,7 @@ const ANIMATION_SERIES = [
     description: 'Join Daisy and Sheep as they learn about the Mass one part at a time and discover fun facts about the Catholic Church.',
     age: 'Ages 10+',
     year: '2024',
+    image: '/assets/images/CarouselThumbnails/DaisyAndSheep.png',
   },
   {
     slug: 'songsofthesaints',
@@ -50,6 +62,7 @@ const ANIMATION_SERIES = [
     description: 'Sing along with your favorite saints in this musical journey.',
     age: 'Ages 10+',
     year: '2025',
+    image: '/assets/images/CarouselThumbnails/SongsOfTheSaints.png',
   },
   {
     slug: 'gigglesandgraceshow',
@@ -57,6 +70,7 @@ const ANIMATION_SERIES = [
     description: 'A musical animated short film that celebrates the joy of thanking God even when things go wrong.',
     age: 'Ages 2+',
     year: '2025',
+    image: '/assets/images/CarouselThumbnails/GigglesAndGrace.webp',
   },
   {
     slug: 'prayingwiththesaints',
@@ -64,14 +78,43 @@ const ANIMATION_SERIES = [
     description: 'Pray common prayers with the saints in this collection of 12 videos featuring St. Thérèse of Lisieux and Carlo Acutis.',
     age: 'Ages 6+',
     year: '2025',
+    image: '/assets/images/CarouselThumbnails/PrayingWithTheSaints.png',
   },
 ];
 
-function animationSeriesRoute(series) {
+/**
+ * Fills in derived metadata fields. Per-route overrides win; everything else
+ * is derived from path/title/description so a route author only has to write
+ * the unique copy.
+ */
+function buildRoute(route) {
+  const url = `${SITE_ORIGIN}${route.path}`;
+  const title = route.title;
+  const description = route.description;
+  const ogImage = route.ogImage
+    ? (route.ogImage.startsWith('http') ? route.ogImage : `${SITE_ORIGIN}${route.ogImage}`)
+    : DEFAULT_OG_IMAGE;
   return {
+    ...route,
+    canonical: route.canonical || url,
+    ogTitle: route.ogTitle || title,
+    ogDescription: route.ogDescription || description,
+    ogUrl: route.ogUrl || url,
+    ogImage,
+    twitterTitle: route.twitterTitle || route.ogTitle || title,
+    twitterDescription: route.twitterDescription || route.ogDescription || description,
+    twitterImage: route.twitterImage
+      ? (route.twitterImage.startsWith('http') ? route.twitterImage : `${SITE_ORIGIN}${route.twitterImage}`)
+      : ogImage,
+  };
+}
+
+function animationSeriesRoute(series) {
+  return buildRoute({
     path: `/animations/${series.slug}/`,
     title: `${series.title} | Catholic Animations | Claritas Studios`,
     description: series.description,
+    ogImage: series.image,
     h1: series.title,
     intro: `${series.description} ${series.age}. Released ${series.year}.`,
     sections: [
@@ -86,10 +129,10 @@ function animationSeriesRoute(series) {
         ],
       },
     ],
-  };
+  });
 }
 
-export const ROUTES = [
+const RAW_ROUTES = [
   {
     path: '/',
     title: 'Free Catholic Animations for Children | Claritas Studios',
@@ -155,7 +198,6 @@ export const ROUTES = [
       },
     ],
   },
-  ...ANIMATION_SERIES.map(animationSeriesRoute),
   {
     path: '/team/',
     title: 'About Our Catholic Animation Nonprofit | Claritas Studios',
@@ -183,7 +225,7 @@ export const ROUTES = [
   },
   {
     path: '/resources/',
-    title: 'Catholic Resources for Parents and Teachers | Claritas Studios',
+    title: 'Catholic Resources for Families | Claritas Studios',
     description: 'Free Catholic resources for parents, catechists, and teachers: printable activities, prayer guides, saint biographies, and feast-day worksheets.',
     h1: 'Resources for Parents and Teachers',
     intro: 'Free downloadable Catholic resources from Claritas Studios. Use these printables and guides at home, in the classroom, or in your parish faith-formation program.',
@@ -204,7 +246,7 @@ export const ROUTES = [
   },
   {
     path: '/give/',
-    title: 'Donate to Claritas Studios | Support Catholic Animation for Children',
+    title: 'Donate to Free Catholic Animations | Claritas Studios',
     description: 'Make a tax-deductible donation to Claritas Studios. Your gift funds free Catholic animations, prayers, and resources for families around the world.',
     h1: 'Support Claritas Studios',
     intro: 'Claritas Studios is a 501(c)(3) Catholic nonprofit. Donations are tax-deductible and directly fund the production of new animations and free resources.',
@@ -229,8 +271,8 @@ export const ROUTES = [
   },
   {
     path: '/contact/',
-    title: 'Contact Claritas Studios | Catholic Animation Studio',
-    description: 'Get in touch with Claritas Studios. We welcome partnership, press, and parish inquiries about our Catholic animations and resources.',
+    title: 'Contact Claritas Studios',
+    description: 'Get in touch with Claritas Studios. We welcome partnership, press, and parish inquiries about our Catholic animations and resources for children.',
     h1: 'Contact Claritas Studios',
     intro: 'We love hearing from families, parishes, and schools who use our animations. Reach out with questions, partnership ideas, or press inquiries.',
     sections: [
@@ -292,6 +334,7 @@ export const ROUTES = [
     description: 'Celebrate the Catholic liturgical year with free feast-day activities, printables, recipes, and prayer guides designed for families and classrooms.',
     h1: 'Feast Day Activities',
     intro: 'Celebrate the Catholic liturgical year at home or in the classroom. Each feast day includes a short reflection plus printable activities and family prayer ideas.',
+    ogImage: '/assets/images/thumbnails/FeastDayActivityThumbnail.png',
     sections: [
       {
         heading: 'Live the liturgical year',
@@ -305,4 +348,9 @@ export const ROUTES = [
       },
     ],
   },
+];
+
+export const ROUTES = [
+  ...RAW_ROUTES.map(buildRoute),
+  ...ANIMATION_SERIES.map(animationSeriesRoute),
 ];

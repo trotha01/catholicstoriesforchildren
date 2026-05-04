@@ -3,13 +3,19 @@
  * SEO smoke test for prerendered routes.
  *
  * Reads every route emitted by `scripts/prerender-routes.mjs` from `dist/`
- * and asserts:
- *   - one <title> tag with non-empty text
- *   - one meta description with non-empty content
- *   - exactly one canonical link
+ * and asserts the acceptance criteria for issue #35:
+ *   - one <title> tag whose text matches `route.title`
+ *   - one meta description matching `route.description`
+ *   - exactly one self-referential canonical link
+ *   - og:title, og:description, og:url, og:image present and correct
+ *   - twitter:card, twitter:title, twitter:description, twitter:image present
+ *   - og:url is the route's own URL, never the homepage on inner pages
  *   - at least one H1
  *   - at least one internal link in raw HTML
- *   - title and canonical agree with the route definition
+ *
+ * Cross-route checks:
+ *   - every public route has a unique <title>
+ *   - every public route has a unique meta description
  *
  * Exits non-zero on any failure so this can run in CI.
  */
@@ -33,7 +39,27 @@ function countMatches(re, html) {
   return (html.match(re) || []).length;
 }
 
+function metaContent(html, attr, name) {
+  // Match `<meta {attr}="{name}" ... content="...">` regardless of attribute order.
+  const re = new RegExp(
+    `<meta\\s+(?=[^>]*\\b${attr}="${name}")[^>]*\\bcontent="([^"]*)"[^>]*>`,
+    'i',
+  );
+  const m = html.match(re);
+  return m ? m[1] : null;
+}
+
+function metaTagCount(html, attr, name) {
+  const re = new RegExp(
+    `<meta\\s+(?=[^>]*\\b${attr}="${name}")[^>]*>`,
+    'gi',
+  );
+  return (html.match(re) || []).length;
+}
+
 const failures = [];
+const titlesSeen = new Map();
+const descriptionsSeen = new Map();
 
 for (const route of ROUTES) {
   const file = fileFor(route);
@@ -50,20 +76,40 @@ for (const route of ROUTES) {
   const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
   if (!titleMatch || !titleMatch[1].trim()) {
     failures.push(`${display}: missing <title>`);
-  } else if (titleMatch[1].trim() !== route.title) {
-    failures.push(`${display}: <title> "${titleMatch[1].trim()}" does not match route.title "${route.title}"`);
+  } else {
+    const titleText = titleMatch[1].trim();
+    if (titleText !== route.title) {
+      failures.push(`${display}: <title> "${titleText}" does not match route.title "${route.title}"`);
+    }
+    if (titlesSeen.has(titleText)) {
+      failures.push(`${display}: duplicate <title> "${titleText}" — also used by ${titlesSeen.get(titleText)}`);
+    } else {
+      titlesSeen.set(titleText, display);
+    }
   }
   if (countMatches(/<title>/gi, html) !== 1) {
     failures.push(`${display}: expected exactly one <title>`);
   }
 
   // meta description
-  const descMatch = html.match(/<meta\s+name="description"\s+content="([^"]*)"\s*\/?>/i);
-  if (!descMatch || !descMatch[1].trim()) {
+  const desc = metaContent(html, 'name', 'description');
+  if (!desc || !desc.trim()) {
     failures.push(`${display}: missing meta description`);
+  } else {
+    if (desc !== route.description) {
+      failures.push(`${display}: meta description does not match route.description`);
+    }
+    if (descriptionsSeen.has(desc)) {
+      failures.push(`${display}: duplicate meta description — also used by ${descriptionsSeen.get(desc)}`);
+    } else {
+      descriptionsSeen.set(desc, display);
+    }
+  }
+  if (metaTagCount(html, 'name', 'description') !== 1) {
+    failures.push(`${display}: expected exactly one meta description`);
   }
 
-  // canonical
+  // canonical (self-referential, exactly one)
   const canonicalMatches = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/gi) || [];
   if (canonicalMatches.length !== 1) {
     failures.push(`${display}: expected exactly one canonical link, got ${canonicalMatches.length}`);
@@ -73,6 +119,56 @@ for (const route of ROUTES) {
     if (actual !== expected) {
       failures.push(`${display}: canonical "${actual}" does not match expected "${expected}"`);
     }
+    if (actual !== route.canonical) {
+      failures.push(`${display}: canonical "${actual}" does not match route.canonical "${route.canonical}"`);
+    }
+  }
+
+  // Open Graph metadata
+  const ogTitle = metaContent(html, 'property', 'og:title');
+  if (ogTitle !== route.ogTitle) {
+    failures.push(`${display}: og:title "${ogTitle}" does not match route.ogTitle "${route.ogTitle}"`);
+  }
+  const ogDescription = metaContent(html, 'property', 'og:description');
+  if (ogDescription !== route.ogDescription) {
+    failures.push(`${display}: og:description does not match route.ogDescription`);
+  }
+  const ogUrl = metaContent(html, 'property', 'og:url');
+  if (ogUrl !== route.ogUrl) {
+    failures.push(`${display}: og:url "${ogUrl}" does not match route.ogUrl "${route.ogUrl}"`);
+  }
+  if (route.path !== '/' && ogUrl === SITE_ORIGIN + '/') {
+    failures.push(`${display}: og:url points to homepage instead of the route URL`);
+  }
+  const ogImage = metaContent(html, 'property', 'og:image');
+  if (!ogImage) {
+    failures.push(`${display}: missing og:image`);
+  } else if (ogImage !== route.ogImage) {
+    failures.push(`${display}: og:image "${ogImage}" does not match route.ogImage "${route.ogImage}"`);
+  }
+
+  // Twitter card metadata
+  const twitterCard = metaContent(html, 'property', 'twitter:card')
+    || metaContent(html, 'name', 'twitter:card');
+  if (!twitterCard) {
+    failures.push(`${display}: missing twitter:card`);
+  }
+  const twitterTitle = metaContent(html, 'property', 'twitter:title')
+    || metaContent(html, 'name', 'twitter:title');
+  if (twitterTitle !== route.twitterTitle) {
+    failures.push(`${display}: twitter:title "${twitterTitle}" does not match route.twitterTitle "${route.twitterTitle}"`);
+  }
+  const twitterDescription = metaContent(html, 'property', 'twitter:description')
+    || metaContent(html, 'name', 'twitter:description');
+  if (twitterDescription !== route.twitterDescription) {
+    failures.push(`${display}: twitter:description does not match route.twitterDescription`);
+  }
+  const twitterImage = metaContent(html, 'property', 'twitter:image')
+    || metaContent(html, 'name', 'twitter:image');
+  if (!twitterImage) {
+    failures.push(`${display}: missing twitter:image`);
+  } else if (twitterImage !== route.twitterImage) {
+    failures.push(`${display}: twitter:image "${twitterImage}" does not match route.twitterImage "${route.twitterImage}"`);
   }
 
   // H1
@@ -97,4 +193,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[verify-seo] OK — ${ROUTES.length} routes pass all checks.`);
+console.log(`[verify-seo] OK — ${ROUTES.length} routes pass all checks (titles, descriptions, canonicals, OG, Twitter).`);
