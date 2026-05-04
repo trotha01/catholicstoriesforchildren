@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /saints?s=
 
-Sitemap: http://www.claritasstudios.com/sitemap.xml
+Sitemap: https://claritasstudios.com/sitemap.xml

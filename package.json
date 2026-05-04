@@ -5,7 +5,9 @@
   "main": "build.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run prerender",
+    "prerender": "node scripts/prerender-routes.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs",
     "preview": "vite preview",
     "start": "npm run dev"
   },

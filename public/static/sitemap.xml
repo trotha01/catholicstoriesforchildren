@@ -5,21 +5,48 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-
 <url>
   <loc>https://claritasstudios.com/</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://claritasstudios.com/team/</loc>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://claritasstudios.com/animations/</loc>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/animations/hailmary/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/animations/prayertimewithangels/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/animations/daisyandsheep/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/animations/songsofthesaints/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/animations/gigglesandgraceshow/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/animations/prayingwiththesaints/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/saints/</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://claritasstudios.com/contact/</loc>
+  <loc>https://claritasstudios.com/prayers/</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/feastdayactivities/</loc>
   <priority>0.80</priority>
 </url>
 <url>
@@ -27,8 +54,16 @@
   <priority>0.70</priority>
 </url>
 <url>
+  <loc>https://claritasstudios.com/team/</loc>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://claritasstudios.com/give/</loc>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://claritasstudios.com/contact/</loc>
+  <priority>0.70</priority>
 </url>
 
 </urlset>
