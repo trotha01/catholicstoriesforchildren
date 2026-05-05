@@ -110,6 +110,7 @@
     });
     window.loadGoogleTag = function() {
       if (window.__gtagLoaded) return;
+      if (window.location.hostname.endsWith('netlify.app')) return;
       window.__gtagLoaded = true;
       var script = document.createElement('script');
       script.async = true;
