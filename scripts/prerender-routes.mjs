@@ -84,6 +84,16 @@ function renderBodyContent(route) {
   ].join('\n');
 }
 
+function renderJsonLd(route) {
+  if (!route.jsonLd || route.jsonLd.length === 0) return '';
+  return route.jsonLd
+    .map((schema) => {
+      const json = JSON.stringify(schema, null, 2).replace(/<\//g, '<\\/');
+      return `  <script type="application/ld+json">\n${json}\n  </script>`;
+    })
+    .join('\n');
+}
+
 function renderRouteHtml(route) {
   let html = baseHtml;
 
@@ -131,7 +141,9 @@ function renderRouteHtml(route) {
     `  <meta property="twitter:title" content="${escape(route.twitterTitle)}">`,
     `  <meta property="twitter:description" content="${escape(route.twitterDescription)}">`,
   ].join('\n');
-  html = html.replace(/<\/head>/i, `${headExtras}\n</head>`);
+  const jsonLdBlock = renderJsonLd(route);
+  const closeHead = [headExtras, jsonLdBlock, '</head>'].filter(Boolean).join('\n');
+  html = html.replace(/<\/head>/i, closeHead);
 
   // Inject crawlable content immediately inside #elm-root.
   // Elm's Browser.application replaces the mount node when it boots, so

@@ -19,6 +19,17 @@ export const SITE_ORIGIN = 'https://claritasstudios.com';
 
 const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/assets/images/thumbnails/CSCThumbnail.png`;
 
+const ORG_NAME = 'Claritas Studios';
+const ORG_URL = SITE_ORIGIN;
+const ORG_LOGO = `${SITE_ORIGIN}/assets/Favicons/PNG/128x128-favicon.png`;
+const ORG_TAX_ID = '85-4194883';
+const ORG_SAME_AS = [
+  'https://www.youtube.com/@ClaritasStudios',
+  'https://www.instagram.com/claritasstudios',
+  'https://blog.claritasstudios.com',
+  'https://www.facebook.com/claritasstudios',
+];
+
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/animations/', label: 'Animations' },
@@ -109,6 +120,60 @@ function buildRoute(route) {
   };
 }
 
+function buildOrganizationSchema(opts = {}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['Organization', 'NGO'],
+    name: ORG_NAME,
+    url: ORG_URL,
+    logo: ORG_LOGO,
+    nonprofitStatus: 'Nonprofit501c3',
+    sameAs: ORG_SAME_AS,
+    knowsAbout: [
+      'Catholic education for children',
+      'Catholic prayers',
+      'Lives of the Saints',
+      'Catholic animation for families',
+      'Feast day activities',
+    ],
+    ...opts,
+  };
+}
+
+function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: ORG_NAME,
+    url: ORG_URL,
+  };
+}
+
+function buildBreadcrumbSchema(path, label) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORG_URL}/` },
+      { '@type': 'ListItem', position: 2, name: label, item: `${ORG_URL}${path}` },
+    ],
+  };
+}
+
+function buildTVSeriesSchema(series) {
+  const image = series.image.startsWith('http') ? series.image : `${ORG_URL}${series.image}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TVSeries',
+    name: series.title,
+    description: series.description,
+    url: `${ORG_URL}/animations/${series.slug}/`,
+    image,
+    startDate: series.year,
+    creator: { '@type': 'Organization', name: ORG_NAME, url: ORG_URL },
+  };
+}
+
 function animationSeriesRoute(series) {
   return buildRoute({
     path: `/animations/${series.slug}/`,
@@ -128,6 +193,10 @@ function animationSeriesRoute(series) {
           { href: '/animations/', label: 'Browse all animations' },
         ],
       },
+    ],
+    jsonLd: [
+      buildBreadcrumbSchema(`/animations/${series.slug}/`, series.title),
+      buildTVSeriesSchema(series),
     ],
   });
 }
@@ -178,6 +247,10 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [
+      buildOrganizationSchema(),
+      buildWebSiteSchema(),
+    ],
   },
   {
     path: '/animations/',
@@ -197,6 +270,7 @@ const RAW_ROUTES = [
         })),
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/animations/', 'Catholic Animations for Kids')],
   },
   {
     path: '/team/',
@@ -222,6 +296,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/team/', 'About Claritas Studios')],
   },
   {
     path: '/resources/',
@@ -243,6 +318,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/resources/', 'Resources for Parents and Teachers')],
   },
   {
     path: '/give/',
@@ -268,6 +344,10 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [
+      buildBreadcrumbSchema('/give/', 'Support Claritas Studios'),
+      buildOrganizationSchema({ taxID: ORG_TAX_ID }),
+    ],
   },
   {
     path: '/contact/',
@@ -287,6 +367,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/contact/', 'Contact Claritas Studios')],
   },
   {
     path: '/saints/',
@@ -307,6 +388,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/saints/', 'Lives of the Saints')],
   },
   {
     path: '/prayers/',
@@ -327,6 +409,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/prayers/', 'Catholic Prayers for Children')],
   },
   {
     path: '/feastdayactivities/',
@@ -347,6 +430,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/feastdayactivities/', 'Feast Day Activities')],
   },
 ];
 
