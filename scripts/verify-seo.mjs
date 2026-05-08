@@ -185,6 +185,52 @@ for (const route of ROUTES) {
   if (!html.includes(route.intro)) {
     failures.push(`${display}: route intro text not found in raw HTML`);
   }
+
+  // JSON-LD
+  if (route.jsonLd && route.jsonLd.length > 0) {
+    const jsonLdMatches = html.match(/<script\s+type="application\/ld\+json"[\s\S]*?<\/script>/gi) || [];
+    if (jsonLdMatches.length === 0) {
+      failures.push(`${display}: no <script type="application/ld+json"> found`);
+    } else if (jsonLdMatches.length !== route.jsonLd.length) {
+      failures.push(`${display}: expected ${route.jsonLd.length} JSON-LD block(s), found ${jsonLdMatches.length}`);
+    } else {
+      for (let i = 0; i < jsonLdMatches.length; i++) {
+        const jsonText = jsonLdMatches[i]
+          .replace(/<script[^>]*>/i, '')
+          .replace(/<\/script>/i, '')
+          .trim();
+        let parsed;
+        try {
+          parsed = JSON.parse(jsonText);
+        } catch (e) {
+          failures.push(`${display}: JSON-LD block ${i + 1} is not valid JSON: ${e.message}`);
+          continue;
+        }
+        const expectedTypes = [].concat(route.jsonLd[i]['@type']);
+        const actualTypes = [].concat(parsed['@type'] || []);
+        for (const t of expectedTypes) {
+          if (!actualTypes.includes(t)) {
+            failures.push(`${display}: JSON-LD block ${i + 1} missing @type "${t}" (found: ${actualTypes.join(', ') || 'none'})`);
+          }
+        }
+        // /give/ second block must include taxID
+        if (route.path === '/give/' && i === 1 && !parsed.taxID) {
+          failures.push(`${display}: JSON-LD block 2 (Organization) missing taxID`);
+        }
+        // Animation series TVSeries block must include startDate
+        if (parsed['@type'] === 'TVSeries' && !parsed.startDate) {
+          failures.push(`${display}: JSON-LD TVSeries block missing startDate`);
+        }
+        // BreadcrumbList must have at least 2 items
+        if (parsed['@type'] === 'BreadcrumbList') {
+          const items = parsed.itemListElement || [];
+          if (items.length < 2) {
+            failures.push(`${display}: JSON-LD BreadcrumbList has fewer than 2 items`);
+          }
+        }
+      }
+    }
+  }
 }
 
 if (failures.length) {
@@ -193,4 +239,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[verify-seo] OK — ${ROUTES.length} routes pass all checks (titles, descriptions, canonicals, OG, Twitter).`);
+console.log(`[verify-seo] OK — ${ROUTES.length} routes pass all checks (titles, descriptions, canonicals, OG, Twitter, JSON-LD).`);
