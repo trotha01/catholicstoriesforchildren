@@ -94,12 +94,25 @@
     };
   </script>
 
-  <!-- Google Analytics consent queue. The third-party tag loads only after consent. -->
+  <!-- Google Analytics consent. Loads immediately for non-EEA visitors; EEA visitors require explicit cookie consent. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-    window.__ga_block = true;
+
+    // Default: grant all for non-EEA visitors.
     window.gtag('consent', 'default', {
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+      functionality_storage: 'granted',
+      personalization_storage: 'granted',
+      security_storage: 'granted'
+    });
+
+    // EEA/GDPR regions: deny by default until the user explicitly consents.
+    window.gtag('consent', 'default', {
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','CH','GB'],
       ad_user_data: 'denied',
       ad_personalization: 'denied',
       ad_storage: 'denied',
@@ -108,6 +121,7 @@
       personalization_storage: 'denied',
       security_storage: 'granted'
     });
+
     window.loadGoogleTag = function() {
       if (window.__gtagLoaded) return;
       if (window.location.hostname.endsWith('netlify.app')) return;
@@ -119,6 +133,9 @@
       window.gtag('js', new Date());
       window.gtag('config', 'G-6JTEZS9G2D');
     };
+
+    // Load immediately — consent defaults handle regional restrictions.
+    window.loadGoogleTag();
   </script>
 
   <script>
