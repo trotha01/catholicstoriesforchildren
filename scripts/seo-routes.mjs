@@ -393,19 +393,50 @@ const RAW_ROUTES = [
   {
     path: '/prayers/',
     title: 'Catholic Prayers for Children | Claritas Studios',
-    description: 'Learn classic Catholic prayers with your children: the Hail Mary, Our Father, Glory Be, Angelus, Act of Contrition, and more, paired with animated explainers.',
+    description: 'Learn classic Catholic prayers with your children: the Hail Mary, Our Father, Glory Be, Angelus, Guardian Angel prayer, and more, paired with free animated explainers.',
     h1: 'Catholic Prayers for Children',
-    intro: 'A growing library of classic Catholic prayers in plain English, paired with our animations so children can both hear and pray each one.',
+    intro: 'Teaching children to pray is one of the greatest gifts a parent or catechist can give. Here you will find the classic Catholic prayers for children that form the foundation of a life of faith — from the Our Father and Hail Mary to the Angelus and Guardian Angel prayer.',
     sections: [
       {
-        heading: 'Featured prayers',
+        heading: 'Why teach children Catholic prayers?',
         paragraphs: [
-          'Start with the prayers every Catholic child should know.',
+          'Memorizing Catholic prayers gives children a vocabulary for speaking with God. When children know these prayers by heart, they can turn to them in moments of joy, fear, gratitude, or sadness — no matter where they are.',
+          'The prayers on this page are the ones the Church has treasured for centuries. They cover adoration, petition, intercession, and thanksgiving, giving children a well-rounded way to approach God each day.',
+        ],
+      },
+      {
+        heading: 'Essential Catholic prayers to learn',
+        paragraphs: [
+          'These are the core Catholic prayers every child should know: the Our Father (the prayer Jesus himself taught), the Hail Mary, the Glory Be, the Guardian Angel prayer, the Saint Michael prayer, and the Angelus.',
+        ],
+      },
+      {
+        heading: 'Learn Catholic prayers through animation',
+        paragraphs: [
+          'Watching and hearing a prayer brings it to life for young children. Our free animated series are designed to help children not just memorize Catholic prayers but truly understand and love them.',
         ],
         links: [
-          { href: '/animations/hailmary/', label: 'Hail Mary (animation)' },
-          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels' },
-          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints' },
+          { href: '/animations/hailmary/', label: 'Hail Mary — animated episode for children ages 2+' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — learn core prayers with Theo and Felicity (ages 6+)' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — 12 episodes with St. Thérèse and Carlo Acutis (ages 6+)' },
+        ],
+      },
+      {
+        heading: 'Tips for praying with children',
+        paragraphs: [
+          'The best way to teach Catholic prayers for children is to pray them together out loud, every day. Start with one prayer at a time, pray at the same time each day, explain the meaning in simple words, and use our animations to reinforce the words visually.',
+        ],
+      },
+      {
+        heading: 'More Catholic resources for children',
+        paragraphs: [
+          'Prayers are just one part of a rich Catholic education. Explore our free resources for families and classrooms.',
+        ],
+        links: [
+          { href: '/saints/', label: 'Lives of the Saints — short biographies for kids' },
+          { href: '/feastdayactivities/', label: 'Feast Day Activities — celebrate the liturgical year at home' },
+          { href: '/resources/', label: 'Printable resources — prayer cards, activity sheets, and more' },
+          { href: '/animations/', label: 'All animations — free Catholic video series for families' },
         ],
       },
     ],
