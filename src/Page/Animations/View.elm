@@ -183,7 +183,7 @@ getTitleFromRoute urlRoute =
             getTitleFromEpisodeRoute r
 
         _ ->
-            ""
+            "Catholic Animations for Children"
 
 
 getTitleFromEpisodeRoute : AnimationEpisode -> String
@@ -321,8 +321,25 @@ viewCategories =
                     [ viewEpisodes production
                     ]
                 ]
+
+        intro =
+            div [ class "max-w-7xl mx-auto px-5 mb-10" ]
+                [ h1 [ class "text-white text-4xl md:text-5xl font-bold mb-5" ]
+                    [ text "Catholic Animations for Children" ]
+                , p [ class "text-gray-300 text-lg md:text-xl max-w-3xl" ]
+                    [ text "Free Catholic animated series designed to help children grow in their love of God, Mary, and the saints. Every show is free to watch and made for families and classrooms." ]
+                ]
+
+        closingSection =
+            div [ class "max-w-7xl mx-auto px-5 mt-4 mb-8" ]
+                [ h2 [ class "text-white text-2xl font-bold mb-3" ]
+                    [ text "Catholic Animations for Every Age" ]
+                , p [ class "text-gray-300 text-lg max-w-3xl" ]
+                    [ text "Our Catholic animations for children cover the rosary, the Mass, the lives of the saints, and core Catholic prayers. Whether your child is two or twelve, there is a series for them — all free to watch online." ]
+                ]
     in
-    div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
+    div [ class "bg-black py-16" ]
+        (intro :: List.map viewCategoryRow Productions.productions ++ [ closingSection ])
 
 
 

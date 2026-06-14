@@ -254,23 +254,42 @@ const RAW_ROUTES = [
   },
   {
     path: '/animations/',
-    title: 'Catholic Animations for Kids | Claritas Studios',
-    description: 'Watch free Catholic animated series for children: Hail Mary, Prayer Time with Angels, Daisy and Sheep, Songs of the Saints, Giggles and Grace, and Praying with the Saints.',
-    h1: 'Catholic Animations for Kids',
-    intro: 'Browse every animated series produced by Claritas Studios. Each show is free to watch online and designed to nurture a child’s love of God and the saints.',
+    title: 'Catholic Animations for Children | Claritas Studios',
+    description: 'Watch free Catholic animations for children from Claritas Studios. Original animated series covering the Mass, the saints, and Catholic prayers — for ages 2 and up.',
+    h1: 'Catholic Animations for Children',
+    intro: 'Claritas Studios creates free Catholic animations for children that bring the faith to life through beautiful storytelling. Every series is free to watch and designed to nurture a child\'s love of God, Mary, and the saints.',
     sections: [
       {
-        heading: 'Series',
+        heading: 'Our Catholic Animated Series',
         paragraphs: [
-          'Our catalog includes original short films and ongoing series for ages 2 and up.',
+          'Our catalog of Catholic animations for children includes original short films and ongoing series for ages 2 and up. Each series focuses on a different dimension of the faith — from learning the Hail Mary to discovering the lives of the saints.',
         ],
         links: ANIMATION_SERIES.map((s) => ({
           href: `/animations/${s.slug}/`,
           label: `${s.title} — ${s.age}`,
         })),
       },
+      {
+        heading: 'Why Catholic Animations for Children?',
+        paragraphs: [
+          'Children learn through story, song, and image. Our Catholic animations for children are crafted to make the beauty of the faith accessible at every age — from toddlers discovering the Hail Mary to older children exploring the Mass and the lives of the saints.',
+          'Every episode is free, family-friendly, and faithful to Catholic teaching. Watch online at home, in the classroom, or as part of your parish faith-formation program.',
+        ],
+      },
+      {
+        heading: 'More Catholic Resources for Families',
+        paragraphs: [
+          'Our Catholic animations are just one part of what Claritas Studios offers. Explore free Catholic prayers, saint biographies for kids, feast-day activities, and printable resources to enrich your family\'s faith life.',
+        ],
+        links: [
+          { href: '/prayers/', label: 'Catholic Prayers for Children' },
+          { href: '/saints/', label: 'Lives of the Saints for Kids' },
+          { href: '/feastdayactivities/', label: 'Feast Day Activities' },
+          { href: '/resources/', label: 'Free Printable Resources' },
+        ],
+      },
     ],
-    jsonLd: [buildBreadcrumbSchema('/animations/', 'Catholic Animations for Kids')],
+    jsonLd: [buildBreadcrumbSchema('/animations/', 'Catholic Animations for Children')],
   },
   {
     path: '/team/',
@@ -308,7 +327,7 @@ const RAW_ROUTES = [
       {
         heading: 'Browse by topic',
         paragraphs: [
-          'Resources cover prayer, the Mass, the saints, the liturgical year, and the lives of children’s patron saints.',
+          'Resources cover prayer, the Mass, the saints, the liturgical year, and the lives of children\'s patron saints.',
         ],
         links: [
           { href: '/prayers/', label: 'Prayers' },
@@ -374,7 +393,7 @@ const RAW_ROUTES = [
     title: 'Lives of the Saints for Kids | Claritas Studios',
     description: 'Read short Catholic saint biographies for children. Discover patron saints, feast days, and inspiring stories of faith from across the centuries.',
     h1: 'Lives of the Saints',
-    intro: 'Browse short saint biographies written for children. Each entry includes the saint’s feast day and a kid-friendly summary of their life and witness.',
+    intro: 'Browse short saint biographies written for children. Each entry includes the saint\'s feast day and a kid-friendly summary of their life and witness.',
     sections: [
       {
         heading: 'Discover the saints',
@@ -453,7 +472,7 @@ const RAW_ROUTES = [
       {
         heading: 'Live the liturgical year',
         paragraphs: [
-          'From Advent and Christmas to Lent and Easter, the Church’s calendar is full of opportunities to teach the faith through celebration.',
+          'From Advent and Christmas to Lent and Easter, the Church\'s calendar is full of opportunities to teach the faith through celebration.',
         ],
         links: [
           { href: '/saints/', label: 'Lives of the Saints' },
