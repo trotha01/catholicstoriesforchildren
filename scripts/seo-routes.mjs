@@ -270,10 +270,85 @@ const RAW_ROUTES = [
         })),
       },
       {
-        heading: 'Why Catholic Animations for Children?',
+        heading: 'Catholic Animations for Every Age',
         paragraphs: [
-          'Children learn through story, song, and image. Our Catholic animations for children are crafted to make the beauty of the faith accessible at every age — from toddlers discovering the Hail Mary to older children exploring the Mass and the lives of the saints.',
-          'Every episode is free, family-friendly, and faithful to Catholic teaching. Watch online at home, in the classroom, or as part of your parish faith-formation program.',
+          'Our free Catholic animated series span ages 2 through 12 and beyond. Hail Mary and Giggles and Grace are perfect for toddlers and early learners. Prayer Time with Angels and Praying with the Saints work well for ages 6 and up. Daisy and Sheep and Songs of the Saints are crafted for older children and teens ready for deeper dives into the Mass and the lives of the saints.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — Ages 2+' },
+          { href: '/animations/gigglesandgraceshow/', label: 'Giggles and Grace Show — Ages 2+' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — Ages 6+' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — Ages 6+' },
+          { href: '/animations/daisyandsheep/', label: 'Daisy and Sheep — Ages 10+' },
+          { href: '/animations/songsofthesaints/', label: 'Songs of the Saints — Ages 10+' },
+        ],
+      },
+      {
+        heading: 'For Catholic Schools, CCD, and Parish Programs',
+        paragraphs: [
+          'All Claritas Studios animations are free to use in Catholic schools, religious education classes, CCD programs, and parish faith-formation. Teachers and catechists use our series as visual introductions to prayer, the Mass, the sacraments, and the saints. Every video is embeddable and shareable at no cost.',
+        ],
+        links: [
+          { href: '/prayers/', label: 'Catholic Prayers for Children' },
+          { href: '/saints/', label: 'Lives of the Saints for Kids' },
+          { href: '/resources/', label: 'Free Printable Resources' },
+          { href: '/contact/', label: 'Contact us about partnerships' },
+        ],
+      },
+      {
+        heading: 'Frequently Asked Questions',
+        paragraphs: [],
+      },
+      {
+        heading: 'Are these Catholic animations free?',
+        paragraphs: [
+          'Yes. Every episode from every Claritas Studios series is completely free to watch online — no account, no subscription, no cost. We are a 501(c)(3) Catholic nonprofit supported by donations, which allows us to keep all our Catholic animations free for families, schools, and parishes worldwide.',
+        ],
+        links: [
+          { href: '/give/', label: 'Support Claritas Studios' },
+        ],
+      },
+      {
+        heading: 'What topics do the Catholic animations cover?',
+        paragraphs: [
+          'Our Catholic animations for children cover the Hail Mary, core Catholic prayers, parts of the Mass, Songs of the Saints, and devotional prayer. Topics include the rosary, the sacraments, liturgy, and Catholic feast days — giving children a well-rounded introduction to the faith through story and song.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — the prayer' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — Catholic prayers' },
+          { href: '/animations/daisyandsheep/', label: 'Daisy and Sheep — the Mass' },
+          { href: '/animations/songsofthesaints/', label: 'Songs of the Saints — lives of the saints' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — devotional prayer' },
+        ],
+      },
+      {
+        heading: 'Can I watch these in Spanish or other languages?',
+        paragraphs: [
+          'Yes. Several series are available in additional languages. Hail Mary is available in English, ASL, and Swedish. Daisy and Sheep is available in English and Spanish. Prayer Time with Angels is available in English and Urdu. Use the language selector on the episode page to switch.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — English, ASL, and Swedish' },
+          { href: '/animations/daisyandsheep/', label: 'Daisy and Sheep — English and Spanish' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — English and Urdu' },
+        ],
+      },
+      {
+        heading: 'Who makes these Catholic animated videos?',
+        paragraphs: [
+          'Claritas Studios is a U.S.-based Catholic nonprofit. Our team of animators, writers, musicians, and theologians creates each series to be faithful to Catholic teaching and beautiful for children. Every episode is reviewed for theological accuracy before release.',
+        ],
+        links: [
+          { href: '/team/', label: 'Meet the Claritas Studios team' },
+        ],
+      },
+      {
+        heading: 'How often is new content released?',
+        paragraphs: [
+          'New episodes are released throughout the year across our active series. Subscribe to our newsletter or follow us on YouTube to be notified when new Catholic animations for children are available.',
+        ],
+        links: [
+          { href: '/contact/', label: 'Subscribe to the newsletter' },
+          { href: 'https://www.youtube.com/@claritasstudios', label: 'Claritas Studios on YouTube' },
         ],
       },
       {
@@ -289,7 +364,63 @@ const RAW_ROUTES = [
         ],
       },
     ],
-    jsonLd: [buildBreadcrumbSchema('/animations/', 'Catholic Animations for Children')],
+    jsonLd: [
+      buildBreadcrumbSchema('/animations/', 'Catholic Animations for Children'),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Are Catholic animations from Claritas Studios free to watch?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Every episode from every Claritas Studios series is completely free to watch online — no account, no subscription, no cost. Claritas Studios is a 501(c)(3) Catholic nonprofit supported by donations, which allows all Catholic animations to remain free for families, schools, and parishes worldwide.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What ages are Claritas Studios Catholic animations for?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Claritas Studios produces Catholic animations for children across a range of ages. Hail Mary and Giggles and Grace are designed for ages 2 and up. Prayer Time with Angels and Praying with the Saints are recommended for ages 6 and up. Daisy and Sheep and Songs of the Saints are best suited for ages 10 and up.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I use these Catholic animations in a Catholic school or CCD class?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. All Claritas Studios animations are free to use in Catholic schools, religious education classes, CCD programs, and parish faith-formation. Teachers and catechists use our series as visual introductions to prayer, the Mass, the sacraments, and the saints. Every video is embeddable and shareable at no cost.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What topics do the Catholic animations for children cover?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Our Catholic animations for children cover the Hail Mary, core Catholic prayers, parts of the Mass, the lives of the saints, and devotional prayer. Topics include the rosary, the sacraments, liturgy, and Catholic feast days — giving children a well-rounded introduction to the faith through story and song.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are there Catholic animations in Spanish or other languages?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Several series are available in additional languages. Hail Mary is available in English, ASL, and Swedish. Daisy and Sheep is available in English and Spanish. Prayer Time with Angels is available in English and Urdu. Use the language selector on the episode page to switch.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who makes these Catholic animated videos for children?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Claritas Studios is a U.S.-based Catholic nonprofit. A team of animators, writers, musicians, and theologians creates each series to be faithful to Catholic teaching and beautiful for children. Every episode is reviewed for theological accuracy before release.',
+            },
+          },
+        ],
+      },
+    ],
   },
   {
     path: '/team/',
