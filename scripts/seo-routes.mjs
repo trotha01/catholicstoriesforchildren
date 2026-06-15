@@ -347,7 +347,7 @@ const RAW_ROUTES = [
           'New episodes are released throughout the year across our active series. Subscribe to our newsletter or follow us on YouTube to be notified when new Catholic animations for children are available.',
         ],
         links: [
-          { href: '/contact/', label: 'Subscribe to the newsletter' },
+          { href: 'https://blog.claritasstudios.com/subscribe', label: 'Subscribe to the newsletter' },
           { href: 'https://www.youtube.com/@claritasstudios', label: 'Claritas Studios on YouTube' },
         ],
       },

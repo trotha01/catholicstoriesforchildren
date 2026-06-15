@@ -418,7 +418,7 @@ viewCategories =
                     [ text "How often is new content released?" ]
                 , p [ class "text-lg mb-8" ]
                     [ text "New episodes are released throughout the year across our active series. "
-                    , link_ "/contact/" "Subscribe to our newsletter"
+                    , a [ href "https://blog.claritasstudios.com/subscribe", class "underline hover:text-white transition-colors", target "_blank" ] [ text "Subscribe to our newsletter" ]
                     , text " or follow us on "
                     , a [ href "https://www.youtube.com/@claritasstudios", class "underline hover:text-white transition-colors", target "_blank" ] [ text "YouTube" ]
                     , text " to be notified when new Catholic animations for children are available."
