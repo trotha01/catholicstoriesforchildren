@@ -84,6 +84,16 @@ function renderBodyContent(route) {
   ].join('\n');
 }
 
+function renderJsonLd(route) {
+  if (!route.jsonLd || route.jsonLd.length === 0) return '';
+  return route.jsonLd
+    .map((schema) => {
+      const json = JSON.stringify(schema, null, 2).replace(/<\//g, '<\\/');
+      return `  <script type="application/ld+json">\n${json}\n  </script>`;
+    })
+    .join('\n');
+}
+
 function renderRouteHtml(route) {
   let html = baseHtml;
 
@@ -124,19 +134,31 @@ function renderRouteHtml(route) {
     `<meta property="twitter:image" content="${escape(route.twitterImage)}">`,
   );
 
-  // Add self-referential canonical link, twitter:title, and twitter:description.
-  // (insert just before </head>)
+  // Strip any tags that may have been injected by a previous prerender run so
+  // reruns are fully idempotent (avoids duplicate twitter:title, canonical, etc.).
+  html = html.replace(/<meta\s+property="twitter:title"[^>]*>\n?/gi, '');
+  html = html.replace(/<meta\s+property="twitter:description"[^>]*>\n?/gi, '');
+  html = html.replace(/<link\s+rel="canonical"[^>]*>\n?/gi, '');
+  html = html.replace(/\s*<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
+
+  // Add self-referential canonical link, twitter:title, and twitter:description
+  // fresh for every route (insert just before </head>).
   const headExtras = [
     `  <link rel="canonical" href="${escape(route.canonical)}">`,
     `  <meta property="twitter:title" content="${escape(route.twitterTitle)}">`,
     `  <meta property="twitter:description" content="${escape(route.twitterDescription)}">`,
   ].join('\n');
-  html = html.replace(/<\/head>/i, `${headExtras}\n</head>`);
+
+  const jsonLdBlock = renderJsonLd(route);
+  const closeHead = [headExtras, jsonLdBlock, '</head>'].filter(Boolean).join('\n');
+  html = html.replace(/<\/head>/i, closeHead);
 
   // Inject crawlable content immediately inside #elm-root.
   // Elm's Browser.application replaces the mount node when it boots, so
   // this content is invisible to JS-enabled visitors but visible to crawlers
   // and to anyone fetching raw HTML (curl, AI retrievers, link previewers).
+  // Strip any previously-injected seo block before re-injecting so reruns are idempotent.
+  html = html.replace(/<div id="elm-root">[\s\S]*?<\/div>/, '<div id="elm-root"></div>');
   const seoBody = renderBodyContent(route);
   html = html.replace(
     /<div id="elm-root"><\/div>/,

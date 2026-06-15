@@ -19,6 +19,17 @@ export const SITE_ORIGIN = 'https://claritasstudios.com';
 
 const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/assets/images/thumbnails/CSCThumbnail.png`;
 
+const ORG_NAME = 'Claritas Studios';
+const ORG_URL = SITE_ORIGIN;
+const ORG_LOGO = `${SITE_ORIGIN}/assets/Favicons/PNG/128x128-favicon.png`;
+const ORG_TAX_ID = '85-4194883';
+const ORG_SAME_AS = [
+  'https://www.youtube.com/@ClaritasStudios',
+  'https://www.instagram.com/claritasstudios',
+  'https://blog.claritasstudios.com',
+  'https://www.facebook.com/claritasstudios',
+];
+
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/animations/', label: 'Animations' },
@@ -109,6 +120,60 @@ function buildRoute(route) {
   };
 }
 
+function buildOrganizationSchema(opts = {}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['Organization', 'NGO'],
+    name: ORG_NAME,
+    url: ORG_URL,
+    logo: ORG_LOGO,
+    nonprofitStatus: 'Nonprofit501c3',
+    sameAs: ORG_SAME_AS,
+    knowsAbout: [
+      'Catholic education for children',
+      'Catholic prayers',
+      'Lives of the Saints',
+      'Catholic animation for families',
+      'Feast day activities',
+    ],
+    ...opts,
+  };
+}
+
+function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: ORG_NAME,
+    url: ORG_URL,
+  };
+}
+
+function buildBreadcrumbSchema(path, label) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORG_URL}/` },
+      { '@type': 'ListItem', position: 2, name: label, item: `${ORG_URL}${path}` },
+    ],
+  };
+}
+
+function buildTVSeriesSchema(series) {
+  const image = series.image.startsWith('http') ? series.image : `${ORG_URL}${series.image}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TVSeries',
+    name: series.title,
+    description: series.description,
+    url: `${ORG_URL}/animations/${series.slug}/`,
+    image,
+    startDate: series.year,
+    creator: { '@type': 'Organization', name: ORG_NAME, url: ORG_URL },
+  };
+}
+
 function animationSeriesRoute(series) {
   return buildRoute({
     path: `/animations/${series.slug}/`,
@@ -128,6 +193,10 @@ function animationSeriesRoute(series) {
           { href: '/animations/', label: 'Browse all animations' },
         ],
       },
+    ],
+    jsonLd: [
+      buildBreadcrumbSchema(`/animations/${series.slug}/`, series.title),
+      buildTVSeriesSchema(series),
     ],
   });
 }
@@ -178,23 +247,178 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [
+      buildOrganizationSchema(),
+      buildWebSiteSchema(),
+    ],
   },
   {
     path: '/animations/',
-    title: 'Catholic Animations for Kids | Claritas Studios',
-    description: 'Watch free Catholic animated series for children: Hail Mary, Prayer Time with Angels, Daisy and Sheep, Songs of the Saints, Giggles and Grace, and Praying with the Saints.',
-    h1: 'Catholic Animations for Kids',
-    intro: 'Browse every animated series produced by Claritas Studios. Each show is free to watch online and designed to nurture a child’s love of God and the saints.',
+    title: 'Catholic Animations for Children | Claritas Studios',
+    description: 'Watch free Catholic animations for children from Claritas Studios. Original animated series covering the Mass, the saints, and Catholic prayers — for ages 2 and up.',
+    h1: 'Catholic Animations for Children',
+    intro: 'Claritas Studios creates free Catholic animations for children that bring the faith to life through beautiful storytelling. Every series is free to watch and designed to nurture a child\'s love of God, Mary, and the saints.',
     sections: [
       {
-        heading: 'Series',
+        heading: 'Our Catholic Animated Series',
         paragraphs: [
-          'Our catalog includes original short films and ongoing series for ages 2 and up.',
+          'Our catalog of Catholic animations for children includes original short films and ongoing series for ages 2 and up. Each series focuses on a different dimension of the faith — from learning the Hail Mary to discovering the lives of the saints.',
         ],
         links: ANIMATION_SERIES.map((s) => ({
           href: `/animations/${s.slug}/`,
           label: `${s.title} — ${s.age}`,
         })),
+      },
+      {
+        heading: 'Catholic Animations for Every Age',
+        paragraphs: [
+          'Our free Catholic animated series span ages 2 through 12 and beyond. Hail Mary and Giggles and Grace are perfect for toddlers and early learners. Prayer Time with Angels and Praying with the Saints work well for ages 6 and up. Daisy and Sheep and Songs of the Saints are crafted for older children and teens ready for deeper dives into the Mass and the lives of the saints.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — Ages 2+' },
+          { href: '/animations/gigglesandgraceshow/', label: 'Giggles and Grace Show — Ages 2+' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — Ages 6+' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — Ages 6+' },
+          { href: '/animations/daisyandsheep/', label: 'Daisy and Sheep — Ages 10+' },
+          { href: '/animations/songsofthesaints/', label: 'Songs of the Saints — Ages 10+' },
+        ],
+      },
+      {
+        heading: 'For Catholic Schools, CCD, and Parish Programs',
+        paragraphs: [
+          'All Claritas Studios animations are free to use in Catholic schools, religious education classes, CCD programs, and parish faith-formation. Teachers and catechists use our series as visual introductions to prayer, the Mass, the sacraments, and the saints. Every video is embeddable and shareable at no cost.',
+        ],
+        links: [
+          { href: '/prayers/', label: 'Catholic Prayers for Children' },
+          { href: '/saints/', label: 'Lives of the Saints for Kids' },
+          { href: '/resources/', label: 'Free Printable Resources' },
+          { href: '/contact/', label: 'Contact us about partnerships' },
+        ],
+      },
+      {
+        heading: 'Frequently Asked Questions',
+        paragraphs: [],
+      },
+      {
+        heading: 'Are these Catholic animations free?',
+        paragraphs: [
+          'Yes. Every episode from every Claritas Studios series is completely free to watch online — no account, no subscription, no cost. We are a 501(c)(3) Catholic nonprofit supported by donations, which allows us to keep all our Catholic animations free for families, schools, and parishes worldwide.',
+        ],
+        links: [
+          { href: '/give/', label: 'Support Claritas Studios' },
+        ],
+      },
+      {
+        heading: 'What topics do the Catholic animations cover?',
+        paragraphs: [
+          'Our Catholic animations for children cover the Hail Mary, core Catholic prayers, parts of the Mass, Songs of the Saints, and devotional prayer. Topics include the rosary, the sacraments, liturgy, and Catholic feast days — giving children a well-rounded introduction to the faith through story and song.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — the prayer' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — Catholic prayers' },
+          { href: '/animations/daisyandsheep/', label: 'Daisy and Sheep — the Mass' },
+          { href: '/animations/songsofthesaints/', label: 'Songs of the Saints — lives of the saints' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — devotional prayer' },
+        ],
+      },
+      {
+        heading: 'Can I watch these in Spanish or other languages?',
+        paragraphs: [
+          'Yes. Several series are available in additional languages. Hail Mary is available in English, ASL, and Swedish. Daisy and Sheep is available in English and Spanish. Prayer Time with Angels is available in English and Urdu. Use the language selector on the episode page to switch.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — English, ASL, and Swedish' },
+          { href: '/animations/daisyandsheep/', label: 'Daisy and Sheep — English and Spanish' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — English and Urdu' },
+        ],
+      },
+      {
+        heading: 'Who makes these Catholic animated videos?',
+        paragraphs: [
+          'Claritas Studios is a U.S.-based Catholic nonprofit. Our team of animators, writers, musicians, and theologians creates each series to be faithful to Catholic teaching and beautiful for children. Every episode is reviewed for theological accuracy before release.',
+        ],
+        links: [
+          { href: '/team/', label: 'Meet the Claritas Studios team' },
+        ],
+      },
+      {
+        heading: 'How often is new content released?',
+        paragraphs: [
+          'New episodes are released throughout the year across our active series. Subscribe to our newsletter or follow us on YouTube to be notified when new Catholic animations for children are available.',
+        ],
+        links: [
+          { href: 'https://blog.claritasstudios.com/subscribe', label: 'Subscribe to the newsletter' },
+          { href: 'https://www.youtube.com/@claritasstudios', label: 'Claritas Studios on YouTube' },
+        ],
+      },
+      {
+        heading: 'More Catholic Resources for Families',
+        paragraphs: [
+          'Our Catholic animations are just one part of what Claritas Studios offers. Explore free Catholic prayers, saint biographies for kids, feast-day activities, and printable resources to enrich your family\'s faith life.',
+        ],
+        links: [
+          { href: '/prayers/', label: 'Catholic Prayers for Children' },
+          { href: '/saints/', label: 'Lives of the Saints for Kids' },
+          { href: '/feastdayactivities/', label: 'Feast Day Activities' },
+          { href: '/resources/', label: 'Free Printable Resources' },
+        ],
+      },
+    ],
+    jsonLd: [
+      buildBreadcrumbSchema('/animations/', 'Catholic Animations for Children'),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Are Catholic animations from Claritas Studios free to watch?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Every episode from every Claritas Studios series is completely free to watch online — no account, no subscription, no cost. Claritas Studios is a 501(c)(3) Catholic nonprofit supported by donations, which allows all Catholic animations to remain free for families, schools, and parishes worldwide.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What ages are Claritas Studios Catholic animations for?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Claritas Studios produces Catholic animations for children across a range of ages. Hail Mary and Giggles and Grace are designed for ages 2 and up. Prayer Time with Angels and Praying with the Saints are recommended for ages 6 and up. Daisy and Sheep and Songs of the Saints are best suited for ages 10 and up.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I use these Catholic animations in a Catholic school or CCD class?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. All Claritas Studios animations are free to use in Catholic schools, religious education classes, CCD programs, and parish faith-formation. Teachers and catechists use our series as visual introductions to prayer, the Mass, the sacraments, and the saints. Every video is embeddable and shareable at no cost.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What topics do the Catholic animations for children cover?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Our Catholic animations for children cover the Hail Mary, core Catholic prayers, parts of the Mass, the lives of the saints, and devotional prayer. Topics include the rosary, the sacraments, liturgy, and Catholic feast days — giving children a well-rounded introduction to the faith through story and song.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Are there Catholic animations in Spanish or other languages?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. Several series are available in additional languages. Hail Mary is available in English, ASL, and Swedish. Daisy and Sheep is available in English and Spanish. Prayer Time with Angels is available in English and Urdu. Use the language selector on the episode page to switch.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Who makes these Catholic animated videos for children?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Claritas Studios is a U.S.-based Catholic nonprofit. A team of animators, writers, musicians, and theologians creates each series to be faithful to Catholic teaching and beautiful for children. Every episode is reviewed for theological accuracy before release.',
+            },
+          },
+        ],
       },
     ],
   },
@@ -222,6 +446,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/team/', 'About Claritas Studios')],
   },
   {
     path: '/resources/',
@@ -233,7 +458,7 @@ const RAW_ROUTES = [
       {
         heading: 'Browse by topic',
         paragraphs: [
-          'Resources cover prayer, the Mass, the saints, the liturgical year, and the lives of children’s patron saints.',
+          'Resources cover prayer, the Mass, the saints, the liturgical year, and the lives of children\'s patron saints.',
         ],
         links: [
           { href: '/prayers/', label: 'Prayers' },
@@ -243,6 +468,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/resources/', 'Resources for Parents and Teachers')],
   },
   {
     path: '/give/',
@@ -268,6 +494,10 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [
+      buildBreadcrumbSchema('/give/', 'Support Claritas Studios'),
+      buildOrganizationSchema({ taxID: ORG_TAX_ID }),
+    ],
   },
   {
     path: '/contact/',
@@ -287,13 +517,14 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/contact/', 'Contact Claritas Studios')],
   },
   {
     path: '/saints/',
     title: 'Lives of the Saints for Kids | Claritas Studios',
     description: 'Read short Catholic saint biographies for children. Discover patron saints, feast days, and inspiring stories of faith from across the centuries.',
     h1: 'Lives of the Saints',
-    intro: 'Browse short saint biographies written for children. Each entry includes the saint’s feast day and a kid-friendly summary of their life and witness.',
+    intro: 'Browse short saint biographies written for children. Each entry includes the saint\'s feast day and a kid-friendly summary of their life and witness.',
     sections: [
       {
         heading: 'Discover the saints',
@@ -307,26 +538,59 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/saints/', 'Lives of the Saints')],
   },
   {
     path: '/prayers/',
     title: 'Catholic Prayers for Children | Claritas Studios',
-    description: 'Learn classic Catholic prayers with your children: the Hail Mary, Our Father, Glory Be, Angelus, Act of Contrition, and more, paired with animated explainers.',
+    description: 'Learn classic Catholic prayers with your children: the Hail Mary, Our Father, Glory Be, Angelus, Guardian Angel prayer, and more, paired with free animated explainers.',
     h1: 'Catholic Prayers for Children',
-    intro: 'A growing library of classic Catholic prayers in plain English, paired with our animations so children can both hear and pray each one.',
+    intro: 'Teaching children to pray is one of the greatest gifts a parent or catechist can give. Here you will find the classic Catholic prayers for children that form the foundation of a life of faith — from the Our Father and Hail Mary to the Angelus and Guardian Angel prayer.',
     sections: [
       {
-        heading: 'Featured prayers',
+        heading: 'Why teach children Catholic prayers?',
         paragraphs: [
-          'Start with the prayers every Catholic child should know.',
+          'Memorizing Catholic prayers gives children a vocabulary for speaking with God. When children know these prayers by heart, they can turn to them in moments of joy, fear, gratitude, or sadness — no matter where they are.',
+          'The prayers on this page are the ones the Church has treasured for centuries. They cover adoration, petition, intercession, and thanksgiving, giving children a well-rounded way to approach God each day.',
+        ],
+      },
+      {
+        heading: 'Essential Catholic prayers to learn',
+        paragraphs: [
+          'These are the core Catholic prayers every child should know: the Our Father (the prayer Jesus himself taught), the Hail Mary, the Glory Be, the Guardian Angel prayer, the Saint Michael prayer, and the Angelus.',
+        ],
+      },
+      {
+        heading: 'Learn Catholic prayers through animation',
+        paragraphs: [
+          'Watching and hearing a prayer brings it to life for young children. Our free animated series are designed to help children not just memorize Catholic prayers but truly understand and love them.',
         ],
         links: [
-          { href: '/animations/hailmary/', label: 'Hail Mary (animation)' },
-          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels' },
-          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints' },
+          { href: '/animations/hailmary/', label: 'Hail Mary — animated episode for children ages 2+' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — learn core prayers with Theo and Felicity (ages 6+)' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — 12 episodes with St. Thérèse and Carlo Acutis (ages 6+)' },
+        ],
+      },
+      {
+        heading: 'Tips for praying with children',
+        paragraphs: [
+          'The best way to teach Catholic prayers for children is to pray them together out loud, every day. Start with one prayer at a time, pray at the same time each day, explain the meaning in simple words, and use our animations to reinforce the words visually.',
+        ],
+      },
+      {
+        heading: 'More Catholic resources for children',
+        paragraphs: [
+          'Prayers are just one part of a rich Catholic education. Explore our free resources for families and classrooms.',
+        ],
+        links: [
+          { href: '/saints/', label: 'Lives of the Saints — short biographies for kids' },
+          { href: '/feastdayactivities/', label: 'Feast Day Activities — celebrate the liturgical year at home' },
+          { href: '/resources/', label: 'Printable resources — prayer cards, activity sheets, and more' },
+          { href: '/animations/', label: 'All animations — free Catholic video series for families' },
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/prayers/', 'Catholic Prayers for Children')],
   },
   {
     path: '/feastdayactivities/',
@@ -339,7 +603,7 @@ const RAW_ROUTES = [
       {
         heading: 'Live the liturgical year',
         paragraphs: [
-          'From Advent and Christmas to Lent and Easter, the Church’s calendar is full of opportunities to teach the faith through celebration.',
+          'From Advent and Christmas to Lent and Easter, the Church\'s calendar is full of opportunities to teach the faith through celebration.',
         ],
         links: [
           { href: '/saints/', label: 'Lives of the Saints' },
@@ -347,6 +611,7 @@ const RAW_ROUTES = [
         ],
       },
     ],
+    jsonLd: [buildBreadcrumbSchema('/feastdayactivities/', 'Feast Day Activities')],
   },
 ];
 

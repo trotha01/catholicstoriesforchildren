@@ -183,7 +183,7 @@ getTitleFromRoute urlRoute =
             getTitleFromEpisodeRoute r
 
         _ ->
-            ""
+            "Catholic Animations for Children"
 
 
 getTitleFromEpisodeRoute : AnimationEpisode -> String
@@ -321,8 +321,112 @@ viewCategories =
                     [ viewEpisodes production
                     ]
                 ]
+
+        intro =
+            div [ class "max-w-7xl mx-auto px-5 mb-10" ]
+                [ h1 [ class "text-white text-4xl md:text-5xl font-bold mb-5" ]
+                    [ text "Catholic Animations for Children" ]
+                , p [ class "text-gray-300 text-lg md:text-xl max-w-3xl" ]
+                    [ text "Free Catholic animated series designed to help children grow in their love of God, Mary, and the saints. Every show is free to watch and made for families and classrooms." ]
+                ]
+
+        link_ url label =
+            a [ href url, class "underline hover:text-white transition-colors" ] [ text label ]
+
+        richContent =
+            div [ class "max-w-3xl mx-auto px-5 mt-4 mb-16 text-gray-300" ]
+                [ -- Age guide
+                  h2 [ class "text-white text-2xl font-bold mb-3 mt-10" ]
+                    [ text "Catholic Animations for Every Age" ]
+                , p [ class "text-lg mb-6" ]
+                    [ text "Our free Catholic animated series span ages 2 through 12 and beyond. "
+                    , link_ "/animations/hailmary/" "Hail Mary"
+                    , text " and "
+                    , link_ "/animations/gigglesandgraceshow/" "Giggles and Grace"
+                    , text " are perfect for toddlers and early learners. "
+                    , link_ "/animations/prayertimewithangels/" "Prayer Time with Angels"
+                    , text " and "
+                    , link_ "/animations/prayingwiththesaints/" "Praying with the Saints"
+                    , text " work well for ages 6 and up. "
+                    , link_ "/animations/daisyandsheep/" "Daisy and Sheep"
+                    , text " and "
+                    , link_ "/animations/songsofthesaints/" "Songs of the Saints"
+                    , text " are crafted for older children and teens who are ready for deeper dives into the Mass and the lives of the saints."
+                    ]
+
+                -- Use in school/parish
+                , h2 [ class "text-white text-2xl font-bold mb-3 mt-10" ]
+                    [ text "For Catholic Schools, CCD, and Parish Programs" ]
+                , p [ class "text-lg mb-6" ]
+                    [ text "All Claritas Studios animations are free to use in Catholic schools, religious education classes, CCD programs, and parish faith-formation. Teachers and catechists use our series as visual introductions to "
+                    , link_ "/prayers/" "prayer"
+                    , text ", the Mass, the sacraments, and "
+                    , link_ "/saints/" "the saints"
+                    , text ". Every video is embeddable and shareable at no cost. "
+                    , link_ "/contact/" "Contact us"
+                    , text " to discuss parish or school partnerships."
+                    ]
+
+                -- FAQ section
+                , h2 [ class "text-white text-2xl font-bold mb-6 mt-10" ]
+                    [ text "Frequently Asked Questions" ]
+
+                , h3 [ class "text-white text-xl font-semibold mb-2" ]
+                    [ text "Are these Catholic animations free?" ]
+                , p [ class "text-lg mb-6" ]
+                    [ text "Yes. Every episode from every Claritas Studios series is completely free to watch online — no account, no subscription, no cost. We are a 501(c)(3) Catholic nonprofit supported by "
+                    , link_ "/give/" "donations"
+                    , text ", which allows us to keep all our Catholic animations free for families, schools, and parishes worldwide."
+                    ]
+
+                , h3 [ class "text-white text-xl font-semibold mb-2" ]
+                    [ text "What topics do the Catholic animations cover?" ]
+                , p [ class "text-lg mb-6" ]
+                    [ text "Our Catholic animations for children cover the "
+                    , link_ "/animations/hailmary/" "Hail Mary"
+                    , text ", core "
+                    , link_ "/animations/prayertimewithangels/" "Catholic prayers"
+                    , text ", "
+                    , link_ "/animations/daisyandsheep/" "parts of the Mass"
+                    , text ", "
+                    , link_ "/animations/songsofthesaints/" "Songs of the Saints"
+                    , text ", and "
+                    , link_ "/animations/prayingwiththesaints/" "devotional prayer"
+                    , text ". Topics include the rosary, the sacraments, liturgy, and Catholic feast days — giving children a well-rounded introduction to the faith through story and song."
+                    ]
+
+                , h3 [ class "text-white text-xl font-semibold mb-2" ]
+                    [ text "Can I watch these in Spanish or other languages?" ]
+                , p [ class "text-lg mb-2" ]
+                    [ text "Yes. Several series are available in additional languages:" ]
+                , ul [ class "list-disc list-inside text-lg mb-4 space-y-1" ]
+                    [ li [] [ link_ "/animations/hailmary/" "Hail Mary", text " — English, ASL, and Swedish" ]
+                    , li [] [ link_ "/animations/daisyandsheep/" "Daisy and Sheep", text " — English and Spanish" ]
+                    , li [] [ link_ "/animations/prayertimewithangels/" "Prayer Time with Angels", text " — English and Urdu" ]
+                    ]
+                , p [ class "text-lg mb-6" ]
+                    [ text "Use the language selector on the episode page to switch. We continue expanding our language offerings to reach more families worldwide." ]
+
+                , h3 [ class "text-white text-xl font-semibold mb-2" ]
+                    [ text "Who makes these Catholic animated videos?" ]
+                , p [ class "text-lg mb-6" ]
+                    [ link_ "/team/" "Claritas Studios"
+                    , text " is a U.S.-based Catholic nonprofit. Our team of animators, writers, musicians, and theologians creates each series to be faithful to Catholic teaching and beautiful for children. Every episode is reviewed for theological accuracy before release."
+                    ]
+
+                , h3 [ class "text-white text-xl font-semibold mb-2" ]
+                    [ text "How often is new content released?" ]
+                , p [ class "text-lg mb-8" ]
+                    [ text "New episodes are released throughout the year across our active series. "
+                    , a [ href "https://blog.claritasstudios.com/subscribe", class "underline hover:text-white transition-colors", target "_blank" ] [ text "Subscribe to our newsletter" ]
+                    , text " or follow us on "
+                    , a [ href "https://www.youtube.com/@claritasstudios", class "underline hover:text-white transition-colors", target "_blank" ] [ text "YouTube" ]
+                    , text " to be notified when new Catholic animations for children are available."
+                    ]
+                ]
     in
-    div [ class "bg-black py-16" ] (List.map viewCategoryRow Productions.productions)
+    div [ class "bg-black py-16" ]
+        (intro :: List.map viewCategoryRow Productions.productions ++ [ richContent ])
 
 
 
