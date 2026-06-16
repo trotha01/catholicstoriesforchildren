@@ -48,6 +48,7 @@ type Msg
     | SetQuery String
     | SaintListMsg SaintList.Msg
     | ChangePatronageView LongTextView
+    | GoBack
 
 
 update : Nav.Key -> Msg -> Model -> ( Model, Cmd Msg )
@@ -82,6 +83,9 @@ update key msg model =
 
         ChangePatronageView viewType ->
             ( { model | patronageView = viewType }, Cmd.none )
+
+        GoBack ->
+            ( model, Nav.back key 1 )
 
 
 
@@ -190,12 +194,12 @@ viewSaintPage model saintName =
         ]
 
 
-viewBackButton : Html msg
+viewBackButton : Html Msg
 viewBackButton =
     a
-        [ href "/saints/all"
+        [ onClick GoBack
         , attribute "aria-label" "Back to list of saints"
-        , class "text-lg hover:underline hover:text-sky-500"
+        , class "text-lg hover:underline hover:text-sky-500 cursor-pointer"
         ]
         [ text "Back" ]
 
