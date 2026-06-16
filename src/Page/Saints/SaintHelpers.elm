@@ -4,7 +4,7 @@ import Page.FeastDayActivities.FeastDayHelpers exposing (Activity, activityFromL
 import Page.Saints.SaintList exposing (Saint)
 import Regex
 import Url
-import Url.Parser exposing ((<?>), parse)
+import Url.Parser exposing ((</>), (<?>), parse)
 import Url.Parser.Query as Query
 
 
@@ -24,7 +24,7 @@ route =
 
 urlSaintParser : Url.Parser.Parser (Maybe String -> a) a
 urlSaintParser =
-    Url.Parser.s "saints" <?> Query.string "s"
+    Url.Parser.s "saints" </> Url.Parser.s "all" <?> Query.string "s"
 
 
 activitiesFromSaint : Saint -> List ( String, Activity )

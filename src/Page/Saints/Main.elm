@@ -103,7 +103,7 @@ view model =
         currentRoute =
             parseRoute model.url
     in
-    { title = "Saints - Claritas Studios"
+    { title = "Full List of Catholic Saints | Claritas Studios"
     , body =
         [ div
             []
@@ -193,7 +193,7 @@ viewSaintPage model saintName =
 viewBackButton : Html msg
 viewBackButton =
     a
-        [ href "/saints"
+        [ href "/saints/all"
         , attribute "aria-label" "Back to list of saints"
         , class "text-lg hover:underline hover:text-sky-500"
         ]
@@ -503,7 +503,7 @@ viewSaint model saint =
     in
     div []
         [ a
-            [ href (absolute [ "saints" ] [ string "s" saint.name ])
+            [ href (absolute [ "saints", "all" ] [ string "s" saint.name ])
             , attribute "aria-label" saint.name
             , class "transition hover:underline hover:text-sky-500"
             ]

@@ -521,24 +521,121 @@ const RAW_ROUTES = [
   },
   {
     path: '/saints/',
-    title: 'Lives of the Saints for Kids | Claritas Studios',
-    description: 'Read short Catholic saint biographies for children. Discover patron saints, feast days, and inspiring stories of faith from across the centuries.',
-    h1: 'Lives of the Saints',
-    intro: 'Browse short saint biographies written for children. Each entry includes the saint\'s feast day and a kid-friendly summary of their life and witness.',
+    title: 'Catholic Saint Videos for Children | Claritas Studios',
+    description: 'Watch free Catholic saint videos for children. Explore animated stories and prayers featuring the Blessed Virgin Mary, St. Joseph, St. Michael, St. Thérèse of Lisieux, Saint Carlo Acutis, and more.',
+    h1: 'Catholic Saint Videos for Children',
+    intro: 'Explore free Catholic saint videos for children from Claritas Studios. Each video brings a beloved Catholic saint to life through animation, song, and prayer — helping children encounter the beauty of the faith and the inspiring witness of the saints.',
+    ogImage: '/assets/images/AnimationImageLinks/SongsOfTheSaints.webp',
     sections: [
       {
-        heading: 'Discover the saints',
+        heading: 'Catholic Saint Videos from Claritas Studios',
         paragraphs: [
-          'From early martyrs to modern witnesses like Carlo Acutis, the lives of the saints show the many ways the Holy Spirit works in the world.',
+          'Claritas Studios creates free Catholic saint videos for children that bring the saints to life through original animation and music. Our series Songs of the Saints, Praying with the Saints, and Prayer Time with Angels all feature beloved Catholic saints — ideal for home, Catholic school, CCD class, or parish faith-formation.',
         ],
         links: [
+          { href: '/animations/songsofthesaints/', label: 'Songs of the Saints — animated saint videos' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — Rosary with the saints' },
+          { href: '/animations/prayertimewithangels/', label: 'Prayer Time with Angels — Catholic prayers for children' },
+        ],
+      },
+      {
+        heading: 'The Blessed Virgin Mary',
+        paragraphs: [
+          'Mary is the Mother of God and the greatest of all the saints. Catholics honor her through the Rosary, the Angelus, and countless prayers passed down through the centuries. Watch our Hail Mary animation and Praying with the Saints Rosary videos to introduce children to Our Lady.',
+        ],
+        links: [
+          { href: '/animations/hailmary/', label: 'Hail Mary — animation for children' },
+          { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints — Rosary videos' },
+        ],
+      },
+      {
+        heading: 'Saint Thérèse of Lisieux',
+        paragraphs: [
+          'Saint Thérèse of Lisieux, the Little Flower, taught the world her Little Way — doing small things with great love. She is one of the most beloved Catholic saints for children. Watch her Songs of the Saints episode and pray the Rosary with her in our Praying with the Saints series.',
+        ],
+        links: [
+          { href: '/animations/songsofthesaints/1/saintth%C3%A9r%C3%A8seoflisieux', label: 'Saint Thérèse — Songs of the Saints' },
+          { href: '/animations/prayingwiththesaints/', label: 'Pray the Rosary with St. Thérèse' },
+        ],
+      },
+      {
+        heading: 'Saint Carlo Acutis',
+        paragraphs: [
+          'Saint Carlo Acutis was an Italian teenager who loved Jesus in the Eucharist and built a website cataloguing Eucharistic miracles. He died at fifteen, was beatified in 2020, and was canonized by Pope Francis on April 27, 2025. He is sometimes called the Patron of the Internet and is a powerful model for Catholic children today.',
+        ],
+        links: [
+          { href: '/animations/songsofthesaints/1/carloacutis', label: 'Carlo Acutis — Songs of the Saints' },
+          { href: '/animations/prayingwiththesaints/1/praythesorrowfulmysterieswithcarlo?tab=episodes', label: 'Pray the Rosary with Carlo Acutis' },
+        ],
+      },
+      {
+        heading: 'Saint Joseph',
+        paragraphs: [
+          'Saint Joseph is the husband of the Blessed Virgin Mary, the foster father of Jesus, and the Patron of the Universal Church. He is a model of quiet strength, fatherhood, and trust in God\'s will for Catholic children and families.',
+        ],
+        links: [
+          { href: '/animations/songsofthesaints/1/saintjoseph', label: 'Saint Joseph — Songs of the Saints' },
+        ],
+      },
+      {
+        heading: 'Saint Michael the Archangel',
+        paragraphs: [
+          'Saint Michael the Archangel is the great defender of God\'s people and the commander of the heavenly army. Catholics pray the Saint Michael Prayer for protection against evil. Watch our animated episode to help children learn this powerful prayer.',
+        ],
+        links: [
+          { href: '/animations/prayertimewithangels/1/saintmichaelprayer', label: 'Saint Michael Prayer — Prayer Time with Angels' },
+        ],
+      },
+      {
+        heading: 'More Catholic Saints for Children',
+        paragraphs: [
+          'There are hundreds of Catholic saints whose lives can inspire and guide children in the faith. From Saint Patrick and Saint Francis of Assisi to Saint Joan of Arc and Saint Faustina Kowalska, the Catholic Church is rich with heroes of holiness. Browse our full saints list to discover more.',
+        ],
+        links: [
+          { href: '/saints/all/', label: 'For a list of more Catholic saints, click here.' },
+          { href: '/feastdayactivities/', label: 'Feast Day Activities' },
+          { href: '/animations/', label: 'All Catholic animations for children' },
+        ],
+      },
+    ],
+    jsonLd: [
+      buildBreadcrumbSchema('/saints/', 'Catholic Saint Videos for Children'),
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Catholic Saint Videos for Children',
+        description: 'Free Catholic saint videos for children featuring the Blessed Virgin Mary, St. Thérèse of Lisieux, Carlo Acutis, St. Joseph, and St. Michael the Archangel.',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'The Blessed Virgin Mary', url: `${SITE_ORIGIN}/saints/#blessed-virgin-mary` },
+          { '@type': 'ListItem', position: 2, name: 'Saint Thérèse of Lisieux', url: `${SITE_ORIGIN}/saints/#saint-therese-of-lisieux` },
+          { '@type': 'ListItem', position: 3, name: 'Saint Carlo Acutis', url: `${SITE_ORIGIN}/saints/#saint-carlo-acutis` },
+          { '@type': 'ListItem', position: 4, name: 'Saint Joseph', url: `${SITE_ORIGIN}/saints/#saint-joseph` },
+          { '@type': 'ListItem', position: 5, name: 'Saint Michael the Archangel', url: `${SITE_ORIGIN}/saints/#saint-michael-the-archangel` },
+        ],
+      },
+    ],
+  },
+  {
+    path: '/saints/all/',
+    title: 'Full List of Catholic Saints | Claritas Studios',
+    description: 'Search our full list of Catholic saints and blesseds. Find patron saints, feast days, and links to Catholic resources for hundreds of saints recognized by the Church.',
+    h1: 'List of Catholic Saints and Blesseds',
+    intro: 'Search our extensive list of Catholic saints and blesseds recognised by the Catholic Church. Find patron saints by name, feast day, or patronage — and discover links to videos, activities, and resources for each saint.',
+    sections: [
+      {
+        heading: 'Find Your Patron Saint',
+        paragraphs: [
+          'Our searchable saints list includes hundreds of saints and blesseds. Search by name, feast day (e.g. "July 25"), or patronage (e.g. "nurse") to find the saint you are looking for.',
+        ],
+        links: [
+          { href: '/saints/', label: 'Catholic Saint Videos for Children' },
           { href: '/feastdayactivities/', label: 'Feast Day Activities' },
           { href: '/animations/songsofthesaints/', label: 'Songs of the Saints animation' },
           { href: '/animations/prayingwiththesaints/', label: 'Praying with the Saints animation' },
         ],
       },
     ],
-    jsonLd: [buildBreadcrumbSchema('/saints/', 'Lives of the Saints')],
+    jsonLd: [buildBreadcrumbSchema('/saints/all/', 'Full List of Catholic Saints')],
   },
   {
     path: '/prayers/',
