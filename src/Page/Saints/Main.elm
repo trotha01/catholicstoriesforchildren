@@ -48,6 +48,7 @@ type Msg
     | SetQuery String
     | SaintListMsg SaintList.Msg
     | ChangePatronageView LongTextView
+    | GoBack
 
 
 update : Nav.Key -> Msg -> Model -> ( Model, Cmd Msg )
@@ -83,6 +84,9 @@ update key msg model =
         ChangePatronageView viewType ->
             ( { model | patronageView = viewType }, Cmd.none )
 
+        GoBack ->
+            ( model, Nav.back key 1 )
+
 
 
 -- SUBSCRIPTIONS
@@ -103,7 +107,7 @@ view model =
         currentRoute =
             parseRoute model.url
     in
-    { title = "Saints - Claritas Studios"
+    { title = "Full List of Catholic Saints | Claritas Studios"
     , body =
         [ div
             []
@@ -190,12 +194,12 @@ viewSaintPage model saintName =
         ]
 
 
-viewBackButton : Html msg
+viewBackButton : Html Msg
 viewBackButton =
     a
-        [ href "/saints"
+        [ onClick GoBack
         , attribute "aria-label" "Back to list of saints"
-        , class "text-lg hover:underline hover:text-sky-500"
+        , class "text-lg hover:underline hover:text-sky-500 cursor-pointer"
         ]
         [ text "Back" ]
 
@@ -503,7 +507,7 @@ viewSaint model saint =
     in
     div []
         [ a
-            [ href (absolute [ "saints" ] [ string "s" saint.name ])
+            [ href (absolute [ "saints", "all" ] [ string "s" saint.name ])
             , attribute "aria-label" saint.name
             , class "transition hover:underline hover:text-sky-500"
             ]

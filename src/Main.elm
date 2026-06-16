@@ -20,6 +20,7 @@ import Page.Prayer.Angelus.View as AngelusPage
 import Page.Prayers.View as PrayersPage
 import Page.Resources.View as ResourcesPage
 import Page.Saints.Main as SaintsPage
+import Page.Saints.VideoPage as SaintVideosPage
 import Page.Shop.View as ShopPage
 import Page.Signup as Signup
 import Page.Team.View as TeamPage
@@ -54,6 +55,7 @@ type Page
     | Shop
     | Feasts
     | Saints
+    | SaintVideos
     | Press
     | PrivacyPolicy
     | TermsAndConditions
@@ -110,6 +112,24 @@ init flags url key =
           , sections = Page.Home.Sections.init
           }
         , Nav.pushUrl key "/animations/prayertimewithangels/1/actofcontritionprayer"
+        )
+
+    else if url.path == "/saints" && Maybe.map (String.startsWith "s=") url.query == Just True then
+        -- Redirect /saints?s=... to /saints/all?s=... so old deep-links keep working
+        ( { key = key
+          , url = url
+          , signup = Signup.init
+          , page = SaintVideos -- temporary, UrlChanged will correct it
+          , time = Time.millisToPosix 0
+          , timezone = Time.utc
+          , language = English
+          , saintsPageModel = saintsPageModel
+          , feastsPageModel = feastsPageModel
+          , animationsPageModel = animationsPageModel
+          , menuOpen = False
+          , sections = Page.Home.Sections.init
+          }
+        , Nav.pushUrl key ("/saints/all?" ++ Maybe.withDefault "" url.query)
         )
 
     else
@@ -201,8 +221,11 @@ parseUrl url =
     else if String.contains "shop" urlString then
         Shop
 
-    else if String.contains "saints" urlString then
+    else if String.contains "saints/all" urlString then
         Saints
+
+    else if String.contains "saints" urlString then
+        SaintVideos
 
     else if String.contains "press" urlString then
         Press
@@ -292,6 +315,35 @@ update msg model =
                       else
                         Cmd.map ProductionsMsg animCmd
                     )
+
+                Saints ->
+                    ( { model | url = url, page = Saints, menuOpen = False }
+                    , Cmd.batch
+                        [ if pathChanged then scrollToTopCmd else Cmd.none
+                        , if model.saintsPageModel.saintList.isLoading then
+                            Cmd.map SaintsMsg (SaintsPage.init () url |> Tuple.second)
+                          else
+                            Cmd.none
+                        ]
+                    )
+
+                SaintVideos ->
+                    -- Redirect /saints?s=... to /saints/all?s=... so old links keep working
+                    case url.query of
+                        Just q ->
+                            if String.startsWith "s=" q then
+                                ( { model | menuOpen = False }
+                                , Nav.pushUrl model.key ("/saints/all?" ++ q)
+                                )
+                            else
+                                ( { model | url = url, page = SaintVideos, menuOpen = False }
+                                , if pathChanged then scrollToTopCmd else Cmd.none
+                                )
+
+                        Nothing ->
+                            ( { model | url = url, page = SaintVideos, menuOpen = False }
+                            , if pathChanged then scrollToTopCmd else Cmd.none
+                            )
 
                 _ ->
                     ( { model | url = url, page = newPage, menuOpen = False }
@@ -392,10 +444,28 @@ updatePage model url =
         , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
         )
 
-    else if String.contains "saints" urlString then
+    else if String.contains "saints/all" urlString then
         ( { model | url = url, page = Saints, menuOpen = False }
         , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
         )
+
+    else if String.contains "saints" urlString then
+        -- Redirect /saints?s=... to /saints/all?s=... so old links keep working
+        case url.query of
+            Just q ->
+                if String.startsWith "s=" q then
+                    ( { model | menuOpen = False }
+                    , Nav.pushUrl model.key ("/saints/all?" ++ q)
+                    )
+                else
+                    ( { model | url = url, page = SaintVideos, menuOpen = False }
+                    , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
+                    )
+
+            Nothing ->
+                ( { model | url = url, page = SaintVideos, menuOpen = False }
+                , Cmd.batch [ Nav.pushUrl model.key urlString, scrollToTopCmd ]
+                )
 
     else if String.contains "press" urlString then
         ( { model | url = url, page = Press, menuOpen = False }
@@ -485,6 +555,11 @@ view model =
                             SaintsPage.view { saintPageModel | url = model.url }
                     in
                     { title = document.title, body = document.body |> List.map (Html.map SaintsMsg) }
+
+                SaintVideos ->
+                    { title = "Catholic Saint Videos for Children | Claritas Studios"
+                    , body = [ SaintVideosPage.view ]
+                    }
 
                 Feasts ->
                     let
