@@ -132,10 +132,40 @@
       document.head.appendChild(script);
       window.gtag('js', new Date());
       window.gtag('config', 'G-6JTEZS9G2D');
+      window.gtag('config', 'AW-XXXXXXXXX');
     };
 
     // Load immediately — consent defaults handle regional restrictions.
     window.loadGoogleTag();
+  </script>
+
+  <!-- Google Ads conversion tracking.
+       TODO: replace AW-XXXXXXXXX (above and in send_to below) and the conversion label
+       with the real values from Google Ads → Goals → Conversions → conversion action → "Use Google tag". -->
+  <script>
+    window.gtag_report_conversion = function (url) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-XXXXXXXXX/XXXXXXXXXXX',
+        event_callback: function () { if (url) { window.location = url; } }
+      });
+      return false;
+    };
+
+    // The signup form and donate links open in a new tab, so the page
+    // survives long enough for the conversion hit to send.
+    document.addEventListener('submit', function (e) {
+      var form = e.target;
+      if (form && form.action && form.action.indexOf('blog.claritasstudios.com') !== -1) {
+        window.gtag_report_conversion();
+      }
+    }, true);
+
+    document.addEventListener('click', function (e) {
+      var link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (link && /zeffy\.com|kickstarter\.com|cars2charities\.org/.test(link.href)) {
+        window.gtag_report_conversion();
+      }
+    }, true);
   </script>
 
   <script>

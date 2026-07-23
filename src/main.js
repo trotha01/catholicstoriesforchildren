@@ -37,7 +37,7 @@ function mount() {
   const app = window.app;
   if (!app || !app.ports) return;
   if (app.ports.gtagReportConversion && !app.__gtagHooked){
-    app.ports.gtagReportConversion.subscribe(function(){ if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(); });
+    app.ports.gtagReportConversion.subscribe(function(url){ if (typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion(url); });
     app.__gtagHooked = true;
   }
   if (app.ports.goBack && !app.__goBackHooked){
